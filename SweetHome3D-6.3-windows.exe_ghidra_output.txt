@@ -1,3 +1,97 @@
+// WARNING: [r2ghidra] Failed to match type LPSYSTEM_INFO for variable lpSystemInfo to Decompiler type: Unknown type
+// identifier LPSYSTEM_INFO
+// WARNING: [r2ghidra] Failed to match type PDWORD * for variable lpflOldProtect to Decompiler type: Unknown type
+// identifier PDWORD
+// WARNING: [r2ghidra] Failed to match type DWORD * for variable flNewProtect to Decompiler type: Unknown type
+// identifier DWORD
+// WARNING: [r2ghidra] Detected overlap for variable var_9h
+
+void entry0(void)
+{
+    int32_t iVar1;
+    int32_t *in_FS_OFFSET;
+    undefined uVar2;
+    int32_t iVar3;
+    undefined4 uStack128;
+    undefined *puStack124;
+    int32_t iStack120;
+    undefined4 uStack116;
+    undefined *puStack112;
+    int32_t var_5ch;
+    int32_t var_40h;
+    int32_t var_3ch;
+    int32_t var_38h;
+    int32_t var_34h;
+    int32_t var_30h;
+    int32_t var_2ch;
+    int32_t var_28h;
+    int32_t var_24h;
+    int32_t var_1ch;
+    uint32_t var_18h;
+    int32_t var_14h;
+    
+    puStack124 = &stack0xfffffffc;
+    var_5ch = 0;
+    puStack112 = (undefined *)0x41184c;
+    fcn.004065d4();
+    uStack116 = 0x411efe;
+    iStack120 = *in_FS_OFFSET;
+    *in_FS_OFFSET = (int32_t)&iStack120;
+    uStack128 = 0x411eba;
+    iVar1 = *in_FS_OFFSET;
+    *in_FS_OFFSET = (int32_t)&stack0xffffff7c;
+    puStack112 = &stack0xfffffffc;
+    fcn.0040ed58();
+    fcn.0040e8ac();
+    if (*(char *)0x412ae0 != '\0') {
+        fcn.0040ee80();
+        fcn.004046ac();
+    }
+    fcn.0040b8fc();
+    fcn.00404c98(iVar1);
+    *(int32_t **)0x41865c = (int32_t *)fcn.0040c238(1, 0, 2);
+    *in_FS_OFFSET = (int32_t)&stack0xffffff64;
+    *(int32_t *)0x418664 = fcn.0040ee2c();
+    uVar2 = *(int32_t *)(*(int32_t *)0x418664 + 0xc) == 1;
+    if ((bool)uVar2) {
+        iVar1 = fcn.0040c738();
+        uVar2 = iVar1 == *(int32_t *)(*(int32_t *)0x418664 + 0x28);
+        if ((bool)uVar2) {
+            (**(code **)(**(int32_t **)0x41865c + 4))();
+            uVar2 = var_18h == 0;
+            if (!(bool)uVar2) goto code_r0x00411930;
+            (**(code **)(**(int32_t **)0x41865c + 4))();
+            uVar2 = var_24h == *(uint32_t *)(*(int32_t *)0x418664 + 0x10);
+            if (*(uint32_t *)(*(int32_t *)0x418664 + 0x10) <= (uint32_t)var_24h) goto code_r0x00411930;
+        }
+    }
+    fcn.0040ec70();
+code_r0x00411930:
+    fcn.0040c220();
+    fcn.0040c1f8();
+    fcn.004031e0();
+    if (!(bool)uVar2) {
+        fcn.0040ec70();
+    }
+    *in_FS_OFFSET = (int32_t)&stack0xffffff58;
+    *(undefined4 *)0x4186b8 = fcn.0040c854(*(int32_t *)0x40cbc0);
+    *in_FS_OFFSET = (int32_t)&stack0xffffff48;
+    iVar3 = 4;
+    fcn.0040da38(4, 0x1c);
+    *(int32_t *)0x418650 = *(int32_t *)0x4185ac;
+    *(undefined4 *)0x41864c = fcn.00402dec();
+    iVar1 = *(int32_t *)0x418650;
+    if (-1 < *(int32_t *)0x418650 + -1) {
+        do {
+            iVar3 = 4;
+            fcn.0040da38(4, 6);
+            iVar1 = iVar1 + -1;
+        } while (iVar1 != 0);
+    }
+    *in_FS_OFFSET = iVar3;
+    fcn.00403894();
+    return;
+}
 
 
 void fcn.00402be0(void)

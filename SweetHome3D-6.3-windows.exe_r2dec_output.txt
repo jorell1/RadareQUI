@@ -1493,6 +1493,18 @@ uint32_t fcn_0040b9d0 (void) {
 }
 
 
+/* r2dec pseudo code output */
+/* /home/jmov/Thesis @ 0x408218 */
+#include <stdint.h>
+ 
+int32_t fcn_00408218 (void) {
+    esi = edx;
+    ebx = eax;
+    eax = esi;
+    edx = ebx;
+    fcn_00404e14 ();
+    return eax;
+}
 
 
 /* r2dec pseudo code output */
@@ -5646,8 +5658,8 @@ uint32_t fcn_004025a0 (void) {
         } else {
             eax++;
             edx--;
-        } while (edx != 0);
-    }
+        }
+    } while (edx != 0);
 label_1:
     *(0x415adc) = 0;
 label_0:
@@ -12642,8 +12654,8 @@ label_0:
             }
         } else {
             ebx = *(ebx);
-        }
-    } while (ebx != 0);
+        } while (ebx != 0);
+    }
 label_1:
     return eax;
 }
@@ -13129,8 +13141,8 @@ int32_t fcn_0040b710 (void) {
             eax = esi;
             edx = ebx;
             al = fcn_0040bb10 ();
-        } while (al == 0);
-    }
+        }
+    } while (al == 0);
     return eax;
 }
 
