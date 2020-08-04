@@ -5,12 +5,15 @@ import time
 import pdb
 
 from signal import SIGINT
-from os import listdir
-from os.path import isfile,join
+from os import listdir, remove
+from os.path import isfile, join, exists
 from pexpect import TIMEOUT
 
 R2DEC_SIG = '/* r2dec pseudo code output */'
 GHIDRA_SIG = 'pdg @ {}\n'
+R2CMD_PROMPT = '[0x[0-9a-fA-F]{8}]>'
+#R2CMD_PROMPT = '\x1b[0m \x00\r\x1b[38;2;193;156;0m[0x[0-9a-fA-F]{8}]>\x1b[0m \x1b[?1001r\x1b[?1000l''
+EXPECTED = [R2CMD_PROMPT, pexpect.TIMEOUT]
 
 ansi_escape = re.compile(r'''
     \x1b  # ESC
@@ -41,7 +44,8 @@ def cleanline(line):
 
 class RadareQUI:
     def __init__(self, file):
-        self._child = pexpect.spawn('r2', [file], timeout=2)
+        self._child = pexpect.spawn('r2', ['-e io.cache=true', file], timeout=1)
+        self._child.setecho(False)
 
     def clear_buff(self):
         # if self._child.before:
@@ -58,7 +62,7 @@ class RadareQUI:
 
     def send_analyze(self):
         self._child.sendline('aaa')
-        self._child.expect(']>')
+        self._child.expect(EXPECTED)
 
         # clear buffer of analysis messages
         try:
@@ -70,7 +74,7 @@ class RadareQUI:
 
     def get_funs_names(self):
         self._child.sendline('afl')
-        self._child.expect(']>')
+        self._child.expect(EXPECTED)
         funs = dict()
 
         # obtain entry without the big garbage before it
@@ -90,13 +94,13 @@ class RadareQUI:
 
     def get_fun_body_ghidra(self, name):
         self._child.sendline('pdg @ {}'.format(name))
-        self._child.expect(']>')
+        self._child.expect(EXPECTED)
 
         body = ''
 
         try:
-            while True:
-                body += cleanline(self._child.readline())
+            for line in self._child:
+                body += cleanline(line)
         except TIMEOUT:
             self.clear_buff()
             # since first 382 chars are also garbage
@@ -104,13 +108,13 @@ class RadareQUI:
 
     def get_fun_body_r2dec(self, name):
         self._child.sendline('pdd @ {}'.format(name))
-        self._child.expect(']>')
+        self._child.expect(EXPECTED)
 
         body = ''
 
         try:
-            while True:
-                body += cleanline(self._child.readline())
+            for line in self._child:
+                body += cleanline(line)
         except TIMEOUT:
             self.clear_buff()
             return body[body.find(R2DEC_SIG):]  # since first chars are garbage until the signature
@@ -119,35 +123,40 @@ class RadareQUI:
 def main(args):
     # extract the executables
     executables = [exe for exe in listdir(args.path) if isfile(join(args.path, exe))]
+    print('Found these files: {}'.format(executables))
+
     for file in executables:
-        # skip non executable files
-        if '.exe' not in file:
+        # skip non object files
+        if '.o' not in file:
             continue
+
         radare = RadareQUI(join(args.path, file))
         radare.send_analyze()
         function_dict = radare.get_funs_names()
         fcount = 1
         ftotal = len(function_dict)
+        print('Disecting File: {}'.format(file))
+        ghidra_out = "Output/{}_ghidra_output.txt".format(file)
+        r2dec_out = "Output/{}_r2dec_output.txt".format(file)
+
+        if exists(ghidra_out):
+            remove(ghidra_out)
+
+        if exists(r2dec_out):
+            remove(r2dec_out)
 
         for function_name in function_dict.values():
-            # skip dll functions
-            # pdb.set_trace()
-            print('Function {} of {} in {}.{}'.format(fcount, ftotal, file, function_name))
-            if 'sub' in function_name or 'dll' in function_name:
-                fcount += 1
-                continue
-            with open("{}_ghidra_output.txt".format(file), "a") as ghidra_code_file:
+            print('Function {} of {} in {}:{}'.format(fcount, ftotal, file, function_name))
+            with open(ghidra_out, "a") as ghidra_code_file:
                 function_body = radare.get_fun_body_ghidra(function_name)
                 ghidra_code_file.write(function_body)
                 ghidra_code_file.write('\n\n')
-            with open("{}_r2dec_output.txt".format(file), "a") as r2dec_code_file:
+
+            with open(r2dec_out, "a") as r2dec_code_file:
                 function_body = radare.get_fun_body_r2dec(function_name)
                 r2dec_code_file.write(function_body)
                 r2dec_code_file.write('\n\n')
             fcount += 1
-
-
-
         radare.close()
     return 0
 
