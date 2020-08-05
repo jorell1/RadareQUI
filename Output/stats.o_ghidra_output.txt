@@ -1,0 +1,28 @@
+uint64_t sym.comparator(int64_t arg1, int64_t arg2)
+{
+    uint64_t uVar1;
+    
+    uVar1 = 0xffffffff;
+    if (*(double *)arg2 <= *(double *)arg1) {
+        uVar1 = (uint64_t)(*(double *)arg2 < *(double *)arg1);
+    }
+    return uVar1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

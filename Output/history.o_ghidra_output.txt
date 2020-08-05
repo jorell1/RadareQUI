@@ -1,0 +1,578 @@
+void sym.add_history(int64_t arg1)
+{
+    undefined8 *puVar1;
+    undefined8 *puVar2;
+    undefined8 uVar3;
+    
+    puVar2 = (undefined8 *)func_0x080104c3(0x20, "\x01");
+    uVar3 = func_0x080104c3(arg1);
+    puVar2[1] = 0;
+    *puVar2 = uVar3;
+    puVar2[3] = 0;
+    puVar2[2] = _str.s;
+    puVar1 = puVar2;
+    if (_str.s != (undefined8 *)0x0) {
+        *(undefined8 **)((int64_t)_str.s + 0x18) = puVar2;
+        puVar1 = _reloc.cur_entry;
+    }
+    _reloc.cur_entry = puVar1;
+    "\x01"._0_4_ = "\x01"._0_4_ + 1;
+    _str.s = puVar2;
+    return;
+}
+
+
+void sym.history_find_by_number.cold(void)
+{
+    do {
+        invalidInstructionException();
+    } while( true );
+}
+
+
+void sym.using_history(void)
+{
+    return;
+}
+
+
+void sym.clear_history(void)
+{
+    undefined8 *puVar1;
+    undefined8 *puVar2;
+    
+    puVar2 = _str.s;
+    if (_str.s != (undefined8 *)0x0) {
+        do {
+            puVar1 = (undefined8 *)puVar2[2];
+            func_0x080104c3(*puVar2);
+            func_0x080104c3(puVar2);
+            puVar2 = puVar1;
+        } while (puVar1 != (undefined8 *)0x0);
+    }
+    "\x01"._0_4_ = 0;
+    _reloc.cur_entry = 0;
+    _str.s = (undefined8 *)0x0;
+    return;
+}
+
+
+int32_t sym.where_history(void)
+{
+    int64_t iVar1;
+    int32_t iVar2;
+    bool bVar3;
+    
+    if (_str.s == 0) {
+        return 0;
+    }
+    iVar2 = "\x01"._0_4_;
+    if (_reloc.cur_entry != 0) {
+        iVar1 = *(int64_t *)(_str.s + 0x10);
+        if (_reloc.cur_entry != _str.s) {
+            do {
+                if (iVar1 == 0) break;
+                iVar2 = iVar2 + -1;
+                bVar3 = _reloc.cur_entry != iVar1;
+                iVar1 = *(int64_t *)(iVar1 + 0x10);
+            } while (bVar3);
+        }
+        iVar2 = iVar2 - (uint32_t)(0 < iVar2);
+    }
+    return iVar2;
+}
+
+
+int64_t sym.history_set_pos(uint32_t arg1)
+{
+    uint32_t uVar1;
+    int64_t iVar2;
+    
+    if (((uint8_t)((int32_t)"\x01"._0_4_ < (int32_t)arg1 | (uint8_t)(arg1 >> 0x1f)) == 0) && (_str.s != 0)) {
+        iVar2 = _str.s;
+        uVar1 = "\x01"._0_4_;
+        if ("\x01"._0_4_ == arg1) {
+            _reloc.cur_entry = 0;
+            return 1;
+        }
+        do {
+            uVar1 = uVar1 - 1;
+            if (arg1 == uVar1) {
+                _reloc.cur_entry = iVar2;
+                return 1;
+            }
+            iVar2 = *(int64_t *)(iVar2 + 0x10);
+        } while (iVar2 != 0);
+        return iVar2;
+    }
+    return 0;
+}
+
+
+int64_t sym.history_get(uint32_t arg1)
+{
+    int64_t *piVar1;
+    int32_t iVar2;
+    int32_t iVar3;
+    int64_t iVar4;
+    
+    iVar3 = arg1 - _reloc.history_base;
+    if (((uint8_t)("\x01"._0_4_ <= iVar3 | (uint8_t)((uint32_t)iVar3 >> 0x1f)) == 0) &&
+       (iVar4 = _str.s, iVar2 = "\x01"._0_4_, _str.s != 0)) {
+        do {
+            if (iVar3 == iVar2 + -1) {
+                return iVar4;
+            }
+            piVar1 = (int64_t *)(iVar4 + 0x10);
+            iVar4 = *piVar1;
+            iVar2 = iVar2 + -1;
+        } while (*piVar1 != 0);
+        return 0;
+    }
+    return 0;
+}
+
+
+undefined8 sym.current_history(void)
+{
+    return _reloc.cur_entry;
+}
+
+
+void sym.previous_history(void)
+{
+    if (_reloc.cur_entry != 0) {
+        if (*(int64_t *)(_reloc.cur_entry + 0x10) != 0) {
+            _reloc.cur_entry = *(int64_t *)(_reloc.cur_entry + 0x10);
+        }
+        return;
+    }
+    _reloc.cur_entry = _str.s;
+    return;
+}
+
+
+void sym.next_history(void)
+{
+    if (_reloc.cur_entry != 0) {
+        _reloc.cur_entry = *(int64_t *)(_reloc.cur_entry + 0x18);
+    }
+    return;
+}
+
+
+undefined8 * sym.replace_history_entry(uint32_t arg1, int64_t arg2, int64_t arg3)
+{
+    int64_t *piVar1;
+    int32_t iVar2;
+    undefined8 *puVar3;
+    undefined8 uVar4;
+    int32_t iVar5;
+    undefined8 *puVar6;
+    
+    iVar5 = (arg1 + 1) - _reloc.history_base;
+    if (((uint8_t)("\x01"._0_4_ <= iVar5 | (uint8_t)((uint32_t)iVar5 >> 0x1f)) == 0) &&
+       (puVar6 = _str.s, iVar2 = "\x01"._0_4_, _str.s != (undefined8 *)0x0)) {
+        do {
+            if (iVar5 == iVar2 + -1) {
+                puVar3 = (undefined8 *)func_0x080104c3(0x20, 1);
+                *puVar3 = *puVar6;
+                puVar3[1] = puVar6[1];
+                uVar4 = func_0x080104c3(arg2);
+                puVar6[1] = arg3;
+                *puVar6 = uVar4;
+                return puVar3;
+            }
+            piVar1 = puVar6 + 2;
+            puVar6 = (undefined8 *)*piVar1;
+            iVar2 = iVar2 + -1;
+        } while ((undefined8 *)*piVar1 != (undefined8 *)0x0);
+        return (undefined8 *)0x0;
+    }
+    return (undefined8 *)0x0;
+}
+
+
+int64_t sym.remove_history(uint32_t arg1)
+{
+    uint32_t uVar1;
+    int64_t iVar2;
+    int64_t iVar3;
+    int64_t iVar4;
+    uint32_t uVar5;
+    int64_t iVar6;
+    
+    if (((uint8_t)((int32_t)"\x01"._0_4_ <= (int32_t)arg1 | (uint8_t)(arg1 >> 0x1f)) != 0) || (_str.s == 0)) {
+        return 0;
+    }
+    uVar1 = "\x01"._0_4_ - 1;
+    iVar4 = _str.s;
+    uVar5 = uVar1;
+    while( true ) {
+        iVar2 = *(int64_t *)(iVar4 + 0x10);
+        if (arg1 == uVar5) break;
+        uVar5 = uVar5 - 1;
+        iVar4 = iVar2;
+        if (iVar2 == 0) {
+            return iVar2;
+        }
+    }
+    iVar6 = *(int64_t *)(iVar4 + 0x18);
+    if (iVar2 != 0) {
+        *(int64_t *)(iVar2 + 0x18) = iVar6;
+        iVar6 = *(int64_t *)(iVar4 + 0x18);
+    }
+    iVar3 = _reloc.cur_entry;
+    if (iVar6 != 0) {
+        *(int64_t *)(iVar6 + 0x10) = iVar2;
+        iVar2 = _str.s;
+    }
+    if (iVar3 == iVar4) {
+        "\x01"._0_4_ = uVar1;
+        _reloc.cur_entry = *(undefined8 *)(iVar4 + 0x10);
+        _str.s = iVar2;
+        return iVar4;
+    }
+    "\x01"._0_4_ = uVar1;
+    _str.s = iVar2;
+    return iVar4;
+}
+
+
+undefined8 sym.free_history_entry(int64_t arg1)
+{
+    undefined8 uVar1;
+    
+    if (arg1 != 0) {
+        uVar1 = *(undefined8 *)(arg1 + 8);
+        func_0x080104c3(*(undefined8 *)arg1);
+        func_0x080104c3(arg1);
+        return uVar1;
+    }
+    return 0;
+}
+
+
+int32_t sym.history_search(int64_t arg1, int64_t arg2)
+{
+    int32_t iVar1;
+    int64_t *piVar2;
+    int64_t iVar3;
+    int64_t *piVar4;
+    int32_t iVar5;
+    int64_t iVar6;
+    bool bVar7;
+    
+    piVar2 = _str.s;
+    iVar1 = (int32_t)arg2;
+    if (_str.s == (int64_t *)0x0) {
+        iVar5 = 0;
+        if (_reloc.cur_entry == (int64_t *)0x0) goto code_r0x0800059e;
+    } else {
+        iVar5 = "\x01"._0_4_;
+        if (_reloc.cur_entry == (int64_t *)0x0) {
+code_r0x0800059e:
+            if (iVar1 < 0) goto code_r0x080005a8;
+            goto code_r0x0800057e;
+        }
+        piVar4 = (int64_t *)_str.s[2];
+        if (_str.s != _reloc.cur_entry) {
+            do {
+                if (piVar4 == (int64_t *)0x0) break;
+                iVar5 = iVar5 + -1;
+                bVar7 = piVar4 != _reloc.cur_entry;
+                piVar4 = (int64_t *)piVar4[2];
+            } while (bVar7);
+        }
+        iVar5 = iVar5 - (uint32_t)(0 < iVar5);
+    }
+    iVar6 = *_reloc.cur_entry;
+    if (iVar6 != 0) goto code_r0x08000545;
+    if (iVar1 < 0) goto code_r0x08000566;
+code_r0x08000528:
+    if (_reloc.cur_entry != (int64_t *)0x0) {
+        _reloc.cur_entry = (int64_t *)_reloc.cur_entry[3];
+        while ((_reloc.cur_entry != (int64_t *)0x0 && (iVar6 = *_reloc.cur_entry, iVar6 != 0))) {
+code_r0x08000545:
+            while( true ) {
+                iVar3 = func_0x080104c3(iVar6, arg1);
+                if (iVar3 != 0) {
+                    return (int32_t)iVar3 - (int32_t)iVar6;
+                }
+                if (-1 < iVar1) goto code_r0x08000528;
+                if (_reloc.cur_entry == (int64_t *)0x0) break;
+code_r0x08000566:
+                piVar4 = (int64_t *)_reloc.cur_entry[2];
+                if ((piVar4 == (int64_t *)0x0) || (iVar6 = *piVar4, _reloc.cur_entry = piVar4, iVar6 == 0))
+                goto code_r0x0800057e;
+            }
+code_r0x080005a8:
+            _reloc.cur_entry = piVar2;
+        }
+    }
+code_r0x0800057e:
+    func_0x080104c3(iVar5);
+    return -1;
+}
+
+
+undefined8 sym.history_search_prefix(int64_t arg1, int64_t arg2)
+{
+    int64_t **ppiVar1;
+    int32_t iVar2;
+    int64_t *piVar3;
+    undefined8 uVar4;
+    undefined8 uVar5;
+    int64_t *piVar6;
+    int32_t iVar7;
+    int64_t iVar8;
+    
+    iVar2 = (int32_t)arg2;
+    uVar4 = func_0x080104c3();
+    piVar3 = _str.s;
+    if (_str.s == (int64_t *)0x0) {
+        iVar7 = 0;
+        if (_reloc.cur_entry == (int64_t *)0x0) goto code_r0x080006c8;
+    } else {
+        iVar7 = "\x01"._0_4_;
+        if (_reloc.cur_entry == (int64_t *)0x0) {
+code_r0x080006c8:
+            if (iVar2 < 0) goto code_r0x080006d0;
+            goto code_r0x080006a8;
+        }
+        if (((int64_t *)_str.s[2] != (int64_t *)0x0) && (piVar6 = (int64_t *)_str.s[2], _str.s != _reloc.cur_entry)) {
+            do {
+                iVar7 = iVar7 + -1;
+                ppiVar1 = (int64_t **)(piVar6 + 2);
+                if (_reloc.cur_entry == piVar6) break;
+                piVar6 = *ppiVar1;
+            } while (*ppiVar1 != (int64_t *)0x0);
+        }
+        iVar7 = iVar7 - (uint32_t)(0 < iVar7);
+    }
+    iVar8 = *_reloc.cur_entry;
+    if (iVar8 != 0) goto code_r0x0800066d;
+    if (iVar2 < 0) goto code_r0x0800068c;
+code_r0x08000650:
+    if (_reloc.cur_entry != (int64_t *)0x0) {
+        _reloc.cur_entry = (int64_t *)_reloc.cur_entry[3];
+        while ((_reloc.cur_entry != (int64_t *)0x0 && (iVar8 = *_reloc.cur_entry, iVar8 != 0))) {
+code_r0x0800066d:
+            while( true ) {
+                uVar5 = func_0x080104c3(iVar8, arg1, uVar4);
+                if ((int32_t)uVar5 == 0) {
+                    return uVar5;
+                }
+                if (-1 < iVar2) goto code_r0x08000650;
+                if (_reloc.cur_entry == (int64_t *)0x0) break;
+code_r0x0800068c:
+                piVar6 = (int64_t *)_reloc.cur_entry[2];
+                if ((piVar6 == (int64_t *)0x0) || (iVar8 = *piVar6, _reloc.cur_entry = piVar6, iVar8 == 0))
+                goto code_r0x080006a8;
+            }
+code_r0x080006d0:
+            _reloc.cur_entry = piVar3;
+        }
+    }
+code_r0x080006a8:
+    func_0x080104c3(iVar7);
+    return 0xffffffff;
+}
+
+
+undefined4 sym.gp_read_history(void)
+{
+    int32_t iVar1;
+    undefined4 uVar2;
+    int64_t iVar3;
+    undefined *puVar4;
+    int64_t *piVar5;
+    undefined4 *puVar6;
+    undefined *unaff_RBX;
+    int64_t unaff_RBP;
+    uint8_t *puVar7;
+    int64_t in_FS_OFFSET;
+    
+    do {
+        *(int64_t *)((int64_t)*(undefined **)0x20 + -8) = unaff_RBP;
+        *(undefined **)((int64_t)*(undefined **)0x20 + -0x10) = unaff_RBX;
+        unaff_RBX = (undefined *)((int64_t)*(undefined **)0x20 + -0x428);
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x20) = *(undefined8 *)(in_FS_OFFSET + 0x28);
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x430) = 0x800070f;
+        unaff_RBP = func_0x080104c3();
+        if (unaff_RBP == 0) {
+            *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x430) = 0x80007d5;
+            puVar6 = (undefined4 *)func_0x080104c3();
+            uVar2 = *puVar6;
+        } else {
+code_r0x08000720:
+            *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x430) = 0x8000728;
+            iVar1 = func_0x080104c3(unaff_RBP);
+            if (iVar1 == 0) {
+                while( true ) {
+                    *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x430) = 0x800073c;
+                    iVar3 = func_0x080104c3((undefined *)((int64_t)*(undefined **)0x20 + -0x428), 0x400, unaff_RBP);
+                    if (iVar3 == 0) break;
+                    *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x430) = 0x800074e;
+                    puVar4 = (undefined *)func_0x080104c3((undefined *)((int64_t)*(undefined **)0x20 + -0x428), 10);
+                    if (puVar4 != (undefined *)0x0) {
+                        *puVar4 = 0;
+                    }
+                    *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x430) = 0x8000763;
+                    puVar4 = (undefined *)func_0x080104c3((undefined *)((int64_t)*(undefined **)0x20 + -0x428), 0xd);
+                    if (puVar4 != (undefined *)0x0) {
+                        *puVar4 = 0;
+                    }
+                    *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x430) = 0x8000770;
+                    piVar5 = (int64_t *)func_0x080104c3();
+                    puVar7 = (uint8_t *)((int64_t)*(undefined **)0x20 + -0x428);
+                    while ((*(uint8_t *)(*piVar5 + 1 + (uint64_t)*puVar7 * 2) & 0x20) != 0) {
+                        puVar7 = puVar7 + 1;
+                    }
+                    if (*puVar7 == 0) break;
+                    *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x430) = 0x8000797;
+                    func_0x080104c3();
+                    *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x430) = 0x800079f;
+                    iVar1 = func_0x080104c3(unaff_RBP);
+                    if (iVar1 != 0) goto code_r0x080007a8;
+                }
+                goto code_r0x08000720;
+            }
+code_r0x080007a8:
+            *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x430) = 0x80007b0;
+            func_0x080104c3(unaff_RBP);
+            uVar2 = 0;
+        }
+        if (*(int64_t *)((int64_t)*(undefined **)0x20 + -0x20) == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return uVar2;
+        }
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x430) = 0x80007de;
+        func_0x080104c3();
+        *(undefined **)0x20 = (BADSPACEBASE *)((int64_t)*(undefined **)0x20 + -0x428);
+    } while( true );
+}
+
+
+
+
+
+
+ lines? (y/N) p
+   d d dd dd dd  dd  dd @ dd @ dd @  dd @  dd @ s dd @ s dd @ sy dd @ sy dd @ sym dd @ sym dd @ sym. dd @ sym. dd @ sym.w dd @ sym.w dd @ sym.wr dd @ sym.wr dd @ sym.wri dd @ sym.wri dd @ sym.writ dd @ sym.writ dd @ sym.write dd @ sym.write dd @ sym.write_ dd @ sym.write_ dd @ sym.write_h dd @ sym.write_h dd @ sym.write_hi dd @ sym.write_hi dd @ sym.write_his dd @ sym.write_his dd @ sym.write_hist dd @ sym.write_hist dd @ sym.write_histo dd @ sym.write_histo dd @ sym.write_histor dd @ sym.write_histor dd @ sym.write_history dd @ sym.write_history dd @ sym.write_history_ dd @ sym.write_history_ dd @ sym.write_history_l dd @ sym.write_history_l dd @ sym.write_history_li dd @ sym.write_history_li dd @ sym.write_history_lis dd @ sym.write_history_lis dd @ sym.write_history_list dd @ sym.write_history_listopendir /proc/x/fd: No such file or directory
+WARNING: r_list_purge: assertion 'list' failed (line 67)
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.w pdg @ sym.w pdg @ sym.wr pdg @ sym.wr pdg @ sym.wri pdg @ sym.wri pdg @ sym.writ pdg @ sym.writ pdg @ sym.write pdg @ sym.write pdg @ sym.write_ pdg @ sym.write_ pdg @ sym.write_h pdg @ sym.write_h pdg @ sym.write_hi pdg @ sym.write_hi pdg @ sym.write_his pdg @ sym.write_his pdg @ sym.write_hist pdg @ sym.write_hist pdg @ sym.write_histo pdg @ sym.write_histo pdg @ sym.write_histor pdg @ sym.write_histor pdg @ sym.write_history pdg @ sym.write_history
+undefined8 sym.write_history(int64_t arg1)
+{
+    func_0x080104c3(0, arg1, reloc..LC2);
+    return 0;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.w pdd @ sym.w pdd @ sym.wr pdd @ sym.wr pdd @ sym.wri pdd @ sym.wri pdd @ sym.writ pdd @ sym.writ pdd @ sym.write pdd @ sym.write pdd @ sym.write_ pdd @ sym.write_ pdd @ sym.write_h pdd @ sym.write_h pdd @ sym.write_hi pdd @ sym.write_hi pdd @ sym.write_his pdd @ sym.write_his pdd @ sym.write_hist pdd @ sym.write_hist pdd @ sym.write_histo pdd @ sym.write_histo pdd @ sym.write_histor pdd @ sym.write_histor pdd @ sym.write_history pdd @ sym.write_history/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x8000a10 */
+#include <stdint.h>
+ 
+uint32_t write_history (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    rsi = rdi;
+    rdx = loc__LC2;
+    edi = 0;
+    eax = gp_alloc ();
+    eax = 0;
+    return eax;
+}
+
+
+
+
+undefined8 sym.history_find(int64_t arg1)
+{
+    char cVar1;
+    int32_t iVar2;
+    
+    cVar1 = *(char *)arg1;
+    if (cVar1 == '\"') {
+        cVar1 = *(char *)(arg1 + 1);
+        arg1 = arg1 + 1;
+    }
+    if (cVar1 != '\0') {
+        iVar2 = func_0x080104c3(arg1);
+        if ((*(char *)(arg1 + (int64_t)iVar2 + -1) != '\"') ||
+           (*(char *)(arg1 + (iVar2 + -1)) = '\0', *(char *)arg1 != '\0')) {
+            func_0x080104c3("\x01"._0_4_);
+            iVar2 = func_0x080104c3(arg1, 0xffffffff);
+            if (iVar2 == 0) {
+                return *_reloc.cur_entry;
+            }
+        }
+    }
+    return 0;
+}
+
+
+int32_t sym.history_find_all(int64_t arg1)
+{
+    undefined8 *puVar1;
+    undefined8 *puVar2;
+    char cVar3;
+    int32_t iVar4;
+    int32_t iVar5;
+    undefined8 *puVar6;
+    
+    cVar3 = *(char *)arg1;
+    if (cVar3 == '\"') {
+        cVar3 = *(char *)(arg1 + 1);
+        arg1 = arg1 + 1;
+    }
+    if ((cVar3 != '\0') &&
+       ((iVar4 = func_0x080104c3(arg1), *(char *)(arg1 + (int64_t)iVar4 + -1) != '\"' ||
+        (*(char *)(arg1 + (iVar4 + -1)) = '\0', *(char *)arg1 != '\0')))) {
+        if ((_str.s != (undefined8 *)0x0) && (-1 < "\x01"._0_4_)) {
+            puVar6 = _str.s;
+            iVar4 = "\x01"._0_4_;
+            if ("\x01"._0_4_ == 0) {
+                _reloc.cur_entry = (undefined8 *)0x0;
+                puVar6 = _reloc.cur_entry;
+code_r0x08000bb7:
+                _reloc.cur_entry = puVar6;
+                iVar4 = 0;
+                while( true ) {
+                    while( true ) {
+                        iVar5 = func_0x080104c3(arg1, 1);
+                        if (iVar5 == 0) break;
+                        if (iVar5 < 0) {
+                            return iVar4;
+                        }
+                    }
+                    iVar4 = iVar4 + 1;
+                    if (_str.s != (undefined8 *)0x0) {
+                        puVar2 = (undefined8 *)_str.s[2];
+                        iVar5 = "\x01"._0_4_;
+                        puVar6 = _str.s;
+                        while ((puVar1 = puVar2, puVar6 != _reloc.cur_entry && (puVar1 != (undefined8 *)0x0))) {
+                            iVar5 = iVar5 + -1;
+                            puVar2 = (undefined8 *)puVar1[2];
+                            puVar6 = puVar1;
+                        }
+                        iVar5 = iVar5 - (uint32_t)(0 < iVar5);
+                    }
+                    func_0x080104c3(1, "%5i  %s\n", iVar5 + _reloc.history_base, *_reloc.cur_entry);
+                    if (_reloc.cur_entry == (undefined8 *)0x0) break;
+                    _reloc.cur_entry = (undefined8 *)_reloc.cur_entry[3];
+                    if (_reloc.cur_entry == (undefined8 *)0x0) {
+                        return iVar4;
+                    }
+                }
+                return iVar4;
+            }
+            do {
+                iVar4 = iVar4 + -1;
+                if (iVar4 == 0) goto code_r0x08000bb7;
+                puVar6 = (undefined8 *)puVar6[2];
+            } while (puVar6 != (undefined8 *)0x0);
+        }
+        func_0x080104c3("ERROR (history_find_all): could not rewind history\n", 1, 0x33, _reloc.stderr);
+    }
+    return 0;
+}
+
+

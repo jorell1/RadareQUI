@@ -1,0 +1,628 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot3d.o @ 0x8000040 */
+#include <stdint.h>
+ 
+void iso_free (int64_t arg1) {
+    rdi = arg1;
+    /* [01] -r-x section size 25593 named .text */
+    if (rdi != 0) {
+        rdi = *((rdi + 0x10));
+        free ();
+    }
+    rdi = rbp;
+    return void (*0x803f20a)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot3d.o @ 0x8000060 */
+#include <stdint.h>
+ 
+uint64_t iso_alloc (int64_t arg1) {
+    rdi = arg1;
+    rsi = "iso curve";
+    r12 = (int64_t) edi;
+    edi = 0x18;
+    rax = free (r12, r13);
+    r13 = rax;
+    eax = 0;
+    __asm ("cmovns eax, r12d");
+    *((r13 + 0xc)) = 0;
+    *((r13 + 8)) = eax;
+    if (r12d > 0) {
+        goto label_0;
+    }
+    *((r13 + 0x10)) = 0;
+    do {
+        *(r13) = 0;
+        rax = r13;
+        return rax;
+label_0:
+        r12 <<= 6;
+        rsi = "iso curve points";
+        rdi = r12;
+        rax = free ();
+        rdx = r12;
+        esi = 0;
+        *((r13 + 0x10)) = rax;
+        rdi = rax;
+        free ();
+    } while (1);
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot3d.o @ 0x80000e0 */
+#include <stdint.h>
+ 
+int64_t sp_alloc (int64_t arg11, int64_t arg10, int64_t arg9, int64_t arg8, int64_t arg7, int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4) {
+    int64_t var_8h_2;
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    int64_t var_28h;
+    int64_t var_30h;
+    int64_t var_38h;
+    int64_t var_40h;
+    int64_t var_48h;
+    int64_t var_50h;
+    int64_t var_58h;
+    int64_t var_60h;
+    int64_t var_68h;
+    xmm4 = arg11;
+    xmm3 = arg10;
+    xmm2 = arg9;
+    xmm1 = arg8;
+    xmm0 = arg7;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    r14d = edx;
+    r13d = esi;
+    rsi = "surface";
+    edi = 0x1c0;
+    ebx = ecx;
+    rax = *(fs:0x28);
+    *((rsp + 0x68)) = rax;
+    eax = 0;
+    rax = free (rbx, rbp, r12, r13, r14);
+    rdi = rax + 8;
+    rcx = rax;
+    *(rax) = 0;
+    r12 = rax;
+    *((rax + 0x1b8)) = 0;
+    rdi &= 0xfffffffffffffff8;
+    eax = 0;
+    rcx -= rdi;
+    ecx += 0x1c0;
+    ecx >>= 3;
+    do {
+        *(rdi) = rax;
+        rcx--;
+        rdi += 8;
+    } while (rcx != 0);
+    rax = 0xfffffffe00000000;
+    *((rsp + 0x10)) = 0;
+    *(rsp) = rax;
+    rax = 0xffffffff00000000;
+    *((rsp + 8)) = rax;
+    rax = .rodata.cst8;
+    *((rsp + 0x28)) = 0;
+    __asm ("movdqa xmm0, xmmword [rsp]");
+    *((rsp + 0x18)) = rax;
+    rax = *(loc..LC4);
+    *((rsp + 0x30)) = 0;
+    __asm ("movdqa xmm1, xmmword [rsp + 0x10]");
+    *((rsp + 0x20)) = rax;
+    __asm ("movdqa xmm2, xmmword [rsp + 0x20]");
+    *((rsp + 0x38)) = 0;
+    __asm ("movdqa xmm3, xmmword [rsp + 0x30]");
+    *((rsp + 0x40)) = 0;
+    eax = *(reloc.default_fillstyle);
+    *((rsp + 0x48)) = 0;
+    __asm ("movdqa xmm4, xmmword [rsp + 0x40]");
+    *((rsp + 0x50)) = 0;
+    *((rsp + 0x58)) = 0;
+    __asm ("movdqa xmm5, xmmword [rsp + 0x50]");
+    *((rsp + 0x60)) = 0;
+    *((r12 + 0x90)) = 0;
+    __asm ("movups xmmword [r12 + 0x30], xmm0");
+    __asm ("movups xmmword [r12 + 0x40], xmm1");
+    __asm ("movups xmmword [r12 + 0x50], xmm2");
+    __asm ("movups xmmword [r12 + 0x60], xmm3");
+    __asm ("movups xmmword [r12 + 0x70], xmm4");
+    __asm ("movups xmmword [r12 + 0x80], xmm5");
+    __asm ("movdqu xmm6, xmmword [reloc.default_fillstyle]");
+    __asm ("movdqu xmm7, xmmword [reloc.__stack_chk_fail]");
+    __asm ("movups xmmword [r12 + 0x138], xmm6");
+    __asm ("movups xmmword [r12 + 0x148], xmm7");
+    if (eax == 0) {
+        *((r12 + 0x138)) = 1;
+    }
+    rdi = r12 + 0x98;
+    free ();
+    if (ebx <= 0) {
+        goto label_0;
+    }
+    if (ebp <= 0) {
+        goto label_0;
+    }
+    if (r13d <= 0) {
+        goto label_1;
+    }
+    r15d = 0;
+    do {
+        edi = r14d;
+        r15d++;
+        iso_alloc ();
+        rdx = *((r12 + 0x1b0));
+        *(rax) = rdx;
+        *((r12 + 0x1b0)) = rax;
+    } while (r13d != r15d);
+label_1:
+    r13d = 0;
+    do {
+        edi = ebp;
+        r13d++;
+        iso_alloc ();
+        rdx = *((r12 + 0x1b0));
+        *(rax) = rdx;
+        *((r12 + 0x1b0)) = rax;
+    } while (ebx > r13d);
+label_0:
+    rax = *((rsp + 0x68));
+    rax ^= *(fs:0x28);
+    if (ebx == r13d) {
+        rax = r12;
+        return rax;
+    }
+    free ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot3d.o @ 0x80003f0 */
+#include <stdint.h>
+ 
+int64_t calculate_set_of_isolines (int64_t arg_e0h, int64_t arg10, int64_t arg9, int64_t arg8, int64_t arg7, uint32_t arg6, uint32_t arg5, uint32_t arg1, int64_t arg2, int64_t arg3, int64_t arg4) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    int64_t var_28h;
+    uint32_t var_2eh;
+    uint32_t var_2fh;
+    int64_t var_30h;
+    int64_t var_38h;
+    int64_t var_40h;
+    uint32_t var_48h;
+    uint32_t var_4ch;
+    int64_t var_50h;
+    int64_t var_58h;
+    int64_t var_60h;
+    int64_t var_68h;
+    int64_t var_7ch;
+    int64_t var_80h;
+    int64_t var_98h;
+    xmm3 = arg10;
+    xmm2 = arg9;
+    xmm1 = arg8;
+    xmm0 = arg7;
+    r9 = arg6;
+    r8 = arg5;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    *((rsp + 0x30)) = rdx;
+    r14d = *((rsp + 0xe0));
+    *((rsp + 0x48)) = edi;
+    *((rsp + 0x4c)) = r8d;
+    *((rsp + 0x2e)) = sil;
+    *((rsp + 0x38)) = xmm0;
+    *((rsp + 0x40)) = xmm1;
+    *((rsp + 0x10)) = xmm2;
+    *((rsp + 0x18)) = xmm3;
+    rax = *(fs:0x28);
+    *((rsp + 0x98)) = rax;
+    eax = 0;
+    rax = *(rdx);
+    rbx = *((rax + 0x10));
+    eax = *(reloc.parametric);
+    eax ^= 1;
+    dl = (edi == 0) ? 1 : 0;
+    eax |= edx;
+    *((rsp + 0x2f)) = al;
+    if (r8d <= 0) {
+        goto label_4;
+    }
+    rax = (int64_t) ecx;
+    r10 = reloc_axis_array;
+    r11d = esi;
+    esi ^= 1;
+    rax *= 0x2a8;
+    rcx = obj_plot_func;
+    *((rsp + 0x28)) = 0;
+    rdx = r10 + rax;
+    *((rsp + 0x58)) = rax;
+    *((rsp + 0x68)) = rdx;
+    edx = (int32_t) sil;
+    rdx *= 3;
+    rdx = rcx + rdx*8 + 0x28;
+    *((rsp + 0x50)) = rdx;
+    rdx = (int64_t) r9d;
+    rdx *= 0x2a8;
+    r13 = r10 + rdx;
+    edx = (int32_t) r11b;
+    rdx *= 3;
+    *((rsp + 0x20)) = r13;
+    r15 = rcx + rdx*8 + 0x28;
+    rdx = (int64_t) edi;
+    rdx *= 0x2a8;
+    rdx += r10;
+    *((rsp + 0x60)) = rdx;
+label_2:
+    xmm0 = 0;
+    rax = reloc_axis_array;
+    rax += *((rsp + 0x58));
+    __asm ("cvtsi2sd xmm0, dword [rsp + 0x28]");
+    __asm ("mulsd xmm0, qword [rsp + 0x40]");
+    __asm ("addsd xmm0, qword [rsp + 0x38]");
+    arg_e0h = xmm0;
+    if (*((rax + 0xa0)) != 0) {
+        rax = *((rax + 0xb0));
+        if (*((rax + 0x10)) == 0) {
+            goto label_5;
+        }
+        rdi = *((rsp + 0x68));
+        free ();
+        arg_e0h = xmm0;
+    }
+label_5:
+    rdi = *((rsp + 0x50));
+    xmm1 = 0;
+    ebp = 0;
+    r12 = rsp + 0x80;
+    free ();
+    if (r14d > 0) {
+        goto label_1;
+    }
+    goto label_6;
+    do {
+        xmm6 = arg_e0h;
+        *((rbx + 0x10)) = xmm0;
+        *((rbx + 8)) = xmm6;
+label_0:
+        rdi = *(0x080064b0);
+        rsi = r12;
+        free ();
+        if (*(reloc.undefined) != 0) {
+            goto label_7;
+        }
+        rdi = r12;
+        free ();
+        __asm ("andpd xmm0, xmmword [loc..LC6]");
+        __asm ("comisd xmm0, xmmword [reloc.zero]");
+        if (*(reloc.undefined) > 0) {
+            goto label_7;
+        }
+        rdi = r12;
+        free ();
+        *(rbx) = 0;
+        if (*((rsp + 0x48)) != 0xfffffffe) {
+            rdx = *((rsp + 0x60));
+            rdi = rbx + 0x18;
+            ecx = 0;
+            rsi = rbx;
+            *(rsp) = xmm0;
+            free ();
+            xmm0 = *(rsp);
+        }
+        if (*((rsp + 0x2f)) != 0) {
+            goto label_8;
+        }
+label_3:
+        ebp++;
+        rbx += 0x40;
+        if (r14d == ebp) {
+            goto label_6;
+        }
+label_1:
+        xmm0 = 0;
+        __asm ("cvtsi2sd xmm0, ebp");
+        __asm ("mulsd xmm0, qword [rsp + 0x18]");
+        __asm ("addsd xmm0, qword [rsp + 0x10]");
+        if (*((r13 + 0xa0)) != 0) {
+            rax = *((r13 + 0xb0));
+            if (*((rax + 0x10)) == 0) {
+                goto label_9;
+            }
+            rdi = *((rsp + 0x20));
+            free ();
+        }
+label_9:
+        xmm1 = 0;
+        rdi = r15;
+        *(rsp) = xmm0;
+        free ();
+        xmm0 = *(rsp);
+    } while (*((rsp + 0x2e)) != 0);
+    xmm7 = arg_e0h;
+    *((rbx + 8)) = xmm0;
+    *((rbx + 0x10)) = xmm7;
+    goto label_0;
+label_7:
+    ebp++;
+    *(rbx) = 2;
+    rbx += 0x40;
+    if (r14d != ebp) {
+        goto label_1;
+    }
+label_6:
+    rcx = *((rsp + 0x30));
+    rax = *(rcx);
+    rbx = *(rax);
+    *((rax + 0xc)) = r14d;
+    *(rcx) = rbx;
+    if (rbx != 0) {
+        rbx = *((rbx + 0x10));
+    }
+    *((rsp + 0x28))++;
+    eax = *((rsp + 0x28));
+    if (*((rsp + 0x4c)) != eax) {
+        goto label_2;
+    }
+label_4:
+    rax = *((rsp + 0x98));
+    rax ^= *(fs:0x28);
+    if (*((rsp + 0x4c)) == eax) {
+        return rax;
+label_8:
+        eax = *(rbx);
+        rsi = rsp + 0x7c;
+        rdi = rbx + 0x28;
+        ecx = 0;
+        rdx = 0x0803fa42;
+        *((rsp + 0x7c)) = eax;
+        free ();
+        goto label_3;
+    }
+    free ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot3d.o @ 0x80007c0 */
+#include <stdint.h>
+ 
+uint64_t iso_extend_isra_0 (uint32_t arg1, int64_t arg2, int64_t arg3) {
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    if (*(rdi) == edx) {
+        goto label_0;
+    }
+    r12 = rdi;
+    ebx = edx;
+    rdi = *(rsi);
+    if (edx <= 0) {
+        goto label_1;
+    }
+    rsi = (int64_t) edx;
+    rdx = "expanding 3D points";
+    rsi <<= 6;
+    rax = free ();
+    rdi = *(r12);
+    *(rbp) = rax;
+    while (1) {
+        *(r12) = ebx;
+        return rax;
+label_1:
+        rax = free ();
+        *(rbp) = 0;
+        *(r12) = 0;
+        return rax;
+label_0:
+        return rax;
+        edx = ebx;
+        esi = 0;
+        edx -= edi;
+        rdi <<= 6;
+        rdx = (int64_t) edx;
+        rdi += rax;
+        rdx <<= 6;
+        free ();
+    }
+}
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot3d.o @ 0x8000850 */
+#include <stdint.h>
+ 
+uint64_t sp_free (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    if (rdi == 0) {
+        goto label_1;
+    }
+    r12 = rdi;
+label_0:
+    r12 = *(r12);
+    rdi = *((rbp + 0x18));
+    free (rbx, rbp);
+    rdi = *((rbp + 0x20));
+    rax = free ();
+    rbx = *((rbp + 0x1a8));
+    *((rbp + 0x20)) = 0;
+    if (rbx == 0) {
+        goto label_2;
+    }
+    do {
+        rax = rbx;
+        rbx = *(rbx);
+        rdi = *((rax + 8));
+        free ();
+        rdi = *((rbp + 0x1a8));
+        free ();
+        *((rbp + 0x1a8)) = rbx;
+    } while (rbx != 0);
+label_2:
+    rbx = *((rbp + 0x1b0));
+    if (rbx == 0) {
+        goto label_3;
+    }
+    do {
+        rdi = rbx;
+        rbx = *(rbx);
+        _text ();
+        *((rbp + 0x1b0)) = rbx;
+    } while (rbx != 0);
+label_3:
+    rdi = *((rbp + 0x158));
+    if (rdi != 0) {
+        free ();
+    }
+    rdi = rbp;
+    free ();
+    if (r12 != 0) {
+        goto label_0;
+    }
+    return rax;
+label_1:
+    return rax;
+}
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot3d.o @ 0x8000300 */
+#include <stdint.h>
+ 
+void pythag (int64_t arg8, int64_t arg7) {
+    xmm1 = arg8;
+    xmm0 = arg7;
+    xmm2 = .rodata.cst16;
+    __asm ("movapd xmm3, xmm0");
+    __asm ("andpd xmm3, xmm2");
+    __asm ("andpd xmm2, xmm1");
+    __asm ("comisd xmm3, xmm2");
+    if (? > ?) {
+        goto label_1;
+    }
+    xmm3 = 0;
+    __asm ("ucomisd xmm1, xmm3");
+    __asm ("jp 0x8000338");
+    if (? == ?) {
+        __asm ("movapd xmm0, xmm3");
+        return;
+    }
+    __asm ("mulsd xmm1, xmm1");
+    __asm ("mulsd xmm0, xmm0");
+    __asm ("divsd xmm0, xmm1");
+    __asm ("addsd xmm0, qword [loc..LC3]");
+    __asm ("ucomisd xmm3, xmm0");
+    __asm ("movapd xmm1, xmm0");
+    __asm ("sqrtsd xmm1, xmm1");
+    while (1) {
+        __asm ("mulsd xmm1, xmm2");
+        __asm ("movapd xmm0, xmm1");
+        return;
+label_1:
+        __asm ("mulsd xmm0, xmm0");
+        __asm ("mulsd xmm1, xmm1");
+        __asm ("divsd xmm1, xmm0");
+        xmm0 = 0;
+        __asm ("addsd xmm1, qword [loc..LC3]");
+        __asm ("ucomisd xmm0, xmm1");
+        __asm ("movapd xmm2, xmm1");
+        __asm ("sqrtsd xmm2, xmm2");
+        if (? > ?) {
+            goto label_2;
+        }
+label_0:
+        __asm ("mulsd xmm2, xmm3");
+        __asm ("movapd xmm0, xmm2");
+        return;
+        *((rsp + 8)) = xmm2;
+        *(rsp) = xmm1;
+        free ();
+        xmm2 = *((rsp + 8));
+        xmm1 = *(rsp);
+    }
+label_2:
+    __asm ("movapd xmm0, xmm1");
+    *((rsp + 8)) = xmm3;
+    *(rsp) = xmm2;
+    free ();
+    xmm3 = *((rsp + 8));
+    xmm2 = *(rsp);
+    goto label_0;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot3d.o @ 0x8000710 */
+#include <stdint.h>
+ 
+uint64_t sp_replace_isra_0 (int64_t arg5, int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4) {
+    r8 = arg5;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    r15d = ecx;
+    r14d = edx;
+    r13d = esi;
+    r12d = r8d;
+    rbx = *(rdi);
+    if (rbx == 0) {
+        goto label_0;
+    }
+    do {
+        rdi = rbx;
+        rbx = *(rbx);
+        rax = _text ();
+    } while (rbx != 0);
+label_0:
+    *(rbp) = 0;
+    if (r12d <= 0) {
+        goto label_1;
+    }
+    if (r13d <= 0) {
+        goto label_1;
+    }
+    if (r14d <= 0) {
+        goto label_2;
+    }
+    ebx = 0;
+    do {
+        edi = r15d;
+        ebx++;
+        iso_alloc ();
+        rdx = *(rbp);
+        *(rax) = rdx;
+        *(rbp) = rax;
+    } while (r14d != ebx);
+label_2:
+    ebx = 0;
+    do {
+        edi = r13d;
+        ebx++;
+        iso_alloc ();
+        rdx = *(rbp);
+        *(rax) = rdx;
+        *(rbp) = rax;
+    } while (r12d > ebx);
+label_1:
+    return rax;
+}
+
+

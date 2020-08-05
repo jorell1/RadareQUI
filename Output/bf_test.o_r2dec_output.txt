@@ -1,0 +1,567 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/bf_test.o @ 0x8000040 */
+#include <stdint.h>
+ 
+void function_part_0 (int64_t arg8, int64_t arg7) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    xmm1 = arg8;
+    xmm0 = arg7;
+    /* [01] -r-x section size 447 named .text */
+    __asm ("mulsd xmm0, xmm0");
+    __asm ("mulsd xmm1, xmm1");
+    __asm ("addsd xmm1, xmm0");
+    __asm ("movapd xmm0, xmm1");
+    *((rsp + 8)) = xmm1;
+    sin ();
+    xmm1 = *((rsp + 8));
+    *((rsp + 0x18)) = xmm0;
+    __asm ("movapd xmm4, xmm1");
+    *((rsp + 0x10)) = xmm1;
+    __asm ("mulsd xmm4, qword [loc..LC1]");
+    __asm ("movapd xmm0, xmm4");
+    *((rsp + 8)) = xmm4;
+    sin ();
+    xmm1 = *((rsp + 0x10));
+    xmm2 = *((rsp + 0x18));
+    xmm4 = *((rsp + 8));
+    __asm ("movapd xmm3, xmm0");
+    xmm0 = 0;
+    __asm ("divsd xmm2, xmm1");
+    xmm1 = .rodata.cst4;
+    __asm ("divsd xmm3, xmm4");
+    __asm ("cvtsd2ss xmm2, xmm2");
+    __asm ("cvtss2sd xmm0, xmm2");
+    __asm ("mulsd xmm0, xmm3");
+    __asm ("cvtsd2ss xmm0, xmm0");
+    __asm ("minss xmm1, xmm0");
+    xmm0 = xmm1;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/bf_test.o @ 0x80000e0 */
+#include <stdint.h>
+ 
+int64_t fwrite_matrix (int64_t arg_58h, int64_t arg_60h, int64_t arg_68h, int64_t arg_70h, int64_t arg_178h, int64_t arg6, int64_t arg5, int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4) {
+    int64_t var_28h_2;
+    int64_t var_4ch_2;
+    int64_t var_50h_2;
+    int64_t var_60h;
+    int64_t var_68h;
+    int64_t var_70h;
+    int64_t var_178h;
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_14h;
+    signed int64_t var_18h;
+    signed int64_t var_20h;
+    int64_t var_28h;
+    int64_t var_30h;
+    uint32_t var_38h;
+    int64_t var_40h;
+    int64_t var_4ch;
+    int64_t var_50h;
+    r9 = arg6;
+    r8 = arg5;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    __asm ("endbr64");
+    xmm0 = 0;
+    r14 = r9;
+    r13d = edx;
+    edx = 1;
+    r12 = (int64_t) ecx;
+    __asm ("cvtsi2ss xmm0, r12d");
+    rcx = rbp;
+    rbx = r8;
+    arg_60h = rsi;
+    rdi = arg_58hx14;
+    esi = 4;
+    rax = *(fs:0x28);
+    arg_70h = *(fs:0x28);
+    eax = 0;
+    *(arg_58hx14) = xmm0;
+    eax = sin (rbx, rbp, r12, r13, r14);
+    if (eax == 1) {
+        goto label_7;
+    }
+    rdi = *(reloc.stderr);
+    ecx = eax;
+    rdx = "fwrite 1 returned %d\n";
+    eax = 0;
+    esi = 1;
+    r15d = 0;
+    sin ();
+    do {
+label_0:
+        rax = arg_70h;
+        rax ^= *(fs:0x28);
+        if (eax != 1) {
+            goto label_8;
+        }
+        eax = r15d;
+        return rax;
+label_7:
+        rcx = rbp;
+        rdx = r12;
+        esi = 4;
+        rdi = r14;
+        r15d = eax;
+        sin ();
+    } while (r13d <= 0);
+    eax = r13 - 1;
+    r14 = arg_60h;
+    r13 = rbx + rax*4 + 4;
+    do {
+        rdi = rbx;
+        rcx = rbp;
+        edx = 1;
+        esi = 4;
+        sin ();
+        rdi = *(r14);
+        rcx = rbp;
+        rdx = r12;
+        esi = 4;
+        rbx += 4;
+        r14 += 8;
+        sin ();
+    } while (rbx != r13);
+    goto label_0;
+label_8:
+    sin ();
+    if (rbx > r13) {
+        /* [05] -r-- section size 62 named .rodata.str1.1 */
+        goto label_9;
+    }
+    esi = *((rbp + 0x20)) * 0x65722031;
+    if (rbx == r13) {
+        goto label_10;
+    }
+    if (rbx < r13) {
+        goto label_11;
+    }
+    *(fs:0x6a000c7a) &= ah;
+    ebp = *((rsi + 0x61)) * 0x64257972;
+    *((rdi + 0x62)) += dh;
+    if (*((rdi + 0x62)) > 0) {
+        void (*0x8000282)() ();
+    }
+    *((rbx + 0x6f)) += al;
+    __asm ("outsd dx, dword [rsi]");
+    if (*((rbx + 0x6f)) == 0) {
+        *((fs:rsi + 0x6f)) &= ch;
+        if (*((fs:rsi + 0x6f)) != 0) {
+            __asm ("outsd dx, dword [rsi]");
+            if (*((fs:rsi + 0x6f)) overflow 0) {
+                goto label_12;
+            }
+            __asm ("outsb dx, byte [rsi]");
+            *((rdi + 0x75)) &= ch;
+            if (*((rdi + 0x75)) == 0) {
+                goto label_13;
+            }
+            if (*((rdi + 0x75)) != 0) {
+                goto label_14;
+            }
+            *((rsi + 0x69)) &= ah;
+            __asm ("insb byte [rdi], dx");
+            al |= *(gs:rax);
+        }
+        ebx = 0;
+        xmm7 = *(loc..LC3);
+        xmm1 = *(loc..LC4);
+        rax = *(fs:0x28);
+        *(arg_58hx178) = rax;
+        if (al >= 0) {
+label_9:
+            *(rax) += al;
+        }
+        *(rcx) += dh;
+        eax = 0;
+        rax = obj_TheRange;
+label_11:
+        eax += 0x61f;
+label_10:
+        xmm0 = *(loc..LC5);
+        xmm2 = *(loc..LC6);
+    }
+    *(arg_58hx50) = rax;
+label_12:
+    al &= 0x50;
+    rax = arg_58hx70;
+    *(arg_58hx60) = rax;
+    *(arg_58hx28) = xmm7;
+label_13:
+    al &= 0x28;
+label_4:
+    __asm ("subss xmm2, xmm0");
+label_14:
+    __asm ("subss xmm1, dword [arg_58hx28]");
+    r14 = *(arg_58hx60);
+    edx = 0x100;
+    r8d = rbx + 1;
+    esi = 1;
+    *(rsp) = xmm0;
+    rcx = "binary%d";
+    rdi = r14;
+    __asm ("cvtss2sd xmm2, xmm2");
+    __asm ("mulsd xmm2, qword [loc..LC7]");
+    __asm ("cvtss2sd xmm1, xmm1");
+    __asm ("addsd xmm2, qword [loc..LC8]");
+    __asm ("mulsd xmm1, qword [loc..LC7]");
+    __asm ("addsd xmm1, qword [loc..LC8]");
+    __asm ("cvttsd2si eax, xmm2");
+    __asm ("cvttsd2si r12d, xmm1");
+    *(arg_58hx4c) = eax;
+    eax = 0;
+    sin ();
+    rsi = loc__LC10;
+    rdi = r14;
+    rax = sin ();
+    xmm0 = *(rsp);
+    *(arg_58hx68) = rax;
+    if (rax == 0) {
+        goto label_15;
+    }
+    rbp = *(arg_58hx4c);
+    esi = 4;
+    r14 = (int64_t) r12d;
+    *(rsp) = xmm0;
+    rdi = rbp;
+    r15 = rbp;
+    rax = sin ();
+    esi = 4;
+    rdi = r14;
+    *(arg_58hx30) = rax;
+    rax = sin ();
+    rdi = rbp;
+    esi = 8;
+    *(arg_58hx58) = rax;
+    rax = sin ();
+    xmm0 = *(rsp);
+    eax = r15d;
+    if (r15d <= 0) {
+        goto label_16;
+    }
+    eax--;
+    r15 = rbp;
+    arg_60h = eax;
+    r13 = rbp + rax*8 + 8;
+    do {
+        esi = 4;
+        rdi = r14;
+        *(rsp) = xmm0;
+        r15 += 8;
+        rax = sin ();
+        xmm0 = *(rsp);
+        *((r15 - 8)) = rax;
+    } while (r13 != r15);
+    xmm3 = *(loc..LC12);
+    ecx = r12 - 1;
+    if (r12d <= 0) {
+        goto label_17;
+    }
+label_5:
+    rsi = *(arg_58hx58);
+    edx = r12 - 1;
+    xmm1 = *(arg_58hx28);
+    rcx = rdx;
+    rax = rsi;
+    rdx = rsi + rdx*4 + 4;
+    rsi = *(loc..LC12);
+    xmm3 = rsi;
+    do {
+        *(rax) = xmm1;
+        __asm ("cvtss2sd xmm1, xmm1");
+        __asm ("addsd xmm1, qword [loc..LC12]");
+        rax += 4;
+        __asm ("cvtsd2ss xmm1, xmm1");
+    } while (rdx != rax);
+    eax = *(arg_58hx4c);
+    edx = rax - 1;
+    arg_60h = edx;
+    if (eax <= 0) {
+        goto label_18;
+    }
+label_17:
+    eax = arg_60h;
+    r14d = 0;
+    *(arg_58hx38) = rax;
+    eax = ecx;
+    rax = rax*4 + 4;
+    *(arg_58hx40) = rax;
+label_1:
+    rax = *(arg_58hx30);
+    xmm7 = 0;
+    __asm ("cvtss2sd xmm7, xmm0");
+    *(arg_58hx20) = xmm7;
+    *((rax + r14*4)) = xmm0;
+    if (r12d <= 0) {
+        goto label_19;
+    }
+    xmm7 = *(arg_58hx20);
+    r13 = *((rbp + r14*8));
+    rax = *(arg_58hx40);
+    xmm1 = *(arg_58hx28);
+    __asm ("movapd xmm4, xmm7");
+    __asm ("mulsd xmm4, xmm7");
+    r15 = rax + r13;
+    do {
+        __asm ("cvtss2sd xmm1, xmm1");
+        __asm ("movapd xmm0, xmm1");
+        __asm ("mulsd xmm0, xmm1");
+        __asm ("movapd xmm2, xmm0");
+        __asm ("addsd xmm2, xmm4");
+        if (rbx == 1) {
+            goto label_20;
+        }
+        xmm0 = *(loc..LC8);
+        xmm5 = *(loc..LC8);
+        __asm ("addsd xmm0, xmm2");
+        __asm ("divsd xmm5, xmm0");
+        xmm0 = 0;
+        __asm ("cvtsd2ss xmm0, xmm5");
+label_2:
+        __asm ("addsd xmm1, xmm3");
+        *(r13) = xmm0;
+        r13 += 4;
+        __asm ("cvtsd2ss xmm1, xmm1");
+    } while (r13 != r15);
+label_19:
+    xmm0 = *(arg_58hx20);
+    r10 = r14 + 1;
+    __asm ("addsd xmm0, xmm3");
+    __asm ("cvtsd2ss xmm0, xmm0");
+    if (*(arg_58hx38) != r14) {
+        r14 = r10;
+        goto label_1;
+label_20:
+        __asm ("movapd xmm0, xmm2");
+        arg_70h = xmm3;
+        arg_68h = xmm4;
+        arg_60h = xmm1;
+        *(rsp) = xmm2;
+        sin ();
+        xmm2 = *(rsp);
+        xmm6 = .rodata.cst4;
+        xmm3 = arg_70h;
+        xmm4 = arg_68h;
+        __asm ("divsd xmm0, xmm2");
+        xmm1 = arg_60h;
+        __asm ("cvtsd2ss xmm0, xmm0");
+        __asm ("minss xmm6, xmm0");
+        xmm0 = xmm6;
+        goto label_2;
+    }
+    r15 = *(arg_58hx58);
+    r14 = *(arg_58hx30);
+    ecx = r12d;
+    rsi = rbp;
+    edx = *(arg_58hx4c);
+    rdi = *(arg_58hx68);
+    r12 = rbp;
+    r9 = r15;
+    r8 = r14;
+    sin (r10);
+    rdi = r14;
+    sin ();
+    rdi = r15;
+    rax = sin ();
+    r10 = *(rsp);
+    r13 = rbp + r10*8;
+    do {
+        rdi = *(r12);
+        r12 += 8;
+        sin ();
+    } while (r13 != r12);
+label_6:
+    rdi = rbp;
+    sin ();
+    *(arg_58hx50) += 0x10;
+    rax = *(arg_58hx50);
+    if (rbx != 1) {
+        goto label_21;
+    }
+    rbx = *(arg_58hx60);
+    r8d = 3;
+    edx = 0x100;
+    eax = 0;
+    rcx = "binary%d";
+    esi = 1;
+    rdi = rbx;
+    sin ();
+    rsi = loc__LC10;
+    rdi = rbx;
+    rax = sin ();
+    *(arg_58hx28) = rax;
+    if (rax == 0) {
+        goto label_15;
+    }
+    esi = 4;
+    edi = 0x1f;
+    rax = sin ();
+    esi = 4;
+    edi = 0x1f;
+    arg_70h = rax;
+    rax = sin ();
+    esi = 8;
+    edi = 0x1f;
+    *(arg_58hx20) = rax;
+    rax = sin ();
+    r14 = rax;
+    r12 = rax;
+    r13 = rax + 0xf8;
+    rbx = rax;
+    do {
+        esi = 4;
+        edi = 0x1f;
+        rbx += 8;
+        rax = sin ();
+        *((rbx - 8)) = rax;
+    } while (r13 != rbx);
+    rcx = *(arg_58hx20);
+    xmm0 = *(loc..LC5);
+    xmm2 = 0;
+    xmm3 = *(loc..LC12);
+    rax = rcx;
+    rdx = rcx + 0x78;
+    xmm1 = xmm0;
+    while (rdx != rax) {
+        __asm ("comiss xmm0, xmm2");
+        xmm1 = xmm0;
+        if (r13 > rbx) {
+            __asm ("addss xmm1, xmm0");
+        }
+        rax += 4;
+        __asm ("cvtss2sd xmm0, xmm0");
+        __asm ("addsd xmm0, xmm3");
+        *(rax) = xmm1;
+        __asm ("cvtsd2ss xmm0, xmm0");
+    }
+    xmm0 = *(loc..LC5);
+    ebp = 0;
+    xmm1 = xmm0;
+label_3:
+    rax = arg_70h;
+    r15 = *((r14 + rbp*8));
+    xmm5 = 0;
+    __asm ("cvtss2sd xmm5, xmm0");
+    arg_68h = xmm5;
+    *((rax + rbp*4)) = xmm1;
+    xmm1 = *(loc..LC5);
+    rbx = r15 + 0x7c;
+    do {
+        xmm0 = arg_68h;
+        __asm ("cvtss2sd xmm1, xmm1");
+        arg_60h = xmm3;
+        r15 += 4;
+        *(rsp) = xmm1;
+        rax = _text ();
+        xmm1 = *(rsp);
+        xmm3 = arg_60h;
+        *((r15 - 4)) = xmm0;
+        __asm ("addsd xmm1, xmm3");
+        __asm ("cvtsd2ss xmm1, xmm1");
+    } while (rbx != r15);
+    xmm0 = arg_68h;
+    __asm ("addsd xmm0, xmm3");
+    __asm ("cvtsd2ss xmm0, xmm0");
+    if (rbp != 0x1e) {
+        xmm6 = 0;
+        xmm1 = xmm0;
+        __asm ("comiss xmm0, xmm6");
+        if (rbp > 0x1e) {
+            __asm ("addss xmm1, xmm0");
+        }
+        rbp++;
+        goto label_3;
+label_21:
+        xmm6 = *((rax + 8));
+        xmm2 = *((rax + 4));
+        ebx = 1;
+        xmm0 = *(rax);
+        xmm1 = *((rax + 0xc));
+        *(arg_58hx28) = xmm6;
+        goto label_4;
+    }
+    r15 = *(arg_58hx20);
+    rbx = arg_70h;
+    ecx = 0x1f;
+    rsi = r14;
+    rdi = *(arg_58hx28);
+    edx = 0x1f;
+    r9 = r15;
+    r8 = rbx;
+    sin ();
+    rdi = rbx;
+    sin ();
+    rdi = r15;
+    sin ();
+    do {
+        rdi = *(r12);
+        r12 += 8;
+        sin ();
+    } while (r13 != r12);
+    rdi = r14;
+    eax = sin ();
+    eax = 0;
+    do {
+        rcx = *(arg_58hx178);
+        rcx ^= *(fs:0x28);
+        if (r13 != r12) {
+            goto label_22;
+        }
+        return rax;
+label_15:
+        rcx = *(reloc.stderr);
+        edx = 0x1b;
+        esi = 1;
+        rdi = "Could not open output file\n";
+        sin ();
+        eax = 1;
+    } while (1);
+label_16:
+    if (r12d > 0) {
+        goto label_5;
+    }
+label_18:
+    r15 = *(arg_58hx58);
+    r14 = *(arg_58hx30);
+    ecx = r12d;
+    rsi = rbp;
+    edx = *(arg_58hx4c);
+    rdi = *(arg_58hx68);
+    r9 = r15;
+    r8 = r14;
+    sin ();
+    rdi = r14;
+    sin ();
+    rdi = r15;
+    sin ();
+    goto label_6;
+label_22:
+    return sin ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/bf_test.o @ 0x8000240 */
+#include <stdint.h>
+ 
+int32_t main (void) {
+    int64_t var_28h;
+    int64_t var_4ch;
+    int64_t var_50h;
+    int64_t var_60h;
+    int64_t var_68h;
+    int64_t var_70h;
+    int64_t var_178h;
+    /* [06] -r-x section size 1604 named .text.startup */
+    __asm ("endbr64");
+}
+
+

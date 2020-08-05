@@ -1,0 +1,20 @@
+void sym.eval_reset_after_error(void)
+{
+    ""._0_4_ = 0;
+    reloc.undefined = (code)0x0;
+    return;
+}
+
+
+
+
+
+
+
+
+
+
+  dd  dd @ dd @ dd @  dd @  dd @ s dd @ s dd @ sy dd @ sy dd @ sym dd @ sym dd @ sym. dd @ sym. dd @ sym.f dd @ sym.f dd @ sym.f_ dd @ sym.f_ dd @ sym.f_p dd @ sym.f_p dd @ sym.f_pu dd @ sym.f_pu dd @ sym.f_pus dd @ sym.f_pus dd @ sym.f_push dd @ sym.f_pushopendir /proc/x/fd: No such file or directory
+WARNING: r_list_purge: assertion 'list' failed (line 67)
+
+

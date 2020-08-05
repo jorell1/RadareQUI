@@ -1,0 +1,32 @@
+void sym.vertex_interp(int64_t arg7, int64_t arg8, undefined8 placeholder_2, undefined8 placeholder_3,
+                      undefined8 placeholder_4, undefined8 placeholder_5, undefined8 placeholder_6,
+                      undefined8 placeholder_7, int64_t arg1, int64_t arg2, int64_t arg3)
+{
+    int64_t iVar1;
+    int64_t iVar2;
+    int64_t iVar3;
+    double dVar4;
+    
+    // [01] -r-x section size 2920 named .text
+    iVar1 = (int64_t)(int32_t)arg3 * 0xc;
+    iVar3 = (int64_t)(int32_t)arg2 * 0xc;
+    iVar2 = 0;
+    do {
+        dVar4 = 0.00000000;
+        if (*(int32_t *)(obj.vertex_offset + iVar2 + iVar1) != *(int32_t *)(obj.vertex_offset + iVar2 + iVar3)) {
+            dVar4 = (double)(((float)(*(int32_t *)(obj.scaled_offset + iVar2 + iVar1) -
+                                     *(int32_t *)(obj.scaled_offset + iVar2 + iVar3)) *
+                             ((float)arg7 - *(float *)(reloc..rodata + (int64_t)(int32_t)arg2 * 4))) /
+                            (*(float *)(reloc..rodata + (int64_t)(int32_t)arg3 * 4) -
+                            *(float *)(reloc..rodata + (int64_t)(int32_t)arg2 * 4)));
+        }
+        *(double *)(obj.intersection + iVar2 * 2 + (int64_t)(int32_t)arg1 * 0x18) =
+             dVar4 + (double)*(int32_t *)(obj.scaled_offset + iVar2 + iVar3);
+        iVar2 = iVar2 + 4;
+    } while (iVar2 != 0xc);
+    return;
+}
+
+
+
+

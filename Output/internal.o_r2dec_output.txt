@@ -1,0 +1,22 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/internal.o @ 0x8000040 */
+#include <stdint.h>
+ 
+void eval_reset_after_error (void) {
+    /* [01] -r-x section size 16934 named .text */
+    __asm ("endbr64");
+    *(obj.recursion_depth) = "undefined variable: %s";
+    *(reloc.undefined) = 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+

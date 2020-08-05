@@ -1,0 +1,375 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/variable.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int64_t _text (uint32_t arg1) {
+    int64_t var_8h;
+    rdi = arg1;
+    /* [01] -r-x section size 1635 named .text */
+    __asm ("endbr64");
+    r12 = loadpath.7687;
+    if (edi > 0x20) {
+        goto label_1;
+    }
+    rdx = reloc__rodata;
+    rax = *((rdx + rdi*4));
+    rax += rdx;
+    /* switch table (33 cases) at 0x8000b08 */
+    void (*rax)() ();
+    rax = "loadpath == NULL";
+    *(obj.limit.7691) = rax;
+    if (r12 == 0) {
+        goto label_1;
+    }
+    rbx = *(obj.p.7688);
+    rbp = *(obj.limit.7691);
+    if (rbx == 0) {
+        goto label_4;
+    }
+    rdi = rbx;
+    strlen ();
+    r12 = rbx + rax + 1;
+    *(obj.p.7688) = r12;
+    do {
+label_0:
+        if (r12 >= rbp) {
+            *(obj.p.7688) = 0;
+            r12d = 0;
+            *(obj.limit.7691) = 0;
+        }
+label_1:
+        rax = r12;
+        return rax;
+label_4:
+        *(obj.p.7688) = r12;
+    } while (rbp != 0);
+    rbp = *(obj.last.7689);
+    *(obj.limit.7691) = rbp;
+    goto label_0;
+    rdi = r12;
+    strlen ();
+    *(obj.last.7689) = 0;
+    *(obj.p.7688) = 0;
+    *(obj.loadpath.7687) = 0;
+    *(obj.limit.7691) = 0;
+label_2:
+    rdi = "GNUPLOT_LIB";
+    rax = strlen ();
+    r12 = loadpath.7687;
+    if (rax == 0) {
+        goto label_5;
+    }
+    rdi = rax;
+    rax = strlen ();
+    rdi = rbp;
+    rbx = rax;
+    rax = strlen ();
+    rbx = (int64_t) ebx;
+    rbx += rax;
+    *(obj.loadpath.7687) = rax;
+    r12 = rax;
+    rdi = rax;
+    *(obj.last.7689) = rbx;
+    while (rax != 0) {
+        *(rax) = 0;
+        rdi = rax + 1;
+        esi = 0x3a;
+        rax = strlen ();
+    }
+label_5:
+    *(obj.envptr.7690) = "loadpath == NULL";
+    goto label_1;
+    if (r12 == 0) {
+        goto label_2;
+    }
+    rdx = "loadpath == NULL";
+    rsi = "Assertion failed: %s";
+    edi |= 0xffffffff;
+    eax = 0;
+    rax = strlen ();
+    rcx = *(reloc.stderr);
+    if (r12 == 0) {
+        goto label_6;
+    }
+    edx = 0xd;
+    esi = 1;
+    rdi = "\tloadpath is ";
+    rax = strlen ();
+    r12 = loadpath.7687;
+    rbx = "\"%s\" ";
+    if (r12 >= *(obj.envptr.7690)) {
+        goto label_7;
+    }
+    do {
+        rdi = *(reloc.stderr);
+        rcx = r12;
+        rdx = rbx;
+        eax = 0;
+        esi = 1;
+        strlen ();
+        rdi = r12;
+        strlen ();
+        r12 = r12 + rax + 1;
+    } while (*(obj.envptr.7690) > r12);
+label_7:
+    rsi = *(reloc.stderr);
+    edi = 0xa;
+    strlen ();
+    if (*(obj.envptr.7690) == 0) {
+        goto label_3;
+    }
+    rcx = *(reloc.stderr);
+    edx = 0x1e;
+    esi = 1;
+    rdi = "\tloadpath from GNUPLOT_LIB is ";
+    rbx = "\"%s\" ";
+    eax = strlen ();
+    r12 = "loadpath == NULL";
+    if (r12 >= *(obj.last.7689)) {
+        goto label_8;
+    }
+    do {
+        rdi = *(reloc.stderr);
+        rcx = r12;
+        rdx = rbx;
+        eax = 0;
+        esi = 1;
+        strlen ();
+        rdi = r12;
+        strlen ();
+        r12 = r12 + rax + 1;
+    } while (*(obj.last.7689) > r12);
+label_8:
+    rsi = *(reloc.stderr);
+    edi = 0xa;
+    eax = strlen ();
+label_3:
+    rdi = *(reloc.stderr);
+    rcx = "/usr/local/share/gnuplot/5.4";
+    rdx = "\tgnuplotrc is read from %s\n";
+    eax = 0;
+    esi = 1;
+    strlen ();
+    r12 = loadpath.7687;
+    goto label_1;
+    if (rsi == 0) {
+        goto label_1;
+    }
+    if (*(rsi) == 0) {
+        goto label_1;
+    }
+    r15 = "loadpath == NULL";
+    r13 = *(obj.last.7689);
+    rdi = rsi;
+    rax = strlen ();
+    r13 -= r15;
+    r14 = rax;
+    r8 = r13 + 1;
+    if (r12 != 0) {
+        if (r15 == 0) {
+            goto label_9;
+        }
+        rdx = r8;
+        rsi = r15;
+        rdi = r12;
+        *((rsp + 8)) = r8;
+        strlen ();
+        r8 = *((rsp + 8));
+    }
+label_9:
+    rdi = r12;
+    rsi = r13 + r14 + 2;
+    *((rsp + 8)) = r8;
+    rdx = "expand loadpath";
+    rax = strlen ();
+    r8 = *((rsp + 8));
+    rbx = rax + r14 + 1;
+    r12 = rax;
+    rsi = rax;
+    *(obj.loadpath.7687) = rax;
+    rdi = rbx;
+    rdx = r8;
+    strlen ();
+    rdi = r12;
+    rsi = rbp;
+    strlen ();
+    *(obj.envptr.7690) = "loadpath == NULL";
+    rbx += r13;
+    rdi = r12;
+    *((r12 + r14)) = 0x3a;
+    *(obj.last.7689) = rbx;
+    while (rax != 0) {
+        *(rax) = 0;
+        rdi = rax + 1;
+        esi = 0x3a;
+        rax = strlen ();
+    }
+    goto label_1;
+label_6:
+    edx = 0x13;
+    esi = 1;
+    rdi = "\tloadpath is empty\n";
+    strlen ();
+    goto label_3;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/variable.o @ 0x8000410 */
+#include <stdint.h>
+ 
+int64_t locale_handler (uint32_t arg1) {
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    int64_t var_30h;
+    int64_t var_38h;
+    rdi = arg1;
+    __asm ("endbr64");
+    rax = *(fs:0x28);
+    *((rsp + 0x38)) = rax;
+    eax = 0;
+    if (edi == 4) {
+        goto label_2;
+    }
+    if (edi > 4) {
+        goto label_3;
+    }
+    if (edi == 1) {
+        goto label_4;
+    }
+    if (edi != 2) {
+        goto label_1;
+    }
+    esi = 0;
+    edi = 0;
+    rax = strlen ();
+    rdi = *(reloc.stderr);
+    esi = 1;
+    rdx = "\tgnuplot LC_CTYPE   %s\n";
+    rcx = rax;
+    eax = 0;
+    strlen ();
+    edx = *(reloc.encoding);
+    esi = 1;
+    rax = reloc_encoding_names;
+    rdi = *(reloc.stderr);
+    rcx = *((rax + rdx*8));
+    rdx = "\tgnuplot encoding   %s\n";
+    eax = 0;
+    strlen ();
+    esi = 0;
+    edi = 2;
+    rax = strlen ();
+    rdi = *(reloc.stderr);
+    esi = 1;
+    rdx = "\tgnuplot LC_TIME    %s\n";
+    rcx = rax;
+    eax = 0;
+    strlen ();
+    rcx = *(reloc.numeric_locale);
+    rax = loc__LC10;
+    rdi = *(reloc.stderr);
+    rdx = "\tgnuplot LC_NUMERIC %s\n";
+    esi = 1;
+    if (rcx == 0) {
+        rcx = rax;
+    }
+    eax = 0;
+    strlen ();
+    do {
+label_1:
+        rax = *(reloc.time_locale);
+label_0:
+        rdx = *((rsp + 0x38));
+        rdx ^= *(fs:0x28);
+        if (rcx != 0) {
+            goto label_5;
+        }
+        return rax;
+label_3:
+    } while (edi != 0x20);
+label_4:
+    rdi = *(reloc.time_locale);
+    strlen ();
+    rsi = loc__LC11;
+    edi = 2;
+    strlen ();
+    rsi = loc__LC11;
+    edi = 0;
+    strlen ();
+    esi = 0;
+    edi = 2;
+    rax = strlen ();
+    rdi = rax;
+    rax = strlen ();
+    *(reloc.time_locale) = rax;
+    goto label_0;
+label_2:
+    edi = 2;
+    rax = strlen ();
+    if (rax == 0) {
+        goto label_6;
+    }
+    rdi = *(reloc.time_locale);
+    r12 = "Sunday";
+    ebx = 0;
+    r14 = obj_abbrev_day_names;
+    r13 = loc__LC13;
+    strlen ();
+    esi = 0;
+    edi = 2;
+    rax = strlen ();
+    rdi = rax;
+    rax = strlen ();
+    xmm0 = 0;
+    *((rsp + 0x30)) = 0;
+    *(reloc.time_locale) = rax;
+    *(rsp) = xmm0;
+    *((rsp + 0x10)) = xmm0;
+    *((rsp + 0x20)) = xmm0;
+    do {
+        rdi = r12;
+        rcx = rbp;
+        rdx = r13;
+        esi = 0x20;
+        *((rsp + 0x18)) = ebx;
+        r12 += 0x20;
+        strlen ();
+        rdi = r14 + rbx*8;
+        rcx = rbp;
+        rdx = loc__LC14;
+        esi = 8;
+        rbx++;
+        rax = strlen ();
+    } while (rbx != 7);
+    r12 = "January";
+    ebx = 0;
+    r14 = obj_abbrev_month_names;
+    r13 = loc__LC15;
+    do {
+        rdi = r12;
+        rcx = rbp;
+        rdx = r13;
+        esi = 0x20;
+        *((rsp + 0x10)) = ebx;
+        r12 += 0x20;
+        strlen ();
+        rdi = r14 + rbx*8;
+        rcx = rbp;
+        rdx = loc__LC16;
+        esi = 8;
+        rbx++;
+        strlen ();
+    } while (rbx != 0xc);
+    goto label_1;
+label_5:
+    eax = strlen ();
+label_6:
+    edi = *(reloc.c_token);
+    rsi = "Locale not available";
+    eax = 0;
+    return strlen ();
+}
+
+

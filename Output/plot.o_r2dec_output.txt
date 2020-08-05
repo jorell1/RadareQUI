@@ -1,0 +1,337 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot.o @ 0x8000040 */
+#include <stdint.h>
+ 
+void wrapper_for_write_history (void) {
+    /* [01] -r-x section size 1312 named .text */
+    __asm ("endbr64");
+    rdi = expanded_history_filename;
+    if (rdi != 0) {
+        remove ();
+        edi = *(reloc.gnuplot_history_size);
+        if (edi >= 0) {
+            rsi = expanded_history_filename;
+            rdx = loc__LC0;
+            void (*0x801aba2)() ();
+        }
+        rdi = expanded_history_filename;
+        void (*0x801aba2)() ();
+    }
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot.o @ 0x80000a0 */
+#include <stdint.h>
+ 
+uint64_t load_rcfile_part_0 (int64_t arg7, int64_t arg1) {
+    xmm0 = arg7;
+    rdi = arg1;
+    if (edi != 0) {
+        ebp = 0;
+        if (edi == 1) {
+            goto label_0;
+        }
+        rbp = user_homedir;
+        if (rbp == 0) {
+            goto label_0;
+        }
+        rdi = rbp;
+        remove ();
+        rsi = "rcfile";
+        edi = rax + 0xa;
+        rdi = (int64_t) edi;
+        rax = remove ();
+        rsi = user_homedir;
+        rdi = rax;
+        rax = remove ();
+        rdx = rax - 1;
+        if (rbp == rax) {
+            rdx = rbp;
+        }
+        ecx = *(rdx);
+        if (cl != 0) {
+            if (cl == 0x2f) {
+                goto label_1;
+            }
+            eax = 0x2f;
+            rdi = rbp;
+            *((rdx + 1)) = ax;
+            rax = remove ();
+            rax += rbp;
+        }
+label_1:
+        *((rax + 8)) = 0;
+        rsi = loc__LC2;
+        rdi = rbp;
+        rdx = 0x746f6c70756e672e;
+        *(rax) = rdx;
+        rax = remove ();
+        r12 = rax;
+    } else {
+        rsi = "rcfile";
+        edi = 0x27;
+        rax = remove ();
+        __asm ("movdqa xmm0, xmmword [loc..LC3]");
+        edx = 0x34;
+        __asm ("movups xmmword [rax], xmm0");
+        rax = 0x746f6c70756e672f;
+        *((rbp + 0x10)) = rax;
+        rax = rbp + 0x1c;
+        *((rbp + 0x18)) = 0x342e352f;
+        *((rbp + 0x1c)) = 0;
+        if (dl != 0x2f) {
+            ecx = 0x2f;
+            rdi = rbp;
+            *((rbp + 0x1c)) = cx;
+            rax = remove ();
+            rax += rbp;
+        }
+        edx = 0x63;
+        rsi = loc__LC2;
+        rdi = rbp;
+        rcx = 0x72746f6c70756e67;
+        *(rax) = rcx;
+        *((rax + 8)) = dx;
+        rax = remove ();
+        r12 = rax;
+    }
+    if (r12 != 0) {
+        rdi = rbp;
+        rax = remove ();
+        rdi = r12;
+        edx = 3;
+        rsi = rax;
+        remove ();
+        edi = 0;
+        remove ();
+    }
+label_0:
+    rdi = rbp;
+    return void (*0x801aba2)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot.o @ 0x8000230 */
+#include <stdint.h>
+ 
+uint64_t inter (void) {
+    __asm ("endbr64");
+    rsi = sym_inter;
+    edi = 2;
+    remove (rax);
+    esi = 0;
+    edi = 8;
+    remove ();
+    remove ();
+    rsi = *(reloc.stderr);
+    edi = 0xa;
+    remove ();
+    rax = remove ();
+    __asm ("endbr64");
+    rsi = sym_inter;
+    edi = 2;
+    remove ();
+    esi = 1;
+    edi = 0xd;
+    return void (*0x801aba2)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot.o @ 0x8000210 */
+#include <stdint.h>
+ 
+void bail_to_command_line (void) {
+    __asm ("endbr64");
+    esi = 1;
+    rdi = obj_command_line_env;
+    remove (rax);
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot.o @ 0x80002b0 */
+#include <stdint.h>
+ 
+uint64_t init_constants (void) {
+    __asm ("endbr64");
+    xmm0 = *(loc..LC4);
+    xmm1 = 0;
+    rdi = reloc_get_udv_by_name;
+    remove ();
+    rdi = loc__LC6;
+    rax = remove ();
+    *(reloc.udv_NaN) = rax;
+    remove ();
+    rax = *(reloc.udv_NaN);
+    xmm1 = 0;
+    rdi = rax + 0x10;
+    return void (*0x801aba2)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot.o @ 0x8000300 */
+#include <stdint.h>
+ 
+void init_session (void) {
+    __asm ("endbr64");
+    esi = 1;
+    rdi = loc__LC7;
+    *(loc..LC1) = "rcfile";
+    remove ();
+    edi = 1;
+    remove ();
+    *(reloc.overflow_handling) = 1;
+    remove ();
+    remove ();
+    if (*(obj.skip_gnuplotrc) == 0) {
+        edi = 0;
+        load_rcfile_part_0 ();
+        if (*(obj.skip_gnuplotrc) != 0) {
+            goto label_0;
+        }
+        *(loc..LC1) = "rcfile";
+        edi = 2;
+        void (*0x80000a0)() ();
+    }
+label_0:
+    *(loc..LC1) = "rcfile";
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot.o @ 0x8000380 */
+#include <stdint.h>
+ 
+uint64_t get_user_env (void) {
+    __asm ("endbr64");
+    if (*(obj.user_homedir) == 0) {
+        goto label_2;
+    }
+label_1:
+    if (*(obj.user_shell) == 0) {
+        goto label_3;
+    }
+    do {
+        return;
+label_2:
+        rdi = "HOME";
+        rax = remove ();
+        rdi = rax;
+        if (rax == 0) {
+            goto label_4;
+        }
+label_0:
+        rax = remove ();
+        *(obj.user_homedir) = rax;
+    } while (*(obj.user_shell) != 0);
+label_3:
+    rdi = "SHELL";
+    rax = remove ();
+    rdi = rax;
+    rax = "/bin/sh";
+    if (rax == 0) {
+        rdi = rax;
+    }
+    rax = remove ();
+    *(obj.user_shell) = rax;
+    return rax;
+label_4:
+    rdi = "HOME";
+    rax = remove ();
+    rdi = rax;
+    if (rax != 0) {
+        goto label_0;
+    }
+    if (*(obj.interactive) == 0) {
+        goto label_1;
+    }
+    rsi = "no HOME found";
+    edi = 0xffffffff;
+    eax = 0;
+    remove ();
+    goto label_1;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot.o @ 0x8000440 */
+#include <stdint.h>
+ 
+uint64_t gp_expand_tilde (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    rbp = *(rdi);
+    if (rbp == 0) {
+        goto label_0;
+    }
+    while (*((rbp + 1)) != 0x2f) {
+        return;
+    }
+    r13 = user_homedir;
+    if (r13 != 0) {
+        rbx = rdi;
+        rdi = rbp;
+        rax = remove ();
+        rdi = r13;
+        r12 = rax;
+        remove ();
+        rdx = "tilde expansion";
+        rdi = rbp;
+        rsi = rax + r12;
+        rax = remove ();
+        r13 = user_homedir;
+        *(rbx) = rax;
+        rdi = r13;
+        remove ();
+        rdx = r12 + 1;
+        rsi = rbp;
+        rdi = rbp + rax - 1;
+        remove ();
+        rdi = r13;
+        rax = remove ();
+        rdi = *(rbx);
+        rsi = r13;
+        rdx = rax;
+        void (*0x801aba2)() ();
+    }
+    rsi = "HOME not set - cannot expand tilde";
+    edi = 0xffffffff;
+    eax = 0;
+    void (*0x801aba2)() ();
+label_0:
+    rsi = "Cannot expand empty path";
+    edi |= 0xffffffff;
+    eax = 0;
+    remove ();
+    __asm ("endbr64");
+    *(obj.expanded_history_filename) = 0;
+    return rax;
+}
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot.o @ 0x8000540 */
+#include <stdint.h>
+ 
+int64_t restrict_popen (int64_t arg1, int64_t arg4) {
+    rdi = arg1;
+    rcx = arg4;
+    __asm ("endbr64");
+    if (*(loc..LC1) != 0) {
+        return;
+    }
+    rsi = "Pipes and shell commands not permitted during initialization";
+    edi |= 0xffffffff;
+    eax = 0;
+    al = remove (rax);
+    /* [03] -rw- section size 2 named .data */
+    *(rax) += al;
+}
+
+

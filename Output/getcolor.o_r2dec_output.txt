@@ -1,0 +1,1460 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/getcolor.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int64_t HSV_2_RGB (int64_t arg1) {
+    rdi = arg1;
+    /* [01] -r-x section size 5923 named .text */
+    xmm4 = *((rdi + 8));
+    __asm ("ucomisd xmm4, qword [loc..LC0]");
+    xmm3 = *((rdi + 0x10));
+    __asm ("jnp 0x8000140");
+label_0:
+    xmm1 = *(loc..LC1);
+    __asm ("mulsd xmm1, qword [rdi]");
+    xmm6 = .rodata.cst16;
+    xmm2 = *(loc..LC2);
+    __asm ("movapd xmm5, xmm1");
+    __asm ("movapd xmm0, xmm1");
+    __asm ("andpd xmm5, xmm6");
+    __asm ("ucomisd xmm2, xmm5");
+    xmm2 = *(loc..LC4);
+    while (1) {
+        __asm ("cvttsd2si eax, xmm0");
+        xmm0 = 0;
+        __asm ("movapd xmm5, xmm4");
+        __asm ("movapd xmm7, xmm2");
+        __asm ("cvtsi2sd xmm0, eax");
+        rdx = (int64_t) eax;
+        ecx = eax;
+        rdx *= 0x2aaaaaab;
+        ecx >>= 0x1f;
+        __asm ("subsd xmm1, xmm0");
+        __asm ("movapd xmm0, xmm2");
+        rdx >>= 0x20;
+        __asm ("subsd xmm0, xmm4");
+        edx -= ecx;
+        edx = rdx * 3;
+        __asm ("mulsd xmm5, xmm1");
+        edx += edx;
+        __asm ("mulsd xmm0, xmm3");
+        eax -= edx;
+        __asm ("subsd xmm7, xmm5");
+        __asm ("movapd xmm5, xmm7");
+        __asm ("movapd xmm7, xmm2");
+        __asm ("subsd xmm7, xmm1");
+        __asm ("mulsd xmm5, xmm3");
+        __asm ("mulsd xmm4, xmm7");
+        __asm ("subsd xmm2, xmm4");
+        __asm ("mulsd xmm2, xmm3");
+        if (eax > 4) {
+            goto label_1;
+        }
+        rdx = reloc__rodata;
+        rax = *((rdx + rax*4));
+        rax += rdx;
+        /* switch table (5 cases) at 0x8001764 */
+        rax = void (*rax)() ();
+        __asm ("cvttsd2si rax, xmm1");
+        xmm5 = 0;
+        __asm ("andnpd xmm6, xmm1");
+        __asm ("cvtsi2sd xmm5, rax");
+        __asm ("movapd xmm0, xmm5");
+        __asm ("cmpnlesd xmm0, xmm1");
+        __asm ("andpd xmm0, xmm2");
+        __asm ("subsd xmm5, xmm0");
+        __asm ("movapd xmm0, xmm5");
+        __asm ("orpd xmm0, xmm6");
+    }
+    if (rax != 0) {
+        goto label_0;
+    }
+    *((rdi + 8)) = xmm3;
+    *(rdi) = xmm3;
+    return rax;
+    *(rdi) = xmm0;
+    *((rdi + 8)) = xmm5;
+    return rax;
+    *(rdi) = xmm2;
+    *((rdi + 8)) = xmm0;
+    return rax;
+    *(rdi) = xmm3;
+    *((rdi + 8)) = xmm2;
+    *((rdi + 0x10)) = xmm0;
+    return rax;
+    *(rdi) = xmm5;
+    *((rdi + 8)) = xmm3;
+    *((rdi + 0x10)) = xmm0;
+    return rax;
+    *(rdi) = xmm0;
+    *((rdi + 8)) = xmm3;
+    *((rdi + 0x10)) = xmm2;
+    return rax;
+label_1:
+    *(rdi) = xmm3;
+    *((rdi + 8)) = xmm0;
+    *((rdi + 0x10)) = xmm5;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/getcolor.o @ 0x8000ac0 */
+#include <stdint.h>
+ 
+int64_t color_components_from_gray (int64_t arg11, int64_t arg10, int64_t arg1, uint32_t arg3) {
+    int64_t var_sp_8h;
+    int64_t var_sp_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    int64_t var_38h;
+    xmm4 = arg11;
+    xmm3 = arg10;
+    rdi = arg1;
+    rdx = arg3;
+label_9:
+    xmm7 = 0;
+    xmm2 = 0;
+    rbx = rdi;
+    rax = *(fs:0x28);
+    *((rsp + 0x38)) = rax;
+    eax = 0;
+    __asm ("comisd xmm7, xmm0");
+    if (? <= ?) {
+        __asm ("movapd xmm2, xmm0");
+        xmm0 = *(loc..LC4);
+        __asm ("minsd xmm0, xmm2");
+        __asm ("movapd xmm2, xmm0");
+    }
+    eax = *(0x0800e353);
+    if (eax == 0x66) {
+        goto label_12;
+    }
+    if (eax > 0x66) {
+        goto label_13;
+    }
+    if (eax == 0x63) {
+        goto label_14;
+    }
+    if (eax != 0x64) {
+        goto label_15;
+    }
+    xmm5 = 0;
+    rdi = *(reloc.Gcomplex);
+    __asm ("comisd xmm5, xmm2");
+    if (eax > 0x64) {
+        goto label_16;
+    }
+    __asm ("comisd xmm2, xmmword [loc..LC4]");
+    rdx = *(0x0800e37b);
+    if (eax > 0x64) {
+        goto label_17;
+    }
+    if (edx <= 1) {
+        goto label_18;
+    }
+    edx--;
+    esi = 0;
+    while (edx != esi) {
+        ecx = rdx + rsi;
+        eax = ecx;
+        eax >>= 0x1f;
+        eax += ecx;
+        eax >>= 1;
+        rcx = (int64_t) eax;
+        rcx <<= 5;
+        __asm ("comisd xmm2, xmmword [rdi + rcx]");
+        if (rcx > 0) {
+            goto label_19;
+        }
+        edx = eax;
+label_8:
+    }
+    rdx = (int64_t) edx;
+    rdx <<= 5;
+    rax = rdi + rdx;
+label_7:
+    xmm5 = *(rax);
+    xmm4 = *((rax + 8));
+    xmm3 = *((rax + 0x10));
+    xmm1 = *((rax + 0x18));
+    __asm ("ucomisd xmm2, xmm5");
+    __asm ("jp 0x8001040");
+    if (rdx != 0) {
+        goto label_20;
+    }
+    *(rbx) = xmm4;
+    *((rbx + 8)) = xmm3;
+    *((rbx + 0x10)) = xmm1;
+    do {
+label_0:
+        rax = *((rsp + 0x38));
+        rax ^= *(fs:0x28);
+        if (rdx != 0) {
+            goto label_21;
+        }
+        return rax;
+label_13:
+        if (eax != 0x72) {
+            goto label_15;
+        }
+        edi = *(reloc.cos);
+        __asm ("movapd xmm0, xmm2");
+        *(rsp) = xmm2;
+        strcmp ();
+        xmm2 = *(rsp);
+        edi = *(0x0800e35b);
+        *(rbx) = xmm0;
+        __asm ("movapd xmm0, xmm2");
+        strcmp ();
+        xmm2 = *(rsp);
+        edi = *(reloc.sin);
+        *((rbx + 8)) = xmm0;
+        __asm ("movapd xmm0, xmm2");
+        strcmp ();
+        *((rbx + 0x10)) = xmm0;
+    } while (1);
+label_15:
+    __asm ("movapd xmm0, xmm2");
+    xmm1 = *(loc..LC4);
+    __asm ("divsd xmm1, qword [0x0800e76f]");
+    strcmp ();
+    *((rbx + 0x10)) = xmm0;
+    *((rbx + 8)) = xmm0;
+    *(rbx) = xmm0;
+    goto label_0;
+label_14:
+    xmm0 = *(0x0800e77f);
+    xmm3 = *(0x0800e777);
+    __asm ("divsd xmm3, qword [loc..LC13]");
+    xmm5 = *(loc..LC4);
+    __asm ("mulsd xmm0, xmm2");
+    __asm ("addsd xmm3, xmm0");
+    xmm0 = *(0x0800e76f);
+    __asm ("mulsd xmm3, qword [loc..LC31]");
+    __asm ("ucomisd xmm0, xmm5");
+    __asm ("jp 0x8000f58");
+    while (1) {
+        __asm ("movapd xmm0, xmm3");
+        rdi = rsp + 0x18;
+        rsi = rsp + 0x10;
+        *(rsp) = xmm2;
+        strcmp ();
+        xmm2 = *(rsp);
+        xmm7 = 0;
+        xmm0 = *(0x0800e787);
+        rax = *(loc..LC4);
+        xmm1 = *((rsp + 0x10));
+        __asm ("mulsd xmm0, xmm2");
+        xmm6 = *((rsp + 0x18));
+        xmm4 = *(loc..LC32);
+        xmm3 = rax;
+        xmm5 = rax;
+        __asm ("subsd xmm3, xmm2");
+        __asm ("mulsd xmm4, xmm1");
+        __asm ("mulsd xmm0, xmm3");
+        xmm3 = *(loc..LC33);
+        __asm ("mulsd xmm0, qword [loc..LC7]");
+        __asm ("mulsd xmm3, xmm6");
+        __asm ("mulsd xmm6, qword [loc..LC35]");
+        __asm ("addsd xmm4, xmm3");
+        xmm3 = *(loc..LC34);
+        __asm ("mulsd xmm3, xmm1");
+        __asm ("mulsd xmm4, xmm0");
+        __asm ("mulsd xmm1, qword [loc..LC36]");
+        __asm ("subsd xmm3, xmm6");
+        __asm ("addsd xmm4, xmm2");
+        __asm ("mulsd xmm1, xmm0");
+        __asm ("mulsd xmm3, xmm0");
+        __asm ("comisd xmm7, xmm4");
+        __asm ("addsd xmm3, xmm2");
+        __asm ("addsd xmm2, xmm1");
+        if (eax > 0x72) {
+            goto label_22;
+        }
+        xmm7 = rax;
+        __asm ("minsd xmm7, xmm4");
+        __asm ("movapd xmm4, xmm7");
+label_4:
+        xmm7 = 0;
+        *(rbx) = xmm4;
+        __asm ("comisd xmm7, xmm3");
+        if (eax > 0x72) {
+            goto label_23;
+        }
+        __asm ("movapd xmm4, xmm5");
+        __asm ("minsd xmm4, xmm3");
+        __asm ("movapd xmm3, xmm4");
+label_3:
+        xmm6 = 0;
+        *((rbx + 8)) = xmm3;
+        __asm ("comisd xmm6, xmm2");
+        if (eax > 0x72) {
+            goto label_24;
+        }
+        __asm ("minsd xmm5, xmm2");
+        __asm ("movapd xmm2, xmm5");
+label_2:
+        *((rbx + 0x10)) = xmm2;
+        goto label_0;
+label_12:
+        __asm ("movapd xmm0, xmm2");
+        xmm1 = 0;
+        *(rsp) = xmm2;
+        rdi = reloc_free;
+        strcmp ();
+        rbp = rsp + 0x20;
+        rdi = *(reloc.__stack_chk_fail);
+        rsi = rbp;
+        strcmp ();
+        xmm2 = *(rsp);
+        if (*(reloc.undefined) != 0) {
+            goto label_25;
+        }
+        rdi = rbp;
+        *(rsp) = xmm2;
+        strcmp ();
+        xmm5 = 0;
+        xmm2 = *(rsp);
+        __asm ("comisd xmm5, xmm0");
+        __asm ("movapd xmm6, xmm0");
+        if (*(reloc.undefined) > 0) {
+            goto label_26;
+        }
+        xmm0 = *(loc..LC4);
+        __asm ("minsd xmm0, xmm6");
+        *(rsp) = xmm0;
+label_1:
+        __asm ("movapd xmm0, xmm2");
+        xmm1 = 0;
+        rdi = 0x0800e507;
+        *((rsp + 8)) = xmm2;
+        strcmp ();
+        rdi = *(0x0800e4ef);
+        rsi = rbp;
+        strcmp ();
+        xmm2 = *((rsp + 8));
+        if (*(reloc.undefined) != 0) {
+            goto label_27;
+        }
+        rdi = rbp;
+        *((rsp + 8)) = xmm2;
+        strcmp ();
+        xmm5 = 0;
+        xmm2 = *((rsp + 8));
+        __asm ("comisd xmm5, xmm0");
+        __asm ("movapd xmm3, xmm0");
+        if (*(reloc.undefined) > 0) {
+            goto label_28;
+        }
+        xmm0 = *(loc..LC4);
+        __asm ("minsd xmm0, xmm3");
+        __asm ("movapd xmm3, xmm0");
+label_6:
+        xmm1 = 0;
+        __asm ("movapd xmm0, xmm2");
+        rdi = 0x0800e64f;
+        *((rsp + 8)) = xmm3;
+        strcmp ();
+        rdi = *(0x0800e637);
+        rsi = rbp;
+        strcmp ();
+        xmm3 = *((rsp + 8));
+        if (*(reloc.undefined) != 0) {
+            goto label_29;
+        }
+        rdi = rbp;
+        *((rsp + 8)) = xmm3;
+        strcmp ();
+        xmm7 = 0;
+        xmm3 = *((rsp + 8));
+        __asm ("comisd xmm7, xmm0");
+        if (*(reloc.undefined) > 0) {
+            goto label_30;
+        }
+        xmm1 = *(loc..LC4);
+        __asm ("minsd xmm1, xmm0");
+        __asm ("movapd xmm0, xmm1");
+label_5:
+        xmm6 = *(rsp);
+        *((rbx + 8)) = xmm3;
+        *((rbx + 0x10)) = xmm0;
+        *(rbx) = xmm6;
+        goto label_0;
+label_16:
+        xmm0 = *((rdi + 8));
+        *(rbx) = xmm0;
+        xmm0 = *((rdi + 0x10));
+        *((rbx + 8)) = xmm0;
+        xmm0 = *((rdi + 0x18));
+        *((rbx + 0x10)) = xmm0;
+        goto label_0;
+        __asm ("movapd xmm1, xmm5");
+        *(rsp) = xmm3;
+        __asm ("divsd xmm1, xmm0");
+        __asm ("movapd xmm0, xmm2");
+        strcmp ();
+        xmm3 = *(rsp);
+        __asm ("movapd xmm2, xmm0");
+    }
+label_26:
+    *(rsp) = 0;
+    goto label_1;
+label_24:
+    xmm2 = 0;
+    goto label_2;
+label_23:
+    xmm3 = 0;
+    goto label_3;
+label_22:
+    xmm4 = 0;
+    goto label_4;
+label_30:
+    xmm0 = 0;
+    goto label_5;
+label_28:
+    xmm3 = 0;
+    goto label_6;
+label_17:
+    rdx <<= 5;
+    rax = rdi + rdx - 0x20;
+    xmm0 = *((rax + 8));
+    *(rbx) = xmm0;
+    xmm0 = *((rax + 0x10));
+    *((rbx + 8)) = xmm0;
+    xmm0 = *((rax + 0x18));
+    *((rbx + 0x10)) = xmm0;
+    goto label_0;
+label_18:
+    rax = rdi;
+    edx = 0;
+    goto label_7;
+label_25:
+    rsi = "Undefined value first color during function evaluation";
+    edi |= 0xffffffff;
+    eax = 0;
+    strcmp ();
+label_19:
+    esi = rax + 1;
+    goto label_8;
+label_20:
+    rax = rdi + rdx - 0x20;
+    xmm0 = *(rax);
+    __asm ("subsd xmm2, xmm0");
+    __asm ("subsd xmm5, xmm0");
+    xmm0 = *((rax + 8));
+    __asm ("subsd xmm4, xmm0");
+    __asm ("divsd xmm2, xmm5");
+    __asm ("mulsd xmm4, xmm2");
+    __asm ("addsd xmm4, xmm0");
+    xmm0 = *((rax + 0x10));
+    __asm ("subsd xmm3, xmm0");
+    *(rbx) = xmm4;
+    __asm ("mulsd xmm3, xmm2");
+    __asm ("addsd xmm3, xmm0");
+    xmm0 = *((rax + 0x18));
+    __asm ("subsd xmm1, xmm0");
+    *((rbx + 8)) = xmm3;
+    __asm ("mulsd xmm1, xmm2");
+    __asm ("addsd xmm1, xmm0");
+    *((rbx + 0x10)) = xmm1;
+    goto label_0;
+label_21:
+    eax = strcmp ();
+label_29:
+    rsi = "Undefined value third color during function evaluation";
+    edi |= 0xffffffff;
+    eax = 0;
+    eax = strcmp ();
+label_27:
+    rsi = "Undefined value second color during function evaluation";
+    edi |= 0xffffffff;
+    eax = 0;
+    rax = strcmp ();
+    __asm ("endbr64");
+    color_components_from_gray ();
+    goto label_9;
+    if (*(0x0800e353) != 0x67) {
+        eax = *(reloc.undefined);
+        if (eax == 0x63) {
+            goto label_31;
+        }
+        if (eax == 0x68) {
+            goto label_32;
+        }
+    }
+    return rax;
+label_32:
+    rdi = rbp;
+    void (*0x8000040)() ();
+label_31:
+    xmm1 = 0;
+    xmm4 = *((rbp + 8));
+    xmm3 = *((rbp + 0x10));
+    xmm0 = *(loc..LC4);
+    __asm ("movapd xmm2, xmm0");
+    __asm ("subsd xmm2, qword [rbp]");
+    __asm ("comisd xmm1, xmm2");
+    if (eax > 0x68) {
+        goto label_33;
+    }
+    __asm ("movapd xmm5, xmm0");
+    __asm ("minsd xmm5, xmm2");
+    __asm ("movapd xmm2, xmm5");
+    do {
+        *(rbp) = xmm2;
+        __asm ("movapd xmm2, xmm0");
+        __asm ("subsd xmm2, xmm4");
+        __asm ("comisd xmm1, xmm2");
+        if (eax > 0x68) {
+            goto label_34;
+        }
+        __asm ("movapd xmm6, xmm0");
+        __asm ("minsd xmm6, xmm2");
+        __asm ("movapd xmm2, xmm6");
+label_11:
+        *((rbp + 8)) = xmm2;
+        __asm ("movapd xmm2, xmm0");
+        __asm ("subsd xmm2, xmm3");
+        __asm ("comisd xmm1, xmm2");
+        if (eax > 0x68) {
+            goto label_35;
+        }
+        __asm ("minsd xmm0, xmm2");
+        __asm ("movapd xmm2, xmm0");
+label_10:
+        *((rbp + 0x10)) = xmm2;
+        return rax;
+label_33:
+        __asm ("movapd xmm2, xmm1");
+    } while (1);
+label_35:
+    __asm ("movapd xmm2, xmm1");
+    goto label_10;
+label_34:
+    __asm ("movapd xmm2, xmm1");
+    goto label_11;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/getcolor.o @ 0x80001b0 */
+#include <stdint.h>
+ 
+int64_t palettes_differ (uint32_t arg1, uint32_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    __asm ("endbr64");
+    r12d = 1;
+    eax = *((rdi + 4));
+    if (eax != *((rsi + 4))) {
+        goto label_0;
+    }
+    ecx = *((rsi + 0x14));
+    rbx = rsi;
+    while (*((rdi + 0x40)) != ecx) {
+label_0:
+        eax = r12d;
+        r12 = rbx;
+        return eax;
+        ecx = *((rsi + 0x40));
+    }
+    ecx = *((rsi + 0x18));
+    if (*((rdi + 0x18)) != ecx) {
+        goto label_0;
+    }
+    eax -= 0x63;
+    if (eax > 0xf) {
+        goto label_1;
+    }
+    rdx = 0x08001778;
+    rax = *((rdx + rax*4));
+    rax += rdx;
+    /* switch table (16 cases) at 0x8001778 */
+    void (*rax)() ();
+    ecx = *((rdi + 0x2c));
+    r12d = 1;
+    if (ecx != *((rsi + 0x2c))) {
+        goto label_0;
+    }
+    if (ecx <= 0) {
+        goto label_1;
+    }
+    rax = *((rdi + 0x30));
+    ecx--;
+    rdx = *((rsi + 0x30));
+    rcx <<= 5;
+    rcx = rax + rcx + 0x20;
+    while (rax == rcx) {
+        xmm0 = *((rax + 8));
+        __asm ("ucomisd xmm0, qword [rdx + 8]");
+        __asm ("jp case.0x800020a.0");
+        if (rcx != 0) {
+            goto label_2;
+        }
+        xmm0 = *((rax + 0x10));
+        __asm ("ucomisd xmm0, qword [rdx + 0x10]");
+        __asm ("jp case.0x800020a.0");
+        if (rcx != 0) {
+            goto label_2;
+        }
+        xmm0 = *((rax + 0x18));
+        __asm ("ucomisd xmm0, qword [rdx + 0x18]");
+        __asm ("jp case.0x800020a.0");
+        if (rcx != 0) {
+            goto label_2;
+        }
+        rax += 0x20;
+        rdx += 0x20;
+        if (rax == rcx) {
+            goto label_1;
+        }
+        xmm0 = *(rax);
+        __asm ("ucomisd xmm0, qword [rdx]");
+        __asm ("jp case.0x800020a.0");
+    }
+label_2:
+    r12d = 1;
+    eax = r12d;
+    r12 = rbx;
+    return rax;
+label_1:
+    r12d = 0;
+    eax = r12d;
+    r12 = rbx;
+    return rax;
+    eax = *(rsi);
+    r12d = 1;
+    if (*(rdi) != eax) {
+        goto label_0;
+    }
+    eax = *((rsi + 8));
+    if (*((rdi + 8)) != eax) {
+        goto label_0;
+    }
+    eax = *((rsi + 0xc));
+    if (*((rdi + 0xc)) != eax) {
+        goto label_0;
+    }
+    r12d = 0;
+    eax = *((rsi + 0x10));
+    r12b = (*((rdi + 0x10)) != eax) ? 1 : 0;
+    goto label_0;
+    r12d = 0;
+    xmm0 = *((rdi + 0x420));
+    __asm ("subsd xmm0, qword [rsi + 0x420]");
+    __asm ("andpd xmm0, xmmword [loc..LC3]");
+    __asm ("comisd xmm0, xmmword [loc..LC5]");
+    r12b = (*((rdi + 0x10)) > eax) ? 1 : 0;
+    goto label_0;
+    rsi = *((rsi + 0x60));
+    rdi = *((rdi + 0x60));
+    r12d = 1;
+    eax = strcmp ();
+    if (eax != 0) {
+        goto label_0;
+    }
+    rsi = *((rbx + 0x1a8));
+    rdi = *((rbp + 0x1a8));
+    eax = strcmp ();
+    if (eax != 0) {
+        goto label_0;
+    }
+    rsi = *((rbx + 0x2f0));
+    rdi = *((rbp + 0x2f0));
+    r12d = 0;
+    eax = strcmp ();
+    r12b = (eax != 0) ? 1 : 0;
+    goto label_0;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/getcolor.o @ 0x8000360 */
+#include <stdint.h>
+ 
+void rgb255_from_rgb1 (int64_t arg_8h, int64_t arg_10h, int64_t arg_18h, int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    xmm0 = *(loc..LC6);
+    xmm1 = arg_8h;
+    xmm2 = *(loc..LC7);
+    __asm ("mulsd xmm1, xmm0");
+    __asm ("addsd xmm1, xmm2");
+    __asm ("cvttsd2si eax, xmm1");
+    xmm1 = arg_10h;
+    __asm ("mulsd xmm1, xmm0");
+    __asm ("mulsd xmm0, qword [arg_18h]");
+    *(rdi) = al;
+    __asm ("addsd xmm1, xmm2");
+    __asm ("addsd xmm0, xmm2");
+    __asm ("cvttsd2si eax, xmm1");
+    *((rdi + 1)) = al;
+    __asm ("cvttsd2si eax, xmm0");
+    *((rdi + 2)) = al;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/getcolor.o @ 0x80003b0 */
+#include <stdint.h>
+ 
+int64_t quantize_gray (int64_t arg7) {
+    xmm0 = arg7;
+    __asm ("endbr64");
+    eax = *(reloc.sqrt);
+    xmm5 = 0;
+    __asm ("movapd xmm2, xmm0");
+    xmm3 = .rodata.cst16;
+    xmm6 = *(loc..LC2);
+    __asm ("cvtsi2sd xmm5, eax");
+    __asm ("movapd xmm4, xmm5");
+    __asm ("mulsd xmm4, xmm0");
+    __asm ("movapd xmm1, xmm4");
+    __asm ("movapd xmm0, xmm4");
+    __asm ("andpd xmm1, xmm3");
+    __asm ("ucomisd xmm6, xmm1");
+    if (? > ?) {
+        __asm ("cvttsd2si rdx, xmm4");
+        xmm1 = 0;
+        xmm6 = *(loc..LC4);
+        __asm ("andnpd xmm3, xmm4");
+        __asm ("cvtsi2sd xmm1, rdx");
+        __asm ("movapd xmm7, xmm1");
+        __asm ("cmpnlesd xmm7, xmm4");
+        __asm ("movapd xmm0, xmm7");
+        __asm ("andpd xmm0, xmm6");
+        __asm ("subsd xmm1, xmm0");
+        __asm ("movapd xmm0, xmm1");
+        __asm ("orpd xmm0, xmm3");
+    }
+    eax--;
+    xmm1 = 0;
+    __asm ("cvtsi2sd xmm1, eax");
+    __asm ("divsd xmm0, xmm1");
+    while (edx <= 2) {
+label_0:
+        return eax;
+        xmm1 = 0;
+        ecx = 0;
+        edx = *(0x0800e37b);
+        __asm ("ucomisd xmm0, xmm1");
+        __asm ("setnp al");
+        if (*(0x0800e353) != 0x64) {
+            eax = ecx;
+        }
+        if (al == 0) {
+            goto label_1;
+        }
+    }
+label_1:
+    xmm4 = *(loc..LC4);
+    xmm1 = *(reloc.evaluate_at);
+    __asm ("divsd xmm4, xmm5");
+    __asm ("comisd xmm1, xmm4");
+    if (edx > 2) {
+        goto label_0;
+    }
+    if (edx <= 0) {
+        goto label_0;
+    }
+    rax = *(reloc.Gcomplex);
+    edx--;
+    rdx <<= 5;
+    rdx = rax + rdx + 0x20;
+    do {
+        xmm1 = *(rax);
+        __asm ("comisd xmm2, xmm1");
+        if (rdx >= 0) {
+            xmm3 = *((rax + 0x20));
+            __asm ("comisd xmm3, xmm2");
+            if (rdx > 0) {
+                goto label_2;
+            }
+        }
+        rax += 0x20;
+    } while (rax != rdx);
+    return rax;
+label_2:
+    __asm ("movapd xmm2, xmm3");
+    __asm ("subsd xmm2, xmm1");
+    __asm ("comisd xmm4, xmm2");
+    if (rax <= rdx) {
+        goto label_0;
+    }
+    __asm ("movapd xmm0, xmm1");
+    __asm ("addsd xmm0, xmm3");
+    __asm ("mulsd xmm0, qword [loc..LC7]");
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/getcolor.o @ 0x80004f0 */
+#include <stdint.h>
+ 
+int64_t GetColorValueFromFormula (int64_t arg_8h, uint32_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    if (edi < 0) {
+        xmm2 = *(loc..LC4);
+        edi = -edi;
+        __asm ("subsd xmm2, xmm0");
+        __asm ("movapd xmm0, xmm2");
+    }
+    if (edi > 0x24) {
+        goto label_7;
+    }
+    rdx = 0x080017b8;
+    rax = *((rdx + rdi*4));
+    rax += rdx;
+    /* switch table (37 cases) at 0x80017b8 */
+    void (*rax)() ();
+    __asm ("mulsd xmm0, qword [loc..LC15]");
+    __asm ("subsd xmm0, qword [loc..LC7]");
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    __asm ("andpd xmm1, xmmword [loc..LC3]");
+    do {
+label_1:
+        __asm ("comisd xmm2, xmm1");
+        if (rax >= 0) {
+            goto label_5;
+        }
+        xmm2 = *(loc..LC4);
+        __asm ("comisd xmm1, xmm2");
+        if (rax >= 0) {
+            goto label_5;
+        }
+label_0:
+        __asm ("movapd xmm0, xmm1");
+        return rax;
+        __asm ("addsd xmm0, xmm0");
+        __asm ("subsd xmm0, qword [loc..LC4]");
+        __asm ("movapd xmm1, xmm0");
+        xmm2 = 0;
+        __asm ("mulsd xmm1, xmm0");
+    } while (1);
+    do {
+label_4:
+        xmm2 = *(loc..LC4);
+label_5:
+        __asm ("movapd xmm1, xmm2");
+        __asm ("movapd xmm0, xmm1");
+        return rax;
+        xmm1 = *(loc..LC7);
+        goto label_0;
+        __asm ("movapd xmm1, xmm0");
+        xmm2 = 0;
+        goto label_1;
+        xmm1 = *(loc..LC16);
+        __asm ("comisd xmm1, xmm0");
+        if (rax >= 0) {
+            goto label_8;
+        }
+        __asm ("comisd xmm0, xmmword [loc..LC17]");
+    } while (rax >= 0);
+    __asm ("divsd xmm0, qword [loc..LC18]");
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    __asm ("subsd xmm1, qword [loc..LC19]");
+    goto label_1;
+    __asm ("mulsd xmm0, qword [loc..LC8]");
+    __asm ("mulsd xmm0, qword [loc..LC9]");
+    strcmp ();
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    goto label_1;
+    __asm ("mulsd xmm0, qword [loc..LC15]");
+    xmm2 = 0;
+    __asm ("subsd xmm0, qword [loc..LC4]");
+    __asm ("movapd xmm1, xmm0");
+    __asm ("andpd xmm1, xmmword [loc..LC3]");
+    goto label_1;
+    __asm ("mulsd xmm0, qword [loc..LC15]");
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    __asm ("subsd xmm1, qword [loc..LC4]");
+    goto label_1;
+    __asm ("mulsd xmm0, qword [loc..LC15]");
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    __asm ("subsd xmm1, qword [loc..LC7]");
+    goto label_1;
+    __asm ("mulsd xmm0, qword [loc..LC13]");
+    xmm2 = 0;
+    __asm ("subsd xmm0, qword [loc..LC14]");
+    __asm ("movapd xmm1, xmm0");
+    __asm ("andpd xmm1, xmmword [loc..LC3]");
+    goto label_1;
+    __asm ("mulsd xmm0, qword [loc..LC13]");
+    xmm2 = 0;
+    __asm ("subsd xmm0, qword [loc..LC4]");
+    __asm ("movapd xmm1, xmm0");
+    __asm ("andpd xmm1, xmmword [loc..LC3]");
+    goto label_1;
+    __asm ("mulsd xmm0, qword [loc..LC13]");
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    __asm ("subsd xmm1, qword [loc..LC14]");
+    goto label_1;
+    __asm ("mulsd xmm0, qword [loc..LC13]");
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    __asm ("subsd xmm1, qword [loc..LC4]");
+    goto label_1;
+    xmm1 = .LC13;
+    xmm2 = 0;
+    __asm ("mulsd xmm1, xmm0");
+    goto label_1;
+    __asm ("mulsd xmm0, qword [loc..LC12]");
+    do {
+label_3:
+        __asm ("mulsd xmm0, qword [loc..LC9]");
+        strcmp ();
+        xmm2 = 0;
+        __asm ("movapd xmm1, xmm0");
+        __asm ("andpd xmm1, xmmword [loc..LC3]");
+        goto label_1;
+        __asm ("mulsd xmm0, qword [loc..LC12]");
+label_2:
+        __asm ("mulsd xmm0, qword [loc..LC9]");
+        strcmp ();
+        xmm2 = 0;
+        __asm ("movapd xmm1, xmm0");
+        __asm ("andpd xmm1, xmmword [loc..LC3]");
+        goto label_1;
+        __asm ("mulsd xmm0, qword [loc..LC11]");
+    } while (1);
+    __asm ("mulsd xmm0, qword [loc..LC11]");
+    goto label_2;
+    __asm ("mulsd xmm0, qword [loc..LC11]");
+    __asm ("mulsd xmm0, qword [loc..LC9]");
+    strcmp ();
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    goto label_1;
+    __asm ("mulsd xmm0, qword [loc..LC11]");
+    __asm ("mulsd xmm0, qword [loc..LC9]");
+    strcmp ();
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    goto label_1;
+    xmm2 = 0;
+    __asm ("movapd xmm3, xmm0");
+    __asm ("ucomisd xmm2, xmm0");
+    __asm ("sqrtsd xmm3, xmm3");
+    if (rax > 0) {
+        goto label_9;
+    }
+label_6:
+    __asm ("ucomisd xmm2, xmm3");
+    __asm ("movapd xmm1, xmm3");
+    __asm ("sqrtsd xmm1, xmm1");
+    if (rax <= 0) {
+        goto label_1;
+    }
+    __asm ("movapd xmm0, xmm3");
+    *((rsp + 8)) = xmm2;
+    *(rsp) = xmm1;
+    strcmp ();
+    xmm1 = *(rsp);
+    xmm2 = *((rsp + 8));
+    goto label_1;
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    __asm ("ucomisd xmm2, xmm0");
+    __asm ("sqrtsd xmm1, xmm1");
+    if (rax <= 0) {
+        goto label_1;
+    }
+    *((rsp + 8)) = xmm2;
+    *(rsp) = xmm1;
+    strcmp ();
+    xmm1 = *(rsp);
+    xmm2 = *((rsp + 8));
+    goto label_1;
+    xmm1 = *(loc..LC4);
+    goto label_0;
+    __asm ("addsd xmm0, xmm0");
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    __asm ("subsd xmm1, qword [loc..LC4]");
+    goto label_1;
+    __asm ("mulsd xmm0, qword [loc..LC8]");
+    __asm ("mulsd xmm0, qword [loc..LC9]");
+    strcmp ();
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    goto label_1;
+    __asm ("mulsd xmm0, qword [loc..LC10]");
+    goto label_3;
+    __asm ("mulsd xmm0, qword [loc..LC10]");
+    __asm ("mulsd xmm0, qword [loc..LC9]");
+    strcmp ();
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    goto label_1;
+    __asm ("addsd xmm0, xmm0");
+    __asm ("subsd xmm0, qword [loc..LC7]");
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    __asm ("andpd xmm1, xmmword [loc..LC3]");
+    goto label_1;
+    xmm1 = *(loc..LC20);
+    __asm ("comisd xmm1, xmm0");
+    if (rax < 0) {
+        goto label_10;
+    }
+    xmm1 = *(loc..LC23);
+    xmm2 = 0;
+    __asm ("mulsd xmm1, xmm0");
+    goto label_1;
+    xmm1 = *(loc..LC20);
+    __asm ("comisd xmm1, xmm0");
+    if (rax >= 0) {
+        goto label_8;
+    }
+    __asm ("comisd xmm0, xmmword [loc..LC21]");
+    if (rax >= 0) {
+        goto label_4;
+    }
+    __asm ("addsd xmm0, xmm0");
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    __asm ("subsd xmm1, qword [loc..LC22]");
+    goto label_1;
+    __asm ("movapd xmm1, xmm0");
+    xmm2 = 0;
+    __asm ("mulsd xmm1, xmm0");
+    __asm ("mulsd xmm1, xmm0");
+    goto label_1;
+    __asm ("addsd xmm0, xmm0");
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    __asm ("subsd xmm1, qword [loc..LC7]");
+    goto label_1;
+    __asm ("movapd xmm1, xmm0");
+    xmm2 = 0;
+    __asm ("addsd xmm1, xmm0");
+    goto label_1;
+    __asm ("movapd xmm1, xmm0");
+    xmm2 = 0;
+    __asm ("mulsd xmm1, xmm0");
+    __asm ("mulsd xmm1, xmm0");
+    __asm ("mulsd xmm1, xmm0");
+    goto label_1;
+label_8:
+    xmm2 = 0;
+    goto label_5;
+label_10:
+    xmm1 = *(loc..LC21);
+    __asm ("comisd xmm1, xmm0");
+    if (rax >= 0) {
+        __asm ("mulsd xmm0, qword [loc..LC24]");
+        xmm1 = "q=\n\xd7\xa3p";
+        xmm2 = 0;
+        __asm ("addsd xmm1, xmm0");
+        goto label_1;
+    }
+    __asm ("divsd xmm0, qword [loc..LC26]");
+    xmm2 = 0;
+    __asm ("movapd xmm1, xmm0");
+    __asm ("subsd xmm1, qword [loc..LC27]");
+    goto label_1;
+label_9:
+    *((rsp + 8)) = xmm2;
+    *(rsp) = xmm3;
+    strcmp ();
+    xmm2 = *((rsp + 8));
+    xmm3 = *(rsp);
+    goto label_6;
+    xmm1 = 0;
+    goto label_0;
+label_7:
+    xmm1 = 0;
+    __asm ("movapd xmm0, xmm1");
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/getcolor.o @ 0x80011b0 */
+#include <stdint.h>
+ 
+int32_t rgb1maxcolors_from_gray (void) {
+    __asm ("endbr64");
+    eax = *(reloc.sqrt);
+    if (eax != 0) {
+        strcmp ();
+        void (*0x80010d0)() ();
+    }
+    return rgb1_from_gray ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/getcolor.o @ 0x80011e0 */
+#include <stdint.h>
+ 
+int64_t rgb255maxcolors_from_gray (int64_t arg1, int64_t arg2, int64_t arg3) {
+    int64_t var_8h_2;
+    int64_t var_10h_2;
+    int64_t var_18h_2;
+    signed int64_t var_20h;
+    int64_t var_24h;
+    int64_t var_28h;
+    int64_t var_30h;
+    uint32_t var_34h;
+    uint32_t var_38h;
+    int64_t var_40h;
+    int64_t var_48h;
+    int64_t var_50h;
+    int64_t var_60h;
+    int64_t var_68h;
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    __asm ("endbr64");
+    rbx = rdi;
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    rdi = rsp;
+    eax = strcmp (rbx);
+    xmm0 = *(loc..LC6);
+    xmm1 = *(rsp);
+    xmm2 = *(loc..LC7);
+    __asm ("mulsd xmm1, xmm0");
+    __asm ("addsd xmm1, xmm2");
+    __asm ("cvttsd2si eax, xmm1");
+    xmm1 = *((rsp + 8));
+    __asm ("mulsd xmm1, xmm0");
+    __asm ("mulsd xmm0, qword [rsp + 0x10]");
+    *(rbx) = al;
+    __asm ("addsd xmm1, xmm2");
+    __asm ("addsd xmm0, xmm2");
+    __asm ("cvttsd2si eax, xmm1");
+    *((rbx + 1)) = al;
+    __asm ("cvttsd2si eax, xmm0");
+    *((rbx + 2)) = al;
+    rax = *((rsp + 0x18));
+    rax ^= *(fs:0x28);
+    if (? == ?) {
+        return rax;
+    }
+    strcmp ();
+    __asm ("endbr64");
+    xmm4 = 0;
+    *((rsp + 0x48)) = rdx;
+    *((rsp + 8)) = xmm0;
+    rax = *(fs:0x28);
+    *((rsp + 0x68)) = rax;
+    eax = 0;
+    eax = 0x7d0;
+    if (esi > 0) {
+        eax = esi;
+    }
+    __asm ("comisd xmm4, xmm0");
+    *((rsp + 0x20)) = eax;
+    if (esi >= 0) {
+        xmm4 = *(loc..LC37);
+        *((rsp + 8)) = xmm4;
+    }
+    edi = 0x640;
+    rax = strcmp ();
+    edi = 0x960;
+    rbx = rax;
+    *((rsp + 0x38)) = rax;
+    rax = strcmp ();
+    xmm0 = 0;
+    r15 = rax;
+    rdi = rax;
+    color_components_from_gray ();
+    __asm ("movdqu xmm4, xmmword [r15]");
+    rax = *((r15 + 0x10));
+    *(rbx) = 0;
+    xmm0 = *(loc..LC4);
+    rdi = r15 + 0x18;
+    __asm ("movups xmmword [rbx + 8], xmm4");
+    xmm4 = 0;
+    __asm ("cvtsi2sd xmm4, dword [rsp + 0x20]");
+    *((rbx + 0x18)) = rax;
+    ebx = 0x64;
+    __asm ("divsd xmm0, xmm4");
+    *((rsp + 0x18)) = xmm4;
+    rax = color_components_from_gray ();
+    *((rsp + 0x30)) = 1;
+    xmm7 = 0;
+    *((rsp + 0x28)) = 0x20;
+    *((rsp + 0x34)) = 0x32;
+    *((rsp + 0x24)) = 0;
+label_1:
+    eax = *((rsp + 0x24));
+    r14d = 2;
+    r10d = rax + 2;
+    r12d = r10d;
+    if (*((rsp + 0x20)) < r10d) {
+        goto label_4;
+    }
+    xmm7 = 0;
+    __asm ("cvtsi2sd xmm7, r12d");
+    __asm ("divsd xmm7, qword [rsp + 0x18]");
+    if (ebx == r14d) {
+        goto label_5;
+    }
+label_0:
+    r13 = r15 + rbp;
+    __asm ("movapd xmm0, xmm7");
+    *((rsp + 0x10)) = xmm7;
+    rdi = r13;
+    color_components_from_gray ();
+    r11 = r15 + rbp - 0x18;
+    rax = r15 + rbp - 0x30;
+    xmm4 = *(r13);
+    xmm2 = *(rax);
+    xmm0 = *(r11);
+    xmm9 = *((rax + 8));
+    xmm1 = *((r11 + 8));
+    __asm ("comisd xmm0, xmm2");
+    xmm5 = *((r13 + 8));
+    xmm7 = *((rsp + 0x10));
+    xmm8 = .rodata.cst16;
+    if (ebx > r14d) {
+        __asm ("comisd xmm0, xmm4");
+        if (ebx > r14d) {
+            goto label_6;
+        }
+    }
+    __asm ("comisd xmm1, xmm9");
+    if (ebx > r14d) {
+        __asm ("comisd xmm1, xmm5");
+        if (ebx > r14d) {
+            goto label_6;
+        }
+    }
+    xmm10 = *((rax + 0x10));
+    xmm3 = *((r11 + 0x10));
+    xmm6 = *((r13 + 0x10));
+    __asm ("comisd xmm3, xmm10");
+    if (ebx > r14d) {
+        __asm ("comisd xmm3, xmm6");
+        if (ebx > r14d) {
+            goto label_6;
+        }
+    }
+    __asm ("comisd xmm2, xmm0");
+    if (ebx > r14d) {
+        __asm ("comisd xmm4, xmm0");
+        if (ebx > r14d) {
+            goto label_6;
+        }
+    }
+    __asm ("comisd xmm9, xmm1");
+    if (ebx > r14d) {
+        __asm ("comisd xmm5, xmm1");
+        if (ebx > r14d) {
+            goto label_6;
+        }
+    }
+    __asm ("comisd xmm10, xmm3");
+    if (ebx > r14d) {
+        __asm ("comisd xmm6, xmm3");
+        if (ebx > r14d) {
+            goto label_6;
+        }
+    }
+    xmm11 = *(r15);
+    xmm0 = 0;
+    rax = r15 + 0x18;
+    xmm1 = 0;
+    xmm10 = *((r15 + 8));
+    xmm9 = *((r15 + 0x10));
+    __asm ("cvtsi2sd xmm0, r14d");
+    edx = 1;
+    __asm ("subsd xmm4, xmm11");
+    __asm ("subsd xmm5, xmm10");
+    __asm ("subsd xmm6, xmm9");
+    __asm ("divsd xmm4, xmm0");
+    __asm ("divsd xmm5, xmm0");
+    __asm ("divsd xmm6, xmm0");
+    do {
+        xmm0 = 0;
+        __asm ("movapd xmm3, xmm4");
+        __asm ("movapd xmm2, xmm5");
+        __asm ("cvtsi2sd xmm0, edx");
+        __asm ("mulsd xmm3, xmm0");
+        __asm ("mulsd xmm2, xmm0");
+        __asm ("mulsd xmm0, xmm6");
+        __asm ("addsd xmm3, xmm11");
+        __asm ("subsd xmm3, qword [rax]");
+        __asm ("addsd xmm2, xmm10");
+        __asm ("subsd xmm2, qword [rax + 8]");
+        __asm ("addsd xmm0, xmm9");
+        __asm ("subsd xmm0, qword [rax + 0x10]");
+        __asm ("andpd xmm3, xmm8");
+        __asm ("maxsd xmm3, xmm1");
+        __asm ("andpd xmm2, xmm8");
+        __asm ("andpd xmm0, xmm8");
+        __asm ("maxsd xmm2, xmm3");
+        __asm ("maxsd xmm0, xmm2");
+        __asm ("comisd xmm0, xmmword [rsp + 8]");
+        __asm ("movapd xmm1, xmm0");
+        if (ebx >= r14d) {
+            goto label_7;
+        }
+        edx++;
+        rax += 0x18;
+    } while (edx != r14d);
+label_7:
+    __asm ("comisd xmm1, xmmword [rsp + 8]");
+    if (edx > r14d) {
+        goto label_6;
+    }
+    eax = r14 + 1;
+    r12d++;
+    rbp += 0x18;
+    if (r12d > *((rsp + 0x20))) {
+        goto label_8;
+    }
+    xmm7 = 0;
+    r14d = eax;
+    __asm ("cvtsi2sd xmm7, r12d");
+    __asm ("divsd xmm7, qword [rsp + 0x18]");
+    if (ebx != r14d) {
+        goto label_0;
+    }
+label_5:
+    ebx += 0x32;
+    rdi = r15;
+    *((rsp + 0x10)) = xmm7;
+    rax = (int64_t) ebx;
+    rsi = rax * 3;
+    rsi <<= 3;
+    rax = strcmp ();
+    xmm7 = *((rsp + 0x10));
+    r15 = rax;
+    goto label_0;
+label_6:
+    r14d--;
+label_3:
+    esi = *((rsp + 0x30));
+    if (*((rsp + 0x34)) == esi) {
+        goto label_9;
+    }
+    do {
+label_2:
+        rdi = *((rsp + 0x28));
+        rax = *((rsp + 0x38));
+        __asm ("movdqu xmm0, xmmword [r11]");
+        rsi = *((r11 + 0x10));
+        rax += rdi;
+        rdi += 0x20;
+        *((rax + 0x18)) = rsi;
+        *(rax) = xmm7;
+        __asm ("movups xmmword [rax + 8], xmm0");
+        eax = *((rsp + 0x30));
+        __asm ("movups xmmword [r15], xmm0");
+        r9d = rax + 1;
+        rax = *((r11 + 0x10));
+        *((rsp + 0x28)) = rdi;
+        *((r15 + 0x10)) = rax;
+        __asm ("movdqu xmm4, xmmword [r13]");
+        __asm ("movups xmmword [r15 + 0x18], xmm4");
+        rax = *((r13 + 0x10));
+        *((r15 + 0x28)) = rax;
+        eax = *((rsp + 0x24));
+        eax = rax + r14 + 1;
+        *((rsp + 0x24)) = eax;
+        if (*((rsp + 0x20)) <= eax) {
+            goto label_10;
+        }
+        *((rsp + 0x30)) = r9d;
+        goto label_1;
+label_8:
+        rax = (int64_t) eax;
+        esi = *((rsp + 0x30));
+        rcx = rax * 3;
+        rcx <<= 3;
+        r11 = r15 + rcx - 0x18;
+        r13 = r15 + rcx;
+    } while (*((rsp + 0x34)) != esi);
+label_9:
+    *((rsp + 0x34)) += 0x19;
+    rsi = *((rsp + 0x34));
+    rdi = *((rsp + 0x38));
+    *((rsp + 0x10)) = r11;
+    rsi <<= 5;
+    *((rsp + 0x40)) = xmm7;
+    rax = strcmp ();
+    xmm7 = *((rsp + 0x40));
+    r11 = *((rsp + 0x10));
+    *((rsp + 0x38)) = rax;
+    goto label_2;
+label_10:
+    rax = *(loc..LC4);
+    rdi = rsp + 0x50;
+    *((rsp + 8)) = r9d;
+    xmm0 = rax;
+    color_components_from_gray ();
+    r13d = *((rsp + 0x30));
+    r9 = *((rsp + 8));
+    r13d += 2;
+    while (1) {
+        rax = *((rsp + 0x38));
+        r9 <<= 5;
+        rdx = *((rsp + 0x60));
+        rdi = r15;
+        rcx = *(loc..LC4);
+        __asm ("movdqa xmm4, xmmword [rsp + 0x50]");
+        rax += r9;
+        *(rax) = rcx;
+        *((rax + 0x18)) = rdx;
+        __asm ("movups xmmword [rax + 8], xmm4");
+        strcmp ();
+        rax = *((rsp + 0x48));
+        *(rax) = r13d;
+        rax = *((rsp + 0x68));
+        rax ^= *(fs:0x28);
+        if (rax != 0) {
+            goto label_11;
+        }
+        rax = *((rsp + 0x38));
+        return rax;
+label_4:
+        r11 = r15 + 0x18;
+        r13 = r15 + 0x30;
+        r14d = 1;
+        goto label_3;
+        rdi = *((rsp + 0x38));
+        rsi = (int64_t) r13d;
+        rsi <<= 5;
+        rax = strcmp ();
+        r9 = *((rsp + 8));
+        *((rsp + 0x38)) = rax;
+    }
+label_11:
+    rax = strcmp ();
+    __asm ("endbr64");
+    rax = _text ();
+    xmm1 = *(loc..LC6);
+    xmm0 = *(rdi);
+    __asm ("mulsd xmm0, xmm1");
+    __asm ("cvttsd2si rax, xmm0");
+    xmm0 = *((rdi + 8));
+    __asm ("mulsd xmm0, xmm1");
+    __asm ("mulsd xmm1, qword [rdi + 0x10]");
+    edx = eax;
+    edx <<= 0x10;
+    __asm ("cvttsd2si rax, xmm0");
+    eax <<= 8;
+    eax += edx;
+    __asm ("cvttsd2si rdx, xmm1");
+    eax += edx;
+    return rax;
+}
+
+

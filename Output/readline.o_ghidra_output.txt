@@ -1,0 +1,549 @@
+undefined8 sym.mbwidth(uint32_t arg1)
+{
+    char cVar1;
+    undefined4 in_RDI;
+    undefined8 uVar2;
+    
+    // [01] -r-x section size 7336 named .text
+    if (_reloc.encoding == 0xf) {
+        cVar1 = func_0x080191bd((int32_t)(char)*(uint8_t *)CONCAT44(in_RDI, arg1));
+        uVar2 = 1;
+        if (cVar1 != '\0') {
+            uVar2 = 2;
+        }
+        return uVar2;
+    }
+    if ((_reloc.encoding == 0x10) && (0xe2 < *(uint8_t *)CONCAT44(in_RDI, arg1))) {
+        return 2;
+    }
+    return 1;
+}
+
+
+int32_t sym.backspace(void)
+{
+    uint8_t uVar1;
+    char cVar2;
+    int32_t iVar3;
+    uint64_t uVar4;
+    int64_t iVar5;
+    int64_t *piVar6;
+    int64_t iVar7;
+    uint32_t arg1;
+    int32_t iVar8;
+    
+    if (_reloc.encoding == 0xf) {
+        iVar3 = 0;
+        uVar4 = 0;
+        iVar7 = -1;
+        iVar8 = 1;
+        if (_obj.cur_pos != 0) {
+            do {
+                cVar2 = func_0x080191bd((int32_t)*(char *)(_obj.cur_line + uVar4));
+                iVar8 = (cVar2 != '\0') + 1;
+                iVar3 = iVar3 + iVar8;
+                uVar4 = SEXT48(iVar3);
+            } while (uVar4 < _obj.cur_pos);
+            iVar7 = _obj.cur_pos - (int64_t)iVar8;
+        }
+        _obj.cur_pos = iVar7;
+        func_0x080191bd(8, _reloc.stderr);
+        iVar3 = sym.mbwidth((int32_t)_obj.cur_pos + (int32_t)_obj.cur_line);
+        if (1 < iVar3) goto code_r0x08000189;
+    } else {
+        if (_reloc.encoding == 0x10) {
+            iVar7 = _obj.cur_pos - 1;
+            do {
+                iVar5 = iVar7;
+                uVar1 = *(uint8_t *)(_obj.cur_line + iVar5);
+                arg1 = (int32_t)_obj.cur_line + (int32_t)iVar5;
+                iVar8 = (int32_t)_obj.cur_pos - (int32_t)iVar5;
+                if ((uVar1 & 0xc0) == 0xc0) goto code_r0x080001ed;
+            } while (((char)uVar1 < '\0') && (iVar7 = iVar5 + -1, iVar5 != 0));
+            _obj.cur_pos = iVar5;
+            piVar6 = (int64_t *)func_0x080191bd();
+            iVar5 = _obj.cur_pos;
+            if ((*(uint8_t *)(*piVar6 + 1 + (uint64_t)(uint32_t)uVar1 * 2) & 0x40) != 0) {
+code_r0x080001ed:
+                _obj.cur_pos = iVar5;
+                func_0x080191bd(8, _reloc.stderr);
+                arg1 = (int32_t)_obj.cur_pos + (int32_t)_obj.cur_line;
+            }
+            iVar3 = sym.mbwidth(arg1);
+            if (iVar3 < 2) {
+                return iVar8;
+            }
+code_r0x08000189:
+            func_0x080191bd(8, _reloc.stderr);
+            return iVar8;
+        }
+        _obj.cur_pos = _obj.cur_pos - 1;
+        iVar8 = 1;
+        func_0x080191bd(8, _reloc.stderr);
+    }
+    return iVar8;
+}
+
+
+void sym.redraw_line(undefined8 param_1)
+{
+    uint64_t uVar1;
+    
+    func_0x080191bd(param_1, _reloc.stderr);
+    func_0x080191bd(_obj.cur_line, _reloc.stderr);
+    uVar1 = _obj.cur_pos;
+    _obj.cur_pos = _obj.max_pos;
+    while (uVar1 < _obj.cur_pos) {
+        sym.backspace();
+    }
+    return;
+}
+
+
+void sym.fix_line(void)
+{
+    char *pcVar1;
+    uint64_t uVar2;
+    
+    uVar2 = _obj.cur_pos;
+    if (_obj.cur_pos < _obj.max_pos) {
+        do {
+            pcVar1 = (char *)(_obj.cur_line + uVar2);
+            uVar2 = uVar2 + 1;
+            func_0x080191bd((int32_t)*pcVar1, _reloc.stderr);
+        } while (uVar2 < _obj.max_pos);
+    }
+    func_0x080191bd(0x20, _reloc.stderr);
+    func_0x080191bd(0x20, _reloc.stderr);
+    if ((obj.search_mode != (code)0x0) && (_obj.search_result_width != 0)) {
+        uVar2 = 0;
+        do {
+            uVar2 = uVar2 + 1;
+            func_0x080191bd(0x20, _reloc.stderr);
+        } while (uVar2 < (uint64_t)(int64_t)_obj.search_result_width);
+        if (_obj.search_result_width != 0) {
+            uVar2 = 0;
+            do {
+                uVar2 = uVar2 + 1;
+                func_0x080191bd(8, _reloc.stderr);
+            } while (uVar2 < (uint64_t)(int64_t)_obj.search_result_width);
+        }
+    }
+    func_0x080191bd(8, _reloc.stderr);
+    func_0x080191bd(8, _reloc.stderr);
+    uVar2 = _obj.cur_pos;
+    _obj.cur_pos = _obj.max_pos;
+    while (uVar2 < _obj.cur_pos) {
+        sym.backspace();
+    }
+    return;
+}
+
+
+
+
+
+
+int32_t sym.char_seqlen(void)
+{
+    uint64_t uVar1;
+    char cVar2;
+    uint64_t uVar3;
+    
+    if (_reloc.encoding == 0xf) {
+        cVar2 = func_0x080191bd((int32_t)*(char *)(_obj.cur_line + _obj.cur_pos));
+        return (cVar2 != '\0') + 1;
+    }
+    if (_reloc.encoding != 0x10) {
+        return 1;
+    }
+    uVar1 = (int64_t)((int32_t)_obj.cur_pos + 1);
+    do {
+        uVar3 = uVar1;
+        if (((*(uint8_t *)(_obj.cur_line + uVar3) & 0xc0) == 0xc0) || (-1 < (char)*(uint8_t *)(_obj.cur_line + uVar3)))
+        break;
+        uVar1 = uVar3 + 1;
+    } while (uVar3 < _obj.max_pos);
+    return (int32_t)uVar3 - (int32_t)_obj.cur_pos;
+}
+
+
+void sym.clear_line(int64_t arg1)
+{
+    undefined *puVar1;
+    int32_t iVar2;
+    undefined *puVar3;
+    bool bVar4;
+    
+    func_0x080191bd(0xd, _reloc.stderr);
+    func_0x080191bd(arg1, _reloc.stderr);
+    _obj.cur_pos = 0;
+    if (_obj.max_pos != 0) {
+        do {
+            func_0x080191bd(0x20, _reloc.stderr);
+            iVar2 = sym.mbwidth((int32_t)_obj.cur_pos + (int32_t)_obj.cur_line);
+            if (1 < iVar2) {
+                func_0x080191bd(0x20, _reloc.stderr);
+            }
+            iVar2 = sym.char_seqlen();
+            puVar1 = _obj.cur_line;
+            _obj.cur_pos = (int64_t)iVar2 + _obj.cur_pos;
+        } while (_obj.cur_pos < _obj.max_pos);
+        if (_obj.max_pos != 0) {
+            puVar3 = _obj.cur_line + (_obj.max_pos - 1);
+            do {
+                *puVar3 = 0;
+                bVar4 = puVar3 != puVar1;
+                puVar3 = puVar3 + -1;
+            } while (bVar4);
+            _obj.max_pos = 0;
+        }
+    }
+    func_0x080191bd(0xd, _reloc.stderr);
+    func_0x080191bd(arg1, _reloc.stderr);
+    _obj.cur_pos = 0;
+    return;
+}
+
+
+void sym.switch_prompt(int64_t arg1, int64_t arg2)
+{
+    int32_t iVar1;
+    int32_t iVar2;
+    int32_t iVar3;
+    uint64_t uVar4;
+    
+    if ((obj.search_mode != (code)0x0) && (_obj.search_result_width != -3)) {
+        uVar4 = 0;
+        do {
+            uVar4 = uVar4 + 1;
+            func_0x080191bd(0x20, _reloc.stderr);
+        } while (uVar4 < (int64_t)_obj.search_result_width + 3U);
+        if ((int64_t)_obj.search_result_width != -3) {
+            uVar4 = 0;
+            do {
+                uVar4 = uVar4 + 1;
+                func_0x080191bd(8, _reloc.stderr);
+            } while (uVar4 < (int64_t)_obj.search_result_width + 3U);
+        }
+    }
+    sym.clear_line(arg1);
+    func_0x080191bd(0xd, _reloc.stderr);
+    func_0x080191bd(arg2, _reloc.stderr);
+    _obj.cur_pos = 0;
+    iVar1 = func_0x080191bd(arg1);
+    iVar2 = func_0x080191bd(arg2);
+    iVar1 = iVar1 - iVar2;
+    iVar2 = 0;
+    if (-1 < iVar1) {
+        iVar2 = iVar1;
+    }
+    iVar3 = 0;
+    if (0 < iVar1) {
+        do {
+            iVar3 = iVar3 + 1;
+            func_0x080191bd(0x20, _reloc.stderr);
+        } while (iVar3 < iVar2);
+        iVar1 = 0;
+        do {
+            iVar1 = iVar1 + 1;
+            func_0x080191bd(8, _reloc.stderr);
+        } while (iVar1 < iVar2);
+    }
+    return;
+}
+
+
+void sym.delete_previous_word(void)
+{
+    char *pcVar1;
+    int64_t iVar2;
+    int32_t iVar3;
+    uint64_t uVar4;
+    uint64_t uVar5;
+    uint64_t uVar6;
+    int64_t iVar7;
+    
+    uVar4 = _obj.cur_pos;
+    if (_obj.cur_pos == 0) {
+        return;
+    }
+    do {
+        if (*(char *)(_obj.cur_line + -1 + _obj.cur_pos) != ' ') {
+            if (_obj.cur_pos != 0) goto code_r0x08000908;
+            uVar5 = 0;
+            iVar7 = _obj.max_pos - uVar4;
+            uVar6 = _obj.cur_pos;
+            if (_obj.max_pos != 0) goto code_r0x08000938;
+            goto code_r0x08000290;
+        }
+        sym.backspace();
+    } while (_obj.cur_pos != 0);
+    goto code_r0x08000920;
+    while (sym.backspace(), _obj.cur_pos != 0) {
+code_r0x08000908:
+        if (*(char *)(_obj.cur_line + -1 + _obj.cur_pos) == ' ') {
+            if (uVar4 == _obj.cur_pos) {
+                return;
+            }
+            break;
+        }
+    }
+code_r0x08000920:
+    iVar7 = _obj.max_pos - uVar4;
+    uVar6 = _obj.cur_pos;
+    uVar5 = _obj.cur_pos;
+    if (_obj.cur_pos < _obj.max_pos) {
+code_r0x08000938:
+        do {
+            func_0x080191bd(0x20, _reloc.stderr);
+            iVar3 = sym.mbwidth((int32_t)_obj.cur_pos + (int32_t)_obj.cur_line);
+            if (1 < iVar3) {
+                func_0x080191bd(0x20, _reloc.stderr);
+            }
+            iVar3 = sym.char_seqlen();
+            _obj.cur_pos = (int64_t)iVar3 + _obj.cur_pos;
+            uVar5 = _obj.cur_pos;
+        } while (_obj.cur_pos < _obj.max_pos);
+    }
+    while (_obj.cur_pos = uVar5, uVar6 < uVar5) {
+        sym.backspace();
+        uVar5 = _obj.cur_pos;
+    }
+code_r0x08000290:
+    iVar2 = _obj.cur_line;
+    uVar6 = iVar7 + uVar5;
+    func_0x080191bd(_obj.cur_line + uVar5, _obj.cur_line + uVar4, iVar7);
+    func_0x080191bd(iVar2 + uVar6, 0, uVar4 - uVar5);
+    uVar4 = _obj.cur_pos;
+    _obj.max_pos = uVar6;
+    if (_obj.cur_pos < uVar6) {
+        do {
+            pcVar1 = (char *)(_obj.cur_line + uVar4);
+            uVar4 = uVar4 + 1;
+            func_0x080191bd((int32_t)*pcVar1, _reloc.stderr);
+        } while (uVar4 < _obj.max_pos);
+    }
+    func_0x080191bd(0x20, _reloc.stderr);
+    func_0x080191bd(0x20, _reloc.stderr);
+    if ((obj.search_mode != (code)0x0) && (_obj.search_result_width != 0)) {
+        uVar4 = 0;
+        do {
+            uVar4 = uVar4 + 1;
+            func_0x080191bd(0x20, _reloc.stderr);
+        } while (uVar4 < (uint64_t)(int64_t)_obj.search_result_width);
+        if (_obj.search_result_width != 0) {
+            uVar4 = 0;
+            do {
+                uVar4 = uVar4 + 1;
+                func_0x080191bd(8, _reloc.stderr);
+            } while (uVar4 < (uint64_t)(int64_t)_obj.search_result_width);
+        }
+    }
+    func_0x080191bd(8, _reloc.stderr);
+    func_0x080191bd(8, _reloc.stderr);
+    uVar4 = _obj.cur_pos;
+    _obj.cur_pos = _obj.max_pos;
+    while (uVar4 < _obj.cur_pos) {
+        sym.backspace();
+    }
+    return;
+}
+
+
+void sym.set_termio.part.0(int64_t arg7, int64_t arg8, int64_t arg9)
+{
+    unkbyte6 Var1;
+    
+    func_0x080191bd(arg7, arg8, arg9, 0, 0x5401, obj.orig_termio);
+    Var1 = CONCAT15(*(undefined *)0x8001f95, CONCAT23(*(undefined2 *)0x8001f93, *(unkbyte3 *)0x8001f90));
+    _obj.rl_termio = CONCAT44(*(undefined4 *)0x8001f84, _obj.orig_termio) & 0xffffffffffffe9e5 | 5;
+    *(undefined8 *)0x8001f70 = *(undefined8 *)0x8001fb0;
+    *(unkuint3 *)0x8001f58 = (unkuint3)*(undefined4 *)0x8001f98;
+    *(uint64_t *)0x8001f58 =
+         CONCAT17(*(undefined *)0x8001f9f, 
+                  CONCAT16(*(undefined *)0x8001f9e, 
+                           CONCAT15(*(undefined *)0x8001f9d, CONCAT14(*(undefined *)0x8001f9c, *(undefined4 *)0x8001f98)
+                                   ))) & 0xffffffff00000000 | (uint64_t)*(unkuint3 *)0x8001f58;
+    *(undefined4 *)0x8001f78 = *(undefined4 *)0x8001fb8;
+    *(uint64_t *)0x8001f48 = *(uint64_t *)0x8001f88 & 0xffffff05ffffffff | 0x100000000;
+    *(undefined8 *)0x8001f50 = CONCAT26(0x100, Var1);
+    *(undefined *)0x8001f24 = *(undefined *)0x8001f95;
+    *(undefined8 *)0x8001f60 = *(undefined8 *)0x8001fa0;
+    *(undefined8 *)0x8001f68 = *(undefined8 *)0x8001fa8;
+    *(undefined2 *)0x8001f22 = *(undefined2 *)0x8001f93;
+    *(undefined *)0x8001f2e = *(undefined *)0x8001f9f;
+    *(undefined *)0x8001f2c = *(undefined *)0x8001f9d;
+    *(undefined *)0x8001f2a = (undefined)((uint32_t)*(undefined4 *)0x8001f98 >> 0x18);
+    func_0x080191bd(CONCAT44(*(undefined4 *)0x8001f84, _obj.orig_termio), CONCAT26(*(undefined2 *)0x8001f96, Var1), 
+                    *(undefined8 *)0x8001fa0, 0, 0x5403, obj.rl_termio);
+    _obj.term_set = 1;
+    return;
+}
+
+
+void sym.reset_termio.part.0(void)
+{
+    func_0x080191bd(0, 0x5403, obj.orig_termio);
+    _obj.term_set = 0;
+    return;
+}
+
+
+void sym.extend_cur_line(void)
+{
+    int64_t iVar1;
+    
+    iVar1 = func_0x080191bd(_obj.cur_line, _obj.line_len + 0x400, 0);
+    if (iVar1 != 0) {
+        _obj.line_len = _obj.line_len + 0x400;
+        _obj.cur_line = iVar1;
+        return;
+    }
+    if (_obj.term_set == 1) goto code_r0x08000b96;
+    do {
+        func_0x080191bd(0xffffffff, str.Can_t_extend_readline_length);
+code_r0x08000b96:
+        sym.reset_termio.part.0();
+    } while( true );
+}
+
+
+void sym.copy_line(int64_t arg1)
+{
+    int64_t iVar1;
+    undefined8 uVar2;
+    
+    while( true ) {
+        iVar1 = func_0x080191bd(arg1);
+        if (iVar1 + 1U <= _obj.line_len) break;
+        sym.extend_cur_line();
+    }
+    uVar2 = func_0x080191bd(_obj.cur_line, arg1);
+    func_0x080191bd(uVar2, _reloc.stderr);
+    _obj.max_pos = func_0x080191bd(_obj.cur_line);
+    _obj.cur_pos = _obj.max_pos;
+    return;
+}
+
+
+void sym.delete_forward.part.0(void)
+{
+    char *pcVar1;
+    undefined *puVar2;
+    int64_t iVar3;
+    int32_t iVar4;
+    undefined *puVar5;
+    undefined *puVar6;
+    uint64_t uVar7;
+    
+    iVar4 = sym.char_seqlen();
+    iVar3 = _obj.cur_line;
+    uVar7 = _obj.max_pos - (int64_t)iVar4;
+    _obj.max_pos = uVar7;
+    if (_obj.cur_pos < uVar7) {
+        puVar2 = (undefined *)(_obj.cur_line + uVar7);
+        puVar5 = (undefined *)(_obj.cur_pos + _obj.cur_line);
+        do {
+            puVar6 = puVar5 + 1;
+            *puVar5 = puVar5[iVar4];
+            puVar5 = puVar6;
+        } while (puVar6 != puVar2);
+    }
+    *(undefined *)(iVar3 + uVar7) = 0;
+    uVar7 = _obj.cur_pos;
+    if (_obj.cur_pos < _obj.max_pos) {
+        do {
+            pcVar1 = (char *)(_obj.cur_line + uVar7);
+            uVar7 = uVar7 + 1;
+            func_0x080191bd((int32_t)*pcVar1, _reloc.stderr);
+        } while (uVar7 < _obj.max_pos);
+    }
+    func_0x080191bd(0x20, _reloc.stderr);
+    func_0x080191bd(0x20, _reloc.stderr);
+    if ((obj.search_mode != (code)0x0) && (_obj.search_result_width != 0)) {
+        uVar7 = 0;
+        do {
+            uVar7 = uVar7 + 1;
+            func_0x080191bd(0x20, _reloc.stderr);
+        } while (uVar7 < (uint64_t)(int64_t)_obj.search_result_width);
+        if (_obj.search_result_width != 0) {
+            uVar7 = 0;
+            do {
+                uVar7 = uVar7 + 1;
+                func_0x080191bd(8, _reloc.stderr);
+            } while (uVar7 < (uint64_t)(int64_t)_obj.search_result_width);
+        }
+    }
+    func_0x080191bd(8, _reloc.stderr);
+    func_0x080191bd(8, _reloc.stderr);
+    uVar7 = _obj.cur_pos;
+    _obj.cur_pos = _obj.max_pos;
+    while (uVar7 < _obj.cur_pos) {
+        sym.backspace();
+    }
+    return;
+}
+
+
+void sym.delete_backward.part.0(void)
+{
+    char *pcVar1;
+    undefined *puVar2;
+    int64_t iVar3;
+    int32_t iVar4;
+    undefined *puVar5;
+    undefined *puVar6;
+    uint64_t uVar7;
+    
+    iVar4 = sym.backspace();
+    iVar3 = _obj.cur_line;
+    uVar7 = _obj.max_pos - (int64_t)iVar4;
+    _obj.max_pos = uVar7;
+    if (_obj.cur_pos < uVar7) {
+        puVar2 = (undefined *)(_obj.cur_line + uVar7);
+        puVar5 = (undefined *)(_obj.cur_pos + _obj.cur_line);
+        do {
+            puVar6 = puVar5 + 1;
+            *puVar5 = puVar5[iVar4];
+            puVar5 = puVar6;
+        } while (puVar6 != puVar2);
+    }
+    *(undefined *)(iVar3 + uVar7) = 0;
+    uVar7 = _obj.cur_pos;
+    if (_obj.cur_pos < _obj.max_pos) {
+        do {
+            pcVar1 = (char *)(_obj.cur_line + uVar7);
+            uVar7 = uVar7 + 1;
+            func_0x080191bd((int32_t)*pcVar1, _reloc.stderr);
+        } while (uVar7 < _obj.max_pos);
+    }
+    func_0x080191bd(0x20, _reloc.stderr);
+    func_0x080191bd(0x20, _reloc.stderr);
+    if ((obj.search_mode != (code)0x0) && (_obj.search_result_width != 0)) {
+        uVar7 = 0;
+        do {
+            uVar7 = uVar7 + 1;
+            func_0x080191bd(0x20, _reloc.stderr);
+        } while (uVar7 < (uint64_t)(int64_t)_obj.search_result_width);
+        if (_obj.search_result_width != 0) {
+            uVar7 = 0;
+            do {
+                uVar7 = uVar7 + 1;
+                func_0x080191bd(8, _reloc.stderr);
+            } while (uVar7 < (uint64_t)(int64_t)_obj.search_result_width);
+        }
+    }
+    func_0x080191bd(8, _reloc.stderr);
+    func_0x080191bd(8, _reloc.stderr);
+    uVar7 = _obj.cur_pos;
+    _obj.cur_pos = _obj.max_pos;
+    while (uVar7 < _obj.cur_pos) {
+        sym.backspace();
+    }
+    return;
+}
+
+
+
+

@@ -1,0 +1,381 @@
+int32_t sym.reverse_sort(int64_t arg1, int64_t arg2)
+{
+    int32_t iVar1;
+    
+    iVar1 = 1;
+    if (*(double *)arg2 <= *(double *)arg1) {
+        iVar1 = -(uint32_t)(*(double *)arg2 < *(double *)arg1);
+    }
+    return iVar1;
+}
+
+
+bool sym.chk_contour_kind(int64_t arg1)
+{
+    double *pdVar1;
+    bool bVar2;
+    double *pdVar3;
+    char in_SIL;
+    
+    bVar2 = true;
+    pdVar1 = (double *)arg1;
+    if (in_SIL == '\0') {
+        do {
+            pdVar3 = pdVar1;
+            pdVar1 = (double *)pdVar3[2];
+        } while ((double *)pdVar3[2] != (double *)0x0);
+        if ((double)((uint64_t)(*pdVar3 - *(double *)arg1) & _reloc..LC0) <
+            (double)((uint64_t)(_obj.x_max - _obj.x_min) & _reloc..LC0) * _reloc..LC1) {
+            return (double)((uint64_t)(pdVar3[1] - *(double *)(arg1 + 8)) & _reloc..LC0) <
+                   (double)((uint64_t)(_obj.y_max - _obj.y_min) & _reloc..LC0) * _reloc..LC1;
+        }
+        bVar2 = false;
+    }
+    return bVar2;
+}
+
+
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable arg3 to Decompiler type: Unknown type identifier
+// signed
+
+void sym.solve_cubic_2(int64_t arg1, int64_t arg2, undefined8 arg3)
+{
+    double dVar1;
+    double *pdVar2;
+    int64_t iVar3;
+    double *pdVar4;
+    double *pdVar5;
+    int64_t iVar6;
+    double *pdVar7;
+    uint64_t uVar8;
+    int64_t iVar9;
+    double dVar10;
+    
+    iVar9 = (int64_t)(int32_t)arg3;
+    uVar8 = (uint64_t)((int32_t)arg3 - 3);
+    iVar6 = iVar9 * 8;
+    pdVar7 = (double *)(arg2 + -8 + iVar6);
+    dVar10 = *pdVar7;
+    if (2 < (int32_t)arg3) {
+        uVar8 = (uint64_t)((int32_t)arg3 - 3);
+        pdVar4 = (double *)(arg2 + 8);
+        pdVar5 = (double *)arg1;
+        do {
+            pdVar2 = pdVar4 + 1;
+            *pdVar4 = *pdVar4 - pdVar5[2] * pdVar4[-1];
+            dVar10 = dVar10 - pdVar4[-1] * *pdVar5;
+            pdVar4 = pdVar2;
+            pdVar5 = pdVar5 + 3;
+        } while ((double *)(arg2 + 0x10 + uVar8 * 8) != pdVar2);
+    }
+    if ((int32_t)arg3 < 2) {
+        if ((int32_t)arg3 != 1) {
+            dVar10 = *pdVar7;
+            goto code_r0x080001eb;
+        }
+    } else {
+        *pdVar7 = dVar10 - *(double *)(arg1 + -0x30 + iVar9 * 0x18) * *(double *)(arg2 + -0x10 + iVar6);
+    }
+    pdVar4 = (double *)(arg1 + 8);
+    iVar3 = 0;
+    do {
+        *(double *)(arg2 + iVar3 * 8) = *(double *)(arg2 + iVar3 * 8) / *pdVar4;
+        iVar3 = iVar3 + 1;
+        pdVar4 = pdVar4 + 3;
+    } while ((int32_t)iVar3 < (int32_t)arg3);
+    dVar10 = *pdVar7;
+    if (1 < (int32_t)arg3) {
+        pdVar7 = (double *)(arg2 + -0x10 + iVar6);
+        *pdVar7 = *pdVar7 - *(double *)(arg1 + -0x30 + iVar9 * 0x18) * dVar10;
+    }
+code_r0x080001eb:
+    if (-1 < (int32_t)uVar8) {
+        iVar6 = (int64_t)(int32_t)uVar8 * 8;
+        pdVar7 = (double *)(arg1 + -0x48 + iVar9 * 0x18);
+        pdVar4 = (double *)(arg2 + iVar6);
+        do {
+            dVar1 = *pdVar7;
+            pdVar5 = pdVar7 + 2;
+            pdVar2 = pdVar4 + -1;
+            pdVar7 = pdVar7 + -3;
+            *pdVar4 = *pdVar4 - (*pdVar5 * pdVar4[1] + dVar1 * dVar10);
+            pdVar4 = pdVar2;
+        } while (pdVar2 != (double *)(arg2 + -8 + iVar6 + uVar8 * -8));
+    }
+    return;
+}
+
+
+void sym.end_crnt_cntr(void)
+{
+    undefined8 uVar1;
+    undefined8 uVar2;
+    undefined8 *puVar3;
+    int64_t iVar4;
+    undefined8 *puVar5;
+    undefined8 *puVar6;
+    undefined8 *puVar7;
+    
+    puVar3 = (undefined8 *)func_0x08024e92(0x40, "");
+    iVar4 = func_0x08024e92();
+    puVar3[1] = iVar4;
+    uVar2 = _obj.contour_level;
+    if (0 < _obj.crnt_cntr_pt_index) {
+        puVar5 = (undefined8 *)obj.crnt_cntr;
+        puVar6 = (undefined8 *)(iVar4 + 8);
+        do {
+            puVar7 = puVar6 + 8;
+            *puVar6 = *puVar5;
+            uVar1 = puVar5[1];
+            puVar6[2] = uVar2;
+            puVar6[1] = uVar1;
+            puVar5 = puVar5 + 2;
+            puVar6 = puVar7;
+        } while (puVar7 != (undefined8 *)(iVar4 + 0x48 + (uint64_t)(_obj.crnt_cntr_pt_index - 1) * 0x40));
+    }
+    *(int32_t *)((int64_t)puVar3 + 0x34) = _obj.crnt_cntr_pt_index;
+    puVar5 = puVar3;
+    *puVar3 = _obj.contour_list;
+    _obj.contour_list = puVar5;
+    *(undefined2 *)(puVar3 + 2) = 0;
+    _obj.crnt_cntr_pt_index = 0;
+    return;
+}
+
+
+void sym.add_cntr_point(int64_t arg7, int64_t arg8)
+{
+    int32_t iVar1;
+    int32_t iVar2;
+    
+    iVar1 = _obj.crnt_cntr_pt_index;
+    if (_obj.crnt_cntr_pt_index < 99) {
+        iVar1 = _obj.crnt_cntr_pt_index * 2;
+        _obj.crnt_cntr_pt_index = _obj.crnt_cntr_pt_index + 1;
+        iVar2 = iVar1 + 1;
+    } else {
+        sym.end_crnt_cntr();
+        _obj.crnt_cntr_pt_index = 2;
+        _obj.crnt_cntr = *(undefined8 *)(obj.crnt_cntr + (int64_t)(iVar1 * 2 + -2) * 8);
+        iVar2 = 3;
+        *(undefined8 *)0x8002748 = *(undefined8 *)(obj.crnt_cntr + (int64_t)(iVar1 * 2 + -1) * 8);
+        iVar1 = 2;
+    }
+    *(int64_t *)(obj.crnt_cntr + (int64_t)iVar1 * 8) = arg7;
+    *(int64_t *)(obj.crnt_cntr + (int64_t)iVar2 * 8) = arg8;
+    return;
+}
+
+
+void sym.add_edge.part.0(int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4)
+{
+    int64_t iVar1;
+    undefined8 *puVar2;
+    
+    puVar2 = (undefined8 *)func_0x08024e92(0x30, "");
+    puVar2[4] = 0;
+    iVar1 = *(int64_t *)arg4;
+    *puVar2 = 0;
+    puVar2[1] = 0;
+    puVar2[2] = arg1;
+    puVar2[3] = arg2;
+    *(undefined4 *)((int64_t)puVar2 + 0x2c) = 1;
+    if (iVar1 != 0) {
+        *(undefined8 **)(iVar1 + 0x20) = puVar2;
+        *(undefined8 **)arg4 = puVar2;
+        return;
+    }
+    *(undefined8 **)arg3 = puVar2;
+    *(undefined8 **)arg4 = puVar2;
+    return;
+}
+
+
+void sym.update_cntr_pt.isra.0(int64_t arg1, int64_t arg2)
+{
+    double dVar1;
+    double dVar2;
+    double dVar3;
+    double *pdVar4;
+    double in_XMM0_Qa;
+    double dVar5;
+    undefined8 in_XMM0_Qb;
+    undefined auVar6 [16];
+    
+    dVar3 = _reloc..LC5;
+    dVar5 = (in_XMM0_Qa - *(double *)(*(int64_t *)arg1 + 0x18)) /
+            (*(double *)(*(int64_t *)arg2 + 0x18) - *(double *)(*(int64_t *)arg1 + 0x18));
+    if (dVar5 < 0.00000000) {
+        dVar5 = 0.00000000;
+    } else {
+        auVar6 = minsd(ZEXT816((uint64_t)_reloc..LC5), CONCAT88(in_XMM0_Qb, dVar5));
+        dVar5 = SUB168(auVar6, 0);
+    }
+    pdVar4 = (double *)func_0x08024e92(dVar5, _reloc..LC5, 0x18, "");
+    dVar1 = *(double *)(*(int64_t *)arg2 + 0x10);
+    dVar2 = *(double *)(*(int64_t *)arg1 + 0x10);
+    *pdVar4 = *(double *)(*(int64_t *)arg2 + 8) * dVar5 + *(double *)(*(int64_t *)arg1 + 8) * (dVar3 - dVar5);
+    pdVar4[1] = dVar5 * dVar1 + (dVar3 - dVar5) * dVar2;
+    return;
+}
+
+
+double * sym.trace_contour(int64_t arg7, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3,
+                          undefined8 placeholder_4, undefined8 placeholder_5, undefined8 placeholder_6,
+                          undefined8 placeholder_7, int64_t arg1, int64_t arg2)
+{
+    int64_t **ppiVar1;
+    uint64_t uVar2;
+    double *pdVar3;
+    int64_t *piVar4;
+    double *pdVar5;
+    int64_t **ppiVar6;
+    char in_DL;
+    int64_t **ppiVar7;
+    int64_t *piVar8;
+    double *pdVar9;
+    bool bVar10;
+    double dVar11;
+    double dVar12;
+    
+    if (in_DL == '\0') {
+        *(undefined *)(arg1 + 0x28) = 0;
+        *(int32_t *)arg2 = *(int32_t *)arg2 + -1;
+    }
+    if ((*(int64_t *)arg1 == 0) && (*(int64_t *)(arg1 + 8) == 0)) {
+        return (double *)0x0;
+    }
+    pdVar3 = (double *)sym.update_cntr_pt.isra.0(arg1 + 0x10, arg1 + 0x18);
+    ppiVar6 = (int64_t **)arg1;
+    piVar8 = *(int64_t **)arg1;
+    pdVar9 = pdVar3;
+    if (*(int64_t **)arg1 == (int64_t *)0x0) goto code_r0x08000646;
+    do {
+        ppiVar7 = (int64_t **)0x0;
+        piVar4 = piVar8;
+        do {
+            ppiVar1 = (int64_t **)*piVar4;
+            if ((ppiVar1 != ppiVar6) && (*(char *)(ppiVar1 + 5) != '\0')) {
+                ppiVar7 = ppiVar1;
+            }
+            piVar4 = piVar4 + 1;
+        } while (piVar8 + 3 != piVar4);
+        if (ppiVar7 == (int64_t **)0x0) {
+            pdVar9[2] = 0.00000000;
+            while (pdVar3 != (double *)0x0) {
+                pdVar9 = (double *)pdVar3[2];
+                func_0x08024e92(pdVar3);
+                pdVar3 = pdVar9;
+            }
+            func_0x08024e92("", 1, 0x29, _reloc.stderr);
+            return (double *)0x0;
+        }
+        *(undefined *)(ppiVar7 + 5) = 0;
+        *(int32_t *)arg2 = *(int32_t *)arg2 + -1;
+        if (*(int32_t *)((int64_t)ppiVar7 + 0x2c) == 3) {
+            if (ppiVar7 == (int64_t **)arg1) goto code_r0x08000655;
+        } else {
+            pdVar5 = (double *)sym.update_cntr_pt.isra.0((int64_t)(ppiVar7 + 2), (int64_t)(ppiVar7 + 3));
+            uVar2 = _reloc..LC0;
+            dVar11 = _obj.x_max - _obj.x_min;
+            pdVar9[2] = (double)pdVar5;
+            if ((double)((uint64_t)(*pdVar9 - *pdVar5) & uVar2) < (double)((uint64_t)dVar11 & uVar2) * _reloc..LC1) {
+                dVar11 = (double)((uint64_t)(_obj.y_max - _obj.y_min) & uVar2) * _reloc..LC1;
+                dVar12 = (double)((uint64_t)(pdVar9[1] - pdVar5[1]) & uVar2);
+                if (dVar12 < dVar11) {
+                    func_0x08024e92(dVar11, dVar12, uVar2, pdVar5);
+                    pdVar5 = pdVar9;
+                }
+            }
+            pdVar9 = pdVar5;
+            if (ppiVar7 == (int64_t **)arg1) {
+code_r0x08000655:
+                pdVar9[2] = 0.00000000;
+                *pdVar3 = *pdVar9;
+                pdVar3[1] = pdVar9[1];
+                return pdVar3;
+            }
+            if (*(int32_t *)((int64_t)ppiVar7 + 0x2c) == 2) {
+                pdVar5[2] = 0.00000000;
+                return pdVar3;
+            }
+        }
+        bVar10 = *ppiVar7 == piVar8;
+        ppiVar6 = ppiVar7;
+        piVar8 = *ppiVar7;
+        if (bVar10) {
+code_r0x08000646:
+            piVar8 = ppiVar6[1];
+        }
+    } while( true );
+}
+
+
+
+
+
+
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable arg4 to Decompiler type: Unknown type identifier
+// signed
+
+undefined8 sym.solve_tri_diag(int64_t arg1, int64_t arg2, int64_t arg3, undefined8 arg4)
+{
+    double *pdVar1;
+    double *pdVar2;
+    double *pdVar3;
+    int64_t iVar4;
+    int64_t iVar5;
+    double *pdVar6;
+    double *pdVar7;
+    int64_t iVar8;
+    double dVar9;
+    
+    if ((int32_t)arg4 < 2) {
+        dVar9 = *(double *)(arg1 + -0x10 + (int64_t)(int32_t)arg4 * 0x18);
+        if (dVar9 == _reloc..LC6) {
+            return 0;
+        }
+        iVar8 = (int64_t)(int32_t)arg4 * 8;
+        *(double *)(arg3 + -8 + iVar8) = *(double *)(arg2 + -8 + iVar8) / dVar9;
+    } else {
+        pdVar3 = (double *)(arg1 + 8);
+        pdVar7 = (double *)arg2;
+        do {
+            dVar9 = *pdVar3;
+            if (dVar9 == 0.00000000) {
+                return 0;
+            }
+            pdVar1 = pdVar3 + 2;
+            pdVar2 = pdVar3 + 1;
+            pdVar6 = pdVar7 + 1;
+            pdVar3 = pdVar3 + 3;
+            dVar9 = *pdVar1 / dVar9;
+            *pdVar3 = *pdVar3 - *pdVar2 * dVar9;
+            *pdVar6 = *pdVar6 - dVar9 * *pdVar7;
+            pdVar7 = pdVar6;
+        } while (pdVar6 != (double *)(arg2 + 8 + (uint64_t)((int32_t)arg4 - 2U) * 8));
+        iVar8 = (int64_t)(int32_t)arg4 * 0x18;
+        dVar9 = *(double *)(arg1 + -0x10 + iVar8);
+        if (dVar9 == 0.00000000) {
+            return 0;
+        }
+        iVar5 = (int64_t)(int32_t)arg4 * 8;
+        iVar4 = (int64_t)(int32_t)((int32_t)arg4 - 2U);
+        *(double *)(arg3 + -8 + iVar5) = *(double *)(arg2 + -8 + iVar5) / dVar9;
+        pdVar3 = (double *)(arg1 + -0x28 + iVar8);
+        do {
+            dVar9 = *pdVar3;
+            if (dVar9 == 0.00000000) {
+                return 0;
+            }
+            pdVar7 = pdVar3 + 1;
+            pdVar3 = pdVar3 + -3;
+            *(double *)(arg3 + iVar4 * 8) =
+                 (*(double *)(arg2 + iVar4 * 8) - *(double *)(arg3 + 8 + iVar4 * 8) * *pdVar7) / dVar9;
+            iVar4 = iVar4 + -1;
+        } while (-1 < (int32_t)iVar4);
+    }
+    return 1;
+}
+
+

@@ -1,0 +1,302 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/external.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int64_t f_calle (int64_t arg7, int64_t arg1) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    xmm0 = arg7;
+    rdi = arg1;
+    /* [01] -r-x section size 1145 named .text */
+    __asm ("endbr64");
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    rax = *(rdi);
+    rdi = rsp;
+    rdx = *((rax + 0x10));
+    rcx = *((rax + 0x18));
+    r8 = rdx + 0x28;
+    esi = *((rdx + 0x20));
+    rdx = r8;
+    uint64_t (*rax)() ();
+    if (*(rsp) == 8) {
+        rax = *(reloc.udv_NaN);
+        __asm ("movdqu xmm0, xmmword [rax + 0x10]");
+        rax = *((rax + 0x20));
+        *((rsp + 0x10)) = rax;
+        *(rsp) = xmm0;
+    }
+    rdi = rbp;
+    udv_NaN ();
+    rax = *((rsp + 0x18));
+    rax ^= *(fs:0x28);
+    if (*(rsp) == 8) {
+        return rax;
+    }
+    udv_NaN ();
+    __asm ("endbr64");
+    edi = *(reloc.c_token);
+    rax = *(fs:0x28);
+    *((rsp + 8)) = rax;
+    eax = 0;
+    eax = udv_NaN (rbx, rbp, r12, r13);
+    if (eax == 0) {
+        goto label_5;
+    }
+    esi = *(reloc.c_token);
+    r12 = rsp;
+    rdi = rsp;
+    edx = esi;
+    udv_NaN ();
+    if (*(rsp) == 0) {
+        goto label_6;
+    }
+    rdi = r12;
+    udv_NaN ();
+    r12 = *(rsp);
+    esi = 0x3a;
+    rdi = r12;
+    rax = udv_NaN ();
+    if (rax != 0) {
+        *(rax) = 0;
+        r12 = *(rsp);
+        rbp = rax + 1;
+    }
+    rdi = r12;
+    esi = 2;
+    rax = udv_NaN ();
+    r12 = rax;
+    if (rax == 0) {
+        goto label_7;
+    }
+label_2:
+    rsi = rbp;
+    rdi = r12;
+    rax = udv_NaN ();
+    r14 = rax;
+    if (rax == 0) {
+        goto label_8;
+    }
+    rdi = r12;
+    rsi = "gnuplot_init";
+    rax = udv_NaN ();
+    rdi = r12;
+    rsi = "gnuplot_fini";
+    rbx = rax;
+    rax = udv_NaN ();
+    rsi = "external_at";
+    edi = 0x12c8;
+    rax = udv_NaN ();
+    r12 = rax;
+    if (rax == 0) {
+        goto label_0;
+    }
+    rdi = rax + 8;
+    rcx = rax;
+    *(rax) = 0;
+    rsi = "external_at";
+    *((rax + 0x12c0)) = 0;
+    rdi &= 0xfffffffffffffff8;
+    eax = 0;
+    rcx -= rdi;
+    ecx += 0x12c8;
+    ecx >>= 3;
+    do {
+        *(rdi) = rax;
+        rcx--;
+        rdi += 8;
+    } while (rcx != 0);
+    *(r12) = 1;
+    edi = 0x20;
+    *((r12 + 8)) = 0x2e;
+    rax = udv_NaN ();
+    *((r12 + 0x10)) = rax;
+    r13 = rax;
+    if (rax == 0) {
+        goto label_9;
+    }
+    *(rax) = r14;
+    *((rax + 8)) = rbp;
+    rax = *(reloc.dummy_func);
+    *((r13 + 0x10)) = rax;
+    if (rbx == 0) {
+        goto label_10;
+    }
+    rdi = r14;
+    rax = void (*rbx)() ();
+    *((r13 + 0x18)) = rax;
+    do {
+label_0:
+        rdi = *(rsp);
+        *(reloc.c_token)++;
+        udv_NaN ();
+        rax = *((rsp + 8));
+        rax ^= *(fs:0x28);
+        if (*(reloc.c_token) != 0) {
+            goto label_11;
+        }
+        rax = r12;
+        return rax;
+label_7:
+        rax = udv_NaN ();
+        r14 = *(rsp);
+        esi = 0x2f;
+        r13 = rax;
+        rdi = r14;
+        rax = udv_NaN ();
+        esi = 0x2e;
+        rdi = rax;
+        if (rax == 0) {
+            goto label_12;
+        }
+        rax = udv_NaN ();
+        if (rax == 0) {
+            goto label_13;
+        }
+label_1:
+        if (r13 == 0) {
+            goto label_14;
+        }
+        rax = "cannot load external function";
+        if (*(r13) == 0) {
+            r13 = rax;
+        }
+        goto label_15;
+label_10:
+        *((r13 + 0x18)) = 0;
+    } while (1);
+label_14:
+    r13 = "cannot load external function";
+label_15:
+    edi = *(reloc.c_token);
+    rsi = r13;
+    eax = 0;
+    udv_NaN ();
+    goto label_0;
+label_12:
+    rdi = r14;
+    rax = udv_NaN ();
+    rdi = r14;
+    rbx = rax;
+    udv_NaN ();
+    rsi = "exfn filename";
+    rdi = rax + 7;
+    rax = udv_NaN ();
+    r14 = rax;
+    if (rbx != 0) {
+        goto label_16;
+    }
+    rsi = *(rsp);
+    rdi = r14;
+    udv_NaN ();
+    esi = 2;
+    rdi = r14;
+    *(rax) = 0x6f732e;
+    rax = udv_NaN ();
+    rbx = rax;
+    if (rax == 0) {
+        edx = 0x2f2e;
+        *((r14 + 2)) = 0;
+        rdi = r14 + 2;
+        *(r14) = dx;
+        rsi = *(rsp);
+        udv_NaN ();
+        esi = 2;
+        rdi = r14;
+        rax = udv_NaN ();
+        rbx = rax;
+        if (rax != 0) {
+            goto label_3;
+        }
+        rdi = r14;
+        udv_NaN ();
+        esi = 2;
+        rdi = r14;
+        *((r14 + rax)) = 0x6f732e;
+        rax = udv_NaN ();
+        rbx = rax;
+    }
+label_3:
+    rdi = r14;
+    udv_NaN ();
+    if (rbx == 0) {
+        goto label_1;
+    }
+    r12 = rbx;
+    goto label_2;
+label_8:
+    rax = udv_NaN ();
+    edi = *(reloc.c_token);
+    rsi = rax;
+    rax = "external function not found";
+    if (rax == 0) {
+        rsi = rax;
+    }
+    eax = 0;
+    r12d = 0;
+    udv_NaN ();
+    goto label_0;
+label_9:
+    rdi = r12;
+    r12d = 0;
+    udv_NaN ();
+    goto label_0;
+label_16:
+    eax = 0x2f2e;
+    *((r14 + 2)) = 0;
+    rdi = r14 + 2;
+    *(r14) = ax;
+    rsi = *(rsp);
+    udv_NaN ();
+    esi = 2;
+    rdi = r14;
+    rax = udv_NaN ();
+    rbx = rax;
+    goto label_3;
+label_13:
+    rdi = r14;
+    udv_NaN ();
+    rsi = "exfn filename";
+    rdi = rax + 7;
+    rax = udv_NaN ();
+    rsi = *(rsp);
+    rdi = rax;
+    r14 = rax;
+    udv_NaN ();
+    esi = 2;
+    rdi = r14;
+    *(rax) = 0x6f732e;
+    rax = udv_NaN ();
+    rbx = rax;
+    goto label_3;
+label_5:
+    edi = *(reloc.c_token);
+    rsi = "expecting external function filename";
+    udv_NaN ();
+label_11:
+    eax = udv_NaN ();
+label_6:
+    edi = *(reloc.c_token);
+    rsi = "expecting external function filename";
+    eax = 0;
+    rax = udv_NaN ();
+    __asm ("endbr64");
+    if (rdi == 0) {
+        goto label_4;
+    }
+    while (*((rdi + 8)) != 0x2e) {
+label_4:
+        return rax;
+    }
+    rdx = *((rdi + 0x10));
+    rax = *((rdx + 8));
+    if (rax == 0) {
+        goto label_4;
+    }
+    rdi = *((rdx + 0x18));
+    return void (*rax)() ();
+}
+
+

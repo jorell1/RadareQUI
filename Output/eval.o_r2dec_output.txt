@@ -1,0 +1,691 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int32_t f_jump (int64_t arg1) {
+    rdi = arg1;
+    /* [01] -r-x section size 7062 named .text */
+    __asm ("endbr64");
+    eax = *(rdi);
+    *(obj.jump_offset) = eax;
+    return eax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x8000050 */
+#include <stdint.h>
+ 
+void fpe (void) {
+    __asm ("endbr64");
+    rsi = sym_fpe;
+    edi = 8;
+    signal (rax);
+    esi = 1;
+    rdi = obj_fpe_env;
+    *(obj.undefined) = 1;
+    signal ();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x8000c00 */
+#include <stdint.h>
+ 
+void fill_gpval_axis (int64_t arg1) {
+    rdi = arg1;
+label_0:
+    rbx = rdi;
+    edi = esi;
+    *((rsp + 8)) = xmm0;
+    r12 = rsp + 0x10;
+    rax = *(fs:0x28);
+    *((rsp + 0x28)) = rax;
+    eax = 0;
+    rax = signal (rbx, rbp);
+    r8 = rbx;
+    rdi = r12;
+    r9 = rax;
+    edx = 0x18;
+    rcx = "%s_%s_%s";
+    esi = 1;
+    eax = 0;
+    signal ();
+    ebx = *((rsp + 0x20));
+    if (bl == 0) {
+        goto label_1;
+    }
+    rax = signal ();
+    rcx = *(rax);
+    rax = r12;
+    do {
+        edx = *((rcx + rbx*4));
+        rax++;
+        *((rax - 1)) = dl;
+        ebx = *(rax);
+    } while (bl != 0);
+label_1:
+    rdi = r12;
+    rax = signal ();
+    if (rax != 0) {
+        xmm1 = *((rsp + 8));
+        *((rax + 0x10)) = 2;
+        *((rax + 0x20)) = 0;
+        *((rax + 0x18)) = xmm1;
+    }
+    rax = *((rsp + 0x28));
+    rax ^= *(fs:0x28);
+    if (rax == 0) {
+        return;
+    }
+    rax = signal ();
+    rdx = loc__LC24;
+    rbx = (int64_t) edi;
+    rdi = "GPVAL";
+    rax = rbx * 0x2a8;
+    rbx = reloc_axis_array;
+    esi = ebp;
+    rbx += rax;
+    xmm0 = *((rbx + 0x10));
+    set_gpval_axis_sth_double ();
+    goto label_0;
+    xmm0 = *((rbx + 0x18));
+    esi = ebp;
+    rdx = loc__LC26;
+    rdi = "GPVAL";
+    set_gpval_axis_sth_double ();
+    goto label_0;
+    xmm0 = *((rbx + 0x90));
+    esi = ebp;
+    rdx = loc__LC27;
+    rdi = "GPVAL";
+    set_gpval_axis_sth_double ();
+    goto label_0;
+    if (ebp > 6) {
+        return;
+    }
+    xmm0 = *((rbx + 0x40));
+    esi = ebp;
+    rdx = loc__LC24;
+    rdi = "GPVAL_DATA";
+    set_gpval_axis_sth_double ();
+    goto label_0;
+    xmm0 = *((rbx + 0x48));
+    esi = ebp;
+    rdx = loc__LC26;
+    rdi = "GPVAL_DATA";
+    set_gpval_axis_sth_double ();
+    goto label_0;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.f pdg @ sym.f pdg @ sym.fi pdg @ sym.fi pdg @ sym.fil pdg @ sym.fil pdg @ sym.fill pdg @ sym.fill pdg @ sym.fill_ pdg @ sym.fill_ pdg @ sym.fill_g pdg @ sym.fill_g pdg @ sym.fill_gp pdg @ sym.fill_gp pdg @ sym.fill_gpv pdg @ sym.fill_gpv pdg @ sym.fill_gpva pdg @ sym.fill_gpva pdg @ sym.fill_gpval pdg @ sym.fill_gpval pdg @ sym.fill_gpval_ pdg @ sym.fill_gpval_ pdg @ sym.fill_gpval_s pdg @ sym.fill_gpval_s pdg @ sym.fill_gpval_sy pdg @ sym.fill_gpval_sy pdg @ sym.fill_gpval_sys pdg @ sym.fill_gpval_sys pdg @ sym.fill_gpval_sysi pdg @ sym.fill_gpval_sysi pdg @ sym.fill_gpval_sysin pdg @ sym.fill_gpval_sysin pdg @ sym.fill_gpval_sysinf pdg @ sym.fill_gpval_sysinf pdg @ sym.fill_gpval_sysinfo pdg @ sym.fill_gpval_sysinfo
+void sym.fill_gpval_sysinfo(undefined8 placeholder_0, int64_t arg2)
+{
+    int32_t iVar1;
+    int64_t iVar2;
+    int64_t in_FS_OFFSET;
+    undefined auStack408 [260];
+    undefined auStack148 [132];
+    int64_t iStack16;
+    
+    iStack16 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    iVar1 = func_0x0802b569(auStack408);
+    if (-1 < iVar1) {
+        func_0x0802b569("", auStack408);
+        arg2 = (int64_t)auStack148;
+        func_0x0802b569("");
+        iVar2 = func_0x0802b569("");
+        if (iVar2 != 0) {
+            *(undefined4 *)(iVar2 + 0x10) = 1;
+            *(undefined8 *)(iVar2 + 0x18) = 0x40;
+        }
+    }
+    if (iStack16 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    func_0x0802b569();
+    iVar2 = func_0x0802b569();
+    if (iVar2 != 0) {
+        *(undefined4 *)(iVar2 + 0x10) = 1;
+        *(int64_t *)(iVar2 + 0x18) = arg2;
+    }
+    return;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.f pdd @ sym.f pdd @ sym.fi pdd @ sym.fi pdd @ sym.fil pdd @ sym.fil pdd @ sym.fill pdd @ sym.fill pdd @ sym.fill_ pdd @ sym.fill_ pdd @ sym.fill_g pdd @ sym.fill_g pdd @ sym.fill_gp pdd @ sym.fill_gp pdd @ sym.fill_gpv pdd @ sym.fill_gpv pdd @ sym.fill_gpva pdd @ sym.fill_gpva pdd @ sym.fill_gpval pdd @ sym.fill_gpval pdd @ sym.fill_gpval_ pdd @ sym.fill_gpval_ pdd @ sym.fill_gpval_s pdd @ sym.fill_gpval_s pdd @ sym.fill_gpval_sy pdd @ sym.fill_gpval_sy pdd @ sym.fill_gpval_sys pdd @ sym.fill_gpval_sys pdd @ sym.fill_gpval_sysi pdd @ sym.fill_gpval_sysi pdd @ sym.fill_gpval_sysin pdd @ sym.fill_gpval_sysin pdd @ sym.fill_gpval_sysinf pdd @ sym.fill_gpval_sysinf pdd @ sym.fill_gpval_sysinfo pdd @ sym.fill_gpval_sysinfo/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x8000fd0 */
+#include <stdint.h>
+ 
+int64_t fill_gpval_sysinfo (int64_t arg2) {
+    int64_t var_104h;
+    int64_t var_188h;
+    rsi = arg2;
+    rax = *(fs:0x28);
+    *((rsp + 0x188)) = rax;
+    eax = 0;
+    rdi = rsp;
+    eax = signal ();
+    if (eax >= 0) {
+        rsi = rbp;
+        rdi = "GPVAL_SYSNAME";
+        signal ();
+        rdi = "GPVAL_MACHINE";
+        rsi = rsp + 0x104;
+        signal ();
+        rdi = "GPVAL_BITS";
+        rax = signal ();
+        if (rax == 0) {
+            goto label_0;
+        }
+        *((rax + 0x10)) = 1;
+        *((rax + 0x18)) = 0x40;
+    }
+label_0:
+    rax = *((rsp + 0x188));
+    rax ^= *(fs:0x28);
+    if (rax == 0) {
+        return rax;
+    }
+    signal ();
+    __asm ("endbr64");
+    rbx = rsi;
+    rax = signal (rbx);
+    if (rax != 0) {
+        *((rax + 0x10)) = 1;
+        *((rax + 0x18)) = rbx;
+    }
+    return rax;
+}
+
+
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x8000420 */
+#include <stdint.h>
+ 
+int64_t Ginteger (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    __asm ("endbr64");
+    *(rdi) = 1;
+    rax = rdi;
+    *((rdi + 8)) = rsi;
+    return rax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.G pdg @ sym.G pdg @ sym.Gs pdg @ sym.Gs pdg @ sym.Gst pdg @ sym.Gst pdg @ sym.Gstr pdg @ sym.Gstr pdg @ sym.Gstri pdg @ sym.Gstri pdg @ sym.Gstrin pdg @ sym.Gstrin pdg @ sym.Gstring pdg @ sym.Gstring
+int64_t sym.Gstring(int64_t arg1, int64_t arg2)
+{
+    undefined8 uVar1;
+    
+    *(undefined4 *)arg1 = 3;
+    if (arg2 != 0) {
+        *(int64_t *)(arg1 + 8) = arg2;
+        return arg1;
+    }
+    uVar1 = func_0x0802b569(reloc..LC13);
+    *(undefined8 *)(arg1 + 8) = uVar1;
+    return arg1;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.G pdd @ sym.G pdd @ sym.Gs pdd @ sym.Gs pdd @ sym.Gst pdd @ sym.Gst pdd @ sym.Gstr pdd @ sym.Gstr pdd @ sym.Gstri pdd @ sym.Gstri pdd @ sym.Gstrin pdd @ sym.Gstrin pdd @ sym.Gstring pdd @ sym.Gstring/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x8000440 */
+#include <stdint.h>
+ 
+int64_t Gstring (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    __asm ("endbr64");
+    r12 = rdi;
+    *(rdi) = 3;
+    if (rsi != 0) {
+        rax = r12;
+        *((r12 + 8)) = rsi;
+        return rax;
+    }
+    rdi = loc__LC13;
+    rax = signal ();
+    rsi = rax;
+    rax = r12;
+    *((r12 + 8)) = rsi;
+    return rax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.g pdg @ sym.g pdg @ sym.gp pdg @ sym.gp pdg @ sym.gpf pdg @ sym.gpf pdg @ sym.gpfr pdg @ sym.gpfr pdg @ sym.gpfre pdg @ sym.gpfre pdg @ sym.gpfree pdg @ sym.gpfree pdg @ sym.gpfree_ pdg @ sym.gpfree_ pdg @ sym.gpfree_s pdg @ sym.gpfree_s pdg @ sym.gpfree_st pdg @ sym.gpfree_st pdg @ sym.gpfree_str pdg @ sym.gpfree_str pdg @ sym.gpfree_stri pdg @ sym.gpfree_stri pdg @ sym.gpfree_strin pdg @ sym.gpfree_strin pdg @ sym.gpfree_string pdg @ sym.gpfree_string
+void sym.gpfree_string(uint32_t arg1)
+{
+    undefined4 in_RDI;
+    int32_t *piVar1;
+    
+    piVar1 = (int32_t *)CONCAT44(in_RDI, arg1);
+    if (*piVar1 != 3) {
+        return;
+    }
+    func_0x0802b569(*(undefined8 *)(piVar1 + 2));
+    *piVar1 = 7;
+    return;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.g pdd @ sym.g pdd @ sym.gp pdd @ sym.gp pdd @ sym.gpf pdd @ sym.gpf pdd @ sym.gpfr pdd @ sym.gpfr pdd @ sym.gpfre pdd @ sym.gpfre pdd @ sym.gpfree pdd @ sym.gpfree pdd @ sym.gpfree_ pdd @ sym.gpfree_ pdd @ sym.gpfree_s pdd @ sym.gpfree_s pdd @ sym.gpfree_st pdd @ sym.gpfree_st pdd @ sym.gpfree_str pdd @ sym.gpfree_str pdd @ sym.gpfree_stri pdd @ sym.gpfree_stri pdd @ sym.gpfree_strin pdd @ sym.gpfree_strin pdd @ sym.gpfree_string pdd @ sym.gpfree_string/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x8000480 */
+#include <stdint.h>
+ 
+void gpfree_string (uint32_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    if (*(rdi) != 3) {
+        return;
+    }
+    return gpfree_string_part_0 ();
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.g pdg @ sym.g pdg @ sym.gp pdg @ sym.gp pdg @ sym.gpf pdg @ sym.gpf pdg @ sym.gpfr pdg @ sym.gpfr pdg @ sym.gpfre pdg @ sym.gpfre pdg @ sym.gpfree pdg @ sym.gpfree pdg @ sym.gpfree_ pdg @ sym.gpfree_ pdg @ sym.gpfree_s pdg @ sym.gpfree_s pdg @ sym.gpfree_st pdg @ sym.gpfree_st pdg @ sym.gpfree_str pdg @ sym.gpfree_str pdg @ sym.gpfree_stri pdg @ sym.gpfree_stri pdg @ sym.gpfree_strin pdg @ sym.gpfree_strin pdg @ sym.gpfree_string pdg @ sym.gpfree_string pdg @ sym.gpfree_string. pdg @ sym.gpfree_string. pdg @ sym.gpfree_string.p pdg @ sym.gpfree_string.p pdg @ sym.gpfree_string.pa pdg @ sym.gpfree_string.pa pdg @ sym.gpfree_string.par pdg @ sym.gpfree_string.par pdg @ sym.gpfree_string.part pdg @ sym.gpfree_string.part pdg @ sym.gpfree_string.part. pdg @ sym.gpfree_string.part. pdg @ sym.gpfree_string.part.0 pdg @ sym.gpfree_string.part.0
+void sym.gpfree_string.part.0(int64_t arg1)
+{
+    func_0x0802b569(*(undefined8 *)(arg1 + 8));
+    *(undefined4 *)arg1 = 7;
+    return;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.g pdd @ sym.g pdd @ sym.gp pdd @ sym.gp pdd @ sym.gpf pdd @ sym.gpf pdd @ sym.gpfr pdd @ sym.gpfr pdd @ sym.gpfre pdd @ sym.gpfre pdd @ sym.gpfree pdd @ sym.gpfree pdd @ sym.gpfree_ pdd @ sym.gpfree_ pdd @ sym.gpfree_s pdd @ sym.gpfree_s pdd @ sym.gpfree_st pdd @ sym.gpfree_st pdd @ sym.gpfree_str pdd @ sym.gpfree_str pdd @ sym.gpfree_stri pdd @ sym.gpfree_stri pdd @ sym.gpfree_strin pdd @ sym.gpfree_strin pdd @ sym.gpfree_string pdd @ sym.gpfree_string pdd @ sym.gpfree_string. pdd @ sym.gpfree_string. pdd @ sym.gpfree_string.p pdd @ sym.gpfree_string.p pdd @ sym.gpfree_string.pa pdd @ sym.gpfree_string.pa pdd @ sym.gpfree_string.par pdd @ sym.gpfree_string.par pdd @ sym.gpfree_string.part pdd @ sym.gpfree_string.part pdd @ sym.gpfree_string.part. pdd @ sym.gpfree_string.part. pdd @ sym.gpfree_string.part.0 pdd @ sym.gpfree_string.part.0/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x8000090 */
+#include <stdint.h>
+ 
+void gpfree_string_part_0 (int64_t arg1) {
+    rdi = arg1;
+    rbx = rdi;
+    rdi = *((rdi + 8));
+    signal (rbx);
+    *(rbx) = 7;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.g pdg @ sym.g pdg @ sym.gp pdg @ sym.gp pdg @ sym.gpf pdg @ sym.gpf pdg @ sym.gpfr pdg @ sym.gpfr pdg @ sym.gpfre pdg @ sym.gpfre pdg @ sym.gpfree pdg @ sym.gpfree pdg @ sym.gpfree_ pdg @ sym.gpfree_ pdg @ sym.gpfree_a pdg @ sym.gpfree_a pdg @ sym.gpfree_ar pdg @ sym.gpfree_ar pdg @ sym.gpfree_arr pdg @ sym.gpfree_arr pdg @ sym.gpfree_arra pdg @ sym.gpfree_arra pdg @ sym.gpfree_array pdg @ sym.gpfree_array
+void sym.gpfree_array(uint32_t arg1)
+{
+    int64_t iVar1;
+    int32_t iVar2;
+    int64_t iVar3;
+    undefined4 in_RDI;
+    int32_t *piVar4;
+    int64_t iVar5;
+    
+    piVar4 = (int32_t *)CONCAT44(in_RDI, arg1);
+    if (*piVar4 != 5) {
+        return;
+    }
+    iVar5 = *(int64_t *)(piVar4 + 2);
+    iVar2 = (int32_t)*(undefined8 *)(iVar5 + 8);
+    if (0 < iVar2) {
+        iVar3 = 0x18;
+        iVar1 = (uint64_t)(iVar2 - 1) * 0x18 + 0x30;
+        do {
+            while (*(int32_t *)(iVar5 + iVar3) == 3) {
+                sym.gpfree_string.part.0((int64_t)(int32_t *)(iVar5 + iVar3));
+                iVar3 = iVar3 + 0x18;
+                iVar5 = *(int64_t *)(piVar4 + 2);
+                if (iVar3 == iVar1) goto code_r0x08000504;
+            }
+            iVar3 = iVar3 + 0x18;
+        } while (iVar3 != iVar1);
+    }
+code_r0x08000504:
+    func_0x0802b569(iVar5);
+    *piVar4 = 7;
+    return;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.g pdd @ sym.g pdd @ sym.gp pdd @ sym.gp pdd @ sym.gpf pdd @ sym.gpf pdd @ sym.gpfr pdd @ sym.gpfr pdd @ sym.gpfre pdd @ sym.gpfre pdd @ sym.gpfree pdd @ sym.gpfree pdd @ sym.gpfree_ pdd @ sym.gpfree_ pdd @ sym.gpfree_a pdd @ sym.gpfree_a pdd @ sym.gpfree_ar pdd @ sym.gpfree_ar pdd @ sym.gpfree_arr pdd @ sym.gpfree_arr pdd @ sym.gpfree_arra pdd @ sym.gpfree_arra pdd @ sym.gpfree_array pdd @ sym.gpfree_array/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x80004a0 */
+#include <stdint.h>
+ 
+int64_t gpfree_array (uint32_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    if (*(rdi) != 5) {
+        return;
+    }
+    r8 = *((rdi + 8));
+    rax = *((r8 + 8));
+    if (eax <= 0) {
+        goto label_1;
+    }
+    eax--;
+    ebx = 0x18;
+    rax *= 3;
+    r12 = rax*8 + 0x30;
+    while (*(rdi) != 3) {
+        rbx += 0x18;
+        if (rbx == r12) {
+            goto label_1;
+        }
+label_0:
+        rdi = r8 + rbx;
+    }
+    gpfree_string_part_0 ();
+    rbx += 0x18;
+    r8 = *((rbp + 8));
+    if (rbx != r12) {
+        goto label_0;
+    }
+label_1:
+    rdi = r8;
+    signal ();
+    *(rbp) = 7;
+    return rax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.f pdg @ sym.f pdg @ sym.fr pdg @ sym.fr pdg @ sym.fre pdg @ sym.fre pdg @ sym.free pdg @ sym.free pdg @ sym.free_ pdg @ sym.free_ pdg @ sym.free_v pdg @ sym.free_v pdg @ sym.free_va pdg @ sym.free_va pdg @ sym.free_val pdg @ sym.free_val pdg @ sym.free_valu pdg @ sym.free_valu pdg @ sym.free_value pdg @ sym.free_value
+void sym.free_value(uint32_t arg1)
+{
+    int64_t iVar1;
+    int32_t iVar2;
+    int64_t iVar3;
+    undefined4 in_RDI;
+    int32_t *arg1_00;
+    int64_t iVar4;
+    
+    arg1_00 = (int32_t *)CONCAT44(in_RDI, arg1);
+    if (*arg1_00 == 3) {
+        sym.gpfree_string.part.0((int64_t)arg1_00);
+    }
+    func_0x0802b569(arg1_00);
+    if (*arg1_00 != 5) {
+        return;
+    }
+    iVar4 = *(int64_t *)(arg1_00 + 2);
+    iVar2 = (int32_t)*(undefined8 *)(iVar4 + 8);
+    if (0 < iVar2) {
+        iVar3 = 0x18;
+        iVar1 = (uint64_t)(iVar2 - 1) * 0x18 + 0x30;
+        do {
+            while (*(int32_t *)(iVar4 + iVar3) == 3) {
+                sym.gpfree_string.part.0((int64_t)(int32_t *)(iVar4 + iVar3));
+                iVar3 = iVar3 + 0x18;
+                iVar4 = *(int64_t *)(arg1_00 + 2);
+                if (iVar3 == iVar1) goto code_r0x08000504;
+            }
+            iVar3 = iVar3 + 0x18;
+        } while (iVar3 != iVar1);
+    }
+code_r0x08000504:
+    func_0x0802b569(iVar4);
+    *arg1_00 = 7;
+    return;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.f pdd @ sym.f pdd @ sym.fr pdd @ sym.fr pdd @ sym.fre pdd @ sym.fre pdd @ sym.free pdd @ sym.free pdd @ sym.free_ pdd @ sym.free_ pdd @ sym.free_v pdd @ sym.free_v pdd @ sym.free_va pdd @ sym.free_va pdd @ sym.free_val pdd @ sym.free_val pdd @ sym.free_valu pdd @ sym.free_valu pdd @ sym.free_value pdd @ sym.free_value/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x8000520 */
+#include <stdint.h>
+ 
+void free_value (uint32_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    while (1) {
+        rdi = rbp;
+        signal ();
+        rdi = rbp;
+        void (*0x80004a0)() ();
+        gpfree_string_part_0 ();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x8001080 */
+#include <stdint.h>
+ 
+uint64_t fill_gpval_float (int64_t arg7) {
+    int64_t var_8h;
+    xmm0 = arg7;
+    __asm ("endbr64");
+    *((rsp + 8)) = xmm0;
+    rax = signal ();
+    if (rax != 0) {
+        xmm1 = *((rsp + 8));
+        *((rax + 0x10)) = 2;
+        *((rax + 0x20)) = 0;
+        *((rax + 0x18)) = xmm1;
+    }
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x80010c0 */
+#include <stdint.h>
+ 
+uint64_t fill_gpval_complex (int64_t arg8, int64_t arg7) {
+    int64_t var_8h;
+    xmm1 = arg8;
+    xmm0 = arg7;
+    __asm ("endbr64");
+    *(rsp) = xmm0;
+    *((rsp + 8)) = xmm1;
+    rax = signal ();
+    if (rax != 0) {
+        xmm2 = *(rsp);
+        xmm3 = *((rsp + 8));
+        *((rax + 0x10)) = 2;
+        *((rax + 0x18)) = xmm2;
+        *((rax + 0x20)) = xmm3;
+    }
+    return rax;
+}
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x8001ac0 */
+#include <stdint.h>
+ 
+int64_t gp_words (int64_t arg1, int64_t arg2) {
+    int64_t var_8h_2;
+    int64_t var_18h_2;
+    int64_t var_8h;
+    int64_t var_18h;
+    rdi = arg1;
+    rsi = arg2;
+    __asm ("endbr64");
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    *(rsp) = 3;
+    while (1) {
+        *((rsp + 8)) = rdi;
+        rdi = rbp;
+        signal ();
+        edi = 0;
+        signal ();
+        rdi = rbp;
+        signal ();
+        rax = *((rsp + 8));
+        rdx = *((rsp + 0x18));
+        rdx ^= *(fs:0x28);
+        if (rdi != 0) {
+            goto label_0;
+        }
+        return rax;
+        rdi = loc__LC13;
+        rax = signal ();
+        rdi = rax;
+    }
+label_0:
+    signal ();
+    __asm ("endbr64");
+    rbx = (int64_t) esi;
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    *(rsp) = 3;
+    while (1) {
+        *((rsp + 8)) = rdi;
+        rdi = rbp;
+        signal ();
+        rdi = rbp;
+        *((rsp + 8)) = rbx;
+        signal (1);
+        edi = 0;
+        signal ();
+        rdi = rbp;
+        signal ();
+        rax = *((rsp + 8));
+        rdx = *((rsp + 0x18));
+        rdx ^= *(fs:0x28);
+        if (rdi != 0) {
+            goto label_1;
+        }
+        return rax;
+        rdi = loc__LC13;
+        rax = signal ();
+        rdi = rax;
+    }
+label_1:
+    return signal ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x8000cd0 */
+#include <stdint.h>
+ 
+void fill_gpval_axis (int64_t arg1) {
+    rdi = arg1;
+label_0:
+    rbx = rdi;
+    edi = esi;
+    *((rsp + 8)) = xmm0;
+    r12 = rsp + 0x10;
+    rax = *(fs:0x28);
+    *((rsp + 0x28)) = rax;
+    eax = 0;
+    rax = signal (rbx, rbp);
+    r8 = rbx;
+    rdi = r12;
+    r9 = rax;
+    edx = 0x18;
+    rcx = "%s_%s_%s";
+    esi = 1;
+    eax = 0;
+    signal ();
+    ebx = *((rsp + 0x20));
+    if (bl == 0) {
+        goto label_1;
+    }
+    rax = signal ();
+    rcx = *(rax);
+    rax = r12;
+    do {
+        edx = *((rcx + rbx*4));
+        rax++;
+        *((rax - 1)) = dl;
+        ebx = *(rax);
+    } while (bl != 0);
+label_1:
+    rdi = r12;
+    rax = signal ();
+    if (rax != 0) {
+        xmm1 = *((rsp + 8));
+        *((rax + 0x10)) = 2;
+        *((rax + 0x20)) = 0;
+        *((rax + 0x18)) = xmm1;
+    }
+    rax = *((rsp + 0x28));
+    rax ^= *(fs:0x28);
+    if (rax == 0) {
+        return;
+    }
+    rax = signal ();
+    rdx = loc__LC24;
+    rbx = (int64_t) edi;
+    rdi = "GPVAL";
+    rax = rbx * 0x2a8;
+    rbx = reloc_axis_array;
+    esi = ebp;
+    rbx += rax;
+    xmm0 = *((rbx + 0x10));
+    set_gpval_axis_sth_double ();
+    goto label_0;
+    xmm0 = *((rbx + 0x18));
+    esi = ebp;
+    rdx = loc__LC26;
+    rdi = "GPVAL";
+    set_gpval_axis_sth_double ();
+    goto label_0;
+    xmm0 = *((rbx + 0x90));
+    esi = ebp;
+    rdx = loc__LC27;
+    rdi = "GPVAL";
+    set_gpval_axis_sth_double ();
+    goto label_0;
+    if (ebp > 6) {
+        return;
+    }
+    xmm0 = *((rbx + 0x40));
+    esi = ebp;
+    rdx = loc__LC24;
+    rdi = "GPVAL_DATA";
+    set_gpval_axis_sth_double ();
+    goto label_0;
+    xmm0 = *((rbx + 0x48));
+    esi = ebp;
+    rdx = loc__LC26;
+    rdi = "GPVAL_DATA";
+    set_gpval_axis_sth_double ();
+    goto label_0;
+}
+
+

@@ -1,0 +1,2649 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x8000290 */
+#include <stdint.h>
+ 
+int64_t num_to_str (void) {
+    rax = *(obj.i.12916);
+    ecx = 0;
+    esi = 1;
+    edx = rax + 1;
+    rax *= 5;
+    r12 = rax * 5;
+    rax = obj_s_12917;
+    if (edx > 3) {
+        edx = ecx;
+    }
+    r12 += rax;
+    rcx = "%.15g";
+    eax = 1;
+    rdi = r12;
+    *(obj.i.12916) = edx;
+    rdx = 0xffffffffffffffff;
+    inline_num ();
+    esi = 0x2e;
+    rdi = r12;
+    rax = inline_num ();
+    while (rax != 0) {
+label_0:
+        rax = r12;
+        return rax;
+        esi = 0x65;
+        rdi = r12;
+        rax = inline_num ();
+    }
+    esi = 0x45;
+    rdi = r12;
+    rax = inline_num ();
+    if (rax != 0) {
+        goto label_0;
+    }
+    rdi = r12;
+    rax = inline_num ();
+    edx = 0x302e;
+    rax += r12;
+    *(rax) = dx;
+    *((rax + 2)) = 0;
+    goto label_0;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.e pdg @ sym.e pdg @ sym.eq pdg @ sym.eq pdg @ sym.equ pdg @ sym.equ pdg @ sym.equa pdg @ sym.equa pdg @ sym.equal pdg @ sym.equal pdg @ sym.equals pdg @ sym.equals pdg @ sym.equals. pdg @ sym.equals. pdg @ sym.equals.p pdg @ sym.equals.p pdg @ sym.equals.pa pdg @ sym.equals.pa pdg @ sym.equals.par pdg @ sym.equals.par pdg @ sym.equals.part pdg @ sym.equals.part pdg @ sym.equals.part. pdg @ sym.equals.part. pdg @ sym.equals.part.0 pdg @ sym.equals.part.0
+bool sym.equals.part.0(int64_t arg1, uint32_t arg2)
+{
+    char *pcVar1;
+    int32_t iVar2;
+    int64_t iVar3;
+    undefined4 in_RSI;
+    char *pcVar4;
+    
+    pcVar4 = (char *)CONCAT44(in_RSI, arg2);
+    pcVar1 = (char *)(_reloc.token + (int64_t)(int32_t)arg1 * 0x28);
+    if (*pcVar1 == '\0') {
+        return false;
+    }
+    if (0 < *(int32_t *)(pcVar1 + 0x24)) {
+        iVar3 = 1;
+        do {
+            iVar2 = (int32_t)iVar3;
+            if (*(char *)(iVar3 + -1 + *(int32_t *)(pcVar1 + 0x20) + _reloc.gp_input_line) != pcVar4[iVar3 + -1]) {
+                return false;
+            }
+            iVar3 = iVar3 + 1;
+        } while ((uint64_t)(*(int32_t *)(pcVar1 + 0x24) - 1) + 2 != iVar3);
+        pcVar4 = pcVar4 + iVar2;
+    }
+    return *pcVar4 == '\0';
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.e pdd @ sym.e pdd @ sym.eq pdd @ sym.eq pdd @ sym.equ pdd @ sym.equ pdd @ sym.equa pdd @ sym.equa pdd @ sym.equal pdd @ sym.equal pdd @ sym.equals pdd @ sym.equals pdd @ sym.equals. pdd @ sym.equals. pdd @ sym.equals.p pdd @ sym.equals.p pdd @ sym.equals.pa pdd @ sym.equals.pa pdd @ sym.equals.par pdd @ sym.equals.par pdd @ sym.equals.part pdd @ sym.equals.part pdd @ sym.equals.part. pdd @ sym.equals.part. pdd @ sym.equals.part.0 pdd @ sym.equals.part.0/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x8000340 */
+#include <stdint.h>
+ 
+int64_t equals_part_0 (int64_t arg1, uint32_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    rax = *(reloc.token);
+    rdi = (int64_t) edi;
+    rdx = rdi * 5;
+    rdx = rax + rdx*8;
+    eax = 0;
+    if (*(rdx) == 0) {
+        goto label_0;
+    }
+    eax = *((rdx + 0x24));
+    if (eax <= 0) {
+        goto label_1;
+    }
+    ecx = rax - 1;
+    rdx = *((rdx + 0x20));
+    eax = 1;
+    rdx += *(reloc.gp_input_line);
+    rcx += 2;
+    while (*((rax + rdx - 1)) == dil) {
+        rdi = (int64_t) eax;
+        rax++;
+        if (rcx == rax) {
+            goto label_2;
+        }
+        edi = *((rsi + rax - 1));
+    }
+    eax = 0;
+label_0:
+    return rax;
+label_2:
+    rsi += rdi;
+label_1:
+    eax = 0;
+    al = (*(rsi) == 0) ? 1 : 0;
+    return rax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.m pdg @ sym.m pdg @ sym.ma pdg @ sym.ma pdg @ sym.man pdg @ sym.man pdg @ sym.mant pdg @ sym.mant pdg @ sym.mant_ pdg @ sym.mant_ pdg @ sym.mant_e pdg @ sym.mant_e pdg @ sym.mant_ex pdg @ sym.mant_ex pdg @ sym.mant_exp pdg @ sym.mant_exp pdg @ sym.mant_exp. pdg @ sym.mant_exp. pdg @ sym.mant_exp.p pdg @ sym.mant_exp.p pdg @ sym.mant_exp.pa pdg @ sym.mant_exp.pa pdg @ sym.mant_exp.par pdg @ sym.mant_exp.par pdg @ sym.mant_exp.part pdg @ sym.mant_exp.part pdg @ sym.mant_exp.part. pdg @ sym.mant_exp.part. pdg @ sym.mant_exp.part.0 pdg @ sym.mant_exp.part.0
+void sym.mant_exp.part.0(int64_t arg7, int64_t arg8, undefined8 placeholder_2, undefined8 placeholder_3,
+                        undefined8 placeholder_4, undefined8 placeholder_5, undefined8 placeholder_6,
+                        undefined8 placeholder_7, int64_t arg1, int64_t arg2, uint32_t arg3, int64_t arg4, int64_t arg5)
+{
+    char cVar1;
+    uint64_t uVar2;
+    code cVar3;
+    uint8_t uVar4;
+    int32_t iVar5;
+    int64_t iVar6;
+    int64_t *piVar7;
+    char **ppcVar8;
+    undefined *puVar9;
+    undefined *puVar10;
+    int64_t iVar11;
+    code *pcVar12;
+    undefined4 in_register_00000014;
+    code *extraout_RDX;
+    undefined4 *puVar13;
+    int64_t extraout_RDX_00;
+    uint32_t uVar14;
+    int32_t iVar15;
+    uint64_t unaff_RBX;
+    code *pcVar16;
+    char *pcVar17;
+    code *pcVar18;
+    char *pcVar19;
+    char *pcVar20;
+    undefined8 uVar21;
+    code *pcVar22;
+    undefined4 in_R9D;
+    undefined4 in_R10D;
+    undefined4 in_R11D;
+    int64_t in_FS_OFFSET;
+    bool bVar23;
+    bool bVar24;
+    uint64_t uVar25;
+    double extraout_XMM0_Qa;
+    double extraout_XMM0_Qa_00;
+    double extraout_XMM0_Qa_01;
+    undefined extraout_XMM0 [16];
+    double dVar26;
+    double dVar27;
+    undefined auVar28 [16];
+    code *pcStack2816;
+    uint8_t auStack2720 [256];
+    uint8_t auStack2464 [256];
+    undefined auStack2208 [1024];
+    undefined auStack1184 [16];
+    undefined uStack1168;
+    undefined uStack1167;
+    undefined auStack1166 [1030];
+    int64_t iStack136;
+    code *pcStack120;
+    int64_t iStack112;
+    undefined8 uStack104;
+    uint64_t uStack96;
+    int32_t *piStack88;
+    int64_t iStack80;
+    double dStack72;
+    double dStack64;
+    
+    piStack88 = (int32_t *)CONCAT44(in_register_00000014, arg3);
+    uVar4 = 0;
+    uStack96 = arg1 & 0xffffffff;
+    uStack104 = 1;
+    uVar25 = arg8;
+    if ((double)arg8 < 0.00000000) {
+        uVar25 = arg8 ^ _reloc..LC20;
+        uStack104 = 0xffffffff;
+    }
+    iStack80 = 0x8000dd6;
+    iVar6 = arg4;
+    dStack72 = (double)arg7;
+    func_0x0802fb5f(uVar25, arg8, placeholder_2);
+    dVar26 = SUB168(extraout_XMM0, 0) / dStack72;
+    dVar27 = dVar26;
+    if ((double)((uint64_t)dVar26 & _reloc..LC22) < _reloc..LC21) {
+        auVar28 = orpd(ZEXT816((uint64_t)
+                               ((double)(int64_t)dVar26 -
+                               (double)(-(uint64_t)(dVar26 < (double)(int64_t)dVar26) & (uint64_t)_reloc..LC23))), 
+                       CONCAT88(SUB168(extraout_XMM0 >> 0x40, 0), ~_reloc..LC22 & (uint64_t)dVar26));
+        dVar27 = SUB168(auVar28, 0);
+    }
+    uVar14 = (uint32_t)dVar27;
+    pcVar16 = (code *)(unaff_RBX & 0xffffffff00000000 | (uint64_t)uVar14);
+    iStack80 = 0x8000e5a;
+    func_0x0802fb5f(_reloc..LC24, (dVar26 - (double)uVar14) * dStack72, dVar27);
+    dStack64 = extraout_XMM0_Qa;
+    if ((char)uStack96 == '\0') {
+        iStack80 = 0x8000e7f;
+        func_0x0802fb5f(_reloc..LC24, dStack72);
+        dStack72 = extraout_XMM0_Qa_00;
+        goto code_r0x08000e84;
+    }
+    if (dStack72 == _reloc..LC23) {
+        iVar15 = (int32_t)uVar14 % 3;
+        if (iVar15 == 1) {
+code_r0x08000fbd:
+            dStack64 = _reloc..LC24 * extraout_XMM0_Qa;
+        } else {
+            if (iVar15 != 2) {
+                if (iVar15 != -1) {
+                    if (iVar15 != 0) {
+                        pcVar16 = (code *)(uint64_t)(uVar14 - 3);
+                        iVar15 = (int32_t)(uVar14 - 3) % 3;
+                        goto code_r0x08000fbd;
+                    }
+                    goto code_r0x08000f66;
+                }
+                pcVar16 = (code *)(uint64_t)(uVar14 - 3);
+                iVar15 = (int32_t)(uVar14 - 3) % 3;
+            }
+            dStack64 = extraout_XMM0_Qa * _reloc..LC27;
+        }
+code_r0x08000f66:
+        pcVar16 = (code *)(uint64_t)(uint32_t)((int32_t)pcVar16 - iVar15);
+        dStack72 = _reloc..LC18;
+code_r0x08000e84:
+        iVar15 = (int32_t)pcVar16;
+        iStack80 = 0x8000e91;
+        iVar6 = func_0x0802fb5f(arg4, 0x2e);
+        dVar27 = 0.00000000;
+        if (iVar6 != 0) {
+            iStack80 = 0x8000eaa;
+            iVar5 = func_0x0802fb5f(iVar6 + 1, 0, 10);
+            dVar27 = (double)-iVar5;
+        }
+        iStack80 = 0x8000ec5;
+        func_0x0802fb5f(_reloc..LC24, dVar27);
+        if (dStack72 <= extraout_XMM0_Qa_01 * _reloc..LC28 + dStack64) {
+            dStack64 = dStack64 / dStack72;
+            iVar15 = iVar15 + 3 + (-(uint32_t)((char)uStack96 == '\0') & 0xfffffffe);
+        }
+        if (arg2 != 0) {
+            *(double *)arg2 = (double)(int32_t)uStack104 * dStack64;
+        }
+        *piStack88 = iVar15;
+        return;
+    }
+    pcVar19 = "";
+    uVar21 = 0xffffffff;
+    iStack80 = 0x800102a;
+    func_0x0802fb5f(0xffffffff, "", "");
+    iStack136 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    pcStack120 = pcVar16;
+    iStack112 = arg2;
+    iStack80 = arg4;
+    func_0x0802fb5f(iVar6);
+    auStack2208[0] = (code)0x0;
+    _obj.log10_of_1024.12678 = _reloc..LC31;
+    if (((reloc.evaluate_inside_using == (code)0x0) && (_reloc.numeric_locale != (char *)0x0)) &&
+       ((*_reloc.numeric_locale != 'C' || (_reloc.numeric_locale[1] != '\0')))) {
+        func_0x0802fb5f(1);
+    }
+    bVar23 = false;
+    bVar24 = extraout_RDX == (code *)0x0;
+    if (bVar24) {
+        pcVar18 = reloc..LC29;
+code_r0x080018de:
+        pcVar17 = (char *)pcVar18;
+        if ((reloc.table_mode == (code)0x0) && ((*(uint8_t *)(_reloc.term + 0xa9) & 0x40) != 0)) {
+            cVar3 = (code)0x24;
+            pcVar17 = "";
+            goto code_r0x080010ef;
+        }
+    } else {
+        iVar6 = 4;
+        pcVar18 = extraout_RDX;
+        pcVar22 = reloc..LC29;
+        do {
+            if (iVar6 == 0) break;
+            iVar6 = iVar6 + -1;
+            bVar23 = (uint8_t)*pcVar18 < (uint8_t)*pcVar22;
+            bVar24 = *pcVar18 == *pcVar22;
+            pcVar18 = pcVar18 + (uint64_t)uVar4 * -2 + 1;
+            pcVar22 = pcVar22 + (uint64_t)uVar4 * -2 + 1;
+        } while (bVar24);
+        pcVar18 = extraout_RDX;
+        pcVar17 = (char *)extraout_RDX;
+        if ((!bVar23 && !bVar24) == bVar23) goto code_r0x080018de;
+    }
+    cVar3 = (code)*pcVar17;
+code_r0x080010ef:
+    bVar23 = false;
+    pcVar18 = (code *)auStack2208;
+    do {
+        if (cVar3 == (code)0x25) {
+            cVar3 = ((code *)pcVar17)[1];
+            if (cVar3 != (code)0x25) {
+                uStack1168 = 0x25;
+                pcVar22 = (code *)&uStack1167;
+                if (cVar3 == (code)0x23) {
+                    uStack1167 = (code)0x23;
+                    cVar3 = ((code *)pcVar17)[2];
+                    pcVar17 = (char *)((code *)pcVar17 + 1);
+                    pcVar22 = (code *)auStack1166;
+                    bVar23 = true;
+                }
+                piVar7 = (int64_t *)func_0x0802fb5f();
+                iVar6 = *piVar7;
+                do {
+                    pcVar12 = (code *)(uint64_t)(uint8_t)cVar3;
+                    pcVar16 = (code *)pcVar17 + 1;
+                    if (cVar3 != (code)0x2e) {
+                        uVar4 = (uint8_t)((uint16_t)*(undefined2 *)(iVar6 + (int64_t)pcVar12 * 2) >> 0xb) & 1;
+                        if ((uint8_t)cVar3 < 0x2e) {
+                            uVar4 = uVar4 | (uint8_t)(0x288100000000 >> ((uint8_t)cVar3 & 0x3f)) & 1;
+                        }
+                        if (uVar4 == 0) {
+                            if ((uint8_t)((char)cVar3 + 0xbeU) < 0x37) {
+    // WARNING: Deleting integrated varnode
+    // WARNING: Treating indirect jump as call
+    // switch table (55 cases) at 0x8002f38
+                                (*(reloc..rodata +
+                                  *(int32_t *)(reloc..rodata + (uint64_t)(uint8_t)((char)cVar3 + 0xbeU) * 4)))();
+                                return;
+                            }
+code_r0x08001f2e:
+                            pcVar20 = "";
+                            pcVar22 = (code *)0xffffffff;
+                            auVar28 = func_0x0802fb5f();
+code_r0x08001f41:
+                            puVar13 = SUB168(auVar28 >> 0x40, 0);
+                            *puVar13 = 0x6d69745c;
+                            *(undefined2 *)(puVar13 + 1) = 0x7365;
+                            iVar15 = SUB164(auVar28, 0) + 6;
+                            *(undefined *)((int64_t)puVar13 + 6) = 0;
+code_r0x08001e19:
+                            do {
+                                uVar4 = auStack2720[(int32_t)pcVar22];
+                                *(undefined4 *)(pcVar20 + iVar15) = 0x7b5e3031;
+                                *(undefined *)((int64_t)(pcVar20 + iVar15) + 4) = 0;
+                                uVar25 = (uint64_t)(iVar15 + 4U);
+                                if (uVar4 == 0x2b) {
+                                    uVar14 = (int32_t)pcVar12 + 2;
+                                    pcVar12 = (code *)(uint64_t)uVar14;
+                                    uVar4 = auStack2720[(int32_t)uVar14];
+                                } else {
+                                    if (uVar4 == 0x2d) {
+                                        uVar14 = (int32_t)pcVar12 + 2;
+                                        pcVar12 = (code *)(uint64_t)uVar14;
+                                        auStack2464[(int32_t)(iVar15 + 4U)] = 0x2d;
+                                        uVar4 = auStack2720[(int32_t)uVar14];
+                                        uVar25 = (uint64_t)(iVar15 + 5);
+                                    } else {
+                                        pcVar12 = (code *)((uint64_t)pcVar22 & 0xffffffff);
+                                    }
+                                }
+                                uVar2 = (int64_t)((int32_t)pcVar12 + 1);
+                                while (uVar4 == 0x30) {
+                                    pcVar12 = (code *)(uVar2 & 0xffffffff);
+                                    uVar4 = auStack2720[uVar2];
+                                    uVar2 = uVar2 + 1;
+                                }
+                                while ((iVar5 = (int32_t)uVar25, uVar4 != 0 && ((int32_t)pcVar12 < 0x100))) {
+                                    uVar14 = (int32_t)pcVar12 + 1;
+                                    pcVar22 = (code *)(uint64_t)uVar14;
+                                    if ((uVar4 & 0xdf) == 0x45) {
+                                        if ((*(uint8_t *)(_reloc.term + 0xa9) & 0x40) != 0) {
+                                            puVar13 = (undefined4 *)(pcVar20 + iVar5);
+                                            auVar28 = CONCAT88(puVar13, uVar25);
+                                            if (*pcVar16 == (code)0x68) goto code_r0x08001f41;
+                                            *puVar13 = 0x6f64635c;
+                                            iVar15 = iVar5 + 5;
+                                            *(undefined2 *)(puVar13 + 1) = 0x74;
+                                            goto code_r0x08001e19;
+                                        }
+                                        if (_reloc.encoding == 0xb) goto code_r0x08001f8a;
+                                        if (_reloc.encoding < 0xc) {
+                                            if (_reloc.encoding - 1 < 4) {
+                                                iVar15 = iVar5 + 1;
+                                                uVar4 = (uint8_t)in_R9D;
+                                                if (*pcVar16 == (code)0x68) {
+                                                    uVar4 = (uint8_t)in_R11D;
+                                                }
+                                                auStack2464[iVar5] = uVar4;
+                                                goto code_r0x08001e19;
+                                            }
+                                        } else {
+                                            if (_reloc.encoding == 0x10) {
+                                                *(undefined2 *)(pcVar20 + iVar5) = 0x97c3;
+                                                iVar15 = iVar5 + 2;
+                                                *(undefined *)((int64_t)(pcVar20 + iVar5) + 2) = 0;
+                                                goto code_r0x08001e19;
+                                            }
+                                        }
+                                        iVar15 = iVar5 + 1;
+                                        uVar4 = (uint8_t)in_R9D;
+                                        if (*pcVar16 == (code)0x68) {
+                                            uVar4 = (uint8_t)in_R10D;
+                                        }
+                                        auStack2464[iVar5] = uVar4;
+                                        goto code_r0x08001e19;
+                                    }
+                                    uVar25 = (uint64_t)(iVar5 + 1);
+                                    auStack2464[iVar5] = uVar4;
+                                    uVar4 = auStack2720[(int32_t)uVar14];
+                                    pcVar12 = pcVar22;
+                                }
+                                auStack2464[iVar5] = 0x7d;
+                                auStack2464[iVar5 + 1] = 0;
+                                func_0x0802fb5f(pcVar18);
+                                if ((bVar23) && (pcVar22 = (code *)func_0x0802fb5f(pcVar16, ""), pcVar16 != pcVar22))
+                                goto code_r0x08001f2e;
+                                if (_reloc.decimalsign != (undefined *)0x0) {
+                                    pcVar16 = (code *)func_0x0802fb5f();
+                                    ppcVar8 = (char **)func_0x0802fb5f();
+                                    cVar1 = **ppcVar8;
+                                    pcVar22 = pcVar18;
+                                    while (puVar9 = (undefined *)func_0x0802fb5f(pcVar22, (int32_t)cVar1),
+                                          puVar9 != (undefined *)0x0) {
+                                        if (pcVar16 == (code *)0x1) {
+                                            pcVar22 = pcVar22 + 1;
+                                            *puVar9 = *_reloc.decimalsign;
+                                        } else {
+                                            pcVar22 = (code *)(puVar9 + (int64_t)pcVar16);
+                                            iVar6 = func_0x0802fb5f(puVar9);
+                                            if (pcStack2816 < pcVar22 + iVar6) goto code_r0x08001f77;
+                                            func_0x0802fb5f(pcVar22, puVar9 + 1, iVar6);
+                                            func_0x0802fb5f(puVar9, _reloc.decimalsign, pcVar16);
+                                        }
+                                    }
+                                }
+                                puVar9 = _reloc.minus_sign;
+                                if ((((reloc.use_minus_sign == (code)0x0) || (_reloc.minus_sign == (undefined *)0x0)) ||
+                                    (reloc.table_mode != (code)0x0)) || ((*(uint8_t *)(_reloc.term + 0xa9) & 0x40) != 0)
+                                   ) {
+code_r0x080012c0:
+                                    pcVar17 = (char *)((code *)pcVar17 + 2);
+                                    iVar6 = func_0x0802fb5f(pcVar18);
+                                    pcVar22 = pcVar18 + iVar6;
+                                    goto code_r0x08001155;
+                                }
+                                iVar6 = func_0x0802fb5f(_reloc.minus_sign);
+                                pcVar16 = pcVar18;
+                                while( true ) {
+                                    while( true ) {
+                                        puVar10 = (undefined *)func_0x0802fb5f(pcVar16, 0x2d);
+                                        if (puVar10 == (undefined *)0x0) goto code_r0x080012c0;
+                                        if (iVar6 != 1) break;
+                                        pcVar16 = pcVar16 + 1;
+                                        *puVar10 = *puVar9;
+                                    }
+                                    iVar11 = func_0x0802fb5f(puVar10);
+                                    pcVar16 = (code *)(puVar10 + iVar6);
+                                    if (pcStack2816 < pcVar16 + iVar11) break;
+                                    func_0x0802fb5f(pcVar16, puVar10 + 1);
+                                    func_0x0802fb5f(puVar10, puVar9, iVar6);
+                                }
+code_r0x08001f64:
+                                func_0x0802fb5f(0xffffffff, "format too long due to minus_sign string");
+                                iVar6 = extraout_RDX_00;
+code_r0x08001f77:
+                                pcVar20 = "format too long due to decimalsign string";
+                                pcVar22 = (code *)0xffffffff;
+                                iVar5 = func_0x0802fb5f(0xffffffff, "format too long due to decimalsign string", iVar6);
+code_r0x08001f8a:
+                                iVar15 = iVar5 + 1;
+                                uVar4 = 0xb7;
+                                if (*pcVar16 == (code)0x68) {
+                                    uVar4 = (uint8_t)in_R11D;
+                                }
+                                auStack2464[iVar5] = uVar4;
+                            } while( true );
+                        }
+                    }
+                    *pcVar22 = cVar3;
+                    cVar3 = ((code *)pcVar17)[2];
+                    pcVar22 = pcVar22 + 1;
+                    pcVar17 = (char *)pcVar16;
+                } while( true );
+            }
+            *pcVar18 = (code)0x25;
+            pcVar22 = pcVar18 + 1;
+            pcVar17 = (char *)((code *)pcVar17 + 2);
+        } else {
+            pcVar22 = pcVar18 + 1;
+            pcVar12 = (code *)auStack1184;
+            *pcVar18 = cVar3;
+            pcVar17 = (char *)((code *)pcVar17 + 1);
+            if ((pcVar22 == pcVar12) || (cVar3 == (code)0x0)) {
+                func_0x0802fb5f(uVar21, auStack2208, pcVar19);
+                if (((reloc.evaluate_inside_using == (code)0x0) && (_reloc.numeric_locale != (char *)0x0)) &&
+                   ((*_reloc.numeric_locale != 'C' || (_reloc.numeric_locale[1] != '\0')))) {
+                    func_0x0802fb5f(1, reloc..LC13);
+                }
+                if (iStack136 != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+                    func_0x0802fb5f();
+                    goto code_r0x08001f64;
+                }
+                return;
+            }
+        }
+code_r0x08001155:
+        cVar3 = (code)*pcVar17;
+        pcVar18 = pcVar22;
+    } while( true );
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x8000d90 */
+#include <stdint.h>
+ 
+uint64_t mant_exp_part_0 (int64_t arg8, int64_t arg7, int64_t arg5, int64_t arg1, int64_t arg2, uint32_t arg3, int64_t arg4) {
+    uint32_t var_8h_2;
+    uint32_t var_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    uint32_t var_2eh;
+    uint32_t var_2fh;
+    int64_t var_30h;
+    int64_t var_38h;
+    int64_t var_40h;
+    int64_t var_48h;
+    int64_t var_50h;
+    int64_t var_58h;
+    int64_t var_64h;
+    uint32_t var_68h;
+    int64_t var_6fh;
+    int64_t var_70h;
+    int64_t var_170h;
+    int64_t var_270h;
+    int64_t var_670h;
+    int64_t var_680h;
+    int64_t var_681h;
+    int64_t var_68ah;
+    int64_t var_a88h;
+    int64_t var_8h;
+    xmm1 = arg8;
+    xmm0 = arg7;
+    r8 = arg5;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+label_6:
+    xmm7 = 0;
+    r15 = rcx;
+    r14 = rdx;
+    r13d = edi;
+    r12d = 1;
+    __asm ("comisd xmm7, xmm1");
+    *(rsp) = xmm0;
+    __asm ("movapd xmm0, xmm1");
+    if (? > ?) {
+        __asm ("xorpd xmm0, xmmword [loc..LC20]");
+        r12d = 0xffffffff;
+    }
+    rax = inline_num ();
+    xmm3 = *(loc..LC22);
+    xmm4 = *(loc..LC21);
+    __asm ("movapd xmm1, xmm0");
+    __asm ("divsd xmm1, qword [rsp]");
+    __asm ("movapd xmm0, xmm1");
+    __asm ("movapd xmm2, xmm1");
+    __asm ("andpd xmm0, xmm3");
+    __asm ("ucomisd xmm4, xmm0");
+    if (? > ?) {
+        __asm ("cvttsd2si rax, xmm1");
+        xmm0 = 0;
+        xmm4 = *(loc..LC23);
+        __asm ("andnpd xmm3, xmm1");
+        __asm ("cvtsi2sd xmm0, rax");
+        __asm ("movapd xmm2, xmm0");
+        __asm ("cmpnlesd xmm2, xmm1");
+        __asm ("andpd xmm2, xmm4");
+        __asm ("subsd xmm0, xmm2");
+        __asm ("movapd xmm2, xmm0");
+        __asm ("orpd xmm2, xmm3");
+    }
+    __asm ("cvttsd2si ebx, xmm2");
+    xmm0 = 0;
+    rax = *(loc..LC24);
+    __asm ("cvtsi2sd xmm0, ebx");
+    __asm ("subsd xmm1, xmm0");
+    __asm ("mulsd xmm1, qword [rsp]");
+    xmm0 = rax;
+    inline_num ();
+    *((rsp + 8)) = xmm0;
+    if (r13b != 0) {
+        goto label_36;
+    }
+    rax = *(loc..LC24);
+    xmm1 = *(rsp);
+    xmm0 = rax;
+    inline_num ();
+    *(rsp) = xmm0;
+    do {
+        esi = 0x2e;
+        rdi = r15;
+        rax = inline_num ();
+        xmm1 = 0;
+        if (rax != 0) {
+            rdi = rax + 1;
+            edx = 0xa;
+            esi = 0;
+            eax = inline_num ();
+            xmm1 = 0;
+            eax = -eax;
+            __asm ("cvtsi2sd xmm1, eax");
+        }
+        rax = *(loc..LC24);
+        xmm0 = rax;
+        inline_num ();
+        xmm6 = *((rsp + 8));
+        xmm4 = *(rsp);
+        __asm ("mulsd xmm0, qword [loc..LC28]");
+        __asm ("addsd xmm0, xmm6");
+        __asm ("comisd xmm0, xmm4");
+        if (rax >= 0) {
+            goto label_37;
+        }
+label_0:
+        if (rbp != 0) {
+            xmm0 = 0;
+            __asm ("cvtsi2sd xmm0, r12d");
+            __asm ("mulsd xmm0, qword [rsp + 8]");
+            *(rbp) = xmm0;
+        }
+        *(r14) = ebx;
+        return rax;
+label_36:
+        xmm5 = *(rsp);
+        __asm ("ucomisd xmm5, qword [loc..LC23]");
+        __asm ("jp 0x8001012");
+        if (rbp != 0) {
+            goto label_38;
+        }
+        rax = (int64_t) ebx;
+        edx = ebx;
+        ecx = ebx;
+        rax *= 0x55555556;
+        edx >>= 0x1f;
+        rax >>= 0x20;
+        eax -= edx;
+        eax = rax * 3;
+        ecx -= eax;
+        eax = ecx;
+        if (ecx == 1) {
+            goto label_39;
+        }
+        if (ecx == 2) {
+            goto label_40;
+        }
+        if (ecx == 0xffffffff) {
+            goto label_41;
+        }
+        if (ecx != 0) {
+            goto label_42;
+        }
+label_1:
+        xmm3 = .rodata.cst8;
+        ebx -= eax;
+        *(rsp) = xmm3;
+    } while (1);
+label_37:
+    __asm ("divsd xmm6, xmm4");
+    eax -= eax;
+    eax &= 0xfffffffe;
+    ebx = rbx + rax + 3;
+    *((rsp + 8)) = xmm6;
+    goto label_0;
+label_42:
+    ebx -= 3;
+    rax = (int64_t) ebx;
+    edx = ebx;
+    esi = ebx;
+    rax *= 0x55555556;
+    edx >>= 0x1f;
+    rax >>= 0x20;
+    eax -= edx;
+    eax = rax * 3;
+    esi -= eax;
+    eax = esi;
+label_39:
+    xmm6 = *(loc..LC24);
+    __asm ("mulsd xmm6, qword [rsp + 8]");
+    *((rsp + 8)) = xmm6;
+    goto label_1;
+label_41:
+    ebx -= 3;
+    rax = (int64_t) ebx;
+    edx = ebx;
+    esi = ebx;
+    rax *= 0x55555556;
+    edx >>= 0x1f;
+    rax >>= 0x20;
+    eax -= edx;
+    eax = rax * 3;
+    esi -= eax;
+    eax = esi;
+label_40:
+    xmm7 = *((rsp + 8));
+    __asm ("mulsd xmm7, qword [loc..LC27]");
+    *((rsp + 8)) = xmm7;
+    goto label_1;
+label_38:
+    rdx = "log10_base == 1.0";
+    rsi = "Assertion failed: %s";
+    edi |= 0xffffffff;
+    eax = 0;
+    inline_num ();
+    __asm ("endbr64");
+    *((rsp + 0x40)) = rdi;
+    rdi = rcx;
+    *((rsp + 0x48)) = rsi;
+    *((rsp + 0x38)) = rcx;
+    *((rsp + 0x30)) = xmm0;
+    rax = *(fs:0x28);
+    *((rsp + 0xa88)) = rax;
+    eax = 0;
+    inline_num (rbx, rbp, r12, r13, r14);
+    rax = *(loc..LC31);
+    *((rsp + 0x64)) = 0;
+    *((rsp + 0x270)) = 0;
+    *(obj.log10_of_1024.12678) = rax;
+    *((rsp + 0x18)) = xmm0;
+    if (*(reloc.evaluate_inside_using) == 0) {
+        rsi = *(obj.numeric_locale);
+        if (rsi == 0) {
+            goto label_23;
+        }
+        if (*(rsi) == 0x43) {
+            goto label_43;
+        }
+label_24:
+        edi = 1;
+        inline_num ();
+    }
+label_23:
+    if (rbp == 0) {
+        goto label_44;
+    }
+    ecx = 4;
+    rdi = loc__LC29;
+    rsi = rbp;
+    __asm ("repe cmpsb byte [rsi], byte ptr [rdi]");
+    al = (rbp > 0) ? 1 : 0;
+    if (al == 0) {
+        goto label_45;
+    }
+label_10:
+    eax = *(rbp);
+label_11:
+    rdi = rsp + 0x270;
+    *((rsp + 0x2e)) = 0;
+    r15 = 0x288100000000;
+    *((rsp + 0x50)) = rdi;
+    r13 = rdi;
+    rdi = rsp + 0x6f;
+    *((rsp + 0x20)) = 0;
+    *((rsp + 0x2f)) = 0;
+    *((rsp + 0x58)) = rdi;
+    while (al != 0x25) {
+        rdx = r13 + 1;
+        rcx = rsp + 0x670;
+        *(r13) = al;
+        rbp++;
+        if (rdx == rcx) {
+            goto label_46;
+        }
+        if (al == 0) {
+            goto label_46;
+        }
+label_3:
+        eax = *(rbp);
+        r13 = rdx;
+    }
+    ecx = *((rbp + 1));
+    if (cl == 0x25) {
+        goto label_47;
+    }
+    *((rsp + 0x680)) = 0x25;
+    r12 = rsp + 0x681;
+    if (cl == 0x23) {
+        *((rsp + 0x681)) = 0x23;
+        ecx = *((rbp + 2));
+        rbp++;
+        r12 = rsp + 0x682;
+        *((rsp + 0x2e)) = 1;
+    }
+    *((rsp + 8)) = cl;
+    rax = inline_num ();
+    ecx = *((rsp + 8));
+    rdx = *(rax);
+    while (cl == 0x2e) {
+label_2:
+        *(r12) = cl;
+        ecx = *((rbx + 1));
+        r12++;
+        rbx = rbp + 1;
+    }
+    eax = (int32_t) cl;
+    eax = *((rdx + rax*2));
+    ax >>= 0xb;
+    eax &= 1;
+    if (cl <= 0x2d) {
+        rsi = r15;
+        rsi >>= cl;
+        esi &= 1;
+        eax |= esi;
+    }
+    if (al != 0) {
+        goto label_2;
+    }
+    eax = rcx - 0x42;
+    if (al > 0x36) {
+        goto label_48;
+    }
+    rdi = reloc__rodata;
+    eax = (int32_t) al;
+    rax = *((rdi + rax*4));
+    rax += rdi;
+    /* switch table (55 cases) at 0x8002f38 */
+    void (*rax)() ();
+    rax = rsp + 0x670;
+    *(r12) = cl;
+    xmm0 = *((rsp + 0x18));
+    *((r12 + 1)) = 0;
+    *((rsp + 0x10)) = rax;
+    rax -= r13;
+    rsi = rax;
+label_4:
+    r8 = rsp + 0x680;
+    edx = 1;
+    rdi = r13;
+    eax = 1;
+    rcx = 0xffffffffffffffff;
+    rax = inline_num ();
+    do {
+label_5:
+        if (*((rsp + 0x2e)) != 0) {
+            rsi = "oeEfFgG";
+            rdi = rbx;
+            rax = inline_num ();
+            if (rbx != rax) {
+                goto label_48;
+            }
+        }
+        rdi = *(obj.decimalsign);
+        if (rdi != 0) {
+            goto label_49;
+        }
+label_8:
+        if (*(obj.use_minus_sign) != 0) {
+            r14 = *(obj.minus_sign);
+            if (r14 == 0) {
+                goto label_21;
+            }
+            if (*(reloc.table_mode) != 0) {
+                goto label_21;
+            }
+            rax = *(reloc.term);
+            if ((*((rax + 0xa9)) & 0x40) == 0) {
+                goto label_50;
+            }
+        }
+label_21:
+        rdi = r13;
+        rbp += 2;
+        inline_num ();
+        rdx = r13 + rax;
+        goto label_3;
+        rax = *((rsp + 0x38));
+        r9d = 0x6c6c;
+        *((r12 + 2)) = cl;
+        *(r12) = r9w;
+        *((r12 + 3)) = 0;
+        if (*(rax) != 1) {
+            goto label_51;
+        }
+        r9 = *((rax + 8));
+        goto label_52;
+        eax = 0x67;
+        edx = 0x47;
+        *((r12 + 1)) = 0;
+        if (cl != 0x68) {
+            eax = edx;
+        }
+        *(r12) = al;
+        rax = rsp + 0x670;
+        *((rsp + 0x10)) = rax;
+        rax -= r13;
+        r14 = rax;
+        rax = *(reloc.term);
+        if ((*((rax + 0xa8)) & 0x4020) != 0) {
+            r12d = *(reloc.table_mode);
+            if (r12b == 0) {
+                goto label_53;
+            }
+        }
+        edx = 1;
+        rsi = r14;
+        rdi = r13;
+        eax = 1;
+        xmm0 = *((rsp + 0x18));
+        r8 = rsp + 0x680;
+        rcx = 0xffffffffffffffff;
+        inline_num ();
+    } while (1);
+    eax = 0x66;
+    xmm0 = *((rsp + 0x18));
+    __asm ("divsd xmm0, qword [loc..LC45]");
+    *(r12) = ax;
+    rax = rsp + 0x670;
+    *((rsp + 0x10)) = rax;
+    rax -= r13;
+    rsi = rax;
+    goto label_4;
+    r10d = 0x64;
+    *(r12) = r10w;
+    if (*((rsp + 0x2f)) == 0) {
+        goto label_54;
+    }
+    xmm4 = *((rsp + 0x20));
+    __asm ("ucomisd xmm4, qword [rsp + 0x30]");
+    __asm ("jp 0x80013dd");
+    if (*((rsp + 0x2f)) == 0) {
+        goto label_55;
+    }
+    rsi = "Format character mismatch: %%L is only valid with %%l";
+    edi |= 0xffffffff;
+    eax = 0;
+    inline_num ();
+    edi = 0x63;
+    *(r12) = di;
+    if (*((rsp + 0x2f)) == 0) {
+        goto label_56;
+    }
+    xmm2 = *(loc..LC23);
+    xmm5 = *((rsp + 0x20));
+    __asm ("ucomisd xmm5, xmm2");
+    __asm ("jp 0x8001fb5");
+    if (*((rsp + 0x2f)) != 0) {
+        goto label_57;
+    }
+    r9d = *((rsp + 0x64));
+    rax = rsp + 0x670;
+    r8 = "e%+02d";
+    *((rsp + 0x10)) = rax;
+    rax -= r13;
+    r14 = rax;
+    eax = r9 + 0x18;
+    *((rsp + 0x68)) = r9d;
+    if (eax <= 0x30) {
+        goto label_32;
+    }
+label_7:
+    rcx = 0xffffffffffffffff;
+    rsi = r14;
+    rdi = r13;
+    eax = 0;
+    edx = 1;
+    inline_num ();
+    goto label_5;
+    xmm7 = *((rsp + 0x18));
+    xmm3 = 0;
+    xmm6 = log10_of_1024.12678;
+    r11d = 0x66;
+    *(r12) = r11w;
+    __asm ("ucomisd xmm7, xmm3");
+    *((rsp + 0x20)) = xmm6;
+    __asm ("jnp 0x8001b97");
+label_14:
+    xmm0 = *((rsp + 0x20));
+    xmm1 = *((rsp + 0x18));
+    rdx = rsp + 0x64;
+    edi = 0;
+    r14 = rsp + 0x680;
+    rsi = rsp + 0x68;
+    rcx = r14;
+    mant_exp_part_0 ();
+    goto label_6;
+    xmm0 = *((rsp + 0x68));
+label_15:
+    rax = rsp + 0x670;
+    r8 = r14;
+    edx = 1;
+    rdi = r13;
+    *((rsp + 0x10)) = rax;
+    rax -= r13;
+    rcx = 0xffffffffffffffff;
+    rsi = rax;
+    eax = 1;
+    inline_num ();
+    *((rsp + 0x2f)) = 1;
+    goto label_5;
+    r9d = 0x64;
+    *(r12) = r9w;
+    if (*((rsp + 0x2f)) == 0) {
+        goto label_58;
+    }
+    xmm2 = *(loc..LC23);
+    xmm4 = *((rsp + 0x20));
+    __asm ("ucomisd xmm4, xmm2");
+    __asm ("jp 0x8001fc6");
+    if (*((rsp + 0x2f)) != 0) {
+        goto label_59;
+    }
+    do {
+label_55:
+        r9d = *((rsp + 0x64));
+        *((rsp + 0x68)) = r9d;
+label_12:
+        rax = rsp + 0x670;
+        r8 = rsp + 0x680;
+        edx = 1;
+        rdi = r13;
+        *((rsp + 0x10)) = rax;
+        rax -= r13;
+        rcx = 0xffffffffffffffff;
+        rsi = rax;
+        eax = 0;
+        eax = inline_num ();
+        goto label_5;
+        r8d = 0x64;
+        *(r12) = r8w;
+        if (*((rsp + 0x2f)) == 0) {
+            goto label_60;
+        }
+        xmm2 = *(loc..LC23);
+        xmm7 = *((rsp + 0x20));
+        __asm ("ucomisd xmm7, xmm2");
+        __asm ("jp 0x80015a6");
+    } while (*((rsp + 0x2f)) == 0);
+    rsi = "Format character mismatch: %%S is only valid with %%s";
+    edi |= 0xffffffff;
+    eax = 0;
+    inline_num ();
+    edx = 0x6963;
+    *((r12 + 2)) = 0;
+    *(r12) = dx;
+    xmm0 = log10_of_1024.12678;
+    if (*((rsp + 0x2f)) == 0) {
+        goto label_61;
+    }
+    xmm1 = *((rsp + 0x20));
+    __asm ("ucomisd xmm1, xmm0");
+    __asm ("jp 0x8001fd7");
+    if (*((rsp + 0x2f)) != 0) {
+        goto label_62;
+    }
+    r9 = *((rsp + 0x64));
+    rax = rsp + 0x670;
+    *((rsp + 0x10)) = rax;
+    rax -= r13;
+    r14 = rax;
+    eax = r9 - 1;
+    *((rsp + 0x68)) = r9d;
+    if (eax <= 7) {
+        goto label_63;
+    }
+label_13:
+    if (r9d > 8) {
+        goto label_64;
+    }
+    if (r9d == 0) {
+        goto label_65;
+    }
+    r9d = r9 * 5;
+    r8 = "x2^{%d}";
+    r9d += r9d;
+    goto label_7;
+    xmm7 = *((rsp + 0x18));
+    xmm3 = 0;
+    eax = 0x66;
+    *(r12) = ax;
+    __asm ("ucomisd xmm7, xmm3");
+    __asm ("jnp 0x8001bbf");
+label_16:
+    r14 = rsp + 0x680;
+    xmm2 = *(loc..LC23);
+    rdx = rsp + 0x64;
+    edi = 0;
+    rsi = rsp + 0x68;
+    rcx = r14;
+    goto label_66;
+    xmm4 = *((rsp + 0x18));
+    xmm5 = 0;
+    r14d = 0x66;
+    *(r12) = r14w;
+    __asm ("ucomisd xmm4, xmm5");
+    __asm ("jnp 0x8001bef");
+label_18:
+    rdx = rsp + 0x64;
+    rsi = rsp + 0x68;
+    edi = 1;
+    xmm2 = *(loc..LC23);
+    r14 = rsp + 0x680;
+    rcx = r14;
+label_66:
+    xmm1 = *((rsp + 0x18));
+    __asm ("movapd xmm0, xmm2");
+    *((rsp + 8)) = xmm2;
+    mant_exp_part_0 ();
+    goto label_6;
+    xmm0 = *((rsp + 0x68));
+    xmm2 = *((rsp + 8));
+label_17:
+    rax = rsp + 0x670;
+    r8 = r14;
+    edx = 1;
+    rdi = r13;
+    *((rsp + 0x10)) = rax;
+    rax -= r13;
+    rcx = 0xffffffffffffffff;
+    rsi = rax;
+    eax = 1;
+    *((rsp + 8)) = xmm2;
+    inline_num ();
+    xmm2 = *((rsp + 8));
+    *((rsp + 0x2f)) = 1;
+    *((rsp + 0x20)) = xmm2;
+    goto label_5;
+    xmm4 = *((rsp + 0x18));
+    xmm5 = 0;
+    eax = 0x66;
+    *(r12) = ax;
+    __asm ("ucomisd xmm4, xmm5");
+    __asm ("jnp 0x8001c00");
+label_19:
+    xmm0 = *((rsp + 0x30));
+    xmm1 = *((rsp + 0x18));
+    rdx = rsp + 0x64;
+    edi = 0;
+    r14 = rsp + 0x680;
+    rsi = rsp + 0x68;
+    rcx = r14;
+    mant_exp_part_0 ();
+    goto label_6;
+    xmm0 = *((rsp + 0x68));
+label_20:
+    rax = rsp + 0x670;
+    r8 = r14;
+    edx = 1;
+    rdi = r13;
+    *((rsp + 0x10)) = rax;
+    rax -= r13;
+    rcx = 0xffffffffffffffff;
+    rsi = rax;
+    eax = 1;
+    inline_num ();
+    xmm6 = *((rsp + 0x30));
+    *((rsp + 0x2f)) = 1;
+    *((rsp + 0x20)) = xmm6;
+    goto label_5;
+label_47:
+    *(r13) = 0x25;
+    rdx = r13 + 1;
+    rbp += 2;
+    goto label_3;
+label_49:
+    rax = inline_num ();
+    r12 = r13;
+    rbx = rax;
+    rax = inline_num ();
+    rax = *(rax);
+    eax = *(rax);
+    *((rsp + 8)) = eax;
+label_9:
+    esi = *((rsp + 8));
+    rdi = r12;
+    rax = inline_num ();
+    r14 = rax;
+    if (rax == 0) {
+        goto label_8;
+    }
+    if (rbx != 1) {
+        rdi = r14;
+        r12 = r14 + rbx;
+        rax = inline_num ();
+        rdx = rax;
+        rax = r12 + rax;
+        if (*((rsp + 0x10)) < rax) {
+            goto label_67;
+        }
+        rsi = r14 + 1;
+        rdi = r12;
+        inline_num ();
+        rsi = *(obj.decimalsign);
+        rdx = rbx;
+        rdi = r14;
+        inline_num ();
+        goto label_9;
+    }
+    rax = *(obj.decimalsign);
+    r12++;
+    eax = *(rax);
+    *(r14) = al;
+    goto label_9;
+label_46:
+    rdx = *((rsp + 0x48));
+    rsi = *((rsp + 0x50));
+    rdi = *((rsp + 0x40));
+    inline_num ();
+    if (*(reloc.evaluate_inside_using) == 0) {
+        rax = *(obj.numeric_locale);
+        if (rax == 0) {
+            goto label_25;
+        }
+        if (*(rax) == 0x43) {
+            goto label_68;
+        }
+label_26:
+        rsi = loc__LC13;
+        edi = 1;
+        inline_num ();
+    }
+label_25:
+    rax = *((rsp + 0xa88));
+    rax ^= *(fs:0x28);
+    if (*(rax) != 0x43) {
+        goto label_69;
+    }
+    return rax;
+label_44:
+    rbp = loc__LC29;
+label_45:
+    if (*(reloc.table_mode) != 0) {
+        goto label_10;
+    }
+    rax = *(reloc.term);
+    if ((*((rax + 0xa9)) & 0x40) == 0) {
+        goto label_10;
+    }
+    eax = 0x24;
+    rbp = "$%h$";
+    goto label_11;
+label_60:
+    xmm3 = *((rsp + 0x18));
+    xmm4 = 0;
+    __asm ("ucomisd xmm3, xmm4");
+    __asm ("jnp 0x8001cd7");
+label_27:
+    xmm2 = *(loc..LC23);
+    xmm1 = *((rsp + 0x18));
+    rdx = rsp + 0x68;
+    esi = 0;
+    rcx = "%.0f";
+    edi = 1;
+    __asm ("movapd xmm0, xmm2");
+    mant_exp_part_0 ();
+    goto label_6;
+    r9d = *((rsp + 0x68));
+    goto label_12;
+label_58:
+    xmm5 = *((rsp + 0x18));
+    xmm6 = 0;
+    __asm ("ucomisd xmm5, xmm6");
+    __asm ("jnp 0x8001ced");
+label_28:
+    xmm1 = *((rsp + 0x18));
+    rdx = rsp + 0x68;
+    esi = 0;
+    edi = 0;
+    xmm2 = *(loc..LC23);
+    rcx = "%.0f";
+    __asm ("movapd xmm0, xmm2");
+    mant_exp_part_0 ();
+    goto label_6;
+    r9d = *((rsp + 0x68));
+    goto label_12;
+label_56:
+    xmm6 = *((rsp + 0x18));
+    rax = rsp + 0x670;
+    xmm7 = 0;
+    *((rsp + 0x10)) = rax;
+    rax -= r13;
+    __asm ("ucomisd xmm6, xmm7");
+    r14 = rax;
+    __asm ("jnp 0x8001d41");
+label_31:
+    xmm2 = *(loc..LC23);
+    xmm1 = *((rsp + 0x18));
+    rdx = rsp + 0x68;
+    esi = 0;
+    rcx = "%.0f";
+    edi = 1;
+    __asm ("movapd xmm0, xmm2");
+    mant_exp_part_0 ();
+    goto label_6;
+    r9d = *((rsp + 0x68));
+    r8 = "e%+02d";
+    eax = r9 + 0x18;
+    if (eax > 0x30) {
+        goto label_7;
+    }
+label_32:
+    edx = 0xaaaaaaab;
+    rcx = 0xffffffffffffffff;
+    rsi = r14;
+    rdi = r13;
+    rax *= rdx;
+    rdx = "yzafpnum kMGTPEZY";
+    r8 = rsp + 0x680;
+    rax >>= 0x21;
+    *((rsp + 0x68)) = eax;
+    rax = (int64_t) eax;
+    r9d = *((rdx + rax));
+    eax = 0;
+    edx = 1;
+    inline_num ();
+    if (*(loc..LC6) == 0) {
+        goto label_5;
+    }
+    if (*((rsp + 0x68)) != 6) {
+        goto label_5;
+    }
+    rsi = r14;
+    edx = 1;
+    rdi = r13;
+    rax = rsp + 0x68a;
+    r9 = *(obj.micro);
+    rcx = 0xffffffffffffffff;
+    r8 = "%s%s";
+    eax = 0;
+    inline_num (rax);
+    goto label_5;
+label_51:
+    rdi = *((rsp + 0x38));
+    inline_num ();
+    __asm ("cvttsd2si r9, xmm0");
+label_52:
+    rax = rsp + 0x670;
+    r8 = rsp + 0x680;
+    edx = 1;
+    rdi = r13;
+    *((rsp + 0x10)) = rax;
+    rax -= r13;
+    rcx = 0xffffffffffffffff;
+    rsi = rax;
+    eax = 0;
+    inline_num ();
+    goto label_5;
+label_54:
+    xmm6 = *((rsp + 0x18));
+    xmm7 = 0;
+    __asm ("ucomisd xmm6, xmm7");
+    __asm ("jnp 0x8001d1f");
+label_30:
+    xmm1 = *((rsp + 0x18));
+    xmm0 = *((rsp + 0x30));
+    esi = 0;
+    edi = 0;
+    rdx = rsp + 0x68;
+    rcx = "%.0f";
+    mant_exp_part_0 ();
+    goto label_6;
+    xmm3 = *((rsp + 0x30));
+    r9d = *((rsp + 0x68));
+    *((rsp + 0x20)) = xmm3;
+    goto label_12;
+label_61:
+    xmm3 = *((rsp + 0x18));
+    rax = rsp + 0x670;
+    xmm4 = 0;
+    *((rsp + 0x10)) = rax;
+    rax -= r13;
+    __asm ("ucomisd xmm3, xmm4");
+    r14 = rax;
+    __asm ("jnp 0x8001cf8");
+label_29:
+    xmm1 = *((rsp + 0x18));
+    rdx = rsp + 0x68;
+    esi = 0;
+    edi = 0;
+    rcx = "%.0f";
+    mant_exp_part_0 ();
+    goto label_6;
+    r9 = *((rsp + 0x68));
+    eax = r9 - 1;
+    if (eax > 7) {
+        goto label_13;
+    }
+label_63:
+    rax = " kMGTPEZY";
+    r8 = rsp + 0x680;
+    r9d = *((rax + r9));
+    goto label_7;
+    if (eax != 7) {
+        goto label_14;
+    }
+    *((rsp + 0x68)) = 0;
+    xmm0 = 0;
+    r14 = rsp + 0x680;
+    *((rsp + 0x64)) = 0;
+    goto label_15;
+    if (eax != 7) {
+        goto label_16;
+    }
+    do {
+        *((rsp + 0x68)) = 0;
+        xmm2 = *(loc..LC23);
+        xmm0 = 0;
+        r14 = rsp + 0x680;
+        *((rsp + 0x64)) = 0;
+        goto label_17;
+    } while (eax == 7);
+    goto label_18;
+    if (eax != 7) {
+        goto label_19;
+    }
+    *((rsp + 0x68)) = 0;
+    xmm0 = 0;
+    r14 = rsp + 0x680;
+    *((rsp + 0x64)) = 0;
+    goto label_20;
+label_50:
+    rdi = r14;
+    rbx = r13;
+    rax = inline_num ();
+    *((rsp + 8)) = rax;
+label_22:
+    esi = 0x2d;
+    rdi = rbx;
+    rax = inline_num ();
+    r12 = rax;
+    if (rax == 0) {
+        goto label_21;
+    }
+    if (*((rsp + 8)) != 1) {
+        rdi = r12;
+        rax = inline_num ();
+        rdx = rax;
+        rax = *((rsp + 8));
+        rbx = r12 + rax;
+        rax = rbx + rdx;
+        if (*((rsp + 0x10)) < rax) {
+            goto label_70;
+        }
+        rsi = r12 + 1;
+        rdi = rbx;
+        inline_num ();
+        rdx = *((rsp + 8));
+        rsi = r14;
+        rdi = r12;
+        inline_num ();
+        goto label_22;
+    }
+    eax = *(r14);
+    rbx++;
+    *(r12) = al;
+    goto label_22;
+label_64:
+    r9d -= 8;
+    r8 = "x2^{%d}Yi";
+    goto label_7;
+label_43:
+    if (*((rsi + 1)) == 0) {
+        goto label_23;
+    }
+    goto label_24;
+label_68:
+    if (*((rax + 1)) == 0) {
+        goto label_25;
+    }
+    goto label_26;
+    if (*((rax + 1)) != 0) {
+        goto label_27;
+    }
+    do {
+        *((rsp + 0x68)) = 0;
+        r9d = 0;
+        goto label_12;
+    } while (*((rax + 1)) == 0);
+    goto label_28;
+    if (*((rax + 1)) != 0) {
+        goto label_29;
+    }
+    *((rsp + 0x68)) = 0;
+label_65:
+    rdx = loc__LC44;
+    rsi = r14;
+    rdi = r13;
+    eax = 0;
+    inline_num ();
+    goto label_5;
+    if (*((rax + 1)) != 0) {
+        goto label_30;
+    }
+    xmm3 = *((rsp + 0x30));
+    *((rsp + 0x68)) = 0;
+    r9d = 0;
+    *((rsp + 0x20)) = xmm3;
+    goto label_12;
+    if (*((rax + 1)) != 0) {
+        goto label_31;
+    }
+    eax = 0x18;
+    goto label_32;
+label_53:
+    xmm0 = *((rsp + 0x18));
+    edx = 1;
+    rdi = rsp + 0x70;
+    r8 = rsp + 0x680;
+    ecx = 0x100;
+    esi = 0xf0;
+    eax = 1;
+    eax = inline_num ();
+    edx = *((rsp + 0x70));
+    eax = 0;
+    if (dl == 0) {
+        goto label_71;
+    }
+    ecx = 0;
+    rsi = rsp + 0x170;
+    r11d = 0xffffffd7;
+    r10d = 0x78;
+    r9d = 0x2a;
+    while (r8b != 0x45) {
+        rcx = (int64_t) eax;
+        eax++;
+        *((rsp + rcx + 0x170)) = dl;
+        rdx = (int64_t) edi;
+        ecx = edi;
+        edx = *((rsp + rdx + 0x70));
+label_33:
+        if (dl == 0) {
+            goto label_72;
+        }
+        if (ecx > 0xff) {
+            goto label_72;
+        }
+        r8d = edx;
+        edi = rcx + 1;
+        r8d &= 0xffffffdf;
+    }
+    rdx = *(reloc.term);
+    if ((*((rdx + 0xa9)) & 0x40) == 0) {
+        goto label_73;
+    }
+    rdx = (int64_t) eax;
+    rdx += rsi;
+    if (*(rbx) == 0x68) {
+        goto label_74;
+    }
+    r12d = 0x74;
+    *(rdx) = 0x6f64635c;
+    r8d = rax + 5;
+    *((rdx + 4)) = r12w;
+label_34:
+    rdx = (int64_t) edi;
+    rax = (int64_t) r8d;
+    edx = *((rsp + rdx + 0x70));
+    rax += rsi;
+    *(rax) = 0x7b5e3031;
+    *((rax + 4)) = 0;
+    eax = r8 + 4;
+    if (dl == 0x2b) {
+        goto label_75;
+    }
+    if (dl == 0x2d) {
+        goto label_76;
+    }
+    ecx = edi;
+label_35:
+    edi = rcx + 1;
+    r8 = *((rsp + 0x58));
+    rdi = (int64_t) edi;
+    if (dl != 0x30) {
+        goto label_77;
+    }
+    do {
+        ecx = edi;
+        rdi++;
+        edx = *((r8 + rdi));
+    } while (dl == 0x30);
+label_77:
+    r12d = 1;
+    goto label_33;
+label_73:
+    edx = *(reloc.encoding);
+    if (edx == 0xb) {
+        goto label_78;
+    }
+    if (edx <= 0xb) {
+        edx--;
+        if (edx > 3) {
+            goto label_79;
+        }
+        edx = r9d;
+        r8d = rax + 1;
+        rax = (int64_t) eax;
+        if (*(rbx) == 0x68) {
+            edx = r11d;
+        }
+        *((rsp + rax + 0x170)) = dl;
+        goto label_34;
+    }
+    if (edx != 0x10) {
+        goto label_79;
+    }
+    rdx = (int64_t) eax;
+    r8d = 0xffff97c3;
+    rdx += rsi;
+    *(rdx) = r8w;
+    r8d = rax + 2;
+    *((rdx + 2)) = 0;
+    goto label_34;
+label_72:
+    if (r12b == 0) {
+        goto label_80;
+    }
+    rdx = (int64_t) eax;
+    eax++;
+    *((rsp + rdx + 0x170)) = 0x7d;
+    do {
+label_80:
+        rax = (int64_t) eax;
+        rdx = r14;
+        rdi = r13;
+        *((rsp + rax + 0x170)) = 0;
+        inline_num ();
+        goto label_5;
+label_76:
+        rax = (int64_t) eax;
+        ecx += 2;
+        *((rsp + rax + 0x170)) = 0x2d;
+        rax = (int64_t) ecx;
+        edx = *((rsp + rax + 0x70));
+        eax = r8 + 5;
+        goto label_35;
+label_75:
+        ecx += 2;
+        rdx = (int64_t) ecx;
+        edx = *((rsp + rdx + 0x70));
+        goto label_35;
+label_48:
+        rsi = "Bad format character";
+        edi = 0xffffffff;
+        eax = 0;
+        inline_num ();
+label_74:
+        r8d = 0x7365;
+        *(rdx) = 0x6d69745c;
+        *((rdx + 4)) = r8w;
+        r8d = rax + 6;
+        *((rdx + 6)) = 0;
+        goto label_34;
+label_69:
+        eax = inline_num ();
+label_70:
+        rsi = "format too long due to minus_sign string";
+        edi = 0xffffffff;
+        eax = 0;
+        eax = inline_num ();
+label_67:
+        rsi = "format too long due to decimalsign string";
+        edi = 0xffffffff;
+        eax = 0;
+        eax = inline_num ();
+label_78:
+        edx = 0xffffffb7;
+        r8d = rax + 1;
+        rax = (int64_t) eax;
+        if (*(rbx) == 0x68) {
+            edx = r11d;
+        }
+        *((rsp + rax + 0x170)) = dl;
+        goto label_34;
+label_71:
+        rsi = rsp + 0x170;
+    } while (1);
+label_57:
+    rsi = "Format character mismatch: %%c is only valid with %%s";
+    edi |= 0xffffffff;
+    eax = 0;
+    eax = inline_num ();
+label_59:
+    rsi = "Format character mismatch: %%T is only valid with %%t";
+    edi |= 0xffffffff;
+    eax = 0;
+    eax = inline_num ();
+label_62:
+    rsi = "Format character mismatch: %%B is only valid with %%b";
+    edi |= 0xffffffff;
+    eax = 0;
+    inline_num ();
+label_79:
+    edx = r9d;
+    r8d = rax + 1;
+    rax = (int64_t) eax;
+    if (*(rbx) == 0x68) {
+        edx = r10d;
+    }
+    *((rsp + rax + 0x170)) = dl;
+    goto label_34;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.e pdg @ sym.e pdg @ sym.eq pdg @ sym.eq pdg @ sym.equ pdg @ sym.equ pdg @ sym.equa pdg @ sym.equa pdg @ sym.equal pdg @ sym.equal pdg @ sym.equals pdg @ sym.equals
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable arg1 to Decompiler type: Unknown type identifier
+// signed
+
+bool sym.equals(undefined8 arg1)
+{
+    char *pcVar1;
+    int32_t iVar2;
+    int64_t iVar3;
+    char *in_RSI;
+    
+    if ((-1 < (int32_t)arg1) && ((int32_t)arg1 < _reloc.num_tokens)) {
+        pcVar1 = (char *)(_reloc.token + (int64_t)(int32_t)arg1 * 0x28);
+        if (*pcVar1 == '\0') {
+            return false;
+        }
+        if (0 < *(int32_t *)(pcVar1 + 0x24)) {
+            iVar3 = 1;
+            do {
+                iVar2 = (int32_t)iVar3;
+                if (*(char *)(iVar3 + -1 + *(int32_t *)(pcVar1 + 0x20) + _reloc.gp_input_line) != in_RSI[iVar3 + -1]) {
+                    return false;
+                }
+                iVar3 = iVar3 + 1;
+            } while ((uint64_t)(*(int32_t *)(pcVar1 + 0x24) - 1) + 2 != iVar3);
+            in_RSI = in_RSI + iVar2;
+        }
+        return *in_RSI == '\0';
+    }
+    return false;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.e pdd @ sym.e pdd @ sym.eq pdd @ sym.eq pdd @ sym.equ pdd @ sym.equ pdd @ sym.equa pdd @ sym.equa pdd @ sym.equal pdd @ sym.equal pdd @ sym.equals pdd @ sym.equals/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x80003b0 */
+#include <stdint.h>
+ 
+int32_t equals (signed int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    if (edi >= 0) {
+        if (*(reloc.num_tokens) <= edi) {
+            goto label_0;
+        }
+        void (*0x8000340)() ();
+    }
+label_0:
+    eax = 0;
+    return eax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.a pdg @ sym.a pdg @ sym.al pdg @ sym.al pdg @ sym.alm pdg @ sym.alm pdg @ sym.almo pdg @ sym.almo pdg @ sym.almos pdg @ sym.almos pdg @ sym.almost pdg @ sym.almost pdg @ sym.almost_ pdg @ sym.almost_ pdg @ sym.almost_e pdg @ sym.almost_e pdg @ sym.almost_eq pdg @ sym.almost_eq pdg @ sym.almost_equ pdg @ sym.almost_equ pdg @ sym.almost_equa pdg @ sym.almost_equa pdg @ sym.almost_equal pdg @ sym.almost_equal pdg @ sym.almost_equals pdg @ sym.almost_equals
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable arg1 to Decompiler type: Unknown type identifier
+// signed
+
+uint32_t sym.almost_equals(undefined8 arg1, int64_t arg2, undefined8 placeholder_2, int64_t arg4)
+{
+    char *pcVar1;
+    int32_t iVar2;
+    int64_t iVar3;
+    uint32_t uVar4;
+    uint32_t uVar5;
+    int32_t iVar6;
+    
+    uVar4 = 0;
+    uVar5 = uVar4;
+    if (-1 < (int32_t)arg1) {
+        if ((_reloc.num_tokens <= (int32_t)arg1) || (arg2 == 0)) {
+            return 0;
+        }
+        pcVar1 = (char *)(_reloc.token + (int64_t)(int32_t)arg1 * 0x28);
+        uVar5 = 0;
+        if (*pcVar1 != '\0') {
+            iVar6 = *(int32_t *)(pcVar1 + 0x20);
+            if (0 < *(int32_t *)(pcVar1 + 0x24)) {
+                iVar3 = 0;
+                do {
+                    iVar2 = (int32_t)iVar3;
+                    if (*(char *)(arg2 + iVar3) != *(char *)(_reloc.gp_input_line + (iVar6 + iVar2))) {
+                        if (*(char *)(arg2 + iVar3) != '$') {
+                            return 0;
+                        }
+                        iVar6 = iVar6 + -1;
+                        uVar4 = 1;
+                    }
+                    iVar3 = iVar3 + 1;
+                } while ((int32_t)iVar3 < (int32_t)(uVar4 + *(int32_t *)(pcVar1 + 0x24)));
+                if (uVar4 != 0) {
+                    return uVar4;
+                }
+                arg2 = arg2 + (iVar2 + 1);
+            }
+            uVar5 = (uint32_t)(*(char *)arg2 == '$' || *(char *)arg2 == '\0');
+        }
+    }
+    return uVar5;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.a pdd @ sym.a pdd @ sym.al pdd @ sym.al pdd @ sym.alm pdd @ sym.alm pdd @ sym.almo pdd @ sym.almo pdd @ sym.almos pdd @ sym.almos pdd @ sym.almost pdd @ sym.almost pdd @ sym.almost_ pdd @ sym.almost_ pdd @ sym.almost_e pdd @ sym.almost_e pdd @ sym.almost_eq pdd @ sym.almost_eq pdd @ sym.almost_equ pdd @ sym.almost_equ pdd @ sym.almost_equa pdd @ sym.almost_equa pdd @ sym.almost_equal pdd @ sym.almost_equal pdd @ sym.almost_equals pdd @ sym.almost_equals/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x80003d0 */
+#include <stdint.h>
+ 
+int64_t almost_equals (signed int64_t arg1, int64_t arg2, int64_t arg4) {
+    rdi = arg1;
+    rsi = arg2;
+    rcx = arg4;
+    __asm ("endbr64");
+    r8d = 0;
+    if (edi < 0) {
+        goto label_0;
+    }
+    if (*(reloc.num_tokens) <= edi) {
+        goto label_1;
+    }
+    if (rsi == 0) {
+        goto label_1;
+    }
+    rax = *(reloc.token);
+    rdi = (int64_t) edi;
+    rdx = rdi * 5;
+    rax = rax + rdx*8;
+    if (*(rax) == 0) {
+        goto label_0;
+    }
+    r10d = *((rax + 0x24));
+    r9d = *((rax + 0x20));
+    if (r10d <= 0) {
+        goto label_2;
+    }
+    r11 = *(reloc.gp_input_line);
+    eax = 0;
+    do {
+        edx = r9 + rax;
+        edi = *((rsi + rax));
+        ecx = eax;
+        rdx = (int64_t) edx;
+        if (dil != *((r11 + rdx))) {
+            if (dil != 0x24) {
+                goto label_1;
+            }
+            r9d--;
+            r8d = 1;
+        }
+        rax++;
+        edx = r8 + r10;
+        ecx++;
+    } while (edx > eax);
+    if (r8d == 0) {
+        rcx = (int64_t) ecx;
+        rsi += rcx;
+label_2:
+        eax = *(rsi);
+        r8b = (al == 0x24) ? 1 : 0;
+        al = (al == 0) ? 1 : 0;
+        r8d |= eax;
+        r8d = (int32_t) r8b;
+    }
+label_0:
+    eax = r8d;
+    return rax;
+label_1:
+    r8d = 0;
+    eax = r8d;
+    return rax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.t pdg @ sym.t pdg @ sym.to pdg @ sym.to pdg @ sym.tok pdg @ sym.tok pdg @ sym.toke pdg @ sym.toke pdg @ sym.token pdg @ sym.token pdg @ sym.token_ pdg @ sym.token_ pdg @ sym.token_t pdg @ sym.token_t pdg @ sym.token_to pdg @ sym.token_to pdg @ sym.token_to_ pdg @ sym.token_to_ pdg @ sym.token_to_s pdg @ sym.token_to_s pdg @ sym.token_to_st pdg @ sym.token_to_st pdg @ sym.token_to_str pdg @ sym.token_to_str pdg @ sym.token_to_stri pdg @ sym.token_to_stri pdg @ sym.token_to_strin pdg @ sym.token_to_strin pdg @ sym.token_to_string pdg @ sym.token_to_string
+void sym.token_to_string(int64_t arg1)
+{
+    int32_t iVar1;
+    int64_t iVar2;
+    
+    iVar2 = (int64_t)(int32_t)arg1 * 0x28;
+    iVar1 = *(int32_t *)(_reloc.token + 0x24 + iVar2);
+    ""._0_8_ = func_0x0802fb5f(""._0_8_, (int64_t)(iVar1 + 1));
+    iVar2 = func_0x0802fb5f(""._0_8_, *(int32_t *)(_reloc.token + 0x20 + iVar2) + _reloc.gp_input_line, (int64_t)iVar1);
+    *(undefined *)(iVar2 + iVar1) = 0;
+    return;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.t pdd @ sym.t pdd @ sym.to pdd @ sym.to pdd @ sym.tok pdd @ sym.tok pdd @ sym.toke pdd @ sym.toke pdd @ sym.token pdd @ sym.token pdd @ sym.token_ pdd @ sym.token_ pdd @ sym.token_t pdd @ sym.token_t pdd @ sym.token_to pdd @ sym.token_to pdd @ sym.token_to_ pdd @ sym.token_to_ pdd @ sym.token_to_s pdd @ sym.token_to_s pdd @ sym.token_to_st pdd @ sym.token_to_st pdd @ sym.token_to_str pdd @ sym.token_to_str pdd @ sym.token_to_stri pdd @ sym.token_to_stri pdd @ sym.token_to_strin pdd @ sym.token_to_strin pdd @ sym.token_to_string pdd @ sym.token_to_string/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x8000490 */
+#include <stdint.h>
+ 
+int64_t token_to_string (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    rdi = (int64_t) edi;
+    rbp = rdi * 5;
+    rbp <<= 3;
+    rax = *(reloc.token);
+    rdi = "{%s, %s}";
+    rbx = *((rax + rbp + 0x24));
+    esi = rbx + 1;
+    rsi = (int64_t) esi;
+    rax = inline_num (rbx);
+    rdx = rbx;
+    r8 = rax;
+    *(obj.token_string.12543) = "{%s, %s}";
+    rax = *(reloc.token);
+    rdi = r8;
+    rsi = *((rax + rbp + 0x20));
+    rsi += *(reloc.gp_input_line);
+    inline_num ();
+    *((rax + rbx)) = 0;
+    return rax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.i pdg @ sym.i pdg @ sym.is pdg @ sym.is pdg @ sym.iss pdg @ sym.iss pdg @ sym.isst pdg @ sym.isst pdg @ sym.isstr pdg @ sym.isstr pdg @ sym.isstri pdg @ sym.isstri pdg @ sym.isstrin pdg @ sym.isstrin pdg @ sym.isstring pdg @ sym.isstring
+bool sym.isstring(int64_t arg1)
+{
+    char *pcVar1;
+    char cVar2;
+    bool bVar3;
+    
+    pcVar1 = (char *)(_reloc.token + (int64_t)(int32_t)arg1 * 0x28);
+    bVar3 = false;
+    if (*pcVar1 != '\0') {
+        cVar2 = *(char *)(_reloc.gp_input_line + *(int32_t *)(pcVar1 + 0x20));
+        bVar3 = cVar2 == '\'' || cVar2 == '\"';
+    }
+    return bVar3;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.i pdd @ sym.i pdd @ sym.is pdd @ sym.is pdd @ sym.iss pdd @ sym.iss pdd @ sym.isst pdd @ sym.isst pdd @ sym.isstr pdd @ sym.isstr pdd @ sym.isstri pdd @ sym.isstri pdd @ sym.isstrin pdd @ sym.isstrin pdd @ sym.isstring pdd @ sym.isstring/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x8000500 */
+#include <stdint.h>
+ 
+int64_t isstring (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    rax = *(reloc.token);
+    rdi = (int64_t) edi;
+    rdx = rdi * 5;
+    rdx = rax + rdx*8;
+    eax = 0;
+    if (*(rdx) != 0) {
+        rax = *((rdx + 0x20));
+        rdx = *(reloc.gp_input_line);
+        edx = *((rdx + rax));
+        al = (dl == 0x27) ? 1 : 0;
+        dl = (dl == 0x22) ? 1 : 0;
+        eax |= edx;
+        eax = (int32_t) al;
+    }
+    return rax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.t pdg @ sym.t pdg @ sym.ty pdg @ sym.ty pdg @ sym.typ pdg @ sym.typ pdg @ sym.type pdg @ sym.type pdg @ sym.type_ pdg @ sym.type_ pdg @ sym.type_u pdg @ sym.type_u pdg @ sym.type_ud pdg @ sym.type_ud pdg @ sym.type_udv pdg @ sym.type_udv
+int32_t sym.type_udv(int64_t arg1)
+{
+    int32_t iVar1;
+    int64_t *piVar2;
+    uint64_t uVar3;
+    uint64_t uVar4;
+    
+    uVar3 = arg1 & 0xffffffff;
+    if (_reloc.first_udv != (int64_t *)0x0) {
+        uVar4 = (uint64_t)_reloc.num_tokens;
+        piVar2 = _reloc.first_udv;
+        do {
+            if ((-1 < (int32_t)uVar3) && ((int32_t)uVar3 < (int32_t)uVar4)) {
+                iVar1 = sym.equals.part.0(uVar3 & 0xffffffff, (uint32_t)piVar2[1]);
+                if (iVar1 != 0) {
+                    iVar1 = *(int32_t *)(piVar2 + 2);
+                    if (iVar1 == 7) {
+                        iVar1 = 0;
+                    }
+                    return iVar1;
+                }
+            }
+            piVar2 = (int64_t *)*piVar2;
+        } while (piVar2 != (int64_t *)0x0);
+    }
+    return 0;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.t pdd @ sym.t pdd @ sym.ty pdd @ sym.ty pdd @ sym.typ pdd @ sym.typ pdd @ sym.type pdd @ sym.type pdd @ sym.type_ pdd @ sym.type_ pdd @ sym.type_u pdd @ sym.type_u pdd @ sym.type_ud pdd @ sym.type_ud pdd @ sym.type_udv pdd @ sym.type_udv/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x8000540 */
+#include <stdint.h>
+ 
+uint32_t type_udv (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    r8 = *(reloc.first_udv);
+    r9d = edi;
+    if (r8 == 0) {
+        goto label_0;
+    }
+    r10d = *(reloc.num_tokens);
+    do {
+        if (r9d >= 0) {
+            if (r9d >= r10d) {
+                goto label_1;
+            }
+            rsi = *((r8 + 8));
+            edi = r9d;
+            eax = equals_part_0 ();
+            if (eax != 0) {
+                goto label_2;
+            }
+        }
+label_1:
+        r8 = *(r8);
+    } while (r8 != 0);
+label_0:
+    eax = 0;
+    return eax;
+label_2:
+    eax = *((r8 + 0x10));
+    edx = 0;
+    if (eax == 7) {
+        eax = edx;
+    }
+    return eax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.i pdg @ sym.i pdg @ sym.is pdg @ sym.is pdg @ sym.isa pdg @ sym.isa pdg @ sym.isan pdg @ sym.isan pdg @ sym.isanu pdg @ sym.isanu pdg @ sym.isanum pdg @ sym.isanum pdg @ sym.isanumb pdg @ sym.isanumb pdg @ sym.isanumbe pdg @ sym.isanumbe pdg @ sym.isanumber pdg @ sym.isanumber
+uint8_t sym.isanumber(int64_t arg1)
+{
+    return *(uint8_t *)(_reloc.token + (int64_t)(int32_t)arg1 * 0x28) ^ 1;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.i pdd @ sym.i pdd @ sym.is pdd @ sym.is pdd @ sym.isa pdd @ sym.isa pdd @ sym.isan pdd @ sym.isan pdd @ sym.isanu pdd @ sym.isanu pdd @ sym.isanum pdd @ sym.isanum pdd @ sym.isanumb pdd @ sym.isanumb pdd @ sym.isanumbe pdd @ sym.isanumbe pdd @ sym.isanumber pdd @ sym.isanumber/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x80005a0 */
+#include <stdint.h>
+ 
+uint64_t isanumber (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    rdx = *(reloc.token);
+    rdi = (int64_t) edi;
+    rax = rdi * 5;
+    rax = rdx + rax*8;
+    eax = *(rax);
+    eax ^= 1;
+    eax = (int32_t) al;
+    return rax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.i pdg @ sym.i pdg @ sym.is pdg @ sym.is pdg @ sym.isl pdg @ sym.isl pdg @ sym.isle pdg @ sym.isle pdg @ sym.islet pdg @ sym.islet pdg @ sym.islett pdg @ sym.islett pdg @ sym.islette pdg @ sym.islette pdg @ sym.isletter pdg @ sym.isletter
+uint8_t sym.isletter(int64_t arg1)
+{
+    char *pcVar1;
+    uint8_t uVar2;
+    int64_t *piVar3;
+    
+    pcVar1 = (char *)(_reloc.token + (int64_t)(int32_t)arg1 * 0x28);
+    if (*pcVar1 == '\0') {
+        return 0;
+    }
+    uVar2 = *(uint8_t *)(_reloc.gp_input_line + *(int32_t *)(pcVar1 + 0x20));
+    piVar3 = (int64_t *)func_0x0802fb5f();
+    if ((*(uint8_t *)(*piVar3 + 1 + (uint64_t)uVar2 * 2) & 4) != 0) {
+        return 1;
+    }
+    return uVar2 == 0x5f | uVar2 >> 7;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.i pdd @ sym.i pdd @ sym.is pdd @ sym.is pdd @ sym.isl pdd @ sym.isl pdd @ sym.isle pdd @ sym.isle pdd @ sym.islet pdd @ sym.islet pdd @ sym.islett pdd @ sym.islett pdd @ sym.islette pdd @ sym.islette pdd @ sym.isletter pdd @ sym.isletter/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x80005c0 */
+#include <stdint.h>
+ 
+int64_t isletter (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    rax = *(reloc.token);
+    rdi = (int64_t) edi;
+    rdx = rdi * 5;
+    rdx = rax + rdx*8;
+    eax = 0;
+    if (*(rdx) != 0) {
+        rax = *((rdx + 0x20));
+        rdx = *(reloc.gp_input_line);
+        ebx = *((rdx + rax));
+        rax = inline_num (rbx);
+        rdx = *(rax);
+        ecx = (int32_t) bl;
+        eax = 1;
+        if ((*((rdx + rcx*2 + 1)) & 4) == 0) {
+            goto label_0;
+        }
+        return rax;
+    }
+    return rax;
+label_0:
+    al = (bl == 0x5f) ? 1 : 0;
+    bl >>= 7;
+    eax |= ebx;
+    eax = (int32_t) al;
+    return rax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.m pdg @ sym.m pdg @ sym.mi pdg @ sym.mi pdg @ sym.mig pdg @ sym.mig pdg @ sym.migh pdg @ sym.migh pdg @ sym.might pdg @ sym.might pdg @ sym.might_ pdg @ sym.might_ pdg @ sym.might_b pdg @ sym.might_b pdg @ sym.might_be pdg @ sym.might_be pdg @ sym.might_be_ pdg @ sym.might_be_ pdg @ sym.might_be_n pdg @ sym.might_be_n pdg @ sym.might_be_nu pdg @ sym.might_be_nu pdg @ sym.might_be_num pdg @ sym.might_be_num pdg @ sym.might_be_nume pdg @ sym.might_be_nume pdg @ sym.might_be_numer pdg @ sym.might_be_numer pdg @ sym.might_be_numeri pdg @ sym.might_be_numeri pdg @ sym.might_be_numeric pdg @ sym.might_be_numeric
+uint64_t sym.might_be_numeric(int64_t arg1)
+{
+    int32_t iVar1;
+    int32_t iVar2;
+    uint64_t uVar3;
+    
+    if (_reloc.num_tokens <= (int32_t)_reloc.c_token) {
+        return 0;
+    }
+    if ((-1 < (int32_t)_reloc.c_token) && (iVar1 = sym.equals.part.0((uint64_t)_reloc.c_token, 0x8002c21), iVar1 != 0))
+    {
+        return 0;
+    }
+    iVar1 = (int32_t)(arg1 & 0xffffffffU);
+    if ((((*(char *)(_reloc.token + (int64_t)iVar1 * 0x28) == '\0') || (iVar2 = func_0x0802fb5f(), iVar2 != 0)) ||
+        (iVar2 = func_0x0802fb5f(), iVar2 - 1U < 2)) || (iVar2 == 5)) {
+        return 1;
+    }
+    if (iVar1 < 0) {
+        return 0;
+    }
+    if (_reloc.num_tokens <= iVar1) {
+        return 0;
+    }
+    uVar3 = sym.equals.part.0(arg1 & 0xffffffffU, 0x8002c23);
+    return uVar3 & 0xffffffffffffff00 | (uint64_t)((int32_t)uVar3 != 0);
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.m pdd @ sym.m pdd @ sym.mi pdd @ sym.mi pdd @ sym.mig pdd @ sym.mig pdd @ sym.migh pdd @ sym.migh pdd @ sym.might pdd @ sym.might pdd @ sym.might_ pdd @ sym.might_ pdd @ sym.might_b pdd @ sym.might_b pdd @ sym.might_be pdd @ sym.might_be pdd @ sym.might_be_ pdd @ sym.might_be_ pdd @ sym.might_be_n pdd @ sym.might_be_n pdd @ sym.might_be_nu pdd @ sym.might_be_nu pdd @ sym.might_be_num pdd @ sym.might_be_num pdd @ sym.might_be_nume pdd @ sym.might_be_nume pdd @ sym.might_be_numer pdd @ sym.might_be_numer pdd @ sym.might_be_numeri pdd @ sym.might_be_numeri pdd @ sym.might_be_numeric pdd @ sym.might_be_numeric/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x8000630 */
+#include <stdint.h>
+ 
+int64_t might_be_numeric (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    edi = *(reloc.c_token);
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_1;
+    }
+    if (edi >= 0) {
+        rsi = ";(=,)\xe7\x91\xb3\xe6\xa5\xb2\xe6\x9d\xae\xe6\x9c\x80\xe5\xbd\xb0\xe7\x91\xb3\xe6\x85\xb2\xe6\x91\xa4\xe4\x8c\x80\xe7\x8c\x80\xe7\x8d\xb9\xe6\x95\xb4";
+        eax = equals_part_0 ();
+        if (eax != 0) {
+            goto label_1;
+        }
+    }
+    rdx = *(reloc.token);
+    rax = (int64_t) ebp;
+    rax *= 5;
+    rax = rdx + rax*8;
+    if (*(rax) == 0) {
+        goto label_0;
+    }
+    edi = ebp;
+    eax = inline_num ();
+    while (edx <= 1) {
+label_0:
+        eax = 1;
+        return rax;
+        edi = ebp;
+        eax = inline_num ();
+        edx = rax - 1;
+    }
+    if (eax == 5) {
+        goto label_0;
+    }
+    while (ebp >= *(reloc.num_tokens)) {
+label_1:
+        eax = 0;
+        return rax;
+    }
+    edi = ebp;
+    rsi = loc__LC7;
+    eax = equals_part_0 ();
+    al = (eax != 0) ? 1 : 0;
+    return rax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.i pdg @ sym.i pdg @ sym.is pdg @ sym.is pdg @ sym.is_ pdg @ sym.is_ pdg @ sym.is_d pdg @ sym.is_d pdg @ sym.is_de pdg @ sym.is_de pdg @ sym.is_def pdg @ sym.is_def pdg @ sym.is_defi pdg @ sym.is_defi pdg @ sym.is_defin pdg @ sym.is_defin pdg @ sym.is_defini pdg @ sym.is_defini pdg @ sym.is_definit pdg @ sym.is_definit pdg @ sym.is_definiti pdg @ sym.is_definiti pdg @ sym.is_definitio pdg @ sym.is_definitio pdg @ sym.is_definition pdg @ sym.is_definition
+bool sym.is_definition(int64_t arg1)
+{
+    int32_t iVar1;
+    int32_t iVar2;
+    uint32_t uVar3;
+    uint64_t arg1_00;
+    
+    iVar1 = func_0x0802fb5f();
+    if (((iVar1 != 0) && (uVar3 = (int32_t)arg1 + 1, -1 < (int32_t)uVar3)) &&
+       (arg1_00 = (uint64_t)uVar3, (int32_t)uVar3 < _reloc.num_tokens)) {
+        iVar1 = sym.equals.part.0(arg1_00, 0x8002c25);
+        if (iVar1 != 0) {
+            return true;
+        }
+        iVar1 = sym.equals.part.0(arg1_00 & 0xffffffff, 0x8002c23);
+        if (((iVar1 != 0) && (iVar1 = func_0x0802fb5f(), iVar1 != 0)) &&
+           ((iVar2 = func_0x0802fb5f(), iVar1 = _reloc.num_tokens, iVar2 == 0 &&
+            ((uVar3 = (int32_t)arg1 + 3, -1 < (int32_t)uVar3 && ((int32_t)uVar3 < _reloc.num_tokens)))))) {
+            while (iVar2 = sym.equals.part.0((uint64_t)uVar3, 0x8002c27), iVar2 != 0) {
+                iVar2 = func_0x0802fb5f();
+                if (iVar2 == 0) {
+                    return false;
+                }
+                uVar3 = uVar3 + 2;
+                if (iVar1 <= (int32_t)uVar3) {
+                    return false;
+                }
+            }
+            iVar2 = sym.equals.part.0((uint64_t)uVar3, 0x8002c29);
+            if ((iVar2 != 0) && ((int32_t)(uVar3 + 1) < iVar1)) {
+                iVar1 = sym.equals.part.0((uint64_t)(uVar3 + 1), 0x8002c25);
+                return iVar1 != 0;
+            }
+        }
+    }
+    return false;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.i pdd @ sym.i pdd @ sym.is pdd @ sym.is pdd @ sym.is_ pdd @ sym.is_ pdd @ sym.is_d pdd @ sym.is_d pdd @ sym.is_de pdd @ sym.is_de pdd @ sym.is_def pdd @ sym.is_def pdd @ sym.is_defi pdd @ sym.is_defi pdd @ sym.is_defin pdd @ sym.is_defin pdd @ sym.is_defini pdd @ sym.is_defini pdd @ sym.is_definit pdd @ sym.is_definit pdd @ sym.is_definiti pdd @ sym.is_definiti pdd @ sym.is_definitio pdd @ sym.is_definitio pdd @ sym.is_definition pdd @ sym.is_definition/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x80006d0 */
+#include <stdint.h>
+ 
+uint32_t is_definition (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    ebx = edi;
+    eax = inline_num (rbx, rbp);
+    if (eax == 0) {
+        goto label_0;
+    }
+    r8d = ebx;
+    r8d++;
+    if (r8d < 0) {
+        goto label_0;
+    }
+    if (r8d >= *(reloc.num_tokens)) {
+        goto label_0;
+    }
+    rsi = loc__LC8;
+    edi = r8d;
+    eax = equals_part_0 ();
+    r9d = eax;
+    eax = 1;
+    if (r9d != 0) {
+        goto label_2;
+    }
+    rsi = loc__LC7;
+    edi = r8d;
+    eax = equals_part_0 ();
+    if (eax != 0) {
+        goto label_3;
+    }
+    do {
+label_0:
+        eax = 0;
+label_2:
+        return eax;
+label_3:
+        edi = rbx + 2;
+        eax = inline_num ();
+    } while (eax == 0);
+    edi = ebx;
+    eax = inline_num ();
+    if (eax != 0) {
+        goto label_0;
+    }
+    ebx += 3;
+    if (ebx < 0) {
+        goto label_0;
+    }
+    ebp = *(reloc.num_tokens);
+    r12 = loc__LC9;
+    if (ebp <= ebx) {
+        goto label_0;
+    }
+label_1:
+    rsi = r12;
+    edi = ebx;
+    eax = equals_part_0 ();
+    if (eax == 0) {
+        goto label_4;
+    }
+    edi = rbx + 1;
+    eax = inline_num ();
+    if (eax == 0) {
+        goto label_0;
+    }
+    ebx += 2;
+    if (ebp > ebx) {
+        goto label_1;
+    }
+    goto label_0;
+label_4:
+    rsi = loc__LC10;
+    edi = ebx;
+    eax = equals_part_0 ();
+    if (eax == 0) {
+        goto label_0;
+    }
+    edi = rbx + 1;
+    if (edi >= ebp) {
+        goto label_0;
+    }
+    rsi = loc__LC8;
+    eax = equals_part_0 ();
+    al = (eax != 0) ? 1 : 0;
+    eax = (int32_t) al;
+    goto label_2;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.c pdg @ sym.c pdg @ sym.co pdg @ sym.co pdg @ sym.cop pdg @ sym.cop pdg @ sym.copy pdg @ sym.copy pdg @ sym.copy_ pdg @ sym.copy_ pdg @ sym.copy_s pdg @ sym.copy_s pdg @ sym.copy_st pdg @ sym.copy_st pdg @ sym.copy_str pdg @ sym.copy_str
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable arg2 to Decompiler type: Unknown type identifier
+// signed
+
+void sym.copy_str(int64_t arg1, undefined8 arg2, uint32_t arg3)
+{
+    int64_t iVar1;
+    int64_t iVar2;
+    int64_t iVar3;
+    int32_t iVar4;
+    
+    if ((int32_t)arg2 < _reloc.num_tokens) {
+        iVar2 = _reloc.token + (int64_t)(int32_t)arg2 * 0x28;
+        iVar4 = *(int32_t *)(iVar2 + 0x24);
+        iVar2 = (int64_t)*(int32_t *)(iVar2 + 0x20);
+        if ((int32_t)arg3 <= iVar4) {
+            iVar4 = arg3 - 1;
+        }
+        iVar3 = arg1 - iVar2;
+        iVar1 = iVar2 + 1;
+        do {
+            *(undefined *)(iVar3 + iVar2) = *(undefined *)(_reloc.gp_input_line + iVar2);
+            iVar2 = iVar2 + 1;
+        } while (iVar1 + (uint64_t)(iVar4 - 1) != iVar2);
+        *(undefined *)(arg1 + iVar4) = 0;
+        return;
+    }
+    *(undefined *)arg1 = 0;
+    return;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.c pdd @ sym.c pdd @ sym.co pdd @ sym.co pdd @ sym.cop pdd @ sym.cop pdd @ sym.copy pdd @ sym.copy pdd @ sym.copy_ pdd @ sym.copy_ pdd @ sym.copy_s pdd @ sym.copy_s pdd @ sym.copy_st pdd @ sym.copy_st pdd @ sym.copy_str pdd @ sym.copy_str/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x80007c0 */
+#include <stdint.h>
+ 
+int64_t copy_str (int64_t arg1, signed int64_t arg2, uint32_t arg3) {
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    __asm ("endbr64");
+    if (*(reloc.num_tokens) <= esi) {
+        goto label_0;
+    }
+    rsi = (int64_t) esi;
+    rax = *(reloc.token);
+    rcx = rsi * 5;
+    rax = rax + rcx*8;
+    ecx = rdx - 1;
+    r8d = *((rax + 0x24));
+    rax = *((rax + 0x20));
+    if (r8d >= edx) {
+        r8d = ecx;
+    }
+    rcx = rdi;
+    rcx -= rax;
+    edx = r8 - 1;
+    rsi = rax + rdx + 1;
+    do {
+        rdx = *(reloc.gp_input_line);
+        edx = *((rdx + rax));
+        *((rcx + rax)) = dl;
+        rax++;
+    } while (rsi != rax);
+    r8 = (int64_t) r8d;
+    *((rdi + r8)) = 0;
+    return rax;
+label_0:
+    *(rdi) = 0;
+    return rax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.t pdg @ sym.t pdg @ sym.to pdg @ sym.to pdg @ sym.tok pdg @ sym.tok pdg @ sym.toke pdg @ sym.toke pdg @ sym.token pdg @ sym.token pdg @ sym.token_ pdg @ sym.token_ pdg @ sym.token_l pdg @ sym.token_l pdg @ sym.token_le pdg @ sym.token_le pdg @ sym.token_len pdg @ sym.token_len
+int64_t sym.token_len(int64_t arg1)
+{
+    return (int64_t)*(int32_t *)(_reloc.token + (int64_t)(int32_t)arg1 * 0x28 + 0x24);
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.t pdd @ sym.t pdd @ sym.to pdd @ sym.to pdd @ sym.tok pdd @ sym.tok pdd @ sym.toke pdd @ sym.toke pdd @ sym.token pdd @ sym.token pdd @ sym.token_ pdd @ sym.token_ pdd @ sym.token_l pdd @ sym.token_l pdd @ sym.token_le pdd @ sym.token_le pdd @ sym.token_len pdd @ sym.token_len/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x8000830 */
+#include <stdint.h>
+ 
+uint64_t token_len (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    rdx = *(reloc.token);
+    rdi = (int64_t) edi;
+    rax = rdi * 5;
+    rax = rdx + rax*8;
+    rax = *((rax + 0x24));
+    return rax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.c pdg @ sym.c pdg @ sym.ca pdg @ sym.ca pdg @ sym.cap pdg @ sym.cap pdg @ sym.capt pdg @ sym.capt pdg @ sym.captu pdg @ sym.captu pdg @ sym.captur pdg @ sym.captur pdg @ sym.capture pdg @ sym.capture
+void sym.capture(uint32_t arg1, int64_t arg2, int64_t arg3, uint32_t arg4)
+{
+    uint32_t uVar1;
+    int32_t iVar2;
+    undefined4 in_RDI;
+    char *pcVar3;
+    char *pcVar4;
+    char *pcVar5;
+    
+    pcVar3 = (char *)CONCAT44(in_RDI, arg1);
+    iVar2 = *(int32_t *)(_reloc.token + 0x20 + (int64_t)(int32_t)arg3 * 0x28) +
+            *(int32_t *)(_reloc.token + 0x24 + (int64_t)(int32_t)arg3 * 0x28);
+    uVar1 = *(uint32_t *)(_reloc.token + 0x20 + (int64_t)(int32_t)arg2 * 0x28);
+    if ((int32_t)arg4 <= (int32_t)(iVar2 - uVar1)) {
+        iVar2 = (uVar1 - 1) + arg4;
+    }
+    pcVar4 = pcVar3;
+    if ((int32_t)uVar1 < iVar2) {
+        pcVar5 = pcVar3;
+        do {
+            pcVar4 = pcVar5;
+            if (pcVar5[((int64_t)(int32_t)uVar1 - (int64_t)pcVar3) + _reloc.gp_input_line] == '\0') break;
+            pcVar4 = pcVar5 + 1;
+            *pcVar5 = pcVar5[((int64_t)(int32_t)uVar1 - (int64_t)pcVar3) + _reloc.gp_input_line];
+            pcVar5 = pcVar4;
+        } while (pcVar4 != pcVar3 + (uint64_t)(iVar2 + ~uVar1) + 1);
+    }
+    *pcVar4 = '\0';
+    return;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.c pdd @ sym.c pdd @ sym.ca pdd @ sym.ca pdd @ sym.cap pdd @ sym.cap pdd @ sym.capt pdd @ sym.capt pdd @ sym.captu pdd @ sym.captu pdd @ sym.captur pdd @ sym.captur pdd @ sym.capture pdd @ sym.capture/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x8000850 */
+#include <stdint.h>
+ 
+int64_t capture (uint32_t arg1, int64_t arg2, int64_t arg3, uint32_t arg4) {
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    __asm ("endbr64");
+    r8 = *(reloc.token);
+    rdx = (int64_t) edx;
+    rsi = (int64_t) esi;
+    rdx *= 5;
+    eax = *((r8 + rdx*8 + 0x20));
+    eax += *((r8 + rdx*8 + 0x24));
+    rdx = rsi * 5;
+    rdx = *((r8 + rdx*8 + 0x20));
+    r8d = eax;
+    r8d -= edx;
+    esi = rdx + rcx - 1;
+    if (r8d >= ecx) {
+        eax = esi;
+    }
+    if (edx >= eax) {
+        goto label_0;
+    }
+    ecx = edx;
+    rdx -= rdi;
+    ecx = ~ecx;
+    eax += ecx;
+    rcx = rdi + rax + 1;
+    while (al != 0) {
+        rdi++;
+        *((rdi - 1)) = al;
+        if (rdi == rcx) {
+            goto label_0;
+        }
+        rax = *(reloc.gp_input_line);
+        rax += rdi;
+        eax = *((rax + rdx));
+    }
+label_0:
+    *(rdi) = 0;
+    return rax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.m pdg @ sym.m pdg @ sym.m_ pdg @ sym.m_ pdg @ sym.m_c pdg @ sym.m_c pdg @ sym.m_ca pdg @ sym.m_ca pdg @ sym.m_cap pdg @ sym.m_cap pdg @ sym.m_capt pdg @ sym.m_capt pdg @ sym.m_captu pdg @ sym.m_captu pdg @ sym.m_captur pdg @ sym.m_captur pdg @ sym.m_capture pdg @ sym.m_capture
+void sym.m_capture(int64_t arg1, int64_t arg2, int64_t arg3)
+{
+    uint32_t uVar1;
+    int64_t iVar2;
+    char *pcVar3;
+    char *pcVar4;
+    char *pcVar5;
+    int32_t iVar6;
+    
+    iVar6 = *(int32_t *)(_reloc.token + 0x20 + (int64_t)(int32_t)arg3 * 0x28) +
+            *(int32_t *)(_reloc.token + 0x24 + (int64_t)(int32_t)arg3 * 0x28);
+    pcVar3 = (char *)func_0x0802fb5f(*(undefined8 *)arg1, 
+                                     (int64_t)((iVar6 - *(int32_t *)
+                                                         (_reloc.token + 0x20 + (int64_t)(int32_t)arg2 * 0x28)) + 1), 
+                                     reloc..LC11);
+    iVar2 = _reloc.token;
+    *(char **)arg1 = pcVar3;
+    uVar1 = *(uint32_t *)(iVar2 + 0x20 + (int64_t)(int32_t)arg2 * 0x28);
+    pcVar4 = pcVar3;
+    if ((int32_t)uVar1 < iVar6) {
+        pcVar5 = pcVar3;
+        do {
+            pcVar4 = pcVar5;
+            if (pcVar5[((int64_t)(int32_t)uVar1 - (int64_t)pcVar3) + _reloc.gp_input_line] == '\0') break;
+            pcVar4 = pcVar5 + 1;
+            *pcVar5 = pcVar5[((int64_t)(int32_t)uVar1 - (int64_t)pcVar3) + _reloc.gp_input_line];
+            pcVar5 = pcVar4;
+        } while (pcVar4 != pcVar3 + (uint64_t)(~uVar1 + iVar6) + 1);
+    }
+    *pcVar4 = '\0';
+    return;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.m pdd @ sym.m pdd @ sym.m_ pdd @ sym.m_ pdd @ sym.m_c pdd @ sym.m_c pdd @ sym.m_ca pdd @ sym.m_ca pdd @ sym.m_cap pdd @ sym.m_cap pdd @ sym.m_capt pdd @ sym.m_capt pdd @ sym.m_captu pdd @ sym.m_captu pdd @ sym.m_captur pdd @ sym.m_captur pdd @ sym.m_capture pdd @ sym.m_capture/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x80008d0 */
+#include <stdint.h>
+ 
+int64_t m_capture (int64_t arg1, int64_t arg2, int64_t arg3) {
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    __asm ("endbr64");
+    rax = *(reloc.token);
+    rdx = (int64_t) edx;
+    rsi = (int64_t) esi;
+    rdx *= 5;
+    ebx = *((rax + rdx*8 + 0x20));
+    ebx += *((rax + rdx*8 + 0x24));
+    rdx = rsi * 5;
+    rdi = *(rdi);
+    esi = ebx;
+    esi -= *((rax + rdx*8 + 0x20));
+    r12 = rdx*8;
+    esi++;
+    rdx = loc__LC11;
+    rsi = (int64_t) esi;
+    rax = inline_num (rbx, rbp);
+    rdx = *(reloc.token);
+    *(rbp) = rax;
+    rcx = *((rdx + r12 + 0x20));
+    if (ebx <= ecx) {
+        goto label_0;
+    }
+    edx = ecx;
+    rcx -= rax;
+    edx = ~edx;
+    edx += ebx;
+    rsi = rax + rdx + 1;
+    while (dl != 0) {
+        rax++;
+        *((rax - 1)) = dl;
+        if (rax == rsi) {
+            goto label_0;
+        }
+        rdx = *(reloc.gp_input_line);
+        rdx += rax;
+        edx = *((rdx + rcx));
+    }
+label_0:
+    *(rax) = 0;
+    return rax;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util.o @ 0x8000a20 */
+#include <stdint.h>
+ 
+uint64_t gp_stradd (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    __asm ("endbr64");
+    r13 = rdi;
+    rax = inline_num (rbp, r12);
+    rdi = rbp;
+    r12 = rax;
+    inline_num ();
+    rsi = loc__LC12;
+    rdi = r12 + rax + 1;
+    rax = inline_num ();
+    rsi = r13;
+    rdi = rax;
+    r12 = rax;
+    rax = inline_num ();
+    rsi = rbp;
+    rdi = rax;
+    inline_num ();
+    rax = r12;
+    return rax;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,572 @@
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x0800004d: Changing call to branch
+
+void sym.iso_free(int64_t arg1)
+{
+    char cVar1;
+    uint8_t uVar2;
+    uint32_t in_EAX;
+    undefined4 in_register_00000004;
+    
+    // [01] -r-x section size 25593 named .text
+    cVar1 = (char)in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(uint32_t *)CONCAT44(in_register_00000004, in_EAX) = *(int32_t *)CONCAT44(in_register_00000004, in_EAX) + in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    uVar2 = cVar1 + *(char *)CONCAT44(in_register_00000004, in_EAX);
+    _uVar2 = in_EAX & 0xffffff00 | (uint32_t)uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint32_t *)CONCAT44(in_register_00000004, _uVar2) = *(int32_t *)CONCAT44(in_register_00000004, _uVar2) + _uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint32_t *)CONCAT44(in_register_00000004, _uVar2) = *(int32_t *)CONCAT44(in_register_00000004, _uVar2) + _uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    *(uint8_t *)CONCAT44(in_register_00000004, _uVar2) = *(char *)CONCAT44(in_register_00000004, _uVar2) + uVar2;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+undefined8 * sym.iso_alloc(int64_t arg1)
+{
+    int32_t iVar1;
+    undefined8 *puVar2;
+    undefined8 uVar3;
+    int32_t iVar4;
+    
+    iVar4 = (int32_t)arg1;
+    puVar2 = (undefined8 *)func_0x0803f20a(0x18, "\x01");
+    iVar1 = 0;
+    if (-1 < iVar4) {
+        iVar1 = iVar4;
+    }
+    *(undefined4 *)((int64_t)puVar2 + 0xc) = 0;
+    *(int32_t *)(puVar2 + 1) = iVar1;
+    if (iVar4 < 1) {
+        puVar2[2] = 0;
+    } else {
+        uVar3 = func_0x0803f20a((int64_t)iVar4 << 6, "");
+        puVar2[2] = uVar3;
+        func_0x0803f20a(uVar3, 0, (int64_t)iVar4 << 6);
+    }
+    *puVar2 = 0;
+    return puVar2;
+}
+
+
+undefined8 *
+sym.sp_alloc(int64_t arg7, int64_t arg8, int64_t arg9, int64_t arg10, int64_t arg11, undefined8 placeholder_5,
+            undefined8 placeholder_6, undefined8 placeholder_7, int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4)
+{
+    int64_t iVar1;
+    undefined8 uVar2;
+    undefined8 uVar3;
+    undefined8 uVar4;
+    undefined8 uVar5;
+    undefined8 uVar6;
+    undefined8 *puVar7;
+    undefined8 *puVar8;
+    uint64_t uVar9;
+    int32_t iVar10;
+    int64_t in_FS_OFFSET;
+    uint8_t uVar11;
+    double dVar12;
+    undefined extraout_XMM0 [16];
+    double dVar13;
+    undefined auVar14 [16];
+    
+    uVar11 = 0;
+    iVar1 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puVar7 = (undefined8 *)
+             func_0x0803f20a(arg7, arg8, arg9, arg10, arg11, placeholder_5, placeholder_6, placeholder_7, 0x1c0, "");
+    *puVar7 = 0;
+    puVar7[0x37] = 0;
+    uVar9 = (uint64_t)
+            (((int32_t)puVar7 - (int32_t)(undefined8 *)((uint64_t)(puVar7 + 1) & 0xfffffffffffffff8)) + 0x1c0U >> 3);
+    puVar8 = (undefined8 *)((uint64_t)(puVar7 + 1) & 0xfffffffffffffff8);
+    while (iVar10 = _reloc.default_fillstyle, uVar3 = _reloc..LC4, uVar9 != 0) {
+        uVar9 = uVar9 - 1;
+        *puVar8 = 0;
+        puVar8 = puVar8 + (uint64_t)uVar11 * 0x1ffffffffffffffe + 1;
+    }
+    auVar14 = ZEXT816((uint64_t)_reloc..LC3) << 0x40;
+    puVar7[0x12] = 0;
+    puVar7[6] = 0xfffffffe00000000;
+    puVar7[7] = 0xffffffff00000000;
+    // WARNING: Store size is inaccurate
+    *(undefined *)(puVar7 + 8) = auVar14;
+    puVar7[10] = uVar3;
+    puVar7[0xb] = 0;
+    // WARNING: Store size is inaccurate
+    *(undefined *)(puVar7 + 0xc) = ZEXT816(0);
+    puVar7[0xe] = 0;
+    puVar7[0xf] = 0;
+    puVar7[0x10] = 0;
+    puVar7[0x11] = 0;
+    uVar6 = _reloc.sqrt;
+    uVar5 = _reloc.__stack_chk_fail;
+    uVar4 = _reloc.default_arrow_style;
+    uVar2 = CONCAT44(*(undefined4 *)0x803f226, _reloc.default_fillstyle);
+    puVar7[0x27] = uVar2;
+    puVar7[0x28] = uVar4;
+    puVar7[0x29] = uVar5;
+    puVar7[0x2a] = uVar6;
+    if (iVar10 == 0) {
+        *(undefined4 *)(puVar7 + 0x27) = 1;
+    }
+    func_0x0803f20a(0xfffffffe00000000, 0, uVar3, 0, 0, 0, uVar2, uVar5);
+    if ((0 < (int32_t)arg4) && (0 < (int32_t)(arg1 & 0xffffffffU))) {
+        if (0 < (int32_t)arg2) {
+            iVar10 = 0;
+            do {
+                iVar10 = iVar10 + 1;
+                puVar8 = (undefined8 *)sym.iso_alloc(arg3 & 0xffffffff);
+                *puVar8 = puVar7[0x36];
+                puVar7[0x36] = puVar8;
+            } while ((int32_t)arg2 != iVar10);
+        }
+        iVar10 = 0;
+        do {
+            iVar10 = iVar10 + 1;
+            puVar8 = (undefined8 *)sym.iso_alloc(arg1 & 0xffffffffU);
+            *puVar8 = puVar7[0x36];
+            puVar7[0x36] = puVar8;
+        } while (iVar10 < (int32_t)arg4);
+    }
+    if (iVar1 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return puVar7;
+    }
+    puVar8 = (undefined8 *)func_0x0803f20a();
+    dVar12 = SUB168(extraout_XMM0, 0);
+    dVar13 = SUB168(auVar14, 0);
+    if ((double)(_reloc..LC6 & (uint64_t)dVar13) < (double)((uint64_t)dVar12 & _reloc..LC6)) {
+        dVar13 = (dVar13 * dVar13) / (dVar12 * dVar12) + _reloc..LC3;
+        auVar14 = CONCAT88(SUB168(auVar14 >> 0x40, 0), dVar13);
+        auVar14 = sqrtsd(auVar14, auVar14);
+        if (dVar13 < 0.00000000) {
+            puVar8 = (undefined8 *)func_0x0803f20a(dVar13, dVar13, SUB168(auVar14, 0), (uint64_t)dVar12 & _reloc..LC6);
+        }
+        return puVar8;
+    }
+    if (dVar13 != 0.00000000) {
+        dVar12 = (dVar12 * dVar12) / (dVar13 * dVar13) + _reloc..LC3;
+        auVar14 = CONCAT88(SUB168(extraout_XMM0 >> 0x40, 0), dVar12);
+        auVar14 = sqrtsd(auVar14, auVar14);
+        if (dVar12 < 0.00000000) {
+            puVar8 = (undefined8 *)func_0x0803f20a(dVar12, SUB168(auVar14, 0), _reloc..LC6 & (uint64_t)dVar13, 0);
+        }
+        return puVar8;
+    }
+    return puVar8;
+}
+
+
+// WARNING: [r2ghidra] Var arg_e0h is stack pointer based, which is not supported for decompilation.
+
+void sym.calculate_set_of_isolines
+               (int64_t arg7, int64_t arg8, int64_t arg9, int64_t arg10, undefined8 placeholder_4,
+               undefined8 placeholder_5, undefined8 placeholder_6, undefined8 placeholder_7, uint32_t arg1, int64_t arg2
+               , int64_t arg3, int64_t arg4, uint32_t arg5, uint32_t arg6)
+{
+    uint8_t uVar1;
+    int64_t iVar2;
+    undefined8 *puVar3;
+    int32_t extraout_EDX;
+    uint64_t uVar4;
+    int64_t iVar5;
+    int32_t iVar6;
+    uint32_t uVar7;
+    undefined8 *puVar8;
+    undefined4 in_RDI;
+    undefined8 *puVar9;
+    uint32_t uVar10;
+    int64_t in_FS_OFFSET;
+    double extraout_XMM0_Qa;
+    uint64_t extraout_XMM0_Qa_00;
+    double dVar11;
+    double extraout_XMM0_Qa_01;
+    int32_t in_stack_00000008;
+    double dStack208;
+    uint32_t uStack176;
+    undefined4 uStack92;
+    undefined8 auStack88 [3];
+    int64_t iStack64;
+    
+    uVar7 = (uint32_t)arg2;
+    puVar9 = (undefined8 *)CONCAT44(in_RDI, arg1);
+    iStack64 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puVar3 = *(undefined8 **)(*(int64_t *)arg3 + 0x10);
+    uVar1 = (uint8_t)reloc.parametric ^ 1;
+    uVar10 = arg5;
+    if (0 < (int32_t)arg5) {
+        puVar8 = (undefined8 *)(uint64_t)(uVar7 ^ 1);
+        iVar2 = (int64_t)(int32_t)arg4 * 0x2a8;
+        uStack176 = 0;
+        uVar4 = (uint64_t)puVar8 & 0xff;
+        iVar5 = (int64_t)(int32_t)arg6 * 0x2a8;
+        do {
+            dStack208 = (double)uStack176 * (double)arg8 + (double)arg7;
+            if ((*(int64_t *)(reloc.check_for_iteration + iVar2) != 0) &&
+               (*(int64_t *)(*(int64_t *)(reloc.plot_iterator + iVar2) + 0x10) != 0)) {
+                func_0x0803f20a(dStack208, reloc.axis_array + iVar2);
+                dStack208 = extraout_XMM0_Qa;
+            }
+            iVar6 = 0;
+            puVar9 = (undefined8 *)(uVar4 * 0x18 + 0x80064c8);
+            func_0x0803f20a(dStack208, 0);
+            if (0 < in_stack_00000008) {
+                do {
+                    while( true ) {
+                        dVar11 = (double)iVar6 * (double)arg10 + (double)arg9;
+                        if ((*(int64_t *)(reloc.check_for_iteration + iVar5) != 0) &&
+                           (*(int64_t *)(*(int64_t *)(reloc.plot_iterator + iVar5) + 0x10) != 0)) {
+                            func_0x0803f20a(dVar11, reloc.axis_array + iVar5);
+                            dVar11 = extraout_XMM0_Qa_01;
+                        }
+                        func_0x0803f20a((arg2 & 0xffU) * 0x18 + 0x80064c8);
+                        if ((char)arg2 == '\0') {
+                            puVar3[1] = dVar11;
+                            puVar3[2] = dStack208;
+                        } else {
+                            puVar3[2] = dVar11;
+                            puVar3[1] = dStack208;
+                        }
+                        puVar8 = auStack88;
+                        puVar9 = *(undefined8 **)0x80064b0;
+                        func_0x0803f20a(dVar11);
+                        if (reloc.undefined == (code)0x0) break;
+code_r0x08000670:
+                        iVar6 = iVar6 + 1;
+                        *(undefined4 *)puVar3 = 2;
+                        puVar3 = puVar3 + 8;
+                        if (in_stack_00000008 == iVar6) goto code_r0x08000686;
+                    }
+                    puVar9 = auStack88;
+                    func_0x0803f20a();
+                    if (_reloc.zero < (double)(extraout_XMM0_Qa_00 & _reloc..LC6)) goto code_r0x08000670;
+                    puVar9 = auStack88;
+                    func_0x0803f20a(extraout_XMM0_Qa_00 & _reloc..LC6);
+                    *(undefined4 *)puVar3 = 0;
+                    if (arg1 != 0xfffffffe) {
+                        puVar9 = puVar3 + 3;
+                        puVar8 = puVar3;
+                        func_0x0803f20a(puVar9, puVar3, reloc.axis_array + (int64_t)(int32_t)arg1 * 0x2a8, 0);
+                    }
+                    if ((uVar1 | arg1 == 0) != 0) {
+                        uStack92 = *(undefined4 *)puVar3;
+                        puVar8 = (undefined8 *)&uStack92;
+                        puVar9 = puVar3 + 5;
+                        func_0x0803f20a(puVar9, puVar8, 0x803fa42, 0);
+                    }
+                    iVar6 = iVar6 + 1;
+                    puVar3 = puVar3 + 8;
+                } while (in_stack_00000008 != iVar6);
+            }
+code_r0x08000686:
+            uVar7 = (uint32_t)puVar8;
+            puVar3 = (undefined8 *)**(undefined8 **)arg3;
+            *(int32_t *)((int64_t)*(undefined8 **)arg3 + 0xc) = in_stack_00000008;
+            *(undefined8 **)arg3 = puVar3;
+            if (puVar3 != (undefined8 *)0x0) {
+                puVar3 = (undefined8 *)puVar3[2];
+            }
+            uStack176 = uStack176 + 1;
+            arg4 = arg3;
+        } while (arg5 != uStack176);
+    }
+    if (iStack64 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    func_0x0803f20a();
+    puVar3 = (undefined8 *)*puVar9;
+    while (puVar3 != (undefined8 *)0x0) {
+        puVar8 = (undefined8 *)*puVar3;
+        sym.iso_free((int64_t)puVar3);
+        puVar3 = puVar8;
+    }
+    *puVar9 = 0;
+    if ((0 < (int32_t)uVar10) && (0 < (int32_t)uVar7)) {
+        if (0 < extraout_EDX) {
+            iVar6 = 0;
+            do {
+                iVar6 = iVar6 + 1;
+                puVar3 = (undefined8 *)sym.iso_alloc(arg4 & 0xffffffff);
+                *puVar3 = *puVar9;
+                *puVar9 = puVar3;
+            } while (extraout_EDX != iVar6);
+        }
+        iVar6 = 0;
+        do {
+            iVar6 = iVar6 + 1;
+            puVar3 = (undefined8 *)sym.iso_alloc((uint64_t)uVar7);
+            *puVar3 = *puVar9;
+            *puVar9 = puVar3;
+        } while (iVar6 < (int32_t)uVar10);
+    }
+    return;
+}
+
+
+void sym.iso_extend.isra.0(uint32_t arg1, int64_t arg2, int64_t arg3)
+{
+    int32_t iVar1;
+    int64_t iVar2;
+    int32_t iVar3;
+    undefined4 in_RDI;
+    int32_t *piVar4;
+    
+    piVar4 = (int32_t *)CONCAT44(in_RDI, arg1);
+    iVar3 = (int32_t)arg3;
+    if (*piVar4 == iVar3) {
+        return;
+    }
+    if (0 < iVar3) {
+        iVar2 = func_0x0803f20a(*(undefined8 *)arg2, (int64_t)iVar3 << 6, "");
+        iVar1 = *piVar4;
+        *(int64_t *)arg2 = iVar2;
+        if (iVar1 < iVar3) {
+            func_0x0803f20a((int64_t)iVar1 * 0x40 + iVar2, 0, (int64_t)(iVar3 - iVar1) << 6);
+        }
+        *piVar4 = iVar3;
+        return;
+    }
+    func_0x0803f20a(*(undefined8 *)arg2);
+    *(undefined8 *)arg2 = 0;
+    *piVar4 = 0;
+    return;
+}
+
+
+
+
+void sym.sp_free(int64_t arg1)
+{
+    int64_t *piVar1;
+    int64_t **ppiVar2;
+    int64_t **ppiVar3;
+    
+    if (arg1 == 0) {
+        return;
+    }
+    do {
+        piVar1 = *(int64_t **)arg1;
+        func_0x0803f20a(*(int64_t *)(arg1 + 0x18));
+        func_0x0803f20a(*(int64_t *)(arg1 + 0x20));
+        *(int64_t *)(arg1 + 0x20) = 0;
+        ppiVar3 = *(int64_t ***)(arg1 + 0x1a8);
+        while (ppiVar3 != (int64_t **)0x0) {
+            ppiVar2 = (int64_t **)*ppiVar3;
+            func_0x0803f20a(ppiVar3[1]);
+            func_0x0803f20a(*(int64_t *)(arg1 + 0x1a8));
+            *(int64_t ***)(arg1 + 0x1a8) = ppiVar2;
+            ppiVar3 = ppiVar2;
+        }
+        ppiVar3 = *(int64_t ***)(arg1 + 0x1b0);
+        while (ppiVar3 != (int64_t **)0x0) {
+            ppiVar2 = (int64_t **)*ppiVar3;
+            sym.iso_free((int64_t)ppiVar3);
+            *(int64_t ***)(arg1 + 0x1b0) = ppiVar2;
+            ppiVar3 = ppiVar2;
+        }
+        if (*(int64_t *)(arg1 + 0x158) != 0) {
+            func_0x0803f20a();
+        }
+        func_0x0803f20a(arg1);
+        arg1 = (int64_t)piVar1;
+    } while (piVar1 != (int64_t *)0x0);
+    return;
+}
+
+
+
+
+void sym.pythag(int64_t arg7, int64_t arg8)
+{
+    double dVar1;
+    undefined8 in_XMM0_Qb;
+    undefined8 in_XMM1_Qb;
+    undefined auVar2 [16];
+    
+    if ((double)(_reloc..LC6 & arg8) < (double)(arg7 & _reloc..LC6)) {
+        dVar1 = ((double)arg8 * (double)arg8) / ((double)arg7 * (double)arg7) + _reloc..LC3;
+        auVar2 = sqrtsd(CONCAT88(in_XMM1_Qb, dVar1), CONCAT88(in_XMM1_Qb, dVar1));
+        if (dVar1 < 0.00000000) {
+            func_0x0803f20a(dVar1, dVar1, SUB168(auVar2, 0), arg7 & _reloc..LC6);
+        }
+        return;
+    }
+    if ((double)arg8 != 0.00000000) {
+        dVar1 = ((double)arg7 * (double)arg7) / ((double)arg8 * (double)arg8) + _reloc..LC3;
+        auVar2 = sqrtsd(CONCAT88(in_XMM0_Qb, dVar1), CONCAT88(in_XMM0_Qb, dVar1));
+        if (dVar1 < 0.00000000) {
+            func_0x0803f20a(dVar1, SUB168(auVar2, 0), _reloc..LC6 & arg8, 0);
+        }
+        return;
+    }
+    return;
+}
+
+
+void sym.sp_replace.isra.0(int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4, int64_t arg5)
+{
+    undefined8 *puVar1;
+    undefined8 *puVar2;
+    int32_t iVar3;
+    
+    puVar2 = *(undefined8 **)arg1;
+    while (puVar2 != (undefined8 *)0x0) {
+        puVar1 = (undefined8 *)*puVar2;
+        sym.iso_free((int64_t)puVar2);
+        puVar2 = puVar1;
+    }
+    *(undefined8 *)arg1 = 0;
+    if ((0 < (int32_t)arg5) && (0 < (int32_t)(arg2 & 0xffffffffU))) {
+        if (0 < (int32_t)arg3) {
+            iVar3 = 0;
+            do {
+                iVar3 = iVar3 + 1;
+                puVar2 = (undefined8 *)sym.iso_alloc(arg4 & 0xffffffff);
+                *puVar2 = *(undefined8 *)arg1;
+                *(undefined8 **)arg1 = puVar2;
+            } while ((int32_t)arg3 != iVar3);
+        }
+        iVar3 = 0;
+        do {
+            iVar3 = iVar3 + 1;
+            puVar2 = (undefined8 *)sym.iso_alloc(arg2 & 0xffffffffU);
+            *puVar2 = *(undefined8 *)arg1;
+            *(undefined8 **)arg1 = puVar2;
+        } while (iVar3 < (int32_t)arg5);
+    }
+    return;
+}
+
+

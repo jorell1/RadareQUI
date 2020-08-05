@@ -1,0 +1,741 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/time.o @ 0x8000040 */
+#include <stdint.h>
+ 
+uint32_t rotate_right32 (uint32_t value, uint32_t count ) {
+    const uint32_t mask = (CHAR_BIT * sizeof (value)) - 1;
+    count &= mask;
+    return (value >> count) | (value << (-count & mask));
+}
+ 
+int32_t gdysize_part_0 (uint32_t arg1) {
+    rdi = arg1;
+    /* [01] -r-x section size 8077 named .text */
+    edi *= 0xc28f5c29;
+    eax = 0x16e;
+    edi += 0x51eb850;
+    edx = edi;
+    edx = rotate_right32 (edx, 2);
+    if (edx <= 0x28f5c28) {
+        edi = rotate_right32 (edi, 4);
+        eax = 0;
+        al = (edi < 0xa3d70b) ? 1 : 0;
+        eax += 0x16d;
+    }
+    return eax;
+}
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/time.o @ 0x8000080 */
+#include <stdint.h>
+ 
+int32_t gtimegm (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    r8d = *((rdi + 0x14));
+    rsi = rdi;
+    if (r8d <= 0x7b1) {
+        goto label_3;
+    }
+    xmm0 = 0;
+    ecx = 0x7b2;
+    eax = 0x16d;
+    if (r8d == 0x7b2) {
+        goto label_4;
+    }
+    do {
+        xmm1 = 0;
+        ecx++;
+        __asm ("cvtsi2sd xmm1, eax");
+        __asm ("addsd xmm0, xmm1");
+        if (r8d == ecx) {
+            goto label_4;
+        }
+label_0:
+        eax = 0x16d;
+    } while ((cl & 3) != 0);
+    edi = ecx;
+    eax = _text ();
+    xmm1 = 0;
+    __asm ("cvtsi2sd xmm1, eax");
+    ecx++;
+    __asm ("addsd xmm0, xmm1");
+    if (r8d != ecx) {
+        goto label_0;
+    }
+label_4:
+    r10d = *((rsi + 0xc));
+    if (r10d <= 0) {
+        goto label_5;
+    }
+label_1:
+    eax = *((rsi + 0x10));
+    if (eax <= 0) {
+        goto label_6;
+    }
+    r11d = r8d;
+    r9d = rax - 1;
+    ecx = 0;
+    eax = 0;
+    xmm2 = *(loc..LC2);
+    rbx = 0x080022e4;
+    r11d &= 3;
+    while (r9 != rcx) {
+        edx = r11d;
+        xmm2 = 0;
+        eax = 0;
+        edx |= ecx;
+        __asm ("cvtsi2sd xmm2, dword [rbx + rcx*4]");
+        if (edx == 0) {
+            edi = r8d;
+            eax = _text ();
+            al = (eax > 0x16d) ? 1 : 0;
+            eax = (int32_t) al;
+        }
+        rcx++;
+        xmm1 = 0;
+        __asm ("cvtsi2sd xmm1, eax");
+        __asm ("addsd xmm1, xmm2");
+        __asm ("addsd xmm0, xmm1");
+    }
+label_6:
+    xmm1 = 0;
+    __asm ("cvtsi2sd xmm1, r10d");
+    __asm ("subsd xmm1, qword [loc..LC3]");
+    __asm ("addsd xmm0, xmm1");
+label_2:
+    __asm ("mulsd xmm0, qword [loc..LC4]");
+    xmm1 = 0;
+    xmm2 = *(loc..LC5);
+    __asm ("cvtsi2sd xmm1, dword [rsi + 8]");
+    __asm ("addsd xmm0, xmm1");
+    xmm1 = 0;
+    __asm ("cvtsi2sd xmm1, dword [rsi + 4]");
+    __asm ("mulsd xmm0, xmm2");
+    __asm ("addsd xmm0, xmm1");
+    __asm ("mulsd xmm0, xmm2");
+    __asm ("movapd xmm1, xmm0");
+    xmm0 = 0;
+    __asm ("cvtsi2sd xmm0, dword [rsi]");
+    __asm ("addsd xmm0, xmm1");
+    xmm1 = 0;
+    __asm ("cvtsi2sd xmm1, qword [rsi + 0x28]");
+    __asm ("subsd xmm0, xmm1");
+    return eax;
+label_3:
+    xmm2 = .rodata.cst8;
+    ecx = r8d;
+    xmm0 = 0;
+    do {
+        __asm ("movapd xmm1, xmm2");
+        if ((cl & 3) == 0) {
+            edi = ecx;
+            eax = _text ();
+            xmm1 = 0;
+            __asm ("cvtsi2sd xmm1, eax");
+        }
+        ecx++;
+        __asm ("subsd xmm0, xmm1");
+    } while (ecx != 0x7b2);
+    r10d = *((rsi + 0xc));
+    if (r10d > 0) {
+        goto label_1;
+    }
+label_5:
+    xmm1 = 0;
+    __asm ("cvtsi2sd xmm1, dword [rsi + 0x1c]");
+    __asm ("addsd xmm0, xmm1");
+    goto label_2;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/time.o @ 0x8000eb0 */
+#include <stdint.h>
+ 
+int64_t ggmtime (int64_t arg7, int64_t arg3) {
+    xmm0 = arg7;
+    rdx = arg3;
+    __asm ("endbr64");
+    __asm ("movapd xmm1, xmm0");
+    __asm ("andpd xmm1, xmmword [loc..LC21]");
+    __asm ("comisd xmm1, xmmword [loc..LC26]");
+    if (? > ?) {
+        goto label_4;
+    }
+    xmm3 = 0;
+    *((rdi + 0x1c)) = 0;
+    rax = 0x7b200000000;
+    rcx = rdi;
+    __asm ("comisd xmm0, xmm3");
+    *(rdi) = 0;
+    *((rdi + 8)) = 0;
+    *((rdi + 0x10)) = rax;
+    *((rdi + 0x28)) = 0;
+    if (? < ?) {
+        goto label_5;
+    }
+    esi = 0x7b3;
+    r8d = 4;
+    eax = 0x16d;
+    xmm2 = *(loc..LC28);
+    while (esi <= 0) {
+        r8d = r8 + rax - 0x16c;
+        __asm ("subsd xmm0, xmm1");
+        *((rcx + 0x14)) = esi;
+        eax = 0x16d;
+        if ((sil & 3) == 0) {
+            edi = esi;
+            eax = _text ();
+        }
+        esi++;
+        xmm1 = 0;
+        __asm ("cvtsi2sd xmm1, eax");
+        __asm ("mulsd xmm1, xmm2");
+        __asm ("comisd xmm1, xmm0");
+    }
+label_1:
+    __asm ("movapd xmm1, xmm0");
+    r9 = obj_mndday;
+    __asm ("divsd xmm1, xmm2");
+    __asm ("cvttsd2si esi, xmm1");
+    xmm1 = 0;
+    __asm ("cvtsi2sd xmm1, esi");
+    r8d += esi;
+    *((rcx + 0x1c)) = esi;
+    __asm ("mulsd xmm2, xmm1");
+    xmm1 = 0;
+    __asm ("subsd xmm0, xmm2");
+    __asm ("cvttsd2si edx, xmm0");
+    rax = (int64_t) edx;
+    rax *= 0xffffffff91a2b3c5;
+    rax >>= 0x20;
+    eax += edx;
+    edx >>= 0x1f;
+    eax >>= 0xb;
+    eax -= edx;
+    *((rcx + 8)) = eax;
+    eax *= 0xe10;
+    __asm ("cvtsi2sd xmm1, eax");
+    __asm ("subsd xmm0, xmm1");
+    xmm1 = 0;
+    __asm ("cvttsd2si edx, xmm0");
+    rax = (int64_t) edx;
+    rax *= 0xffffffff88888889;
+    rax >>= 0x20;
+    eax += edx;
+    edx >>= 0x1f;
+    eax >>= 5;
+    eax -= edx;
+    edx = r8d;
+    *((rcx + 4)) = eax;
+    eax *= 0x3c;
+    edx >>= 0x1f;
+    __asm ("cvtsi2sd xmm1, eax");
+    __asm ("subsd xmm0, xmm1");
+    __asm ("cvttsd2si eax, xmm0");
+    *(rcx) = eax;
+    rax = (int64_t) r8d;
+    rax *= 0xffffffff92492493;
+    rax >>= 0x20;
+    eax += r8d;
+    eax >>= 2;
+    eax -= edx;
+    edx = rax*8;
+    edx -= eax;
+    eax = 0;
+    r8d -= edx;
+    *((rcx + 0x18)) = r8d;
+    r8d = 0x1f;
+label_0:
+    if (eax == 1) {
+        edi = *((rcx + 0x14));
+        if ((dil & 3) == 0) {
+            eax = _text ();
+            al = (eax > 0x16d) ? 1 : 0;
+            eax = (int32_t) al;
+            r8d += eax;
+        }
+        if (esi < r8d) {
+            goto label_6;
+        }
+        *((rcx + 0x10)) = 2;
+        esi -= r8d;
+        eax = 2;
+        r8d = 0x1f;
+    }
+    if (r8d > esi) {
+        goto label_6;
+    }
+    do {
+        eax++;
+        esi -= r8d;
+        *((rcx + 0x10)) = eax;
+        if (eax <= 0xb) {
+            goto label_7;
+        }
+        r8d = 0x1f;
+        *((rcx + 0x14))++;
+        eax = 0;
+        *((rcx + 0x10)) = 0;
+    } while (r8d <= esi);
+label_6:
+    esi++;
+    eax = 0;
+    *((rcx + 0xc)) = esi;
+label_3:
+    return rax;
+label_7:
+    rdx = (int64_t) eax;
+    r8d = *((r9 + rdx*4));
+    goto label_0;
+label_5:
+    __asm ("comisd xmm3, xmm0");
+    xmm2 = *(loc..LC28);
+    r8d = 4;
+    if (esi <= 0) {
+        goto label_1;
+    }
+    r8d = 4;
+    eax = 0x16d;
+    esi = 0x173;
+    *((rdi + 0x14)) = 0x7b1;
+    xmm2 = *(loc..LC28);
+label_2:
+    xmm1 = 0;
+    edx = esi;
+    __asm ("cvtsi2sd xmm1, eax");
+    edx -= eax;
+    r8d += edx;
+    __asm ("mulsd xmm1, xmm2");
+    __asm ("addsd xmm0, xmm1");
+    __asm ("comisd xmm3, xmm0");
+    if (r8d <= 0) {
+        goto label_1;
+    }
+    eax = *((rcx + 0x14));
+    edi = rax - 1;
+    eax = 0x16d;
+    *((rcx + 0x14)) = edi;
+    if ((dil & 3) != 0) {
+        goto label_2;
+    }
+    eax = _text ();
+    goto label_2;
+label_4:
+    eax = 0;
+    rsi = "time value out of range";
+    edi = 0xffffffff;
+    memset ();
+    eax = 0xffffffff;
+    goto label_3;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/time.o @ 0x8001150 */
+#include <stdint.h>
+ 
+int64_t gstrptime (int64_t arg5, int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_2bh;
+    uint32_t var_2ch;
+    int64_t var_2dh;
+    int64_t var_38h;
+    r8 = arg5;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    __asm ("endbr64");
+    rax = 0x100000000;
+    r15 = rdx;
+    r14 = r8;
+    r13 = rsi;
+    rsi = loc__LC29;
+    ebx = 0;
+    *((rdx + 8)) = rax;
+    rax = 0x7b200000000;
+    *(rdx) = 0;
+    *((rdx + 0x10)) = rax;
+    *((rdx + 0x28)) = 0;
+    *(rcx) = 0;
+    *((rdx + 0x18)) = 0xffffffffffffffff;
+    *((rsp + 0x38)) = rdi;
+    rdi = r13;
+    rax = memset (rbx, rbp, r12, r13, r14);
+    if (rax != 0) {
+        *((r15 + 0xc)) = 0xffffffff;
+        ebx = 1;
+    }
+    rsi = loc__LC30;
+    rdi = r13;
+    rax = memset ();
+    if (rax == 0) {
+        goto label_15;
+    }
+label_3:
+    *((r15 + 0x14)) = 0xffffffff;
+    ebx = 1;
+label_4:
+    rsi = loc__LC32;
+    rdi = r13;
+    rax = memset ();
+    if (rax == 0) {
+        goto label_16;
+    }
+label_7:
+    *((r15 + 0x10)) = 0xffffffff;
+    ebx = 1;
+label_8:
+    rsi = loc__LC35;
+    rdi = r13;
+    rax = memset ();
+    if (rax == 0) {
+        goto label_17;
+    }
+    *(r14) = 0;
+    eax = *(r13);
+    if (al == 0) {
+        goto label_18;
+    }
+    ebx = 0;
+    r12d = 1;
+label_5:
+    *((rsp + 0x2d)) = 0;
+    r9d = 0;
+    r8 = 0x080021f4;
+    *((rsp + 0x2b)) = 0;
+    *((rsp + 0x2c)) = 0;
+    *((rsp + 0x10)) = rbp;
+    *((rsp + 8)) = r14;
+    r14d = r12d;
+    r12d = r9d;
+label_9:
+    if (al == 0x25) {
+        goto label_19;
+    }
+    rdx = *((rsp + 0x38));
+    esi = *(rdx);
+    if (al == 0x20) {
+        goto label_20;
+    }
+    if (al == sil) {
+        goto label_21;
+    }
+label_10:
+    r9d = r12d;
+    if (r14b != 0) {
+        goto label_18;
+    }
+    eax = *((r15 + 8));
+    esi = *(r15);
+    ecx = *((r15 + 4));
+    if (eax <= 0xb) {
+        if (*((rsp + 0x2c)) != 0) {
+            goto label_22;
+        }
+    }
+    dl = (eax == 0xc) ? 1 : 0;
+    dl &= *((rsp + 0x2b));
+    if (dl != 0) {
+        goto label_23;
+    }
+label_12:
+    if (esi > 0x3b) {
+        rdx = (int64_t) esi;
+        edi = esi;
+        rdx *= 0xffffffff88888889;
+        edi >>= 0x1f;
+        rdx >>= 0x20;
+        edx += esi;
+        edx >>= 5;
+        edx -= edi;
+        ecx += edx;
+        edx *= 0x3c;
+        *((r15 + 4)) = ecx;
+        esi -= edx;
+        *(r15) = esi;
+    }
+    if (ecx > 0x3b) {
+        rdx = (int64_t) ecx;
+        esi = ecx;
+        rdx *= 0xffffffff88888889;
+        esi >>= 0x1f;
+        rdx >>= 0x20;
+        edx += ecx;
+        edx >>= 5;
+        edx -= esi;
+        eax += edx;
+        edx *= 0x3c;
+        *((r15 + 8)) = eax;
+        ecx -= edx;
+        *((r15 + 4)) = ecx;
+    }
+    if (eax > 0x17) {
+        rdx = (int64_t) eax;
+        esi = eax;
+        rcx = rdx * 0x2aaaaaab;
+        esi >>= 0x1f;
+        rcx >>= 0x22;
+        ecx -= esi;
+        if (r9d != 0) {
+            *((r15 + 0x1c)) += ecx;
+        }
+        rdx *= 0x2aaaaaab;
+        *((r15 + 0xc)) += ecx;
+        ecx = eax;
+        ecx >>= 0x1f;
+        rdx >>= 0x22;
+        edx -= ecx;
+        edx = rdx * 3;
+        edx <<= 3;
+        eax -= edx;
+        *((r15 + 8)) = eax;
+    }
+label_6:
+    while (ecx <= esi) {
+label_1:
+        eax = 1;
+        return rax;
+label_19:
+        eax = *((r13 + 1));
+        rbp = r13 + 1;
+        eax -= 0x41;
+        if (al > 0x39) {
+            goto label_24;
+        }
+        eax = (int32_t) al;
+        rax = *((r8 + rax*4));
+        rax += r8;
+        void (*rax)() ();
+        if (r9d != 0) {
+            goto label_25;
+        }
+        eax = *((r15 + 0x10));
+        if (eax < 0) {
+            goto label_26;
+        }
+        ecx = *((r15 + 0xc));
+        if (ecx <= 0) {
+            goto label_26;
+        }
+        if (eax > 0xb) {
+            rdx = (int64_t) eax;
+            esi = eax;
+            rdx *= 0x2aaaaaab;
+            esi >>= 0x1f;
+            rdx >>= 0x21;
+            edx -= esi;
+            *((r15 + 0x14)) += edx;
+            edx = rdx * 3;
+            edx <<= 2;
+            eax -= edx;
+            *((r15 + 0x10)) = eax;
+        }
+label_11:
+        r8 = obj_mndday;
+        rdx = (int64_t) eax;
+        esi = *((r8 + rdx*4));
+        goto label_27;
+label_0:
+    }
+    eax++;
+    *((r15 + 0x10)) = eax;
+    if (eax == 0xc) {
+        goto label_28;
+    }
+    rdi = (int64_t) eax;
+    edx = esi;
+    esi = *((r8 + rdi*4));
+label_2:
+    ecx -= edx;
+    *((r15 + 0xc)) = ecx;
+label_27:
+    if (eax != 1) {
+        goto label_0;
+    }
+    edi = *((r15 + 0x14));
+    if ((dil & 3) == 0) {
+        eax = _text ();
+        al = (eax > 0x16d) ? 1 : 0;
+        eax = (int32_t) al;
+        esi += eax;
+    }
+    if (ecx <= esi) {
+        goto label_1;
+    }
+    edx = esi;
+    *((r15 + 0x10)) = 2;
+    esi = 0x1f;
+    eax = 2;
+    goto label_2;
+label_15:
+    rsi = loc__LC31;
+    rdi = r13;
+    rax = memset ();
+    if (rax != 0) {
+        goto label_3;
+    }
+    goto label_4;
+label_17:
+    eax = *(r13);
+    r12d = 0;
+    r9d = 0;
+    if (al != 0) {
+        goto label_5;
+    }
+    goto label_6;
+label_16:
+    rsi = loc__LC33;
+    rdi = r13;
+    rax = memset ();
+    if (rax != 0) {
+        goto label_7;
+    }
+    rsi = loc__LC34;
+    rdi = r13;
+    rax = memset ();
+    if (rax != 0) {
+        goto label_7;
+    }
+    goto label_8;
+label_21:
+    rax = rdx + 1;
+    *((rsp + 0x38)) = rax;
+label_13:
+    r13++;
+label_14:
+    eax = *(r13);
+    if (al != 0) {
+        goto label_9;
+    }
+    goto label_10;
+label_18:
+    eax = 2;
+    return rax;
+label_25:
+    ecx = *((r15 + 0x1c));
+    if (ecx < 0) {
+        goto label_26;
+    }
+    ecx++;
+    *((r15 + 0x10)) = 0;
+    eax = 0;
+    *((r15 + 0xc)) = ecx;
+    goto label_11;
+label_22:
+    eax += 0xc;
+    *((r15 + 8)) = eax;
+    dl = (eax == 0xc) ? 1 : 0;
+    dl &= *((rsp + 0x2b));
+    if (dl == 0) {
+        goto label_12;
+    }
+label_23:
+    *((r15 + 8)) = 0;
+    eax = 0;
+    goto label_12;
+label_28:
+    edx = esi;
+    *((r15 + 0x14))++;
+    esi = 0x1f;
+    eax = 0;
+    *((r15 + 0x10)) = 0;
+    goto label_2;
+label_26:
+    eax = 4;
+    return rax;
+label_20:
+    rax = rdx + 1;
+    if (sil != 0x20) {
+        goto label_13;
+    }
+    do {
+        *((rsp + 0x38)) = rax;
+        rax++;
+    } while (*((rax - 1)) == 0x20);
+    goto label_13;
+label_24:
+    rsi = "Bad time format in string";
+    edi = 0xfffffffe;
+    eax = 0;
+    memset ();
+    r8 = 0x080021f4;
+    r13 = rbp + 1;
+    goto label_14;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/time.o @ 0x8001f00 */
+#include <stdint.h>
+ 
+int64_t gstrftime (int64_t arg7, int64_t arg1, int64_t arg2, int64_t arg3) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_48h;
+    xmm0 = arg7;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    __asm ("endbr64");
+    r12 = rdx;
+    rbx = rsi;
+    rax = *(fs:0x28);
+    *((rsp + 0x48)) = rax;
+    eax = 0;
+    r13 = rsp + 0x10;
+    *((rsp + 8)) = xmm0;
+    rdi = r13;
+    rax = memset (rbx, rbp, r12);
+    xmm1 = *((rsp + 8));
+    xmm3 = .rodata.cst16;
+    xmm4 = .LC20;
+    __asm ("movapd xmm0, xmm1");
+    __asm ("movapd xmm2, xmm1");
+    __asm ("andpd xmm0, xmm3");
+    __asm ("ucomisd xmm4, xmm0");
+    if (? > ?) {
+        __asm ("cvttsd2si rax, xmm1");
+        xmm0 = 0;
+        xmm4 = *(loc..LC3);
+        __asm ("andnpd xmm3, xmm1");
+        __asm ("cvtsi2sd xmm0, rax");
+        __asm ("movapd xmm2, xmm0");
+        __asm ("cmpnlesd xmm2, xmm1");
+        __asm ("andpd xmm2, xmm4");
+        __asm ("subsd xmm0, xmm2");
+        __asm ("movapd xmm2, xmm0");
+        __asm ("orpd xmm2, xmm3");
+    }
+    __asm ("movapd xmm0, xmm1");
+    rcx = r13;
+    rdx = r12;
+    esi = ebx;
+    __asm ("subsd xmm0, xmm2");
+    rdi = rbp;
+    xstrftime ();
+    rcx = *((rsp + 0x48));
+    rcx ^= *(fs:0x28);
+    if (? == ?) {
+        return rax;
+    }
+    eax = memset ();
+    /* [05] -r-- section size 195 named .rodata.str1.1 */
+    eax &= 0x642a30;
+    eax &= 0x6100642a;
+    __asm ("insd dword [rdi], dx");
+    *((rax + 0x6d)) += dh;
+    if (*((rax + 0x6d)) overflow 0) {
+        void (*0x8002048)() ();
+    }
+    *(0x6c254f4e) += ah;
+    eax &= 0x64252f6d;
+}
+
+

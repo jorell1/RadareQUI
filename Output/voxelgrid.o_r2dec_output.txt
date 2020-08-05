@@ -1,0 +1,751 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/voxelgrid.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int64_t gpfree_vgrid_part_0 (int64_t arg1) {
+    rdi = arg1;
+    /* [01] -r-x section size 7728 named .text */
+    rax = *((rdi + 0x18));
+    rbx = rdi;
+    rdi = *((rax + 0x78));
+    free (rbx);
+    rdi = *((rbx + 0x18));
+    free ();
+    rax = *(obj.current_vgrid);
+    while (1) {
+        *((rbx + 0x18)) = 0;
+        *((rbx + 0x10)) = 7;
+        return rax;
+        *(obj.current_vgrid) = 0;
+    }
+}
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/voxelgrid.o @ 0x8000090 */
+#include <stdint.h>
+ 
+uint64_t init_voxelsupport (void) {
+    __asm ("endbr64");
+    rdi = "VoxelDistance";
+    rax = free ();
+    *(obj.udv_VoxelDistance) = rax;
+    *((rax + 0x10)) = 2;
+    rax = 0x100000000;
+    *(obj.isosurface_options) = rax;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/voxelgrid.o @ 0x80000d0 */
+#include <stdint.h>
+ 
+int64_t check_grid_ranges (int64_t arg1) {
+    int64_t var_338h;
+    rdi = arg1;
+    __asm ("endbr64");
+    rax = *(obj.current_vgrid);
+    if (rax == 0) {
+        goto label_2;
+    }
+    xmm0 = *((rax + 8));
+    __asm ("ucomisd xmm0, xmm0");
+    __asm ("jp 0x8000190");
+    xmm0 = *((rax + 0x10));
+    __asm ("ucomisd xmm0, xmm0");
+    __asm ("jp 0x8000190");
+    while (1) {
+        xmm0 = *((rax + 0x20));
+        __asm ("ucomisd xmm0, xmm0");
+        __asm ("jp 0x80001c0");
+        xmm0 = *((rax + 0x28));
+        __asm ("ucomisd xmm0, xmm0");
+        __asm ("jp 0x80001c0");
+label_0:
+        xmm3 = *((rax + 0x38));
+        __asm ("ucomisd xmm3, xmm3");
+        __asm ("jp 0x80001f0");
+        xmm0 = *((rax + 0x40));
+        __asm ("ucomisd xmm0, xmm0");
+        __asm ("jp 0x80001f0");
+label_1:
+        ecx = *(rax);
+        xmm1 = 0;
+        xmm2 = *((rax + 0x10));
+        __asm ("subsd xmm0, xmm3");
+        __asm ("subsd xmm2, qword [rax + 8]");
+        edx = rcx - 1;
+        __asm ("cvtsi2sd xmm1, edx");
+        __asm ("divsd xmm2, xmm1");
+        __asm ("divsd xmm0, xmm1");
+        *((rax + 0x18)) = xmm2;
+        xmm2 = *((rax + 0x28));
+        __asm ("subsd xmm2, qword [rax + 0x20]");
+        __asm ("divsd xmm2, xmm1");
+        *((rax + 0x48)) = xmm0;
+        *((rax + 0x30)) = xmm2;
+        return rax;
+        if ((*(0x0801f926) & 3) != 0) {
+            goto label_3;
+        }
+        xmm0 = *(0x0801f942);
+        *((rax + 8)) = xmm0;
+        xmm0 = *(0x0801f94a);
+        *((rax + 0x10)) = xmm0;
+    }
+    if ((*(0x0801f67e) & 3) == 0) {
+        xmm0 = *(0x0801f69a);
+        *((rax + 0x20)) = xmm0;
+        xmm0 = *(0x0801f6a2);
+        *((rax + 0x28)) = xmm0;
+        goto label_0;
+        if ((*(0x0801f3d6) & 3) != 0) {
+            goto label_3;
+        }
+        xmm3 = *(reloc.num_tokens);
+        xmm0 = *(reloc.plot_iterator);
+        *((rax + 0x38)) = xmm3;
+        *((rax + 0x40)) = xmm0;
+        goto label_1;
+label_2:
+        rsi = "vgrid must be set before use";
+        edi |= 0xffffffff;
+        eax = free ();
+    }
+label_3:
+    rsi = "grid limits must be set before use";
+    edi |= 0xffffffff;
+    eax = 0;
+    free ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/voxelgrid.o @ 0x8001500 */
+#include <stdint.h>
+ 
+uint64_t get_vgrid_by_name (void) {
+    __asm ("endbr64");
+    rax = free ();
+    if (rax != 0) {
+        edx = 0;
+        if (*((rax + 0x10)) == 6) {
+            rax = rdx;
+            goto label_0;
+        }
+    }
+label_0:
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/voxelgrid.o @ 0x8001530 */
+#include <stdint.h>
+ 
+uint64_t vclear_command (void) {
+    __asm ("endbr64");
+    eax = *(reloc.c_token);
+    rbx = *(obj.current_vgrid);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    while (eax != 0) {
+label_0:
+        if (rbx != 0) {
+            edx = *(rbx);
+            if (edx == 0) {
+                goto label_1;
+            }
+            rdi = *((rbx + 0x78));
+            if (rdi == 0) {
+                goto label_1;
+            }
+            eax = edx;
+            esi = 0;
+            eax *= edx;
+            edx *= eax;
+            rdx = (int64_t) edx;
+            rdx <<= 2;
+            void (*0x801f3c2)() ();
+        }
+label_1:
+        return eax;
+        rsi = loc__LC4;
+        eax = free ();
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC50;
+    eax = free ();
+    if (eax == 0) {
+        goto label_0;
+    }
+    rax = free ();
+    rdi = rax;
+    rax = free ();
+    if (rax != 0) {
+        if (*((rax + 0x10)) != 6) {
+            goto label_2;
+        }
+        rbx = *((rax + 0x18));
+        goto label_0;
+    }
+label_2:
+    edi = *(reloc.c_token);
+    rsi = "no such voxel grid";
+    eax = 0;
+    free ();
+    __asm ("endbr64");
+    if (*((rdi + 0x10)) != 6) {
+        return rax;
+    }
+    return gpfree_vgrid_part_0 ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/voxelgrid.o @ 0x8001610 */
+#include <stdint.h>
+ 
+uint64_t unset_vgrid (void) {
+    __asm ("endbr64");
+    edi = *(reloc.c_token);
+    if (edi < *(reloc.num_tokens)) {
+        rsi = loc__LC4;
+        eax = free ();
+        if (eax == 0) {
+            edi = *(reloc.c_token);
+            rsi = loc__LC50;
+            eax = free ();
+            if (eax == 0) {
+                goto label_2;
+            }
+            rax = free ();
+            rdi = rax;
+            rax = free ();
+            rdi = rax;
+            if (rax != 0) {
+                if (*((rax + 0x10)) != 6) {
+                    goto label_3;
+                }
+                void (*0x8000040)() ();
+            }
+label_3:
+            edi = *(reloc.c_token);
+            rsi = "no such vgrid";
+            eax = 0;
+            eax = free ();
+        }
+label_2:
+        edi = *(reloc.c_token);
+    }
+    rsi = "syntax: unset vgrid $<gridname>";
+    eax = 0;
+    free ();
+    __asm ("endbr64");
+    edi = *(reloc.c_token);
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_4;
+    }
+    rbx = loc__LC4;
+    while (eax != 0) {
+        *(obj.isosurface_options) = 1;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        eax = *(reloc.num_tokens);
+        *(reloc.c_token) = edi;
+label_1:
+        if (edi >= eax) {
+            goto label_5;
+        }
+label_0:
+        rsi = rbx;
+        eax = free ();
+        if (eax != 0) {
+            goto label_5;
+        }
+        eax = *(reloc.c_token);
+        rsi = "triang$les";
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        eax = free ();
+    }
+    edi = *(reloc.c_token);
+    rsi = "mix$ed";
+    eax = free ();
+    if (eax == 0) {
+        goto label_6;
+    }
+    *(obj.isosurface_options) = 0;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    eax = *(reloc.num_tokens);
+    *(reloc.c_token) = edi;
+    if (edi < eax) {
+        goto label_0;
+    }
+label_5:
+    return rax;
+label_6:
+    edi = *(reloc.c_token);
+    rsi = "inside$color";
+    eax = free ();
+    if (eax == 0) {
+        goto label_7;
+    }
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    eax = *(reloc.num_tokens);
+    *(reloc.c_token) = edi;
+    while (1) {
+        *(0x08000004) = 1;
+        goto label_1;
+label_7:
+        edi = *(reloc.c_token);
+        rsi = "noin$sidecolor";
+        eax = free ();
+        if (eax == 0) {
+            goto label_8;
+        }
+        *(0x08000004) = 0;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        eax = *(reloc.num_tokens);
+        *(reloc.c_token) = edi;
+        goto label_1;
+        rsi = rbx;
+        eax = free ();
+        if (eax == 0) {
+            goto label_9;
+        }
+        edi = *(reloc.c_token);
+        eax = *(reloc.num_tokens);
+    }
+label_9:
+    eax = free ();
+    edi = *(reloc.c_token);
+    *(0x08000004) = eax;
+    eax = *(reloc.num_tokens);
+    goto label_1;
+label_4:
+    return rax;
+label_8:
+    edi = *(reloc.c_token);
+    rsi = "unrecognized option";
+    eax = 0;
+    free ();
+    __asm ("endbr64");
+    eax = voxelgrid.c;
+    *(reloc.c_token)++;
+    rcx = "triangles only";
+    rdi = *(reloc.stderr);
+    rdx = "\tisosurfaces will use %s\n";
+    esi = 1;
+    rax = "a mixture of triangles and quadrangles";
+    if (eax == 0) {
+        rcx = rax;
+    }
+    eax = 0;
+    eax = free ();
+    ecx = *(0x08000004);
+    esi = 1;
+    eax = 0;
+    rdi = *(reloc.stderr);
+    rdx = "\tinside surface linetype offset by %d\n";
+    return void (*0x801f3c2)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/voxelgrid.o @ 0x8001890 */
+#include <stdint.h>
+ 
+uint64_t voxel_command (int64_t arg9, int64_t arg8, int64_t arg7, int64_t arg3, int64_t arg4) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    xmm2 = arg9;
+    xmm1 = arg8;
+    xmm0 = arg7;
+    rdx = arg3;
+    rcx = arg4;
+    __asm ("endbr64");
+    free (rbx);
+    edi = *(reloc.c_token);
+    rsi = loc__LC63;
+    eax = rdi + 2;
+    edi++;
+    *(reloc.c_token) = eax;
+    eax = free ();
+    if (eax == 0) {
+        goto label_4;
+    }
+    free ();
+    edi = *(reloc.c_token);
+    rsi = loc__LC26;
+    *((rsp + 8)) = xmm0;
+    eax = rdi + 1;
+    *(reloc.c_token) = eax;
+    eax = free ();
+    if (eax == 0) {
+        goto label_4;
+    }
+    free ();
+    edi = *(reloc.c_token);
+    rsi = loc__LC26;
+    *((rsp + 0x10)) = xmm0;
+    eax = rdi + 1;
+    *(reloc.c_token) = eax;
+    eax = free ();
+    if (eax == 0) {
+        goto label_4;
+    }
+    free ();
+    edi = *(reloc.c_token);
+    rsi = loc__LC65;
+    *((rsp + 0x18)) = xmm0;
+    eax = rdi + 1;
+    *(reloc.c_token) = eax;
+    eax = free ();
+    if (eax == 0) {
+        goto label_4;
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC66;
+    eax = rdi + 1;
+    *(reloc.c_token) = eax;
+    eax = free ();
+    if (eax == 0) {
+        goto label_4;
+    }
+    rax = *(obj.current_vgrid);
+    xmm7 = *((rsp + 8));
+    xmm0 = *((rax + 8));
+    __asm ("comisd xmm0, xmm7");
+    if (eax > 0) {
+        goto label_5;
+    }
+    __asm ("comisd xmm7, xmmword [rax + 0x10]");
+    if (eax > 0) {
+        goto label_5;
+    }
+    xmm1 = *((rax + 0x20));
+    xmm6 = *((rsp + 0x10));
+    __asm ("comisd xmm1, xmm6");
+    if (eax > 0) {
+        goto label_5;
+    }
+    __asm ("comisd xmm6, xmmword [rax + 0x28]");
+    if (eax > 0) {
+        goto label_5;
+    }
+    xmm4 = *((rax + 0x38));
+    xmm2 = *((rsp + 0x18));
+    __asm ("comisd xmm4, xmm2");
+    if (eax > 0) {
+        goto label_5;
+    }
+    __asm ("comisd xmm2, xmmword [rax + 0x40]");
+    if (eax > 0) {
+        goto label_5;
+    }
+    xmm3 = *((rsp + 8));
+    xmm6 = .rodata.cst8;
+    __asm ("subsd xmm3, xmm0");
+    __asm ("movapd xmm0, xmm3");
+    xmm3 = .rodata.cst16;
+    __asm ("divsd xmm0, qword [rax + 0x18]");
+    __asm ("movapd xmm5, xmm0");
+    __asm ("movapd xmm2, xmm0");
+    __asm ("andpd xmm5, xmm3");
+    __asm ("movapd xmm7, xmm3");
+    __asm ("ucomisd xmm6, xmm5");
+    if (eax > 0) {
+        goto label_6;
+    }
+label_1:
+    xmm0 = *((rsp + 0x10));
+    __asm ("movapd xmm5, xmm3");
+    __asm ("subsd xmm0, xmm1");
+    __asm ("divsd xmm0, qword [rax + 0x30]");
+    __asm ("movapd xmm1, xmm0");
+    __asm ("movapd xmm7, xmm0");
+    __asm ("andpd xmm1, xmm3");
+    __asm ("ucomisd xmm6, xmm1");
+    if (eax > 0) {
+        goto label_7;
+    }
+label_0:
+    xmm1 = *((rsp + 0x18));
+    __asm ("subsd xmm1, xmm4");
+    __asm ("divsd xmm1, qword [rax + 0x48]");
+    __asm ("movapd xmm4, xmm1");
+    __asm ("movapd xmm5, xmm1");
+    __asm ("andpd xmm4, xmm3");
+    __asm ("ucomisd xmm6, xmm4");
+    while (1) {
+        __asm ("cvttsd2si ecx, xmm0");
+        esi = *(rax);
+        rax = *((rax + 0x78));
+        __asm ("cvttsd2si edx, xmm2");
+        ecx *= esi;
+        ecx += edx;
+        __asm ("cvttsd2si edx, xmm1");
+        edx *= esi;
+        edx *= esi;
+        edx += ecx;
+        rdx = (int64_t) edx;
+        rbx = rax + rdx*4;
+        eax = free ();
+        __asm ("cvtsd2ss xmm0, xmm0");
+        *(rbx) = xmm0;
+        return rax;
+label_5:
+        rsi = loc__LC67;
+        edi = 0xffffffff;
+        eax = 0;
+        free ();
+        void (*0x801f3c2)() ();
+        __asm ("cvttsd2si rdx, xmm1");
+        xmm4 = 0;
+        xmm6 = *(loc..LC19);
+        __asm ("andnpd xmm3, xmm5");
+        __asm ("cvtsi2sd xmm4, rdx");
+        __asm ("cmpnlesd xmm1, xmm4");
+        __asm ("andpd xmm1, xmm6");
+        __asm ("addsd xmm1, xmm4");
+        __asm ("orpd xmm1, xmm3");
+    }
+label_7:
+    __asm ("cvttsd2si rdx, xmm0");
+    xmm1 = 0;
+    __asm ("andnpd xmm5, xmm7");
+    xmm8 = *(loc..LC19);
+    __asm ("cvtsi2sd xmm1, rdx");
+    __asm ("cmpnlesd xmm0, xmm1");
+    __asm ("andpd xmm0, xmm8");
+    __asm ("addsd xmm0, xmm1");
+    __asm ("orpd xmm0, xmm5");
+    goto label_0;
+label_6:
+    __asm ("cvttsd2si rdx, xmm0");
+    xmm5 = 0;
+    __asm ("andnpd xmm7, xmm0");
+    xmm8 = *(loc..LC19);
+    __asm ("cvtsi2sd xmm5, rdx");
+    __asm ("cmpnlesd xmm2, xmm5");
+    __asm ("andpd xmm2, xmm8");
+    __asm ("addsd xmm2, xmm5");
+    __asm ("orpd xmm2, xmm7");
+    goto label_1;
+label_4:
+    eax = *(reloc.c_token);
+    rsi = "syntax: voxel(x,y,z) = newvalue";
+    edi = rax - 1;
+    eax = 0;
+    rax = free ();
+    __asm ("endbr64");
+    rax = *(obj.current_vgrid);
+    if (rax == 0) {
+        goto label_8;
+    }
+    xmm3 = *((rax + 8));
+    __asm ("comisd xmm3, xmm0");
+    if (rax > 0) {
+        goto label_8;
+    }
+    __asm ("comisd xmm0, xmmword [rax + 0x10]");
+    if (rax > 0) {
+        goto label_8;
+    }
+    xmm4 = *((rax + 0x20));
+    __asm ("comisd xmm4, xmm1");
+    if (rax > 0) {
+        goto label_8;
+    }
+    __asm ("comisd xmm1, xmmword [rax + 0x28]");
+    if (rax > 0) {
+        goto label_8;
+    }
+    xmm6 = *((rax + 0x38));
+    __asm ("comisd xmm6, xmm2");
+    if (rax > 0) {
+        goto label_8;
+    }
+    __asm ("comisd xmm2, xmmword [rax + 0x40]");
+    if (rax > 0) {
+        goto label_8;
+    }
+    xmm5 = .rodata.cst16;
+    __asm ("subsd xmm0, xmm3");
+    xmm8 = .rodata.cst8;
+    __asm ("divsd xmm0, qword [rax + 0x18]");
+    __asm ("movapd xmm7, xmm0");
+    __asm ("movapd xmm3, xmm0");
+    __asm ("andpd xmm7, xmm5");
+    __asm ("movapd xmm9, xmm5");
+    __asm ("ucomisd xmm8, xmm7");
+    if (rax > 0) {
+        goto label_9;
+    }
+label_3:
+    __asm ("subsd xmm1, xmm4");
+    __asm ("divsd xmm1, qword [rax + 0x30]");
+    __asm ("movapd xmm0, xmm1");
+    __asm ("movapd xmm7, xmm1");
+    __asm ("andpd xmm0, xmm5");
+    __asm ("movapd xmm4, xmm5");
+    __asm ("ucomisd xmm8, xmm0");
+    if (rax > 0) {
+        goto label_10;
+    }
+label_2:
+    __asm ("subsd xmm2, xmm6");
+    __asm ("divsd xmm2, qword [rax + 0x48]");
+    __asm ("movapd xmm0, xmm2");
+    __asm ("movapd xmm4, xmm2");
+    __asm ("andpd xmm0, xmm5");
+    __asm ("ucomisd xmm8, xmm0");
+    while (1) {
+        __asm ("cvttsd2si edx, xmm2");
+        edi = *(rax);
+        rax = *((rax + 0x78));
+        __asm ("cvttsd2si ecx, xmm1");
+        __asm ("cvttsd2si esi, xmm3");
+        edx *= edi;
+        ecx *= edi;
+        edx *= edi;
+        ecx += esi;
+        edx += ecx;
+        rdx = (int64_t) edx;
+        xmm0 = *((rax + rdx*4));
+        goto label_11;
+label_8:
+        free ();
+        __asm ("cvtsd2ss xmm0, xmm0");
+label_11:
+        return rax;
+        __asm ("cvttsd2si rdx, xmm2");
+        xmm0 = 0;
+        xmm6 = *(loc..LC19);
+        __asm ("andnpd xmm5, xmm4");
+        __asm ("cvtsi2sd xmm0, rdx");
+        __asm ("cmpnlesd xmm2, xmm0");
+        __asm ("andpd xmm2, xmm6");
+        __asm ("addsd xmm2, xmm0");
+        __asm ("orpd xmm2, xmm5");
+    }
+label_10:
+    __asm ("cvttsd2si rdx, xmm1");
+    xmm0 = 0;
+    __asm ("andnpd xmm4, xmm7");
+    xmm9 = *(loc..LC19);
+    __asm ("cvtsi2sd xmm0, rdx");
+    __asm ("cmpnlesd xmm1, xmm0");
+    __asm ("andpd xmm1, xmm9");
+    __asm ("addsd xmm1, xmm0");
+    __asm ("orpd xmm1, xmm4");
+    goto label_2;
+label_9:
+    __asm ("cvttsd2si rdx, xmm0");
+    xmm7 = 0;
+    __asm ("andnpd xmm9, xmm0");
+    xmm10 = *(loc..LC19);
+    __asm ("cvtsi2sd xmm7, rdx");
+    __asm ("cmpnlesd xmm3, xmm7");
+    __asm ("andpd xmm3, xmm10");
+    __asm ("addsd xmm3, xmm7");
+    __asm ("orpd xmm3, xmm9");
+    goto label_3;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/voxelgrid.o @ 0x8001d40 */
+#include <stdint.h>
+ 
+int64_t f_voxel (int64_t arg7) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_28h;
+    xmm0 = arg7;
+    __asm ("endbr64");
+    rax = *(fs:0x28);
+    *((rsp + 0x28)) = rax;
+    eax = 0;
+    rbp = rsp + 0x10;
+    rdi = rbp;
+    rax = free ();
+    rdi = rax;
+    free ();
+    rdi = rbp;
+    *((rsp + 8)) = xmm0;
+    rax = free ();
+    rdi = rax;
+    free ();
+    rdi = rbp;
+    *(rsp) = xmm0;
+    rax = free ();
+    rdi = rax;
+    free ();
+    rax = *(obj.current_vgrid);
+    if (rax != 0) {
+        xmm1 = *((rax + 8));
+        __asm ("comisd xmm1, xmm0");
+        if (rax <= 0) {
+            __asm ("comisd xmm0, xmmword [rax + 0x10]");
+            if (rax <= 0) {
+                xmm1 = *((rax + 0x20));
+                xmm3 = *(rsp);
+                __asm ("comisd xmm1, xmm3");
+                if (rax > 0) {
+                    goto label_0;
+                }
+                __asm ("comisd xmm3, xmmword [rax + 0x28]");
+                if (rax > 0) {
+                    goto label_0;
+                }
+                xmm1 = *((rax + 0x38));
+                xmm4 = *((rsp + 8));
+                __asm ("comisd xmm1, xmm4");
+                if (rax > 0) {
+                    goto label_0;
+                }
+                __asm ("comisd xmm4, xmmword [rax + 0x40]");
+                if (rax > 0) {
+                    goto label_0;
+                }
+                xmm2 = *((rsp + 8));
+                xmm1 = *(rsp);
+                free ();
+                rdi = rbp;
+                xmm1 = 0;
+                __asm ("cvtss2sd xmm0, xmm0");
+                rax = free ();
+                rdi = rax;
+                free ();
+            }
+        } else {
+label_0:
+            rax = *(reloc.udv_NaN);
+            rdi = rax + 0x10;
+            free ();
+        }
+        rax = *((rsp + 0x28));
+        rax ^= *(fs:0x28);
+        if (rax == 0) {
+            return rax;
+        }
+        free ();
+    }
+    rsi = "no active voxel grid";
+    edi |= 0xffffffff;
+    rax = free ();
+    __asm ("endbr64");
+    *(reloc.c_token)++;
+    return vfill_isra_0 ();
+}
+
+

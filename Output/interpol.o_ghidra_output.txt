@@ -1,0 +1,287 @@
+int32_t sym.compare_points(int64_t arg1, int64_t arg2)
+{
+    int32_t iVar1;
+    
+    iVar1 = 1;
+    if (*(double *)(arg1 + 8) <= *(double *)(arg2 + 8)) {
+        iVar1 = -(uint32_t)(*(double *)(arg1 + 8) < *(double *)(arg2 + 8));
+    }
+    return iVar1;
+}
+
+
+int32_t sym.compare_z(int64_t arg1, int64_t arg2)
+{
+    int32_t iVar1;
+    
+    iVar1 = 1;
+    if (*(double *)(arg1 + 0x18) <= *(double *)(arg2 + 0x18)) {
+        iVar1 = -(uint32_t)(*(double *)(arg1 + 0x18) < *(double *)(arg2 + 0x18));
+    }
+    return iVar1;
+}
+
+
+void sym.do_freq(int64_t arg1, int64_t arg2, int64_t arg3)
+{
+    undefined8 uVar1;
+    int32_t iVar2;
+    int32_t iVar3;
+    int64_t iVar4;
+    undefined4 *puVar5;
+    undefined4 *puVar6;
+    
+    iVar2 = *(int32_t *)(arg1 + 0x1cc);
+    iVar3 = *(int32_t *)(arg1 + 0x1d0);
+    iVar4 = *(int64_t *)(arg1 + 0x1e8);
+    if (0 < (int32_t)arg3) {
+        puVar5 = (undefined4 *)((int64_t)(int32_t)arg2 * 0x40 + iVar4);
+        do {
+            *puVar5 = 0;
+            uVar1 = *(undefined8 *)(puVar5 + 4);
+            func_0x08020867(*(undefined8 *)(puVar5 + 2), puVar5 + 2, puVar5, reloc.axis_array + (int64_t)iVar2 * 0x2a8, 
+                            *(int32_t *)(reloc.axis_array + (int64_t)iVar2 * 0x2a8) != 0);
+            puVar6 = puVar5 + 0x10;
+            func_0x08020867(uVar1, puVar5 + 4, puVar5, reloc.axis_array + (int64_t)iVar3 * 0x2a8);
+            uVar1 = _reloc..LC0;
+            *(undefined8 *)(puVar5 + 0xe) = *(undefined8 *)(puVar5 + 2);
+            *(undefined8 *)(puVar5 + 0xc) = *(undefined8 *)(puVar5 + 2);
+            *(undefined8 *)(puVar5 + 6) = uVar1;
+            *(undefined8 *)(puVar5 + 10) = *(undefined8 *)(puVar5 + 4);
+            *(undefined8 *)(puVar5 + 8) = *(undefined8 *)(puVar5 + 4);
+            puVar5 = puVar6;
+        } while (puVar6 != (undefined4 *)
+                           (iVar4 + 0x40 + ((uint64_t)((int32_t)arg3 - 1) + (int64_t)(int32_t)arg2) * 0x40));
+    }
+    return;
+}
+
+
+// WARNING: Variable defined which should be unmapped: var_2h
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable var_2ch to Decompiler type: Unknown type
+// identifier signed
+// WARNING: [r2ghidra] Detected overlap for variable var_3h
+
+void sym.do_cubic(int64_t arg1, int64_t arg2, char *arg3, int64_t arg4, int64_t arg5)
+{
+    int32_t iVar1;
+    int64_t iVar2;
+    int32_t iVar3;
+    undefined8 uVar4;
+    int64_t iVar5;
+    int32_t iVar6;
+    double *pdVar7;
+    int64_t iVar8;
+    uint32_t uVar9;
+    int64_t iVar10;
+    int64_t iVar11;
+    int32_t iVar12;
+    double dVar13;
+    undefined auVar14 [16];
+    double dVar15;
+    double dVar16;
+    undefined auVar17 [16];
+    int64_t var_2h;
+    
+    iVar3 = (int32_t)arg4;
+    _reloc.x_axis = *(int32_t *)(arg1 + 0x1cc);
+    _reloc.y_axis = *(int32_t *)(arg1 + 0x1d0);
+    iVar10 = (int64_t)(int32_t)arg3 * 0x40 + *(int64_t *)(arg1 + 0x1e8);
+    iVar11 = (int64_t)_reloc.x_axis;
+    auVar17 = maxsd(ZEXT816(*(uint64_t *)(iVar10 + 8)), *(undefined8 *)(reloc.x_axis + iVar11 * 0x2a8));
+    auVar14 = minsd(ZEXT816(*(uint64_t *)(iVar10 + -0x38 + (int64_t)iVar3 * 0x40)), 
+                    *(undefined8 *)(reloc.y_axis + iVar11 * 0x2a8));
+    dVar16 = SUB168(auVar17, 0);
+    if (SUB168(auVar14, 0) <= dVar16) {
+        if (0 < _reloc.samples_1) {
+            uVar9 = _reloc.samples_1 - 1;
+            iVar10 = arg5 + 0x40;
+            do {
+                *(undefined4 *)arg5 = 1;
+                arg5 = arg5 + 0x40;
+            } while ((undefined4 *)(iVar10 + (uint64_t)uVar9 * 0x40) != (undefined4 *)arg5);
+        }
+    } else {
+        iVar1 = _reloc.samples_1 + -1;
+        if (0 < _reloc.samples_1) {
+            iVar6 = 0;
+            iVar12 = 0;
+            do {
+                iVar8 = (int64_t)iVar6;
+                dVar13 = (double)iVar12 * ((SUB168(auVar14, 0) - dVar16) / (double)iVar1) + dVar16;
+                if ((*(double *)(iVar8 * 0x40 + 0x48 + iVar10) <= dVar13) && (iVar6 < iVar3 + -2)) {
+                    uVar9 = (iVar3 + -3) - iVar6;
+                    iVar2 = iVar8 + 2;
+                    iVar5 = (int64_t)(iVar6 + 1);
+                    do {
+                        iVar8 = iVar5;
+                        iVar6 = (int32_t)iVar8;
+                        if (dVar13 < *(double *)(iVar10 + 0x48 + iVar8 * 0x40)) break;
+                        iVar5 = iVar8 + 1;
+                    } while (iVar2 + (uint64_t)uVar9 != iVar8 + 1);
+                }
+                pdVar7 = (double *)(iVar8 * 0x20 + arg2);
+                dVar15 = dVar13 - *(double *)(iVar10 + 8 + iVar8 * 0x40);
+                dVar15 = ((pdVar7[3] * dVar15 + pdVar7[2]) * dVar15 + pdVar7[1]) * dVar15 + *pdVar7;
+                *(undefined4 *)arg5 = 0;
+                func_0x08020867(dVar13, dVar15, (undefined4 *)(arg5 + 8), arg5, reloc.axis_array + iVar11 * 0x2a8, 
+                                *(int32_t *)(reloc.axis_array + iVar11 * 0x2a8) != 0);
+                iVar12 = iVar12 + 1;
+                func_0x08020867(dVar15, dVar15, (undefined4 *)(arg5 + 0x10), arg5, 
+                                reloc.axis_array + (int64_t)_reloc.y_axis * 0x2a8, 
+                                *(int32_t *)(reloc.axis_array + (int64_t)_reloc.y_axis * 0x2a8) != 0);
+                uVar4 = _reloc..LC0;
+                *(undefined8 *)(arg5 + 0x38) = *(undefined8 *)(arg5 + 8);
+                *(undefined8 *)(arg5 + 0x30) = *(undefined8 *)(arg5 + 8);
+                *(undefined8 *)(arg5 + 0x18) = uVar4;
+                *(undefined8 *)(arg5 + 0x28) = *(undefined8 *)(arg5 + 0x10);
+                *(undefined8 *)(arg5 + 0x20) = *(undefined8 *)(arg5 + 0x10);
+                if (_reloc.samples_1 <= iVar12) {
+                    return;
+                }
+                iVar11 = (int64_t)_reloc.x_axis;
+                arg5 = (int64_t)(arg5 + 0x40);
+            } while( true );
+        }
+    }
+    return;
+}
+
+
+int32_t sym.next_curve.isra.0(int64_t arg1, int64_t arg2, int64_t arg3)
+{
+    int32_t iVar1;
+    int32_t iVar2;
+    int64_t iVar3;
+    int32_t *piVar4;
+    int32_t iVar5;
+    
+    iVar3 = (int64_t)*(int32_t *)arg3;
+    iVar5 = *(int32_t *)arg1;
+    if (*(int32_t *)arg3 < iVar5) {
+        arg2 = *(int64_t *)arg2;
+        do {
+            iVar1 = (int32_t)iVar3;
+            if (*(int32_t *)(arg2 + iVar3 * 0x40) != 2) {
+                if (iVar5 <= iVar1) {
+                    return 0;
+                }
+                iVar2 = 0;
+                piVar4 = (int32_t *)(arg2 + (int64_t)iVar1 * 0x40);
+                do {
+                    iVar2 = iVar2 + 1;
+                    if (iVar2 == iVar5 - iVar1) {
+                        return iVar2;
+                    }
+                    piVar4 = piVar4 + 0x10;
+                } while (*piVar4 != 2);
+                return iVar2;
+            }
+            iVar3 = iVar3 + 1;
+            *(int32_t *)arg3 = iVar1 + 1;
+            iVar5 = *(int32_t *)arg1;
+        } while ((int32_t)iVar3 < iVar5);
+    }
+    return 0;
+}
+
+
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x08002b83: Changing call to branch
+// WARNING: Possible PIC construction at 0x08002f14: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x08002b88)
+// WARNING: Removing unreachable block (ram,0x08002bae)
+// WARNING: Removing unreachable block (ram,0x08002bc0)
+// WARNING: Removing unreachable block (ram,0x08002bd0)
+// WARNING: Removing unreachable block (ram,0x08002be0)
+// WARNING: Removing unreachable block (ram,0x08002c10)
+// WARNING: Removing unreachable block (ram,0x08002c19)
+// WARNING: Removing unreachable block (ram,0x08002c47)
+// WARNING: Removing unreachable block (ram,0x08002c7f)
+// WARNING: Removing unreachable block (ram,0x08002c87)
+// WARNING: Removing unreachable block (ram,0x08002c8c)
+// WARNING: Removing unreachable block (ram,0x08002c9f)
+// WARNING: Removing unreachable block (ram,0x08002cac)
+// WARNING: Removing unreachable block (ram,0x08002cc4)
+// WARNING: Removing unreachable block (ram,0x08002ea0)
+// WARNING: Removing unreachable block (ram,0x08002cd3)
+// WARNING: Removing unreachable block (ram,0x08002cd8)
+// WARNING: Removing unreachable block (ram,0x08002e90)
+// WARNING: Removing unreachable block (ram,0x08002ced)
+// WARNING: Removing unreachable block (ram,0x08002f30)
+// WARNING: Removing unreachable block (ram,0x08002d29)
+// WARNING: Removing unreachable block (ram,0x08002da0)
+// WARNING: Removing unreachable block (ram,0x08002d68)
+// WARNING: Removing unreachable block (ram,0x08002d72)
+// WARNING: Removing unreachable block (ram,0x08002e00)
+// WARNING: Removing unreachable block (ram,0x08002e06)
+// WARNING: Removing unreachable block (ram,0x08002d7c)
+// WARNING: Removing unreachable block (ram,0x08002e10)
+// WARNING: Removing unreachable block (ram,0x08002d9d)
+// WARNING: Removing unreachable block (ram,0x08002e27)
+// WARNING: Removing unreachable block (ram,0x08002e3d)
+// WARNING: Removing unreachable block (ram,0x08002e4c)
+// WARNING: Removing unreachable block (ram,0x08002e54)
+// WARNING: Removing unreachable block (ram,0x08002e59)
+// WARNING: Removing unreachable block (ram,0x08002e6b)
+// WARNING: Removing unreachable block (ram,0x08002e71)
+// WARNING: Removing unreachable block (ram,0x08002f19)
+
+void sym.make_bins(int64_t arg7, int64_t arg8, double placeholder_2, undefined8 placeholder_3, undefined8 placeholder_4,
+                  undefined8 placeholder_5, undefined8 placeholder_6, undefined8 placeholder_7, int64_t arg1,
+                  int64_t arg2)
+{
+    uint64_t uVar1;
+    char cVar2;
+    uint64_t *puVar3;
+    double dVar4;
+    undefined8 uVar5;
+    double dVar6;
+    undefined8 uVar7;
+    undefined auVar8 [16];
+    undefined auVar9 [16];
+    
+    puVar3 = (uint64_t *)(uint64_t)*(uint32_t *)(arg1 + 0x1d0);
+    if ((double)arg7 == (double)arg8) {
+        if (0 < *(int32_t *)(arg1 + 0x1c8)) {
+            uVar7 = 0;
+            uVar5 = 0;
+            puVar3 = (uint64_t *)(*(int64_t *)(arg1 + 0x1e8) + 8);
+            dVar4 = _reloc..LC35;
+            dVar6 = _reloc..LC34;
+            do {
+                uVar1 = *puVar3;
+                puVar3 = puVar3 + 8;
+                auVar8 = maxsd(ZEXT816(uVar1), CONCAT88(uVar7, dVar6));
+                auVar9 = minsd(ZEXT816(uVar1), CONCAT88(uVar5, dVar4));
+                dVar6 = SUB168(auVar8, 0);
+                uVar7 = SUB168(auVar8 >> 0x40, 0);
+                dVar4 = SUB168(auVar9, 0);
+                uVar5 = SUB168(auVar9 >> 0x40, 0);
+            } while (puVar3 != (uint64_t *)
+                               (*(int64_t *)(arg1 + 0x1e8) + 0x48 + (uint64_t)(*(int32_t *)(arg1 + 0x1c8) - 1) * 0x40));
+            if (dVar4 < dVar6) goto code_r0x08002afb;
+        }
+        puVar3 = (uint64_t *)0x2;
+    } else {
+code_r0x08002afb:
+        if (placeholder_2 <= 0.00000000) {
+            puVar3 = (uint64_t *)(uint64_t)((int32_t)arg2 - 1);
+        }
+    }
+    cVar2 = (char)puVar3;
+    *(char *)puVar3 = *(char *)puVar3 + cVar2;
+    *(char *)puVar3 = *(char *)puVar3 + cVar2;
+    *(char *)puVar3 = *(char *)puVar3 + cVar2;
+    *(char *)puVar3 = *(char *)puVar3 + cVar2;
+    *(char *)puVar3 = *(char *)puVar3 + cVar2;
+    *(char *)puVar3 = *(char *)puVar3 + cVar2;
+    *(char *)puVar3 = *(char *)puVar3 + cVar2;
+    *(char *)puVar3 = *(char *)puVar3 + cVar2;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+

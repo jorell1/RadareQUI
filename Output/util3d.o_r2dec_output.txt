@@ -1,0 +1,148 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util3d.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int64_t mat_scale (int64_t arg9, int64_t arg8, int64_t arg7, int64_t arg1) {
+    xmm2 = arg9;
+    xmm1 = arg8;
+    xmm0 = arg7;
+    rdi = arg1;
+    /* [01] -r-x section size 12905 named .text */
+    __asm ("endbr64");
+    xmm3 = *(loc..LC0);
+    rcx = rdi;
+    edx = 0;
+label_0:
+    eax = 0;
+    do {
+        if (edx == eax) {
+            goto label_2;
+        }
+        *((rcx + rax*8)) = 0;
+label_1:
+        rax++;
+    } while (rax != 4);
+    edx++;
+    rcx += 0x20;
+    if (edx != 4) {
+        goto label_0;
+    }
+    *(rdi) = xmm0;
+    *((rdi + 0x28)) = xmm1;
+    *((rdi + 0x50)) = xmm2;
+    return rax;
+label_2:
+    *((rcx + rax*8)) = xmm3;
+    goto label_1;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util3d.o @ 0x8000090 */
+#include <stdint.h>
+ 
+uint64_t mat_rot_x (int64_t arg1) {
+    int64_t var_8h;
+    rdi = arg1;
+    __asm ("endbr64");
+    rbx = rdi;
+    __asm ("mulsd xmm0, qword [loc..LC2]");
+    rdi = rsp + 8;
+    rsi = rsp;
+    eax = sincos (rbx);
+    xmm1 = *(rsp);
+    rcx = rbx;
+    edx = 0;
+    xmm2 = *((rsp + 8));
+    xmm0 = *(loc..LC0);
+label_0:
+    eax = 0;
+    do {
+        if (edx == eax) {
+            goto label_2;
+        }
+        *((rcx + rax*8)) = 0;
+label_1:
+        rax++;
+    } while (rax != 4);
+    edx++;
+    rcx += 0x20;
+    if (edx != 4) {
+        goto label_0;
+    }
+    __asm ("movapd xmm0, xmm2");
+    __asm ("xorpd xmm0, xmmword [loc..LC3]");
+    *((rbx + 0x28)) = xmm1;
+    *((rbx + 0x48)) = xmm2;
+    *((rbx + 0x30)) = xmm0;
+    *((rbx + 0x50)) = xmm1;
+    return rax;
+label_2:
+    *((rcx + rax*8)) = xmm0;
+    goto label_1;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/util3d.o @ 0x8000120 */
+#include <stdint.h>
+ 
+uint64_t mat_rot_z (int64_t arg1) {
+    int64_t var_8h;
+    rdi = arg1;
+    __asm ("endbr64");
+    rbx = rdi;
+    __asm ("mulsd xmm0, qword [loc..LC2]");
+    rdi = rsp + 8;
+    rsi = rsp;
+    eax = sincos (rbx);
+    xmm1 = *(rsp);
+    rcx = rbx;
+    edx = 0;
+    xmm2 = *((rsp + 8));
+    xmm0 = *(loc..LC0);
+label_0:
+    eax = 0;
+    do {
+        if (edx == eax) {
+            goto label_2;
+        }
+        *((rcx + rax*8)) = 0;
+label_1:
+        rax++;
+    } while (rax != 4);
+    edx++;
+    rcx += 0x20;
+    if (edx != 4) {
+        goto label_0;
+    }
+    __asm ("movapd xmm0, xmm2");
+    __asm ("xorpd xmm0, xmmword [loc..LC3]");
+    *(rbx) = xmm1;
+    *((rbx + 0x20)) = xmm2;
+    *((rbx + 8)) = xmm0;
+    *((rbx + 0x28)) = xmm1;
+    return rax;
+label_2:
+    *((rcx + rax*8)) = xmm0;
+    goto label_1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,699 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/scanner.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int64_t get_num (int64_t arg7, int64_t arg1) {
+    int64_t var_8h_2;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_8h;
+    xmm0 = arg7;
+    rdi = arg1;
+    /* [01] -r-x section size 2704 named .text */
+    rbx = rdi;
+    r13 = *(reloc.token);
+    rax = *(fs:0x28);
+    *((rsp + 8)) = rax;
+    eax = 0;
+    rax = *(obj.t_num);
+    rbp = rax * 5;
+    r12 = rax;
+    rbp <<= 3;
+    r13 += rbp;
+    *(r13) = 0;
+    *((r13 + 8)) = 1;
+    rax = token (rbx, rbp, r12, r13);
+    rsi = *(rax);
+    eax = 0;
+    do {
+        ecx = *((rbx + rax));
+        edi = eax;
+        rax++;
+        rdx = rcx;
+    } while ((*((rsi + rcx*2 + 1)) & 8) != 0);
+    if (cl != 0x2e) {
+        edx &= 0xffffffdf;
+        if (dl == 0x45) {
+            goto label_0;
+        }
+        token ();
+        r14 = rsp;
+        edx = 0;
+        rdi = rbx;
+        *(rax) = 0;
+        rsi = r14;
+        r13 = rax;
+        rax = token ();
+        rdx = rax;
+        eax = *(r13);
+        if (eax != 0) {
+            goto label_1;
+        }
+        rcx = *(rsp);
+        rax = *(rsp);
+        rax -= rbx;
+        ecx = 1;
+        if (ecx == ebx) {
+            eax = ecx;
+        }
+        rcx = *(reloc.token);
+        *((rcx + rbp + 0x10)) = rdx;
+        goto label_2;
+    }
+    *((r13 + 8)) = 2;
+    eax = rdi + 1;
+    rax = (int64_t) eax;
+    do {
+        ecx = *((rbx + rax));
+        edi = eax;
+        rax++;
+        rdx = rcx;
+    } while ((*((rsi + rcx*2 + 1)) & 8) != 0);
+    edx &= 0xffffffdf;
+    if (dl == 0x45) {
+label_0:
+        edx = rdi + 1;
+        *((r13 + 8)) = 2;
+        rax = (int64_t) edx;
+        eax = *((rbx + rax));
+        ecx = rax - 0x2b;
+        ecx &= 0xfd;
+        if (ecx == 0) {
+            edx = rdi + 2;
+            rax = (int64_t) edx;
+            eax = *((rbx + rax));
+        }
+        if ((*((rsi + rax*2 + 1)) & 8) == 0) {
+            goto label_3;
+        }
+    }
+    r14 = rsp;
+    do {
+        *((r13 + 0x18)) = 0;
+        rsi = r14;
+        rdi = rbx;
+        token ();
+        eax = *(rsp);
+        *((r13 + 0x10)) = xmm0;
+        eax -= ebx;
+label_2:
+        rsi = *((rsp + 8));
+        rsi ^= *(fs:0x28);
+        if (eax != 0) {
+            goto label_4;
+        }
+        return rax;
+label_1:
+        eax = 0;
+        rsi = "integer overflow; changing to floating point";
+        edi = r12d;
+        token ();
+        rax = *(obj.t_num);
+        rdx = rax * 5;
+        rax = *(reloc.token);
+        r13 = rax + rdx*8;
+        *((r13 + 8)) = 2;
+    } while (1);
+label_4:
+    eax = token ();
+label_3:
+    *((r13 + 0x20)) += edx;
+    rsi = "expecting exponent";
+    edi = r12d;
+    eax = 0;
+    token ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/scanner.o @ 0x80004e0 */
+#include <stdint.h>
+ 
+int64_t scanner (int64_t arg1, int64_t arg2, int64_t arg4) {
+    int64_t var_8h;
+    char * var_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    int64_t var_28h;
+    int64_t var_34h;
+    int64_t var_38h;
+    uint32_t var_47h;
+    int64_t var_48h;
+    rdi = arg1;
+    rsi = arg2;
+    rcx = arg4;
+    __asm ("endbr64");
+    r14 = *(rdi);
+    *((rsp + 0x18)) = rdi;
+    *((rsp + 0x20)) = rsi;
+    rax = *(fs:0x28);
+    *((rsp + 0x48)) = rax;
+    eax = 0;
+    *(obj.curly_brace_count) = 0;
+    *(obj.t_num) = "expecting exponent";
+    if (*(r14) == 0) {
+        goto label_9;
+    }
+    rax = token ();
+    r13d = 0;
+    ebp = 0;
+    r15d = 0;
+    *((rsp + 8)) = rax;
+    rbx = reloc__rodata;
+    rdi = r14;
+    do {
+        eax = r13 + 1;
+        if (eax >= *(reloc.token_table_size)) {
+            goto label_10;
+        }
+label_0:
+        rax = *((rsp + 8));
+        rdx = *(rax);
+        eax = *(rdi);
+        if ((*((rdx + rax*2 + 1)) & 0x20) != 0) {
+            goto label_11;
+        }
+        rax = (int64_t) r13d;
+        rcx = *(reloc.token);
+        r10 = rax * 5;
+        r9 = r10*8;
+        r12 = rcx + r9;
+        *((r12 + 0x20)) = ebp;
+        *((r12 + 0x24)) = 1;
+        *(r12) = 1;
+        eax = *(rdi);
+        if (al == 0x60) {
+            goto label_12;
+        }
+        r8d = eax;
+        esi = (int32_t) al;
+        r11b = (al == 0x5f) ? 1 : 0;
+        r8b >>= 7;
+        esi = *((rdx + rsi*2));
+        r11b |= r8b;
+        if (r11b != 0) {
+            goto label_13;
+        }
+        if ((si & 0x400) != 0) {
+            goto label_13;
+        }
+        if ((si & 0x800) != 0) {
+            goto label_14;
+        }
+        if (al == 0x2e) {
+            goto label_15;
+        }
+        if (al == 0x7b) {
+            goto label_16;
+        }
+        if (al == 0x27) {
+            goto label_17;
+        }
+        if (al == 0x22) {
+            goto label_17;
+        }
+        edx = rax - 0x21;
+        if (dl > 0x5d) {
+            goto label_18;
+        }
+        edx = (int32_t) dl;
+        rdx = *((rbx + rdx*4));
+        rdx += rbx;
+        void (*rdx)() ();
+label_2:
+        ebp++;
+label_4:
+        r13d++;
+        r15 = (int64_t) ebp;
+        *(obj.t_num) = "expecting exponent";
+        rdi = r14 + r15;
+label_1:
+    } while (*(rdi) != 0);
+    rax = (int64_t) r13d;
+    rdx = rax * 5;
+    rax = *(reloc.token);
+    rdx = rax + rdx*8;
+label_8:
+    *((rdx + 0x20)) = ebp;
+    *((rdx + 0x24)) = 0;
+    *(rdx) = 1;
+    rax = *((rsp + 0x48));
+    rax ^= *(fs:0x28);
+    if (*(rdi) != 0) {
+        goto label_19;
+    }
+    eax = r13d;
+    return rax;
+label_10:
+    *((rsp + 0x10)) = rdi;
+    token ();
+    r13d = "expecting exponent";
+    rdi = *((rsp + 0x10));
+    goto label_0;
+label_11:
+    ebp++;
+    r15 = (int64_t) ebp;
+    rdi = r14 + r15;
+    goto label_1;
+label_13:
+    rax = (int64_t) ebp;
+    ecx = *((r14 + rax + 1));
+    rax = rcx;
+    if ((*((rdx + rcx*2)) & 8) != 0) {
+        goto label_20;
+    }
+    cl >>= 7;
+    al = (al == 0x5f) ? 1 : 0;
+    cl |= al;
+    if (cl == 0) {
+        goto label_2;
+    }
+label_20:
+    eax = rbp + 1;
+    edi = 1;
+    rax = (int64_t) eax;
+    edi -= ebp;
+    do {
+label_3:
+        ecx = rdi + rax;
+        *((r12 + 0x24)) = ecx;
+        esi = *((r14 + rax + 1));
+        rax++;
+        rcx = rsi;
+    } while ((*((rdx + rsi*2)) & 8) != 0);
+    sil >>= 7;
+    cl = (cl == 0x5f) ? 1 : 0;
+    sil |= cl;
+    if (sil != 0) {
+        goto label_3;
+    }
+    goto label_2;
+label_15:
+    eax = *((r14 + r15 + 1));
+    if ((*((rdx + rax*2 + 1)) & 8) == 0) {
+        goto label_2;
+    }
+label_14:
+    *(r12) = 0;
+    eax = _text ();
+    rdx = *(reloc.token);
+    *((r12 + 0x24)) = eax;
+    rax = *(obj.t_num);
+    r13 = rax;
+    rax *= 5;
+    rax = rdx + rax*8;
+    ebp += *((rax + 0x24));
+    goto label_4;
+label_12:
+    r15 = *((rsp + 0x18));
+    rsi = *((rsp + 0x20));
+    edx = ebp;
+    rdi = r15;
+    substitute ();
+    r14 = *(r15);
+    r15 = (int64_t) ebp;
+    r13d = "expecting exponent";
+    rdi = r14 + r15;
+    goto label_1;
+label_17:
+    *((r12 + 0x24)) = 2;
+    r12d = rbp + 1;
+    r15d = *(rdi);
+    rsi = (int64_t) r12d;
+    rdx = r14 + rsi;
+    eax = *(rdx);
+    if (r15b == al) {
+        goto label_21;
+    }
+    r13d = r15d;
+    while (r15d != 0x22) {
+        rax = *(obj.t_num);
+        rdx = rax * 5;
+        rax = *(reloc.token);
+        rdx = rax + rdx*8;
+        eax = *((rdx + 0x24));
+        if (r15d == 0x27) {
+            if (*((r14 + rsi + 1)) == 0x27) {
+                goto label_22;
+            }
+        }
+label_5:
+        eax++;
+        r12d++;
+        *((rdx + 0x24)) = eax;
+label_7:
+        rsi = (int64_t) r12d;
+        rdx = r14 + rsi;
+        eax = *(rdx);
+        if (r13b == al) {
+            goto label_23;
+        }
+label_6:
+        if (al == 0) {
+            goto label_24;
+        }
+    }
+    if (al != 0x5c) {
+        if (al == 0x60) {
+            goto label_25;
+        }
+        rax = *(obj.t_num);
+        rdx = rax * 5;
+        rax = *(reloc.token);
+        rdx = rax + rdx*8;
+        eax = *((rdx + 0x24));
+        goto label_5;
+    }
+    rax = *(obj.t_num);
+    rdx = rax * 5;
+    rax = *(reloc.token);
+    rdx = rax + rdx*8;
+    eax = *((rdx + 0x24));
+    if (*((r14 + rsi + 1)) == 0) {
+        goto label_5;
+    }
+    ebp += 2;
+    eax += 2;
+    r12d = rbp + 1;
+    *((rdx + 0x24)) = eax;
+    rsi = (int64_t) r12d;
+    rdx = r14 + rsi;
+    eax = *(rdx);
+    if (r13b != al) {
+        goto label_6;
+    }
+label_23:
+    r13d = "expecting exponent";
+label_21:
+    ebp += 2;
+    goto label_4;
+label_16:
+    r11d = rbp + 1;
+    *(r12) = 0;
+    eax = 0;
+    rcx = r12 + 0x18;
+    r15 = (int64_t) r11d;
+    rdx = r12 + 0x10;
+    r8 = rsp + 0x47;
+    *((r12 + 8)) = 2;
+    rdi = r14 + r15;
+    rsi = "%lf , %lf %c";
+    *((rsp + 0x10)) = r9;
+    *((rsp + 0x38)) = r10;
+    *((rsp + 0x34)) = r11d;
+    *((rsp + 0x28)) = rdi;
+    eax = token ();
+    r9 = *((rsp + 0x10));
+    if (eax > 0) {
+        goto label_26;
+    }
+    rax = *(reloc.token);
+    r10 = *((rsp + 0x38));
+    r13d++;
+    r11d = *((rsp + 0x34));
+    *(obj.curly_brace_count)++;
+    *(obj.t_num) = "expecting exponent";
+    rdi = *((rsp + 0x28));
+    *((rax + r10*8)) = 1;
+    goto label_1;
+label_22:
+    if (*((r14 + rsi + 2)) != 0x27) {
+        goto label_5;
+    }
+    ebp += 3;
+    eax += 3;
+    *((rdx + 0x24)) = eax;
+    r12d = rbp + 1;
+    goto label_7;
+label_25:
+    r14 = *((rsp + 0x18));
+    rsi = *((rsp + 0x20));
+    edx = r12d;
+    rdi = r14;
+    eax = substitute ();
+    r14 = *(r14);
+    goto label_7;
+label_24:
+    *(rdx) = r13b;
+    ebp = r12 + 1;
+    r13d = "expecting exponent";
+    *((r14 + rsi + 1)) = 0;
+    goto label_4;
+label_26:
+    if (eax != 3) {
+        goto label_27;
+    }
+    if (*((rsp + 0x47)) != 0x7d) {
+        goto label_27;
+    }
+    r9 += *(reloc.token);
+    eax = rbp + 2;
+    *((r9 + 0x24)) += 2;
+    rax = (int64_t) eax;
+    while (*((r14 + rax)) != 0x7d) {
+        rax++;
+        *((r9 + 0x24))++;
+        if (*((r14 + rax - 1)) == 0) {
+            goto label_28;
+        }
+    }
+    goto label_2;
+label_18:
+    edx = (int32_t) al;
+    rsi = "invalid character %c";
+    edi = r13d;
+    eax = 0;
+    eax = token ();
+    rdx = r12;
+    goto label_8;
+label_9:
+    rdx = *(reloc.token);
+    r13d = 0;
+    ebp = 0;
+    goto label_8;
+label_28:
+    rsi = "no matching '}';
+    edi = r13d;
+    eax = 0;
+    eax = token ();
+label_27:
+    rsi = "invalid complex constant";
+    edi = r13d;
+    eax = 0;
+    token ();
+label_19:
+    rax = token ();
+    /* [05] -r-- section size 125 named .rodata.str1.1 */
+    al += *(rax);
+    *(rax) += al;
+    rsi = *((rcx + rbp*2 + 0x6e));
+    *((ebp + 0x78)) &= ah;
+    if (*((ebp + 0x78)) overflow 0) {
+        void (*0x8000b4d)() ();
+    }
+    __asm ("outsb dx, byte [rsi]");
+    __asm ("outsb dx, byte gs:[rsi]");
+    if (*((ebp + 0x78)) != 0) {
+    }
+    rbp = *((rdi + 0x6d));
+    __asm ("insd dword [rdi], dx");
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/scanner.o @ 0x8000200 */
+#include <stdint.h>
+ 
+int64_t substitute (int64_t arg1, int64_t arg2, int64_t arg3) {
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    r15 = (int64_t) edx;
+    r14 = r15;
+    r12 = rdi;
+    rcx = *(rdi);
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    rcx += r15;
+    rbx = rcx;
+    while (al != 0x60) {
+        if (al == 0) {
+            goto label_5;
+        }
+        r13 = rbx;
+        eax = *((rbx + 1));
+        rbx++;
+    }
+label_5:
+    rdx = rbx;
+    rsi = "command string";
+    *((rsp + 8)) = rcx;
+    rdx -= rcx;
+    rdi = rdx;
+    rax = token (rdx);
+    rcx = *((rsp + 8));
+    rdx = *(rsp);
+    rdi = rax;
+    rsi = rcx + 1;
+    token (rax);
+    r8 = *(rsp);
+    if (*(rbx) == 0) {
+        goto label_6;
+    }
+    rbx = r13 + 2;
+    rdi = rbx;
+    rax = token ();
+    r8 = *(rsp);
+    r13 = rax + 1;
+    if (rax != 0) {
+        goto label_7;
+    }
+label_1:
+    rdi = r8;
+    rsi = rsp + 0x10;
+    token (r8);
+    r8 = *(rsp);
+    rdi = *(rsp);
+    token ();
+    rdx = *((rsp + 0x10));
+    *(rsp) = 0;
+    eax = *(rdx);
+    if (al == 0) {
+        goto label_8;
+    }
+label_2:
+    ebx = 1;
+    while (*(rbp) != r15) {
+label_0:
+        rdx = *((rsp + 0x10));
+        eax = *((rdx + rbx));
+        rbx++;
+        if (al == 0) {
+            goto label_9;
+        }
+        if (*((rdx + rbx)) == 0) {
+            if (al == 0xa) {
+                goto label_10;
+            }
+        }
+        rdx = *(r12);
+        r14d++;
+        *((rdx + r15)) = al;
+        r15 = (int64_t) r14d;
+label_10:
+    }
+    token ();
+    goto label_0;
+label_9:
+    rax = *(r12);
+    *((rax + r15)) = 0;
+    rdi = *((rsp + 0x10));
+    token ();
+    if (*(rsp) == 0) {
+        goto label_4;
+    }
+label_3:
+    r13 += r15;
+    if (*(rbp) >= r13) {
+        goto label_11;
+    }
+    do {
+        token ();
+    } while (*(rbp) < r13);
+label_11:
+    rbx = *(rsp);
+    rdi = *(r12);
+    rsi = rbx;
+    rdi += r15;
+    token ();
+    rdi = rbx;
+    token ();
+label_4:
+    *(reloc.screen_ok) = 0;
+    rax = *((rsp + 0x18));
+    rax ^= *(fs:0x28);
+    if (rdi != 0) {
+        goto label_12;
+    }
+    return rax;
+label_6:
+    r13d = 0;
+    goto label_1;
+label_7:
+    rsi = "input line copy";
+    rdi = r13;
+    *((rsp + 8)) = r8;
+    rax = token ();
+    rsi = rbx;
+    rdi = rax;
+    token (rax);
+    r8 = *((rsp + 8));
+    rsi = rsp + 0x10;
+    rdi = r8;
+    token ();
+    r8 = *((rsp + 8));
+    rdi = *((rsp + 8));
+    token ();
+    rdx = *((rsp + 0x10));
+    eax = *(rdx);
+    if (al != 0) {
+        goto label_2;
+    }
+    rax = *(r12);
+    *((rax + r15)) = 0;
+    rdi = *((rsp + 0x10));
+    token ();
+    goto label_3;
+label_8:
+    rax = *(r12);
+    *((rax + r15)) = 0;
+    rdi = *((rsp + 0x10));
+    token ();
+    goto label_4;
+label_12:
+    token ();
+    __asm ("endbr64");
+    if (rdi == 0) {
+        goto label_13;
+    }
+    ebx = *(rdi);
+    r12d = 0;
+    if (bl != 0) {
+        rax = token ();
+        rsi = *(rax);
+        eax = (int32_t) bl;
+        ecx = *((rsi + rax*2));
+        if ((ch & 8) == 0) {
+            goto label_14;
+        }
+    }
+    eax = r12d;
+    return rax;
+    do {
+        eax = (int32_t) bl;
+        ecx = *((rsi + rax*2));
+label_14:
+        eax = ebx;
+        eax = ~eax;
+        al >>= 7;
+        dl = (bl != 0x5f) ? 1 : 0;
+        if ((al & dl) != 0) {
+            ecx &= 8;
+            if (ecx == 0) {
+                goto label_13;
+            }
+        }
+        ebx = *((rbp + 1));
+        rbp++;
+    } while (bl != 0);
+    r12d = 1;
+    eax = r12d;
+    return rax;
+label_13:
+    r12d = 0;
+    eax = r12d;
+    return rax;
+}
+
+

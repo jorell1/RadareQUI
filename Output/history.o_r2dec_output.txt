@@ -1,0 +1,859 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x8000040 */
+#include <stdint.h>
+ 
+uint64_t add_history (int64_t arg1) {
+    rdi = arg1;
+    /* [01] -r-x section size 3152 named .text */
+    __asm ("endbr64");
+    rsi = "history";
+    edi = 0x20;
+    rax = gp_alloc (rbx);
+    rdi = rbp;
+    rbx = rax;
+    rax = gp_alloc ();
+    *((rbx + 8)) = 0;
+    *(rbx) = rax;
+    rax = "  %s\n";
+    *((rbx + 0x18)) = 0;
+    *((rbx + 0x10)) = rax;
+    if (rax == 0) {
+        goto label_0;
+    }
+    *((rax + 0x18)) = rbx;
+    do {
+        *(obj.history) = "  %s\n";
+        *(loc..LC0)++;
+        return rax;
+label_0:
+        *(loc..LC1) = rbx;
+    } while (1);
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x8000d34 */
+#include <stdint.h>
+ 
+int64_t history_find_by_number_cold (void) {
+    /* [07] -r-x section size 10 named .text.unlikely */
+    rax = *(0);
+    __asm ("ud2");
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x80000c0 */
+#include <stdint.h>
+ 
+void using_history (void) {
+    __asm ("endbr64");
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x80000d0 */
+#include <stdint.h>
+ 
+void clear_history (void) {
+    __asm ("endbr64");
+    rbx = "  %s\n";
+    if (rbx == 0) {
+        goto label_0;
+    }
+    do {
+        rbx = *((rbx + 0x10));
+        rdi = *(rbp);
+        gp_alloc ();
+        rdi = rbp;
+        gp_alloc ();
+    } while (rbx != 0);
+label_0:
+    *(loc..LC0) = "history";
+    *(loc..LC1) = 0;
+    *(obj.history) = "  %s\n";
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x8000140 */
+#include <stdint.h>
+ 
+int64_t where_history (void) {
+    __asm ("endbr64");
+    rdx = "  %s\n";
+    if (rdx == 0) {
+        goto label_0;
+    }
+    rcx = *(loc..LC1);
+    r8d = "history";
+    if (rcx == 0) {
+        goto label_1;
+    }
+    rax = *((rdx + 0x10));
+    if (rcx != rdx) {
+        goto label_2;
+    }
+    goto label_3;
+    do {
+        rdx = rax;
+        r8d--;
+        rax = *((rax + 0x10));
+        if (rcx == rdx) {
+            goto label_3;
+        }
+label_2:
+    } while (rax != 0);
+label_3:
+    eax = 0;
+    al = (r8d > 0) ? 1 : 0;
+    r8d -= eax;
+label_1:
+    eax = r8d;
+    return rax;
+label_0:
+    r8d = 0;
+    eax = r8d;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x80001a0 */
+#include <stdint.h>
+ 
+int64_t history_set_pos (uint32_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    ecx = "history";
+    edx = edi;
+    rax = "  %s\n";
+    sil = (ecx < edi) ? 1 : 0;
+    edx >>= 0x1f;
+    sil |= dl;
+    if (sil != 0) {
+        goto label_0;
+    }
+    if (rax == 0) {
+        goto label_0;
+    }
+    edx = rcx - 1;
+    if (ecx == edi) {
+        goto label_1;
+    }
+    do {
+        if (edi == edx) {
+            goto label_2;
+        }
+        rax = *((rax + 0x10));
+        edx--;
+    } while (rax != 0);
+    return rax;
+label_0:
+    eax = 0;
+    return rax;
+label_2:
+    *(loc..LC1) = rax;
+    eax = 1;
+    return rax;
+label_1:
+    *(loc..LC1) = 0;
+    eax = 1;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x8000220 */
+#include <stdint.h>
+ 
+int64_t history_get (uint32_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    eax = "history";
+    edi -= *(obj.history_base);
+    edx = edi;
+    r8 = "  %s\n";
+    cl = (eax <= edi) ? 1 : 0;
+    edx >>= 0x1f;
+    cl |= dl;
+    if (cl != 0) {
+        goto label_0;
+    }
+    if (r8 == 0) {
+        goto label_0;
+    }
+    eax--;
+    do {
+        if (edi == eax) {
+            goto label_1;
+        }
+        r8 = *((r8 + 0x10));
+        eax--;
+    } while (r8 != 0);
+label_1:
+    rax = r8;
+    return rax;
+label_0:
+    r8d = 0;
+    rax = r8;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x8000270 */
+#include <stdint.h>
+ 
+int64_t current_history (void) {
+    __asm ("endbr64");
+    rax = *(loc..LC1);
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x8000280 */
+#include <stdint.h>
+ 
+int64_t previous_history (void) {
+    __asm ("endbr64");
+    rax = *(loc..LC1);
+    if (rax != 0) {
+        rax = *((rax + 0x10));
+        if (rax != 0) {
+            *(loc..LC1) = rax;
+        }
+        return rax;
+    }
+    rax = "  %s\n";
+    *(loc..LC1) = rax;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x80002c0 */
+#include <stdint.h>
+ 
+int64_t next_history (void) {
+    __asm ("endbr64");
+    rax = *(loc..LC1);
+    if (rax != 0) {
+        rax = *((rax + 0x18));
+        *(loc..LC1) = rax;
+    }
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x80002e0 */
+#include <stdint.h>
+ 
+int64_t replace_history_entry (uint32_t arg1, int64_t arg2, int64_t arg3) {
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    __asm ("endbr64");
+    edi++;
+    eax = "history";
+    edi -= *(obj.history_base);
+    ecx = edi;
+    r12 = "  %s\n";
+    sil = (eax <= edi) ? 1 : 0;
+    ecx >>= 0x1f;
+    sil |= cl;
+    if (sil != 0) {
+        goto label_0;
+    }
+    if (r12 == 0) {
+        goto label_0;
+    }
+    r13 = rdx;
+    eax--;
+    do {
+        if (edi == eax) {
+            goto label_1;
+        }
+        r12 = *((r12 + 0x10));
+        eax--;
+    } while (r12 != 0);
+    rax = r12;
+    return rax;
+label_1:
+    esi = 1;
+    edi = 0x20;
+    rax = gp_alloc ();
+    rdi = rbp;
+    rbx = rax;
+    rax = *(r12);
+    *(rbx) = rax;
+    rax = *((r12 + 8));
+    *((rbx + 8)) = rax;
+    rax = gp_alloc ();
+    *((r12 + 8)) = r13;
+    *(r12) = rax;
+    r12 = rbx;
+    rax = rbx;
+    return rax;
+label_0:
+    r12d = 0;
+    rax = r12;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x80003b0 */
+#include <stdint.h>
+ 
+int64_t remove_history (uint32_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    edx = "history";
+    ecx = edi;
+    rax = "  %s\n";
+    sil = (edi >= edx) ? 1 : 0;
+    ecx >>= 0x1f;
+    sil |= cl;
+    if (sil != 0) {
+        goto label_0;
+    }
+    if (rax == 0) {
+        goto label_0;
+    }
+    esi = rdx - 1;
+    edx = esi;
+    do {
+        rcx = rax;
+        rax = *((rax + 0x10));
+        if (edi == edx) {
+            goto label_1;
+        }
+        edx--;
+    } while (rax != 0);
+    return rax;
+label_1:
+    rdx = *((rcx + 0x18));
+    if (rax != 0) {
+        *((rax + 0x18)) = rdx;
+        rdx = *((rcx + 0x18));
+    }
+    if (rdx == 0) {
+        goto label_2;
+    }
+    *((rdx + 0x10)) = rax;
+    if (*(loc..LC1) == rcx) {
+        goto label_3;
+    }
+    do {
+        *(loc..LC0) = "history";
+        rax = rcx;
+        return rax;
+label_0:
+        eax = 0;
+        return rax;
+label_2:
+        *(obj.history) = "  %s\n";
+    } while (*(loc..LC1) != rcx);
+label_3:
+    rax = *((rcx + 0x10));
+    *(loc..LC0) = "history";
+    *(loc..LC1) = rax;
+    rax = rcx;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x8000460 */
+#include <stdint.h>
+ 
+int64_t free_history_entry (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    if (rdi != 0) {
+        r12 = *((rdi + 8));
+        rdi = *(rdi);
+        gp_alloc ();
+        rdi = rbp;
+        gp_alloc ();
+        rax = r12;
+        return rax;
+    }
+    r12d = 0;
+    rax = r12;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x80004b0 */
+#include <stdint.h>
+ 
+int64_t history_search (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    __asm ("endbr64");
+    rax = *(loc..LC1);
+    r14d = esi;
+    r12 = "  %s\n";
+    rbx = rdi;
+    if (r12 == 0) {
+        goto label_4;
+    }
+    ebp = "history";
+    if (rax == 0) {
+        goto label_5;
+    }
+    rdx = *((r12 + 0x10));
+    if (r12 != rax) {
+        goto label_6;
+    }
+    goto label_7;
+    do {
+        rcx = rdx;
+        ebp--;
+        rdx = *((rdx + 0x10));
+        if (rcx == rax) {
+            goto label_7;
+        }
+label_6:
+    } while (rdx != 0);
+label_7:
+    edx = 0;
+    dl = (ebp > 0) ? 1 : 0;
+    ebp -= edx;
+label_1:
+    r13 = *(rax);
+    if (r13 != 0) {
+        goto label_0;
+    }
+    if (r14d < 0) {
+        goto label_8;
+    }
+    do {
+        if (rax == 0) {
+            goto label_2;
+        }
+        rax = *((rax + 0x18));
+        *(loc..LC1) = rax;
+label_3:
+        if (rax == 0) {
+            goto label_2;
+        }
+        r13 = *(rax);
+        if (r13 == 0) {
+            goto label_2;
+        }
+label_0:
+        rsi = rbx;
+        rdi = r13;
+        rax = gp_alloc ();
+        if (rax != 0) {
+            goto label_9;
+        }
+        rax = *(loc..LC1);
+    } while (r14d >= 0);
+    if (rax == 0) {
+        goto label_10;
+    }
+label_8:
+    rax = *((rax + 0x10));
+    if (rax == 0) {
+        goto label_2;
+    }
+    r13 = *(rax);
+    *(loc..LC1) = rax;
+    if (r13 != 0) {
+        goto label_0;
+    }
+label_2:
+    edi = ebp;
+    gp_alloc ();
+    eax = 0xffffffff;
+    return rax;
+label_4:
+    ebp = 0;
+    if (rax != 0) {
+        goto label_1;
+    }
+label_5:
+    if (r14d >= 0) {
+        goto label_2;
+    }
+label_10:
+    *(loc..LC1) = r12;
+    rax = r12;
+    goto label_3;
+label_9:
+    eax -= r13d;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x80005d0 */
+#include <stdint.h>
+ 
+uint64_t history_search_prefix (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    __asm ("endbr64");
+    r12 = rdi;
+    ebx = esi;
+    rax = gp_alloc (rbx, rbp, r12, r13);
+    r14 = "  %s\n";
+    r13 = rax;
+    rax = *(loc..LC1);
+    if (r14 == 0) {
+        goto label_4;
+    }
+    ebp = "history";
+    if (rax == 0) {
+        goto label_5;
+    }
+    rdx = *((r14 + 0x10));
+    if (rdx == 0) {
+        goto label_6;
+    }
+    if (r14 != rax) {
+        goto label_7;
+    }
+    goto label_6;
+    do {
+        if (rdx == 0) {
+            goto label_6;
+        }
+label_7:
+        rcx = rdx;
+        ebp--;
+        rdx = *((rdx + 0x10));
+    } while (rax != rcx);
+label_6:
+    edx = 0;
+    dl = (ebp > 0) ? 1 : 0;
+    ebp -= edx;
+label_1:
+    rdi = *(rax);
+    if (rdi != 0) {
+        goto label_0;
+    }
+    if (ebx < 0) {
+        goto label_8;
+    }
+    do {
+        if (rax == 0) {
+            goto label_2;
+        }
+        rax = *((rax + 0x18));
+        *(loc..LC1) = rax;
+label_3:
+        if (rax == 0) {
+            goto label_2;
+        }
+        rdi = *(rax);
+        if (rdi == 0) {
+            goto label_2;
+        }
+label_0:
+        rdx = r13;
+        rsi = r12;
+        eax = gp_alloc ();
+        if (eax == 0) {
+            goto label_9;
+        }
+        rax = *(loc..LC1);
+    } while (ebx >= 0);
+    if (rax == 0) {
+        goto label_10;
+    }
+label_8:
+    rax = *((rax + 0x10));
+    if (rax == 0) {
+        goto label_2;
+    }
+    rdi = *(rax);
+    *(loc..LC1) = rax;
+    if (rdi != 0) {
+        goto label_0;
+    }
+label_2:
+    edi = ebp;
+    gp_alloc ();
+    eax = 0xffffffff;
+label_9:
+    return rax;
+label_4:
+    ebp = 0;
+    if (rax != 0) {
+        goto label_1;
+    }
+label_5:
+    if (ebx >= 0) {
+        goto label_2;
+    }
+label_10:
+    *(loc..LC1) = r14;
+    rax = r14;
+    goto label_3;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x80006e0 */
+#include <stdint.h>
+ 
+int64_t gp_read_history (void) {
+    int64_t var_408h;
+label_2:
+    __asm ("endbr64");
+    rsi = loc__LC1;
+    rax = *(fs:0x28);
+    *((rsp + 0x408)) = rax;
+    eax = 0;
+    rbx = rsp;
+    rax = gp_alloc (rbx);
+    if (rax == 0) {
+        goto label_3;
+    }
+    do {
+label_0:
+        rdi = rbp;
+        eax = gp_alloc ();
+        if (eax != 0) {
+            goto label_4;
+        }
+label_1:
+        rdx = rbp;
+        esi = 0x400;
+        rdi = rbx;
+        rax = gp_alloc ();
+    } while (rax == 0);
+    esi = 0xa;
+    rdi = rbx;
+    rax = gp_alloc ();
+    if (rax != 0) {
+        *(rax) = 0;
+    }
+    esi = 0xd;
+    rdi = rbx;
+    rax = gp_alloc ();
+    if (rax != 0) {
+        *(rax) = 0;
+    }
+    rax = gp_alloc ();
+    rdi = rbx;
+    rcx = *(rax);
+    while ((*((rcx + rdx*2 + 1)) & 0x20) != 0) {
+        rdi++;
+        edx = *(rdi);
+    }
+    if (dl == 0) {
+        goto label_0;
+    }
+    gp_alloc ();
+    rdi = rbp;
+    eax = gp_alloc ();
+    if (eax == 0) {
+        goto label_1;
+    }
+label_4:
+    rdi = rbp;
+    eax = gp_alloc ();
+    eax = 0;
+    do {
+        rsi = *((rsp + 0x408));
+        rsi ^= *(fs:0x28);
+        if (eax != 0) {
+            goto label_5;
+        }
+        return rax;
+label_3:
+        rax = gp_alloc ();
+        eax = *(rax);
+    } while (1);
+label_5:
+    gp_alloc ();
+    __asm ("endbr64");
+    gp_read_history ();
+    goto label_2;
+}
+
+
+
+
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x8000aa0 */
+#include <stdint.h>
+ 
+uint64_t history_find (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    eax = *(rdi);
+    if (al == 0x22) {
+        eax = *((rdi + 1));
+        rbp++;
+    }
+    if (al == 0) {
+        goto label_0;
+    }
+    rdi = rbp;
+    eax = gp_alloc ();
+    rdx = (int64_t) eax;
+    while (*(rbp) != 0) {
+        edi = "history";
+        gp_alloc ();
+        esi = 0xffffffff;
+        rdi = rbp;
+        eax = gp_alloc ();
+        if (eax != 0) {
+            goto label_0;
+        }
+        rax = *(loc..LC1);
+        rax = *(rax);
+        return rax;
+        eax--;
+        rax = (int64_t) eax;
+        *((rbp + rax)) = 0;
+    }
+label_0:
+    eax = 0;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/history.o @ 0x8000b10 */
+#include <stdint.h>
+ 
+uint64_t history_find_all (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    eax = *(rdi);
+    rbx = rdi;
+    if (al == 0x22) {
+        eax = *((rdi + 1));
+        rbx++;
+    }
+    if (al == 0) {
+        goto label_4;
+    }
+    rdi = rbx;
+    eax = gp_alloc ();
+    rdx = (int64_t) eax;
+    if (*((rbx + rdx - 1)) == 0x22) {
+        goto label_5;
+    }
+label_0:
+    rax = "  %s\n";
+    ecx = "history";
+    if (rax == 0) {
+        goto label_6;
+    }
+    if (ecx < 0) {
+        goto label_6;
+    }
+    edx = rcx - 1;
+    if (ecx == 0) {
+        goto label_7;
+    }
+    do {
+        if (edx == 0) {
+            goto label_8;
+        }
+        rax = *((rax + 0x10));
+        edx--;
+    } while (rax != 0);
+label_6:
+    rcx = *(reloc.stderr);
+    edx = 0x33;
+    esi = 1;
+    rdi = "ERROR (history_find_all): could not rewind history\n";
+    gp_alloc ();
+    do {
+label_4:
+        r12d = 0;
+label_1:
+        eax = r12d;
+        return rax;
+label_5:
+        eax--;
+        rax = (int64_t) eax;
+        *((rbx + rax)) = 0;
+    } while (*(rbx) == 0);
+    goto label_0;
+label_8:
+    *(loc..LC1) = rax;
+label_3:
+    r12d = 0;
+    rbp = "%5i  %s\n";
+label_2:
+    esi = 1;
+    rdi = rbx;
+    eax = gp_alloc ();
+    if (eax != 0) {
+        goto label_9;
+    }
+    rsi = *(loc..LC1);
+    rdx = "  %s\n";
+    r12d++;
+    r8 = *(rsi);
+    if (rdx == 0) {
+        goto label_10;
+    }
+    eax = "history";
+    rcx = *((rdx + 0x10));
+    if (rdx != rsi) {
+        goto label_11;
+    }
+    goto label_12;
+    do {
+        rdx = rcx;
+        eax--;
+        rcx = *((rcx + 0x10));
+        if (rsi == rdx) {
+            goto label_12;
+        }
+label_11:
+    } while (rcx != 0);
+label_12:
+    edx = 0;
+    dl = (eax > 0) ? 1 : 0;
+    eax -= edx;
+label_10:
+    eax += *(obj.history_base);
+    rcx = r8;
+    rsi = rbp;
+    edi = 1;
+    edx = eax;
+    eax = 0;
+    gp_alloc ();
+    rax = *(loc..LC1);
+    if (rax == 0) {
+        goto label_1;
+    }
+    rax = *((rax + 0x18));
+    *(loc..LC1) = rax;
+    if (rax != 0) {
+        goto label_2;
+    }
+    goto label_1;
+    if (rax >= 0) {
+label_9:
+        goto label_2;
+    }
+    goto label_1;
+label_7:
+    *(loc..LC1) = 0;
+    goto label_3;
+}
+
+

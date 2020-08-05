@@ -1,0 +1,1816 @@
+// WARNING: [r2ghidra] Variable var_1h extends beyond the stackframe. Try changing its type to something smaller.
+
+undefined8 sym.clip_line(uint32_t arg1, int64_t arg2, int64_t arg3, uint32_t arg4)
+{
+    int32_t iVar1;
+    int32_t iVar2;
+    int32_t iVar3;
+    int32_t iVar4;
+    int32_t iVar5;
+    int32_t iVar6;
+    uint32_t uVar7;
+    undefined8 uVar8;
+    uint32_t uVar9;
+    undefined4 in_register_0000000c;
+    int32_t *piVar10;
+    undefined4 in_RDI;
+    int32_t *piVar11;
+    int32_t iVar12;
+    int32_t iVar13;
+    int64_t in_FS_OFFSET;
+    double dVar14;
+    double dVar15;
+    double dVar16;
+    uint32_t uStack116;
+    int32_t aiStack104 [4];
+    int32_t aiStack88 [6];
+    int64_t iStack64;
+    
+    piVar11 = (int32_t *)CONCAT44(in_RDI, arg1);
+    // [01] -r-x section size 8641 named .text
+    piVar10 = (int32_t *)CONCAT44(in_register_0000000c, arg4);
+    iStack64 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    if (_reloc.clip_area == (int32_t *)0x0) {
+code_r0x080002fd:
+        uVar8 = 1;
+        goto code_r0x08000302;
+    }
+    iVar1 = *_reloc.clip_area;
+    iVar2 = *piVar11;
+    iVar3 = _reloc.clip_area[1];
+    iVar4 = *(int32_t *)arg2;
+    iVar12 = _reloc.clip_area[2];
+    iVar13 = _reloc.clip_area[3];
+    iVar5 = *piVar10;
+    uVar7 = (uint32_t)(iVar2 < iVar1);
+    if (iVar3 < iVar2) {
+        uVar7 = iVar2 < iVar1 | 2;
+    }
+    if (iVar4 < iVar12) {
+        uVar7 = uVar7 | 4;
+    }
+    iVar6 = *(int32_t *)arg3;
+    if (iVar13 < iVar4) {
+        uVar7 = uVar7 | 8;
+    }
+    uVar9 = (uint32_t)(iVar6 < iVar1);
+    if (iVar3 < iVar6) {
+        uVar9 = iVar6 < iVar1 | 2;
+    }
+    if (iVar5 < iVar12) {
+        uVar9 = uVar9 | 4;
+        if (iVar13 < iVar5) {
+code_r0x080000e5:
+            uVar9 = uVar9 | 8;
+        }
+    } else {
+        if (iVar13 < iVar5) goto code_r0x080000e5;
+        if ((uVar9 | uVar7) == 0) goto code_r0x080002fd;
+    }
+    uStack116 = uVar9 & uVar7;
+    if (uStack116 == 0) {
+        dVar15 = (double)(iVar6 - iVar2);
+        dVar16 = (double)(iVar5 - iVar4);
+        if (iVar4 == iVar5) {
+code_r0x08000328:
+            if (iVar2 == iVar6) goto code_r0x080003f0;
+code_r0x08000331:
+            dVar14 = ((double)(iVar1 - iVar6) * dVar16) / dVar15 + (double)iVar5;
+            if (((double)iVar12 <= dVar14) && (dVar14 <= (double)iVar13)) {
+                aiStack104[(int32_t)uStack116] = iVar1;
+                aiStack88[(int32_t)uStack116] = (int32_t)dVar14;
+                uStack116 = uStack116 + 1;
+            }
+            dVar14 = ((double)(iVar3 - iVar6) * dVar16) / dVar15 + (double)iVar5;
+            if (((double)iVar12 <= dVar14) && (dVar14 <= (double)iVar13)) {
+                aiStack104[(int32_t)uStack116] = iVar3;
+                aiStack88[(int32_t)uStack116] = (int32_t)dVar14;
+                uStack116 = uStack116 + 1;
+            }
+        } else {
+            dVar14 = ((double)(iVar12 - iVar5) * dVar15) / dVar16 + (double)iVar6;
+            if (((double)iVar1 <= dVar14) && (dVar14 <= (double)iVar3)) {
+                aiStack104[0] = (int32_t)dVar14;
+                uStack116 = 1;
+                aiStack88[0] = iVar12;
+            }
+            dVar14 = ((double)(iVar13 - iVar5) * dVar15) / dVar16 + (double)iVar6;
+            if ((dVar14 < (double)iVar1) || ((double)iVar3 < dVar14)) goto code_r0x08000328;
+            aiStack88[(int32_t)uStack116] = iVar13;
+            aiStack104[(int32_t)uStack116] = (int32_t)dVar14;
+            uStack116 = uStack116 + 1;
+            if (iVar2 != iVar6) goto code_r0x08000331;
+        }
+        if (1 < uStack116) {
+            if (((uStack116 != 2) && (aiStack104[1] == aiStack104[0])) && (aiStack88[1] == aiStack88[0])) {
+                aiStack104[1] = aiStack104[2];
+                aiStack88[1] = aiStack88[2];
+            }
+            iVar1 = iVar2;
+            iVar3 = iVar6;
+            if (iVar6 <= iVar2) {
+                iVar1 = iVar6;
+                iVar3 = iVar2;
+            }
+            iVar12 = iVar4;
+            iVar13 = iVar5;
+            if (iVar5 <= iVar4) {
+                iVar12 = iVar5;
+                iVar13 = iVar4;
+            }
+            if (uVar7 == 0) {
+code_r0x080004a0:
+                if (dVar16 * (double)(aiStack88[0] - iVar4) + dVar15 * (double)(aiStack104[0] - iVar2) <= _reloc..LC0) {
+                    *(int32_t *)arg3 = aiStack104[1];
+                    *piVar10 = aiStack88[1];
+                } else {
+                    *(int32_t *)arg3 = aiStack104[0];
+                    *piVar10 = aiStack88[0];
+                }
+            } else {
+                if (uVar9 == 0) {
+                    if (uVar7 == 0) goto code_r0x080004a0;
+                    if (dVar16 * (double)(iVar5 - aiStack88[0]) + dVar15 * (double)(iVar6 - aiStack104[0]) <=
+                        _reloc..LC0) {
+                        *piVar11 = aiStack104[1];
+                        *(int32_t *)arg2 = aiStack88[1];
+                    } else {
+                        *piVar11 = aiStack104[0];
+                        *(int32_t *)arg2 = aiStack88[0];
+                    }
+                } else {
+                    if ((dVar15 * (double)(aiStack104[1] - aiStack104[0]) < 0.00000000) ||
+                       (dVar16 * (double)(aiStack88[1] - aiStack88[0]) < 0.00000000)) {
+                        *piVar11 = aiStack104[1];
+                        *(int32_t *)arg2 = aiStack88[1];
+                        *(int32_t *)arg3 = aiStack104[0];
+                        *piVar10 = aiStack88[0];
+                    } else {
+                        *piVar11 = aiStack104[0];
+                        *(int32_t *)arg2 = aiStack88[0];
+                        *(int32_t *)arg3 = aiStack104[1];
+                        *piVar10 = aiStack88[1];
+                    }
+                }
+            }
+            if (((iVar1 <= *piVar11) && (*piVar11 <= iVar3)) &&
+               ((*(int32_t *)arg3 <= iVar3 &&
+                ((((iVar1 <= *(int32_t *)arg3 && (iVar12 <= *(int32_t *)arg2)) && (*(int32_t *)arg2 <= iVar13)) &&
+                 ((iVar12 <= *piVar10 && (*piVar10 <= iVar13)))))))) {
+                uVar8 = 0xffffffff;
+                goto code_r0x08000302;
+            }
+        }
+    }
+code_r0x080003f0:
+    uVar8 = 0;
+code_r0x08000302:
+    if (iStack64 != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        func_0x08023288();
+    // WARNING: Could not recover jumptable at 0x08000530. Too many branches
+    // WARNING: Treating indirect jump as call
+        uVar8 = (**(code **)(_reloc.term + 0x68))(0xfffffffe);
+        return uVar8;
+    }
+    return uVar8;
+}
+
+
+void sym.reset_textcolor.part.0(void)
+{
+    // WARNING: Could not recover jumptable at 0x08000530. Too many branches
+    // WARNING: Treating indirect jump as call
+    (**(code **)(_reloc.term + 0x68))(0xfffffffe);
+    return;
+}
+
+
+// WARNING: [r2ghidra] Failed to match type signed int for variable arg1 to Decompiler type: Unknown type identifier
+// signed
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable arg2 to Decompiler type: Unknown type identifier
+// signed
+
+uint8_t sym.clip_point(undefined8 arg1, undefined8 arg2)
+{
+    uint8_t uVar1;
+    
+    if (_reloc.clip_area != (int32_t *)0x0) {
+        uVar1 = *_reloc.clip_area != (int32_t)arg1 && (int32_t)arg1 <= *_reloc.clip_area;
+        if (_reloc.clip_area[1] < (int32_t)arg1) {
+            uVar1 = uVar1 | 2;
+        }
+        if (_reloc.clip_area[2] != (int32_t)arg2 && (int32_t)arg2 <= _reloc.clip_area[2]) {
+            uVar1 = uVar1 | 4;
+        }
+        if (_reloc.clip_area[3] < (int32_t)arg2) {
+            uVar1 = uVar1 | 8;
+        }
+        return uVar1;
+    }
+    return 0;
+}
+
+
+// WARNING: [r2ghidra] Variable var_1h extends beyond the stackframe. Try changing its type to something smaller.
+
+int32_t sym.draw_clip_line(int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4)
+{
+    int64_t iVar1;
+    int32_t iVar2;
+    undefined4 uStack36;
+    undefined4 uStack32;
+    undefined4 uStack28;
+    
+    iVar1 = _reloc.term;
+    uStack28 = (undefined4)arg1;
+    uStack32 = (undefined4)arg2;
+    uStack36 = (undefined4)arg3;
+    iVar2 = sym.clip_line((int32_t)*(BADSPACEBASE **)0x20 - 0x1c, (int64_t)&uStack32, (int64_t)&uStack36, 
+                          (int32_t)*(BADSPACEBASE **)0x20 - 0x28);
+    if (iVar2 != 0) {
+        (**(code **)(iVar1 + 0x58))(uStack28, uStack32);
+        (**(code **)(iVar1 + 0x60))(uStack36, (int32_t)arg4);
+    }
+    return iVar2;
+}
+
+
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable arg1 to Decompiler type: Unknown type identifier
+// signed
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable arg2 to Decompiler type: Unknown type identifier
+// signed
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable var_2ch to Decompiler type: Unknown type
+// identifier signed
+// WARNING: [r2ghidra] Variable var_1h extends beyond the stackframe. Try changing its type to something smaller.
+
+void sym.draw_clip_polygon(undefined8 arg1, int32_t *arg2)
+{
+    int32_t iVar1;
+    uint32_t arg4;
+    int32_t *unaff_RBX;
+    int32_t *piVar2;
+    int32_t *unaff_RBP;
+    uint32_t arg1_00;
+    int32_t *unaff_R12;
+    int32_t *unaff_R13;
+    int32_t *unaff_R14;
+    int32_t *unaff_R15;
+    int64_t in_FS_OFFSET;
+    int32_t *piStack112;
+    int64_t iStack104;
+    uint32_t uStack96;
+    bool bStack89;
+    int32_t iStack80;
+    int32_t iStack76;
+    int32_t iStack72;
+    int32_t iStack68;
+    int64_t iStack64;
+    
+    iStack64 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    if ((int32_t)arg1 < 2) goto code_r0x080007c1;
+    iStack80 = *arg2;
+    bStack89 = false;
+    iStack76 = arg2[1];
+    if (iStack80 == arg2[(int64_t)(int32_t)arg1 * 3 + -3]) {
+        bStack89 = (arg2 + (int64_t)(int32_t)arg1 * 3 + -3)[1] == iStack76;
+    }
+    iStack104 = _reloc.term;
+    if (_reloc.clip_area == (int32_t *)0x0) {
+code_r0x08000692:
+        (**(code **)(_reloc.term + 0x58))(iStack80);
+        uStack96 = 0;
+    } else {
+        uStack96 = (uint32_t)(iStack80 < *_reloc.clip_area);
+        if (_reloc.clip_area[1] < iStack80) {
+            uStack96 = uStack96 | 2;
+        }
+        if (_reloc.clip_area[2] == iStack76 || _reloc.clip_area[2] < iStack76) {
+            if (iStack76 <= _reloc.clip_area[3]) {
+                if (uStack96 != 0) goto code_r0x080006a2;
+                goto code_r0x08000692;
+            }
+        } else {
+            uStack96 = uStack96 | 4;
+            if (iStack76 <= _reloc.clip_area[3]) goto code_r0x080006a2;
+        }
+        uStack96 = uStack96 | 8;
+    }
+code_r0x080006a2:
+    func_0x08023288();
+    unaff_R15 = &iStack68;
+    piStack112 = arg2 + (uint64_t)((int32_t)arg1 - 2) * 3 + 6;
+    unaff_R14 = &iStack72;
+    unaff_R13 = &iStack76;
+    unaff_R12 = &iStack80;
+    piVar2 = arg2 + 3;
+code_r0x08000739:
+    do {
+        iStack72 = *piVar2;
+        iStack68 = piVar2[1];
+        arg4 = (uint32_t)unaff_R15;
+        arg1_00 = (uint32_t)unaff_R12;
+        if (_reloc.clip_area == (int32_t *)0x0) {
+            iVar1 = sym.clip_line(arg1_00, (int64_t)unaff_R13, (int64_t)unaff_R14, arg4);
+            if (iVar1 == 0) {
+                iStack80 = *piVar2;
+                iStack76 = piVar2[1];
+code_r0x080007a5:
+                while( true ) {
+                    bStack89 = false;
+                    unaff_RBX = piVar2 + 3;
+                    piVar2 = unaff_RBX;
+                    if (unaff_RBX != piStack112) break;
+code_r0x080007b5:
+                    unaff_RBP = arg2;
+                    if (bStack89) {
+                        func_0x08023288();
+                    }
+code_r0x080007c1:
+                    arg2 = unaff_RBP;
+                    if (iStack64 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+                        return;
+                    }
+                    func_0x08023288();
+                    piVar2 = unaff_RBX;
+code_r0x08000847:
+                    iStack80 = *piVar2;
+                    iStack76 = piVar2[1];
+code_r0x08000854:
+                    uStack96 = (uint32_t)arg2;
+                }
+                goto code_r0x08000739;
+            }
+            arg2 = (int32_t *)0x0;
+        } else {
+            arg2 = (int32_t *)(uint64_t)(iStack72 < *_reloc.clip_area);
+            if (_reloc.clip_area[1] < iStack72) {
+                arg2 = (int32_t *)(uint64_t)(iStack72 < *_reloc.clip_area | 2);
+            }
+            if (iStack68 < _reloc.clip_area[2]) {
+                arg2 = (int32_t *)(uint64_t)((uint32_t)arg2 | 4);
+            }
+            if (_reloc.clip_area[3] < iStack68) {
+                arg2 = (int32_t *)(uint64_t)((uint32_t)arg2 | 8);
+                iVar1 = sym.clip_line(arg1_00, (int64_t)unaff_R13, (int64_t)unaff_R14, arg4);
+                if (iVar1 == 0) goto code_r0x08000847;
+            } else {
+                iVar1 = sym.clip_line(arg1_00, (int64_t)unaff_R13, (int64_t)unaff_R14, arg4);
+                if (iVar1 == 0) {
+                    iStack80 = *piVar2;
+                    iStack76 = piVar2[1];
+                    if ((uint32_t)arg2 != 0) goto code_r0x08000854;
+                    goto code_r0x080007a5;
+                }
+            }
+        }
+        if (uStack96 != 0) {
+            (**(code **)(iStack104 + 0x58))(iStack80, iStack76);
+        }
+        unaff_RBX = piVar2 + 3;
+        (**(code **)(iStack104 + 0x60))(iStack72, iStack68);
+        iStack80 = *piVar2;
+        uStack96 = (uint32_t)arg2;
+        iStack76 = piVar2[1];
+        piVar2 = unaff_RBX;
+        if (unaff_RBX == piStack112) goto code_r0x080007b5;
+    } while( true );
+}
+
+
+// WARNING: [r2ghidra] Variable var_1h extends beyond the stackframe. Try changing its type to something smaller.
+
+uint64_t sym.draw_clip_arrow(int64_t arg7, int64_t arg8, int64_t arg9, int64_t arg10, undefined8 placeholder_4,
+                            undefined8 placeholder_5, undefined8 placeholder_6, undefined8 placeholder_7, int64_t arg1,
+                            int64_t arg2, undefined8 placeholder_10, int64_t arg4)
+{
+    int64_t iVar1;
+    int32_t iVar2;
+    uint64_t uVar3;
+    uint32_t uVar4;
+    int32_t iVar5;
+    int32_t *piVar6;
+    int32_t iVar7;
+    uint32_t *puVar8;
+    int64_t in_FS_OFFSET;
+    double dVar9;
+    undefined auVar10 [16];
+    int32_t iStack120;
+    uint32_t uStack64;
+    int32_t iStack60;
+    int32_t iStack56;
+    int32_t iStack52;
+    int64_t iStack48;
+    
+    iVar1 = _reloc.term;
+    uVar3 = arg1 & 0xffffffff;
+    uVar4 = (uint32_t)uVar3;
+    iStack48 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    uStack64 = (uint32_t)((double)arg7 + _reloc..LC1);
+    iStack60 = (int32_t)((double)arg8 + _reloc..LC1);
+    iStack56 = (int32_t)((double)arg9 + _reloc..LC1);
+    iStack52 = (int32_t)(_reloc..LC1 + (double)arg10);
+    if (_reloc.clip_area != (int32_t *)0x0) {
+        if ((((_reloc.clip_area[1] < (int32_t)uStack64) || (iStack60 < _reloc.clip_area[2])) ||
+            (_reloc.clip_area[3] < iStack60)) || ((int32_t)uStack64 < *_reloc.clip_area)) {
+            uVar4 = uVar4 & 0xfffffffd;
+            uVar3 = (uint64_t)uVar4;
+        }
+        if (((_reloc.clip_area[1] < iStack56) || (uVar4 = (uint32_t)uVar3, iStack52 < _reloc.clip_area[2])) ||
+           ((_reloc.clip_area[3] < iStack52 || (iStack56 < *_reloc.clip_area)))) {
+            uVar3 = (uint64_t)(uVar4 & 0xfffffffe);
+        }
+    }
+    puVar8 = &uStack64;
+    iVar2 = sym.clip_line((uint32_t)puVar8, (int64_t)&iStack60, (int64_t)&iStack56, 
+                          (int32_t)*(BADSPACEBASE **)0x20 - 0x34);
+    if (iVar2 != 0) {
+        puVar8 = (uint32_t *)(uint64_t)uStack64;
+        uVar4 = (int32_t)(iStack56 - uStack64) >> 0x1f;
+        iVar2 = (iStack56 - uStack64 ^ uVar4) - uVar4;
+        uVar4 = iStack52 - iStack60 >> 0x1f;
+        iVar5 = (iStack52 - iStack60 ^ uVar4) - uVar4;
+        if ((iVar2 < 0x19) && (iVar5 < 0x19)) {
+            if (((1 < iVar2) || (1 < iVar5)) && ((*(uint8_t *)(iVar1 + 0xa9) & 0x40) == 0)) {
+                (**(code **)(iVar1 + 0x90))(puVar8, iStack60, iStack56, iStack52, (uint32_t)uVar3 | 8);
+            }
+            if (((uVar3 & 3) != 0) && (((double)arg7 != (double)arg9 || ((double)arg8 != (double)arg10)))) {
+                if (reloc.curr_arrow_headfixedsize == (code)0x0) {
+                    puVar8 = (uint32_t *)(uint64_t)uStack64;
+                    (**(code **)(iVar1 + 0x90))(puVar8, iStack60, iStack56, iStack52, (uint32_t)uVar3 | 4);
+                } else {
+                    auVar10 = maxsd(ZEXT816((uint64_t)((double)arg9 - (double)arg7) & _reloc..LC2), 
+                                    ZEXT816(_reloc..LC2 & (uint64_t)((double)arg10 - (double)arg8)));
+                    dVar9 = _reloc..LC3 / SUB168(auVar10, 0);
+                    iVar2 = (int32_t)(((double)arg9 - (double)arg7) * dVar9);
+                    if ((uVar3 & 1) != 0) {
+                        puVar8 = (uint32_t *)(uint64_t)(uint32_t)(iStack56 - iVar2);
+                        (**(code **)(iVar1 + 0x90))();
+                    }
+                    if ((uVar3 & 2) != 0) {
+                        puVar8 = (uint32_t *)(uint64_t)uStack64;
+                        (**(code **)(iVar1 + 0x90))
+                                  (puVar8, iStack60, uStack64 + iVar2, 
+                                   iStack60 + (int32_t)(((double)arg10 - (double)arg8) * dVar9), 6);
+                    }
+                }
+            }
+        } else {
+            (**(code **)(iVar1 + 0x90))(puVar8, iStack60, iStack56, iStack52, uVar3);
+        }
+    }
+    if (iStack48 != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        auVar10 = func_0x08023288();
+        piVar6 = SUB168(auVar10 >> 0x40, 0);
+        uVar3 = SUB168(auVar10, 0);
+        iVar2 = piVar6[3];
+        iVar5 = piVar6[1];
+        iVar7 = (int32_t)((uint64_t)puVar8 >> 0x20);
+        if (*piVar6 < iVar2) {
+            uVar3 = 1;
+            if (iVar5 <= iVar7) {
+                return uVar3;
+            }
+        } else {
+            if ((iVar2 < *piVar6) && (uVar3 = 1, iVar7 <= iVar5)) {
+                return uVar3;
+            }
+        }
+        iStack120 = (int32_t)puVar8;
+        iVar7 = piVar6[4];
+        if (piVar6[4] == iVar5 || iVar7 < iVar5) {
+            return (uint64_t)
+                   (((uint32_t)uVar3 & 0xffffff00 | (uint32_t)(iVar7 < iVar5)) &
+                   (SUB164(auVar10 >> 0x40, 0) & 0xffffff00 | (uint32_t)(iVar2 <= iStack120)));
+        }
+        return uVar3 & 0xffffffffffffff00 | (uint64_t)(iStack120 <= iVar2);
+    }
+    return 0;
+}
+
+
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable arg3 to Decompiler type: Unknown type identifier
+// signed
+
+uint64_t sym.vertex_is_inside(int64_t arg1, undefined8 placeholder_1, int32_t *arg3)
+{
+    int32_t iVar1;
+    int32_t iVar2;
+    uint64_t in_RAX;
+    int32_t iVar3;
+    int32_t iStack16;
+    
+    iVar1 = arg3[3];
+    iVar2 = arg3[1];
+    iVar3 = (int32_t)((uint64_t)arg1 >> 0x20);
+    if (*arg3 < iVar1) {
+        in_RAX = 1;
+        if (iVar2 <= iVar3) {
+            return in_RAX;
+        }
+    } else {
+        if ((iVar1 < *arg3) && (in_RAX = 1, iVar3 <= iVar2)) {
+            return in_RAX;
+        }
+    }
+    iStack16 = (int32_t)arg1;
+    iVar3 = arg3[4];
+    if (arg3[4] != iVar2 && iVar2 <= iVar3) {
+        return in_RAX & 0xffffffffffffff00 | (uint64_t)(iStack16 <= iVar1);
+    }
+    return (uint64_t)
+           (((uint32_t)in_RAX & 0xffffff00 | (uint32_t)(iVar3 < iVar2)) &
+           CONCAT31((unkint3)((uint64_t)arg3 >> 8), iVar1 <= iStack16));
+}
+
+
+void sym.intersect_polyedge_with_boundary
+               (int64_t arg1, undefined8 placeholder_1, int64_t arg3, undefined8 placeholder_3, uint32_t arg5,
+               uint32_t arg6)
+{
+    int32_t iVar1;
+    int32_t iVar2;
+    int32_t iVar3;
+    int32_t iVar4;
+    int32_t iVar5;
+    undefined4 in_R8;
+    undefined4 in_R9;
+    
+    iVar2 = (int32_t)arg1;
+    iVar1 = *(int32_t *)(CONCAT44(in_R9, arg6) + 4);
+    iVar4 = (int32_t)arg3 - iVar2;
+    iVar5 = (int32_t)((uint64_t)arg1 >> 0x20);
+    iVar3 = (int32_t)((uint64_t)arg3 >> 0x20) - iVar5;
+    if (iVar1 != *(int32_t *)(CONCAT44(in_R9, arg6) + 0x10)) {
+        iVar1 = *(int32_t *)CONCAT44(in_R9, arg6);
+        *(int32_t *)CONCAT44(in_R8, arg5) = iVar1;
+        *(int32_t *)(CONCAT44(in_R8, arg5) + 4) = ((iVar1 - iVar2) * iVar3) / iVar4 + iVar5;
+        return;
+    }
+    *(int32_t *)(CONCAT44(in_R8, arg5) + 4) = iVar1;
+    *(int32_t *)CONCAT44(in_R8, arg5) = ((iVar1 - iVar5) * iVar4) / iVar3 + iVar2;
+    return;
+}
+
+
+void sym.clip_polygon_to_boundary(int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4, int64_t arg5)
+{
+    undefined8 *puVar1;
+    int64_t iVar2;
+    int32_t *piVar3;
+    int32_t iVar4;
+    int32_t iVar5;
+    int32_t iVar6;
+    int32_t iVar7;
+    undefined8 uVar8;
+    char cVar9;
+    int32_t iVar10;
+    int32_t iVar11;
+    int32_t iVar12;
+    undefined8 uVar13;
+    uint64_t uVar14;
+    undefined8 uStack72;
+    int32_t iStack64;
+    
+    *(undefined4 *)arg4 = 0;
+    iVar10 = (int32_t)arg3;
+    if (0 < iVar10) {
+        piVar3 = (int32_t *)(arg1 + -0xc + (int64_t)iVar10 * 0xc);
+        uVar14 = (uint64_t)(uint32_t)piVar3[1];
+        iStack64 = piVar3[2];
+        iVar2 = arg1 + 0xc;
+        iVar11 = *piVar3;
+        do {
+            iVar7 = (int32_t)uVar14;
+            iVar4 = *(int32_t *)arg1;
+            uVar8 = *(undefined8 *)arg1;
+            uVar14 = (uint64_t)*(uint32_t *)(arg1 + 4);
+            iVar5 = *(int32_t *)(arg1 + 8);
+            uVar13 = *(undefined8 *)arg1;
+            iVar12 = iVar5;
+            cVar9 = func_0x08023288(uVar8, iVar5, arg5);
+            uStack72 = CONCAT44(iVar7, iVar11);
+            if (cVar9 == '\0') {
+                cVar9 = func_0x08023288(uStack72, iStack64, arg5);
+                iStack64 = iVar12;
+                if (cVar9 != '\0') {
+                    iVar12 = (int32_t)uVar14 - iVar7;
+                    piVar3 = (int32_t *)(arg2 + (int64_t)*(int32_t *)arg4 * 0xc);
+                    if (*(int32_t *)(arg5 + 4) == *(int32_t *)(arg5 + 0x10)) {
+                        piVar3[1] = *(int32_t *)(arg5 + 4);
+                        *piVar3 = ((*(int32_t *)(arg5 + 4) - iVar7) * (iVar4 - iVar11)) / iVar12 + iVar11;
+                    } else {
+                        iVar6 = *(int32_t *)arg5;
+                        *piVar3 = iVar6;
+                        piVar3[1] = ((iVar6 - iVar11) * iVar12) / (iVar4 - iVar11) + iVar7;
+                    }
+                    *(int32_t *)arg4 = *(int32_t *)arg4 + 1;
+                    iStack64 = iVar5;
+                }
+            } else {
+                cVar9 = func_0x08023288(uStack72, iStack64, arg5);
+                puVar1 = (undefined8 *)(arg2 + (int64_t)*(int32_t *)arg4 * 0xc);
+                if (cVar9 == '\0') {
+                    iVar12 = (int32_t)uVar14 - iVar7;
+                    if (*(int32_t *)(arg5 + 4) == *(int32_t *)(arg5 + 0x10)) {
+                        *(int32_t *)((int64_t)puVar1 + 4) = *(int32_t *)(arg5 + 4);
+                        *(int32_t *)puVar1 = ((*(int32_t *)(arg5 + 4) - iVar7) * (iVar4 - iVar11)) / iVar12 + iVar11;
+                    } else {
+                        iVar6 = *(int32_t *)arg5;
+                        *(int32_t *)puVar1 = iVar6;
+                        *(int32_t *)((int64_t)puVar1 + 4) = ((iVar6 - iVar11) * iVar12) / (iVar4 - iVar11) + iVar7;
+                    }
+                    puVar1 = (undefined8 *)(arg2 + ((int64_t)*(int32_t *)arg4 * 3 + 3) * 4);
+                    *puVar1 = uVar8;
+                    *(int32_t *)(puVar1 + 1) = iVar5;
+                    *(int32_t *)arg4 = *(int32_t *)arg4 + 2;
+                    iStack64 = iVar5;
+                } else {
+                    *puVar1 = uVar13;
+                    *(int32_t *)(puVar1 + 1) = *(int32_t *)(arg1 + 8);
+                    *(int32_t *)arg4 = *(int32_t *)arg4 + 1;
+                    iStack64 = iVar12;
+                }
+            }
+            arg1 = arg1 + 0xc;
+            iVar11 = iVar4;
+        } while ((undefined8 *)(iVar2 + (uint64_t)(iVar10 - 1) * 0xc) != (undefined8 *)arg1);
+    }
+    return;
+}
+
+
+// WARNING: [r2ghidra] Var arg_24h is stack pointer based, which is not supported for decompilation.
+// WARNING: [r2ghidra] Var arg_28h is stack pointer based, which is not supported for decompilation.
+// WARNING: [r2ghidra] Var arg_2ch is stack pointer based, which is not supported for decompilation.
+
+void loc.08000ccf(undefined8 placeholder_0, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3
+                 , undefined8 placeholder_4, int64_t arg6)
+{
+    undefined8 *puVar1;
+    int32_t *piVar2;
+    int32_t iVar3;
+    int32_t iVar4;
+    int32_t iVar5;
+    undefined8 uVar6;
+    char cVar7;
+    int32_t unaff_EBX;
+    int32_t iVar8;
+    undefined8 uVar9;
+    uint64_t in_R11;
+    int32_t *unaff_R12;
+    int32_t *unaff_R15;
+    int64_t in_stack_00000000;
+    undefined8 *in_stack_00000008;
+    undefined8 uStack0000000000000018;
+    int32_t in_stack_00000020;
+    int32_t iStack0000000000000024;
+    uint32_t uStack0000000000000028;
+    int32_t iStack000000000000002c;
+    
+    do {
+        iVar5 = (int32_t)in_R11;
+        iVar3 = *(int32_t *)arg6;
+        uStack0000000000000028 = *(uint32_t *)(arg6 + 4);
+        uVar6 = *(undefined8 *)arg6;
+        in_R11 = (uint64_t)uStack0000000000000028;
+        iVar8 = *(int32_t *)(arg6 + 8);
+        uVar9 = *(undefined8 *)arg6;
+        iStack0000000000000024 = iVar3;
+        iStack000000000000002c = iVar8;
+        cVar7 = func_0x08023288(uVar6, iVar8);
+        uStack0000000000000018 = CONCAT44(iVar5, unaff_EBX);
+        if (cVar7 == '\0') {
+            cVar7 = func_0x08023288(uStack0000000000000018, in_stack_00000020);
+            in_stack_00000020 = iVar8;
+            if (cVar7 != '\0') {
+                iVar8 = (int32_t)in_R11 - iVar5;
+                piVar2 = (int32_t *)(in_stack_00000000 + (int64_t)*unaff_R12 * 0xc);
+                if (unaff_R15[1] == unaff_R15[4]) {
+                    piVar2[1] = unaff_R15[1];
+                    *piVar2 = ((unaff_R15[1] - iVar5) * (iVar3 - unaff_EBX)) / iVar8 + unaff_EBX;
+                } else {
+                    iVar4 = *unaff_R15;
+                    *piVar2 = iVar4;
+                    piVar2[1] = ((iVar4 - unaff_EBX) * iVar8) / (iVar3 - unaff_EBX) + iVar5;
+                }
+                *unaff_R12 = *unaff_R12 + 1;
+                in_stack_00000020 = iStack000000000000002c;
+            }
+        } else {
+            cVar7 = func_0x08023288(uStack0000000000000018, in_stack_00000020);
+            puVar1 = (undefined8 *)(in_stack_00000000 + (int64_t)*unaff_R12 * 0xc);
+            if (cVar7 == '\0') {
+                iVar8 = (int32_t)in_R11 - iVar5;
+                if (unaff_R15[1] == unaff_R15[4]) {
+                    *(int32_t *)((int64_t)puVar1 + 4) = unaff_R15[1];
+                    *(int32_t *)puVar1 = ((unaff_R15[1] - iVar5) * (iVar3 - unaff_EBX)) / iVar8 + unaff_EBX;
+                } else {
+                    iVar4 = *unaff_R15;
+                    *(int32_t *)puVar1 = iVar4;
+                    *(int32_t *)((int64_t)puVar1 + 4) = ((iVar4 - unaff_EBX) * iVar8) / (iVar3 - unaff_EBX) + iVar5;
+                }
+                puVar1 = (undefined8 *)(in_stack_00000000 + ((int64_t)*unaff_R12 * 3 + 3) * 4);
+                *puVar1 = uVar6;
+                *(int32_t *)(puVar1 + 1) = iStack000000000000002c;
+                *unaff_R12 = *unaff_R12 + 2;
+                in_stack_00000020 = iStack000000000000002c;
+            } else {
+                *puVar1 = uVar9;
+                *(int32_t *)(puVar1 + 1) = *(int32_t *)(arg6 + 8);
+                *unaff_R12 = *unaff_R12 + 1;
+                in_stack_00000020 = iVar8;
+            }
+        }
+        arg6 = arg6 + 0xc;
+        unaff_EBX = iVar3;
+    } while (in_stack_00000008 != (undefined8 *)arg6);
+    return;
+}
+
+
+void sym.clip_polygon(int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4)
+{
+    undefined8 uVar1;
+    int64_t iVar2;
+    undefined8 *puVar3;
+    undefined4 uVar4;
+    undefined4 uVar5;
+    undefined8 uVar6;
+    uint64_t uVar7;
+    int64_t in_FS_OFFSET;
+    undefined4 uStack136;
+    undefined4 uStack132;
+    undefined4 uStack128;
+    undefined4 uStack124;
+    undefined4 uStack120;
+    undefined4 uStack112;
+    undefined4 uStack108;
+    undefined4 uStack100;
+    undefined4 uStack96;
+    undefined8 uStack88;
+    undefined4 uStack80;
+    int64_t iStack64;
+    
+    uVar7 = arg3 & 0xffffffff;
+    iStack64 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    iVar2 = (int64_t)(int32_t)arg3 * 0xc;
+    if (_reloc.clip_area == (undefined4 *)0x0) {
+        func_0x08023288(arg2, arg1, iVar2);
+        uVar4 = (undefined4)arg1;
+        uVar5 = (undefined4)arg2;
+        *(int32_t *)arg4 = (int32_t)uVar7;
+    } else {
+        uVar1 = func_0x08023288(_obj.tmp_corners.12145, (int64_t)((int32_t)arg3 * 4) * 0xc, "");
+        uStack136 = *_reloc.clip_area;
+        uStack132 = _reloc.clip_area[3];
+        uStack120 = _reloc.clip_area[2];
+        uStack112 = _reloc.clip_area[1];
+        uStack88 = CONCAT44(uStack132, uStack136);
+        uStack80 = uStack128;
+        _obj.tmp_corners.12145 = uVar1;
+        uStack124 = uStack136;
+        uStack108 = uStack120;
+        uStack100 = uStack112;
+        uStack96 = uStack132;
+        func_0x08023288(uVar1, arg1, iVar2);
+        puVar3 = (undefined8 *)&uStack136;
+        while( true ) {
+            func_0x08023288(uVar1, arg2, uVar7, arg4, puVar3);
+            iVar2 = arg2;
+            uVar6 = uVar1;
+            func_0x08023288(uVar1, arg2, (int64_t)*(int32_t *)arg4 * 0xc);
+            uVar4 = (undefined4)iVar2;
+            uVar5 = (undefined4)uVar6;
+            if (&uStack88 == (undefined8 *)((int64_t)puVar3 + 0xc)) break;
+            uVar7 = (uint64_t)*(uint32_t *)arg4;
+            puVar3 = (undefined8 *)((int64_t)puVar3 + 0xc);
+        }
+    }
+    if (iStack64 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    func_0x08023288();
+    _obj.move_pos_y = uVar4;
+    _obj.move_pos_x = uVar5;
+    return;
+}
+
+
+void sym.clip_move(int64_t arg1, int64_t arg2)
+{
+    _obj.move_pos_y = (int32_t)arg2;
+    _obj.move_pos_x = (int32_t)arg1;
+    return;
+}
+
+
+void sym.clip_vector(int64_t arg1, int64_t arg2)
+{
+    func_0x08023288(_obj.move_pos_x, _obj.move_pos_y, arg1 & 0xffffffff, arg2 & 0xffffffff);
+    _obj.move_pos_y = (int32_t)arg2;
+    _obj.move_pos_x = (int32_t)arg1;
+    return;
+}
+
+
+// WARNING: [r2ghidra] Variable var_1h extends beyond the stackframe. Try changing its type to something smaller.
+
+uint64_t sym.draw_polar_clip_line(int64_t arg7, int64_t arg8, int64_t arg9, int64_t arg10)
+{
+    code *UNRECOVERED_JUMPTABLE;
+    int64_t iVar1;
+    bool bVar2;
+    uint32_t uVar3;
+    undefined4 uVar4;
+    undefined4 uVar5;
+    undefined4 uVar6;
+    uint64_t uVar7;
+    double dVar8;
+    undefined8 in_XMM1_Qb;
+    undefined auVar9 [16];
+    undefined8 in_XMM3_Qb;
+    double dVar10;
+    double dVar11;
+    double dVar12;
+    double dVar13;
+    double dVar14;
+    double dVar15;
+    double dVar16;
+    double dVar17;
+    undefined auVar18 [16];
+    undefined auVar19 [16];
+    undefined4 uStack36;
+    
+    auVar19 = CONCAT88(in_XMM1_Qb, arg8);
+    if (*(double *)0x8024580 == _reloc..LC5) goto code_r0x080011b8;
+    dVar8 = *(double *)0x8024580 - *(double *)0x8024578;
+    dVar14 = dVar8 * dVar8;
+    dVar13 = (double)arg8 * (double)arg8 + (double)arg7 * (double)arg7;
+    dVar12 = (double)arg9 * (double)arg9 + (double)arg10 * (double)arg10;
+    if ((dVar13 <= dVar14) && (dVar12 <= dVar14)) {
+        uVar5 = func_0x08023288(arg10, arg8);
+        uStack36 = func_0x08023288(arg9);
+        uVar6 = func_0x08023288(arg8, arg8);
+        uVar4 = func_0x08023288(arg7);
+        iVar1 = _reloc.term;
+        uVar7 = CONCAT44(uVar4, uVar6);
+        uVar3 = sym.clip_line((int32_t)*(BADSPACEBASE **)0x20 - 0x1c, (int64_t)&stack0xffffffffffffffe0, 
+                              (int64_t)&uStack36, (int32_t)*(BADSPACEBASE **)0x20 - 0x28);
+        if (uVar3 != 0) {
+            (**(code **)(iVar1 + 0x58))((int32_t)(uVar7 >> 0x20), uVar7 & 0xffffffff);
+            (**(code **)(iVar1 + 0x60))(uStack36, uVar5);
+        }
+        return (uint64_t)uVar3;
+    }
+    dVar17 = (double)arg7;
+    if ((double)((uint64_t)((double)arg7 - (double)arg9) & _reloc..LC2) <= _reloc..LC6) {
+        if (dVar8 < (double)(_reloc..LC2 & arg7)) goto code_r0x080011b8;
+        dVar14 = dVar14 - (double)arg7 * (double)arg7;
+        auVar18 = sqrtsd(ZEXT816((uint64_t)dVar14), ZEXT816((uint64_t)dVar14));
+        if (dVar14 < 0.00000000) {
+            func_0x08023288(dVar14, arg8);
+            in_XMM3_Qb = 0;
+            auVar19 = ZEXT816((uint64_t)arg8);
+            auVar18 = auVar18 & (undefined  [16])0xffffffffffffffff;
+        }
+        dVar12 = SUB168(auVar19, 0);
+        dVar13 = SUB168(auVar18, 0);
+        dVar8 = (double)((uint64_t)dVar13 ^ _reloc..LC10);
+        if ((double)arg10 <= dVar12) {
+            if ((dVar13 < (double)arg10) || (dVar12 < dVar13)) {
+                dVar13 = dVar12;
+                if (dVar8 < (double)arg10) goto code_r0x080011b8;
+                goto code_r0x080012d1;
+            }
+        } else {
+            if ((dVar13 < dVar12) || ((double)arg10 < dVar13)) {
+                dVar13 = (double)arg10;
+                if (dVar8 < dVar12) goto code_r0x080011b8;
+code_r0x080012d1:
+                if (dVar13 < dVar8) goto code_r0x080011b8;
+            }
+        }
+        auVar9 = minsd(auVar19, CONCAT88(in_XMM3_Qb, arg10));
+        auVar19 = maxsd(auVar19, CONCAT88(in_XMM3_Qb, arg10));
+        arg8 = (int64_t)SUB168(auVar9, 0);
+        auVar19 = minsd(auVar18, auVar19);
+        dVar15 = SUB168(auVar19, 0);
+        if (dVar8 <= (double)arg8) {
+            dVar8 = (double)arg8;
+        }
+    } else {
+        dVar10 = ((double)arg10 - (double)arg8) / ((double)arg9 - (double)arg7);
+        dVar17 = dVar10 * dVar10 + _reloc..LC7;
+        dVar15 = (double)arg8 - (double)arg7 * dVar10;
+        dVar8 = dVar10 * _reloc..LC8 * dVar10 * dVar15 * dVar15 - (dVar15 * dVar15 - dVar14) * _reloc..LC8 * dVar17;
+        if (dVar8 < 0.00000000) goto code_r0x080011b8;
+        auVar19 = sqrtsd(CONCAT88(in_XMM3_Qb, dVar8), CONCAT88(in_XMM3_Qb, dVar8));
+        if (dVar8 < 0.00000000) {
+            func_0x08023288(dVar8, arg8);
+        }
+        dVar8 = _reloc..LC9 * dVar10 * dVar15;
+        dVar16 = (dVar8 - SUB168(auVar19, 0)) / (dVar17 + dVar17);
+        dVar17 = (dVar8 + SUB168(auVar19, 0)) / (dVar17 + dVar17);
+        dVar11 = dVar10 * dVar16 + dVar15;
+        dVar15 = dVar10 * dVar17 + dVar15;
+        if (dVar14 < dVar13) {
+            if (dVar12 <= dVar14) {
+                if ((double)arg9 <= (double)arg7) {
+                    if ((double)arg9 <= dVar17) goto code_r0x08001407;
+                } else {
+                    bVar2 = (double)arg7 <= dVar17;
+                    arg7 = arg9;
+                    if (bVar2) {
+code_r0x08001407:
+                        bVar2 = dVar17 <= (double)arg7;
+                        dVar8 = (double)arg10;
+                        arg7 = arg9;
+                        if (bVar2) goto code_r0x08001338;
+                    }
+                }
+                dVar17 = (double)arg9;
+                dVar8 = dVar11;
+                arg7 = (int64_t)dVar16;
+                dVar15 = (double)arg10;
+            } else {
+                if ((double)arg9 <= (double)arg7) {
+                    if (dVar17 < (double)arg9) goto code_r0x080011b8;
+                } else {
+                    bVar2 = dVar17 < (double)arg7;
+                    arg7 = arg9;
+                    if (bVar2) goto code_r0x080011b8;
+                }
+                bVar2 = (double)arg7 < dVar17;
+                dVar8 = dVar11;
+                arg7 = (int64_t)dVar16;
+                if (bVar2) goto code_r0x080011b8;
+            }
+        } else {
+            if ((double)arg7 < (double)arg9) {
+                dVar12 = (double)arg9;
+                if ((double)arg7 <= dVar17) goto code_r0x08001187;
+            } else {
+                dVar12 = (double)arg7;
+                if ((double)arg9 <= dVar17) {
+code_r0x08001187:
+                    dVar8 = (double)arg8;
+                    if (dVar17 <= dVar12) goto code_r0x08001338;
+                }
+            }
+            dVar17 = (double)arg7;
+            dVar8 = dVar11;
+            arg7 = (int64_t)dVar16;
+            dVar15 = (double)arg8;
+        }
+    }
+code_r0x08001338:
+    UNRECOVERED_JUMPTABLE = *(code **)(_reloc.term + 0x58);
+    uVar5 = func_0x08023288(dVar15, arg8);
+    uVar6 = func_0x08023288(dVar17);
+    (*UNRECOVERED_JUMPTABLE)(uVar6, uVar5);
+    UNRECOVERED_JUMPTABLE = *(code **)(_reloc.term + 0x60);
+    uVar5 = func_0x08023288(dVar8);
+    uVar6 = func_0x08023288(arg7);
+    (*UNRECOVERED_JUMPTABLE)(uVar6, uVar5);
+code_r0x080011b8:
+    UNRECOVERED_JUMPTABLE = *(code **)(_reloc.term + 0x58);
+    uVar5 = func_0x08023288(arg10);
+    uVar6 = func_0x08023288(arg9);
+    // WARNING: Deleting integrated varnode
+    // WARNING: Treating indirect jump as call
+    uVar7 = (*UNRECOVERED_JUMPTABLE)(uVar6, uVar5);
+    return uVar7;
+}
+
+
+void sym.apply_pm3dcolor(int64_t arg1)
+{
+    undefined4 *puVar1;
+    int64_t iVar2;
+    char cVar3;
+    int32_t iVar4;
+    code *pcVar5;
+    int32_t *piVar6;
+    int64_t in_FS_OFFSET;
+    double dVar7;
+    int32_t aiStack136 [12];
+    int32_t aiStack88 [14];
+    int64_t iStack32;
+    
+    iVar2 = _reloc.term;
+    piVar6 = aiStack136;
+    iStack32 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    pcVar5 = (code *)arg1;
+    iVar4 = *(int32_t *)arg1;
+    if (*(int32_t *)arg1 == 2) {
+        puVar1 = (undefined4 *)(arg1 + 4);
+        arg1 = (int64_t)aiStack88;
+        func_0x08023288(aiStack136, *puVar1);
+        pcVar5 = (code *)piVar6;
+        iVar4 = aiStack88[0];
+    }
+    if (iVar4 != 0) {
+        if (iVar4 == 1) {
+            (**(code **)(iVar2 + 0xe0))();
+            pcVar5 = (code *)arg1;
+            goto code_r0x0800164d;
+        }
+        if (iVar4 == 3) {
+            if (((*(uint8_t *)(iVar2 + 0xa9) & 4) == 0) || (*(double *)(arg1 + 8) < _reloc..LC0)) {
+                (**(code **)(iVar2 + 0xe0))();
+                pcVar5 = (code *)arg1;
+            } else {
+                pcVar5 = obj.black.12183;
+                (**(code **)(iVar2 + 0xe0))();
+            }
+            goto code_r0x0800164d;
+        }
+        if (iVar4 == 7) goto code_r0x0800164d;
+        cVar3 = func_0x08023288();
+        if (cVar3 != '\0') {
+            iVar4 = *(int32_t *)arg1;
+            if (iVar4 == 5) {
+                dVar7 = *(double *)(arg1 + 8);
+                if (*(char *)0x8023314 != 'p') {
+                    dVar7 = _reloc..LC7 - dVar7;
+                }
+                func_0x08023288(dVar7);
+            } else {
+                if (iVar4 == 6) {
+                    func_0x08023288(*(undefined8 *)(arg1 + 8));
+                    func_0x08023288();
+                } else {
+                    if (iVar4 == 4) {
+                        dVar7 = *(double *)(arg1 + 8);
+                        if ((*(char *)0x8023b44 != '\0') && (dVar7 <= 0.00000000)) {
+                            dVar7 = *(double *)0x8023ac8;
+                        }
+                        func_0x08023288(dVar7);
+                        func_0x08023288();
+                    }
+                }
+            }
+            goto code_r0x0800164d;
+        }
+    }
+    pcVar5 = obj.black.12183;
+    (**(code **)(iVar2 + 0xe0))();
+code_r0x0800164d:
+    if (iStack32 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    func_0x08023288();
+    if (*(int32_t *)pcVar5 != 0) {
+    // WARNING: Could not recover jumptable at 0x08000530. Too many branches
+    // WARNING: Treating indirect jump as call
+        (**(code **)(_reloc.term + 0x68))(0xfffffffe);
+        return;
+    }
+    return;
+}
+
+
+void sym.reset_textcolor(int64_t arg1)
+{
+    if (*(int32_t *)arg1 != 0) {
+    // WARNING: Could not recover jumptable at 0x08000530. Too many branches
+    // WARNING: Treating indirect jump as call
+        (**(code **)(_reloc.term + 0x68))(0xfffffffe);
+        return;
+    }
+    return;
+}
+
+
+void sym.default_arrow_style(int64_t arg1)
+{
+    undefined8 uVar1;
+    
+    *(undefined8 *)(arg1 + 0x18) = 0;
+    *(undefined8 *)arg1 = 0xffffffff;
+    *(undefined8 *)(arg1 + 8) = 0xfffffff900000000;
+    *(undefined8 *)(arg1 + 0x10) = 0xffffffff00000000;
+    uVar1 = _reloc..LC7;
+    *(undefined8 *)(arg1 + 0x28) = 0;
+    *(undefined8 *)(arg1 + 0x20) = uVar1;
+    uVar1 = _reloc..LC11;
+    *(undefined8 *)(arg1 + 0x30) = 0;
+    *(undefined8 *)(arg1 + 0x88) = uVar1;
+    uVar1 = _reloc..LC12;
+    *(undefined8 *)(arg1 + 0x38) = 0;
+    *(undefined8 *)(arg1 + 0x40) = 0;
+    *(undefined8 *)(arg1 + 0x48) = 0;
+    *(undefined8 *)(arg1 + 0x50) = 0;
+    *(undefined8 *)(arg1 + 0x58) = 0;
+    *(undefined8 *)(arg1 + 0x60) = 0;
+    *(undefined8 *)(arg1 + 0x68) = 0;
+    *(undefined4 *)(arg1 + 0x70) = 1;
+    *(undefined8 *)(arg1 + 0x78) = 0;
+    *(undefined4 *)(arg1 + 0x80) = 0;
+    *(undefined8 *)(arg1 + 0x90) = uVar1;
+    *(undefined4 *)(arg1 + 0x98) = 0;
+    *(undefined *)(arg1 + 0x9c) = 0;
+    return;
+}
+
+
+void sym.apply_head_properties(int64_t arg1)
+{
+    int64_t iVar1;
+    int64_t *piVar2;
+    int64_t *piVar3;
+    int64_t in_FS_OFFSET;
+    double dStack72;
+    undefined auStack64 [8];
+    undefined4 uStack56;
+    undefined8 uStack52;
+    double dStack40;
+    undefined8 uStack32;
+    undefined8 uStack24;
+    int64_t iStack16;
+    
+    iStack16 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    _reloc.curr_arrow_headfilled = *(undefined4 *)(arg1 + 0x98);
+    _reloc.curr_arrow_headlength = 0;
+    reloc.curr_arrow_headfixedsize = *(code *)(arg1 + 0x9c);
+    piVar3 = (int64_t *)arg1;
+    if (_reloc..LC0 < *(double *)(arg1 + 0x78)) {
+        uStack52 = 0x200000002;
+        uStack56 = *(undefined4 *)(arg1 + 0x80);
+        piVar3 = (int64_t *)&uStack56;
+        uStack32 = 0;
+        uStack24 = 0;
+        dStack40 = *(double *)(arg1 + 0x78);
+        func_0x08023288(piVar3, &dStack72, auStack64, "");
+        _reloc.curr_arrow_headlength = (int32_t)dStack72;
+        _reloc.curr_arrow_headangle = *(undefined8 *)(arg1 + 0x88);
+        _reloc.curr_arrow_headbackangle = *(undefined8 *)(arg1 + 0x90);
+    }
+    if (iStack16 != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        func_0x08023288();
+        iVar1 = piVar3[10];
+        if (iVar1 != 0) {
+            func_0x08023288(iVar1);
+        }
+        do {
+            if (piVar3[9] != 0) {
+                func_0x08023288();
+            }
+            if ((piVar3[10] != iVar1) && (piVar3[10] != 0)) {
+                func_0x08023288();
+            }
+            piVar2 = (int64_t *)*piVar3;
+            func_0x08023288(piVar3);
+            piVar3 = piVar2;
+        } while (piVar2 != (int64_t *)0x0);
+        return;
+    }
+    return;
+}
+
+
+void sym.free_labels(int64_t arg1)
+{
+    int64_t iVar1;
+    int64_t *piVar2;
+    
+    iVar1 = *(int64_t *)(arg1 + 0x50);
+    if (iVar1 != 0) {
+        func_0x08023288(iVar1);
+    }
+    do {
+        if (*(int64_t *)(arg1 + 0x48) != 0) {
+            func_0x08023288();
+        }
+        if ((*(int64_t *)(arg1 + 0x50) != iVar1) && (*(int64_t *)(arg1 + 0x50) != 0)) {
+            func_0x08023288();
+        }
+        piVar2 = *(int64_t **)arg1;
+        func_0x08023288(arg1);
+        arg1 = (int64_t)piVar2;
+    } while (piVar2 != (int64_t *)0x0);
+    return;
+}
+
+
+uint32_t sym.get_offsets(int64_t arg1, int64_t arg2, int64_t arg3)
+{
+    uint8_t uVar1;
+    double dVar2;
+    double dVar3;
+    char cVar4;
+    int32_t iVar5;
+    uint32_t uVar6;
+    int64_t iVar7;
+    undefined *puVar8;
+    undefined2 *puVar9;
+    undefined *puVar10;
+    int64_t extraout_RDX;
+    int32_t iVar11;
+    uint32_t uVar12;
+    uint32_t uVar13;
+    int32_t *piVar14;
+    uint32_t *puVar15;
+    uint32_t *puVar16;
+    uint64_t uVar17;
+    char *pcVar18;
+    uint64_t uVar19;
+    code *pcVar20;
+    int64_t in_FS_OFFSET;
+    undefined *puVar21;
+    undefined8 uVar22;
+    int32_t iStack112;
+    int32_t iStack108;
+    int64_t iStack104;
+    int64_t iStack96;
+    int64_t iStack88;
+    int32_t iStack48;
+    undefined4 uStack44;
+    int32_t iStack40;
+    undefined4 uStack36;
+    int64_t iStack32;
+    
+    iVar7 = _reloc.term;
+    dVar3 = _reloc..LC1;
+    dVar2 = _reloc.pointsize;
+    iStack32 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    if ((*(uint8_t *)(arg1 + 0x68) & 1) == 0) {
+        *(undefined4 *)arg2 = 0;
+        *(undefined4 *)arg3 = 0;
+    } else {
+        *(int32_t *)arg2 =
+             (int32_t)((double)(uint64_t)*(uint32_t *)(_reloc.term + 0x24) * _reloc.pointsize * _reloc..LC1);
+        *(int32_t *)arg3 = (int32_t)((double)(uint64_t)*(uint32_t *)(iVar7 + 0x20) * dVar2 * dVar3);
+    }
+    uVar17 = arg1 + 0xd0;
+    piVar14 = &iStack48;
+    if (reloc.is_3d_plot == (code)0x0) {
+        func_0x08023288(uVar17, piVar14, &iStack40, "");
+        uVar13 = (uint32_t)piVar14;
+        *(int32_t *)arg2 = *(int32_t *)arg2 + (int32_t)(double)CONCAT44(uStack44, iStack48);
+        *(int32_t *)arg3 = *(int32_t *)arg3 + (int32_t)(double)CONCAT44(uStack36, iStack40);
+    } else {
+        func_0x08023288(uVar17, piVar14, &iStack40, "");
+        uVar13 = (uint32_t)piVar14;
+        *(int32_t *)arg2 = *(int32_t *)arg2 + iStack48;
+        *(int32_t *)arg3 = *(int32_t *)arg3 + iStack40;
+    }
+    if (iStack32 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return 0;
+    }
+    func_0x08023288();
+    puVar16 = (uint32_t *)(uint64_t)uVar13;
+    iStack104 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    iStack96 = arg3;
+    iStack88 = arg2;
+    func_0x08023288();
+    func_0x08023288();
+    iVar11 = (int32_t)(uVar17 & 0xffffffff);
+    if (*(char *)(extraout_RDX + 0xf9) == '\0') {
+        uVar22 = 0x8001b40;
+        func_0x08023288(extraout_RDX, &iStack112, &iStack108);
+        iVar5 = *(int32_t *)(extraout_RDX + 0x44);
+        if (iVar5 < 0) {
+            pcVar20 = segment.ehdr;
+code_r0x08001b62:
+            if ((*(code **)(_reloc.term + 0x130) != (code *)0x0) &&
+               ((*pcVar20 != (code)0x0 || (pcVar20[1] == (code)0x0)))) {
+                uVar22 = 0x8001d18;
+                (**(code **)(_reloc.term + 0x130))(iStack112 + iVar11, iStack108 + uVar13, 0);
+            }
+        } else {
+            pcVar20 = (code *)0x0;
+            if (iVar5 != 0) {
+                pcVar20 = (code *)((int64_t)iVar5 * 0x40 + 0x8000000);
+                goto code_r0x08001b62;
+            }
+        }
+        if (*(int32_t *)(extraout_RDX + 0x3c) == 0) {
+code_r0x08001ba9:
+            uVar19 = *(uint64_t *)(extraout_RDX + 0x50);
+            puVar15 = (uint32_t *)(uint64_t)(iStack108 + uVar13);
+            func_0x08023288(iStack112 + iVar11, puVar15, *(undefined8 *)(extraout_RDX + 0x48), 
+                            *(undefined4 *)(extraout_RDX + 0x38), 0, 0, uVar19, uVar22);
+        } else {
+            uVar22 = 0x8001ba1;
+            iVar5 = (**(code **)(_reloc.term + 0x78))();
+            if (iVar5 == 0) goto code_r0x08001ba9;
+            puVar15 = (uint32_t *)(uint64_t)(iStack108 + uVar13);
+            func_0x08023288(iStack112 + iVar11, puVar15, *(undefined8 *)(extraout_RDX + 0x48), 
+                            *(undefined4 *)(extraout_RDX + 0x38), 0, *(undefined4 *)(extraout_RDX + 0x3c), 
+                            *(undefined8 *)(extraout_RDX + 0x50), uVar22);
+            uVar19 = 0;
+            (**(code **)(_reloc.term + 0x78))();
+        }
+        if (((pcVar20 != (code *)0x0) && (*(code **)(_reloc.term + 0x130) != (code *)0x0)) &&
+           ((*pcVar20 != (code)0x0 || (pcVar20[1] == (code)0x0)))) {
+            (**(code **)(_reloc.term + 0x130))
+                      (_reloc..LC16 * *(double *)(pcVar20 + 8), *(double *)(pcVar20 + 0x10) * _reloc..LC16, 
+                       uVar19 & 0xffffffff00000000 |
+                       (uint64_t)(uint32_t)(int32_t)(_reloc..LC16 * *(double *)(pcVar20 + 8)), 
+                       (uint64_t)puVar15 & 0xffffffff00000000 |
+                       (uint64_t)(uint32_t)(int32_t)(*(double *)(pcVar20 + 0x10) * _reloc..LC16), 3);
+            if (*pcVar20 != (code)0x0) {
+                func_0x08023288(pcVar20 + 0x30);
+                (**(code **)(_reloc.term + 0x130))(0, 0, 2);
+                func_0x08023288();
+                if (pcVar20[1] == (code)0x0) {
+                    (**(code **)(_reloc.term + 0x130))(iStack112 + iVar11, iStack108 + uVar13, 0);
+                }
+                if ((*(int32_t *)(extraout_RDX + 0x3c) == 0) ||
+                   (iVar5 = (**(code **)(_reloc.term + 0x78))(), iVar5 == 0)) {
+                    func_0x08023288(iStack112 + iVar11, iStack108 + uVar13, *(undefined8 *)(extraout_RDX + 0x48), 
+                                    *(undefined4 *)(extraout_RDX + 0x38), 0, 0, *(undefined8 *)(extraout_RDX + 0x50));
+                } else {
+                    func_0x08023288(iStack112 + iVar11, iStack108 + uVar13, *(undefined8 *)(extraout_RDX + 0x48), 
+                                    *(undefined4 *)(extraout_RDX + 0x38), 0, *(undefined4 *)(extraout_RDX + 0x3c), 
+                                    *(undefined8 *)(extraout_RDX + 0x50));
+                    (**(code **)(_reloc.term + 0x78))();
+                }
+            }
+            if (pcVar20[1] == (code)0x0) {
+                (**(code **)(_reloc.term + 200))(*(undefined8 *)(pcVar20 + 0x18));
+                func_0x08023288();
+                (**(code **)(_reloc.term + 0x130))(0, 0, 1);
+            }
+            puVar15 = (uint32_t *)0x0;
+            (**(code **)(_reloc.term + 0x130))(0, 0, 4);
+            uVar1 = *(uint8_t *)(extraout_RDX + 0x68);
+            goto joined_r0x08001c88;
+        }
+    } else {
+        puVar15 = *(uint32_t **)(extraout_RDX + 0x48);
+        if ((puVar15 != (uint32_t *)0x0) && (*(char *)puVar15 != '\0')) {
+            if (*(int64_t *)(extraout_RDX + 0x50) == 0) {
+                if (*(code **)(_reloc.term + 0x128) != (code *)0x0) {
+                    (**(code **)(_reloc.term + 0x128))();
+                }
+            } else {
+                (**(code **)(_reloc.term + 0x98))();
+                if (*(code **)(_reloc.term + 0x128) != (code *)0x0) {
+                    puVar15 = *(uint32_t **)(extraout_RDX + 0x48);
+                    (**(code **)(_reloc.term + 0x128))(0);
+                }
+                (**(code **)(_reloc.term + 0x98))();
+            }
+        }
+    }
+    uVar1 = *(uint8_t *)(extraout_RDX + 0x68);
+joined_r0x08001c88:
+    if (((uVar1 & 1) != 0) && (puVar15 = puVar16, cVar4 = func_0x08023288(), cVar4 != '\0')) {
+        func_0x08023288(extraout_RDX + 0x68);
+        (**(code **)(_reloc.term + 0x88))(uVar17 & 0xffffffff, puVar16, *(undefined4 *)(extraout_RDX + 0x70));
+        func_0x08023288();
+        puVar15 = puVar16;
+    }
+    pcVar18 = (char *)0x0;
+    func_0x08023288();
+    if (iStack104 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return 0;
+    }
+    func_0x08023288();
+    if ((pcVar18 == (char *)0x0) || (*pcVar18 == '\0')) {
+        uVar13 = 0;
+        if (puVar15 != (uint32_t *)0x0) {
+            *puVar15 = 0;
+        }
+    } else {
+        iVar7 = func_0x08023288();
+        uVar12 = 0;
+        uVar13 = 0;
+        puVar8 = (undefined *)func_0x08023288(iVar7 + 2, "");
+        puVar21 = puVar8;
+        puVar9 = (undefined2 *)func_0x08023288(puVar8, pcVar18);
+        *puVar9 = 10;
+        while (puVar10 = (undefined *)func_0x08023288(puVar8, 10), puVar10 != (undefined *)0x0) {
+            *puVar10 = 0;
+            uVar6 = func_0x08023288(puVar8);
+            if ((int32_t)uVar13 < (int32_t)uVar6) {
+                uVar13 = uVar6;
+            }
+            if (((uVar6 | uVar12) == 0) && (*pcVar18 != '\n')) {
+                uVar12 = 0;
+            } else {
+                uVar12 = uVar12 + 1;
+            }
+            puVar8 = puVar10 + 1;
+        }
+        if (puVar15 != (uint32_t *)0x0) {
+            *puVar15 = uVar12;
+        }
+        func_0x08023288(puVar21);
+    }
+    return uVar13;
+}
+
+
+uint32_t sym.write_label(int64_t arg1, int64_t arg2, int64_t arg3)
+{
+    uint8_t uVar1;
+    char cVar2;
+    int32_t iVar3;
+    uint32_t uVar4;
+    int64_t iVar5;
+    undefined *puVar6;
+    undefined2 *puVar7;
+    undefined *puVar8;
+    int32_t iVar9;
+    uint32_t uVar10;
+    uint32_t *puVar11;
+    uint32_t *puVar12;
+    char *pcVar13;
+    uint64_t uVar14;
+    int32_t iVar15;
+    uint32_t uVar16;
+    code *pcVar17;
+    int64_t in_FS_OFFSET;
+    undefined *puVar18;
+    undefined8 uVar19;
+    int32_t iStack56;
+    int32_t iStack52;
+    int64_t iStack48;
+    
+    puVar12 = (uint32_t *)(arg2 & 0xffffffff);
+    iStack48 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    func_0x08023288();
+    func_0x08023288();
+    iVar15 = (int32_t)puVar12;
+    iVar9 = (int32_t)(arg1 & 0xffffffffU);
+    if (*(char *)(arg3 + 0xf9) == '\0') {
+        uVar19 = 0x8001b40;
+        func_0x08023288(arg3, &iStack56, &iStack52);
+        iVar3 = *(int32_t *)(arg3 + 0x44);
+        if (iVar3 < 0) {
+            pcVar17 = segment.ehdr;
+code_r0x08001b62:
+            if ((*(code **)(_reloc.term + 0x130) != (code *)0x0) &&
+               ((*pcVar17 != (code)0x0 || (pcVar17[1] == (code)0x0)))) {
+                uVar19 = 0x8001d18;
+                (**(code **)(_reloc.term + 0x130))(iStack56 + iVar9, iStack52 + iVar15, 0);
+            }
+        } else {
+            pcVar17 = (code *)0x0;
+            if (iVar3 != 0) {
+                pcVar17 = (code *)((int64_t)iVar3 * 0x40 + 0x8000000);
+                goto code_r0x08001b62;
+            }
+        }
+        if (*(int32_t *)(arg3 + 0x3c) == 0) {
+code_r0x08001ba9:
+            uVar14 = *(uint64_t *)(arg3 + 0x50);
+            puVar11 = (uint32_t *)(uint64_t)(uint32_t)(iStack52 + iVar15);
+            func_0x08023288(iStack56 + iVar9, puVar11, *(undefined8 *)(arg3 + 0x48), *(undefined4 *)(arg3 + 0x38), 0, 0
+                            , uVar14, uVar19);
+        } else {
+            uVar19 = 0x8001ba1;
+            iVar3 = (**(code **)(_reloc.term + 0x78))();
+            if (iVar3 == 0) goto code_r0x08001ba9;
+            puVar11 = (uint32_t *)(uint64_t)(uint32_t)(iStack52 + iVar15);
+            func_0x08023288(iStack56 + iVar9, puVar11, *(undefined8 *)(arg3 + 0x48), *(undefined4 *)(arg3 + 0x38), 0, 
+                            *(undefined4 *)(arg3 + 0x3c), *(undefined8 *)(arg3 + 0x50), uVar19);
+            uVar14 = 0;
+            (**(code **)(_reloc.term + 0x78))();
+        }
+        if (((pcVar17 != (code *)0x0) && (*(code **)(_reloc.term + 0x130) != (code *)0x0)) &&
+           ((*pcVar17 != (code)0x0 || (pcVar17[1] == (code)0x0)))) {
+            (**(code **)(_reloc.term + 0x130))
+                      (uVar14 & 0xffffffff00000000 |
+                       (uint64_t)(uint32_t)(int32_t)(_reloc..LC16 * *(double *)(pcVar17 + 8)), 
+                       (uint64_t)puVar11 & 0xffffffff00000000 |
+                       (uint64_t)(uint32_t)(int32_t)(*(double *)(pcVar17 + 0x10) * _reloc..LC16), 3);
+            if (*pcVar17 != (code)0x0) {
+                func_0x08023288(pcVar17 + 0x30);
+                (**(code **)(_reloc.term + 0x130))(0, 0, 2);
+                func_0x08023288();
+                if (pcVar17[1] == (code)0x0) {
+                    (**(code **)(_reloc.term + 0x130))(iStack56 + iVar9, iStack52 + iVar15, 0);
+                }
+                if ((*(int32_t *)(arg3 + 0x3c) == 0) || (iVar3 = (**(code **)(_reloc.term + 0x78))(), iVar3 == 0)) {
+                    func_0x08023288(iStack56 + iVar9, iStack52 + iVar15, *(undefined8 *)(arg3 + 0x48), 
+                                    *(undefined4 *)(arg3 + 0x38), 0, 0, *(undefined8 *)(arg3 + 0x50));
+                } else {
+                    func_0x08023288(iStack56 + iVar9, iStack52 + iVar15, *(undefined8 *)(arg3 + 0x48), 
+                                    *(undefined4 *)(arg3 + 0x38), 0, *(undefined4 *)(arg3 + 0x3c), 
+                                    *(undefined8 *)(arg3 + 0x50));
+                    (**(code **)(_reloc.term + 0x78))();
+                }
+            }
+            if (pcVar17[1] == (code)0x0) {
+                (**(code **)(_reloc.term + 200))(*(undefined8 *)(pcVar17 + 0x18));
+                func_0x08023288();
+                (**(code **)(_reloc.term + 0x130))(0, 0, 1);
+            }
+            puVar11 = (uint32_t *)0x0;
+            (**(code **)(_reloc.term + 0x130))(0, 0, 4);
+            uVar1 = *(uint8_t *)(arg3 + 0x68);
+            goto joined_r0x08001c88;
+        }
+    } else {
+        puVar11 = *(uint32_t **)(arg3 + 0x48);
+        if ((puVar11 != (uint32_t *)0x0) && (*(char *)puVar11 != '\0')) {
+            if (*(int64_t *)(arg3 + 0x50) == 0) {
+                if (*(code **)(_reloc.term + 0x128) != (code *)0x0) {
+                    (**(code **)(_reloc.term + 0x128))();
+                }
+            } else {
+                (**(code **)(_reloc.term + 0x98))();
+                if (*(code **)(_reloc.term + 0x128) != (code *)0x0) {
+                    puVar11 = *(uint32_t **)(arg3 + 0x48);
+                    (**(code **)(_reloc.term + 0x128))(0);
+                }
+                (**(code **)(_reloc.term + 0x98))();
+            }
+        }
+    }
+    uVar1 = *(uint8_t *)(arg3 + 0x68);
+joined_r0x08001c88:
+    if (((uVar1 & 1) != 0) && (puVar11 = puVar12, cVar2 = func_0x08023288(), cVar2 != '\0')) {
+        func_0x08023288(arg3 + 0x68);
+        (**(code **)(_reloc.term + 0x88))(arg1 & 0xffffffffU, puVar12, *(undefined4 *)(arg3 + 0x70));
+        func_0x08023288();
+        puVar11 = puVar12;
+    }
+    pcVar13 = (char *)0x0;
+    func_0x08023288();
+    if (iStack48 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return 0;
+    }
+    func_0x08023288();
+    if ((pcVar13 == (char *)0x0) || (*pcVar13 == '\0')) {
+        uVar16 = 0;
+        if (puVar11 != (uint32_t *)0x0) {
+            *puVar11 = 0;
+        }
+    } else {
+        iVar5 = func_0x08023288();
+        uVar10 = 0;
+        uVar16 = 0;
+        puVar6 = (undefined *)func_0x08023288(iVar5 + 2, "");
+        puVar18 = puVar6;
+        puVar7 = (undefined2 *)func_0x08023288(puVar6, pcVar13);
+        *puVar7 = 10;
+        while (puVar8 = (undefined *)func_0x08023288(puVar6, 10), puVar8 != (undefined *)0x0) {
+            *puVar8 = 0;
+            uVar4 = func_0x08023288(puVar6);
+            if ((int32_t)uVar16 < (int32_t)uVar4) {
+                uVar16 = uVar4;
+            }
+            if (((uVar4 | uVar10) == 0) && (*pcVar13 != '\n')) {
+                uVar10 = 0;
+            } else {
+                uVar10 = uVar10 + 1;
+            }
+            puVar6 = puVar8 + 1;
+        }
+        if (puVar11 != (uint32_t *)0x0) {
+            *puVar11 = uVar10;
+        }
+        func_0x08023288(puVar18);
+    }
+    return uVar16;
+}
+
+
+uint32_t sym.label_width(uint32_t arg1, int64_t arg2)
+{
+    uint32_t uVar1;
+    int64_t iVar2;
+    undefined *puVar3;
+    undefined2 *puVar4;
+    undefined *puVar5;
+    uint32_t uVar6;
+    undefined4 in_RDI;
+    char *pcVar7;
+    uint32_t uVar8;
+    undefined *puVar9;
+    
+    pcVar7 = (char *)CONCAT44(in_RDI, arg1);
+    if ((pcVar7 == (char *)0x0) || (*pcVar7 == '\0')) {
+        uVar8 = 0;
+        if (arg2 != 0) {
+            *(undefined4 *)arg2 = 0;
+        }
+    } else {
+        iVar2 = func_0x08023288();
+        uVar6 = 0;
+        uVar8 = 0;
+        puVar3 = (undefined *)func_0x08023288(iVar2 + 2, "");
+        puVar4 = (undefined2 *)func_0x08023288(puVar3, pcVar7);
+        *puVar4 = 10;
+        puVar9 = puVar3;
+        while( true ) {
+            puVar5 = (undefined *)func_0x08023288(puVar9, 10);
+            if (puVar5 == (undefined *)0x0) break;
+            *puVar5 = 0;
+            uVar1 = func_0x08023288(puVar9);
+            if ((int32_t)uVar8 < (int32_t)uVar1) {
+                uVar8 = uVar1;
+            }
+            if (((uVar1 | uVar6) == 0) && (*pcVar7 != '\n')) {
+                uVar6 = 0;
+            } else {
+                uVar6 = uVar6 + 1;
+            }
+            puVar9 = puVar5 + 1;
+        }
+        if (arg2 != 0) {
+            *(uint32_t *)arg2 = uVar6;
+        }
+        func_0x08023288(puVar3);
+    }
+    return uVar8;
+}
+
+
+void sym.do_timelabel(int64_t arg7, int64_t arg8, int64_t arg9, int64_t arg10, int64_t arg11, undefined8 placeholder_5,
+                     undefined8 placeholder_6, undefined8 placeholder_7, int64_t arg1, int64_t arg2)
+{
+    undefined8 uVar1;
+    int32_t iVar2;
+    int64_t in_FS_OFFSET;
+    undefined auStack1344 [8];
+    undefined4 uStack1336;
+    undefined4 uStack1332;
+    undefined4 uStack1328;
+    undefined4 uStack1324;
+    undefined4 uStack1320;
+    undefined4 uStack1316;
+    undefined4 uStack1312;
+    undefined4 uStack1308;
+    undefined4 uStack1304;
+    undefined4 uStack1300;
+    undefined4 uStack1296;
+    undefined4 uStack1292;
+    undefined4 uStack1288;
+    undefined4 uStack1284;
+    undefined4 uStack1280;
+    uint32_t uStack1276;
+    undefined4 uStack1272;
+    undefined4 uStack1268;
+    undefined *puStack1264;
+    undefined4 uStack1256;
+    undefined4 uStack1252;
+    undefined4 uStack1248;
+    undefined4 uStack1244;
+    undefined4 uStack1240;
+    undefined4 uStack1236;
+    undefined4 uStack1232;
+    undefined4 uStack1228;
+    undefined4 uStack1224;
+    undefined4 uStack1220;
+    undefined4 uStack1216;
+    undefined4 uStack1212;
+    undefined8 uStack1208;
+    undefined8 uStack1200;
+    undefined8 uStack1192;
+    undefined8 uStack1184;
+    undefined8 uStack1176;
+    undefined8 uStack1168;
+    undefined8 uStack1160;
+    undefined8 uStack1152;
+    undefined8 uStack1144;
+    undefined8 uStack1136;
+    undefined8 uStack1128;
+    undefined8 uStack1120;
+    undefined8 uStack1112;
+    undefined8 uStack1104;
+    undefined8 uStack1096;
+    undefined8 uStack1088;
+    undefined auStack1080 [1032];
+    int64_t iStack48;
+    
+    iVar2 = (int32_t)arg2;
+    iStack48 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    uStack1336 = _reloc.timelabel;
+    uStack1332 = *(undefined4 *)0x8002d64;
+    uStack1328 = *(undefined4 *)0x8002d68;
+    uStack1324 = *(undefined4 *)0x8002d6c;
+    uStack1320 = *(undefined4 *)0x8002d70;
+    uStack1316 = *(undefined4 *)0x8002d74;
+    uStack1312 = *(undefined4 *)0x8002d78;
+    uStack1308 = *(undefined4 *)0x8002d7c;
+    uStack1304 = *(undefined4 *)0x8002d80;
+    uStack1300 = *(undefined4 *)0x8002d84;
+    uStack1296 = *(undefined4 *)0x8002d88;
+    uStack1292 = *(undefined4 *)0x8002d8c;
+    uStack1288 = *(undefined4 *)0x8002d90;
+    uStack1284 = *(undefined4 *)0x8002d94;
+    uStack1280 = *(undefined4 *)0x8002d98;
+    uStack1276 = *(uint32_t *)0x8002d9c;
+    uStack1272 = *(undefined4 *)0x8002da0;
+    uStack1268 = *(undefined4 *)0x8002da4;
+    puStack1264 = (undefined *)CONCAT44(*(undefined4 *)0x8002dac, *(undefined4 *)0x8002da8);
+    uStack1256 = *(undefined4 *)0x8002db0;
+    uStack1252 = *(undefined4 *)0x8002db4;
+    uStack1248 = *(undefined4 *)0x8002db8;
+    uStack1244 = *(undefined4 *)0x8002dbc;
+    uStack1240 = *(undefined4 *)0x8002dc0;
+    uStack1236 = *(undefined4 *)0x8002dc4;
+    uStack1232 = *(undefined4 *)0x8002dc8;
+    uStack1228 = *(undefined4 *)0x8002dcc;
+    uStack1224 = *(undefined4 *)0x8002dd0;
+    uStack1220 = *(undefined4 *)0x8002dd4;
+    uStack1216 = *(undefined4 *)0x8002dd8;
+    uStack1212 = *(undefined4 *)0x8002ddc;
+    uStack1208 = *(undefined8 *)0x8002de0;
+    uStack1200 = *(undefined8 *)0x8002de8;
+    uStack1192 = *(undefined8 *)0x8002df0;
+    uStack1184 = *(undefined8 *)0x8002df8;
+    uStack1176 = *(undefined8 *)0x8002e00;
+    uStack1168 = *(undefined8 *)0x8002e08;
+    uStack1160 = *(undefined8 *)0x8002e10;
+    uStack1152 = *(undefined8 *)0x8002e18;
+    uStack1144 = *(undefined8 *)0x8002e20;
+    uStack1136 = *(undefined8 *)0x8002e28;
+    uStack1128 = *(undefined8 *)0x8002e30;
+    uStack1120 = *(undefined8 *)0x8002e38;
+    uStack1112 = *(undefined8 *)0x8002e40;
+    uStack1104 = *(undefined8 *)0x8002e48;
+    uStack1096 = *(undefined8 *)0x8002e50;
+    uStack1088 = *(undefined8 *)0x8002e58;
+    if ((*(uint32_t *)0x8002d9c | _reloc.timelabel_bottom) == 0) {
+        iVar2 = iVar2 - *(int32_t *)(_reloc.term + 0x18);
+    }
+    func_0x08023288(*(undefined8 *)0x8002de0, *(undefined8 *)0x8002df0, *(undefined8 *)0x8002e00, 
+                    *(undefined8 *)0x8002e10, *(undefined8 *)0x8002e20, *(undefined8 *)0x8002e30, 
+                    *(undefined8 *)0x8002e40, *(undefined8 *)0x8002e50, auStack1344);
+    uVar1 = func_0x08023288(auStack1344);
+    func_0x08023288(auStack1080, 0x400, CONCAT44(*(undefined4 *)0x8002dac, *(undefined4 *)0x8002da8), uVar1);
+    puStack1264 = auStack1080;
+    func_0x08023288(arg1 & 0xffffffff, iVar2, &uStack1336);
+    if (iStack48 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    func_0x08023288();
+    _reloc.grid_wall = 0x80030a8;
+    *(undefined8 *)0x8002fc8 = 0xcdb79e00000003;
+    *(code **)0x8003008 = obj.y0_wall_corners.12253;
+    *(undefined8 *)0x80030a8 = 0x80031f0;
+    *(undefined8 *)0x8003110 = 0x228b2200000003;
+    *(code **)0x8003150 = obj.x0_wall_corners.12254;
+    *(undefined8 *)0x80031f0 = 0x8003338;
+    *(undefined8 *)0x8003258 = 0xcdb79e00000003;
+    *(code **)0x8003298 = obj.y1_wall_corners.12255;
+    *(undefined8 *)0x8003338 = 0x8003480;
+    *(undefined8 *)0x80033a0 = 0x228b2200000003;
+    *(code **)0x80033e0 = obj.x1_wall_corners.12256;
+    *(undefined8 *)0x80034e8 = 0xa0b6cd00000003;
+    *(code **)0x8003528 = reloc..data;
+    return;
+}
+
+
+void sym.init_gadgets(void)
+{
+    _reloc.grid_wall = 0x80030a8;
+    *(undefined8 *)0x8002fc8 = 0xcdb79e00000003;
+    *(code **)0x8003008 = obj.y0_wall_corners.12253;
+    *(undefined8 *)0x80030a8 = 0x80031f0;
+    *(undefined8 *)0x8003110 = 0x228b2200000003;
+    *(code **)0x8003150 = obj.x0_wall_corners.12254;
+    *(undefined8 *)0x80031f0 = 0x8003338;
+    *(undefined8 *)0x8003258 = 0xcdb79e00000003;
+    *(code **)0x8003298 = obj.y1_wall_corners.12255;
+    *(undefined8 *)0x8003338 = 0x8003480;
+    *(undefined8 *)0x80033a0 = 0x228b2200000003;
+    *(code **)0x80033e0 = obj.x1_wall_corners.12256;
+    *(undefined8 *)0x80034e8 = 0xa0b6cd00000003;
+    *(code **)0x8003528 = reloc..data;
+    return;
+}
+
+
+int64_t sym.pm3d_objects(void)
+{
+    int64_t *piVar1;
+    
+    piVar1 = ""._0_8_;
+    if (""._0_8_ == (int64_t *)0x0) {
+        return 0;
+    }
+    do {
+        if (*(int32_t *)((int64_t)piVar1 + 0xc) == 8) {
+            return 1;
+        }
+        piVar1 = (int64_t *)*piVar1;
+    } while (piVar1 != (int64_t *)0x0);
+    return (int64_t)piVar1;
+}
+
+
+void sym.place_title(undefined8 param_1, undefined8 param_2)
+{
+    if (*(int64_t *)0x8002ea8 == 0) {
+        return;
+    }
+    func_0x08023288(param_1, param_2, reloc.title);
+    if (*(int32_t *)0x8002eb8 != 0) {
+    // WARNING: Could not recover jumptable at 0x08000530. Too many branches
+    // WARNING: Treating indirect jump as call
+        (**(code **)(_reloc.term + 0x68))(0xfffffffe);
+        return;
+    }
+    return;
+}
+
+

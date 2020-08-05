@@ -1,0 +1,64 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/alloc.o @ 0x8000040 */
+#include <stdint.h>
+ 
+uint64_t gp_alloc (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    do {
+        /* [01] -r-x section size 112 named .text */
+        __asm ("endbr64");
+        r12 = rsi;
+        rax = malloc (r12);
+        if (r12 != 0) {
+            if (rax == 0) {
+                goto label_1;
+            }
+        }
+        return rax;
+label_1:
+        rdx = r12;
+        rsi = "out of memory for %s";
+        edi |= 0xffffffff;
+        rax = malloc ();
+        __asm ("endbr64");
+        r8 = rsi;
+        if (rdi != 0) {
+            rax = malloc ();
+            if (rax == 0) {
+                goto label_2;
+            }
+label_0:
+            return rax;
+        }
+        rsi = rdx;
+        rdi = r8;
+    } while (1);
+label_2:
+    if (rbp == 0) {
+        goto label_0;
+    }
+    rdx = rbp;
+    rsi = "out of memory for %s";
+    edi |= 0xffffffff;
+    malloc ();
+    /* [05] -r-- section size 21 named .rodata.str1.1 */
+    __asm ("outsd dx, dword [rsi]");
+    if (edi != 0) {
+        void (*0x8000127)() ();
+    }
+    *((rdi + 0x66)) &= ch;
+    *((rbp + 0x65)) &= ch;
+    __asm ("insd dword [rdi], dx");
+    __asm ("outsd dx, dword [rsi]");
+    if (*((rbp + 0x65)) < 0) {
+        void (*0x8000136)() ();
+    }
+    *((rsi + 0x6f)) &= ah;
+    if (*((rsi + 0x6f)) < 0) {
+        void (*0x80000e2)() ();
+    }
+    eax &= 0xffff0073;
+}
+
+

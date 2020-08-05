@@ -1,0 +1,1844 @@
+int64_t sym.quantize_duodecimal_tics
+                  (int64_t arg7, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3,
+                  undefined8 placeholder_4, uint64_t placeholder_5, undefined8 placeholder_6, undefined8 placeholder_7,
+                  int64_t arg1)
+{
+    int64_t iVar1;
+    double dVar2;
+    double extraout_XMM0_Qa;
+    undefined extraout_XMM0 [16];
+    undefined auVar3 [16];
+    double dVar4;
+    
+    // [01] -r-x section size 27201 named .text
+    func_0x0803b2f7(arg7, placeholder_1, placeholder_2, placeholder_3, placeholder_4);
+    dVar2 = SUB168(extraout_XMM0, 0) / _reloc..LC0;
+    dVar4 = (double)((uint64_t)dVar2 & _reloc..LC2);
+    if (dVar4 < _reloc..LC1) {
+        dVar4 = (double)(int64_t)dVar2 - (double)(-(uint64_t)(dVar2 < (double)(int64_t)dVar2) & placeholder_5);
+        auVar3 = orpd(ZEXT816((uint64_t)dVar4), 
+                      CONCAT88(~SUB168((ZEXT816(_reloc..LC2) & (undefined  [16])0xffffffffffffffff) >> 0x40, 0) &
+                               SUB168(extraout_XMM0 >> 0x40, 0), 
+                               ~SUB168(ZEXT816(_reloc..LC2) & (undefined  [16])0xffffffffffffffff, 0) & (uint64_t)dVar2)
+                     );
+        dVar2 = SUB168(auVar3, 0);
+    }
+    iVar1 = func_0x0803b2f7(_reloc..LC4, dVar2, dVar4);
+    dVar4 = (double)arg7 / extraout_XMM0_Qa;
+    dVar2 = (double)(int32_t)arg1 / dVar4;
+    if (dVar2 <= _reloc..LC5) {
+        if (dVar2 <= _reloc..LC4) {
+            if (_reloc..LC6 < dVar2) {
+                return iVar1;
+            }
+            if ((((dVar2 <= _reloc..LC7) && (dVar2 <= _reloc..LC9)) && (dVar2 <= _reloc..LC3)) &&
+               (((dVar2 <= _reloc..LC10 && (dVar2 <= _reloc..LC11)) &&
+                ((double)((uint64_t)dVar4 & _reloc..LC2) < _reloc..LC1)))) {
+                iVar1 = (int64_t)dVar4;
+                orpd(ZEXT816((uint64_t)
+                             ((double)(-(uint64_t)((double)iVar1 < dVar4) & (uint64_t)_reloc..LC3) + (double)iVar1)), 
+                     CONCAT88(0xffffffffffffffff, ~_reloc..LC2 & (uint64_t)dVar4) & (undefined  [16])0xffffffffffffffff)
+                ;
+            }
+        }
+        return iVar1;
+    }
+    return iVar1;
+}
+
+
+void sym.get_position_type(int64_t arg1, int64_t arg2)
+{
+    int32_t iVar1;
+    
+    iVar1 = func_0x0803b2f7(_reloc.c_token, "");
+    if (iVar1 != 0) {
+        _reloc.c_token = _reloc.c_token + 1;
+        *(undefined4 *)arg1 = 0;
+        goto code_r0x0800021f;
+    }
+    iVar1 = func_0x0803b2f7(_reloc.c_token, "");
+    if (iVar1 != 0) {
+        _reloc.c_token = _reloc.c_token + 1;
+        *(undefined4 *)arg1 = 1;
+code_r0x08000253:
+        *(undefined4 *)arg2 = 4;
+        return;
+    }
+    iVar1 = func_0x0803b2f7(_reloc.c_token, "");
+    if (iVar1 == 0) {
+        iVar1 = func_0x0803b2f7(_reloc.c_token, "");
+        if (iVar1 == 0) {
+            iVar1 = func_0x0803b2f7(_reloc.c_token, "");
+            if (iVar1 == 0) {
+                iVar1 = func_0x0803b2f7(_reloc.c_token, "");
+                if (iVar1 == 0) {
+                    iVar1 = *(int32_t *)arg1;
+                    if (iVar1 == 1) goto code_r0x08000253;
+                    if ((iVar1 != 5) && (iVar1 != 0)) goto code_r0x0800028b;
+                } else {
+                    _reloc.c_token = _reloc.c_token + 1;
+                    *(undefined4 *)arg1 = 5;
+                }
+code_r0x0800021f:
+                *(undefined4 *)arg2 = 0;
+                return;
+            }
+            _reloc.c_token = _reloc.c_token + 1;
+            *(undefined4 *)arg1 = 4;
+        } else {
+            _reloc.c_token = _reloc.c_token + 1;
+            *(undefined4 *)arg1 = 3;
+        }
+    } else {
+        _reloc.c_token = _reloc.c_token + 1;
+        *(undefined4 *)arg1 = 2;
+    }
+code_r0x0800028b:
+    *(undefined4 *)arg2 = 0xfffffffe;
+    return;
+}
+
+
+// WARNING: Could not reconcile some variable overlaps
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable var_4h to Decompiler type: Unknown type
+// identifier signed
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable var_8h_2 to Decompiler type: Unknown type
+// identifier signed
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable var_ch to Decompiler type: Unknown type
+// identifier signed
+
+void sym.time_tic_just.part.0
+               (int64_t arg7, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3,
+               undefined8 placeholder_4, undefined8 placeholder_5, uint64_t placeholder_6, undefined8 placeholder_7,
+               int64_t arg1, int64_t arg2, int64_t arg3)
+{
+    double placeholder_2_00;
+    int32_t iVar1;
+    uint32_t uVar2;
+    int64_t arg3_00;
+    int32_t *piVar3;
+    int64_t in_FS_OFFSET;
+    double dVar4;
+    undefined extraout_XMM0 [16];
+    undefined8 uVar5;
+    undefined extraout_XMM0_00 [16];
+    undefined auVar6 [16];
+    double placeholder_3_00;
+    uint64_t uVar7;
+    double dVar8;
+    int32_t iStack88;
+    int32_t iStack84;
+    undefined8 uStack80;
+    int32_t iStack72;
+    int32_t iStack68;
+    int32_t iStack60;
+    int64_t iStack32;
+    
+    uVar2 = (uint32_t)arg1;
+    piVar3 = &iStack88;
+    iStack32 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    func_0x0803b2f7(arg7, placeholder_1, placeholder_2, placeholder_3, &iStack88);
+    if (0x37 < iStack88) {
+        iStack84 = iStack84 + 1;
+    }
+    iStack88 = 0;
+    if (uVar2 != 2) {
+        if (0x37 < iStack84) {
+            uStack80 = uStack80 & 0xffffffff00000000 | (uint64_t)((int32_t)uStack80 + 1);
+        }
+        iStack84 = 0;
+        if (3 < uVar2) {
+            if (0x16 < (int32_t)uStack80) {
+                iStack60 = iStack60 + 1;
+                uStack80 = 0;
+                func_0x0803b2f7(&iStack88);
+                func_0x0803b2f7(&iStack88);
+            }
+            if (5 < uVar2) {
+                if ((0x19 < uStack80._4_4_) && (iStack72 = iStack72 + 1, 0xb < iStack72)) {
+                    iStack68 = iStack68 + 1;
+                    iStack72 = 0;
+                }
+                uStack80 = CONCAT44(1, (int32_t)uStack80);
+            }
+        }
+    }
+    func_0x0803b2f7();
+    if (iStack32 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    func_0x0803b2f7();
+    placeholder_2_00 = *(double *)((int64_t)piVar3 + 0x160);
+    uVar5 = SUB168(extraout_XMM0 >> 0x40, 0);
+    dVar4 = SUB168(extraout_XMM0, 0) / placeholder_2_00;
+    placeholder_3_00 = (double)((uint64_t)dVar4 & _reloc..LC2);
+    uVar7 = _reloc..LC2;
+    dVar8 = _reloc..LC1;
+    if ((char)arg2 == '\0') {
+        if (placeholder_3_00 < _reloc..LC1) {
+            uVar7 = ~_reloc..LC2 & (uint64_t)dVar4;
+            iVar1 = *(int32_t *)((int64_t)piVar3 + 0x170);
+            placeholder_6 = -(uint64_t)(dVar4 < (double)(int64_t)dVar4);
+            placeholder_3_00 = (double)(int64_t)dVar4 - (double)(placeholder_6 & (uint64_t)_reloc..LC3);
+            auVar6 = orpd(ZEXT816((uint64_t)placeholder_3_00), CONCAT88(uVar5, uVar7));
+            dVar4 = SUB168(auVar6, 0);
+            dVar8 = _reloc..LC3;
+            goto joined_r0x080004d0;
+        }
+    } else {
+        if (placeholder_3_00 < _reloc..LC1) {
+            uVar7 = ~_reloc..LC2 & (uint64_t)dVar4;
+            placeholder_3_00 = (double)(int64_t)dVar4;
+            auVar6 = orpd(ZEXT816((uint64_t)
+                                  ((double)(-(uint64_t)(placeholder_3_00 < dVar4) & (uint64_t)_reloc..LC3) +
+                                  placeholder_3_00)), CONCAT88(uVar5, uVar7));
+            dVar4 = SUB168(auVar6, 0);
+            dVar8 = _reloc..LC3;
+        }
+    }
+    iVar1 = *(int32_t *)((int64_t)piVar3 + 0x170);
+joined_r0x080004d0:
+    if (iVar1 == 1) {
+        dVar4 = dVar4 * placeholder_2_00;
+        if (1 < *(uint32_t *)((int64_t)piVar3 + 0x188)) {
+            sym.time_tic_just.part.0
+                      ((int64_t)dVar4, dVar4, placeholder_2_00, placeholder_3_00, uVar7, dVar8, placeholder_6, 
+                       placeholder_7, (uint64_t)*(uint32_t *)((int64_t)piVar3 + 0x188), arg2, arg3_00);
+            if ((char)arg2 == '\0') {
+                minsd(extraout_XMM0_00, ZEXT816((uint64_t)dVar4));
+            } else {
+                maxsd(extraout_XMM0_00, ZEXT816((uint64_t)dVar4));
+            }
+        }
+    }
+    return;
+}
+
+
+
+
+
+
+
+
+
+
+Do you want to print 7477 lines? (y/N) p
+   d d dd dd dd  dd  dd @ dd @ dd @  dd @  dd @ s dd @ s dd @ sy dd @ sy dd @ sym dd @ sym dd @ sym. dd @ sym. dd @ sym.c dd @ sym.c dd @ sym.ch dd @ sym.ch dd @ sym.che dd @ sym.che dd @ sym.chec dd @ sym.chec dd @ sym.check dd @ sym.check dd @ sym.check_ dd @ sym.check_ dd @ sym.check_l dd @ sym.check_l dd @ sym.check_lo dd @ sym.check_lo dd @ sym.check_log dd @ sym.check_log dd @ sym.check_log_ dd @ sym.check_log_ dd @ sym.check_log_l dd @ sym.check_log_l dd @ sym.check_log_li dd @ sym.check_log_li dd @ sym.check_log_lim dd @ sym.check_log_lim dd @ sym.check_log_limi dd @ sym.check_log_limi dd @ sym.check_log_limit dd @ sym.check_log_limit dd @ sym.check_log_limits dd @ sym.check_log_limits dd @ sym.check_log_limits. dd @ sym.check_log_limits. dd @ sym.check_log_limits.p dd @ sym.check_log_limits.p dd @ sym.check_log_limits.pa dd @ sym.check_log_limits.pa dd @ sym.check_log_limits.par dd @ sym.check_log_limits.par dd @ sym.check_log_limits.part dd @ sym.check_log_limits.part dd @ sym.check_log_limits.part. dd @ sym.check_log_limits.part. dd @ sym.check_log_limits.part.0 dd @ sym.check_log_limits.part.0opendir /proc/x/fd: No such file or directory
+WARNING: r_list_purge: assertion 'list' failed (line 67)
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.m pdg @ sym.m pdg @ sym.ma pdg @ sym.ma pdg @ sym.mak pdg @ sym.mak pdg @ sym.make pdg @ sym.make pdg @ sym.make_ pdg @ sym.make_ pdg @ sym.make_t pdg @ sym.make_t pdg @ sym.make_ti pdg @ sym.make_ti pdg @ sym.make_tic pdg @ sym.make_tic pdg @ sym.make_tics pdg @ sym.make_ticsGhidra Decompiler Error: Deleting integrated varnode
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.m pdd @ sym.m pdd @ sym.ma pdd @ sym.ma pdd @ sym.mak pdd @ sym.mak pdd @ sym.make pdd @ sym.make pdd @ sym.make_ pdd @ sym.make_ pdd @ sym.make_t pdd @ sym.make_t pdd @ sym.make_ti pdd @ sym.make_ti pdd @ sym.make_tic pdd @ sym.make_tic pdd @ sym.make_tics pdd @ sym.make_tics/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/axis.o @ 0x80014f0 */
+#include <stdint.h>
+ 
+uint64_t make_tics (int64_t arg1, int64_t arg2) {
+    int64_t var_8h;
+    rdi = arg1;
+    rsi = arg2;
+    rbx = rdi;
+    xmm0 = *((rdi + 0x10));
+    __asm ("subsd xmm0, qword [rdi + 0x18]");
+    __asm ("ucomisd xmm0, qword [loc..LC25]");
+    __asm ("jnp 0x80015a0");
+label_0:
+    __asm ("movapd xmm1, xmm0");
+    __asm ("andpd xmm1, xmmword [loc..LC2]");
+    __asm ("comisd xmm1, xmmword [loc..LC20]");
+    while (1) {
+        __asm ("movapd xmm0, xmm1");
+        edi = ebp;
+        *(rsp) = xmm1;
+        log ();
+        xmm1 = *(rsp);
+        eax = *((rbx + 0x170));
+        if (*((rbx + 0x8c)) != 0) {
+            xmm2 = *(loc..LC3);
+            __asm ("comisd xmm2, xmm0");
+            if (*((rbx + 0x8c)) > 0) {
+                goto label_8;
+            }
+        }
+        if (eax == 1) {
+            goto label_9;
+        }
+label_1:
+        return eax;
+        edi = *((rbx + 0x18c));
+        *(rsp) = xmm1;
+        rax = log ();
+        rsi = "%s axis range undefined or overflow";
+        edi = 0xffffffff;
+        rdx = rax;
+        eax = 0;
+        eax = log ();
+        xmm1 = *(rsp);
+    }
+    if (eax != 1) {
+        goto label_0;
+    }
+    xmm2 = *(loc..LC3);
+    do {
+        __asm ("movapd xmm0, xmm2");
+        return rax;
+label_8:
+    } while (eax != 1);
+    eax = rbp + rbp*2;
+    __asm ("movapd xmm0, xmm2");
+    *((rbx + 0x188)) = 1;
+    r12 = (int64_t) eax;
+    eax >>= 0x1f;
+    r12 *= 0x66666667;
+    r12 >>= 0x21;
+    r12d -= eax;
+    goto label_6;
+label_9:
+    *((rbx + 0x188)) = 1;
+    eax = rbp + rbp*2;
+    r12 = (int64_t) eax;
+    eax >>= 0x1f;
+    r12 *= 0x66666667;
+    r12 >>= 0x21;
+    r12d -= eax;
+    __asm ("comisd xmm0, xmmword [loc..LC54]");
+    if (r12d > 0) {
+        goto label_10;
+    }
+label_4:
+    __asm ("comisd xmm0, xmmword [loc..LC56]");
+    xmm2 = *(loc..LC57);
+    if (r12d > 0) {
+        goto label_11;
+    }
+label_3:
+    __asm ("comisd xmm0, xmm2");
+    if (r12d > 0) {
+        edi = r12d;
+        __asm ("movapd xmm0, xmm1");
+        *(rsp) = xmm1;
+        __asm ("divsd xmm0, qword [loc..LC58]");
+        _text ();
+        __asm ("mulsd xmm0, qword [loc..LC58]");
+        xmm1 = *(rsp);
+        __asm ("comisd xmm0, xmmword [loc..LC58]");
+        if (r12d < 0) {
+            goto label_2;
+        }
+        *((rbx + 0x188)) = 4;
+    }
+label_2:
+    __asm ("comisd xmm0, xmmword [loc..LC59]");
+    if (r12d > 0) {
+        goto label_12;
+    }
+label_6:
+    __asm ("comisd xmm0, xmmword [loc..LC60]");
+    xmm2 = *(loc..LC52);
+    if (r12d > 0) {
+        goto label_13;
+    }
+label_5:
+    __asm ("comisd xmm0, xmm2");
+    if (r12d <= 0) {
+        goto label_1;
+    }
+    __asm ("divsd xmm1, qword [loc..LC61]");
+    edi = r12d;
+    __asm ("movapd xmm0, xmm1");
+    _text ();
+    __asm ("mulsd xmm0, qword [loc..LC61]");
+    __asm ("comisd xmm0, xmmword [loc..LC61]");
+    if (r12d < 0) {
+        goto label_1;
+    }
+    *((rbx + 0x188)) = 7;
+    goto label_1;
+label_11:
+    __asm ("movapd xmm0, xmm1");
+    edi = r12d;
+    *((rsp + 8)) = xmm1;
+    __asm ("divsd xmm0, xmm2");
+    *(rsp) = xmm2;
+    _text ();
+    xmm2 = *(rsp);
+    xmm1 = *((rsp + 8));
+    __asm ("mulsd xmm0, xmm2");
+    __asm ("comisd xmm0, xmm2");
+    if (r12d < 0) {
+        goto label_2;
+    }
+    *((rbx + 0x188)) = 3;
+    goto label_3;
+label_10:
+    edi = r12d;
+    __asm ("movapd xmm0, xmm1");
+    *(rsp) = xmm1;
+    __asm ("divsd xmm0, qword [loc..LC55]");
+    _text ();
+    __asm ("mulsd xmm0, qword [loc..LC55]");
+    xmm1 = *(rsp);
+    __asm ("comisd xmm0, xmmword [loc..LC55]");
+    if (r12d < 0) {
+        goto label_4;
+    }
+    *((rbx + 0x188)) = 2;
+    goto label_4;
+label_13:
+    __asm ("movapd xmm0, xmm1");
+    edi = ebp;
+    *((rsp + 8)) = xmm1;
+    __asm ("divsd xmm0, xmm2");
+    *(rsp) = xmm2;
+    rax = log ();
+    xmm2 = *(rsp);
+    xmm1 = *((rsp + 8));
+    __asm ("mulsd xmm0, xmm2");
+    __asm ("comisd xmm2, xmm0");
+    if (r12d > 0) {
+        goto label_14;
+    }
+    __asm ("comisd xmm0, xmm2");
+    if (r12d < 0) {
+        goto label_1;
+    }
+label_7:
+    *((rbx + 0x188)) = 6;
+    goto label_5;
+label_12:
+    xmm2 = *(loc..LC51);
+    __asm ("movapd xmm0, xmm1");
+    edi = ebp;
+    *(rsp) = xmm1;
+    __asm ("divsd xmm0, xmm2");
+    log ();
+    rax = *(loc..LC51);
+    xmm1 = *(rsp);
+    xmm2 = rax;
+    __asm ("mulsd xmm0, xmm2");
+    __asm ("comisd xmm2, xmm0");
+    if (r12d > 0) {
+        goto label_15;
+    }
+    __asm ("comisd xmm0, xmm2");
+    if (r12d < 0) {
+        goto label_6;
+    }
+    do {
+        *((rbx + 0x188)) = 5;
+        goto label_6;
+label_14:
+        __asm ("movapd xmm0, xmm2");
+        goto label_7;
+label_15:
+        xmm0 = rax;
+    } while (1);
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.l pdg @ sym.l pdg @ sym.lo pdg @ sym.lo pdg @ sym.loa pdg @ sym.loa pdg @ sym.load pdg @ sym.load pdg @ sym.load_ pdg @ sym.load_ pdg @ sym.load_o pdg @ sym.load_o pdg @ sym.load_on pdg @ sym.load_on pdg @ sym.load_one pdg @ sym.load_one pdg @ sym.load_one_ pdg @ sym.load_one_ pdg @ sym.load_one_r pdg @ sym.load_one_r pdg @ sym.load_one_ra pdg @ sym.load_one_ra pdg @ sym.load_one_ran pdg @ sym.load_one_ran pdg @ sym.load_one_rang pdg @ sym.load_one_rang pdg @ sym.load_one_range pdg @ sym.load_one_range
+uint64_t sym.load_one_range(int64_t arg7, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3,
+                           undefined8 placeholder_4, undefined8 placeholder_5, undefined8 placeholder_6,
+                           undefined8 placeholder_7, int64_t arg1, int64_t arg2, uint32_t arg3, int64_t arg4)
+{
+    uint32_t uVar1;
+    int32_t iVar2;
+    uint64_t uVar3;
+    uint32_t uVar4;
+    uint32_t uVar5;
+    undefined4 in_register_00000014;
+    uint32_t *puVar6;
+    double *arg2_00;
+    char *pcVar7;
+    undefined8 extraout_XMM0_Qa;
+    undefined8 uVar8;
+    int64_t arg7_00;
+    int64_t arg7_01;
+    undefined auVar9 [12];
+    
+    uVar4 = (uint32_t)arg4;
+    puVar6 = (uint32_t *)CONCAT44(in_register_00000014, arg3);
+    uVar5 = uVar4;
+    iVar2 = func_0x0803b2f7(_reloc.c_token, reloc..LC64);
+    if (iVar2 == 0) {
+        reloc.scanning_range_in_progress = (code)0x1;
+        uVar8 = func_0x0803b2f7();
+        reloc.scanning_range_in_progress = (code)0x0;
+        if (((int32_t)_reloc.num_tokens <= (int32_t)_reloc.c_token) ||
+           (iVar2 = func_0x0803b2f7(_reloc.c_token, ""), iVar2 != 0)) goto code_r0x08002192;
+        iVar2 = func_0x0803b2f7(_reloc.c_token, 0x8006cc8);
+        if (iVar2 == 0) {
+            iVar2 = func_0x0803b2f7(_reloc.c_token, 0x8006cca);
+            if (iVar2 == 0) {
+                *puVar6 = *puVar6 & ~uVar4;
+                if (uVar4 == 1) {
+                    *(undefined4 *)(arg1 + 0x50) = 0;
+                    *(undefined8 *)(arg1 + 0x60) = 0;
+                } else {
+                    *(undefined4 *)(arg1 + 0x54) = 0;
+                    *(undefined8 *)(arg1 + 0x70) = 0;
+                }
+                uVar1 = _reloc.c_token;
+                *(undefined8 *)arg2 = uVar8;
+                placeholder_2 = uVar8;
+                goto code_r0x08001e17;
+            }
+            goto code_r0x080021a0;
+        }
+        _reloc.c_token = _reloc.c_token + 1;
+        if (((int32_t)_reloc.num_tokens <= (int32_t)_reloc.c_token) ||
+           (iVar2 = func_0x0803b2f7(_reloc.c_token, ""), iVar2 != 0)) {
+code_r0x08002164:
+            func_0x0803b2f7(_reloc.c_token, "");
+            goto code_r0x08002178;
+        }
+        iVar2 = func_0x0803b2f7(_reloc.c_token, reloc..LC64);
+        if (iVar2 != 0) {
+            *puVar6 = *puVar6 | uVar4;
+            if (uVar4 == 1) {
+                *(uint32_t *)(arg1 + 0x50) = *(uint32_t *)(arg1 + 0x50) | 1;
+                *(undefined8 *)(arg1 + 0x58) = uVar8;
+            } else {
+                *(uint32_t *)(arg1 + 0x54) = *(uint32_t *)(arg1 + 0x54) | 1;
+                *(undefined8 *)(arg1 + 0x68) = uVar8;
+                placeholder_1 = uVar8;
+                uVar8 = placeholder_3;
+            }
+            goto code_r0x08001e08;
+        }
+    } else {
+        *puVar6 = *puVar6 | uVar4;
+        uVar8 = placeholder_3;
+        if (uVar4 == 1) {
+            *(uint32_t *)(arg1 + 0x50) = *(uint32_t *)(arg1 + 0x50) & 0xfffffffe;
+            *(undefined8 *)(arg1 + 0x58) = 0;
+        } else {
+            *(uint32_t *)(arg1 + 0x54) = *(uint32_t *)(arg1 + 0x54) & 0xfffffffe;
+            *(undefined8 *)(arg1 + 0x68) = 0;
+        }
+code_r0x08001e08:
+        uVar1 = _reloc.c_token + 1;
+        placeholder_3 = uVar8;
+        _reloc.c_token = uVar1;
+code_r0x08001e17:
+        if ((*puVar6 & uVar4) == 0) {
+            if ((int32_t)_reloc.num_tokens <= (int32_t)uVar1) {
+                return (uint64_t)_reloc.num_tokens;
+            }
+            uVar3 = func_0x0803b2f7(uVar1, "");
+            if (((int32_t)uVar3 == 0) &&
+               ((iVar2 = func_0x0803b2f7(_reloc.c_token, 0x8006cc8), iVar2 != 0 ||
+                (uVar3 = func_0x0803b2f7(_reloc.c_token, 0x8006cca), (int32_t)uVar3 != 0)))) {
+                func_0x0803b2f7(_reloc.c_token, "no upper bound constraint allowed if not autoscaling");
+                goto code_r0x08002128;
+            }
+            if ((*puVar6 & uVar4) == 0) {
+                return uVar3;
+            }
+            if (uVar4 == 1) goto code_r0x08001f0b;
+code_r0x08001eac:
+            if (*(int32_t *)(arg1 + 0x54) != 3) {
+                return uVar3;
+            }
+            if (*(double *)(arg1 + 0x68) < *(double *)(arg1 + 0x70) ||
+                *(double *)(arg1 + 0x68) == *(double *)(arg1 + 0x70)) {
+                return uVar3;
+            }
+code_r0x08002128:
+            uVar3 = func_0x0803b2f7(_reloc.c_token, "Upper bound of constraint < lower bound:  Turning of constraints.")
+            ;
+            *(undefined4 *)(arg1 + 0x54) = 0;
+            return uVar3;
+        }
+        if (((int32_t)uVar1 < (int32_t)_reloc.num_tokens) && (iVar2 = func_0x0803b2f7(uVar1, ""), iVar2 == 0)) {
+            iVar2 = func_0x0803b2f7(_reloc.c_token, 0x8006cc8);
+            if (iVar2 == 0) {
+                uVar3 = func_0x0803b2f7(_reloc.c_token, 0x8006cca);
+                if ((int32_t)uVar3 != 0) goto code_r0x080021a0;
+                if (uVar4 != 1) {
+                    *(uint32_t *)(arg1 + 0x54) = *(uint32_t *)(arg1 + 0x54) & 0xfffffffd;
+                    *(undefined8 *)(arg1 + 0x70) = 0;
+code_r0x08001ea6:
+                    if ((*puVar6 & uVar4) == 0) {
+                        return uVar3;
+                    }
+                    goto code_r0x08001eac;
+                }
+                *(uint32_t *)(arg1 + 0x50) = *(uint32_t *)(arg1 + 0x50) & 0xfffffffd;
+                *(undefined8 *)(arg1 + 0x60) = 0;
+            } else {
+                _reloc.c_token = _reloc.c_token + 1;
+                if (((int32_t)_reloc.num_tokens <= (int32_t)_reloc.c_token) ||
+                   (iVar2 = func_0x0803b2f7(_reloc.c_token, ""), iVar2 != 0)) goto code_r0x08002164;
+                uVar3 = func_0x0803b2f7(arg1);
+                if (uVar4 != 1) {
+                    *(uint32_t *)(arg1 + 0x54) = *(uint32_t *)(arg1 + 0x54) | 2;
+                    *(undefined8 *)(arg1 + 0x70) = extraout_XMM0_Qa;
+                    goto code_r0x08001ea6;
+                }
+                *(uint32_t *)(arg1 + 0x50) = *(uint32_t *)(arg1 + 0x50) | 2;
+                *(undefined8 *)(arg1 + 0x60) = extraout_XMM0_Qa;
+            }
+            if ((*puVar6 & uVar4) == 0) {
+                return uVar3;
+            }
+code_r0x08001f0b:
+            if ((*(int32_t *)(arg1 + 0x50) == 3) &&
+               (*(double *)(arg1 + 0x60) <= *(double *)(arg1 + 0x58) &&
+                *(double *)(arg1 + 0x58) != *(double *)(arg1 + 0x60))) {
+                uVar3 = func_0x0803b2f7(_reloc.c_token, 
+                                        "Upper bound of constraint < lower bound:  Turning of constraints.");
+                *(undefined4 *)(arg1 + 0x50) = 0;
+            }
+            return uVar3;
+        }
+code_r0x08002178:
+        func_0x0803b2f7(_reloc.c_token, "");
+code_r0x08002192:
+        func_0x0803b2f7(_reloc.c_token, "");
+code_r0x080021a0:
+        func_0x0803b2f7(_reloc.c_token, "malformed range with constraint (use \'<\' only)");
+    }
+    uVar3 = (uint64_t)_reloc.c_token;
+    pcVar7 = "";
+    func_0x0803b2f7();
+    iVar2 = func_0x0803b2f7(_reloc.c_token, 0x8006ccc);
+    if (iVar2 != 0) {
+        *(undefined8 *)(uVar3 + 0x50) = 0;
+        return (uint64_t)uVar5;
+    }
+    if (((int32_t)_reloc.num_tokens <= (int32_t)_reloc.c_token) ||
+       (iVar2 = func_0x0803b2f7(_reloc.c_token, ""), iVar2 != 0)) {
+code_r0x08002366:
+        pcVar7 = "starting range value or \':\' or \'to\' expected";
+        auVar9 = func_0x0803b2f7(_reloc.c_token, "starting range value or \':\' or \'to\' expected");
+        if (SUB124(auVar9 >> 0x40, 0) == 1) {
+            return SUB128(auVar9, 0);
+        }
+        uVar3 = func_0x0803b2f7(pcVar7, 0);
+        if (_segment.ehdr < (int32_t)uVar3) {
+            _segment.ehdr = (int32_t)uVar3;
+        }
+        return uVar3;
+    }
+    iVar2 = func_0x0803b2f7(_reloc.c_token, 0x8006cce);
+    if ((iVar2 == 0) && (iVar2 = func_0x0803b2f7(_reloc.c_token, reloc..LC40), iVar2 == 0)) {
+        sym.load_one_range(arg7_01, placeholder_1, placeholder_2, placeholder_3, placeholder_4, placeholder_5, 
+                           placeholder_6, placeholder_7, uVar3, (int64_t)pcVar7, (int32_t)*(BADSPACEBASE **)0x20 - 0x54
+                           , 1);
+    }
+    iVar2 = func_0x0803b2f7(_reloc.c_token, 0x8006cce);
+    if ((iVar2 == 0) && (iVar2 = func_0x0803b2f7(_reloc.c_token, reloc..LC40), iVar2 == 0)) {
+        func_0x0803b2f7(_reloc.c_token, "");
+        goto code_r0x08002366;
+    }
+    _reloc.c_token = _reloc.c_token + 1;
+    iVar2 = func_0x0803b2f7(_reloc.c_token, 0x8006ccc);
+    if (iVar2 == 0) {
+        sym.load_one_range(arg7_00, placeholder_1, placeholder_2, placeholder_3, placeholder_4, placeholder_5, 
+                           placeholder_6, placeholder_7, uVar3, (int64_t)arg2_00, (int32_t)*(BADSPACEBASE **)0x20 - 0x54
+                           , 2);
+        if (_reloc..LC19 < *(double *)pcVar7 || _reloc..LC19 == *(double *)pcVar7) goto code_r0x080022a6;
+    } else {
+        if (_reloc..LC19 < *(double *)pcVar7 || _reloc..LC19 == *(double *)pcVar7) goto code_r0x080022a6;
+    }
+    *(double *)pcVar7 = _reloc..LC19;
+code_r0x080022a6:
+    if (_reloc..LC20 < *arg2_00) {
+        *arg2_00 = _reloc..LC20;
+    }
+    return (uint64_t)uVar5;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.l pdd @ sym.l pdd @ sym.lo pdd @ sym.lo pdd @ sym.loa pdd @ sym.loa pdd @ sym.load pdd @ sym.load pdd @ sym.load_ pdd @ sym.load_ pdd @ sym.load_o pdd @ sym.load_o pdd @ sym.load_on pdd @ sym.load_on pdd @ sym.load_one pdd @ sym.load_one pdd @ sym.load_one_ pdd @ sym.load_one_ pdd @ sym.load_one_r pdd @ sym.load_one_r pdd @ sym.load_one_ra pdd @ sym.load_one_ra pdd @ sym.load_one_ran pdd @ sym.load_one_ran pdd @ sym.load_one_rang pdd @ sym.load_one_rang pdd @ sym.load_one_range pdd @ sym.load_one_range/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/axis.o @ 0x8001dc0 */
+#include <stdint.h>
+ 
+uint64_t load_one_range (int64_t arg7, int64_t arg1, int64_t arg2, uint32_t arg3, int64_t arg4) {
+    int64_t var_ch;
+    int64_t var_8h;
+    xmm0 = arg7;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+label_9:
+    r13 = rsi;
+    rsi = loc__LC64;
+    r12 = rdx;
+    rbx = rdi;
+    edi = *(reloc.c_token);
+    eax = log (rbx, rbp, r12);
+    if (eax == 0) {
+        goto label_13;
+    }
+    *(r12) |= ebp;
+    if (ebp == 1) {
+        goto label_14;
+    }
+    *((rbx + 0x54)) &= 0xfffffffe;
+    *((rbx + 0x68)) = 0;
+    do {
+label_2:
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+label_5:
+        eax = *(reloc.num_tokens);
+        if ((*(r12) & ebp) == 0) {
+            goto label_15;
+        }
+        if (eax <= edi) {
+            goto label_16;
+        }
+        rsi = ";<>]";
+        eax = log ();
+        if (eax != 0) {
+            goto label_16;
+        }
+        edi = *(reloc.c_token);
+        rsi = loc__LC67;
+        eax = log ();
+        if (eax == 0) {
+            goto label_17;
+        }
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        if (edi >= *(reloc.num_tokens)) {
+            goto label_18;
+        }
+        rsi = ";<>]";
+        eax = log ();
+        if (eax != 0) {
+            goto label_18;
+        }
+        rdi = rbx;
+        eax = log ();
+        if (ebp == 1) {
+            goto label_19;
+        }
+        *((rbx + 0x54)) |= 2;
+        *((rbx + 0x70)) = xmm0;
+label_3:
+        if ((*(r12) & ebp) != 0) {
+label_1:
+            if (*((rbx + 0x54)) != 3) {
+                goto label_0;
+            }
+            xmm0 = *((rbx + 0x68));
+            __asm ("comisd xmm0, xmmword [rbx + 0x70]");
+            if (*((rbx + 0x54)) > 3) {
+                goto label_20;
+            }
+        }
+label_0:
+        return eax;
+label_14:
+        *((rbx + 0x50)) &= 0xfffffffe;
+        *((rbx + 0x58)) = 0;
+    } while (1);
+label_15:
+    if (eax <= edi) {
+        goto label_0;
+    }
+    rsi = ";<>]";
+    eax = log ();
+    if (eax == 0) {
+        goto label_21;
+    }
+label_7:
+    if ((*(r12) & ebp) == 0) {
+        goto label_0;
+    }
+    if (ebp != 1) {
+        goto label_1;
+    }
+label_4:
+    if (*((rbx + 0x50)) != 3) {
+        goto label_0;
+    }
+    xmm0 = *((rbx + 0x58));
+    __asm ("comisd xmm0, xmmword [rbx + 0x60]");
+    if (*((rbx + 0x50)) <= 3) {
+        goto label_0;
+    }
+    edi = *(reloc.c_token);
+    rsi = "Upper bound of constraint < lower bound:  Turning of constraints.";
+    eax = 0;
+    log ();
+    *((rbx + 0x50)) = 0;
+    goto label_0;
+label_13:
+    rdi = rbx;
+    *(reloc.scanning_range_in_progress) = 1;
+    log ();
+    edi = *(reloc.c_token);
+    *(reloc.scanning_range_in_progress) = 0;
+    *((rsp + 8)) = xmm0;
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_22;
+    }
+    rsi = ";<>]";
+    eax = log ();
+    if (eax != 0) {
+        goto label_23;
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC67;
+    eax = log ();
+    if (eax == 0) {
+        goto label_24;
+    }
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_18;
+    }
+    rsi = ";<>]";
+    eax = log ();
+    if (eax != 0) {
+        goto label_18;
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC64;
+    eax = log ();
+    if (eax == 0) {
+        goto label_25;
+    }
+    *(r12) |= ebp;
+    if (ebp != 1) {
+        xmm1 = *((rsp + 8));
+        *((rbx + 0x54)) |= 1;
+        *((rbx + 0x68)) = xmm1;
+        goto label_2;
+    }
+    xmm3 = *((rsp + 8));
+    *((rbx + 0x50)) |= 1;
+    *((rbx + 0x58)) = xmm3;
+    goto label_2;
+label_17:
+    edi = *(reloc.c_token);
+    rsi = loc__LC70;
+    eax = log ();
+    if (eax != 0) {
+        goto label_26;
+    }
+    if (ebp == 1) {
+        goto label_27;
+    }
+    *((rbx + 0x54)) &= 0xfffffffd;
+    *((rbx + 0x70)) = 0;
+    goto label_3;
+label_19:
+    *((rbx + 0x50)) |= 2;
+    *((rbx + 0x60)) = xmm0;
+label_6:
+    if ((*(r12) & ebp) != 0) {
+        goto label_4;
+    }
+    goto label_0;
+label_24:
+    edi = *(reloc.c_token);
+    rsi = loc__LC70;
+    eax = log ();
+    if (eax != 0) {
+        goto label_26;
+    }
+    eax = ebp;
+    eax = ~eax;
+    *(r12) &= eax;
+    if (ebp == 1) {
+        goto label_28;
+    }
+    *((rbx + 0x54)) = 0;
+    *((rbx + 0x70)) = 0;
+label_8:
+    xmm2 = *((rsp + 8));
+    edi = *(reloc.c_token);
+    *(r13) = xmm2;
+    goto label_5;
+label_27:
+    *((rbx + 0x50)) &= 0xfffffffd;
+    *((rbx + 0x60)) = 0;
+    goto label_6;
+label_21:
+    edi = *(reloc.c_token);
+    rsi = loc__LC67;
+    eax = log ();
+    if (eax != 0) {
+        goto label_29;
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC70;
+    eax = log ();
+    if (eax == 0) {
+        goto label_7;
+    }
+label_29:
+    edi = *(reloc.c_token);
+    rsi = "no upper bound constraint allowed if not autoscaling";
+    eax = 0;
+    rax = log ();
+label_20:
+    edi = *(reloc.c_token);
+    rsi = "Upper bound of constraint < lower bound:  Turning of constraints.";
+    eax = 0;
+    eax = log ();
+    *((rbx + 0x54)) = 0;
+    goto label_0;
+label_28:
+    *((rbx + 0x50)) = 0;
+    *((rbx + 0x60)) = 0;
+    goto label_8;
+label_18:
+    edi = *(reloc.c_token);
+    rsi = "unfinished range with constraint";
+    eax = 0;
+    eax = log ();
+label_16:
+    edi = *(reloc.c_token);
+    rsi = "unfinished range";
+    eax = 0;
+    eax = log ();
+label_23:
+    edi = *(reloc.c_token);
+label_22:
+    rsi = "unfinished range";
+    eax = 0;
+    eax = log ();
+label_26:
+    edi = *(reloc.c_token);
+    rsi = "malformed range with constraint (use '<' only)";
+    eax = 0;
+    eax = log ();
+label_25:
+    edi = *(reloc.c_token);
+    rsi = "malformed range with constraint";
+    eax = 0;
+    log ();
+    __asm ("endbr64");
+    r12 = rdi;
+    rsi = loc__LC74;
+    rbx = rdx;
+    edi = *(reloc.c_token);
+    *((rsp + 0xc)) = ecx;
+    eax = log (rbx, rbp);
+    if (eax != 0) {
+        goto label_30;
+    }
+    edi = *(reloc.c_token);
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_31;
+    }
+    rsi = ";<>]";
+    eax = log ();
+    if (eax != 0) {
+        goto label_32;
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC76;
+    eax = log ();
+    if (eax == 0) {
+        goto label_33;
+    }
+label_12:
+    edi = *(reloc.c_token);
+    rsi = loc__LC76;
+    eax = log ();
+    if (eax == 0) {
+        edi = *(reloc.c_token);
+        rsi = loc__LC40;
+        eax = log ();
+        if (eax == 0) {
+            goto label_34;
+        }
+    }
+    eax = *(reloc.c_token);
+    rsi = loc__LC74;
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    eax = log ();
+    if (eax == 0) {
+        goto label_35;
+    }
+    xmm0 = *(loc..LC19);
+    __asm ("comisd xmm0, xmmword [rbp]");
+    if (eax > 0) {
+label_11:
+        *(rbp) = xmm0;
+    }
+label_10:
+    xmm0 = *(loc..LC20);
+    xmm1 = *(rbx);
+    __asm ("comisd xmm1, xmm0");
+    while (1) {
+        eax = *((rsp + 0xc));
+        return rax;
+        *(rbx) = xmm0;
+    }
+label_35:
+    rdx = rsp + 0xc;
+    ecx = 2;
+    rsi = rbx;
+    rdi = r12;
+    load_one_range ();
+    goto label_9;
+    xmm0 = *(loc..LC19);
+    __asm ("comisd xmm0, xmmword [rbp]");
+    if (eax <= 0) {
+        goto label_10;
+    }
+    goto label_11;
+label_33:
+    edi = *(reloc.c_token);
+    rsi = loc__LC40;
+    eax = log ();
+    if (eax != 0) {
+        goto label_12;
+    }
+    rdx = rsp + 0xc;
+    ecx = 1;
+    rsi = rbp;
+    rdi = r12;
+    load_one_range ();
+    goto label_9;
+    goto label_12;
+label_30:
+    *((r12 + 0x50)) = 0;
+    eax = *((rsp + 0xc));
+    return rax;
+label_34:
+    edi = *(reloc.c_token);
+    rsi = ':' or keyword 'to' expected";
+    eax = log ();
+label_32:
+    edi = *(reloc.c_token);
+label_31:
+    rsi = "starting range value or ':' or 'to' expected";
+    eax = 0;
+    log ();
+    __asm ("endbr64");
+    if (edx == 1) {
+        return rax;
+    }
+    rdi = rsi;
+    esi = 0;
+    eax = log ();
+    if (*(obj.axis_array) < eax) {
+        *(obj.axis_array) = eax;
+    }
+    return rax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.a pdg @ sym.a pdg @ sym.ax pdg @ sym.ax pdg @ sym.axi pdg @ sym.axi pdg @ sym.axis pdg @ sym.axis pdg @ sym.axis_ pdg @ sym.axis_ pdg @ sym.axis_i pdg @ sym.axis_i pdg @ sym.axis_in pdg @ sym.axis_in pdg @ sym.axis_inv pdg @ sym.axis_inv pdg @ sym.axis_inve pdg @ sym.axis_inve pdg @ sym.axis_inver pdg @ sym.axis_inver pdg @ sym.axis_invert pdg @ sym.axis_invert pdg @ sym.axis_invert_ pdg @ sym.axis_invert_ pdg @ sym.axis_invert_i pdg @ sym.axis_invert_i pdg @ sym.axis_invert_if pdg @ sym.axis_invert_if pdg @ sym.axis_invert_if_ pdg @ sym.axis_invert_if_ pdg @ sym.axis_invert_if_r pdg @ sym.axis_invert_if_r pdg @ sym.axis_invert_if_re pdg @ sym.axis_invert_if_re pdg @ sym.axis_invert_if_req pdg @ sym.axis_invert_if_req pdg @ sym.axis_invert_if_requ pdg @ sym.axis_invert_if_requ pdg @ sym.axis_invert_if_reque pdg @ sym.axis_invert_if_reque pdg @ sym.axis_invert_if_reques pdg @ sym.axis_invert_if_reques pdg @ sym.axis_invert_if_request pdg @ sym.axis_invert_if_request pdg @ sym.axis_invert_if_requeste pdg @ sym.axis_invert_if_requeste pdg @ sym.axis_invert_if_requested pdg @ sym.axis_invert_if_requested
+void sym.axis_invert_if_requested(int64_t arg1)
+{
+    double dVar1;
+    
+    if (((*(uint8_t *)(arg1 + 8) & 4) != 0) && (*(int32_t *)arg1 != 0)) {
+        dVar1 = *(double *)(arg1 + 0x18);
+        if (*(double *)(arg1 + 0x10) < dVar1) {
+            *(double *)(arg1 + 0x18) = *(double *)(arg1 + 0x10);
+            *(double *)(arg1 + 0x10) = dVar1;
+        }
+    }
+    return;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.a pdd @ sym.a pdd @ sym.ax pdd @ sym.ax pdd @ sym.axi pdd @ sym.axi pdd @ sym.axis pdd @ sym.axis pdd @ sym.axis_ pdd @ sym.axis_ pdd @ sym.axis_i pdd @ sym.axis_i pdd @ sym.axis_in pdd @ sym.axis_in pdd @ sym.axis_inv pdd @ sym.axis_inv pdd @ sym.axis_inve pdd @ sym.axis_inve pdd @ sym.axis_inver pdd @ sym.axis_inver pdd @ sym.axis_invert pdd @ sym.axis_invert pdd @ sym.axis_invert_ pdd @ sym.axis_invert_ pdd @ sym.axis_invert_i pdd @ sym.axis_invert_i pdd @ sym.axis_invert_if pdd @ sym.axis_invert_if pdd @ sym.axis_invert_if_ pdd @ sym.axis_invert_if_ pdd @ sym.axis_invert_if_r pdd @ sym.axis_invert_if_r pdd @ sym.axis_invert_if_re pdd @ sym.axis_invert_if_re pdd @ sym.axis_invert_if_req pdd @ sym.axis_invert_if_req pdd @ sym.axis_invert_if_requ pdd @ sym.axis_invert_if_requ pdd @ sym.axis_invert_if_reque pdd @ sym.axis_invert_if_reque pdd @ sym.axis_invert_if_reques pdd @ sym.axis_invert_if_reques pdd @ sym.axis_invert_if_request pdd @ sym.axis_invert_if_request pdd @ sym.axis_invert_if_requeste pdd @ sym.axis_invert_if_requeste pdd @ sym.axis_invert_if_requested pdd @ sym.axis_invert_if_requested/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/axis.o @ 0x8000550 */
+#include <stdint.h>
+ 
+int32_t axis_invert_if_requested (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    if ((*((rdi + 8)) & 4) != 0) {
+        eax = *(rdi);
+        if (eax == 0) {
+            goto label_0;
+        }
+        xmm1 = *((rdi + 0x10));
+        xmm0 = *((rdi + 0x18));
+        __asm ("comisd xmm0, xmm1");
+        if (eax <= 0) {
+            goto label_0;
+        }
+        *((rdi + 0x18)) = xmm1;
+        *((rdi + 0x10)) = xmm0;
+    }
+label_0:
+    return eax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.a pdg @ sym.a pdg @ sym.ax pdg @ sym.ax pdg @ sym.axi pdg @ sym.axi pdg @ sym.axis pdg @ sym.axis pdg @ sym.axis_ pdg @ sym.axis_ pdg @ sym.axis_i pdg @ sym.axis_i pdg @ sym.axis_in pdg @ sym.axis_in pdg @ sym.axis_ini pdg @ sym.axis_ini pdg @ sym.axis_init pdg @ sym.axis_init
+void sym.axis_init(int64_t arg1)
+{
+    uint32_t uVar1;
+    char in_SIL;
+    undefined8 uVar2;
+    undefined8 uVar3;
+    undefined8 uVar4;
+    
+    uVar1 = *(uint32_t *)(arg1 + 4);
+    *(uint32_t *)arg1 = uVar1;
+    uVar2 = _reloc..LC20;
+    uVar3 = _reloc..LC19;
+    if (in_SIL == '\0') {
+        uVar4 = *(undefined8 *)(arg1 + 0x28);
+        *(undefined8 *)(arg1 + 0x10) = *(undefined8 *)(arg1 + 0x20);
+        uVar2 = _reloc..LC20;
+    } else {
+        if ((uVar1 & 1) == 0) {
+            *(undefined8 *)(arg1 + 0x10) = *(undefined8 *)(arg1 + 0x20);
+            uVar3 = _reloc..LC19;
+            uVar2 = _reloc..LC20;
+        } else {
+            *(undefined8 *)(arg1 + 0x10) = _reloc..LC20;
+            uVar3 = _reloc..LC19;
+        }
+        _reloc..LC19 = uVar3;
+        if ((uVar1 & 2) != 0) {
+            *(undefined8 *)(arg1 + 0x40) = uVar2;
+            *(undefined8 *)(arg1 + 0x48) = uVar3;
+            *(undefined8 *)(arg1 + 0x18) = uVar3;
+            return;
+        }
+        uVar4 = *(undefined8 *)(arg1 + 0x28);
+    }
+    *(undefined8 *)(arg1 + 0x18) = uVar4;
+    *(undefined8 *)(arg1 + 0x40) = uVar2;
+    *(undefined8 *)(arg1 + 0x48) = uVar3;
+    return;
+}
+
+
+// WARNING: [r2ghidra] Failed to match type signed int for variable arg1 to Decompiler type: Unknown type identifier
+// signed
+
+char * sym.axis_name(undefined8 arg1)
+{
+    char *pcVar1;
+    
+    if ((int32_t)arg1 == 0x4d2) {
+        return (char *)reloc..LC21;
+    }
+    if ((int32_t)arg1 < 0xb) {
+        if ((int32_t)arg1 < 0) {
+            func_0x0803b2f7("primary 00 ", 1, 0xc, "", (int64_t)-(int32_t)arg1 * 0x18 + 0x8007710);
+            pcVar1 = "primary 00 ";
+        } else {
+            pcVar1 = (char *)((int64_t)(int32_t)arg1 * 0x18 + 0x8007710);
+        }
+        return pcVar1;
+    }
+    func_0x0803b2f7("primary 00 ", 1, 0xc, "", (int32_t)arg1 - 10U & 0xff);
+    return "primary 00 ";
+}
+
+
+void sym.init_sample_range(int64_t arg1, int64_t arg2)
+{
+    if ((int32_t)arg2 == 0) {
+        *(undefined8 *)0x8000b40 = *(undefined8 *)(arg1 + 0xa0);
+        *(undefined8 *)0x8000b50 = *(undefined8 *)(arg1 + 0xb0);
+    }
+    *(undefined4 *)0x8000aa8 = 0;
+    *(undefined8 *)0x8000ab0 = *(undefined8 *)(arg1 + 0x10);
+    *(undefined8 *)0x8000ab8 = *(undefined8 *)(arg1 + 0x18);
+    *(undefined8 *)0x8000ac0 = *(undefined8 *)(arg1 + 0x20);
+    *(undefined8 *)0x8000ac8 = *(undefined8 *)(arg1 + 0x28);
+    *(undefined4 *)0x8000c0c = *(undefined4 *)(arg1 + 0x16c);
+    return;
+}
+
+
+void sym.init_parallel_axis(int64_t arg1, int64_t arg2)
+{
+    uint32_t uVar1;
+    undefined8 uVar2;
+    undefined8 uVar3;
+    int64_t iVar4;
+    uint64_t uVar5;
+    undefined8 *puVar6;
+    undefined8 *puVar7;
+    undefined8 uVar8;
+    
+    *(undefined8 *)arg1 = _reloc.default_axis_state;
+    *(undefined8 *)(arg1 + 0x2a0) = *(undefined8 *)0x80076e0;
+    puVar7 = (undefined8 *)(arg1 + 8U & 0xfffffffffffffff8);
+    iVar4 = arg1 - (int64_t)puVar7;
+    uVar5 = (uint64_t)((int32_t)iVar4 + 0x2a8U >> 3);
+    puVar6 = (undefined8 *)(reloc.default_axis_state + -iVar4);
+    while (uVar5 != 0) {
+        uVar5 = uVar5 - 1;
+        *puVar7 = *puVar6;
+        puVar6 = puVar6 + 1;
+        puVar7 = puVar7 + 1;
+    }
+    uVar3 = func_0x0803b2f7(reloc..LC30);
+    *(int32_t *)(arg1 + 0x18c) = (int32_t)arg2 + 0xb;
+    *(undefined8 *)(arg1 + 0x178) = uVar3;
+    uVar1 = *(uint32_t *)(arg1 + 4);
+    *(undefined *)(arg1 + 0x130) = 1;
+    *(uint32_t *)(arg1 + 4) = uVar1 | 0xc;
+    *(uint32_t *)arg1 = uVar1 | 0xc;
+    uVar3 = _reloc..LC20;
+    if ((uVar1 & 1) == 0) {
+        *(undefined8 *)(arg1 + 0x10) = *(undefined8 *)(arg1 + 0x20);
+        uVar2 = _reloc..LC19;
+    } else {
+        *(undefined8 *)(arg1 + 0x10) = _reloc..LC20;
+        uVar2 = _reloc..LC19;
+    }
+    uVar8 = uVar2;
+    if ((uVar1 & 2) == 0) {
+        uVar8 = *(undefined8 *)(arg1 + 0x28);
+    }
+    _reloc..LC19 = uVar2;
+    *(undefined8 *)(arg1 + 0x18) = uVar8;
+    *(undefined8 *)(arg1 + 0x40) = uVar3;
+    *(undefined8 *)(arg1 + 0x48) = uVar2;
+    return;
+}
+
+
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable arg1 to Decompiler type: Unknown type identifier
+// signed
+
+void sym.extend_parallel_axis(undefined8 arg1)
+{
+    char cVar1;
+    char *pcVar2;
+    undefined in_CL;
+    char in_CH;
+    unkbyte6 in_register_0000000a;
+    
+    if ((int32_t)arg1 <= (int32_t)_reloc.num_parallel_axes) {
+        return;
+    }
+    _reloc.parallel_axis_array =
+         (int32_t *)func_0x0803b2f7(_reloc.parallel_axis_array, (int64_t)(int32_t)arg1 * 0x2a8, "");
+    if ((int32_t)_reloc.num_parallel_axes < (int32_t)arg1) {
+        pcVar2 = (char *)(int64_t)*_reloc.parallel_axis_array;
+        cVar1 = (char)*_reloc.parallel_axis_array;
+        *pcVar2 = *pcVar2 + cVar1;
+        pcVar2[2] = pcVar2[2] + in_CH;
+        *pcVar2 = *pcVar2 + cVar1;
+        *pcVar2 = *pcVar2 + cVar1;
+        *pcVar2 = *pcVar2 + cVar1;
+        *pcVar2 = *pcVar2 + cVar1;
+        *pcVar2 = *pcVar2 + cVar1;
+        *pcVar2 = *pcVar2 + cVar1;
+        *pcVar2 = *pcVar2 + cVar1;
+        *pcVar2 = *pcVar2 + cVar1;
+        *pcVar2 = *pcVar2 + cVar1;
+        *pcVar2 = *pcVar2 + cVar1;
+        *pcVar2 = *pcVar2 + cVar1;
+        *pcVar2 = *pcVar2 + cVar1;
+        *pcVar2 = *pcVar2 + cVar1;
+        *pcVar2 = *pcVar2 + cVar1;
+        *pcVar2 = *pcVar2 + cVar1;
+        *(char *)(uint64_t)_reloc.num_parallel_axes =
+             *(char *)(uint64_t)_reloc.num_parallel_axes + (char)((uint64_t)pcVar2 >> 8);
+        pcVar2 = (char *)(CONCAT62(in_register_0000000a, CONCAT11(in_CH, in_CL)) + 0x39);
+        *pcVar2 = *pcVar2 + cVar1;
+    }
+    _reloc.num_parallel_axes = (int32_t)arg1;
+    return;
+}
+
+
+undefined8 sym.bad_axis_range(int64_t arg1)
+{
+    undefined4 uVar1;
+    char cVar2;
+    uint32_t uVar3;
+    undefined4 *in_RAX;
+    
+    if (((double)(*(uint64_t *)(arg1 + 0x10) & _reloc..LC2) <= _reloc..LC32) &&
+       ((double)(_reloc..LC2 & *(uint64_t *)(arg1 + 0x18)) <= _reloc..LC32)) {
+        uVar1 = LocalDescriptorTableRegister();
+        *in_RAX = uVar1;
+        cVar2 = (char)in_RAX;
+        *(char *)in_RAX = *(char *)in_RAX + cVar2;
+        *(char *)in_RAX = *(char *)in_RAX + cVar2;
+        *(char *)in_RAX = *(char *)in_RAX + cVar2;
+        uVar3 = (uint32_t)in_RAX | 0x6df3;
+        _uVar3 = (char *)(uint64_t)uVar3;
+        cVar2 = (char)uVar3;
+        *_uVar3 = *_uVar3 + cVar2;
+        *_uVar3 = *_uVar3 + cVar2;
+        *_uVar3 = *_uVar3 + cVar2;
+        *_uVar3 = *_uVar3 + cVar2;
+    }
+    return 1;
+}
+
+
+
+
+
+
+
+
+dg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.s pdg @ sym.s pdg @ sym.se pdg @ sym.se pdg @ sym.set pdg @ sym.set pdg @ sym.setu pdg @ sym.setu pdg @ sym.setup pdg @ sym.setup pdg @ sym.setup_ pdg @ sym.setup_ pdg @ sym.setup_t pdg @ sym.setup_t pdg @ sym.setup_ti pdg @ sym.setup_ti pdg @ sym.setup_tic pdg @ sym.setup_tic pdg @ sym.setup_tics pdg @ sym.setup_ticsGhidra Decompiler Error: Deleting integrated varnode
+
+
+void sym.axis_set_scale_and_range(int64_t arg1, int64_t arg2, int64_t arg3)
+{
+    int64_t iVar1;
+    int32_t iVar2;
+    int32_t iVar3;
+    
+    iVar3 = (int32_t)arg2;
+    iVar2 = (int32_t)arg3;
+    *(int32_t *)(arg1 + 0x78) = iVar3;
+    iVar1 = *(int64_t *)(arg1 + 0xa0);
+    *(int32_t *)(arg1 + 0x7c) = iVar2;
+    *(double *)(arg1 + 0x80) = (double)(iVar2 - iVar3) / (*(double *)(arg1 + 0x18) - *(double *)(arg1 + 0x10));
+    if ((iVar1 != 0) && (*(int32_t *)(iVar1 + 0x18c) < 1)) {
+        *(int32_t *)(iVar1 + 0x78) = iVar3;
+        *(int32_t *)(iVar1 + 0x7c) = iVar2;
+        *(double *)(iVar1 + 0x80) = (double)(iVar2 - iVar3) / (*(double *)(iVar1 + 0x18) - *(double *)(iVar1 + 0x10));
+        return;
+    }
+    return;
+}
+
+
+void sym.axis_draw_2d_zeroaxis(int64_t arg1, int64_t arg2, uint32_t arg3)
+{
+    double dVar1;
+    int64_t iVar2;
+    undefined4 uVar3;
+    int64_t iVar4;
+    uint32_t uVar5;
+    int64_t iVar6;
+    int64_t iVar7;
+    double dVar8;
+    
+    iVar4 = (int64_t)(int32_t)arg2 * 0x2a8;
+    dVar8 = *(double *)(iVar4 + 0x8000010);
+    if ((dVar8 <= 0.00000000) || (dVar1 = *(double *)(iVar4 + 0x8000018), dVar1 <= 0.00000000)) {
+        if (*(char *)(iVar4 + 0x800008c) == '\0') {
+            if ((0.00000000 <= dVar8) || (dVar1 = *(double *)(iVar4 + 0x8000018), 0.00000000 <= dVar1)) {
+                iVar7 = (int64_t)(int32_t)arg2 * 0x2a8;
+                iVar6 = (int64_t)(int32_t)(uint32_t)arg1 * 0x2a8;
+                iVar2 = *(int64_t *)(iVar6 + 0x8000298);
+                dVar8 = (0.00000000 - *(double *)(iVar7 + 0x8000010)) * *(double *)(iVar7 + 0x8000080) +
+                        (double)*(int32_t *)(iVar7 + 0x8000078) + _reloc..LC10;
+                *(int32_t *)(iVar4 + 0x8000088) = (int32_t)dVar8;
+                if (iVar2 == 0) {
+                    return;
+                }
+                func_0x0803b2f7(dVar8, (double)*(int32_t *)(iVar7 + 0x8000078));
+                uVar5 = (uint32_t)arg1 & 0xfffffffb;
+                if (uVar5 != 2) {
+                    if (uVar5 != 1) {
+                        return;
+                    }
+                    (**(code **)(_reloc.term + 0x58))
+                              (*(undefined4 *)(iVar7 + 0x8000088), *(undefined4 *)(iVar6 + 0x8000078));
+    // WARNING: Could not recover jumptable at 0x08001ca7. Too many branches
+    // WARNING: Treating indirect jump as call
+                    (**(code **)(_reloc.term + 0x60))
+                              (*(undefined4 *)(iVar7 + 0x8000088), *(undefined4 *)(iVar6 + 0x800007c));
+                    return;
+                }
+                (**(code **)(_reloc.term + 0x58))
+                          (*(undefined4 *)(iVar6 + 0x8000078), *(undefined4 *)(iVar7 + 0x8000088));
+    // WARNING: Could not recover jumptable at 0x08001cdf. Too many branches
+    // WARNING: Treating indirect jump as call
+                (**(code **)(_reloc.term + 0x60))
+                          (*(undefined4 *)(iVar6 + 0x800007c), *(undefined4 *)(iVar7 + 0x8000088));
+                return;
+            }
+        } else {
+            dVar1 = *(double *)(iVar4 + 0x8000018);
+        }
+    }
+    if (dVar8 <= dVar1) {
+        uVar3 = *(undefined4 *)(iVar4 + 0x8000078);
+    } else {
+        uVar3 = *(undefined4 *)(iVar4 + 0x800007c);
+    }
+    *(undefined4 *)(iVar4 + 0x8000088) = uVar3;
+    return;
+}
+
+
+uint64_t sym.get_num_or_time(uint32_t arg1)
+{
+    uint32_t uVar1;
+    int32_t iVar2;
+    uint64_t uVar3;
+    uint64_t uVar4;
+    uint32_t in_ECX;
+    uint32_t uVar5;
+    double *pdVar6;
+    uint32_t *extraout_RDX;
+    double *arg2;
+    undefined8 *in_RSI;
+    char *pcVar7;
+    undefined4 in_RDI;
+    int64_t in_FS_OFFSET;
+    undefined8 extraout_XMM0_Qa;
+    undefined8 uVar8;
+    int64_t arg7;
+    int64_t arg7_00;
+    undefined8 in_XMM1_Qa;
+    undefined8 in_XMM2_Qa;
+    undefined8 in_XMM3_Qa;
+    undefined8 in_XMM4_Qa;
+    undefined8 in_XMM5_Qa;
+    undefined8 in_XMM6_Qa;
+    undefined8 in_XMM7_Qa;
+    undefined auVar9 [12];
+    double dStack104;
+    double dStack96;
+    undefined auStack88 [56];
+    int64_t iStack32;
+    
+    uVar4 = CONCAT44(in_RDI, arg1);
+    iStack32 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    dStack104 = 0.00000000;
+    if ((uVar4 == 0) || (*(int32_t *)(uVar4 + 0x16c) != 1)) {
+code_r0x08001d21:
+        func_0x0803b2f7();
+    } else {
+        iVar2 = func_0x0803b2f7();
+        if (iVar2 == 0) {
+            uVar4 = (uint64_t)_reloc.c_token;
+            iVar2 = func_0x0803b2f7();
+            if (iVar2 != 3) goto code_r0x08001d21;
+        }
+        uVar4 = func_0x0803b2f7();
+        if (uVar4 != 0) {
+            pdVar6 = &dStack96;
+            in_RSI = _reloc.timefmt;
+            iVar2 = func_0x0803b2f7(uVar4, _reloc.timefmt, auStack88, pdVar6, &dStack104);
+            in_ECX = (uint32_t)pdVar6;
+            if (iVar2 == 1) {
+                dStack104 = (double)func_0x0803b2f7(auStack88);
+                dStack104 = dStack104 + dStack96;
+            }
+        }
+        func_0x0803b2f7();
+    }
+    if (iStack32 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return 0;
+    }
+    func_0x0803b2f7();
+    uVar5 = in_ECX;
+    iVar2 = func_0x0803b2f7(_reloc.c_token, reloc..LC64);
+    if (iVar2 == 0) {
+        reloc.scanning_range_in_progress = (code)0x1;
+        uVar8 = func_0x0803b2f7();
+        reloc.scanning_range_in_progress = (code)0x0;
+        if (((int32_t)_reloc.num_tokens <= (int32_t)_reloc.c_token) ||
+           (iVar2 = func_0x0803b2f7(_reloc.c_token, ""), iVar2 != 0)) goto code_r0x08002192;
+        iVar2 = func_0x0803b2f7(_reloc.c_token, 0x8006cc8);
+        if (iVar2 == 0) {
+            iVar2 = func_0x0803b2f7(_reloc.c_token, 0x8006cca);
+            if (iVar2 == 0) {
+                *extraout_RDX = *extraout_RDX & ~in_ECX;
+                if (in_ECX == 1) {
+                    *(undefined4 *)(uVar4 + 0x50) = 0;
+                    *(undefined8 *)(uVar4 + 0x60) = 0;
+                } else {
+                    *(undefined4 *)(uVar4 + 0x54) = 0;
+                    *(undefined8 *)(uVar4 + 0x70) = 0;
+                }
+                uVar1 = _reloc.c_token;
+                *in_RSI = uVar8;
+                in_XMM2_Qa = uVar8;
+                goto code_r0x08001e17;
+            }
+            goto code_r0x080021a0;
+        }
+        _reloc.c_token = _reloc.c_token + 1;
+        if (((int32_t)_reloc.num_tokens <= (int32_t)_reloc.c_token) ||
+           (iVar2 = func_0x0803b2f7(_reloc.c_token, ""), iVar2 != 0)) {
+code_r0x08002164:
+            func_0x0803b2f7(_reloc.c_token, "");
+            goto code_r0x08002178;
+        }
+        iVar2 = func_0x0803b2f7(_reloc.c_token, reloc..LC64);
+        if (iVar2 != 0) {
+            *extraout_RDX = *extraout_RDX | in_ECX;
+            if (in_ECX == 1) {
+                *(uint32_t *)(uVar4 + 0x50) = *(uint32_t *)(uVar4 + 0x50) | 1;
+                *(undefined8 *)(uVar4 + 0x58) = uVar8;
+            } else {
+                *(uint32_t *)(uVar4 + 0x54) = *(uint32_t *)(uVar4 + 0x54) | 1;
+                *(undefined8 *)(uVar4 + 0x68) = uVar8;
+                in_XMM1_Qa = uVar8;
+                uVar8 = in_XMM3_Qa;
+            }
+            goto code_r0x08001e08;
+        }
+    } else {
+        *extraout_RDX = *extraout_RDX | in_ECX;
+        uVar8 = in_XMM3_Qa;
+        if (in_ECX == 1) {
+            *(uint32_t *)(uVar4 + 0x50) = *(uint32_t *)(uVar4 + 0x50) & 0xfffffffe;
+            *(undefined8 *)(uVar4 + 0x58) = 0;
+        } else {
+            *(uint32_t *)(uVar4 + 0x54) = *(uint32_t *)(uVar4 + 0x54) & 0xfffffffe;
+            *(undefined8 *)(uVar4 + 0x68) = 0;
+        }
+code_r0x08001e08:
+        uVar1 = _reloc.c_token + 1;
+        in_XMM3_Qa = uVar8;
+        _reloc.c_token = uVar1;
+code_r0x08001e17:
+        if ((*extraout_RDX & in_ECX) == 0) {
+            if ((int32_t)_reloc.num_tokens <= (int32_t)uVar1) {
+                return (uint64_t)_reloc.num_tokens;
+            }
+            uVar3 = func_0x0803b2f7(uVar1, "");
+            if (((int32_t)uVar3 == 0) &&
+               ((iVar2 = func_0x0803b2f7(_reloc.c_token, 0x8006cc8), iVar2 != 0 ||
+                (uVar3 = func_0x0803b2f7(_reloc.c_token, 0x8006cca), (int32_t)uVar3 != 0)))) {
+                func_0x0803b2f7(_reloc.c_token, "no upper bound constraint allowed if not autoscaling");
+                goto code_r0x08002128;
+            }
+            if ((*extraout_RDX & in_ECX) == 0) {
+                return uVar3;
+            }
+            if (in_ECX == 1) goto code_r0x08001f0b;
+code_r0x08001eac:
+            if (*(int32_t *)(uVar4 + 0x54) != 3) {
+                return uVar3;
+            }
+            if (*(double *)(uVar4 + 0x68) < *(double *)(uVar4 + 0x70) ||
+                *(double *)(uVar4 + 0x68) == *(double *)(uVar4 + 0x70)) {
+                return uVar3;
+            }
+code_r0x08002128:
+            uVar3 = func_0x0803b2f7(_reloc.c_token, "Upper bound of constraint < lower bound:  Turning of constraints.")
+            ;
+            *(undefined4 *)(uVar4 + 0x54) = 0;
+            return uVar3;
+        }
+        if (((int32_t)uVar1 < (int32_t)_reloc.num_tokens) && (iVar2 = func_0x0803b2f7(uVar1, ""), iVar2 == 0)) {
+            iVar2 = func_0x0803b2f7(_reloc.c_token, 0x8006cc8);
+            if (iVar2 == 0) {
+                uVar3 = func_0x0803b2f7(_reloc.c_token, 0x8006cca);
+                if ((int32_t)uVar3 != 0) goto code_r0x080021a0;
+                if (in_ECX != 1) {
+                    *(uint32_t *)(uVar4 + 0x54) = *(uint32_t *)(uVar4 + 0x54) & 0xfffffffd;
+                    *(undefined8 *)(uVar4 + 0x70) = 0;
+code_r0x08001ea6:
+                    if ((*extraout_RDX & in_ECX) == 0) {
+                        return uVar3;
+                    }
+                    goto code_r0x08001eac;
+                }
+                *(uint32_t *)(uVar4 + 0x50) = *(uint32_t *)(uVar4 + 0x50) & 0xfffffffd;
+                *(undefined8 *)(uVar4 + 0x60) = 0;
+            } else {
+                _reloc.c_token = _reloc.c_token + 1;
+                if (((int32_t)_reloc.num_tokens <= (int32_t)_reloc.c_token) ||
+                   (iVar2 = func_0x0803b2f7(_reloc.c_token, ""), iVar2 != 0)) goto code_r0x08002164;
+                uVar3 = func_0x0803b2f7(uVar4);
+                if (in_ECX != 1) {
+                    *(uint32_t *)(uVar4 + 0x54) = *(uint32_t *)(uVar4 + 0x54) | 2;
+                    *(undefined8 *)(uVar4 + 0x70) = extraout_XMM0_Qa;
+                    goto code_r0x08001ea6;
+                }
+                *(uint32_t *)(uVar4 + 0x50) = *(uint32_t *)(uVar4 + 0x50) | 2;
+                *(undefined8 *)(uVar4 + 0x60) = extraout_XMM0_Qa;
+            }
+            if ((*extraout_RDX & in_ECX) == 0) {
+                return uVar3;
+            }
+code_r0x08001f0b:
+            if ((*(int32_t *)(uVar4 + 0x50) == 3) &&
+               (*(double *)(uVar4 + 0x60) <= *(double *)(uVar4 + 0x58) &&
+                *(double *)(uVar4 + 0x58) != *(double *)(uVar4 + 0x60))) {
+                uVar3 = func_0x0803b2f7(_reloc.c_token, 
+                                        "Upper bound of constraint < lower bound:  Turning of constraints.");
+                *(undefined4 *)(uVar4 + 0x50) = 0;
+            }
+            return uVar3;
+        }
+code_r0x08002178:
+        func_0x0803b2f7(_reloc.c_token, "");
+code_r0x08002192:
+        func_0x0803b2f7(_reloc.c_token, "");
+code_r0x080021a0:
+        func_0x0803b2f7(_reloc.c_token, "malformed range with constraint (use \'<\' only)");
+    }
+    uVar4 = (uint64_t)_reloc.c_token;
+    pcVar7 = "";
+    func_0x0803b2f7();
+    iVar2 = func_0x0803b2f7(_reloc.c_token, 0x8006ccc);
+    if (iVar2 != 0) {
+        *(undefined8 *)(uVar4 + 0x50) = 0;
+        return (uint64_t)uVar5;
+    }
+    if (((int32_t)_reloc.num_tokens <= (int32_t)_reloc.c_token) ||
+       (iVar2 = func_0x0803b2f7(_reloc.c_token, ""), iVar2 != 0)) {
+code_r0x08002366:
+        pcVar7 = "starting range value or \':\' or \'to\' expected";
+        auVar9 = func_0x0803b2f7(_reloc.c_token, "starting range value or \':\' or \'to\' expected");
+        if (SUB124(auVar9 >> 0x40, 0) == 1) {
+            return SUB128(auVar9, 0);
+        }
+        uVar4 = func_0x0803b2f7(pcVar7, 0);
+        if (_segment.ehdr < (int32_t)uVar4) {
+            _segment.ehdr = (int32_t)uVar4;
+        }
+        return uVar4;
+    }
+    iVar2 = func_0x0803b2f7(_reloc.c_token, 0x8006cce);
+    if ((iVar2 == 0) && (iVar2 = func_0x0803b2f7(_reloc.c_token, reloc..LC40), iVar2 == 0)) {
+        sym.load_one_range(arg7_00, in_XMM1_Qa, in_XMM2_Qa, in_XMM3_Qa, in_XMM4_Qa, in_XMM5_Qa, in_XMM6_Qa, in_XMM7_Qa, 
+                           uVar4, (int64_t)pcVar7, (int32_t)*(BADSPACEBASE **)0x20 - 0xbc, 1);
+    }
+    iVar2 = func_0x0803b2f7(_reloc.c_token, 0x8006cce);
+    if ((iVar2 == 0) && (iVar2 = func_0x0803b2f7(_reloc.c_token, reloc..LC40), iVar2 == 0)) {
+        func_0x0803b2f7(_reloc.c_token, "");
+        goto code_r0x08002366;
+    }
+    _reloc.c_token = _reloc.c_token + 1;
+    iVar2 = func_0x0803b2f7(_reloc.c_token, 0x8006ccc);
+    if (iVar2 == 0) {
+        sym.load_one_range(arg7, in_XMM1_Qa, in_XMM2_Qa, in_XMM3_Qa, in_XMM4_Qa, in_XMM5_Qa, in_XMM6_Qa, in_XMM7_Qa, 
+                           uVar4, (int64_t)arg2, (int32_t)*(BADSPACEBASE **)0x20 - 0xbc, 2);
+        if (_reloc..LC19 < *(double *)pcVar7 || _reloc..LC19 == *(double *)pcVar7) goto code_r0x080022a6;
+    } else {
+        if (_reloc..LC19 < *(double *)pcVar7 || _reloc..LC19 == *(double *)pcVar7) goto code_r0x080022a6;
+    }
+    *(double *)pcVar7 = _reloc..LC19;
+code_r0x080022a6:
+    if (_reloc..LC20 < *arg2) {
+        *arg2 = _reloc..LC20;
+    }
+    return (uint64_t)uVar5;
+}
+
+
+void sym.save_writeback_all_axes(void)
+{
+    uint8_t *puVar1;
+    
+    puVar1 = (uint8_t *)0x8000008;
+    do {
+        if ((*puVar1 & 1) != 0) {
+            *(undefined8 *)(puVar1 + 0x28) = *(undefined8 *)(puVar1 + 8);
+            *(undefined8 *)(puVar1 + 0x30) = *(undefined8 *)(puVar1 + 0x10);
+        }
+        puVar1 = puVar1 + 0x2a8;
+    } while (puVar1 != (uint8_t *)0x8001d40);
+    return;
+}
+
+
+void sym.check_axis_reversed(int64_t arg1)
+{
+    int64_t iVar1;
+    
+    iVar1 = (int64_t)(int32_t)arg1 * 0x2a8;
+    if ((*(uint8_t *)(iVar1 + 0x8000000) & 3) == 0) {
+        if (*(double *)(iVar1 + 0x8000028) < *(double *)(iVar1 + 0x8000020)) {
+            *(double *)(iVar1 + 0x8000010) = *(double *)(iVar1 + 0x8000020);
+            *(double *)(iVar1 + 0x8000018) = *(double *)(iVar1 + 0x8000028);
+        }
+    }
+    return;
+}
+
+
+code sym.some_grid_selected(void)
+{
+    code *pcVar1;
+    code cVar2;
+    
+    pcVar1 = (code *)0x8000140;
+    while( true ) {
+        if (*pcVar1 != (code)0x0) {
+            return *pcVar1;
+        }
+        if (pcVar1[1] != (code)0x0) break;
+        pcVar1 = pcVar1 + 0x2a8;
+        if (pcVar1 == (code *)0x8001680) {
+            cVar2 = (code)0x1;
+            if (_reloc.polar_grid_angle <= _reloc..LC25) {
+                cVar2 = reloc.grid_spiderweb;
+            }
+            return cVar2;
+        }
+    }
+    return pcVar1[1];
+}
+
+
+void sym.save_autoscaled_ranges(int64_t arg1, int64_t arg2)
+{
+    if (arg1 != 0) {
+        ""._8_8_ = *(undefined8 *)(arg1 + 0x10);
+        ""._0_8_ = *(undefined8 *)(arg1 + 0x18);
+    }
+    if (arg2 != 0) {
+        _obj.save_autoscaled_ymin = *(undefined8 *)(arg2 + 0x10);
+        _obj.save_autoscaled_ymax = *(undefined8 *)(arg2 + 0x18);
+    }
+    return;
+}
+
+
+void sym.restore_autoscaled_ranges(int64_t arg1, int64_t arg2)
+{
+    if (arg1 != 0) {
+        *(undefined8 *)(arg1 + 0x10) = ""._8_8_;
+        *(undefined8 *)(arg1 + 0x18) = ""._0_8_;
+    }
+    if (arg2 != 0) {
+        *(undefined8 *)(arg2 + 0x10) = _obj.save_autoscaled_ymin;
+        *(undefined8 *)(arg2 + 0x18) = _obj.save_autoscaled_ymax;
+    }
+    return;
+}
+
+
+void sym.get_position_default(int64_t arg1, int64_t arg2, int64_t arg3)
+{
+    undefined4 uVar1;
+    int32_t iVar2;
+    undefined4 *unaff_RBX;
+    uint64_t unaff_RBP;
+    undefined4 *puVar3;
+    undefined *unaff_R12;
+    undefined *unaff_R13;
+    int64_t in_FS_OFFSET;
+    undefined8 extraout_XMM0_Qa;
+    undefined8 extraout_XMM0_Qa_00;
+    undefined8 extraout_XMM0_Qa_01;
+    
+    do {
+        *(undefined **)((int64_t)*(undefined **)0x20 + -8) = unaff_R13;
+        *(undefined **)((int64_t)*(undefined **)0x20 + -0x10) = unaff_R12;
+        *(uint64_t *)((int64_t)*(undefined **)0x20 + -0x18) = unaff_RBP;
+        unaff_RBP = arg3 & 0xffffffff;
+        *(undefined4 **)((int64_t)*(undefined **)0x20 + -0x20) = unaff_RBX;
+        unaff_R13 = (undefined *)((int64_t)*(undefined **)0x20 + -0x38);
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x30) = *(undefined8 *)(in_FS_OFFSET + 0x28);
+        unaff_R12 = (undefined *)((int64_t)*(undefined **)0x20 + -0x34);
+        *(int32_t *)((int64_t)*(undefined **)0x20 + -0x34) = (int32_t)arg2;
+        *(undefined8 *)(arg1 + 0x20) = 0;
+    // WARNING: Store size is inaccurate
+        *(undefined *)arg1 = (undefined  [16])0x0;
+    // WARNING: Store size is inaccurate
+        *(undefined *)(arg1 + 0x10) = (undefined  [16])0x0;
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x40) = 0x800258d;
+        sym.get_position_type
+                  (unaff_R12, (undefined *)((int64_t)*(undefined **)0x20 + -0x38), 
+                   *(undefined *)((int64_t)*(undefined **)0x20 + -0x40));
+        *(undefined4 *)arg1 = *(undefined4 *)((int64_t)*(undefined **)0x20 + -0x34);
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x40) = 0x80025b9;
+        func_0x0803b2f7();
+        puVar3 = (undefined4 *)(uint64_t)_reloc.c_token;
+        *(undefined8 *)(arg1 + 0x10) = extraout_XMM0_Qa;
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x40) = 0x80025d0;
+        iVar2 = func_0x0803b2f7();
+        if (iVar2 == 0) {
+            uVar1 = *(undefined4 *)((int64_t)*(undefined **)0x20 + -0x34);
+            *(undefined8 *)(arg1 + 0x18) = 0;
+            *(undefined4 *)(arg1 + 4) = uVar1;
+        } else {
+            _reloc.c_token = _reloc.c_token + 1;
+            *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x40) = 0x8002682;
+            sym.get_position_type
+                      (unaff_R12, (undefined *)((int64_t)*(undefined **)0x20 + -0x38), 
+                       *(undefined *)((int64_t)*(undefined **)0x20 + -0x40));
+            puVar3 = (undefined4 *)0x0;
+            *(undefined4 *)(arg1 + 4) = *(undefined4 *)((int64_t)*(undefined **)0x20 + -0x34);
+            if (*(int32_t *)((int64_t)*(undefined **)0x20 + -0x38) != -2) {
+                puVar3 = (undefined4 *)
+                         ((int64_t)(*(int32_t *)((int64_t)*(undefined **)0x20 + -0x38) + 1) * 0x2a8 + 0x8000000);
+            }
+            *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x40) = 0x80026af;
+            func_0x0803b2f7();
+            *(undefined8 *)(arg1 + 0x18) = extraout_XMM0_Qa_01;
+        }
+        if ((int32_t)unaff_RBP == 2) {
+code_r0x080025ec:
+            uVar1 = *(undefined4 *)((int64_t)*(undefined **)0x20 + -0x34);
+            *(undefined8 *)(arg1 + 0x20) = 0;
+            *(undefined4 *)(arg1 + 8) = uVar1;
+        } else {
+            puVar3 = (undefined4 *)(uint64_t)_reloc.c_token;
+            *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x40) = 0x8002632;
+            iVar2 = func_0x0803b2f7();
+            if (iVar2 == 0) goto code_r0x080025ec;
+            _reloc.c_token = _reloc.c_token + 1;
+            *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x40) = 0x8002648;
+            sym.get_position_type
+                      (unaff_R12, (undefined *)((int64_t)*(undefined **)0x20 + -0x38), 
+                       *(undefined *)((int64_t)*(undefined **)0x20 + -0x40));
+            if (*(int32_t *)((int64_t)*(undefined **)0x20 + -0x34) == 1) {
+                *(undefined4 *)((int64_t)*(undefined **)0x20 + -0x34) = 0;
+                iVar2 = 0;
+                *(undefined4 *)((int64_t)*(undefined **)0x20 + -0x38) = 0;
+                *(undefined4 *)(arg1 + 8) = 0;
+code_r0x080026d8:
+                puVar3 = (undefined4 *)((int64_t)iVar2 * 0x2a8 + 0x8000000);
+            } else {
+                iVar2 = *(int32_t *)((int64_t)*(undefined **)0x20 + -0x38);
+                *(int32_t *)(arg1 + 8) = *(int32_t *)((int64_t)*(undefined **)0x20 + -0x34);
+                puVar3 = (undefined4 *)0x0;
+                if (iVar2 != -2) goto code_r0x080026d8;
+            }
+            *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x40) = 0x8002663;
+            func_0x0803b2f7();
+            *(undefined8 *)(arg1 + 0x20) = extraout_XMM0_Qa_00;
+        }
+        if (*(int64_t *)((int64_t)*(undefined **)0x20 + -0x30) == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return;
+        }
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x40) = 0x80026f6;
+        func_0x0803b2f7();
+        arg3 = 3;
+        arg2 = 0;
+        unaff_RBX = (undefined4 *)arg1;
+        *(undefined **)0x20 = (BADSPACEBASE *)((int64_t)*(undefined **)0x20 + -0x38);
+        arg1 = (int64_t)puVar3;
+    } while( true );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+dd @  dd @  dd @ s dd @ s dd @ sy dd @ sy dd @ sym dd @ sym dd @ sym. dd @ sym. dd @ sym.e dd @ sym.e dd @ sym.ev dd @ sym.ev dd @ sym.eva dd @ sym.eva dd @ sym.eval dd @ sym.eval dd @ sym.eval_ dd @ sym.eval_ dd @ sym.eval_l dd @ sym.eval_l dd @ sym.eval_li dd @ sym.eval_li dd @ sym.eval_lin dd @ sym.eval_lin dd @ sym.eval_link dd @ sym.eval_link dd @ sym.eval_link_ dd @ sym.eval_link_ dd @ sym.eval_link_f dd @ sym.eval_link_f dd @ sym.eval_link_fu dd @ sym.eval_link_fu dd @ sym.eval_link_fun dd @ sym.eval_link_fun dd @ sym.eval_link_func dd @ sym.eval_link_func dd @ sym.eval_link_funct dd @ sym.eval_link_funct dd @ sym.eval_link_functi dd @ sym.eval_link_functi dd @ sym.eval_link_functio dd @ sym.eval_link_functio dd @ sym.eval_link_function dd @ sym.eval_link_functionopendir /proc/x/fd: No such file or directory
+WARNING: r_list_purge: assertion 'list' failed (line 67)
+
+
+
+
+
+
+
+

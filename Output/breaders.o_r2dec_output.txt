@@ -1,0 +1,48 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/breaders.o @ 0x8000040 */
+#include <stdint.h>
+ 
+uint64_t edf_findInHeader (int64_t arg2) {
+    rsi = arg2;
+    /* [01] -r-x section size 1810 named .text */
+    rax = strstr (rbp);
+    r12 = rax;
+    if (rax == 0) {
+        goto label_0;
+    }
+    rdi = rbp;
+    strstr ();
+    esi = 0x3d;
+    rdi = r12 + rax;
+    strstr ();
+    r12 = rax + 1;
+    rax = strstr ();
+    rdx = *(rax);
+    while ((*((rdx + rax*2 + 1)) & 0x20) != 0) {
+        r12++;
+        eax = *(r12);
+    }
+label_0:
+    rax = r12;
+    return rax;
+}
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/breaders.o @ 0x8000730 */
+#include <stdint.h>
+ 
+int32_t df_read_pixmap (void) {
+    __asm ("endbr64");
+    eax = 0;
+    edi = 0xffffffff;
+    rsi = "This copy of gnuplot cannot read png/gif/jpeg images";
+    eax = strstr ();
+    eax = 0;
+    return eax;
+}
+
+

@@ -1,0 +1,3240 @@
+void sym.auto_filetype_function(void)
+{
+    char in_AL;
+    unkbyte7 in_RAX;
+    
+    // [01] -r-x section size 42779 named .text
+    *(char *)CONCAT71(in_RAX, in_AL) = *(char *)CONCAT71(in_RAX, in_AL) + in_AL;
+    *(char *)CONCAT71(in_RAX, in_AL) = *(char *)CONCAT71(in_RAX, in_AL) + in_AL;
+    return;
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+
+void sym.gpbin_filetype_function(void)
+{
+    char cVar1;
+    uint32_t uVar2;
+    int32_t *in_RAX;
+    
+    uVar2 = (int32_t)in_RAX + *in_RAX;
+    _uVar2 = (char *)(uint64_t)uVar2;
+    cVar1 = (char)uVar2;
+    *_uVar2 = *_uVar2 + cVar1;
+    *_uVar2 = *_uVar2 + cVar1;
+    *_uVar2 = *_uVar2 + cVar1;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+void sym.raw_filetype_function(void)
+{
+    segment.ehdr = (code)0x1;
+    return;
+}
+
+
+void sym.expand_df_column(int64_t arg1)
+{
+    undefined8 *puVar1;
+    undefined8 *puVar2;
+    undefined8 *puVar3;
+    uint32_t uVar4;
+    
+    uVar4 = (uint32_t)arg1;
+    _str.auto = func_0x0808b4e1(_str.auto, (int64_t)(int32_t)uVar4 << 5, str.datafile_column);
+    if ((int32_t)_obj.df_max_cols < (int32_t)uVar4) {
+        puVar1 = (undefined8 *)
+                 (_str.auto + ((int64_t)(int32_t)_obj.df_max_cols + 1 + (uint64_t)(~_obj.df_max_cols + uVar4)) * 0x20);
+        puVar2 = (undefined8 *)((int64_t)(int32_t)_obj.df_max_cols * 0x20 + _str.auto);
+        do {
+            *puVar2 = 0;
+            puVar3 = puVar2 + 4;
+            puVar2[3] = 0;
+            puVar2[2] = 0;
+            puVar2 = puVar3;
+            _obj.df_max_cols = uVar4;
+        } while (puVar3 != puVar1);
+    }
+    return;
+}
+
+
+void sym.clear_binary_records(int64_t arg1)
+{
+    int64_t iVar1;
+    int64_t *piVar2;
+    int32_t iVar3;
+    
+    iVar1 = _reloc.df_bin_record_default;
+    if ((int32_t)arg1 == 0) {
+        iVar1 = _reloc.df_bin_record;
+    }
+    if (0 < _segment.ehdr) {
+        piVar2 = (int64_t *)(iVar1 + 0xf0);
+        iVar3 = 0;
+        do {
+            if (*piVar2 != 0) {
+                func_0x0808b4e1();
+                *piVar2 = 0;
+            }
+            iVar3 = iVar3 + 1;
+            piVar2 = piVar2 + 0x1f;
+        } while (iVar3 < _segment.ehdr);
+    }
+    _segment.ehdr = 0;
+    return;
+}
+
+
+void sym.initialize_use_spec(void)
+{
+    undefined4 *puVar1;
+    int64_t iVar2;
+    
+    _segment.ehdr = 0;
+    iVar2 = 1;
+    puVar1 = (undefined4 *)segment.ehdr;
+    do {
+        *puVar1 = (int32_t)iVar2;
+        puVar1[1] = 0;
+        if (*(int64_t *)(puVar1 + 2) != 0) {
+            func_0x0808b4e1();
+            *(undefined8 *)(puVar1 + 2) = 0;
+        }
+        *(undefined4 *)(iVar2 * 4 + 0x7fffffc) = 0xfffffffe;
+        iVar2 = iVar2 + 1;
+        puVar1[4] = 0xffffffff;
+        puVar1 = puVar1 + 6;
+    } while (iVar2 != 0xf);
+    return;
+}
+
+
+// WARNING: Removing unreachable block (ram,0x080007ae)
+
+int32_t sym.plot_ticlabel_using(int64_t arg1)
+{
+    uint8_t *puVar1;
+    uint8_t uVar2;
+    int32_t iVar3;
+    uint32_t uVar4;
+    int64_t iVar5;
+    code *pcVar6;
+    int64_t iVar7;
+    int64_t *piVar8;
+    undefined8 *in_RCX;
+    int32_t iVar9;
+    undefined8 *puVar10;
+    uint16_t uVar11;
+    uint64_t unaff_RBP;
+    code *pcVar12;
+    undefined8 unaff_R12;
+    uint8_t uVar13;
+    uint64_t uVar14;
+    uint8_t *puVar15;
+    uint8_t *unaff_R15;
+    uint8_t *puVar16;
+    int64_t in_FS_OFFSET;
+    bool bVar17;
+    bool bVar18;
+    undefined8 uVar19;
+    uint8_t *puStack96;
+    int64_t iStack88;
+    undefined8 *puStack72;
+    uint64_t uStack64;
+    undefined8 uStack56;
+    
+    puVar10 = (undefined8 *)(arg1 & 0xffffffff);
+    _reloc.c_token = _reloc.c_token + 1;
+    iVar3 = func_0x0808b4e1(_reloc.c_token, reloc.df_bin_record);
+    if (iVar3 == 0) {
+        func_0x0808b4e1(_reloc.c_token, reloc..LC3);
+    } else {
+        _reloc.c_token = _reloc.c_token + 1;
+        iVar3 = func_0x0808b4e1();
+        if ((iVar3 == 0) && (iVar3 = func_0x0808b4e1(), iVar3 != 1)) {
+            iVar3 = "\x01"._0_4_ + _segment.ehdr;
+            uVar19 = func_0x0808b4e1();
+            _obj.fast_columns = 0;
+            unaff_RBP = 1;
+            *(undefined8 *)((int64_t)iVar3 * 0x18 + 0x8000008) = uVar19;
+        } else {
+            uVar4 = func_0x0808b4e1();
+            unaff_R12 = 0x8000000;
+            unaff_RBP = (uint64_t)uVar4;
+            *(undefined8 *)((int64_t)("\x01"._0_4_ + _segment.ehdr) * 0x18 + 0x8000008) = 0;
+            if ((int32_t)uVar4 < 1) goto code_r0x08000325;
+        }
+        unaff_R12 = 0x8000000;
+        iVar3 = func_0x0808b4e1(_reloc.c_token, reloc..LC5);
+        if (iVar3 != 0) {
+            _reloc.c_token = _reloc.c_token + 1;
+            iVar9 = _segment.ehdr + "\x01"._0_4_;
+            "\x01"._0_4_ = "\x01"._0_4_ + 1;
+            iVar3 = "\x01"._0_4_;
+            iVar5 = (int64_t)iVar9 * 0x18;
+            *(int32_t *)(iVar5 + 0x8000004) = (int32_t)puVar10;
+            *(int32_t *)(iVar5 + 0x8000000) = (int32_t)unaff_RBP;
+            return iVar3;
+        }
+    }
+    func_0x0808b4e1(_reloc.c_token, "");
+code_r0x08000325:
+    puVar15 = (uint8_t *)(uint64_t)_reloc.c_token;
+    func_0x0808b4e1(puVar15, "ticlabels must come from a real column");
+    iStack88 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack72 = puVar10;
+    uStack64 = unaff_RBP;
+    uStack56 = unaff_R12;
+    iVar5 = func_0x0808b4e1();
+    uVar13 = puVar15[iVar5 + -1];
+    if ((uVar13 == 0xd) || (uVar13 == 10)) {
+        puVar15[iVar5 + -1] = 0;
+    }
+    pcVar6 = segment.ehdr;
+    do {
+        *(undefined8 *)pcVar6 = 0;
+        pcVar6 = (code *)((int64_t)pcVar6 + 8);
+    } while (pcVar6 != sym.raw_filetype_function);
+    _obj.df_no_cols = 0;
+    iVar3 = 0;
+    if (*puVar15 == 0) goto code_r0x080005f0;
+    puVar10 = (undefined8 *)0x8000150;
+code_r0x080003c0:
+    if (_obj.df_max_cols <= iVar3 + 2) {
+        uVar4 = _obj.df_max_cols * 2;
+        if (_obj.df_max_cols < 0x14) {
+            uVar4 = _obj.df_max_cols + 0x14;
+        }
+        sym.expand_df_column((uint64_t)uVar4);
+        iVar3 = _obj.df_no_cols;
+    }
+    pcVar6 = segment.ehdr;
+    pcVar12 = segment.ehdr;
+    in_RCX = (undefined8 *)((int64_t)iVar3 * 0x20 + _str.auto);
+    in_RCX[2] = puVar15;
+    do {
+        while ((*(int32_t *)pcVar6 + -1 == iVar3 &&
+               (iVar9 = *(int32_t *)((int64_t)pcVar6 + 4), *(uint8_t **)pcVar12 = puVar15, iVar9 == 1))) {
+            pcVar6 = (code *)((int64_t)pcVar6 + 0x18);
+            *(undefined4 *)(in_RCX + 1) = 1;
+            pcVar12 = (code *)((int64_t)pcVar12 + 8);
+            if (puVar10 == (undefined8 *)pcVar6) goto code_r0x08000448;
+        }
+        pcVar6 = (code *)((int64_t)pcVar6 + 0x18);
+        pcVar12 = (code *)((int64_t)pcVar12 + 8);
+    } while (puVar10 != (undefined8 *)pcVar6);
+code_r0x08000448:
+    unaff_RBP = _reloc.df_separators;
+    if (*puVar15 == 0x22) {
+        if (_reloc.df_separators != 0) {
+            puVar16 = puVar15 + 1;
+            in_RCX[2] = puVar16;
+            puVar1 = puVar15 + 1;
+            puVar15 = puVar16;
+            if (*puVar1 != 0x22) goto code_r0x08000a13;
+            iVar3 = iVar3 + 1;
+            *(undefined4 *)(in_RCX + 1) = 0xfffffff8;
+            goto code_r0x0800052d;
+        }
+        iVar3 = iVar3 + 1;
+        *(undefined4 *)(in_RCX + 1) = 0xfffffff8;
+        _obj.df_no_cols = iVar3;
+        goto code_r0x08000638;
+    }
+    bVar17 = false;
+    if (_reloc.missing_val == 0) goto code_r0x080007c0;
+code_r0x08000467:
+    iVar5 = _reloc.missing_val;
+    iVar7 = func_0x0808b4e1(_reloc.missing_val);
+    iVar9 = func_0x0808b4e1(puVar15, iVar5, iVar7);
+    uVar14 = _reloc.df_separators;
+    if (iVar9 == 0) {
+        uVar13 = puVar15[iVar7];
+        if (uVar13 == 0) goto code_r0x080004d9;
+        if (_reloc.df_separators != 0) goto code_r0x080004ba;
+        piVar8 = (int64_t *)func_0x0808b4e1();
+        if ((*(uint8_t *)(*piVar8 + 1 + (uint64_t)uVar13 * 2) & 0x20) != 0) goto code_r0x080004d9;
+    } else {
+code_r0x080007c0:
+        uVar14 = _reloc.df_separators;
+        if (_reloc.df_separators != 0) goto code_r0x080004ba;
+    }
+code_r0x080006d6:
+    iVar3 = iVar3 + 1;
+    if (((_obj.fast_columns == 0) || (_segment.ehdr == 0)) ||
+       ((0 < _segment.ehdr &&
+        ((_segment.ehdr == iVar3 ||
+         ((_segment.ehdr != 1 &&
+          ((*(int32_t *)0x8000018 == iVar3 ||
+           ((_segment.ehdr != 2 &&
+            ((*(int32_t *)0x8000030 == iVar3 ||
+             ((_segment.ehdr != 3 &&
+              ((*(int32_t *)0x8000048 == iVar3 ||
+               ((_segment.ehdr != 4 && ((*(int32_t *)0x8000060 == iVar3 || (_segment.ehdr != 5)))))))))))))))))))))) {
+        uVar19 = func_0x0808b4e1(puVar15, &puStack96);
+        iVar9 = (int32_t)puStack96 - (int32_t)puVar15;
+        *in_RCX = uVar19;
+        iVar5 = (int64_t)iVar9;
+        uVar4 = (uint32_t)(iVar9 != 0);
+        goto code_r0x08000787;
+    }
+    piVar8 = (int64_t *)func_0x0808b4e1();
+    iVar5 = *piVar8;
+    while( true ) {
+        uVar13 = *puVar15;
+        uVar11 = *(uint16_t *)(iVar5 + (uint64_t)uVar13 * 2) & 0x2000;
+        if (uVar11 == 0) break;
+        if ((uVar14 != 0) && (iVar7 = func_0x0808b4e1(), iVar7 != 0)) goto code_r0x08000903;
+        puVar15 = puVar15 + 1;
+    }
+    if (uVar13 == 0) {
+        if (uVar14 != 0) {
+code_r0x08000903:
+            uVar4 = 0;
+            goto code_r0x08000906;
+        }
+        bVar18 = false;
+        uVar4 = 0;
+code_r0x08000913:
+        if ((uVar11 == 0) && (bVar18)) goto code_r0x08000924;
+    } else {
+        if (uVar14 != 0) {
+            iVar7 = func_0x0808b4e1();
+            uVar4 = 1;
+            if (iVar7 != 0) goto code_r0x08000903;
+code_r0x08000906:
+            if (bVar17) {
+                do {
+                    uVar13 = puVar15[1];
+                    puVar15 = puVar15 + 1;
+                    bVar18 = uVar13 != 0;
+                    bVar17 = uVar13 != 0x22 && bVar18;
+                } while (bVar17);
+                uVar11 = *(uint16_t *)(iVar5 + (uint64_t)uVar13 * 2) & 0x2000;
+            } else {
+                bVar18 = uVar13 != 0;
+            }
+            goto code_r0x08000913;
+        }
+        uVar4 = 1;
+code_r0x08000924:
+        while ((uVar14 == 0 || (iVar7 = func_0x0808b4e1(), iVar7 == 0))) {
+            puVar16 = puVar15 + 1;
+            puVar15 = puVar15 + 1;
+            if (((*(uint8_t *)(iVar5 + 1 + (uint64_t)*puVar16 * 2) & 0x20) != 0) || (*puVar16 == 0)) break;
+        }
+    }
+    iVar5 = 0;
+code_r0x08000787:
+    if ((reloc.df_fortran_constants != (code)0x0) && (uVar4 == 1)) {
+        puVar16 = puVar15 + iVar5;
+        uVar13 = *puVar16;
+        uVar2 = uVar13 & 0xdf;
+        if ((uVar2 == 0x44) || (uVar2 == 0x51)) {
+            *puVar16 = 0x65;
+            uVar19 = func_0x0808b4e1(puVar15, &puStack96);
+            uVar4 = (uint32_t)(puStack96 != puVar15);
+            *in_RCX = uVar19;
+            *puVar16 = uVar13;
+        }
+    }
+    unaff_RBP = _reloc.df_separators;
+    *(uint32_t *)(in_RCX + 1) = uVar4;
+    puVar16 = puVar15;
+    do {
+        puVar15 = puVar16;
+        _obj.df_no_cols = iVar3;
+        if (bVar17) {
+code_r0x08000638:
+            do {
+                uVar13 = puVar15[1];
+                puVar15 = puVar15 + 1;
+                bVar17 = uVar13 != 0;
+                if (uVar13 == 0x22) goto code_r0x08000537;
+            } while (bVar17);
+            unaff_R15 = puVar15;
+            if (unaff_RBP == 0) goto code_r0x08000670;
+code_r0x0800054b:
+            if (bVar17) {
+                do {
+                    iVar5 = func_0x0808b4e1(unaff_RBP, (int32_t)(char)uVar13);
+                    if (iVar5 != 0) break;
+                    uVar13 = unaff_R15[1];
+                    unaff_R15 = unaff_R15 + 1;
+                    if (uVar13 == 0) goto code_r0x080005f0;
+                } while (uVar13 != 10);
+            }
+            if ((uVar13 != 0) && (uVar13 != 10)) {
+                uVar13 = unaff_R15[1];
+                puVar15 = unaff_R15 + 1;
+                if ((uVar13 == 9) || (uVar13 == 0x20)) {
+                    do {
+                        iVar5 = func_0x0808b4e1(unaff_RBP, (int32_t)(char)uVar13);
+                        if (iVar5 != 0) break;
+                        uVar13 = puVar15[1];
+                        puVar15 = puVar15 + 1;
+                    } while ((uVar13 == 0x20) || (uVar13 == 9));
+                }
+                if ((uVar13 != 0) && (uVar13 != 10)) {
+                    uVar13 = *puVar15;
+                    goto code_r0x080005e5;
+                }
+                puVar10 = (undefined8 *)((int64_t)iVar3 * 0x20 + _str.auto);
+                *(int32_t *)(puVar10 + 1) = -5;
+                uVar19 = func_0x0808b4e1();
+                *puVar10 = uVar19;
+                iVar3 = _obj.df_no_cols + 1;
+                _obj.df_no_cols = iVar3;
+            }
+        } else {
+code_r0x0800052d:
+            uVar13 = *puVar16;
+            bVar17 = uVar13 != 0;
+            puVar15 = puVar16;
+            _obj.df_no_cols = iVar3;
+code_r0x08000537:
+            bVar17 = (bool)(uVar13 != 10 & bVar17);
+            unaff_R15 = puVar15;
+            if (unaff_RBP != 0) goto code_r0x0800054b;
+code_r0x08000670:
+            piVar8 = (int64_t *)func_0x0808b4e1();
+            in_RCX = (undefined8 *)*piVar8;
+            unaff_R15 = puVar15;
+            if (bVar17) {
+                while ((*(uint8_t *)((int64_t)in_RCX + (uint64_t)uVar13 * 2 + 1) & 0x20) == 0) {
+                    uVar13 = puVar15[1];
+                    puVar15 = puVar15 + 1;
+                    unaff_R15 = puVar15;
+                    if ((uVar13 == 0) || (uVar13 == 10)) goto code_r0x080006c3;
+                }
+                uVar13 = *puVar15;
+                unaff_R15 = puVar15;
+            }
+code_r0x080006c3:
+            while (((*(uint8_t *)((int64_t)in_RCX + (uint64_t)uVar13 * 2 + 1) & 0x20) != 0 && (uVar13 != 10))) {
+                uVar13 = puVar15[1];
+                puVar15 = puVar15 + 1;
+            }
+code_r0x080005e5:
+            if (uVar13 != 0) goto code_r0x080003c0;
+        }
+code_r0x080005f0:
+        if (iStack88 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return iVar3;
+        }
+        func_0x0808b4e1();
+        puVar15 = unaff_R15;
+code_r0x08000a13:
+        if (_reloc.missing_val != 0) {
+            bVar17 = true;
+            goto code_r0x08000467;
+        }
+        bVar17 = true;
+        uVar14 = unaff_RBP;
+code_r0x080004ba:
+        iVar5 = func_0x0808b4e1();
+        if (iVar5 == 0) goto code_r0x080006d6;
+code_r0x080004d9:
+        *(undefined4 *)(in_RCX + 1) = 0xfffffffb;
+        uVar19 = func_0x0808b4e1();
+        unaff_RBP = _reloc.df_separators;
+        iVar5 = (int64_t)_obj.df_no_cols * 0x20 + _str.auto;
+        *in_RCX = uVar19;
+        *(undefined8 *)(iVar5 + 0x10) = 0;
+        iVar3 = _obj.df_no_cols + 1;
+        puVar16 = puVar15;
+    } while( true );
+}
+
+
+void sym.df_swap_bytes_by_endianess(char *arg1, uint32_t arg2, int64_t arg3)
+{
+    char cVar1;
+    int32_t iVar2;
+    int64_t iVar3;
+    int64_t iVar4;
+    char *pcVar5;
+    char *pcVar6;
+    int64_t iVar7;
+    
+    iVar2 = (int32_t)arg3;
+    if (arg2 - 2 < 2) {
+        iVar3 = 0;
+        iVar7 = (int64_t)(iVar2 + -1);
+        iVar4 = iVar7;
+        if (0 < iVar2 + -1) {
+            do {
+                cVar1 = arg1[iVar3];
+                arg1[iVar3] = arg1[iVar4];
+                iVar3 = iVar3 + 1;
+                arg1[iVar4] = cVar1;
+                iVar4 = iVar4 + -1;
+            } while ((int32_t)iVar3 < (int32_t)iVar4);
+            if (1 < arg2 - 1) {
+                return;
+            }
+            goto code_r0x08000a62;
+        }
+    } else {
+        if ((arg2 - 1 < 2) && (0 < iVar2 + -1)) {
+            iVar7 = (int64_t)(iVar2 + -1);
+code_r0x08000a62:
+            pcVar5 = arg1 + iVar7;
+            do {
+                cVar1 = pcVar5[-1];
+                pcVar6 = pcVar5 + -2;
+                pcVar5[-1] = *pcVar5;
+                *pcVar5 = cVar1;
+                pcVar5 = pcVar6;
+            } while (0 < ((iVar2 + -1) - (int32_t)(arg1 + iVar7)) + (int32_t)pcVar6);
+            return;
+        }
+    }
+    return;
+}
+
+
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable arg1 to Decompiler type: Unknown type identifier
+// signed
+
+uint32_t sym.df_insert_scanned_use_spec
+                   (int64_t arg7, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3,
+                   undefined8 placeholder_4, undefined8 placeholder_5, undefined8 placeholder_6,
+                   undefined8 placeholder_7, undefined8 arg1)
+{
+    char cVar1;
+    undefined4 *puVar2;
+    undefined4 *puVar3;
+    int64_t iVar4;
+    int64_t iVar5;
+    int64_t iVar6;
+    int32_t iVar7;
+    
+    if (_segment.ehdr < 0xe) {
+        if ((int32_t)arg1 < _segment.ehdr) {
+            puVar2 = (undefined4 *)((int64_t)_segment.ehdr * 0x18 + 0x8000000);
+            do {
+                puVar3 = puVar2 + -6;
+                *puVar2 = puVar2[-6];
+                puVar2[1] = puVar2[-5];
+                puVar2[2] = puVar2[-4];
+                puVar2[3] = puVar2[-3];
+                *(undefined8 *)(puVar2 + 4) = *(undefined8 *)(puVar2 + -2);
+                puVar2 = puVar3;
+            } while (puVar3 != (undefined4 *)
+                               (((int64_t)_segment.ehdr - (uint64_t)(uint32_t)((_segment.ehdr + -1) - (int32_t)arg1)) *
+                                0x18 + 0x7ffffe8));
+        }
+        _segment.ehdr = _segment.ehdr + 1;
+        *(undefined8 *)((int64_t)(int32_t)arg1 * 0x18 + 0x8000008) = 0;
+        *(uint32_t *)((int64_t)(int32_t)arg1 * 0x18 + 0x8000000) = -(int32_t)arg1 - 3U;
+        return -(int32_t)arg1 - 3U;
+    }
+    func_0x0808b4e1(arg7, 0xffffffff, "Too many columns in using specification and implied sampling array");
+    iVar7 = 0;
+    while( true ) {
+        while( true ) {
+            do {
+                iVar4 = func_0x0808b4e1();
+                if (iVar4 == 0) {
+                    return (uint32_t)(iVar7 - 1U < 7);
+                }
+                do {
+                    iVar6 = iVar4;
+                    cVar1 = *(char *)(iVar6 + 1);
+                    iVar5 = func_0x0808b4e1("");
+                    iVar4 = iVar6 + 1;
+                } while (iVar5 != 0);
+            } while (cVar1 == '*');
+            if (cVar1 == 'l') break;
+            if (cVar1 != '%') {
+                return 0;
+            }
+        }
+        iVar4 = func_0x0808b4e1("", (int32_t)*(char *)(iVar6 + 2));
+        if (iVar4 == 0) break;
+        iVar7 = iVar7 + 1;
+    }
+    return 0;
+}
+
+
+// WARNING: Could not reconcile some variable overlaps
+
+undefined8
+sym.df_skip_bytes(int64_t arg7, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3,
+                 int64_t arg11, undefined8 placeholder_5, undefined8 placeholder_6, undefined8 placeholder_7,
+                 int64_t arg1)
+{
+    int32_t iVar1;
+    uint32_t uVar2;
+    int32_t iVar3;
+    int64_t iVar4;
+    undefined8 uVar5;
+    int32_t *piVar6;
+    int64_t iVar7;
+    int64_t unaff_RBX;
+    undefined *unaff_RBP;
+    code *pcVar8;
+    uint32_t *puVar9;
+    uint32_t *puVar10;
+    int32_t iVar11;
+    uint64_t uVar12;
+    int64_t iVar13;
+    int32_t iVar14;
+    uint32_t uVar15;
+    uint32_t *unaff_R13;
+    undefined8 *puVar16;
+    undefined8 *puVar17;
+    code *pcVar18;
+    int64_t in_FS_OFFSET;
+    bool bVar19;
+    double dVar20;
+    double extraout_XMM0_Qa;
+    undefined8 uStack144;
+    undefined4 uStack136;
+    undefined4 uStack132;
+    double dStack128;
+    uint32_t uStack108;
+    int64_t iStack104;
+    int64_t iStack88;
+    undefined *puStack80;
+    undefined uStack33;
+    int64_t iStack32;
+    
+    iStack32 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    if ((""[0] == '\0') && (reloc.plotted_data_from_stdin == (code)0x0)) {
+        iVar1 = func_0x0808b4e1(arg7, placeholder_1, placeholder_2, placeholder_3, arg11, placeholder_5, 
+                                *(undefined8 *)0x800ada0, arg1, 1);
+        if (iVar1 == 0) {
+code_r0x08000cb8:
+            uVar5 = 0;
+            goto code_r0x08000c87;
+        }
+        iVar1 = func_0x0808b4e1();
+        if (iVar1 != 0) goto code_r0x08000c78;
+        func_0x0808b4e1(0xffffffff, _reloc.read_error_msg);
+        arg1 = unaff_RBX;
+    } else {
+        unaff_RBP = &uStack33;
+        do {
+            unaff_RBX = arg1;
+            if (arg1 == 0) goto code_r0x08000cb8;
+            arg1 = arg1 + -1;
+            iVar4 = func_0x0808b4e1(unaff_RBP, 1, 1, *(undefined8 *)0x800ada0);
+        } while (iVar4 == 1);
+        iVar1 = func_0x0808b4e1();
+        unaff_RBX = arg1;
+        if (iVar1 == 0) goto code_r0x08000ce4;
+code_r0x08000c78:
+        _obj.df_eof = 1;
+        uVar5 = 0xffffffff;
+code_r0x08000c87:
+        arg1 = unaff_RBX;
+        if (iStack32 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return uVar5;
+        }
+    }
+    func_0x0808b4e1();
+code_r0x08000ce4:
+    uVar12 = 0xffffffff;
+    uVar5 = _reloc.read_error_msg;
+    func_0x0808b4e1();
+    iVar11 = (int32_t)uVar5;
+    iStack104 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    iStack88 = arg1;
+    puStack80 = unaff_RBP;
+    iVar1 = func_0x0808b4e1(_reloc.c_token, reloc..LC10);
+    if (iVar1 != 0) {
+        _reloc.c_token = _reloc.c_token + 1;
+        if (_reloc.c_token < _reloc.num_tokens) {
+            iVar4 = (int64_t)iVar11;
+            iVar13 = 0;
+code_r0x08000d70:
+            iVar1 = func_0x0808b4e1();
+            if (iVar1 == 0) {
+                uVar2 = (uint32_t)(uVar12 & 0xffffffff);
+                if (5 < uVar2) goto code_r0x08001210;
+                if (3 < uVar2) goto code_r0x08001219;
+                if (1 < uVar2 - 2) goto code_r0x080012e0;
+                do {
+                    unaff_R13 = (uint32_t *)0x1;
+code_r0x08000db0:
+                    iVar3 = _reloc.c_token;
+                    if (_segment.ehdr <= (int32_t)iVar13) {
+code_r0x080014bd:
+                        func_0x0808b4e1();
+code_r0x080014cb:
+                        func_0x0808b4e1();
+                        goto code_r0x080014d9;
+                    }
+                    iVar14 = (int32_t)unaff_R13;
+                    switch(uVar12 & 0xffffffff) {
+                    default:
+                        iVar7 = _reloc.df_bin_record + iVar13 * 0xf8;
+                        *(double *)(iVar7 + 0x18 + iVar4 * 8) = uStack144;
+                        if (0.00000000 < *(double *)(iVar7 + 0x18 + iVar4 * 8)) goto code_r0x08000e30;
+                        func_0x0808b4e1();
+code_r0x08001210:
+                        if (uVar2 == 7) {
+code_r0x08001219:
+                            iVar3 = func_0x0808b4e1(_reloc.c_token, reloc.df_bin_record);
+                            if ((iVar3 != 0) &&
+                               (_reloc.c_token = _reloc.c_token + 1, _reloc.c_token < _reloc.num_tokens)) {
+                                unaff_R13 = (uint32_t *)0x0;
+                                bVar19 = true;
+                                puVar17 = &uStack144;
+                                do {
+                                    iVar3 = func_0x0808b4e1(_reloc.c_token, reloc..LC14);
+                                    if (iVar3 != 0) break;
+                                    if (bVar19) {
+                                        uVar15 = (int32_t)unaff_R13 + 1;
+                                        unaff_R13 = (uint32_t *)(uint64_t)uVar15;
+                                        if (3 < (int32_t)uVar15) {
+                                            func_0x0808b4e1(_reloc.c_token + -1, "", unaff_R13);
+                                            goto code_r0x080014bd;
+                                        }
+                                        uVar5 = func_0x0808b4e1();
+                                        puVar16 = puVar17 + 1;
+                                        *puVar17 = uVar5;
+                                        bVar19 = false;
+                                    } else {
+                                        iVar3 = func_0x0808b4e1(_reloc.c_token, reloc..LC12);
+                                        if (iVar3 == 0) goto code_r0x08001450;
+                                        bVar19 = true;
+                                        _reloc.c_token = _reloc.c_token + 1;
+                                        puVar16 = puVar17;
+                                    }
+                                    puVar17 = puVar16;
+                                    if (_reloc.num_tokens <= _reloc.c_token) break;
+                                } while( true );
+                            }
+                            goto code_r0x080012f6;
+                        }
+code_r0x080012e0:
+                        uStack144 = (double)func_0x0808b4e1();
+                        break;
+                    case 1:
+                        goto code_r0x0800104b;
+                    case 2:
+                        unaff_R13 = &uStack108;
+                        func_0x0808b4e1(unaff_R13, _reloc.c_token, 4);
+                        puVar10 = unaff_R13;
+                        do {
+                            puVar9 = puVar10;
+                            uVar15 = *puVar9 + 0xfefefeff & ~*puVar9;
+                            uVar2 = uVar15 & 0x80808080;
+                            puVar10 = puVar9 + 1;
+                        } while (uVar2 == 0);
+                        bVar19 = (uVar15 & 0x8080) == 0;
+                        if (bVar19) {
+                            uVar2 = uVar2 >> 0x10;
+                        }
+                        if (bVar19) {
+                            puVar10 = (uint32_t *)((int64_t)puVar9 + 6);
+                        }
+                        iVar7 = func_0x0808b4e1(unaff_R13, "", uVar2 & 0xffffff00);
+                        if ((int64_t)puVar10 +
+                            ((-3 - (uint64_t)CARRY1((uint8_t)uVar2, (uint8_t)uVar2)) - (int64_t)unaff_R13) != iVar7)
+                        goto code_r0x08001537;
+                        iVar7 = func_0x0808b4e1(unaff_R13);
+                        if (iVar7 == 0) {
+code_r0x08001137:
+                            iVar7 = func_0x0808b4e1(unaff_R13, reloc..LC23);
+                            if (iVar7 != 0) {
+                                iVar7 = _reloc.df_bin_record + iVar13 * 0xf8;
+                                if (*(int32_t *)(iVar7 + 4) == 0) goto code_r0x080014d9;
+                                *(int32_t *)(iVar7 + 0x10) = iVar11;
+                            }
+                            iVar7 = func_0x0808b4e1();
+                            if (iVar7 != 0) {
+                                iVar7 = _reloc.df_bin_record + iVar13 * 0xf8;
+                                if (*(int32_t *)(iVar7 + 8) == 0) goto code_r0x080014d9;
+                                *(int32_t *)(iVar7 + 0x14) = iVar11;
+                            }
+                            goto code_r0x080011af;
+                        }
+                        piVar6 = (int32_t *)(_reloc.df_bin_record + iVar13 * 0xf8);
+                        if (*piVar6 != 0) {
+                            piVar6[3] = iVar11;
+                            goto code_r0x08001137;
+                        }
+code_r0x080014d9:
+                        func_0x0808b4e1(_reloc.c_token, "Cannot flip a non-existent dimension");
+code_r0x080014ed:
+                        func_0x0808b4e1();
+                        goto code_r0x080014fb;
+                    case 3:
+                        unaff_R13 = (uint32_t *)(iVar13 * 0xf8);
+                        piVar6 = (int32_t *)(_reloc.df_bin_record + (int64_t)unaff_R13);
+                        if (((*piVar6 == 0) && (piVar6[0x26] == 0)) || ((piVar6[1] == 0 && (piVar6[0x27] == 0))))
+                        goto code_r0x08001591;
+                        if ((piVar6[2] != 0) || (iVar3 = piVar6[0x28], iVar3 != 0)) goto code_r0x08001308;
+                        pcVar18 = reloc.df_bin_scan_table_2D;
+                        pcVar8 = reloc.df_bin_scan_table_2D;
+                        goto code_r0x08001018;
+                    case 4:
+                    case 5:
+                        iVar7 = _reloc.df_bin_record + iVar13 * 0xf8;
+                        *(uint32_t *)(iVar7 + 0x30) = (uVar2 != 4) + 1;
+                        if (iVar11 != 1) {
+                            if (iVar11 == 2) {
+                                if (iVar14 == 3) goto code_r0x08000f90;
+                                func_0x0808b4e1(iVar3, "Three-dimensional tuple required for 3D plot");
+code_r0x08001450:
+                                iVar3 = func_0x0808b4e1();
+                                if (iVar3 != 0) goto code_r0x0800146a;
+                                goto code_r0x08001512;
+                            }
+                            if (iVar11 != 0) goto code_r0x08001583;
+                            if (iVar14 == 3) goto code_r0x08000f90;
+                            goto code_r0x08001575;
+                        }
+                        if (iVar14 != 2) goto code_r0x080014ed;
+                        dStack128 = 0.00000000;
+code_r0x08000f90:
+                        *(undefined4 *)(iVar7 + 0x38) = (undefined4)uStack144;
+                        *(undefined4 *)(iVar7 + 0x3c) = uStack144._4_4_;
+                        *(undefined4 *)(iVar7 + 0x40) = uStack136;
+                        *(undefined4 *)(iVar7 + 0x44) = uStack132;
+                        *(double *)(iVar7 + 0x48) = dStack128;
+                        goto code_r0x08000e30;
+                    case 6:
+                        iVar1 = func_0x0808b4e1(_reloc.c_token, reloc..LC31);
+                        dVar20 = uStack144;
+                        if (iVar1 == 0) {
+                            iVar1 = func_0x0808b4e1(_reloc.c_token, "");
+                            if (iVar1 != 0) {
+                                dVar20 = dVar20 * _reloc..LC34;
+                                _reloc.c_token = _reloc.c_token + 1;
+                            }
+                        } else {
+                            dVar20 = uStack144 * _reloc..LC32;
+                            _reloc.c_token = _reloc.c_token + 1;
+                        }
+                        *(double *)(_reloc.df_bin_record + iVar13 * 0xf8 + 0x50) = dVar20;
+                        goto code_r0x08000e30;
+                    case 7:
+                        if (iVar14 != 3) goto code_r0x0800154b;
+                        if (uStack144 * uStack144 +
+                            (double)CONCAT44(uStack132, uStack136) * (double)CONCAT44(uStack132, uStack136) +
+                            dStack128 * dStack128 < _reloc..LC36) goto code_r0x08001567;
+                        iVar7 = _reloc.df_bin_record + iVar13 * 0xf8;
+                        *(undefined4 *)(iVar7 + 0x58) = (undefined4)uStack144;
+                        *(undefined4 *)(iVar7 + 0x5c) = uStack144._4_4_;
+                        *(undefined4 *)(iVar7 + 0x60) = uStack136;
+                        *(undefined4 *)(iVar7 + 100) = uStack132;
+                        *(double *)(iVar7 + 0x68) = dStack128;
+                        goto code_r0x08000e30;
+                    case 8:
+                        iVar7 = (int64_t)uStack144;
+                        *(int64_t *)(_reloc.df_bin_record + iVar13 * 0xf8 + 0x80) = iVar7;
+                        if (((double)iVar7 != uStack144) || (iVar7 < 0)) goto code_r0x080014cb;
+                        goto code_r0x08000e30;
+                    }
+                } while( true );
+            }
+        }
+code_r0x08000e5f:
+        if (iStack104 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return 0;
+        }
+code_r0x080014fb:
+        func_0x0808b4e1();
+    }
+    func_0x0808b4e1(_reloc.c_token, _reloc.equal_symbol_msg);
+code_r0x08001512:
+    iVar3 = _reloc.c_token;
+    func_0x0808b4e1(_reloc.c_token, "");
+code_r0x08001526:
+    func_0x0808b4e1(iVar3 + -1, "Flipping dimension direction must be 1 or 0");
+code_r0x08001537:
+    func_0x0808b4e1(_reloc.c_token, "");
+code_r0x0800154b:
+    func_0x0808b4e1();
+code_r0x08001559:
+    func_0x0808b4e1();
+code_r0x08001567:
+    func_0x0808b4e1();
+code_r0x08001575:
+    func_0x0808b4e1();
+code_r0x08001583:
+    func_0x0808b4e1();
+code_r0x08001591:
+    uVar5 = func_0x0808b4e1();
+    if (_obj.max_line_len < 0xa0) {
+        _obj.max_line_len = 0xa0;
+        _obj.df_line = func_0x0808b4e1(0xa0, "");
+        return _obj.df_line;
+    }
+    return uVar5;
+    while( true ) {
+        iVar3 = iVar3 + 1;
+        pcVar8 = (code *)((int64_t)pcVar8 + 0x18);
+        if (iVar3 == 4) break;
+code_r0x08001018:
+        iVar1 = func_0x0808b4e1(_reloc.c_token, *(undefined8 *)pcVar8);
+        if (iVar1 != 0) {
+            unaff_R13 = (uint32_t *)((int64_t)unaff_R13 + _reloc.df_bin_record);
+            goto code_r0x080013ff;
+        }
+    }
+    iVar3 = _reloc.c_token;
+    func_0x0808b4e1();
+code_r0x0800104b:
+    piVar6 = (int32_t *)(_reloc.df_bin_record + iVar13 * 0xf8);
+    if (*piVar6 == 0) goto code_r0x08001559;
+    dVar20 = uStack144;
+    if (uStack144 == _reloc..LC1) {
+        piVar6[iVar4 + 3] = 0;
+        goto code_r0x08000e30;
+    }
+code_r0x08001350:
+    if (dVar20 != _reloc..LC17) goto code_r0x08001526;
+    piVar6[iVar4 + 3] = 1;
+code_r0x08000e30:
+    iVar1 = func_0x0808b4e1();
+    if (iVar1 == 0) goto code_r0x08000e5f;
+    iVar13 = iVar13 + 1;
+    _reloc.c_token = _reloc.c_token + 1;
+    if (_reloc.num_tokens <= _reloc.c_token) goto code_r0x08000e5f;
+    goto code_r0x08000d70;
+code_r0x0800146a:
+    _reloc.c_token = _reloc.c_token + 1;
+    if ((int32_t)unaff_R13 == 0) {
+code_r0x080012f6:
+        func_0x0808b4e1(_reloc.c_token, "");
+code_r0x08001308:
+        pcVar18 = reloc.df_bin_scan_table_3D;
+        goto code_r0x08001318;
+    }
+    goto code_r0x08000db0;
+code_r0x08001318:
+    iVar3 = func_0x0808b4e1();
+    if (iVar3 == 0) goto code_r0x08001328;
+    unaff_R13 = (uint32_t *)((int64_t)unaff_R13 + _reloc.df_bin_record);
+    iVar3 = iVar1;
+code_r0x080013ff:
+    *(undefined8 *)(unaff_R13 + 0x1c) = *(undefined8 *)(pcVar18 + (int64_t)iVar3 * 0x18 + 8);
+    unaff_R13[0x1e] = *(uint32_t *)((int64_t)(pcVar18 + (int64_t)iVar3 * 0x18 + 8) + 8);
+    *(undefined8 *)(unaff_R13 + 0x29) = *(undefined8 *)0x800a9c4;
+    unaff_R13[0x2b] = *(uint32_t *)0x800a9cc;
+code_r0x080011af:
+    _reloc.c_token = _reloc.c_token + 1;
+    goto code_r0x08000e30;
+code_r0x08001328:
+    iVar1 = iVar1 + 1;
+    if (iVar1 == 0xc) goto code_r0x0800133a;
+    goto code_r0x08001318;
+code_r0x0800133a:
+    iVar3 = _reloc.c_token;
+    piVar6 = (int32_t *)func_0x0808b4e1(_reloc.c_token, "Improper scanning string. Try 3 character string for 3D data");
+    dVar20 = extraout_XMM0_Qa;
+    goto code_r0x08001350;
+}
+
+
+code * sym.df_gets(void)
+{
+    int32_t *piVar1;
+    undefined8 uVar2;
+    int32_t iVar3;
+    code *pcVar4;
+    int64_t iVar5;
+    uint64_t uVar6;
+    uint32_t uVar7;
+    int64_t *piVar8;
+    int64_t iVar9;
+    int64_t iVar10;
+    double extraout_XMM0_Qa;
+    double extraout_XMM0_Qa_00;
+    double extraout_XMM0_Qa_01;
+    double extraout_XMM0_Qa_02;
+    double extraout_XMM0_Qa_03;
+    double dVar11;
+    undefined auVar12 [16];
+    double dVar13;
+    double dVar14;
+    undefined8 uVar15;
+    
+    if ((obj.mixed_data_fp != (code)0x0) && (reloc.interactive != (code)0x0)) {
+        func_0x0808b4e1("", 1, 0x18);
+    }
+    iVar9 = _obj.data_fp;
+    if (_obj.df_pseudodata != 0) {
+        if (_obj.df_pseudodata == 1) {
+            uVar7 = *(uint32_t *)0x808c0a9 & 2;
+            if (_obj.df_pseudorecord == 0) {
+                _obj.t_step.13321 = 0.00000000;
+                if (uVar7 == 0) {
+                    if (((reloc.parametric == (code)0x0) && (reloc.polar == (code)0x0)) && (*(int32_t *)0x808cb41 != 0))
+                    {
+                        if (_reloc..LC45 == *(double *)0x808bb69) {
+                            *(double *)0x808bb69 = _reloc..LC46;
+                        }
+                        if (_reloc..LC47 == *(double *)0x808bb61) {
+                            *(double *)0x808bb61 = _reloc..LC48;
+                        }
+                        iVar9 = (int64_t)_reloc.x_axis * 0x2a8;
+                        ""._8_8_ = *(double *)(reloc.__sprintf_chk + iVar9);
+                        ""._0_8_ = *(double *)(reloc.samples_1 + iVar9);
+                    } else {
+                        ""._8_8_ = *(double *)0x808cb51;
+                        ""._0_8_ = *(double *)0x808cb59;
+                    }
+                    iVar10 = (int64_t)_reloc.x_axis * 0x2a8;
+                    iVar9 = *(int64_t *)(reloc.streq + iVar10);
+                    if (((iVar9 == 0) || (*(int64_t *)(*(int64_t *)(reloc.undefined + iVar10) + 0x10) == 0)) ||
+                       (iVar9 == 0x808bb51)) {
+                        func_0x0808b4e1(""._8_8_, ""._0_8_);
+                    } else {
+                        func_0x0808b4e1(""._8_8_, ""._0_8_, iVar9);
+                        ""._8_8_ = extraout_XMM0_Qa_00;
+                        func_0x0808b4e1(""._0_8_);
+                        ""._0_8_ = extraout_XMM0_Qa_01;
+                    }
+                } else {
+                    ""._8_8_ = *(double *)0x808c0b1;
+                    ""._0_8_ = *(double *)0x808c0b9;
+                    _obj.t_step.13321 = *(double *)0x808c1e9;
+                }
+                if (_obj.t_step.13321 == 0.00000000) {
+                    uVar7 = *(uint32_t *)0x808c0a9 & 2;
+                    _obj.t_step.13321 = (""._0_8_ - ""._8_8_) / (double)(_reloc.samples_1 + -1);
+                    if (_obj.t_step.13321 == 0.00000000) {
+                        _obj.t_step.13321 = _reloc..LC17;
+                    }
+                } else {
+                    uVar7 = *(uint32_t *)0x808c0a9 & 2;
+                }
+            }
+            _obj.t.13318 = (double)_obj.df_pseudorecord * _obj.t_step.13321 + ""._8_8_;
+            if (uVar7 == 0) {
+                if (_reloc.samples_1 <= (int32_t)_obj.df_pseudorecord) {
+                    return (code *)0x0;
+                }
+                if ((*(int64_t *)(reloc.streq + (int64_t)_reloc.x_axis * 0x2a8) != 0) &&
+                   (*(int64_t *)(*(int64_t *)(reloc.undefined + (int64_t)_reloc.x_axis * 0x2a8) + 0x10) != 0)) {
+                    func_0x0808b4e1(_obj.t.13318, _obj.t_step.13321, ""._8_8_, 
+                                    *(undefined8 *)(*(int64_t *)(reloc.streq + (int64_t)_reloc.x_axis * 0x2a8) + 0xa8));
+                    _obj.t.13318 = extraout_XMM0_Qa;
+                }
+            } else {
+                dVar13 = ""._8_8_;
+                dVar14 = ""._0_8_;
+                if (""._8_8_ < ""._0_8_) {
+                    dVar13 = ""._0_8_;
+                    dVar14 = ""._8_8_;
+                }
+                if (_obj.t.13318 < dVar14) {
+                    return (code *)0x0;
+                }
+                if (dVar13 < _obj.t.13318) {
+                    return (code *)0x0;
+                }
+            }
+            if ((""._0_8_ != 0) && (*(int64_t *)(""._0_8_ + 0x170) != 0)) {
+                func_0x0808b4e1(*(int64_t *)(""._0_8_ + 0x170) + 0x10);
+            }
+            _obj.df_pseudovalue_0 = _obj.t.13318;
+            func_0x0808b4e1(_obj.df_line, 1, 0xffffffffffffffff);
+            _obj.df_pseudorecord = _obj.df_pseudorecord + 1;
+        }
+        if (_obj.df_pseudodata != 2) {
+            return _obj.df_line;
+        }
+        if ((_obj.df_pseudospan | _obj.df_pseudorecord) == 0) {
+            if ((((_reloc.samples_1 < 2) || (_reloc.samples_2 < 2)) || (_reloc.iso_samples_1 < 2)) ||
+               (_reloc.iso_samples_2 < 2)) {
+                pcVar4 = (code *)func_0x0808b4e1(0xffffffff, "samples or iso_samples < 2. Must be at least 2.");
+                _obj.df_no_cols = 0;
+                if ((_obj.data_fp == 0) && (obj.df_datablock == (code)0x0)) {
+                    _obj.df_no_cols = 0;
+                    return pcVar4;
+                }
+                piVar8 = (int64_t *)0x8000008;
+                do {
+                    if (*piVar8 != 0) {
+                        pcVar4 = (code *)func_0x0808b4e1();
+                        *piVar8 = 0;
+                    }
+                    piVar8 = piVar8 + 3;
+                } while (piVar8 != (int64_t *)0x8000158);
+                if ((reloc.df_matrix != (code)0x0) &&
+                   (pcVar4 = (code *)(uint64_t)_segment.ehdr, 0 < (int32_t)_segment.ehdr)) {
+                    iVar9 = 0;
+                    iVar3 = 0;
+                    pcVar4 = _reloc.df_bin_record;
+                    do {
+                        iVar3 = iVar3 + 1;
+                        func_0x0808b4e1(*(undefined8 *)(pcVar4 + iVar9 + 0xf0));
+                        pcVar4 = _reloc.df_bin_record;
+                        *(undefined8 *)(_reloc.df_bin_record + iVar9 + 0xf0) = 0;
+                        iVar9 = iVar9 + 0xf8;
+                    } while (iVar3 < (int32_t)_segment.ehdr);
+                }
+                iVar9 = _obj.data_fp;
+                if ((obj.mixed_data_fp == (code)0x0) && (obj.df_datablock == (code)0x0)) {
+                    iVar3 = func_0x0808b4e1(_obj.data_fp);
+                    if (iVar3 == _obj.data_fd) {
+                        func_0x0808b4e1(iVar9);
+                        pcVar4 = (code *)func_0x0808b4e1(_reloc.stderr, 1, "", _obj.data_fd);
+                    } else {
+                        if (""[0] == '\0') {
+                            pcVar4 = (code *)func_0x0808b4e1(iVar9);
+                        } else {
+                            pcVar4 = (code *)func_0x0808b4e1(iVar9);
+                            ""[0] = '\0';
+                        }
+                    }
+                }
+                obj.mixed_data_fp = (code)0x0;
+                _obj.data_fp = 0;
+                return pcVar4;
+            }
+            if (reloc.parametric == (code)0x0) {
+                func_0x0808b4e1(9, "");
+                func_0x0808b4e1(10);
+                if ((*(int64_t *)0x808ce89 == 0) || (*(int64_t *)(*(int64_t *)0x808ce99 + 0x10) == 0)) {
+                    _obj.u_min.13324 = *(double *)0x808cdf9;
+                    _obj.u_max.13325 = *(double *)0x808ce01;
+                } else {
+                    _obj.u_min.13324 = *(double *)(*(int64_t *)0x808ce89 + 0x10);
+                    _obj.u_max.13325 = *(double *)(*(int64_t *)0x808ce89 + 0x18);
+                }
+                if ((*(int64_t *)0x808d131 == 0) || (*(int64_t *)(*(int64_t *)0x808d141 + 0x10) == 0)) {
+                    _obj.v_min.13327 = *(double *)0x808d0a1;
+                    _obj.v_max.13328 = *(double *)0x808d0a9;
+                } else {
+                    _obj.v_min.13327 = *(double *)(*(int64_t *)0x808d131 + 0x10);
+                    _obj.v_max.13328 = *(double *)(*(int64_t *)0x808d131 + 0x18);
+                }
+            } else {
+                _obj.u_min.13324 = *(double *)0x808cdf9;
+                _obj.u_max.13325 = *(double *)0x808ce01;
+                _obj.v_min.13327 = *(double *)0x808d0a1;
+                _obj.v_max.13328 = *(double *)0x808d0a9;
+            }
+            if (((*(uint8_t *)0x808cdf1 & 2) == 0) || (*(double *)0x808cf31 == _reloc..LC1)) {
+                _obj.nusteps.13330 = _reloc.iso_samples_1;
+                if (reloc.hidden3d == (code)0x0) {
+                    _obj.nusteps.13330 = _reloc.samples_1;
+                }
+                _obj.u_step.13326 = (_obj.u_max.13325 - _obj.u_min.13324) / (double)(_obj.nusteps.13330 + -1);
+            } else {
+                _obj.u_step.13326 = *(double *)0x808cf31;
+                dVar13 = (_obj.u_max.13325 - _obj.u_min.13324) / *(double *)0x808cf31;
+                if ((double)((uint64_t)dVar13 & _reloc..LC54) < _reloc..LC53) {
+                    auVar12 = orpd(ZEXT816((uint64_t)
+                                           ((double)(int64_t)dVar13 -
+                                           (double)(-(uint64_t)(dVar13 < (double)(int64_t)dVar13) &
+                                                   (uint64_t)_reloc..LC17))), ZEXT816(~_reloc..LC54 & (uint64_t)dVar13))
+                    ;
+                    dVar13 = SUB168(auVar12, 0);
+                }
+                _obj.nusteps.13330 = (int32_t)(dVar13 + _reloc..LC17);
+            }
+            if (((*(uint8_t *)0x808d099 & 2) == 0) || (*(double *)0x808d1d9 == _reloc..LC1)) {
+                _obj.nvsteps.13331 = _reloc.iso_samples_2;
+                _obj.v_isostep.13329 = (_obj.v_max.13328 - _obj.v_min.13327) / (double)(_reloc.iso_samples_2 + -1);
+            } else {
+                dVar13 = (_obj.v_max.13328 - _obj.v_min.13327) / *(double *)0x808d1d9;
+                _obj.v_isostep.13329 = *(double *)0x808d1d9;
+                if ((double)((uint64_t)dVar13 & _reloc..LC54) < _reloc..LC53) {
+                    auVar12 = orpd(ZEXT816((uint64_t)
+                                           ((double)(int64_t)dVar13 -
+                                           (double)(-(uint64_t)(dVar13 < (double)(int64_t)dVar13) &
+                                                   (uint64_t)_reloc..LC17))), ZEXT816(~_reloc..LC54 & (uint64_t)dVar13))
+                    ;
+                    dVar13 = SUB168(auVar12, 0);
+                }
+                _obj.nvsteps.13331 = (int32_t)(dVar13 + _reloc..LC17);
+            }
+        }
+        if (_obj.nusteps.13330 <= (int32_t)_obj.df_pseudorecord) {
+            _obj.df_pseudospan = _obj.df_pseudospan + 1;
+            if (_obj.nvsteps.13331 <= (int32_t)_obj.df_pseudospan) {
+                _obj.df_pseudorecord = 0;
+                return (code *)0x0;
+            }
+            _obj.df_pseudorecord = 0;
+            return reloc..LC43;
+        }
+        dVar13 = _obj.u_max.13325;
+        if (_obj.nusteps.13330 - 1U != _obj.df_pseudorecord) {
+            dVar13 = (double)_obj.df_pseudorecord * _obj.u_step.13326 + _obj.u_min.13324;
+        }
+        dVar14 = _obj.v_max.13328;
+        dVar11 = _obj.v_min.13327;
+        if (_obj.nvsteps.13331 - 1U != _obj.df_pseudospan) {
+            dVar14 = _obj.v_max.13328 - (double)_obj.df_pseudospan * _obj.v_isostep.13329;
+            dVar11 = dVar14;
+        }
+        if (reloc.parametric == (code)0x0) {
+            if ((*(int64_t *)0x808ce89 != 0) && (*(int64_t *)(*(int64_t *)0x808ce99 + 0x10) != 0)) {
+                func_0x0808b4e1(dVar13, dVar11, dVar13, dVar14, 0x808cde9);
+                dVar13 = extraout_XMM0_Qa_02;
+            }
+            _obj.df_pseudovalue_0 = dVar13;
+            dVar13 = _obj.df_pseudovalue_0;
+            if ((*(int64_t *)0x808d131 != 0) && (*(int64_t *)(*(int64_t *)0x808d141 + 0x10) != 0)) {
+                func_0x0808b4e1(dVar11, dVar11, 0x808d091);
+                dVar11 = extraout_XMM0_Qa_03;
+                dVar13 = _obj.df_pseudovalue_0;
+            }
+        }
+        _obj.df_pseudovalue_0 = dVar13;
+        _obj.df_pseudovalue_1 = dVar11;
+        func_0x0808b4e1(_obj.df_pseudovalue_0, _obj.df_pseudovalue_1, _obj.df_pseudovalue_0, _obj.df_line, 1, 
+                        0xffffffffffffffff, "");
+        _obj.df_pseudorecord = _obj.df_pseudorecord + 1;
+        if (""._0_8_ != 0) {
+            if ((*(int64_t *)(""._0_8_ + 0x170) != 0) &&
+               (func_0x0808b4e1(_obj.df_pseudovalue_0, 0, *(int64_t *)(""._0_8_ + 0x170) + 0x10), ""._0_8_ == 0)) {
+                return _obj.df_line;
+            }
+            if (*(int64_t *)(""._0_8_ + 0x178) != 0) {
+                func_0x0808b4e1(_obj.df_pseudovalue_1, 0, *(int64_t *)(""._0_8_ + 0x178) + 0x10);
+                return _obj.df_line;
+            }
+            return _obj.df_line;
+        }
+        return _obj.df_line;
+    }
+    if (obj.df_datablock != (code)0x0) {
+        pcVar4 = *_obj.df_datablock_line;
+        _obj.df_datablock_line = _obj.df_datablock_line + 1;
+        return pcVar4;
+    }
+    if (_reloc.df_array == 0) {
+        pcVar4 = (code *)func_0x0808b4e1(_obj.df_line, _obj.max_line_len & 0xffffffff, _obj.data_fp);
+        if (pcVar4 != (code *)0x0) {
+            if (obj.mixed_data_fp != (code)0x0) {
+                _reloc.inline_num = _reloc.inline_num + 1;
+            }
+            iVar10 = 0;
+            do {
+                pcVar4 = _obj.df_line;
+                iVar3 = func_0x0808b4e1(_obj.df_line + (int32_t)iVar10);
+                iVar3 = (int32_t)iVar10 + iVar3;
+                iVar10 = (int64_t)iVar3;
+                if ((0 < iVar3) && (pcVar4[iVar10 + -1] == (code)0xa)) {
+                    pcVar4[iVar10 + -1] = (code)0x0;
+                    return pcVar4;
+                }
+                if (_obj.max_line_len - iVar10 < 0x20) {
+                    _obj.max_line_len = _obj.max_line_len * 2;
+                    pcVar4 = (code *)func_0x0808b4e1(pcVar4, _obj.max_line_len, "");
+                    _obj.df_line = pcVar4;
+                }
+                iVar5 = func_0x0808b4e1(pcVar4 + iVar10, (int32_t)_obj.max_line_len - iVar3, iVar9);
+                pcVar4 = _obj.df_line;
+            } while (iVar5 != 0);
+        }
+        return pcVar4;
+    }
+    _obj.df_array_index = _obj.df_array_index + 1;
+    if (*(int64_t *)(*(int64_t *)(_reloc.df_array + 0x18) + 8) < (int64_t)_obj.df_array_index) {
+        return (code *)0x0;
+    }
+    piVar1 = (int32_t *)(*(int64_t *)(_reloc.df_array + 0x18) + (int64_t)_obj.df_array_index * 0x18);
+    if (*piVar1 == 3) {
+        while( true ) {
+            pcVar4 = _obj.df_line;
+            uVar2 = *(undefined8 *)(piVar1 + 2);
+            uVar15 = 0x800180c;
+            uVar6 = func_0x0808b4e1(uVar2);
+            if (uVar6 <= _obj.max_line_len) break;
+            _obj.max_line_len = _obj.max_line_len * 2;
+            _obj.df_line = (code *)func_0x0808b4e1(pcVar4, _obj.max_line_len, "");
+        }
+        func_0x0808b4e1(pcVar4, _obj.max_line_len - 1, 1, 0xffffffffffffffff, "", _obj.df_array_index, uVar2, uVar15);
+        return _obj.df_line;
+    }
+    func_0x0808b4e1(piVar1);
+    func_0x0808b4e1(piVar1);
+    func_0x0808b4e1(_obj.df_line, _obj.max_line_len - 1, 1, 0xffffffffffffffff, "", _obj.df_array_index);
+    return _obj.df_line;
+}
+
+
+
+
+// WARNING: [r2ghidra] Var arg_90h is stack pointer based, which is not supported for decompilation.
+// WARNING: [r2ghidra] Var arg_38h is stack pointer based, which is not supported for decompilation.
+// WARNING: [r2ghidra] Var arg_98h is stack pointer based, which is not supported for decompilation.
+// WARNING: [r2ghidra] Var arg_c8h is stack pointer based, which is not supported for decompilation.
+// WARNING: [r2ghidra] Var arg_ch is stack pointer based, which is not supported for decompilation.
+
+uint64_t fcn.08005547(undefined8 placeholder_0, undefined8 placeholder_1, int64_t arg3)
+{
+    uint32_t uVar1;
+    int32_t in_EAX;
+    uint64_t uVar2;
+    int32_t iVar3;
+    int64_t unaff_RBX;
+    int64_t unaff_R12;
+    int64_t unaff_R13;
+    int64_t iVar4;
+    int32_t unaff_R14D;
+    uint64_t unaff_R15;
+    int64_t in_FS_OFFSET;
+    int32_t in_stack_0000000c;
+    int64_t in_stack_00000038;
+    int32_t in_stack_00000090;
+    undefined8 in_stack_00000098;
+    int64_t in_stack_000000c8;
+    
+code_r0x08005547:
+    do {
+        iVar3 = _segment.ehdr;
+        if (in_stack_00000090 == 3) {
+            func_0x0808b4e1(*(undefined8 *)(in_stack_00000038 + (int64_t)(int32_t)arg3 * 8), 
+                            (int64_t)in_EAX * 0x2a8 + unaff_R12, in_stack_00000098, 0xffffffff);
+            func_0x0808b4e1();
+            iVar3 = _segment.ehdr;
+        }
+        do {
+            iVar4 = unaff_R13;
+            unaff_R14D = unaff_R14D + 1;
+            unaff_R13 = iVar4 + 0x18;
+            if ("\x01"._0_4_ + iVar3 <= unaff_R14D) {
+                uVar2 = unaff_R15 & 0xffffffff;
+                if ((iVar3 == 0 || iVar3 == (int32_t)uVar2) || (in_stack_0000000c == (int32_t)uVar2)) {
+                    while (in_stack_000000c8 != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+                        func_0x0808b4e1();
+                        uVar2 = 0xfffffff9;
+                    }
+                    return uVar2;
+                }
+                func_0x0808b4e1(0xffffffff, reloc..LC77, 
+                                "df_no_use_specs == 0 || output == df_no_use_specs || output == max");
+                if (*(int32_t *)0x8000008 == 0) {
+                    arg3 = 2;
+                    in_EAX = 3;
+                } else {
+                    in_EAX = 3;
+                    arg3 = ZEXT48(_segment.ehdr - 1);
+                }
+                goto code_r0x08005547;
+            }
+        } while ((*(int32_t *)(iVar4 + 0x1c) < 3) || (*(int64_t *)(iVar4 + 0x20) == 0));
+        reloc.evaluate_inside_using = (code)0x1;
+        func_0x0808b4e1();
+        reloc.evaluate_inside_using = (code)0x0;
+        uVar1 = *(int32_t *)(iVar4 + 0x1c) - 4;
+        if (uVar1 < 5) {
+    // WARNING: Could not recover jumptable at 0x0800553d. Too many branches
+    // WARNING: Treating indirect jump as call
+            uVar2 = (*(code *)(*(int32_t *)(unaff_RBX + (uint64_t)uVar1 * 4) + unaff_RBX))();
+            return uVar2;
+        }
+        arg3 = 0;
+        in_EAX = 2;
+    } while( true );
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x08005e43: Changing call to branch
+// WARNING: Possible PIC construction at 0x08005ee5: Changing call to branch
+// WARNING: Possible PIC construction at 0x08005f40: Changing call to branch
+// WARNING: Possible PIC construction at 0x08005f7d: Changing call to branch
+// WARNING: Possible PIC construction at 0x08006132: Changing call to branch
+// WARNING: Possible PIC construction at 0x080061ad: Changing call to branch
+// WARNING: Possible PIC construction at 0x08005e02: Changing call to branch
+// WARNING: Possible PIC construction at 0x080060c7: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800601f: Changing call to branch
+// WARNING: Possible PIC construction at 0x08005eb3: Changing call to branch
+// WARNING: Possible PIC construction at 0x08005fb7: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800607b: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x08005fbc)
+// WARNING: Removing unreachable block (ram,0x08005fc0)
+// WARNING: Removing unreachable block (ram,0x08006068)
+// WARNING: Removing unreachable block (ram,0x08005fe6)
+// WARNING: Removing unreachable block (ram,0x08005eb8)
+// WARNING: Removing unreachable block (ram,0x08006024)
+// WARNING: Removing unreachable block (ram,0x08005e07)
+// WARNING: Removing unreachable block (ram,0x080061b2)
+// WARNING: Removing unreachable block (ram,0x080061f0)
+// WARNING: Removing unreachable block (ram,0x080061c3)
+// WARNING: Removing unreachable block (ram,0x08005c54)
+// WARNING: Removing unreachable block (ram,0x08005db8)
+// WARNING: Removing unreachable block (ram,0x08005c66)
+// WARNING: Removing unreachable block (ram,0x08005de6)
+// WARNING: Removing unreachable block (ram,0x08005c94)
+// WARNING: Removing unreachable block (ram,0x08005c9c)
+// WARNING: Removing unreachable block (ram,0x08005cb0)
+// WARNING: Removing unreachable block (ram,0x08005dab)
+// WARNING: Removing unreachable block (ram,0x08006137)
+// WARNING: Removing unreachable block (ram,0x08005f82)
+// WARNING: Removing unreachable block (ram,0x08005f8a)
+// WARNING: Removing unreachable block (ram,0x08005f90)
+// WARNING: Removing unreachable block (ram,0x08005fa4)
+// WARNING: Removing unreachable block (ram,0x08005f45)
+// WARNING: Removing unreachable block (ram,0x08006018)
+// WARNING: Removing unreachable block (ram,0x08005f4d)
+// WARNING: Removing unreachable block (ram,0x080060ba)
+// WARNING: Removing unreachable block (ram,0x08005f67)
+// WARNING: Removing unreachable block (ram,0x08005eea)
+// WARNING: Removing unreachable block (ram,0x08005ff0)
+// WARNING: Removing unreachable block (ram,0x08005ef2)
+// WARNING: Removing unreachable block (ram,0x08006050)
+// WARNING: Removing unreachable block (ram,0x08005f08)
+// WARNING: Removing unreachable block (ram,0x08005e48)
+// WARNING: Removing unreachable block (ram,0x080060cc)
+// WARNING: Removing unreachable block (ram,0x080060de)
+// WARNING: Removing unreachable block (ram,0x08006154)
+// WARNING: Removing unreachable block (ram,0x080060fc)
+// WARNING: Removing unreachable block (ram,0x08006128)
+// WARNING: Removing unreachable block (ram,0x08006116)
+// WARNING: Removing unreachable block (ram,0x08005e50)
+// WARNING: Removing unreachable block (ram,0x08005ec0)
+// WARNING: Removing unreachable block (ram,0x08005e60)
+// WARNING: Removing unreachable block (ram,0x08006000)
+// WARNING: Removing unreachable block (ram,0x08005e6f)
+// WARNING: Removing unreachable block (ram,0x08005fb0)
+// WARNING: Removing unreachable block (ram,0x08005ed8)
+// WARNING: Removing unreachable block (ram,0x08006080)
+// WARNING: Removing unreachable block (ram,0x08005eac)
+
+void sym.plot_option_array(void)
+{
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+
+
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8000340 */
+#include <stdint.h>
+ 
+int64_t df_tokenise (int64_t arg7, int64_t arg1) {
+    xmm0 = arg7;
+    rdi = arg1;
+    r14 = rdi;
+    rax = *(fs:0x28);
+    *((rsp + 0x28)) = rax;
+    eax = 0;
+    gp_realloc (rbx, rbp, r12, r13, r14);
+    rdx = r14 + rax - 1;
+    eax = *(rdx);
+    if (al == 0xd) {
+        goto label_24;
+    }
+    if (al == 0xa) {
+        goto label_24;
+    }
+label_4:
+    rdx = sym_raw_filetype_function;
+    rax = rdx - 0x70;
+    do {
+        *(rax) = 0;
+        rax += 8;
+    } while (rdx != rax);
+    *(obj.df_no_cols) = 0;
+    r12d = 0;
+    if (*(r14) == 0) {
+        goto label_19;
+    }
+    rbx = 0x08000150;
+label_3:
+    eax = df_max_cols;
+    edx = r12 + 2;
+    if (edx >= eax) {
+        edx = rax + 0x14;
+        edi = rax + rax;
+        if (eax <= 0x13) {
+            edi = edx;
+        }
+        expand_df_column ();
+        r12d = df_no_cols;
+    }
+    rcx = (int64_t) r12d;
+    rax = obj_df_matrix_file;
+    rsi = obj_df_matrix_file;
+    rcx <<= 5;
+    rcx += *(obj.df_column);
+    *((rcx + 0x10)) = r14;
+    while (edx != r12d) {
+label_0:
+        rax += 0x18;
+        rsi += 8;
+        if (rbx == rax) {
+            goto label_25;
+        }
+label_1:
+        edi = *(rax);
+        edx = rdi - 1;
+    }
+    *(rsi) = r14;
+    if (*((rax + 4)) != 1) {
+        goto label_0;
+    }
+    rax += 0x18;
+    *((rcx + 8)) = 1;
+    rsi += 8;
+    if (rbx != rax) {
+        goto label_1;
+    }
+label_25:
+    if (*(r14) == 0x22) {
+        goto label_26;
+    }
+    rsi = *(obj.missing_val);
+    *((rsp + 0xf)) = 0;
+    if (rsi == 0) {
+        goto label_27;
+    }
+label_22:
+    rdi = rsi;
+    *((rsp + 0x18)) = rcx;
+    *((rsp + 0x10)) = rsi;
+    rax = gp_realloc ();
+    rsi = *((rsp + 0x10));
+    rdi = r14;
+    rdx = rax;
+    eax = gp_realloc ();
+    rcx = *((rsp + 0x18));
+    if (eax != 0) {
+        goto label_27;
+    }
+    ebp = *((r14 + rbp));
+    if (bpl == 0) {
+        goto label_28;
+    }
+    r13 = *(obj.df_separators);
+    r15 = r14;
+    if (r13 == 0) {
+        goto label_29;
+    }
+label_11:
+    esi = (int32_t) bpl;
+    rdi = r13;
+    *((rsp + 0x10)) = rcx;
+    rax = gp_realloc ();
+    rcx = *((rsp + 0x10));
+    if (rax == 0) {
+        goto label_17;
+    }
+label_14:
+    *((rcx + 8)) = 0xfffffffb;
+    *((rsp + 0x10)) = rcx;
+    gp_realloc ();
+    rax = *(obj.df_no_cols);
+    rcx = *((rsp + 0x10));
+    rbp = *(obj.df_separators);
+    r12 = rax;
+    rax <<= 5;
+    rax += *(obj.df_column);
+    *(rcx) = xmm0;
+    *((rax + 0x10)) = 0;
+    r12d++;
+label_10:
+    *(obj.df_no_cols) = r12d;
+    if (*((rsp + 0xf)) != 0) {
+        goto label_6;
+    }
+label_13:
+    r13d = *(r15);
+    al = (r13b != 0) ? 1 : 0;
+label_5:
+    r14b = (r13b != 0xa) ? 1 : 0;
+    r14d &= eax;
+    if (rbp == 0) {
+        goto label_30;
+    }
+label_7:
+    if (r14b != 0) {
+        goto label_31;
+    }
+    goto label_32;
+    do {
+        r13d = *((r15 + 1));
+        r15++;
+        if (r13b == 0) {
+            goto label_19;
+        }
+        if (r13b == 0xa) {
+            goto label_32;
+        }
+label_31:
+        esi = (int32_t) r13b;
+        rdi = rbp;
+        rax = gp_realloc ();
+    } while (rax == 0);
+label_32:
+    if (r13b == 0) {
+        goto label_19;
+    }
+    if (r13b == 0xa) {
+        goto label_19;
+    }
+    r13d = *((r15 + 1));
+    r14 = r15 + 1;
+    if (r13b == 9) {
+        goto label_2;
+    }
+    if (r13b != 0x20) {
+        goto label_33;
+    }
+    do {
+label_2:
+        esi = (int32_t) r13b;
+        rdi = rbp;
+        rax = gp_realloc ();
+        if (rax != 0) {
+            goto label_33;
+        }
+        r13d = *((r14 + 1));
+        r14++;
+    } while (r13b == 0x20);
+    if (r13b == 9) {
+        goto label_2;
+    }
+label_33:
+    if (r13b == 0) {
+        goto label_34;
+    }
+    if (r13b == 0xa) {
+        goto label_34;
+    }
+    r13d = *(r14);
+label_8:
+    if (r13b != 0) {
+        goto label_3;
+    }
+label_19:
+    rax = *((rsp + 0x28));
+    rax ^= *(fs:0x28);
+    if (r13b != 0) {
+        goto label_35;
+    }
+    eax = r12d;
+    return rax;
+label_24:
+    *(rdx) = 0;
+    goto label_4;
+label_12:
+    r12d++;
+    *((rcx + 8)) = 0xfffffff8;
+    r15 = r14;
+    *(obj.df_no_cols) = r12d;
+label_6:
+    r13d = *((r15 + 1));
+    r15++;
+    al = (r13b != 0) ? 1 : 0;
+    if (r13b == 0x22) {
+        goto label_5;
+    }
+    if (al != 0) {
+        goto label_6;
+    }
+    r14b = (r13b != 0xa) ? 1 : 0;
+    r14d &= eax;
+    if (rbp != 0) {
+        goto label_7;
+    }
+label_30:
+    rax = gp_realloc ();
+    rcx = *(rax);
+    if (r14b != 0) {
+        goto label_36;
+    }
+    goto label_37;
+    do {
+        r13d = *((r15 + 1));
+        r15++;
+        if (r13b == 0) {
+            goto label_37;
+        }
+        if (r13b == 0xa) {
+            goto label_37;
+        }
+label_36:
+        r13d = (int32_t) r13b;
+    } while ((*((rcx + r13*2 + 1)) & 0x20) == 0);
+    r13d = *(r15);
+label_37:
+    r14 = r15;
+    goto label_38;
+label_9:
+    if (r13b == 0xa) {
+        goto label_8;
+    }
+    r13d = *((r14 + 1));
+    r14++;
+label_38:
+    eax = (int32_t) r13b;
+    if ((*((rcx + rax*2 + 1)) & 0x20) != 0) {
+        goto label_9;
+    }
+    goto label_8;
+    do {
+        r15 = r14;
+label_17:
+        eax = fast_columns;
+        r12d++;
+        if (eax != 0) {
+            eax = datafile.c;
+            if (eax == 0) {
+                goto label_39;
+            }
+            if (eax <= 0) {
+                goto label_40;
+            }
+            rdx = obj_df_matrix_file;
+            if (*(rdx) == r12d) {
+                goto label_39;
+            }
+            if (eax == 1) {
+                goto label_40;
+            }
+            if (*(0x08000018) == r12d) {
+                goto label_39;
+            }
+            if (eax == 2) {
+                goto label_40;
+            }
+            if (*(0x08000030) == r12d) {
+                goto label_39;
+            }
+            if (eax == 3) {
+                goto label_40;
+            }
+            if (*(0x08000048) == r12d) {
+                goto label_39;
+            }
+            if (eax == 4) {
+                goto label_40;
+            }
+            if (*(0x08000060) == r12d) {
+                goto label_39;
+            }
+            if (eax == 5) {
+                goto label_40;
+            }
+        }
+label_39:
+        rsi = rsp + 0x20;
+        rdi = r14;
+        *((rsp + 0x10)) = rcx;
+        gp_realloc ();
+        rax = *((rsp + 0x20));
+        rcx = *((rsp + 0x10));
+        r9d = 0;
+        rax -= r14;
+        *(rcx) = xmm0;
+        rsi = (int64_t) eax;
+        r9b = (eax != 0) ? 1 : 0;
+label_16:
+        if (*(obj.df_fortran_constants) != 0) {
+            if (r9d == 1) {
+                goto label_41;
+            }
+        }
+label_15:
+        xmm0 = *(rcx);
+        eax = 0xfffffffe;
+        rbp = *(obj.df_separators);
+        __asm ("ucomisd xmm0, xmm0");
+        __asm ("cmovp r9d, eax");
+        *((rcx + 8)) = r9d;
+        goto label_10;
+label_27:
+        r13 = *(obj.df_separators);
+    } while (r13 == 0);
+label_23:
+    ebp = *(r14);
+    r15 = r14;
+    goto label_11;
+label_26:
+    rbp = *(obj.df_separators);
+    if (rbp == 0) {
+        goto label_12;
+    }
+    r15 = r14 + 1;
+    *((rcx + 0x10)) = r15;
+    if (*((r14 + 1)) != 0x22) {
+        goto label_42;
+    }
+    r12d++;
+    *((rcx + 8)) = 0xfffffff8;
+    *(obj.df_no_cols) = r12d;
+    goto label_13;
+label_28:
+    r15 = r14;
+    goto label_14;
+label_41:
+    rbp = r15 + rsi;
+    r14d = *(rbp);
+    eax = r14d;
+    eax &= 0xffffffdf;
+    if (al == 0x44) {
+        goto label_43;
+    }
+    if (al != 0x51) {
+        goto label_15;
+    }
+label_43:
+    *(rbp) = 0x65;
+    rsi = rsp + 0x20;
+    rdi = r15;
+    *((rsp + 0x10)) = rcx;
+    gp_realloc ();
+    rcx = *((rsp + 0x10));
+    r9d = 0;
+    r9b = (*((rsp + 0x20)) != r15) ? 1 : 0;
+    *(rcx) = xmm0;
+    *(rbp) = r14b;
+    goto label_15;
+label_40:
+    *((rsp + 0x10)) = rcx;
+    rax = gp_realloc ();
+    rcx = *((rsp + 0x10));
+    r14 = *(rax);
+    while (bp != 0) {
+        if (r13 != 0) {
+            esi = (int32_t) al;
+            rdi = r13;
+            *((rsp + 0x18)) = rcx;
+            *((rsp + 0x10)) = al;
+            rax = gp_realloc ();
+            r8d = *((rsp + 0x10));
+            rcx = *((rsp + 0x18));
+            if (rax != 0) {
+                goto label_20;
+            }
+        }
+        r15++;
+        eax = *(r15);
+        ebp = *((r14 + rax*2));
+        r8 = rax;
+        bp &= 0x2000;
+    }
+    if (al == 0) {
+        goto label_44;
+    }
+    if (r13 == 0) {
+        goto label_45;
+    }
+    esi = (int32_t) al;
+    rdi = r13;
+    *((rsp + 0x18)) = rcx;
+    *((rsp + 0x10)) = al;
+    rax = gp_realloc ();
+    r8d = *((rsp + 0x10));
+    rcx = *((rsp + 0x18));
+    r9d = 1;
+    if (rax != 0) {
+label_20:
+        r9d = 0;
+    }
+    if (*((rsp + 0xf)) != 0) {
+        goto label_46;
+    }
+    al = (r8b != 0) ? 1 : 0;
+label_18:
+    if (bp != 0) {
+        goto label_47;
+    }
+    if (al != 0) {
+        goto label_21;
+    }
+    goto label_47;
+    do {
+        if (al == 0) {
+            goto label_47;
+        }
+label_21:
+        if (r13 != 0) {
+            esi = (int32_t) r8b;
+            rdi = r13;
+            *((rsp + 0x18)) = r9d;
+            *((rsp + 0x10)) = rcx;
+            rax = gp_realloc ();
+            rcx = *((rsp + 0x10));
+            r9d = *((rsp + 0x18));
+            if (rax != 0) {
+                goto label_47;
+            }
+        }
+        eax = *((r15 + 1));
+        r15++;
+        r8 = rax;
+    } while ((*((r14 + rax*2 + 1)) & 0x20) == 0);
+label_47:
+    esi = 0;
+    goto label_16;
+label_29:
+    *((rsp + 0x10)) = rcx;
+    rax = gp_realloc ();
+    rcx = *((rsp + 0x10));
+    rax = *(rax);
+    if ((*((rax + rbp*2 + 1)) & 0x20) == 0) {
+        goto label_17;
+    }
+    goto label_14;
+    do {
+label_46:
+        r8d = *((r15 + 1));
+        r15++;
+        al = (r8b != 0) ? 1 : 0;
+        dl = (r8b != 0x22) ? 1 : 0;
+        dl &= al;
+        *((rsp + 0xf)) = dl;
+    } while (dl != 0);
+    esi = (int32_t) r8b;
+    ebp = *((r14 + rsi*2));
+    bp &= 0x2000;
+    goto label_18;
+label_34:
+    rbx = (int64_t) r12d;
+    rbx <<= 5;
+    rbx += *(obj.df_column);
+    *((rbx + 8)) = 0xfffffffb;
+    gp_realloc ();
+    eax = df_no_cols;
+    *(rbx) = xmm0;
+    r12d = rax + 1;
+    *(obj.df_no_cols) = r12d;
+    goto label_19;
+label_44:
+    if (r13 != 0) {
+        goto label_20;
+    }
+    eax = 0;
+    r9d = 0;
+    goto label_18;
+label_45:
+    r9d = 1;
+    goto label_21;
+label_35:
+    gp_realloc ();
+label_42:
+    rsi = *(obj.missing_val);
+    if (rsi != 0) {
+        *((rsp + 0xf)) = 1;
+        r14 = r15;
+        goto label_22;
+    }
+    *((rsp + 0xf)) = 1;
+    r13 = rbp;
+    r14 = r15;
+    goto label_23;
+}
+
+
+bool sym.valid_format.part.0(int64_t param_1)
+{
+    char cVar1;
+    int64_t iVar2;
+    int64_t iVar3;
+    int32_t iVar4;
+    
+    iVar4 = 0;
+    do {
+        iVar2 = func_0x0808b4e1(param_1);
+        if (iVar2 == 0) {
+            return iVar4 - 1U < 7;
+        }
+        do {
+            param_1 = iVar2;
+            cVar1 = *(char *)(param_1 + 1);
+            iVar3 = func_0x0808b4e1("");
+            iVar2 = param_1 + 1;
+        } while (iVar3 != 0);
+        if (cVar1 != '*') {
+            if (cVar1 == 'l') {
+                iVar2 = func_0x0808b4e1("", (int32_t)*(char *)(param_1 + 2));
+                if (iVar2 == 0) {
+                    return false;
+                }
+                iVar4 = iVar4 + 1;
+            } else {
+                if (cVar1 != '%') {
+                    return false;
+                }
+            }
+        }
+        param_1 = param_1 + 2;
+    } while( true );
+}
+
+
+void sym.df_showdata(void)
+{
+    int64_t iVar1;
+    int64_t iVar2;
+    uint64_t uVar3;
+    code *pcVar4;
+    undefined8 uVar5;
+    
+    iVar2 = _obj.df_line;
+    iVar1 = _reloc.df_filename;
+    if (_obj.data_fp != 0) {
+        if ((_reloc.df_filename != 0) && (_obj.df_line != 0)) {
+            uVar5 = 0x8002375;
+            uVar3 = func_0x0808b4e1(_obj.df_line);
+            pcVar4 = reloc..LC59;
+            if (uVar3 < 0x4e) {
+                pcVar4 = reloc..LC43;
+            }
+            func_0x0808b4e1(_reloc.stderr, 1, "", iVar2, pcVar4, iVar1, _segment.ehdr, uVar5);
+        }
+        return;
+    }
+    return;
+}
+
+
+void sym.df_read_a_float(int64_t arg1)
+{
+    undefined8 *puVar1;
+    char *pcVar2;
+    char cVar3;
+    int32_t iVar4;
+    int64_t iVar5;
+    undefined8 uVar6;
+    uint64_t unaff_RBX;
+    undefined *puVar7;
+    uint32_t arg2;
+    char *arg1_00;
+    undefined *unaff_R13;
+    char *unaff_R14;
+    uint64_t unaff_R15;
+    int64_t in_FS_OFFSET;
+    double extraout_XMM0_Qa;
+    undefined auStack40 [4];
+    char acStack36 [4];
+    int64_t iStack32;
+    
+    iStack32 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    arg1_00 = acStack36;
+    iVar5 = func_0x0808b4e1(arg1_00, 4, 1, arg1);
+    if (iVar5 == 1) {
+        arg2 = 3;
+        if (_segment.ehdr < 3) {
+            arg2 = SEXT14((char)obj.df_byte_read_order_map[_segment.ehdr]);
+        }
+        sym.df_swap_bytes_by_endianess(arg1_00, arg2, 4);
+        if (iStack32 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return;
+        }
+    } else {
+        iVar4 = func_0x0808b4e1(arg1);
+        if (iVar4 != 0) {
+            func_0x0808b4e1(0xffffffff, "");
+        }
+        func_0x0808b4e1(0xffffffff, _reloc.read_error_msg);
+    }
+    func_0x0808b4e1();
+    puVar7 = auStack40;
+    do {
+        *(uint64_t *)(puVar7 + -8) = unaff_R15;
+        *(char **)(puVar7 + -0x10) = unaff_R14;
+        *(undefined **)(puVar7 + -0x18) = unaff_R13;
+        *(char **)(puVar7 + -0x20) = arg1_00;
+        *(int64_t *)(puVar7 + -0x28) = arg1;
+        *(uint64_t *)(puVar7 + -0x30) = unaff_RBX;
+        unaff_R13 = puVar7 + -0x58;
+        *(undefined8 *)(puVar7 + -0x40) = *(undefined8 *)(in_FS_OFFSET + 0x28);
+        *(undefined8 *)(puVar7 + -0x60) = 0x80024cd;
+        func_0x0808b4e1(puVar7 + -0x58);
+        if (reloc.evaluate_inside_using != (code)0x0) {
+            if (*(int32_t *)(puVar7 + -0x58) == 3) {
+                arg1_00 = *(char **)(puVar7 + -0x50);
+                if (0 < _obj.df_no_cols) {
+                    unaff_RBX = 0;
+                    do {
+                        arg1 = unaff_RBX & 0xffffffff;
+                        unaff_R14 = (char *)(unaff_RBX * 0x20);
+                        pcVar2 = *(char **)(unaff_R14 + _str.auto + 0x18);
+                        if (pcVar2 != (char *)0x0) {
+                            cVar3 = *pcVar2;
+                            *(undefined8 *)(puVar7 + -0x60) = 0x8002525;
+                            cVar3 = func_0x0808b4e1(arg1_00, pcVar2 + (cVar3 == '\"'));
+                            if (cVar3 != '\0') {
+                                arg1 = ZEXT48((int32_t)arg1 + 1);
+                                if (_reloc.df_key_title == 0) {
+                                    uVar6 = *(undefined8 *)(unaff_R14 + _str.auto + 0x18);
+                                    *(undefined8 *)(puVar7 + -0x60) = 0x800277d;
+                                    _reloc.df_key_title = func_0x0808b4e1(uVar6);
+                                }
+                                goto code_r0x080026a1;
+                            }
+                        }
+                        unaff_RBX = unaff_RBX + 1;
+                    } while ((int32_t)unaff_RBX < _obj.df_no_cols);
+                }
+                if ((*arg1_00 != '\0') && (""[0] != '\0')) {
+                    ""[0] = '\0';
+                    *(undefined8 *)(puVar7 + -0x60) = 0x80026eb;
+                    func_0x0808b4e1(0xffffffff, "", *(undefined8 *)(puVar7 + -0x50));
+                    if (0 < _obj.df_no_cols) {
+                        unaff_RBX = 0;
+                        do {
+                            unaff_R15 = (uint64_t)((int32_t)unaff_RBX + 1);
+                            unaff_R14 = *(char **)(unaff_RBX * 0x20 + _str.auto + 0x18);
+                            if (unaff_R14 != (char *)0x0) {
+                                *(undefined8 *)(puVar7 + -0x60) = 0x800273b;
+                                uVar6 = func_0x0808b4e1(arg1_00);
+                                cVar3 = *unaff_R14;
+                                *(undefined8 *)(puVar7 + -0x60) = 0x8002753;
+                                iVar4 = func_0x0808b4e1(arg1_00, unaff_R14 + (cVar3 == '\"'), uVar6);
+                                if (iVar4 == 0) {
+                                    *(undefined8 *)(puVar7 + -0x60) = 0x800276a;
+                                    func_0x0808b4e1(0xffffffff, "partial match against column %d header \"%s\"", 
+                                                    unaff_R15, unaff_R14);
+                                }
+                            }
+                            unaff_RBX = unaff_RBX + 1;
+                        } while ((int32_t)unaff_RBX < _obj.df_no_cols);
+                        arg1 = 0xfffffff7;
+code_r0x080026a1:
+                        *(undefined8 *)(puVar7 + -0x60) = 0x80026a9;
+                        func_0x0808b4e1(puVar7 + -0x58);
+                        goto code_r0x080025ac;
+                    }
+                }
+                *(undefined8 *)(puVar7 + -0x60) = 0x8002555;
+                func_0x0808b4e1(puVar7 + -0x58);
+                goto code_r0x08002555;
+            }
+            *(undefined8 *)(puVar7 + -0x60) = 0x80025a8;
+            func_0x0808b4e1(puVar7 + -0x58);
+            arg1 = arg1 & 0xffffffff00000000U | (uint64_t)(uint32_t)(int32_t)extraout_XMM0_Qa;
+code_r0x080025ac:
+            iVar4 = (int32_t)arg1;
+            if (iVar4 == -2) {
+                *(undefined8 *)(puVar7 + -0x60) = 0x8002647;
+                uVar6 = func_0x0808b4e1(puVar7 + -0x58, (int64_t)_obj.df_current_index);
+                *(undefined8 *)(puVar7 + -0x60) = 0x800264f;
+                func_0x0808b4e1(uVar6);
+            } else {
+                if (iVar4 == -1) {
+                    *(undefined8 *)(puVar7 + -0x60) = 0x80026bf;
+                    uVar6 = func_0x0808b4e1(puVar7 + -0x58, (int64_t)_obj.line_count);
+                    *(undefined8 *)(puVar7 + -0x60) = 0x80026c7;
+                    func_0x0808b4e1(uVar6);
+                } else {
+                    if (iVar4 == 0) {
+code_r0x08002561:
+                        *(undefined8 *)(puVar7 + -0x60) = 0x800256d;
+                        uVar6 = func_0x0808b4e1(puVar7 + -0x58);
+                        *(undefined8 *)(puVar7 + -0x60) = 0x8002575;
+                        func_0x0808b4e1(uVar6);
+                    } else {
+                        if (iVar4 == -3) {
+                            uVar6 = *(undefined8 *)((int64_t)_obj.df_no_cols * 0x20 + _str.auto + -0x20);
+                            *(undefined8 *)(puVar7 + -0x60) = 0x800267b;
+                            uVar6 = func_0x0808b4e1(uVar6, 0, puVar7 + -0x58);
+                            *(undefined8 *)(puVar7 + -0x60) = 0x8002683;
+                            func_0x0808b4e1(uVar6);
+                        } else {
+                            if ((iVar4 < 1) || (_obj.df_no_cols < iVar4)) {
+code_r0x08002555:
+                                reloc.undefined = (code)0x1;
+                                *(undefined8 *)(puVar7 + -0x60) = 0x8002561;
+                                func_0x0808b4e1();
+                                goto code_r0x08002561;
+                            }
+                            arg1 = (int64_t)iVar4 * 0x20;
+                            puVar1 = (undefined8 *)(_str.auto + -0x20 + arg1);
+                            iVar4 = *(int32_t *)(puVar1 + 1);
+                            if (iVar4 == -5) {
+                                *(undefined8 *)(puVar7 + -0x60) = 0x800278e;
+                                func_0x0808b4e1();
+                                *(undefined8 *)(puVar7 + -0x60) = 0x800279e;
+                                uVar6 = func_0x0808b4e1(puVar7 + -0x58);
+                                *(undefined8 *)(puVar7 + -0x60) = 0x80027a6;
+                                func_0x0808b4e1(uVar6);
+                            } else {
+                                if (iVar4 != 1) goto code_r0x08002555;
+                                uVar6 = *puVar1;
+                                *(undefined8 *)(puVar7 + -0x60) = 0x8002613;
+                                uVar6 = func_0x0808b4e1(uVar6, 0, puVar7 + -0x58);
+                                *(undefined8 *)(puVar7 + -0x60) = 0x800261b;
+                                func_0x0808b4e1(uVar6);
+                            }
+                        }
+                    }
+                }
+            }
+            if (*(int64_t *)(puVar7 + -0x40) == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+                return;
+            }
+            *(undefined8 *)(puVar7 + -0x60) = 0x80027ba;
+            func_0x0808b4e1();
+        }
+        *(undefined8 *)(puVar7 + -0x60) = 0x80027d1;
+        func_0x0808b4e1(_reloc.c_token + -1, "column() called from invalid context");
+        *(int64_t *)(puVar7 + -0x60) = arg1;
+        *(undefined8 *)(puVar7 + -0x68) = 0x80027ed;
+        func_0x0808b4e1();
+        arg1 = *(int64_t *)(puVar7 + -0x60);
+        puVar7 = puVar7 + -0x58;
+    } while( true );
+}
+
+
+void sym.df_reset_after_error(void)
+{
+    reloc.evaluate_inside_using = (code)0x0;
+    return;
+}
+
+
+int64_t sym.f_columnhead(int64_t arg7)
+{
+    int32_t iVar1;
+    undefined8 uVar2;
+    int64_t iVar3;
+    undefined *unaff_RBP;
+    code *pcVar4;
+    int32_t *piVar5;
+    undefined *unaff_R12;
+    undefined *unaff_R13;
+    int64_t in_FS_OFFSET;
+    bool bVar6;
+    double dVar7;
+    double dStack264;
+    undefined8 uStack256;
+    undefined auStack248 [32];
+    int32_t aiStack216 [2];
+    undefined8 uStack208;
+    undefined auStack184 [56];
+    int64_t iStack128;
+    undefined *puStack104;
+    undefined auStack80 [24];
+    int64_t iStack56;
+    undefined *puStack48;
+    undefined auStack40 [24];
+    int64_t iStack16;
+    
+    iStack16 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    if (reloc.evaluate_inside_using != (code)0x0) {
+        puStack48 = (undefined *)0x8002841;
+        func_0x0808b4e1(auStack40);
+        puStack48 = (undefined *)0x8002849;
+        dVar7 = (double)func_0x0808b4e1(auStack40);
+        _obj.column_for_key_title = (uint32_t)dVar7;
+        if (_obj.column_for_key_title == 0xffffffff) {
+            puStack48 = (undefined *)0x8002907;
+            uVar2 = func_0x0808b4e1(auStack40, _reloc.df_key_title);
+            puStack48 = (undefined *)0x800290f;
+            func_0x0808b4e1(uVar2);
+        } else {
+            if (_obj.column_for_key_title < 10000) {
+                if (_str.auto == 0) {
+code_r0x080028cf:
+                    puStack48 = (undefined *)0x80028e2;
+                    func_0x0808b4e1(0xffffffff, "Internal error: df_column[] not initialized\n");
+                    goto code_r0x080028e8;
+                }
+                if (((_obj.column_for_key_title == 0) || (_obj.df_max_cols < (int32_t)_obj.column_for_key_title)) ||
+                   (pcVar4 = *(code **)(_str.auto + -8 + (int64_t)(int32_t)_obj.column_for_key_title * 0x20),
+                   pcVar4 == (code *)0x0)) goto code_r0x080028e8;
+            } else {
+                _obj.column_for_key_title = 0;
+                if (_str.auto == 0) goto code_r0x080028cf;
+code_r0x080028e8:
+                pcVar4 = obj.unknown_column.12776;
+            }
+            puStack48 = (undefined *)0x8002898;
+            uVar2 = func_0x0808b4e1(auStack40, pcVar4);
+            puStack48 = (undefined *)0x80028a0;
+            func_0x0808b4e1(uVar2);
+            reloc.parse_1st_row_as_headers = (code)0x1;
+        }
+        if (iStack16 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return 0;
+        }
+        puStack48 = (undefined *)0x8002916;
+        arg7 = func_0x0808b4e1();
+        unaff_RBP = auStack40;
+    }
+    puStack48 = (undefined *)0x800292d;
+    func_0x0808b4e1(arg7, _reloc.c_token + -1, "columnhead() called from invalid context");
+    puStack104 = auStack80;
+    iStack56 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack48 = unaff_RBP;
+    func_0x0808b4e1(auStack80);
+    dVar7 = (double)func_0x0808b4e1(auStack80);
+    bVar6 = false;
+    iVar1 = (int32_t)dVar7 + -1;
+    if ((-1 < iVar1) && (iVar1 < _obj.df_no_cols)) {
+        bVar6 = *(int32_t *)((int64_t)iVar1 * 0x20 + _str.auto + 8) == 1;
+    }
+    uVar2 = func_0x0808b4e1(auStack80, bVar6);
+    func_0x0808b4e1(uVar2);
+    if (iStack56 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return 0;
+    }
+    func_0x0808b4e1();
+    iStack128 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    piVar5 = aiStack216;
+    dStack264 = 0.00000000;
+    func_0x0808b4e1(piVar5);
+    uVar2 = uStack208;
+    func_0x0808b4e1();
+    if ((int32_t)uVar2 != 1) {
+        if ((int32_t)uVar2 == 2) {
+            unaff_R12 = auStack248;
+            func_0x0808b4e1(unaff_R12);
+            dVar7 = (double)func_0x0808b4e1();
+            if (reloc.evaluate_inside_using == (code)0x0) goto code_r0x08002b27;
+            if (aiStack216[0] == 3) goto code_r0x08002a49;
+        } else {
+            func_0x0808b4e1(0xffffffff, "wrong number of parameters to timecolumn");
+        }
+        iVar1 = -1;
+        func_0x0808b4e1(0xffffffff, "non-string passed as a format to timecolumn");
+        goto code_r0x08002b80;
+    }
+    dVar7 = (double)func_0x0808b4e1(piVar5);
+    uStack208 = func_0x0808b4e1(_reloc.timefmt);
+    aiStack216[0] = 3;
+    if (reloc.evaluate_inside_using == (code)0x0) {
+code_r0x08002b27:
+        func_0x0808b4e1(_reloc.c_token + -1, "timecolumn() called from invalid context");
+code_r0x08002b40:
+        dVar7 = (double)func_0x0808b4e1(unaff_R13);
+        func_0x0808b4e1(dVar7 + dStack264, 0, unaff_R12);
+    } else {
+code_r0x08002a49:
+        unaff_R12 = auStack248;
+        iVar1 = (int32_t)dVar7;
+        if (((iVar1 < 1) || (_obj.df_no_cols < iVar1)) ||
+           (iVar3 = *(int64_t *)((int64_t)iVar1 * 0x20 + _str.auto + -0x10), iVar3 == 0)) {
+code_r0x08002a98:
+            reloc.undefined = (code)0x1;
+        } else {
+            unaff_R13 = auStack184;
+            iVar1 = func_0x0808b4e1(iVar3, uStack208, unaff_R13, &dStack264, &uStack256);
+            if (iVar1 == 1) goto code_r0x08002b40;
+            if (iVar1 != 2) goto code_r0x08002a98;
+            func_0x0808b4e1(uStack256, 0, unaff_R12);
+        }
+    }
+    func_0x0808b4e1(unaff_R12);
+    func_0x0808b4e1();
+    iVar1 = (int32_t)piVar5;
+    if (iStack128 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return 0;
+    }
+code_r0x08002b80:
+    func_0x0808b4e1();
+    if (iVar1 < 1) {
+        iVar3 = 0;
+    } else {
+        iVar3 = _str.auto;
+        if (_str.auto != 0) {
+            return *(int64_t *)(_str.auto + -8 + (int64_t)iVar1 * 0x20);
+        }
+    }
+    return iVar3;
+}
+
+
+undefined4 sym.expect_string(char param_1)
+{
+    int64_t iVar1;
+    int32_t *piVar2;
+    
+    if ('\0' < param_1) {
+        iVar1 = (int64_t)(param_1 + -1) * 0x18;
+        *(undefined4 *)(iVar1 + 0x8000004) = 1;
+        piVar2 = *(int32_t **)(iVar1 + 0x8000008);
+        if (((piVar2 != (int32_t *)0x0) && (*piVar2 == 2)) && (piVar2[10] == 0x2f)) {
+            piVar2[10] = 0x30;
+        }
+        return *(undefined4 *)((int64_t)(param_1 + -1) * 0x18 + 0x8000000);
+    }
+    obj.df_tabulate_strings = (code)0x1;
+    return 0xffffffff;
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x08002c55: Changing call to branch
+// WARNING: Possible PIC construction at 0x08002cc9: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x08002c5a)
+// WARNING: Removing unreachable block (ram,0x08002cce)
+
+void sym.df_set_key_title(uint32_t arg1)
+{
+    char cVar1;
+    int32_t iVar2;
+    int32_t *in_RAX;
+    undefined4 in_RDI;
+    int64_t iVar3;
+    
+    iVar3 = CONCAT44(in_RDI, arg1);
+    if (_reloc.df_key_title == 0) {
+        return;
+    }
+    if ((*(int32_t *)(iVar3 + 0x10) == 0x608) && (_reloc.histogram_opts == 2)) {
+        in_RAX = (int32_t *)
+                 func_0x0808b4e1((double)*(int32_t *)(iVar3 + 0x1b0) + *(double *)(*(int64_t *)(iVar3 + 0x1a8) + 0x10), 
+                                 0x808bb51, _reloc.df_key_title, 0xffffffff);
+    } else {
+        if ((_segment.ehdr == 0) && (*(char *)(iVar3 + 0x2a) != '\0')) {
+            return;
+        }
+    }
+    cVar1 = (char)in_RAX;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    iVar2 = (int32_t)in_RAX;
+    *in_RAX = *in_RAX + iVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *in_RAX = *in_RAX + iVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *in_RAX = *in_RAX + iVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *in_RAX = *in_RAX + iVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+void sym.df_set_key_title_columnhead(int64_t arg1)
+{
+    int32_t iVar1;
+    
+    _reloc.c_token = _reloc.c_token + 1;
+    iVar1 = func_0x0808b4e1(_reloc.c_token, reloc.df_bin_record);
+    if (iVar1 == 0) {
+        if (((_reloc.c_token < _reloc.num_tokens) && (iVar1 = func_0x0808b4e1(_reloc.c_token, reloc..LC14), iVar1 == 0))
+           && (iVar1 = func_0x0808b4e1(_reloc.c_token), iVar1 != 0)) {
+            _obj.column_for_key_title = func_0x0808b4e1();
+        } else {
+            _obj.column_for_key_title = _segment.ehdr;
+            if (((arg1 != 0) && (*(int32_t *)(arg1 + 0x10) != 0x608)) &&
+               ((*(int32_t *)(arg1 + 0x10) != 0x801 &&
+                ((_segment.ehdr != 1 &&
+                 (_obj.column_for_key_title = *(int32_t *)0x8000030, *(int32_t *)(arg1 + 0xc) != 3)))))) {
+                _obj.column_for_key_title = *(int32_t *)0x8000018;
+            }
+        }
+    } else {
+        _reloc.c_token = _reloc.c_token + 1;
+        _obj.column_for_key_title = func_0x0808b4e1();
+        _reloc.c_token = _reloc.c_token + 1;
+    }
+    if (_obj.column_for_key_title != -99) {
+        reloc.parse_1st_row_as_headers = (code)0x1;
+        return;
+    }
+    func_0x0808b4e1(_segment.ehdr);
+    _segment.ehdr = 0;
+    _segment.ehdr = func_0x0808b4e1();
+    reloc.parse_1st_row_as_headers = (code)0x1;
+    return;
+}
+
+
+
+
+
+
+
+
+
+
+void sym.df_set_plot_mode(int64_t arg1)
+{
+    _obj.df_plot_mode = (int32_t)arg1;
+    return;
+}
+
+
+// WARNING: Could not reconcile some variable overlaps
+
+void sym.plot_option_multivalued
+               (undefined8 placeholder_0, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3,
+               int64_t arg11, undefined8 placeholder_5, undefined8 placeholder_6, undefined8 placeholder_7, int64_t arg1
+               , int64_t arg2, int64_t arg3)
+{
+    int32_t iVar1;
+    uint32_t uVar2;
+    int32_t iVar3;
+    int64_t iVar4;
+    int32_t *piVar5;
+    int64_t iVar6;
+    code *pcVar7;
+    uint32_t *puVar8;
+    uint32_t *puVar9;
+    int32_t iVar10;
+    int64_t iVar11;
+    int32_t iVar12;
+    uint32_t uVar13;
+    uint32_t *unaff_R13;
+    undefined8 *puVar14;
+    undefined8 *puVar15;
+    code *pcVar16;
+    int64_t in_FS_OFFSET;
+    bool bVar17;
+    double dVar18;
+    undefined8 uVar19;
+    double extraout_XMM0_Qa;
+    undefined8 uStack104;
+    undefined4 uStack96;
+    undefined4 uStack92;
+    double dStack88;
+    uint32_t uStack68;
+    int64_t iStack64;
+    
+    iVar10 = (int32_t)arg2;
+    iStack64 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    iVar1 = func_0x0808b4e1(placeholder_0, placeholder_1, placeholder_2, placeholder_3, arg11, placeholder_5, 
+                            _reloc.c_token, reloc..LC10);
+    if (iVar1 != 0) {
+        _reloc.c_token = _reloc.c_token + 1;
+        if (_reloc.c_token < _reloc.num_tokens) {
+            iVar4 = (int64_t)iVar10;
+            iVar11 = 0;
+code_r0x08000d70:
+            iVar1 = func_0x0808b4e1();
+            if (iVar1 == 0) {
+                uVar2 = (uint32_t)(arg1 & 0xffffffffU);
+                if (5 < uVar2) goto code_r0x08001210;
+                if (3 < uVar2) goto code_r0x08001219;
+                if (1 < uVar2 - 2) goto code_r0x080012e0;
+                do {
+                    unaff_R13 = (uint32_t *)0x1;
+code_r0x08000db0:
+                    iVar3 = _reloc.c_token;
+                    if (_segment.ehdr <= (int32_t)iVar11) {
+code_r0x080014bd:
+                        func_0x0808b4e1();
+code_r0x080014cb:
+                        func_0x0808b4e1();
+                        goto code_r0x080014d9;
+                    }
+                    iVar12 = (int32_t)unaff_R13;
+    // switch table (9 cases) at 0x800c3a0
+                    switch(arg1 & 0xffffffffU) {
+                    default:
+                        iVar6 = _reloc.df_bin_record + iVar11 * 0xf8;
+                        *(double *)(iVar6 + 0x18 + iVar4 * 8) = uStack104;
+                        if (0.00000000 < *(double *)(iVar6 + 0x18 + iVar4 * 8)) goto code_r0x08000e30;
+                        func_0x0808b4e1();
+code_r0x08001210:
+                        if (uVar2 == 7) {
+code_r0x08001219:
+                            iVar3 = func_0x0808b4e1(_reloc.c_token, reloc.df_bin_record);
+                            if ((iVar3 != 0) &&
+                               (_reloc.c_token = _reloc.c_token + 1, _reloc.c_token < _reloc.num_tokens)) {
+                                unaff_R13 = (uint32_t *)0x0;
+                                bVar17 = true;
+                                puVar15 = &uStack104;
+                                do {
+                                    iVar3 = func_0x0808b4e1(_reloc.c_token, reloc..LC14);
+                                    if (iVar3 != 0) break;
+                                    if (bVar17) {
+                                        uVar13 = (int32_t)unaff_R13 + 1;
+                                        unaff_R13 = (uint32_t *)(uint64_t)uVar13;
+                                        if (3 < (int32_t)uVar13) {
+                                            func_0x0808b4e1(_reloc.c_token + -1, "", unaff_R13);
+                                            goto code_r0x080014bd;
+                                        }
+                                        uVar19 = func_0x0808b4e1();
+                                        puVar14 = puVar15 + 1;
+                                        *puVar15 = uVar19;
+                                        bVar17 = false;
+                                    } else {
+                                        iVar3 = func_0x0808b4e1(_reloc.c_token, reloc..LC12);
+                                        if (iVar3 == 0) goto code_r0x08001450;
+                                        bVar17 = true;
+                                        _reloc.c_token = _reloc.c_token + 1;
+                                        puVar14 = puVar15;
+                                    }
+                                    puVar15 = puVar14;
+                                    if (_reloc.num_tokens <= _reloc.c_token) break;
+                                } while( true );
+                            }
+                            goto code_r0x080012f6;
+                        }
+code_r0x080012e0:
+                        uStack104 = (double)func_0x0808b4e1();
+                        break;
+                    case 1:
+                        goto code_r0x0800104b;
+                    case 2:
+                        unaff_R13 = &uStack68;
+                        func_0x0808b4e1(unaff_R13, _reloc.c_token, 4);
+                        puVar9 = unaff_R13;
+                        do {
+                            puVar8 = puVar9;
+                            uVar13 = *puVar8 + 0xfefefeff & ~*puVar8;
+                            uVar2 = uVar13 & 0x80808080;
+                            puVar9 = puVar8 + 1;
+                        } while (uVar2 == 0);
+                        bVar17 = (uVar13 & 0x8080) == 0;
+                        if (bVar17) {
+                            uVar2 = uVar2 >> 0x10;
+                        }
+                        if (bVar17) {
+                            puVar9 = (uint32_t *)((int64_t)puVar8 + 6);
+                        }
+                        iVar6 = func_0x0808b4e1(unaff_R13, "", uVar2 & 0xffffff00);
+                        if ((int64_t)puVar9 +
+                            ((-3 - (uint64_t)CARRY1((uint8_t)uVar2, (uint8_t)uVar2)) - (int64_t)unaff_R13) != iVar6)
+                        goto code_r0x08001537;
+                        iVar6 = func_0x0808b4e1(unaff_R13);
+                        if (iVar6 == 0) {
+code_r0x08001137:
+                            iVar6 = func_0x0808b4e1(unaff_R13, reloc..LC23);
+                            if (iVar6 != 0) {
+                                iVar6 = _reloc.df_bin_record + iVar11 * 0xf8;
+                                if (*(int32_t *)(iVar6 + 4) == 0) goto code_r0x080014d9;
+                                *(int32_t *)(iVar6 + 0x10) = iVar10;
+                            }
+                            iVar6 = func_0x0808b4e1();
+                            if (iVar6 != 0) {
+                                iVar6 = _reloc.df_bin_record + iVar11 * 0xf8;
+                                if (*(int32_t *)(iVar6 + 8) == 0) goto code_r0x080014d9;
+                                *(int32_t *)(iVar6 + 0x14) = iVar10;
+                            }
+                            goto code_r0x080011af;
+                        }
+                        piVar5 = (int32_t *)(_reloc.df_bin_record + iVar11 * 0xf8);
+                        if (*piVar5 != 0) {
+                            piVar5[3] = iVar10;
+                            goto code_r0x08001137;
+                        }
+code_r0x080014d9:
+                        func_0x0808b4e1(_reloc.c_token, "Cannot flip a non-existent dimension");
+code_r0x080014ed:
+                        func_0x0808b4e1();
+                        goto code_r0x080014fb;
+                    case 3:
+                        unaff_R13 = (uint32_t *)(iVar11 * 0xf8);
+                        piVar5 = (int32_t *)(_reloc.df_bin_record + (int64_t)unaff_R13);
+                        if (((*piVar5 == 0) && (piVar5[0x26] == 0)) || ((piVar5[1] == 0 && (piVar5[0x27] == 0))))
+                        goto code_r0x08001591;
+                        if ((piVar5[2] != 0) || (iVar3 = piVar5[0x28], iVar3 != 0)) goto code_r0x08001308;
+                        pcVar16 = reloc.df_bin_scan_table_2D;
+                        pcVar7 = reloc.df_bin_scan_table_2D;
+                        goto code_r0x08001018;
+                    case 4:
+                    case 5:
+                        iVar6 = _reloc.df_bin_record + iVar11 * 0xf8;
+                        *(uint32_t *)(iVar6 + 0x30) = (uVar2 != 4) + 1;
+                        if (iVar10 != 1) {
+                            if (iVar10 == 2) {
+                                if (iVar12 == 3) goto code_r0x08000f90;
+                                func_0x0808b4e1(iVar3, "Three-dimensional tuple required for 3D plot");
+code_r0x08001450:
+                                iVar3 = func_0x0808b4e1();
+                                if (iVar3 != 0) goto code_r0x0800146a;
+                                goto code_r0x08001512;
+                            }
+                            if (iVar10 != 0) goto code_r0x08001583;
+                            if (iVar12 == 3) goto code_r0x08000f90;
+                            goto code_r0x08001575;
+                        }
+                        if (iVar12 != 2) goto code_r0x080014ed;
+                        dStack88 = 0.00000000;
+code_r0x08000f90:
+                        *(undefined4 *)(iVar6 + 0x38) = (undefined4)uStack104;
+                        *(undefined4 *)(iVar6 + 0x3c) = uStack104._4_4_;
+                        *(undefined4 *)(iVar6 + 0x40) = uStack96;
+                        *(undefined4 *)(iVar6 + 0x44) = uStack92;
+                        *(double *)(iVar6 + 0x48) = dStack88;
+                        goto code_r0x08000e30;
+                    case 6:
+                        iVar1 = func_0x0808b4e1(_reloc.c_token, reloc..LC31);
+                        dVar18 = uStack104;
+                        if (iVar1 == 0) {
+                            iVar1 = func_0x0808b4e1(_reloc.c_token, "");
+                            if (iVar1 != 0) {
+                                dVar18 = dVar18 * _reloc..LC34;
+                                _reloc.c_token = _reloc.c_token + 1;
+                            }
+                        } else {
+                            dVar18 = uStack104 * _reloc..LC32;
+                            _reloc.c_token = _reloc.c_token + 1;
+                        }
+                        *(double *)(_reloc.df_bin_record + iVar11 * 0xf8 + 0x50) = dVar18;
+                        goto code_r0x08000e30;
+                    case 7:
+                        if (iVar12 != 3) goto code_r0x0800154b;
+                        if (uStack104 * uStack104 +
+                            (double)CONCAT44(uStack92, uStack96) * (double)CONCAT44(uStack92, uStack96) +
+                            dStack88 * dStack88 < _reloc..LC36) goto code_r0x08001567;
+                        iVar6 = _reloc.df_bin_record + iVar11 * 0xf8;
+                        *(undefined4 *)(iVar6 + 0x58) = (undefined4)uStack104;
+                        *(undefined4 *)(iVar6 + 0x5c) = uStack104._4_4_;
+                        *(undefined4 *)(iVar6 + 0x60) = uStack96;
+                        *(undefined4 *)(iVar6 + 100) = uStack92;
+                        *(double *)(iVar6 + 0x68) = dStack88;
+                        goto code_r0x08000e30;
+                    case 8:
+                        iVar6 = (int64_t)uStack104;
+                        *(int64_t *)(_reloc.df_bin_record + iVar11 * 0xf8 + 0x80) = iVar6;
+                        if (((double)iVar6 != uStack104) || (iVar6 < 0)) goto code_r0x080014cb;
+                        goto code_r0x08000e30;
+                    }
+                } while( true );
+            }
+        }
+code_r0x08000e5f:
+        if (iStack64 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return;
+        }
+code_r0x080014fb:
+        func_0x0808b4e1();
+    }
+    func_0x0808b4e1(_reloc.c_token, _reloc.equal_symbol_msg);
+code_r0x08001512:
+    iVar3 = _reloc.c_token;
+    func_0x0808b4e1(_reloc.c_token, "");
+code_r0x08001526:
+    func_0x0808b4e1(iVar3 + -1, "Flipping dimension direction must be 1 or 0");
+code_r0x08001537:
+    func_0x0808b4e1(_reloc.c_token, "");
+code_r0x0800154b:
+    func_0x0808b4e1();
+code_r0x08001559:
+    func_0x0808b4e1();
+code_r0x08001567:
+    func_0x0808b4e1();
+code_r0x08001575:
+    func_0x0808b4e1();
+code_r0x08001583:
+    func_0x0808b4e1();
+code_r0x08001591:
+    func_0x0808b4e1();
+    if (_obj.max_line_len < 0xa0) {
+        _obj.max_line_len = 0xa0;
+        _obj.df_line = func_0x0808b4e1(0xa0, "");
+        return;
+    }
+    return;
+    while( true ) {
+        iVar3 = iVar3 + 1;
+        pcVar7 = (code *)((int64_t)pcVar7 + 0x18);
+        if (iVar3 == 4) break;
+code_r0x08001018:
+        iVar1 = func_0x0808b4e1(_reloc.c_token, *(undefined8 *)pcVar7);
+        if (iVar1 != 0) {
+            unaff_R13 = (uint32_t *)((int64_t)unaff_R13 + _reloc.df_bin_record);
+            goto code_r0x080013ff;
+        }
+    }
+    iVar3 = _reloc.c_token;
+    func_0x0808b4e1();
+code_r0x0800104b:
+    piVar5 = (int32_t *)(_reloc.df_bin_record + iVar11 * 0xf8);
+    if (*piVar5 == 0) goto code_r0x08001559;
+    dVar18 = uStack104;
+    if (uStack104 == _reloc..LC1) {
+        piVar5[iVar4 + 3] = 0;
+        goto code_r0x08000e30;
+    }
+code_r0x08001350:
+    if (dVar18 != _reloc..LC17) goto code_r0x08001526;
+    piVar5[iVar4 + 3] = 1;
+code_r0x08000e30:
+    iVar1 = func_0x0808b4e1();
+    if (iVar1 == 0) goto code_r0x08000e5f;
+    iVar11 = iVar11 + 1;
+    _reloc.c_token = _reloc.c_token + 1;
+    if (_reloc.num_tokens <= _reloc.c_token) goto code_r0x08000e5f;
+    goto code_r0x08000d70;
+code_r0x0800146a:
+    _reloc.c_token = _reloc.c_token + 1;
+    if ((int32_t)unaff_R13 == 0) {
+code_r0x080012f6:
+        func_0x0808b4e1(_reloc.c_token, "");
+code_r0x08001308:
+        pcVar16 = reloc.df_bin_scan_table_3D;
+        goto code_r0x08001318;
+    }
+    goto code_r0x08000db0;
+code_r0x08001318:
+    iVar3 = func_0x0808b4e1();
+    if (iVar3 == 0) goto code_r0x08001328;
+    unaff_R13 = (uint32_t *)((int64_t)unaff_R13 + _reloc.df_bin_record);
+    iVar3 = iVar1;
+code_r0x080013ff:
+    *(undefined8 *)(unaff_R13 + 0x1c) = *(undefined8 *)(pcVar16 + (int64_t)iVar3 * 0x18 + 8);
+    unaff_R13[0x1e] = *(uint32_t *)((int64_t)(pcVar16 + (int64_t)iVar3 * 0x18 + 8) + 8);
+    *(undefined8 *)(unaff_R13 + 0x29) = *(undefined8 *)0x800a9c4;
+    unaff_R13[0x2b] = *(uint32_t *)0x800a9cc;
+code_r0x080011af:
+    _reloc.c_token = _reloc.c_token + 1;
+    goto code_r0x08000e30;
+code_r0x08001328:
+    iVar1 = iVar1 + 1;
+    if (iVar1 == 0xc) goto code_r0x0800133a;
+    goto code_r0x08001318;
+code_r0x0800133a:
+    iVar3 = _reloc.c_token;
+    piVar5 = (int32_t *)func_0x0808b4e1(_reloc.c_token, "Improper scanning string. Try 3 character string for 3D data");
+    dVar18 = extraout_XMM0_Qa;
+    goto code_r0x08001350;
+}
+
+

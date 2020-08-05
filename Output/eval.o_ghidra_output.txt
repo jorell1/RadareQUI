@@ -1,0 +1,1139 @@
+void sym.f_jump(int64_t arg1)
+{
+    _obj.jump_offset = *(undefined4 *)arg1;
+    return;
+}
+
+
+void sym.fpe(void)
+{
+    code *pcVar1;
+    
+    func_0x0802b569(8, sym.fpe);
+    pcVar1 = obj.fpe_env;
+    segment.ehdr = (code)0x1;
+    func_0x0802b569(obj.fpe_env, 1);
+    func_0x0802b569(*(undefined8 *)((int64_t)pcVar1 + 8));
+    *(undefined4 *)pcVar1 = 7;
+    return;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.g pdd @ sym.g pdd @ sym.gp pdd @ sym.gp pdd @ sym.gp_ pdd @ sym.gp_ pdd @ sym.gp_e pdd @ sym.gp_e pdd @ sym.gp_ex pdd @ sym.gp_ex pdd @ sym.gp_exp pdd @ sym.gp_exp/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x8000550 */
+#include <stdint.h>
+ 
+void gp_exp (void) {
+    __asm ("endbr64");
+    xmm1 = *(loc..LC14);
+    __asm ("comisd xmm1, xmm0");
+    if (? > ?) {
+        xmm0 = 0;
+        return;
+    }
+    return void (*0x802b569)() ();
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.r pdg @ sym.r pdg @ sym.re pdg @ sym.re pdg @ sym.res pdg @ sym.res pdg @ sym.rese pdg @ sym.rese pdg @ sym.reset pdg @ sym.reset pdg @ sym.reset_ pdg @ sym.reset_ pdg @ sym.reset_s pdg @ sym.reset_s pdg @ sym.reset_st pdg @ sym.reset_st pdg @ sym.reset_sta pdg @ sym.reset_sta pdg @ sym.reset_stac pdg @ sym.reset_stac pdg @ sym.reset_stack pdg @ sym.reset_stack
+void sym.reset_stack(void)
+{
+    _reloc..data = 0xffffffff;
+    return;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.r pdd @ sym.r pdd @ sym.re pdd @ sym.re pdd @ sym.res pdd @ sym.res pdd @ sym.rese pdd @ sym.rese pdd @ sym.reset pdd @ sym.reset pdd @ sym.reset_ pdd @ sym.reset_ pdd @ sym.reset_s pdd @ sym.reset_s pdd @ sym.reset_st pdd @ sym.reset_st pdd @ sym.reset_sta pdd @ sym.reset_sta pdd @ sym.reset_stac pdd @ sym.reset_stac pdd @ sym.reset_stack pdd @ sym.reset_stack/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x8000580 */
+#include <stdint.h>
+ 
+void reset_stack (void) {
+    __asm ("endbr64");
+    *(obj.s_p) = 0xffffffff;
+}
+
+
+
+
+
+
+
+
+
+
+Do you want to print 6485 lines? (y/N) p
+   d d dd dd dd  dd  dd @ dd @ dd @  dd @  dd @ s dd @ s dd @ sy dd @ sy dd @ sym dd @ sym dd @ sym. dd @ sym. dd @ sym.c dd @ sym.c dd @ sym.ch dd @ sym.ch dd @ sym.che dd @ sym.che dd @ sym.chec dd @ sym.chec dd @ sym.check dd @ sym.check dd @ sym.check_ dd @ sym.check_ dd @ sym.check_s dd @ sym.check_s dd @ sym.check_st dd @ sym.check_st dd @ sym.check_sta dd @ sym.check_sta dd @ sym.check_stac dd @ sym.check_stac dd @ sym.check_stack dd @ sym.check_stackopendir /proc/x/fd: No such file or directory
+WARNING: r_list_purge: assertion 'list' failed (line 67)
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.m pdg @ sym.m pdg @ sym.mo pdg @ sym.mo pdg @ sym.mor pdg @ sym.mor pdg @ sym.more pdg @ sym.more pdg @ sym.more_ pdg @ sym.more_ pdg @ sym.more_o pdg @ sym.more_o pdg @ sym.more_on pdg @ sym.more_on pdg @ sym.more_on_ pdg @ sym.more_on_ pdg @ sym.more_on_s pdg @ sym.more_on_s pdg @ sym.more_on_st pdg @ sym.more_on_st pdg @ sym.more_on_sta pdg @ sym.more_on_sta pdg @ sym.more_on_stac pdg @ sym.more_on_stac pdg @ sym.more_on_stack pdg @ sym.more_on_stack
+uint32_t sym.more_on_stack(void)
+{
+    return ~_reloc..data >> 0x1f;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.m pdd @ sym.m pdd @ sym.mo pdd @ sym.mo pdd @ sym.mor pdd @ sym.mor pdd @ sym.more pdd @ sym.more pdd @ sym.more_ pdd @ sym.more_ pdd @ sym.more_o pdd @ sym.more_o pdd @ sym.more_on pdd @ sym.more_on pdd @ sym.more_on_ pdd @ sym.more_on_ pdd @ sym.more_on_s pdd @ sym.more_on_s pdd @ sym.more_on_st pdd @ sym.more_on_st pdd @ sym.more_on_sta pdd @ sym.more_on_sta pdd @ sym.more_on_stac pdd @ sym.more_on_stac pdd @ sym.more_on_stack pdd @ sym.more_on_stack/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x80005b0 */
+#include <stdint.h>
+ 
+int32_t more_on_stack (void) {
+    __asm ("endbr64");
+    eax = .data;
+    eax = ~eax;
+    eax >>= 0x1f;
+    return eax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.p pdg @ sym.p pdg @ sym.po pdg @ sym.po pdg @ sym.pop pdg @ sym.pop
+int32_t * sym.pop(int64_t arg7, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3,
+                 undefined8 placeholder_4, undefined8 placeholder_5, undefined8 placeholder_6, undefined8 placeholder_7,
+                 int64_t arg1)
+{
+    char *pcVar1;
+    undefined4 uVar2;
+    undefined4 uVar3;
+    undefined4 uVar4;
+    int64_t iVar5;
+    undefined8 uVar6;
+    int64_t iVar7;
+    int32_t *arg1_00;
+    int32_t *piVar8;
+    int64_t in_FS_OFFSET;
+    undefined8 extraout_XMM0_Qa;
+    int64_t iStack128;
+    int64_t iStack120;
+    int32_t aiStack88 [6];
+    int64_t iStack64;
+    undefined8 uStack56;
+    int32_t aiStack48 [6];
+    int64_t iStack24;
+    undefined8 uStack16;
+    
+    iVar7 = (int64_t)_reloc..data;
+    if (-1 < _reloc..data) {
+        _reloc..data = _reloc..data + -1;
+        iVar7 = iVar7 * 0x18;
+        uVar2 = *(undefined4 *)("" + iVar7 + 4);
+        uVar3 = *(undefined4 *)("" + iVar7 + 8);
+        uVar4 = *(undefined4 *)("" + iVar7 + 0xc);
+        *(undefined4 *)arg1 = *(undefined4 *)("" + iVar7);
+        *(undefined4 *)(arg1 + 4) = uVar2;
+        *(undefined4 *)(arg1 + 8) = uVar3;
+        *(undefined4 *)(arg1 + 0xc) = uVar4;
+        *(undefined8 *)(arg1 + 0x10) = *(undefined8 *)("" + iVar7 + 0x10);
+        return (int32_t *)arg1;
+    }
+    arg1_00 = (int32_t *)0xffffffff;
+    uStack16 = 0x800060c;
+    func_0x0802b569(arg7, 0xffffffff, "");
+    piVar8 = aiStack48;
+    iStack24 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    if (*(int32_t *)("" + (int64_t)_reloc..data * 0x18) == 1) {
+        if (*(int64_t *)("" + (int64_t)_reloc..data * 0x18 + 8) == 0) {
+            _obj.jump_offset = *arg1_00;
+            piVar8 = arg1_00;
+        } else {
+            uStack56 = 0x8000678;
+            func_0x0802b569();
+        }
+        arg1_00 = piVar8;
+        if (iStack24 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return (int32_t *)0x0;
+        }
+    } else {
+        uStack56 = 0x800067f;
+        sym.int_check.part.0();
+    }
+    uStack56 = 0x8000684;
+    func_0x0802b569();
+    piVar8 = aiStack88;
+    iStack64 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    if (*(int32_t *)("" + (int64_t)_reloc..data * 0x18) == 1) {
+        if (*(int64_t *)("" + (int64_t)_reloc..data * 0x18 + 8) == 0) {
+            func_0x0802b569();
+        } else {
+            _obj.jump_offset = *arg1_00;
+            piVar8 = arg1_00;
+        }
+        arg1_00 = piVar8;
+        if (iStack64 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return (int32_t *)0x0;
+        }
+    } else {
+        sym.int_check.part.0();
+    }
+    func_0x0802b569();
+    iStack120 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    func_0x0802b569();
+    if (*arg1_00 == 9) {
+        func_0x0802b569(0xffffffff, "");
+    } else {
+        if (*arg1_00 == 3) {
+            pcVar1 = *(char **)(arg1_00 + 2);
+            if (*pcVar1 != '\0') {
+                iVar7 = func_0x0802b569(pcVar1, "");
+                iVar5 = func_0x0802b569(pcVar1);
+                if (iVar7 == iVar5) {
+                    uVar6 = func_0x0802b569(pcVar1, 0, 10);
+                    if (*arg1_00 == 3) {
+                        sym.gpfree_string.part.0((int64_t)arg1_00);
+                    }
+                    *arg1_00 = 1;
+                    *(undefined8 *)(arg1_00 + 2) = uVar6;
+                    goto code_r0x08000746;
+                }
+            }
+            func_0x0802b569(pcVar1, &iStack128);
+            if (*(int64_t *)(arg1_00 + 2) == iStack128) goto code_r0x0800084b;
+            if (*arg1_00 == 3) {
+                sym.gpfree_string.part.0((int64_t)arg1_00);
+            }
+            *arg1_00 = 2;
+            *(undefined8 *)(arg1_00 + 4) = 0;
+            *(undefined8 *)(arg1_00 + 2) = extraout_XMM0_Qa;
+        }
+code_r0x08000746:
+        if (iStack120 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return arg1_00;
+        }
+    }
+    func_0x0802b569();
+code_r0x0800084b:
+    if (*arg1_00 == 3) goto code_r0x08000863;
+    do {
+        func_0x0802b569(0xffffffff, "");
+code_r0x08000863:
+        sym.gpfree_string.part.0((int64_t)arg1_00);
+    } while( true );
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.p pdd @ sym.p pdd @ sym.po pdd @ sym.po pdd @ sym.pop pdd @ sym.pop/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x80005c0 */
+#include <stdint.h>
+ 
+int64_t pop (int64_t arg7, int64_t arg1) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h_3;
+    int64_t var_18h_2;
+    int64_t var_18h;
+    xmm0 = arg7;
+    rdi = arg1;
+    __asm ("endbr64");
+    rdx = *(obj.s_p);
+    if (edx >= 0) {
+        ecx = rdx - 1;
+        rax = rdi;
+        *(obj.s_p) = ecx;
+        rcx = rdx * 3;
+        rdx = "Did you try to generate a file name using dummy variable x or y?";
+        rdx = rdx + rcx*8;
+        __asm ("movdqu xmm0, xmmword [rdx]");
+        __asm ("movups xmmword [rdi], xmm0");
+        rdx = *((rdx + 0x10));
+        *((rdi + 0x10)) = rdx;
+        return rax;
+    }
+    rsi = "stack underflow (function call with missing parameters?)";
+    edi |= 0xffffffff;
+    eax = 0;
+    rax = signal (rax);
+    __asm ("endbr64");
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    rax = *(obj.s_p);
+    rdx = rax * 3;
+    rax = "Did you try to generate a file name using dummy variable x or y?";
+    rax = rax + rdx*8;
+    if (*(rax) != 1) {
+        goto label_2;
+    }
+    if (*((rax + 8)) != 0) {
+        goto label_3;
+    }
+    eax = *(rdi);
+    *(obj.jump_offset) = eax;
+    do {
+        rax = *((rsp + 0x18));
+        rax ^= *(fs:0x28);
+        if (*((rax + 8)) != 0) {
+            goto label_4;
+        }
+        return rax;
+label_3:
+        rdi = rsp;
+        signal ();
+    } while (1);
+label_2:
+    int_check_part_0 ();
+label_4:
+    signal ();
+    __asm ("endbr64");
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    rax = *(obj.s_p);
+    rdx = rax * 3;
+    rax = "Did you try to generate a file name using dummy variable x or y?";
+    rax = rax + rdx*8;
+    if (*(rax) != 1) {
+        goto label_5;
+    }
+    if (*((rax + 8)) == 0) {
+        goto label_6;
+    }
+    eax = *(rdi);
+    *(obj.jump_offset) = eax;
+    do {
+        rax = *((rsp + 0x18));
+        rax ^= *(fs:0x28);
+        if (*((rax + 8)) != 0) {
+            goto label_7;
+        }
+        return rax;
+label_6:
+        rdi = rsp;
+        signal ();
+    } while (1);
+label_5:
+    int_check_part_0 ();
+label_7:
+    signal ();
+    __asm ("endbr64");
+    r12 = rdi;
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    signal (rbx, rbp);
+    eax = *(r12);
+    if (eax == 9) {
+        goto label_8;
+    }
+    while (1) {
+label_1:
+        rax = *((rsp + 0x18));
+        rax ^= *(fs:0x28);
+        if (eax != 3) {
+            goto label_9;
+        }
+        rax = r12;
+        return rax;
+        rbp = *((r12 + 8));
+        if (*(rbp) != 0) {
+            rdi = rbp;
+            rsi = "0123456789 ";
+            rax = signal ();
+            rdi = rbp;
+            rbx = rax;
+            rax = signal ();
+            if (rbx == rax) {
+                goto label_10;
+            }
+        }
+        rsi = rsp + 0x10;
+        rdi = rbp;
+        signal ();
+        rax = *((rsp + 0x10));
+        if (*((r12 + 8)) == rax) {
+            goto label_11;
+        }
+        if (*(r12) == 3) {
+            goto label_12;
+        }
+label_0:
+        *(r12) = 2;
+        *((r12 + 0x10)) = 0;
+        *((r12 + 8)) = xmm0;
+    }
+label_12:
+    rdi = r12;
+    *((rsp + 8)) = xmm0;
+    gpfree_string_part_0 ();
+    xmm0 = *((rsp + 8));
+    goto label_0;
+label_10:
+    esi = 0;
+    edx = 0xa;
+    rdi = rbp;
+    rax = signal ();
+    rbx = rax;
+    while (1) {
+        *(r12) = 1;
+        *((r12 + 8)) = rbx;
+        goto label_1;
+        rdi = r12;
+        eax = gpfree_string_part_0 ();
+    }
+label_8:
+    rsi = "invalid dummy variable name";
+    edi |= 0xffffffff;
+    eax = 0;
+    signal ();
+label_9:
+    eax = signal ();
+label_11:
+    while (1) {
+        rsi = "Non-numeric string found where a numeric expression was expected";
+        edi |= 0xffffffff;
+        eax = 0;
+        signal ();
+        rdi = r12;
+        gpfree_string_part_0 ();
+    }
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.p pdg @ sym.p pdg @ sym.pu pdg @ sym.pu pdg @ sym.pus pdg @ sym.pus pdg @ sym.push pdg @ sym.push
+void sym.push(int64_t arg7, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3,
+             undefined8 placeholder_4, undefined8 placeholder_5, undefined8 placeholder_6, undefined8 placeholder_7,
+             uint32_t arg1)
+{
+    int64_t iVar1;
+    int32_t iVar2;
+    undefined8 uVar3;
+    undefined4 uVar4;
+    int32_t iVar5;
+    undefined8 uVar6;
+    int32_t *piVar7;
+    char *pcVar8;
+    undefined4 in_RDI;
+    undefined8 *puVar9;
+    int32_t iVar10;
+    bool bVar11;
+    
+    puVar9 = (undefined8 *)CONCAT44(in_RDI, arg1);
+    if (_reloc..data != 0xf9) {
+        _reloc..data = _reloc..data + 1;
+        uVar6 = *puVar9;
+        uVar3 = puVar9[1];
+        iVar1 = (int64_t)_reloc..data * 0x18;
+        *(undefined8 *)("" + iVar1) = uVar6;
+        *(undefined8 *)("" + iVar1 + 8) = uVar3;
+        *(undefined8 *)("" + iVar1 + 0x10) = puVar9[2];
+        if ((*(int32_t *)puVar9 == 3) && (puVar9[1] != 0)) {
+            uVar6 = func_0x0802b569(uVar6);
+            *(undefined8 *)("" + iVar1 + 8) = uVar6;
+            return;
+        }
+        return;
+    }
+    piVar7 = (int32_t *)0xffffffff;
+    func_0x0802b569(arg7, 0xffffffff, "");
+    if (*piVar7 == 1) {
+        return;
+    }
+    sym.int_check.part.0();
+    uVar4 = _obj.jump_offset;
+    iVar10 = 0;
+    iVar5 = *piVar7;
+    if (0 < iVar5) {
+        do {
+            _obj.jump_offset = 1;
+            iVar2 = piVar7[(int64_t)iVar10 * 8 + 2];
+            (**(code **)((int64_t)iVar2 * 0x10 + 0x80024a8))(piVar7 + (int64_t)iVar10 * 8 + 4);
+            if ((3 < iVar2 - 0x29U) && (_obj.jump_offset != 1)) {
+                pcVar8 = "";
+                uVar6 = 0xffffffff;
+                func_0x0802b569(0xffffffff, "", "");
+                segment.ehdr = (code)0x0;
+                piVar7 = (int32_t *)func_0x0802b569();
+                bVar11 = reloc.evaluate_inside_using == (code)0x0;
+                _reloc..data = -1;
+                *piVar7 = 0;
+                if ((bVar11) || (reloc.df_nofpe_trap == (code)0x0)) {
+                    iVar5 = func_0x0802b569(obj.fpe_env, 1);
+                    if (iVar5 != 0) {
+                        return;
+                    }
+                    func_0x0802b569(8, sym.fpe);
+                }
+                func_0x0802b569(uVar6);
+                if ((reloc.evaluate_inside_using == (code)0x0) || (reloc.df_nofpe_trap == (code)0x0)) {
+                    func_0x0802b569(8, 0);
+                }
+                if (*piVar7 - 0x21U < 2) {
+                    segment.ehdr = (code)0x1;
+                    return;
+                }
+                if (segment.ehdr == (code)0x0) {
+                    func_0x0802b569(pcVar8);
+                    if (_reloc..data != -1) {
+                        sym.check_stack.part.0();
+                    }
+                    if (((segment.ehdr == (code)0x0) && (*(int32_t *)pcVar8 == 5)) &&
+                       (bVar11 = reloc.string_result_only == (code)0x0, *(int32_t *)pcVar8 = 7, bVar11)) {
+                        func_0x0802b569(0xffffffff, "");
+                        segment.ehdr = (code)0x1;
+                        return;
+                    }
+                }
+                return;
+            }
+            iVar10 = iVar10 + _obj.jump_offset;
+        } while (iVar10 < iVar5);
+    }
+    _obj.jump_offset = uVar4;
+    return;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.p pdd @ sym.p pdd @ sym.pu pdd @ sym.pu pdd @ sym.pus pdd @ sym.pus pdd @ sym.push pdd @ sym.push/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/eval.o @ 0x8000870 */
+#include <stdint.h>
+ 
+int64_t push (int64_t arg7, uint32_t arg1) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    xmm0 = arg7;
+    rdi = arg1;
+    __asm ("endbr64");
+    eax = .data;
+    if (eax == 0xf9) {
+        goto label_1;
+    }
+    eax++;
+    __asm ("movdqu xmm0, xmmword [rdi]");
+    *(obj.s_p) = eax;
+    rax = (int64_t) eax;
+    rdx = rax * 3;
+    rax = "Did you try to generate a file name using dummy variable x or y?";
+    rbx = rax + rdx*8;
+    __asm ("movups xmmword [rbx], xmm0");
+    rax = *((rdi + 0x10));
+    *((rbx + 0x10)) = rax;
+    while (rdi == 0) {
+        return rax;
+        rdi = *((rdi + 8));
+    }
+    rax = signal ();
+    *((rbx + 8)) = rax;
+    return rax;
+label_1:
+    rsi = "stack overflow";
+    edi |= 0xffffffff;
+    eax = 0;
+    rax = signal ();
+    __asm ("endbr64");
+    if (*(rdi) == 1) {
+        return rax;
+    }
+    rax = int_check_part_0 ();
+    __asm ("endbr64");
+    r15 = rdi;
+    r14d = 0;
+    r12 = obj_ft;
+    ebp = *(rdi);
+    r13d = jump_offset;
+    if (ebp <= 0) {
+        goto label_2;
+    }
+    do {
+        *(obj.jump_offset) = 1;
+        rax = (int64_t) r14d;
+        rax <<= 5;
+        ebx = *((r15 + rax + 8));
+        rdi = r15 + rax + 0x10;
+        rax = (int64_t) ebx;
+        ebx -= 0x29;
+        rax <<= 4;
+        uint64_t (*r12 + rax + 8)() ();
+        eax = jump_offset;
+        if (ebx > 3) {
+            if (eax != 1) {
+                goto label_3;
+            }
+        }
+        r14d += eax;
+    } while (ebp > r14d);
+label_2:
+    *(obj.jump_offset) = r13d;
+    return rax;
+label_3:
+    rdx = "is_jump(operator) || (jump_offset == 1)";
+    rsi = "Assertion failed: %s";
+    edi = 0xffffffff;
+    eax = 0;
+    rax = signal ();
+    __asm ("endbr64");
+    *(obj.undefined) = 0;
+    *((rsp + 0x10)) = rdi;
+    *((rsp + 0x18)) = rsi;
+    rax = signal ();
+    *(obj.s_p) = 0xffffffff;
+    *((rsp + 8)) = rax;
+    *(rax) = 0;
+    if (*(reloc.evaluate_inside_using) != 0) {
+        if (*(reloc.df_nofpe_trap) != 0) {
+            goto label_4;
+        }
+    }
+    esi = 1;
+    rdi = obj_fpe_env;
+    eax = signal ();
+    __asm ("endbr64");
+    while (*(obj.undefined) != 0) {
+label_0:
+        return rax;
+        rsi = sym_fpe;
+        edi = 8;
+        signal ();
+label_4:
+        rdi = *((rsp + 0x10));
+        signal ();
+        if (*(reloc.evaluate_inside_using) != 0) {
+            if (*(reloc.df_nofpe_trap) != 0) {
+                goto label_5;
+            }
+        }
+        esi = 0;
+        edi = 8;
+        signal ();
+label_5:
+        rax = *((rsp + 8));
+        eax = *(rax);
+        eax -= 0x21;
+        if (eax <= 1) {
+            goto label_6;
+        }
+    }
+    rdi = *((rsp + 0x18));
+    signal ();
+    if (*(obj.s_p) != 0xffffffff) {
+        check_stack_part_0 ();
+    }
+    if (*(obj.undefined) != 0) {
+        goto label_0;
+    }
+    rax = *((rsp + 0x18));
+    if (*(rax) != 5) {
+        goto label_0;
+    }
+    *(rax) = 7;
+    if (*(reloc.string_result_only) != 0) {
+        goto label_0;
+    }
+    rsi = "evaluate_at: unsupported array operation";
+    edi |= 0xffffffff;
+    eax = 0;
+    rax = signal ();
+label_6:
+    *(obj.undefined) = 1;
+    return rax;
+}
+
+
+
+
+
+
+void sym.fill_gpval_float(int64_t arg7)
+{
+    int64_t iVar1;
+    
+    iVar1 = func_0x0802b569();
+    if (iVar1 != 0) {
+        *(undefined4 *)(iVar1 + 0x10) = 2;
+        *(undefined8 *)(iVar1 + 0x20) = 0;
+        *(int64_t *)(iVar1 + 0x18) = arg7;
+    }
+    return;
+}
+
+
+void sym.fill_gpval_complex(int64_t arg7, int64_t arg8)
+{
+    int64_t iVar1;
+    
+    iVar1 = func_0x0802b569();
+    if (iVar1 != 0) {
+        *(undefined4 *)(iVar1 + 0x10) = 2;
+        *(int64_t *)(iVar1 + 0x18) = arg7;
+        *(int64_t *)(iVar1 + 0x20) = arg8;
+    }
+    return;
+}
+
+
+void sym.update_gpval_variables(uint32_t arg1)
+{
+    int32_t iVar1;
+    undefined8 uVar2;
+    code *pcVar3;
+    int64_t iVar4;
+    uint64_t uVar5;
+    code *pcVar6;
+    char *pcVar7;
+    int64_t iVar8;
+    uint32_t uVar9;
+    undefined8 extraout_XMM0_Qa;
+    double dVar10;
+    undefined8 extraout_XMM0_Qa_00;
+    double dVar11;
+    
+    if (arg1 == 1) {
+        sym.fill_gpval_axis(2);
+        sym.fill_gpval_axis(1);
+        sym.fill_gpval_axis(6);
+        sym.fill_gpval_axis(5);
+        sym.fill_gpval_axis(0);
+        sym.fill_gpval_axis(3);
+        sym.fill_gpval_axis(8);
+        sym.fill_gpval_axis(9);
+        sym.fill_gpval_axis(10);
+        uVar2 = *(undefined8 *)0x802c8d9;
+        iVar8 = func_0x0802b569(0x8001ecf);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 2;
+            *(undefined8 *)(iVar8 + 0x20) = 0;
+            *(undefined8 *)(iVar8 + 0x18) = uVar2;
+        }
+        uVar2 = *(undefined8 *)0x802c8e1;
+        iVar8 = func_0x0802b569(0x8001edb);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 2;
+            *(undefined8 *)(iVar8 + 0x20) = 0;
+            *(undefined8 *)(iVar8 + 0x18) = uVar2;
+        }
+        uVar2 = *(undefined8 *)0x802c959;
+        iVar8 = func_0x0802b569(0x8001ee7);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 2;
+            *(undefined8 *)(iVar8 + 0x20) = 0;
+            *(undefined8 *)(iVar8 + 0x18) = uVar2;
+        }
+        dVar10 = (double)*(int32_t *)0x802bbf9;
+        dVar11 = (double)_reloc.term[0x24];
+        iVar8 = func_0x0802b569(dVar10 / dVar11, 0x8001ef3);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(int64_t *)(iVar8 + 0x18) = (int64_t)(dVar10 / dVar11);
+        }
+        dVar10 = (double)*(int32_t *)0x802bbfd;
+        dVar11 = (double)_reloc.term[0x24];
+        iVar8 = func_0x0802b569(dVar10 / dVar11, 0x8001f03);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(int64_t *)(iVar8 + 0x18) = (int64_t)(dVar10 / dVar11);
+        }
+        dVar10 = (double)_reloc.f_sgn;
+        dVar11 = (double)_reloc.term[0x24];
+        iVar8 = func_0x0802b569(dVar10 / dVar11, 0x8001f13);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(int64_t *)(iVar8 + 0x18) = (int64_t)(dVar10 / dVar11);
+        }
+        dVar10 = (double)*(int32_t *)0x802b955;
+        dVar11 = (double)_reloc.term[0x24];
+        iVar8 = func_0x0802b569(dVar10 / dVar11, 0x8001f23);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(int64_t *)(iVar8 + 0x18) = (int64_t)(dVar10 / dVar11);
+        }
+        iVar1 = *(int32_t *)0x802b6b5 + 1;
+        iVar8 = func_0x0802b569(0x8001f33);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(int64_t *)(iVar8 + 0x18) = (int64_t)iVar1;
+        }
+        iVar1 = *(int32_t *)0x802b6bd + 1;
+        iVar8 = func_0x0802b569(0x8001f44);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(int64_t *)(iVar8 + 0x18) = (int64_t)iVar1;
+        }
+        dVar11 = (double)_reloc.term[0x24];
+        iVar8 = func_0x0802b569(0x8001f55);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(int64_t *)(iVar8 + 0x18) = (int64_t)dVar11;
+        }
+        uVar9 = *(uint32_t *)((int64_t)_reloc.term + 0x1c);
+        iVar8 = func_0x0802b569(0x8001f66);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(uint64_t *)(iVar8 + 0x18) = (uint64_t)uVar9;
+        }
+        uVar9 = *(uint32_t *)(_reloc.term + 3);
+        iVar8 = func_0x0802b569(0x8001f77);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(uint64_t *)(iVar8 + 0x18) = (uint64_t)uVar9;
+        }
+        uVar9 = (uint32_t)(uint8_t)reloc.is_3d_plot;
+        iVar8 = func_0x0802b569(0x8001f88);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(uint64_t *)(iVar8 + 0x18) = (uint64_t)(uVar9 ^ 1);
+        }
+        uVar5 = (uint64_t)(uint8_t)reloc.is_3d_plot;
+        iVar8 = func_0x0802b569(0x8001f93);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(uint64_t *)(iVar8 + 0x18) = uVar5;
+        }
+        uVar5 = (uint64_t)(uint8_t)reloc.splot_map;
+        iVar8 = func_0x0802b569(0x8001f9f);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(uint64_t *)(iVar8 + 0x18) = uVar5;
+        }
+        dVar11 = (double)_reloc.surface_rot_x;
+        iVar8 = func_0x0802b569(0x8001fae);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 2;
+            *(undefined8 *)(iVar8 + 0x20) = 0;
+            *(double *)(iVar8 + 0x18) = dVar11;
+        }
+        dVar11 = (double)_reloc.surface_rot_z;
+        iVar8 = func_0x0802b569(0x8001fbf);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 2;
+            *(undefined8 *)(iVar8 + 0x20) = 0;
+            *(double *)(iVar8 + 0x18) = dVar11;
+        }
+        dVar11 = (double)_reloc.surface_scale;
+        iVar8 = func_0x0802b569(0x8001fd0);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 2;
+            *(undefined8 *)(iVar8 + 0x20) = 0;
+            *(double *)(iVar8 + 0x18) = dVar11;
+        }
+        dVar11 = (double)_reloc.surface_zscale;
+        iVar8 = func_0x0802b569(0x8001fe1);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 2;
+            *(undefined8 *)(iVar8 + 0x20) = 0;
+            *(double *)(iVar8 + 0x18) = dVar11;
+        }
+        dVar11 = (double)_reloc.azimuth;
+        iVar8 = func_0x0802b569(0x8001ff3);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 2;
+            *(undefined8 *)(iVar8 + 0x20) = 0;
+            *(double *)(iVar8 + 0x18) = dVar11;
+        }
+        dVar11 = (double)(*(int32_t *)0x802b6b5 + 1);
+        dVar10 = (double)((*(int32_t *)0x802b6b5 + 1) - _reloc.xmiddle) / dVar11;
+        iVar8 = func_0x0802b569(dVar11, dVar10, 0x8002006);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 2;
+            *(undefined8 *)(iVar8 + 0x20) = 0;
+            *(double *)(iVar8 + 0x18) = dVar10;
+        }
+        dVar11 = (double)((*(int32_t *)0x802b6bd + 1) - _reloc.ymiddle) / (double)(*(int32_t *)0x802b6bd + 1);
+        dVar10 = _reloc..LC9 - dVar11;
+        iVar8 = func_0x0802b569(dVar11, dVar10, 0x8002017);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 2;
+            *(undefined8 *)(iVar8 + 0x20) = 0;
+            *(double *)(iVar8 + 0x18) = dVar10;
+        }
+        dVar11 = ((double)_reloc.surface_scale * _reloc..LC57 * (double)_reloc.xscaler) /
+                 (double)(*(int32_t *)0x802b6b5 + 1);
+        iVar8 = func_0x0802b569((double)(*(int32_t *)0x802b6b5 + 1), dVar11, 0x8002028);
+        if (iVar8 == 0) {
+            return;
+        }
+        *(undefined4 *)(iVar8 + 0x10) = 2;
+        *(undefined8 *)(iVar8 + 0x20) = 0;
+        *(double *)(iVar8 + 0x18) = dVar11;
+        return;
+    }
+    uVar9 = arg1 - 3 & 0xfffffffd;
+    if ((arg1 - 2 < 2) || (arg1 == 0)) {
+        if (_reloc.term == (undefined8 *)0x0) {
+            func_0x0802b569(0x8002042, 0x800203a);
+        } else {
+            func_0x0802b569(0x8002042, *_reloc.term);
+        }
+        func_0x0802b569(0x800204d, reloc.term_options);
+        pcVar6 = _reloc.outstr;
+        if (_reloc.outstr == (code *)0x0) {
+            pcVar6 = reloc..LC13;
+        }
+        func_0x0802b569(0x800205f, pcVar6);
+        func_0x0802b569(0x800206c, *(undefined8 *)(reloc.encoding_names + (uint64_t)_reloc.encoding * 8));
+        pcVar7 = _reloc.minus_sign;
+        if (_reloc.minus_sign == (char *)0x0) {
+            pcVar7 = "";
+        }
+        func_0x0802b569(0x800207b, pcVar7);
+        iVar8 = _reloc.micro;
+        if (_reloc.micro == 0) {
+            iVar8 = 0x8001ecd;
+        }
+        func_0x0802b569(0x800208c, iVar8);
+        func_0x0802b569(0x8002098, reloc.degree_sign);
+        if (arg1 != 2) goto code_r0x080011ff;
+        iVar8 = func_0x0802b569(0x80020aa);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(undefined8 *)(iVar8 + 0x18) = 1;
+        }
+code_r0x08001204:
+        if (arg1 - 3 < 2) goto code_r0x08001383;
+        if (uVar9 != 0) goto joined_r0x08001438;
+    } else {
+code_r0x080011ff:
+        if (arg1 != 3) goto code_r0x08001204;
+        iVar8 = func_0x0802b569(0x80020b6);
+        if ((iVar8 != 0) && (*(int32_t *)(iVar8 + 0x10) == 7)) {
+            func_0x0802b569(reloc.gnuplot_version, 0);
+            *(undefined4 *)(iVar8 + 0x10) = 2;
+            *(undefined8 *)(iVar8 + 0x20) = 0;
+            *(undefined8 *)(iVar8 + 0x18) = extraout_XMM0_Qa_00;
+        }
+        iVar8 = func_0x0802b569(0x80020c4);
+        if ((iVar8 != 0) && (*(int32_t *)(iVar8 + 0x10) == 7)) {
+            func_0x0802b569(0x80020c4, reloc.gnuplot_patchlevel);
+        }
+        iVar8 = func_0x0802b569(0x80020d5);
+        if ((iVar8 != 0) && (*(int32_t *)(iVar8 + 0x10) == 7)) {
+            func_0x0802b569(0x80020d5, _reloc.compile_options);
+        }
+        iVar8 = func_0x0802b569(0x80020eb);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(undefined8 *)(iVar8 + 0x18) = 0;
+        }
+        iVar8 = func_0x0802b569(0x8001f88);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(undefined8 *)(iVar8 + 0x18) = 0;
+        }
+        iVar8 = func_0x0802b569(0x8001f93);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(undefined8 *)(iVar8 + 0x18) = 0;
+        }
+        uVar2 = func_0x0802b569();
+        func_0x0802b569(0x80020fb, uVar2);
+        func_0x0802b569(uVar2);
+        iVar8 = *(int64_t *)(reloc.encoding_names + (uint64_t)_reloc.encoding * 8);
+        func_0x0802b569(0x800206c);
+        iVar4 = func_0x0802b569(0x800210b);
+        uVar2 = _reloc..LC11;
+        if (iVar4 != 0) {
+            *(undefined4 *)(iVar4 + 0x10) = 2;
+            *(undefined8 *)(iVar4 + 0x20) = 0;
+            *(undefined8 *)(iVar4 + 0x18) = uVar2;
+        }
+        func_0x0802b569();
+        uVar2 = 0x8002114;
+        iVar4 = func_0x0802b569();
+        if (iVar4 != 0) {
+            *(undefined4 *)(iVar4 + 0x10) = 2;
+            *(undefined8 *)(iVar4 + 0x20) = 0;
+            *(undefined8 *)(iVar4 + 0x18) = extraout_XMM0_Qa;
+        }
+        sym.fill_gpval_sysinfo(uVar2, iVar8);
+code_r0x08001383:
+        iVar8 = func_0x0802b569(0x80020aa);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(undefined8 *)(iVar8 + 0x18) = 0;
+        }
+        func_0x0802b569(0x800211e, reloc..LC13);
+        iVar8 = func_0x0802b569(0x800212b);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(undefined8 *)(iVar8 + 0x18) = 0;
+        }
+        func_0x0802b569(0x800213e, reloc..LC13);
+        if (uVar9 != 0) {
+            return;
+        }
+    }
+    pcVar3 = (code *)func_0x0802b569(0x1000, 0x8002152);
+    iVar8 = func_0x0802b569(pcVar3, 0x1000);
+    pcVar6 = reloc..LC13;
+    if (iVar8 != 0) {
+        pcVar6 = pcVar3;
+    }
+    func_0x0802b569(0x8002152, pcVar6);
+    func_0x0802b569(pcVar3);
+joined_r0x08001438:
+    if (arg1 == 6) {
+        iVar4 = (int64_t)_reloc.current_x11_windowid;
+        iVar8 = func_0x0802b569(0x800215c);
+        if (iVar8 != 0) {
+            *(undefined4 *)(iVar8 + 0x10) = 1;
+            *(int64_t *)(iVar8 + 0x18) = iVar4;
+            return;
+        }
+    }
+    return;
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+
+int64_t sym.gp_words(int64_t arg1, int64_t arg2)
+{
+    int32_t iVar1;
+    int64_t in_FS_OFFSET;
+    undefined4 auStack96 [2];
+    undefined4 *puStack88;
+    int64_t iStack72;
+    undefined4 *puStack48;
+    undefined4 auStack40 [2];
+    int64_t iStack32;
+    int64_t iStack16;
+    
+    iVar1 = (int32_t)arg2;
+    puStack88 = auStack40;
+    iStack16 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    auStack40[0] = 3;
+    if (arg1 == 0) {
+        puStack48 = (undefined4 *)0x8001b2c;
+        arg1 = func_0x0802b569(reloc..LC13);
+    }
+    puStack48 = (undefined4 *)0x8001af5;
+    iStack32 = arg1;
+    func_0x0802b569(auStack40);
+    puStack48 = (undefined4 *)0x8001afc;
+    func_0x0802b569(0);
+    puStack48 = (undefined4 *)0x8001b04;
+    func_0x0802b569();
+    if (iStack16 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return iStack32;
+    }
+    puStack48 = (undefined4 *)0x8001b36;
+    func_0x0802b569();
+    iStack72 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    auStack96[0] = 3;
+    puStack48 = auStack40;
+    if (puStack88 == (undefined4 *)0x0) {
+        puStack48 = auStack40;
+        puStack88 = (undefined4 *)func_0x0802b569(reloc..LC13);
+    }
+    func_0x0802b569(auStack96);
+    auStack96[0] = 1;
+    puStack88 = (undefined4 *)(int64_t)iVar1;
+    func_0x0802b569(auStack96);
+    func_0x0802b569(0);
+    func_0x0802b569(auStack96);
+    if (iStack72 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return (int64_t)puStack88;
+    }
+    func_0x0802b569();
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+void sym.fill_gpval_axis(int64_t arg1)
+{
+    uint8_t uVar1;
+    undefined8 uVar2;
+    int64_t *piVar3;
+    uint8_t *puVar4;
+    int64_t iVar5;
+    uint64_t unaff_RBX;
+    undefined8 uVar6;
+    code *unaff_RBP;
+    undefined8 uVar7;
+    uint8_t *unaff_R12;
+    int64_t in_FS_OFFSET;
+    undefined8 in_XMM1_Qa;
+    undefined8 in_XMM2_Qa;
+    undefined8 in_XMM3_Qa;
+    undefined8 in_XMM4_Qa;
+    undefined8 in_XMM5_Qa;
+    undefined8 in_XMM6_Qa;
+    undefined8 in_XMM7_Qa;
+    
+    while( true ) {
+        *(code **)((int64_t)*(undefined **)0x20 + -8) = unaff_RBP;
+        *(uint64_t *)((int64_t)*(undefined **)0x20 + -0x10) = unaff_RBX;
+        iVar5 = (int64_t)(int32_t)arg1 * 0x2a8;
+        uVar2 = *(undefined8 *)(reloc.gpfree_vgrid + iVar5);
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x20) = 0x8000d07;
+        sym.set_gpval_axis_sth_double
+                  (uVar2, in_XMM1_Qa, in_XMM2_Qa, in_XMM3_Qa, in_XMM4_Qa, in_XMM5_Qa, in_XMM6_Qa, in_XMM7_Qa, "", 
+                   arg1 & 0xffffffff, reloc..LC24, *(undefined *)((int64_t)*(undefined **)0x20 + -0x20));
+        uVar2 = *(undefined8 *)(reloc.uname + iVar5);
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x20) = 0x8000d21;
+        sym.set_gpval_axis_sth_double
+                  (uVar2, in_XMM1_Qa, in_XMM2_Qa, in_XMM3_Qa, in_XMM4_Qa, in_XMM5_Qa, in_XMM6_Qa, in_XMM7_Qa, "", 
+                   arg1 & 0xffffffff, reloc..LC26, *(undefined *)((int64_t)*(undefined **)0x20 + -0x20));
+        uVar2 = *(undefined8 *)(reloc.splot_map + iVar5);
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x20) = 0x8000d3e;
+        sym.set_gpval_axis_sth_double
+                  (uVar2, in_XMM1_Qa, in_XMM2_Qa, in_XMM3_Qa, in_XMM4_Qa, in_XMM5_Qa, in_XMM6_Qa, in_XMM7_Qa, "", 
+                   arg1 & 0xffffffff, reloc..LC27, *(undefined *)((int64_t)*(undefined **)0x20 + -0x20));
+        if (6 < (int32_t)arg1) {
+            return;
+        }
+        uVar2 = *(undefined8 *)(reloc.encoding_names + iVar5);
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x20) = 0x8000d6a;
+        sym.set_gpval_axis_sth_double
+                  (uVar2, in_XMM1_Qa, in_XMM2_Qa, in_XMM3_Qa, in_XMM4_Qa, in_XMM5_Qa, in_XMM6_Qa, in_XMM7_Qa, "", 
+                   arg1 & 0xffffffff, reloc..LC24, *(undefined *)((int64_t)*(undefined **)0x20 + -0x20));
+        uVar2 = *(undefined8 *)(reloc.minus_sign + iVar5);
+        uVar6 = *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x10);
+        uVar7 = *(undefined8 *)((int64_t)*(undefined **)0x20 + -8);
+        *(uint8_t **)((int64_t)*(undefined **)0x20 + -8) = unaff_R12;
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x10) = uVar7;
+        unaff_RBP = reloc..LC26;
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x18) = uVar6;
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x40) = uVar2;
+        unaff_R12 = (uint8_t *)((int64_t)*(undefined **)0x20 + -0x38);
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x20) = *(undefined8 *)(in_FS_OFFSET + 0x28);
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x50) = 0x8000c30;
+        uVar2 = func_0x0802b569(arg1 & 0xffffffffU, arg1 & 0xffffffffU);
+        *(code **)((int64_t)*(undefined **)0x20 + -0x58) = reloc..LC26;
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x60) = 0x8000c56;
+        func_0x0802b569(unaff_R12, 1, 0x18, "", "", uVar2);
+        unaff_RBX = (uint64_t)*(uint8_t *)((int64_t)*(undefined **)0x20 + -0x38);
+        if (*(uint8_t *)((int64_t)*(undefined **)0x20 + -0x38) != 0) {
+            *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x50) = 0x8000c66;
+            piVar3 = (int64_t *)func_0x0802b569();
+            iVar5 = *piVar3;
+            puVar4 = unaff_R12;
+            do {
+                *puVar4 = (uint8_t)*(undefined4 *)(iVar5 + unaff_RBX * 4);
+                uVar1 = puVar4[1];
+                unaff_RBX = (uint64_t)uVar1;
+                puVar4 = puVar4 + 1;
+            } while (uVar1 != 0);
+        }
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x50) = 0x8000c89;
+        arg1 = (int64_t)unaff_R12;
+        iVar5 = func_0x0802b569();
+        if (iVar5 != 0) {
+            in_XMM1_Qa = *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x40);
+            *(undefined4 *)(iVar5 + 0x10) = 2;
+            *(undefined8 *)(iVar5 + 0x20) = 0;
+            *(undefined8 *)(iVar5 + 0x18) = in_XMM1_Qa;
+        }
+        if (*(int64_t *)((int64_t)*(undefined **)0x20 + -0x20) == *(int64_t *)(in_FS_OFFSET + 0x28)) break;
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x50) = 0x8000cc6;
+        func_0x0802b569();
+        *(undefined **)0x20 = (BADSPACEBASE *)((int64_t)*(undefined **)0x20 + -0x48);
+    }
+    return;
+}
+
+

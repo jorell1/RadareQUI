@@ -1,0 +1,75 @@
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/plot2d.o @ 0x8000c10 */
+#include <stdint.h>
+ 
+int64_t polar_range_fiddling_part_0 (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    rax = *((rdi + 0x1cc));
+    rcx = *((rdi + 0x1d0));
+    rdx = reloc_axis_array;
+    xmm3 = *(loc..LC12);
+    rax *= 0x2a8;
+    rsi = rcx * 0x2a8;
+    rax += rdx;
+    xmm1 = *((rax + 0x10));
+    rsi += rdx;
+    xmm0 = *((rax + 0x18));
+    xmm2 = *((rsi + 0x10));
+    __asm ("xorpd xmm1, xmm3");
+    __asm ("maxsd xmm0, xmm1");
+    xmm1 = *((rsi + 0x18));
+    __asm ("xorpd xmm2, xmm3");
+    esi = *((rax + 4));
+    __asm ("maxsd xmm1, xmm2");
+    esi &= 3;
+    __asm ("maxsd xmm0, xmm1");
+    if (esi == 3) {
+        __asm ("movapd xmm1, xmm0");
+        *((rax + 0x18)) = xmm0;
+        __asm ("xorpd xmm1, xmm3");
+        *((rax + 0x10)) = xmm1;
+    }
+    rcx *= 0x2a8;
+    rdx += rcx;
+    eax = *((rdx + 4));
+    eax &= 3;
+    if (eax != 3) {
+        return rax;
+    }
+    *((rdx + 0x18)) = xmm0;
+    __asm ("xorpd xmm0, xmm3");
+    *((rdx + 0x10)) = xmm0;
+    return rax;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

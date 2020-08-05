@@ -44,7 +44,7 @@ def cleanline(line):
 
 class RadareQUI:
     def __init__(self, file):
-        self._child = pexpect.spawn('r2', ['-e io.cache=true', file], timeout=1)
+        self._child = pexpect.spawn('r2', ['-e io.cache=true', file], timeout=2)
         self._child.setecho(False)
 
     def clear_buff(self):
@@ -126,8 +126,10 @@ def main(args):
     print('Found these files: {}'.format(executables))
 
     for file in executables:
+        ghidra_out = "Output/{}_ghidra_output.txt".format(file)
+        r2dec_out = "Output/{}_r2dec_output.txt".format(file)
         # skip non object files
-        if '.o' not in file:
+        if '.o' not in file or (exists(ghidra_out) and exists(r2dec_out)):
             continue
 
         radare = RadareQUI(join(args.path, file))
@@ -136,8 +138,6 @@ def main(args):
         fcount = 1
         ftotal = len(function_dict)
         print('Disecting File: {}'.format(file))
-        ghidra_out = "Output/{}_ghidra_output.txt".format(file)
-        r2dec_out = "Output/{}_r2dec_output.txt".format(file)
 
         if exists(ghidra_out):
             remove(ghidra_out)

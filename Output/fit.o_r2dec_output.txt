@@ -1,0 +1,2434 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8000040 */
+#include <stdint.h>
+ 
+uint64_t fit_show (int64_t arg9, int64_t arg7, int64_t arg1, int64_t arg2, int64_t arg3) {
+    int64_t var_8h;
+    xmm2 = arg9;
+    xmm0 = arg7;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    /* [01] -r-x section size 21565 named .text */
+    r13 = rsi;
+    r12 = rdx;
+    ebx = edi;
+    __asm ("comisd xmm0, xmmword [loc..LC3]");
+    xmm3 = *(obj.epsilon);
+    *((rsp + 8)) = xmm2;
+    __asm ("movapd xmm2, xmm0");
+    __asm ("subsd xmm2, xmm1");
+    xmm1 = 0;
+    if (? > ?) {
+        __asm ("movapd xmm1, xmm2");
+        __asm ("divsd xmm1, xmm0");
+    }
+    ecx = ebx;
+    esi = 1;
+    rdi = r12;
+    eax = 4;
+    rdx = "\n\n Iteration %d\n WSSR        : %-15g   delta(WSSR)/WSSR   : %g\n delta(WSSR) : %-15g   limit for stopping : %g\n";
+    _fprintf_chk ();
+    if (*(obj.fit_show_lambda) != 0) {
+        goto label_1;
+    }
+label_0:
+    esi = 1;
+    rdi = r12;
+    rax = "initial set of free";
+    rcx = "resultant";
+    if (ebx <= 0) {
+        rcx = rax;
+    }
+    rdx = "\n%s parameter values\n\n";
+    eax = 0;
+    _fprintf_chk ();
+    eax = num_params;
+    if (eax <= 0) {
+        goto label_2;
+    }
+    ebp = 0;
+    ebx = 0;
+    r14 = "%-15.15s = %g\n";
+    do {
+        rax = scale_params;
+        rdx = r14;
+        esi = 1;
+        rdi = r12;
+        rcx = par_name;
+        xmm0 = *((rax + rbx*8));
+        __asm ("mulsd xmm0, qword [r13 + rbx*8]");
+        eax = 1;
+        rbx++;
+        rcx += rbp;
+        rbp += 0x33;
+        _fprintf_chk ();
+    } while (*(obj.num_params) > ebx);
+label_2:
+    return rax;
+label_1:
+    xmm0 = *((rsp + 8));
+    esi = 1;
+    rdi = r12;
+    eax = 1;
+    rdx = " lambda\t     : %g\n";
+    _fprintf_chk ();
+    goto label_0;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8000170 */
+#include <stdint.h>
+ 
+int64_t Dblfn (int64_t arg_e0h, int64_t arg11, int64_t arg10, int64_t arg9, int64_t arg8, int64_t arg6, int64_t arg5, int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4) {
+    int64_t var_4h;
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    int64_t var_28h;
+    int64_t var_30h;
+    int64_t var_38h;
+    int64_t var_40h;
+    int64_t var_48h;
+    int64_t var_50h;
+    int64_t var_60h;
+    int64_t var_70h;
+    int64_t var_80h;
+    int64_t var_90h;
+    int64_t var_a0h;
+    int64_t var_b0h;
+    int64_t var_c0h;
+    xmm4 = arg11;
+    xmm3 = arg10;
+    xmm2 = arg9;
+    xmm1 = arg8;
+    r9 = arg6;
+    r8 = arg5;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    r12 = rdi;
+    *((rsp + 0x28)) = rsi;
+    *((rsp + 0x30)) = rdx;
+    *((rsp + 0x38)) = rcx;
+    *((rsp + 0x40)) = r8;
+    *((rsp + 0x48)) = r9;
+    if (al != 0) {
+        *((rsp + 0x50)) = xmm0;
+        *((rsp + 0x60)) = xmm1;
+        *((rsp + 0x70)) = xmm2;
+        *((rsp + 0x80)) = xmm3;
+        *((rsp + 0x90)) = xmm4;
+        *((rsp + 0xa0)) = xmm5;
+        *((rsp + 0xb0)) = xmm6;
+        *((rsp + 0xc0)) = xmm7;
+    }
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    rax = rsp + 0xe0;
+    *(rsp) = 8;
+    arg_e0h = rax;
+    rax = rsp + 0x20;
+    *((rsp + 4)) = 0x30;
+    *((rsp + 0x10)) = rax;
+    if (*(obj.fit_verbosity) != 1) {
+        rdi = *(reloc.stderr);
+        rcx = rsp;
+        rdx = r12;
+        esi = 1;
+        _fprintf_chk ();
+    }
+    while (1) {
+        rax = *((rsp + 0x18));
+        rax ^= *(fs:0x28);
+        if (*(obj.fit_suppress_log) != 0) {
+            goto label_0;
+        }
+        return rax;
+        rax = rsp + 0xe0;
+        rdi = log_f;
+        rcx = rsp;
+        rdx = r12;
+        arg_e0h = rax;
+        esi = 1;
+        rax = rsp + 0x20;
+        *((rsp + 4)) = 0x30;
+        *((rsp + 0x10)) = rax;
+        _fprintf_chk (8);
+    }
+label_0:
+    _fprintf_chk ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x80002d0 */
+#include <stdint.h>
+ 
+int64_t log_axis_restriction (int64_t arg8, int64_t arg7, int64_t arg1, uint32_t arg2, int64_t arg3) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_68h;
+    xmm1 = arg8;
+    xmm0 = arg7;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    r14d = edx;
+    edx &= 2;
+    r14d &= 1;
+    r13d = esi;
+    r12 = rdi;
+    *(rsp) = xmm1;
+    rax = *(fs:0x28);
+    *((rsp + 0x68)) = rax;
+    eax = 0;
+    *((rsp + 8)) = xmm0;
+    if (esi == 1) {
+        goto label_3;
+    }
+    rbx = *(reloc.x_axis);
+    rax = reloc_axis_array;
+    esi = 1;
+    rdx = "        %s range restricted to [";
+    rbx *= 0x2a8;
+    rbx += rax;
+    eax = 0;
+    _fprintf_chk ();
+    xmm0 = *((rsp + 8));
+    if (r14d != 0) {
+        goto label_4;
+    }
+    if (r13d <= 1) {
+        goto label_5;
+    }
+label_0:
+    rdx = loc__LC10;
+    esi = 1;
+    rdi = r12;
+    eax = 1;
+    _fprintf_chk ();
+    do {
+        rcx = r12;
+        edx = 3;
+        esi = 1;
+        rdi = loc__LC9;
+        _fprintf_chk ();
+        if (ebp != 0) {
+            goto label_6;
+        }
+        if (r13d <= 1) {
+label_1:
+            if (*((rbx + 0x16c)) == 1) {
+                goto label_7;
+            }
+        }
+        xmm0 = *(rsp);
+        esi = 1;
+        rdi = r12;
+        eax = 1;
+        rdx = loc__LC10;
+        _fprintf_chk ();
+label_2:
+        rcx = r12;
+        edx = 2;
+        esi = 1;
+        rdi = loc__LC11;
+        _fprintf_chk ();
+        rax = *((rsp + 0x68));
+        rax ^= *(fs:0x28);
+        if (*((rbx + 0x16c)) != 1) {
+            goto label_8;
+        }
+        return rax;
+label_3:
+        rbx = *(reloc.y_axis);
+        rax = reloc_axis_array;
+        esi = 1;
+        rdx = "        %s range restricted to [";
+        rbx *= 0x2a8;
+        rbx += rax;
+        eax = 0;
+        _fprintf_chk ();
+        xmm0 = *((rsp + 8));
+        if (r14d == 0) {
+            goto label_5;
+        }
+label_4:
+        rsi = r12;
+        edi = 0x2a;
+        _fprintf_chk ();
+    } while (1);
+label_5:
+    if (*((rbx + 0x16c)) != 1) {
+        goto label_0;
+    }
+    rsi = r12;
+    edi = 0x22;
+    *((rsp + 8)) = xmm0;
+    r13 = rsp + 0x10;
+    _fprintf_chk ();
+    rdx = *(reloc.timefmt);
+    esi = 0x50;
+    rdi = r13;
+    xmm0 = *((rsp + 8));
+    _fprintf_chk ();
+    rsi = r12;
+    rdi = r13;
+    _fprintf_chk ();
+    rsi = r12;
+    edi = 0x22;
+    _fprintf_chk ();
+    rcx = r12;
+    edx = 3;
+    esi = 1;
+    rdi = loc__LC9;
+    _fprintf_chk ();
+    if (ebp == 0) {
+        goto label_1;
+    }
+label_6:
+    rsi = r12;
+    edi = 0x2a;
+    _fprintf_chk ();
+    goto label_2;
+label_7:
+    rsi = r12;
+    edi = 0x22;
+    rbp = rsp + 0x10;
+    _fprintf_chk ();
+    xmm0 = *(rsp);
+    rdi = rbp;
+    rdx = *(reloc.timefmt);
+    esi = 0x50;
+    _fprintf_chk ();
+    rsi = r12;
+    rdi = rbp;
+    _fprintf_chk ();
+    rsi = r12;
+    edi = 0x22;
+    _fprintf_chk ();
+    goto label_2;
+label_8:
+    _fprintf_chk ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x80005d0 */
+#include <stdint.h>
+ 
+void ctrlc_handle (void) {
+    __asm ("endbr64");
+    rsi = sym_ctrlc_handle;
+    edi = 2;
+    _fprintf_chk ();
+    *(reloc.ctrlc_flag) = 1;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8000600 */
+#include <stdint.h>
+ 
+uint32_t setvar (int64_t arg1) {
+    rdi = arg1;
+    eax = *(rdi);
+    if (al == 0) {
+        goto label_0;
+    }
+    rdx = rdi;
+    do {
+        eax -= 0x5b;
+        if ((al & 0xfd) == 0) {
+            *(rdx) = 0x5f;
+        }
+        eax = *((rdx + 1));
+        rdx++;
+    } while (al != 0);
+label_0:
+    return void (*0x8040d6c)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8000630 */
+#include <stdint.h>
+ 
+uint64_t setvarerr (int64_t arg7, int64_t arg1) {
+    int64_t var_8h;
+    xmm0 = arg7;
+    rdi = arg1;
+    rbx = rdi;
+    *((rsp + 8)) = xmm0;
+    _fprintf_chk (rbx);
+    rsi = "setvarerr";
+    rdi = rax + 6;
+    rax = _fprintf_chk ();
+    r8 = rbx;
+    esi = 1;
+    rcx = "%s_err";
+    rdi = rax;
+    rdx = 0xffffffffffffffff;
+    eax = 0;
+    _fprintf_chk ();
+    xmm0 = *((rsp + 8));
+    rdi = rbp;
+    setvar ();
+    rdi = rbp;
+    return void (*0x8040d6c)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x80006a0 */
+#include <stdint.h>
+ 
+uint64_t setvarcovar (int64_t arg7, int64_t arg1, int64_t arg2) {
+    int64_t var_8h;
+    xmm0 = arg7;
+    rdi = arg1;
+    rsi = arg2;
+    r12 = rsi;
+    rbx = rdi;
+    *((rsp + 8)) = xmm0;
+    rax = _fprintf_chk (rbx, rbp);
+    rdi = r12;
+    _fprintf_chk ();
+    rsi = "setvarcovar";
+    rdi = rbp + rax + 0xa;
+    rax = _fprintf_chk ();
+    r9 = r12;
+    r8 = rbx;
+    esi = 1;
+    rdi = rax;
+    eax = 0;
+    rdx = 0xffffffffffffffff;
+    rcx = "FIT_COV_%s_%s";
+    _fprintf_chk ();
+    xmm0 = *((rsp + 8));
+    rdi = rbp;
+    setvar ();
+    rdi = rbp;
+    return void (*0x8040d6c)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8000720 */
+#include <stdint.h>
+ 
+int64_t pack_float (int64_t arg1) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h_2;
+    int64_t var_20h;
+    int64_t var_24h;
+    int64_t var_30h;
+    int64_t var_40h;
+    int64_t var_48h;
+    int64_t var_128h;
+    int64_t var_ch;
+    int64_t var_18h;
+    rdi = arg1;
+    r12 = rdi;
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    eax = .data;
+    if (eax >= 0) {
+label_0:
+        if (eax != 0) {
+            esi = 0x65;
+            rdi = r12;
+            rax = _fprintf_chk ();
+            if (rax == 0) {
+                goto label_3;
+            }
+label_2:
+            if (*((rax + 2)) == 0x30) {
+                goto label_4;
+            }
+        }
+label_1:
+        rax = *((rsp + 0x18));
+        rax ^= *(fs:0x28);
+        if (*((rax + 2)) != 0x30) {
+            goto label_5;
+        }
+        rax = r12;
+        return rax;
+    }
+    rbx = rsp + 0xc;
+    xmm0 = *(loc..LC17);
+    edx = 1;
+    r8 = "%.2e";
+    ecx = 0xc;
+    esi = 0xc;
+    rdi = rbx;
+    eax = 1;
+    _fprintf_chk ();
+    rdx = rbx;
+    do {
+        ecx = *(rdx);
+        rdx += 4;
+        eax = rcx - 0x1010101;
+        ecx = ~ecx;
+        eax &= ecx;
+        eax &= 0x80808080;
+    } while (eax == 0);
+    ecx = eax;
+    ecx >>= 0x10;
+    if ((eax & 0x8080) == 0) {
+        eax = ecx;
+    }
+    rcx = rdx + 2;
+    if ((eax & 0x8080) == 0) {
+        rdx = rcx;
+    }
+    esi = eax;
+    sil += al;
+    rdx -= 3;
+    eax = 0;
+    rdx -= rbx;
+    al = (rdx == 9) ? 1 : 0;
+    *(obj.needs_packing.12816) = eax;
+    goto label_0;
+label_3:
+    esi = 0x45;
+    rdi = r12;
+    rax = _fprintf_chk ();
+    if (rax == 0) {
+        goto label_1;
+    }
+    goto label_2;
+label_4:
+    rax += 2;
+    do {
+        edx = *((rax + 1));
+        rax++;
+        *((rax - 1)) = dl;
+    } while (dl != 0);
+    goto label_1;
+label_5:
+    rax = _fprintf_chk ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8000f00 */
+#include <stdint.h>
+ 
+int64_t print_function_definitions_recursion_constprop_0 (int64_t arg1, int32_t arg2, int64_t arg3, signed int64_t arg4) {
+    int64_t var_8h;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+label_1:
+    r13d = *(rdi);
+    if (r13d == 0) {
+        goto label_2;
+    }
+    r12 = rsi;
+    esi = *(rsi);
+    if (esi == 0x20) {
+        goto label_3;
+    }
+    r14d = ecx;
+    if (ecx > 0x13) {
+        goto label_4;
+    }
+    if (r13d <= 0) {
+        goto label_5;
+    }
+    rbx = rdi;
+    ebp = 0;
+    r15 = rdx + 0x100;
+    r13d = 0;
+    if (esi > 0x1f) {
+        goto label_2;
+    }
+    do {
+        r8 = rbp;
+        r8 <<= 5;
+        eax = *((rbx + r8 + 8));
+        eax -= 6;
+        if (eax <= 1) {
+            goto label_6;
+        }
+label_0:
+        rbp++;
+        if (*(rbx) <= ebp) {
+            goto label_2;
+        }
+        esi = *(r12);
+    } while (esi <= 0x1f);
+label_2:
+    eax = r13d;
+    return eax;
+label_6:
+    r9 = *((rbx + r8 + 0x10));
+    rdi = *((r9 + 0x18));
+    if (rdi == 0) {
+        goto label_0;
+    }
+    rax = rdx;
+    do {
+        rcx = *(rax);
+        if (rdi == rcx) {
+            goto label_7;
+        }
+        if (rcx == 0) {
+            goto label_8;
+        }
+        rax += 8;
+    } while (rax != r15);
+    do {
+label_7:
+        rdi = *((r9 + 0x10));
+        ecx = r14 + 1;
+        rsi = r12;
+        *((rsp + 8)) = rdx;
+        eax = print_function_definitions_recursion_constprop_0 ();
+        goto label_1;
+        rdx = *((rsp + 8));
+        r13d |= eax;
+        goto label_0;
+label_4:
+        r13d = 2;
+        goto label_2;
+label_3:
+        r13d = 1;
+        goto label_2;
+label_8:
+        esi++;
+        *(r12) = esi;
+        rcx = *((rbx + r8 + 0x10));
+        rcx = *((rcx + 0x18));
+        *(rax) = rcx;
+        r9 = *((rbx + r8 + 0x10));
+    } while (1);
+label_5:
+    r13d = 0;
+    goto label_2;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8001580 */
+#include <stdint.h>
+ 
+int64_t analyze (int64_t arg7, int64_t arg5, int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4) {
+    uint32_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    int64_t var_28h;
+    int64_t var_30h;
+    int64_t var_38h;
+    int64_t var_40h;
+    int64_t var_58h;
+    xmm0 = arg7;
+    r8 = arg5;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    r13 = rdi;
+    rbx = rsi;
+    edi = num_data;
+    *((rsp + 0x30)) = rcx;
+    *((rsp + 0x20)) = r8;
+    rax = *(fs:0x28);
+    *((rsp + 0x58)) = rax;
+    eax = 0;
+    rax = _fprintf_chk (rbx, rbp, r12, r13, r14);
+    edi = num_params;
+    r12 = rax;
+    rax = _fprintf_chk ();
+    rsi = rbp;
+    rdi = r13;
+    *((rsp + 8)) = rax;
+    eax = _fprintf_chk ();
+    edx = num_params;
+    eax = 0;
+    r8 = *((rsp + 8));
+    ecx = rdx - 1;
+    if (edx <= 0) {
+        goto label_8;
+    }
+    do {
+        xmm0 = *((r13 + rax*8));
+        rdx = rax;
+        *((r8 + rax*8)) = xmm0;
+        rax++;
+    } while (rcx != rdx);
+    rax = r13;
+    r15d = 0;
+    r13 = r8;
+    r8 = rax;
+label_0:
+    xmm1 = *((r8 + r15*8));
+    xmm4 = .rodata.cst8;
+    r14 = r15*8;
+    __asm ("movapd xmm0, xmm1");
+    __asm ("andpd xmm0, xmmword [loc..LC47]");
+    __asm ("comisd xmm4, xmm0");
+    if (rcx > rdx) {
+        goto label_9;
+    }
+    xmm0 = *(loc..LC48);
+    __asm ("mulsd xmm0, xmm1");
+label_2:
+    *((r13 + r15*8)) = xmm0;
+    rsi = r12;
+    rdi = r13;
+    *((rsp + 0x10)) = r8;
+    *((rsp + 8)) = xmm1;
+    _fprintf_chk ();
+    eax = num_data;
+    xmm1 = *((rsp + 8));
+    r8 = *((rsp + 0x10));
+    if (eax <= 0) {
+        goto label_10;
+    }
+    __asm ("mulsd xmm1, qword [loc..LC49]");
+    ecx = rax - 1;
+    eax = 0;
+    do {
+        xmm0 = *((r12 + rax*8));
+        __asm ("subsd xmm0, qword [rbp + rax*8]");
+        rdx = *((rbx + rax*8));
+        __asm ("divsd xmm0, xmm1");
+        *((rdx + r14)) = xmm0;
+        rdx = rax;
+        rax++;
+    } while (rcx != rdx);
+label_10:
+    xmm0 = *((r8 + r15*8));
+    *((r13 + r15*8)) = xmm0;
+    r15++;
+    if (*(obj.num_params) > r15d) {
+        goto label_0;
+    }
+    rax = r8;
+    r8 = r13;
+    r13 = rax;
+label_8:
+    rdi = r12;
+    *((rsp + 8)) = r8;
+    _fprintf_chk ();
+    r8 = *((rsp + 8));
+    rdi = *((rsp + 8));
+    _fprintf_chk ();
+    r14d = num_data;
+    if (*(obj.num_errors) > 1) {
+        goto label_11;
+    }
+label_7:
+    if (r14d <= 0) {
+        goto label_4;
+    }
+    eax = r14 - 1;
+    *((rsp + 0x10)) = r14d;
+    r12d = 0;
+    xmm3 = 0;
+    r10d = num_params;
+    rax = rax*8 + 8;
+    r14 = *((rsp + 0x20));
+    r15d = num_errors;
+    *((rsp + 8)) = rax;
+    eax = r10 - 1;
+    r13d = r15d;
+    r11 = rax*8 + 8;
+label_1:
+    r8 = err_data;
+    if (r15d <= 1) {
+        goto label_12;
+    }
+    eax = r13 - 1;
+    edx = num_indep;
+    r9d = r13d;
+    rax = (int64_t) eax;
+    r9d -= r15d;
+    xmm2 = *((r8 + rax*8));
+    __asm ("mulsd xmm2, xmm2");
+    if (edx <= 0) {
+        goto label_13;
+    }
+    rax = obj_err_cols;
+    esi = rdx - 1;
+    edx = 0;
+    rdi = rax + 1;
+    rsi += rdi;
+    do {
+        if (*(rax) != 0) {
+            rcx = (int64_t) edx;
+            rdi = *((r14 + rcx*8));
+            ecx = rdx + r9;
+            edx++;
+            rcx = (int64_t) ecx;
+            xmm0 = *((rdi + r12));
+            __asm ("mulsd xmm0, qword [r8 + rcx*8]");
+            __asm ("mulsd xmm0, xmm0");
+            __asm ("addsd xmm2, xmm0");
+        }
+        rax++;
+    } while (rsi != rax);
+label_13:
+    __asm ("ucomisd xmm3, xmm2");
+    __asm ("movapd xmm1, xmm2");
+    __asm ("sqrtsd xmm1, xmm1");
+    if (rsi > rax) {
+        goto label_14;
+    }
+label_3:
+    rax = fit_z;
+    xmm0 = *((rbp + r12));
+    __asm ("subsd xmm0, qword [rax + r12]");
+    __asm ("divsd xmm0, xmm1");
+    *((rbp + r12)) = xmm0;
+    if (r10d <= 0) {
+        goto label_15;
+    }
+    rax = *((rbx + r12));
+    rdx = r11 + rax;
+    do {
+        xmm0 = *(rax);
+        rax += 8;
+        __asm ("divsd xmm0, xmm1");
+        *((rax - 8)) = xmm0;
+    } while (rax != rdx);
+label_15:
+    r12 += 8;
+    r13d += r15d;
+    if (*((rsp + 8)) != r12) {
+        goto label_1;
+    }
+    r14d = *((rsp + 0x10));
+label_4:
+    rsi = rbp;
+    edi = r14d;
+    _fprintf_chk ();
+    rax = *((rsp + 0x30));
+    *(rax) = xmm0;
+    rax = *((rsp + 0x58));
+    rax ^= *(fs:0x28);
+    if (*((rsp + 8)) != r12) {
+        goto label_16;
+    }
+    return rax;
+label_9:
+    rax = *(loc..LC46);
+    xmm0 = rax;
+    rax = .rodata.cst8;
+    xmm1 = rax;
+    goto label_2;
+label_12:
+    xmm1 = *((r8 + r12));
+    goto label_3;
+label_11:
+    eax = num_params;
+    r12d = 0;
+    if (eax <= 0) {
+        goto label_17;
+    }
+    do {
+        rax = scale_params;
+        xmm1 = 0;
+        xmm0 = *((rax + r12*8));
+        __asm ("mulsd xmm0, qword [r13 + r12*8]");
+        rax = par_udv;
+        rdi = *((rax + r12*8));
+        r12++;
+        _fprintf_chk ();
+    } while (*(obj.num_params) > r12d);
+label_17:
+    edx = num_data;
+    eax = num_indep;
+    *((rsp + 8)) = 0;
+    r14d = edx;
+    if (edx <= 0) {
+        goto label_4;
+    }
+    *((rsp + 0x38)) = rbx;
+    *((rsp + 0x28)) = rbp;
+label_6:
+    ebx = *((rsp + 8));
+    if (eax <= 0) {
+        goto label_18;
+    }
+    rsi = *((rsp + 8));
+    ebp = 0;
+    r13d = 0;
+    rdi = rsi*8;
+    *((rsp + 0x18)) = rdi;
+    while (*((rsi + rbp)) == 0) {
+        rbp++;
+        if (eax <= ebp) {
+            goto label_19;
+        }
+label_5:
+        rsi = obj_err_cols;
+        r12d = ebp;
+    }
+    rcx = fit_x;
+    r14 = 0x08005668;
+    r15d = 0;
+    do {
+        if (r15d != ebp) {
+            eax *= ebx;
+            xmm1 = 0;
+            rdi = r14;
+            eax += r15d;
+            rax = (int64_t) eax;
+            xmm0 = *((rcx + rax*8));
+            _fprintf_chk ();
+            rcx = fit_x;
+            eax = num_indep;
+        }
+        r15d++;
+        r14 += 0x18;
+    } while (eax > r15d);
+    eax *= ebx;
+    xmm2 = *(loc..LC49);
+    rsi = 0x08005668;
+    r12d += eax;
+    rax = rbp + rbp*2;
+    rbp++;
+    r12 = (int64_t) r12d;
+    rdi = rsi + rax*8;
+    xmm1 = *((rcx + r12*8));
+    r12 = rsp + 0x40;
+    __asm ("movapd xmm0, xmm1");
+    __asm ("andpd xmm0, xmmword [loc..LC47]");
+    __asm ("mulsd xmm2, xmm0");
+    __asm ("addsd xmm0, qword [loc..LC50]");
+    __asm ("mulsd xmm0, qword [loc..LC51]");
+    __asm ("maxsd xmm2, xmm0");
+    __asm ("addsd xmm1, xmm2");
+    *((rsp + 0x10)) = xmm2;
+    __asm ("movapd xmm0, xmm1");
+    xmm1 = 0;
+    _fprintf_chk ();
+    rdi = *(0x08005650);
+    rsi = r12;
+    _fprintf_chk ();
+    rdi = r12;
+    _fprintf_chk ();
+    rsi = *((rsp + 0x20));
+    rax = (int64_t) r13d;
+    rdi = *((rsp + 0x28));
+    xmm2 = *((rsp + 0x10));
+    r13d++;
+    rax = *((rsi + rax*8));
+    rsi = *((rsp + 8));
+    __asm ("subsd xmm0, qword [rdi + rsi*8]");
+    rdi = *((rsp + 0x18));
+    __asm ("divsd xmm0, xmm2");
+    *((rax + rdi)) = xmm0;
+    eax = num_indep;
+    if (eax > ebp) {
+        goto label_5;
+    }
+label_19:
+    edx = num_data;
+label_18:
+    *((rsp + 8))++;
+    rsi = *((rsp + 8));
+    r14d = edx;
+    if (edx > esi) {
+        goto label_6;
+    }
+    rbx = *((rsp + 0x38));
+    rbp = *((rsp + 0x28));
+    goto label_7;
+label_16:
+    _fprintf_chk ();
+label_14:
+    __asm ("movapd xmm0, xmm2");
+    *((rsp + 0x28)) = r11;
+    *((rsp + 0x20)) = r10d;
+    *((rsp + 0x18)) = xmm1;
+    _fprintf_chk ();
+    r11 = *((rsp + 0x28));
+    r10d = *((rsp + 0x20));
+    xmm3 = 0;
+    xmm1 = *((rsp + 0x18));
+    goto label_3;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8001af0 */
+#include <stdint.h>
+ 
+int64_t marquardt (int64_t arg10, int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4) {
+    uint32_t var_8h;
+    char * var_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    char * var_28h;
+    int64_t var_30h;
+    int64_t var_34h;
+    int64_t var_38h;
+    int64_t var_40h;
+    int64_t var_48h;
+    xmm3 = arg10;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    r15 = rcx;
+    rbx = rsi;
+    xmm0 = *(rcx);
+    *((rsp + 0x18)) = rdx;
+    rax = *(fs:0x28);
+    *((rsp + 0x48)) = rax;
+    eax = 0;
+    __asm ("ucomisd xmm0, qword [loc..LC52]");
+    __asm ("jnp 0x8001e00");
+label_1:
+    rax = d.12528;
+    __asm ("ucomisd xmm0, qword [loc..LC53]");
+    r14 = tmp_C.12530;
+    *((rsp + 0x20)) = rax;
+    rax = tmp_d.12529;
+    *((rsp + 0x10)) = rax;
+    rax = "%-15.15s = %g\n";
+    *((rsp + 0x28)) = rax;
+    __asm ("jnp 0x8002038");
+label_7:
+    eax = num_data;
+    ecx = num_params;
+    *((rsp + 0x34)) = eax;
+    eax += ecx;
+    *((rsp + 8)) = ecx;
+    *((rsp + 0x30)) = eax;
+    if (eax <= 0) {
+        goto label_12;
+    }
+    eax = *((rsp + 0x30));
+    r12 = *((rsp + 8));
+    *((rsp + 0x38)) = rbp;
+    r13d = 0;
+    eax--;
+    r12 <<= 3;
+    rbx = rax;
+    do {
+        rdi = *((r14 + r13*8));
+        rsi = *((rbp + r13*8));
+        rdx = r12;
+        _fprintf_chk ();
+        rax = r13;
+        r13++;
+    } while (rbx != rax);
+    rbx = rbp;
+    rbp = *((rsp + 0x38));
+label_12:
+    rcx = *((rsp + 0x34));
+    rsi = *((rsp + 0x20));
+    rdi = *((rsp + 0x10));
+    r12 = rcx*8;
+    rdx = r12;
+    _fprintf_chk ();
+    edx = *((rsp + 8));
+    if (edx <= 0) {
+        goto label_13;
+    }
+    eax = *((rsp + 8));
+    rsi = r14 + r12;
+    eax--;
+    rdi = rax*8 + 8;
+    rax = *((rsp + 0x10));
+    rcx = rax + r12;
+    eax = 0;
+    do {
+        rdx = *((rsi + rax));
+        xmm0 = *(r15);
+        *((rdx + rax)) = xmm0;
+        *((rcx + rax)) = 0;
+        rax += 8;
+    } while (rax != rdi);
+label_13:
+    r8d = *((rsp + 8));
+    ecx = *((rsp + 0x30));
+    rdi = r14;
+    rdx = *((rsp + 0x28));
+    rsi = *((rsp + 0x10));
+    _fprintf_chk ();
+    eax = num_params;
+    if (eax <= 0) {
+        goto label_14;
+    }
+    rsi = "%-15.15s = %g\n";
+    rdi = temp_a.12527;
+    ecx = rax - 1;
+    eax = 0;
+    do {
+        xmm0 = *((rbp + rax*8));
+        __asm ("addsd xmm0, qword [rsi + rax*8]");
+        rdx = rax;
+        *((rdi + rax*8)) = xmm0;
+        rax++;
+    } while (rcx != rdx);
+label_8:
+    r8 = deriv.12532;
+    rdx = tmp_d.12529;
+    rcx = rsp + 0x40;
+    rsi = tmp_C.12530;
+    analyze ();
+    rax = *((rsp + 0x18));
+    xmm0 = *((rsp + 0x40));
+    xmm1 = *(rax);
+    __asm ("comisd xmm1, xmm0");
+    if (rcx < rdx) {
+        xmm2 = *(r15);
+        __asm ("mulsd xmm2, qword [obj.lambda_up_factor]");
+        eax = fit_verbosity;
+        *(r15) = xmm2;
+        if (eax == 4) {
+            goto label_15;
+        }
+        if (eax == 3) {
+            goto label_16;
+        }
+        eax = 3;
+label_0:
+        rbx = *((rsp + 0x48));
+        rbx ^= *(fs:0x28);
+        if (eax != 3) {
+            goto label_17;
+        }
+        return rax;
+    }
+    xmm1 = *(r15);
+    __asm ("comisd xmm1, xmmword [loc..LC54]");
+    if (eax > 3) {
+        goto label_18;
+    }
+label_4:
+    rax = *((rsp + 0x18));
+    esi = num_params;
+    *(rax) = xmm0;
+    eax = num_data;
+    *((rsp + 0x10)) = esi;
+    if (eax <= 0) {
+        goto label_19;
+    }
+    eax--;
+    r12 = *((rsp + 0x10));
+    *((rsp + 0x18)) = rbp;
+    r15d = 0;
+    r13 = tmp_d.12529;
+    rcx = d.12528;
+    *((rsp + 8)) = rax;
+    r14 = tmp_C.12530;
+    r12 <<= 3;
+    r13 = rcx;
+    do {
+        rdi = *((rbx + r15*8));
+        rsi = *((r14 + r15*8));
+        rdx = r12;
+        _fprintf_chk ();
+        xmm0 = *((rbp + r15*8));
+        rax = r15;
+        *((r13 + r15*8)) = xmm0;
+        r15++;
+    } while (*((rsp + 8)) != rax);
+    rbp = *((rsp + 0x18));
+label_19:
+    eax = *((rsp + 0x10));
+    if (eax <= 0) {
+        goto label_20;
+    }
+    eax = *((rsp + 0x10));
+    rsi = temp_a.12527;
+    ecx = rax - 1;
+    eax = 0;
+    do {
+        xmm0 = *((rsi + rax*8));
+        rdx = rax;
+        *((rbp + rax*8)) = xmm0;
+        rax++;
+    } while (rcx != rdx);
+label_20:
+    eax = 2;
+    goto label_0;
+    if (rcx != rdx) {
+        goto label_1;
+    }
+    edi = num_params;
+    rax = _fprintf_chk ();
+    edi = num_params;
+    edi += *(obj.num_data);
+    *(obj.temp_a.12527) = rax;
+    rax = _fprintf_chk ();
+    edi = num_params;
+    edi += *(obj.num_data);
+    *(obj.d.12528) = rax;
+    rax = _fprintf_chk ();
+    edi = num_params;
+    *(obj.tmp_d.12529) = rax;
+    rax = _fprintf_chk ();
+    edi = num_params;
+    edi += *(obj.num_data);
+    *(obj.da.12526) = "%-15.15s = %g\n";
+    rax = _fprintf_chk ();
+    esi = num_params;
+    edi = num_data;
+    *(obj.residues.12531) = rax;
+    edi += esi;
+    rax = _fprintf_chk ();
+    r8d = 0;
+    *(obj.deriv.12532) = 0;
+    *(obj.tmp_C.12530) = rax;
+    eax = num_errors;
+    if (eax > 1) {
+        goto label_21;
+    }
+label_6:
+    rcx = *((rsp + 0x18));
+    rdx = d.12528;
+    rsi = rbx;
+    rdi = rbp;
+    analyze ();
+    xmm0 = startup_lambda;
+    xmm2 = 0;
+    __asm ("ucomisd xmm0, xmm2");
+    __asm ("jp 0x8002007");
+    if (eax != 1) {
+        goto label_22;
+    }
+    r8d = num_data;
+    *(r15) = 0;
+    ebp = num_params;
+    if (r8d <= 0) {
+        goto label_23;
+    }
+    eax = r8 - 1;
+    rcx = rbx;
+    __asm ("movapd xmm1, xmm2");
+    rsi = rbx + rax*8 + 8;
+    eax = rbp - 1;
+    rdi = rax*8 + 8;
+label_2:
+    if (ebp <= 0) {
+        goto label_24;
+    }
+    rax = *(rcx);
+    rdx = rdi + rax;
+    do {
+        xmm0 = *(rax);
+        rax += 8;
+        __asm ("mulsd xmm0, xmm0");
+        __asm ("addsd xmm1, xmm0");
+        *(r15) = xmm1;
+    } while (rdx != rax);
+label_24:
+    rcx += 8;
+    if (rsi != rcx) {
+        goto label_2;
+    }
+label_10:
+    xmm0 = 0;
+    __asm ("cvtsi2sd xmm0, r8d");
+    __asm ("divsd xmm1, xmm0");
+    xmm0 = 0;
+    __asm ("cvtsi2sd xmm0, ebp");
+    __asm ("divsd xmm1, xmm0");
+    __asm ("ucomisd xmm2, xmm1");
+    __asm ("movapd xmm3, xmm1");
+    __asm ("sqrtsd xmm3, xmm3");
+    if (rsi > rcx) {
+        goto label_25;
+    }
+label_11:
+    *(r15) = xmm3;
+label_5:
+    if (ebp <= 0) {
+        goto label_26;
+    }
+    rax = *(obj.num_data);
+    r8d = 0;
+    edx = 8;
+    r8d++;
+    r9 = rax;
+    rdi = rbx + rax*8;
+    if (r8d == ebp) {
+        goto label_26;
+    }
+label_3:
+    eax = r8 + r9;
+    rax = (int64_t) eax;
+    rsi = *((rbx + rax*8));
+    eax = 0;
+    do {
+        rcx = *((rdi + rax));
+        *((rsi + rax)) = 0;
+        rax += 8;
+        *((rcx + rdx)) = 0;
+    } while (rax != rdx);
+    r8d++;
+    rdx += 8;
+    if (r8d != ebp) {
+        goto label_3;
+    }
+label_26:
+    eax = 0;
+    goto label_0;
+label_18:
+    if (*(obj.fit_verbosity) == 4) {
+        goto label_27;
+    }
+label_9:
+    __asm ("divsd xmm1, qword [obj.lambda_down_factor]");
+    *(r15) = xmm1;
+    goto label_4;
+label_22:
+    ebp = num_params;
+    *(r15) = xmm0;
+    goto label_5;
+label_21:
+    esi = num_data;
+    edi = rax - 1;
+    rax = _fprintf_chk ();
+    *(obj.deriv.12532) = rax;
+    r8 = rax;
+    goto label_6;
+    if (*(obj.fit_verbosity) != 4) {
+        goto label_7;
+    }
+    rdi = *((rsp + 0x20));
+    _fprintf_chk ();
+    rdi = *((rsp + 0x10));
+    _fprintf_chk ();
+    rdi = *((rsp + 0x28));
+    _fprintf_chk ();
+    rdi = temp_a.12527;
+    _fprintf_chk ();
+    rdi = residues.12531;
+    _fprintf_chk ();
+    rdi = r14;
+    _fprintf_chk ();
+    rdi = deriv.12532;
+    eax = _fprintf_chk ();
+    eax = 0;
+    *(obj.residues.12531) = 0;
+    *(obj.temp_a.12527) = 0;
+    *(obj.da.12526) = "%-15.15s = %g\n";
+    *(obj.tmp_d.12529) = 0;
+    *(obj.d.12528) = 0;
+    *(obj.deriv.12532) = 0;
+    *(obj.tmp_C.12530) = 0;
+    goto label_0;
+label_14:
+    rdi = temp_a.12527;
+    goto label_8;
+label_15:
+    rsi = *(reloc.stderr);
+    edi = 0x2a;
+    _fprintf_chk ();
+    eax = 3;
+    goto label_0;
+label_16:
+    *((rsp + 8)) = eax;
+    rax = *((rsp + 0x18));
+    edi = 0xffffffff;
+    rdx = *(reloc.stderr);
+    rsi = temp_a.12527;
+    xmm1 = *(rax);
+    fit_show_brief ();
+    eax = *((rsp + 8));
+    goto label_0;
+label_27:
+    rsi = *(reloc.stderr);
+    edi = 0x2f;
+    _fprintf_chk ();
+    xmm1 = *(r15);
+    xmm0 = *((rsp + 0x40));
+    goto label_9;
+label_23:
+    __asm ("movapd xmm1, xmm2");
+    goto label_10;
+label_17:
+    _fprintf_chk ();
+label_25:
+    __asm ("movapd xmm0, xmm1");
+    *((rsp + 8)) = xmm3;
+    _fprintf_chk ();
+    xmm3 = *((rsp + 8));
+    goto label_11;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8002180 */
+#include <stdint.h>
+ 
+int64_t internal_cleanup (int64_t arg5) {
+    int64_t var_8h;
+    r8 = arg5;
+    __asm ("endbr64");
+    rdi = regress_C;
+    rax = *(fs:0x28);
+    *((rsp + 8)) = rax;
+    eax = 0;
+    _fprintf_chk ();
+    rax = *(loc..LC53);
+    edx = 0;
+    esi = 0;
+    *(obj.regress_C) = 0;
+    edi = 0;
+    rcx = rsp;
+    *(rsp) = rax;
+    marquardt ();
+    rax = *((rsp + 8));
+    rax ^= *(fs:0x28);
+    if (? == ?) {
+        return rax;
+    }
+    rax = _fprintf_chk ();
+    __asm ("endbr64");
+    rax = *(obj.fit_script);
+    if (rax != 0) {
+        return rax;
+    }
+    rdi = "FIT_SCRIPT";
+    rax = _fprintf_chk ();
+    rdx = "replot";
+    if (rax == 0) {
+        rax = rdx;
+    }
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8001020 */
+#include <stdint.h>
+ 
+int64_t wri_to_fil_last_fit_cmd (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    rsi = rdi;
+    rdi = last_fit_command;
+    if (rdi != 0) {
+        if (rsi != 0) {
+            eax = _fprintf_chk ();
+            rax = (int64_t) eax;
+            return rax;
+        }
+        void (*0x8040d6c)() ();
+    }
+    eax = 0;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8001060 */
+#include <stdint.h>
+ 
+int64_t error_ex (int64_t arg_180h, int64_t arg11, int64_t arg10, int64_t arg9, int64_t arg6, int64_t arg5, int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4) {
+    int64_t var_8h_2;
+    int64_t var_20h_2;
+    int64_t var_30h;
+    int64_t var_58h;
+    int64_t var_ch_2;
+    int64_t var_10h_2;
+    int64_t var_18h_2;
+    int64_t var_20h_3;
+    int64_t var_38h;
+    int64_t var_8h;
+    int64_t var_ch;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    int64_t var_a8h;
+    int64_t var_b0h;
+    int64_t var_c0h;
+    int64_t var_c8h;
+    int64_t var_d0h;
+    int64_t var_d8h;
+    int64_t var_e0h;
+    int64_t var_f0h;
+    int64_t var_100h;
+    int64_t var_110h;
+    int64_t var_120h;
+    int64_t var_130h;
+    int64_t var_140h;
+    int64_t var_150h;
+    xmm4 = arg11;
+    xmm3 = arg10;
+    xmm2 = arg9;
+    r9 = arg6;
+    r8 = arg5;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    __asm ("endbr64");
+    *((rsp + 0xc0)) = rdx;
+    *((rsp + 0xc8)) = rcx;
+    *((rsp + 0xd0)) = r8;
+    *((rsp + 0xd8)) = r9;
+    if (al != 0) {
+        *((rsp + 0xe0)) = xmm0;
+        *((rsp + 0xf0)) = xmm1;
+        *((rsp + 0x100)) = xmm2;
+        *((rsp + 0x110)) = xmm3;
+        *((rsp + 0x120)) = xmm4;
+        *((rsp + 0x130)) = xmm5;
+        *((rsp + 0x140)) = xmm6;
+        *((rsp + 0x150)) = xmm7;
+    }
+    rax = *(fs:0x28);
+    *((rsp + 0xa8)) = rax;
+    eax = 0;
+    r12 = rsp + 0x20;
+    r8 = rsi;
+    r9 = &arg_180h;
+    rax = rsp + 0x180;
+    rdi = r12;
+    ecx = 0x80;
+    edx = 1;
+    *((rsp + 0x10)) = rax;
+    esi = 0x80;
+    rax = rsp + 0xb0;
+    arg_180h = 0x10;
+    *((rsp + 0xc)) = 0x30;
+    *((rsp + 0x18)) = rax;
+    eax = _fprintf_chk ();
+    rdi = log_f;
+    if (rdi != 0) {
+        rcx = r12;
+        rdx = "BREAK: %s";
+        esi = 1;
+        eax = 0;
+        _fprintf_chk ();
+        rdi = log_f;
+        _fprintf_chk ();
+        *(obj.log_f) = 0;
+    }
+    rdi = via_f;
+    if (rdi != 0) {
+        _fprintf_chk ();
+        *(obj.via_f) = 0;
+    }
+    rdi = fit_x;
+    _fprintf_chk ();
+    rdi = fit_z;
+    _fprintf_chk ();
+    rdi = err_data;
+    _fprintf_chk ();
+    rdi = a;
+    _fprintf_chk ();
+    rdi = *(0x08005650);
+    *(obj.err_data) = 0;
+    *(obj.fit_z) = 0;
+    *(obj.fit_x) = 0;
+    *(obj.a) = 0;
+    if (rdi != 0) {
+        _fprintf_chk ();
+        *(0x08005650) = 0;
+    }
+    rax = regress_cleanup;
+    if (rax != 0) {
+        void (*rax)() ();
+    }
+    _fprintf_chk ();
+    eax = _fprintf_chk ();
+    rsi = r12;
+    edi = ebp;
+    eax = 0;
+    _fprintf_chk ();
+    __asm ("endbr64");
+    ebx = 0;
+    *((rsp + 0x18)) = rsi;
+    esi = num_params;
+    *((rsp + 0x10)) = rdi;
+    rax = *(fs:0x28);
+    *((rsp + 0x38)) = rax;
+    eax = 0;
+    if (esi <= 0) {
+        goto label_2;
+    }
+    do {
+        rax = scale_params;
+        xmm1 = 0;
+        xmm0 = *((rax + rbx*8));
+        rax = *((rsp + 0x10));
+        __asm ("mulsd xmm0, qword [rax + rbx*8]");
+        rax = par_udv;
+        rdi = *((rax + rbx*8));
+        rbx++;
+        _fprintf_chk ();
+    } while (*(obj.num_params) > ebx);
+label_2:
+    ecx = num_data;
+    r13d = 0;
+    rbp = obj_scale_params;
+    if (ecx <= 0) {
+        goto label_3;
+    }
+    rax = rsp + 0x20;
+    *(rsp) = rax;
+label_1:
+    rbx = 0x08005668;
+    *((rsp + 0xc)) = r13d;
+    r12d = r13d;
+    r14 = obj_fit_dummy_udvs;
+    r15 = rbx;
+    while (eax > 1) {
+label_0:
+        rdi = r15;
+        xmm1 = 0;
+        r15 += 0x18;
+        r14 += 8;
+        _fprintf_chk ();
+        if (rbp == r15) {
+            goto label_4;
+        }
+        rdi = *(r14);
+        if (rdi == 0) {
+            goto label_5;
+        }
+        eax = *((rdi + 0x10));
+        xmm0 = 0;
+        eax--;
+    }
+    rdi += 0x10;
+    _fprintf_chk ();
+    goto label_0;
+label_4:
+    eax = num_indep;
+    r15d = 0;
+    if (eax <= 0) {
+        goto label_6;
+    }
+    do {
+        eax *= r12d;
+        rcx = fit_x;
+        rdi = rbx;
+        xmm1 = 0;
+        rbx += 0x18;
+        eax += r15d;
+        r15d++;
+        rax = (int64_t) eax;
+        xmm0 = *((rcx + rax*8));
+        _fprintf_chk ();
+        eax = num_indep;
+    } while (eax > r15d);
+label_6:
+    rsi = *(rsp);
+    rdi = *(0x08005650);
+    rbx = r13*8;
+    _fprintf_chk ();
+    r15d = *((rsp + 0xc));
+    r15d++;
+    if (*(reloc.undefined) != 0) {
+        goto label_7;
+    }
+    rdi = *(rsp);
+    _fprintf_chk ();
+    __asm ("ucomisd xmm0, xmm0");
+    __asm ("jp 0x80013f5");
+    rdi = *(rsp);
+    _fprintf_chk ();
+    rax = *((rsp + 0x18));
+    *((rax + r13*8)) = xmm0;
+    r13++;
+    if (*(obj.num_data) > r13d) {
+        goto label_1;
+    }
+label_3:
+    rax = *((rsp + 0x38));
+    rax ^= *(fs:0x28);
+    if (*(obj.num_data) != r13d) {
+        goto label_8;
+    }
+    return rax;
+label_7:
+    rdi = "\nCurrent data point\n";
+    eax = 0;
+    r12 = reloc_c_dummy_var;
+    ebp = 0;
+    eax = Dblfn ();
+    rdi = "=========================\n";
+    eax = 0;
+    r13 = "%-15.15s = %-15g\n";
+    eax = Dblfn ();
+    ecx = num_data;
+    edx = r15d;
+    eax = 0;
+    rsi = loc__LC38;
+    rdi = "%-15s = %i out of %i\n";
+    rax = Dblfn ();
+    edx = num_indep;
+    if (edx <= 0) {
+        goto label_9;
+    }
+    do {
+        rax = scale_params;
+        rsi = r12;
+        rdi = r13;
+        r12 += 0x33;
+        xmm0 = *((rax + rbp*8));
+        rax = *((rsp + 0x10));
+        __asm ("mulsd xmm0, qword [rax + rbp*8]");
+        eax = 1;
+        rbp++;
+        Dblfn ();
+    } while (*(obj.num_indep) > ebp);
+label_9:
+    rax = fit_z;
+    rsi = loc__LC40;
+    rdi = "%-15.15s = %-15g\n";
+    rbp = "%-15.15s = %-15g\n";
+    xmm0 = *((rax + rbx));
+    eax = 1;
+    ebx = 0;
+    eax = Dblfn ();
+    rdi = "\nCurrent set of parameters\n";
+    eax = 0;
+    eax = Dblfn ();
+    eax = 0;
+    rdi = "=========================\n";
+    Dblfn ();
+    eax = num_params;
+    if (eax <= 0) {
+        goto label_10;
+    }
+    do {
+        rax = scale_params;
+        rdi = rbp;
+        xmm0 = *((rax + rbx*8));
+        rax = *((rsp + 0x10));
+        __asm ("mulsd xmm0, qword [rax + rbx*8]");
+        rax = rbx * 3;
+        rbx++;
+        rsi = rax;
+        rsi <<= 4;
+        rax += rsi;
+        rax += *(obj.par_name);
+        rsi = rax;
+        eax = 1;
+        eax = Dblfn ();
+    } while (*(obj.num_params) > ebx);
+label_10:
+    eax = 0;
+    rdi = loc__LC43;
+    eax = Dblfn ();
+    if (*(reloc.undefined) != 0) {
+        rsi = "Undefined value during function evaluation";
+        edi = 0xffffffff;
+        eax = 0;
+        eax = _fprintf_chk ();
+    }
+    rsi = "Function evaluation yields NaN (\"not a number\")";
+    edi = 0xffffffff;
+    eax = 0;
+    eax = _fprintf_chk ();
+label_5:
+    rsi = "Internal error: lost a dummy parameter!";
+    edi = 0xffffffff;
+    eax = 0;
+    _fprintf_chk ();
+label_8:
+    rax = _fprintf_chk ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8002230 */
+#include <stdint.h>
+ 
+int32_t regress_check_stop (void) {
+    __asm ("endbr64");
+    if (*(reloc.ctrlc_flag) != 0) {
+        void (*0x8000d40)() ();
+    }
+    eax = 1;
+    return eax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8002250 */
+#include <stdint.h>
+ 
+int32_t fit_progress (void) {
+    __asm ("endbr64");
+    eax = fit_verbosity;
+    if (eax != 4) {
+        if (eax == 3) {
+            goto label_0;
+        }
+        return eax;
+    }
+    void (*0x8000040)() ();
+label_0:
+    return fit_show_brief ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8000860 */
+#include <stdint.h>
+ 
+int64_t fit_show_brief (int64_t arg9, int64_t arg8, int64_t arg7, int64_t arg1, int64_t arg2, int64_t arg3) {
+    xmm2 = arg9;
+    xmm1 = arg8;
+    xmm0 = arg7;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rbx = rsi;
+    *((rsp + 8)) = edi;
+    r15 = rsp + 0x20;
+    *(rsp) = xmm0;
+    *((rsp + 0x10)) = xmm1;
+    *((rsp + 0x18)) = xmm2;
+    rax = *(fs:0x28);
+    *((rsp + 0x128)) = rax;
+    eax = 0;
+    eax = rdi + 2;
+    eax &= 0xfffffffd;
+    if (eax == 0) {
+        goto label_7;
+    }
+label_4:
+    xmm3 = *(rsp);
+    xmm0 = *(obj.epsilon_abs);
+    r8 = loc__LC21;
+    r9d = *((rsp + 8));
+    __asm ("movapd xmm1, xmm3");
+    __asm ("subsd xmm1, qword [rsp + 0x10]");
+    __asm ("mulsd xmm3, qword [obj.epsilon]");
+    *((rsp + 8)) = xmm1;
+    __asm ("addsd xmm0, xmm3");
+    *((rsp + 0x10)) = xmm0;
+    if (r9d < 0) {
+        goto label_8;
+    }
+label_1:
+    ecx = 0x100;
+    edx = 1;
+    rdi = r15;
+    eax = 0;
+    esi = 0x100;
+    r12 = rsp + 0x24;
+    _fprintf_chk ();
+    xmm0 = *(rsp);
+    ecx = 0xfc;
+    rdi = r12;
+    edx = 1;
+    esi = 0xfc;
+    eax = 2;
+    xmm1 = *((rsp + 8));
+    r8 = " %-17.10e %- 10.2e";
+    __asm ("divsd xmm1, qword [rsp + 0x10]");
+    _fprintf_chk ();
+    if (*(obj.fit_show_lambda) != 0) {
+        goto label_9;
+    }
+label_5:
+    rax = r12;
+    r13d = 0;
+    do {
+        r12 = rax + 1;
+        r13d++;
+        rdi = r12;
+        pack_float ();
+        esi = 0x65;
+        rdi = r12;
+        rax = _fprintf_chk ();
+        if (r13d > 2) {
+            goto label_10;
+        }
+    } while (rax != 0);
+label_10:
+    rsi = rbp;
+    rdi = r15;
+    r12 = r15;
+    _fprintf_chk ();
+    do {
+        edx = *(r12);
+        r12 += 4;
+        eax = rdx - 0x1010101;
+        edx = ~edx;
+        eax &= edx;
+        eax &= 0x80808080;
+    } while (eax == 0);
+    edx = eax;
+    edx >>= 0x10;
+    if ((eax & 0x8080) == 0) {
+        eax = edx;
+    }
+    rdx = r12 + 2;
+    if ((eax & 0x8080) == 0) {
+        r12 = rdx;
+    }
+    esi = eax;
+    sil += al;
+    eax = num_params;
+    r12 -= 3;
+    r12d -= r15d;
+    if (eax <= 0) {
+        goto label_11;
+    }
+    r14d = 0;
+    r13 = " % 14.6e";
+    goto label_12;
+label_0:
+    rsi = rbp;
+    rdi = r15;
+    r14++;
+    _fprintf_chk ();
+    if (*(obj.num_params) <= r14d) {
+        goto label_11;
+    }
+label_12:
+    edx = 1;
+    r8 = r13;
+    ecx = 0x100;
+    rdi = r15;
+    rax = scale_params;
+    esi = 0x100;
+    xmm0 = *((rax + r14*8));
+    __asm ("mulsd xmm0, qword [rbx + r14*8]");
+    eax = 1;
+    _fprintf_chk ();
+    rdi = r15;
+    pack_float ();
+    rdx = r15;
+    do {
+        ecx = *(rdx);
+        rdx += 4;
+        eax = rcx - 0x1010101;
+        ecx = ~ecx;
+        eax &= ecx;
+        eax &= 0x80808080;
+    } while (eax == 0);
+    ecx = eax;
+    ecx >>= 0x10;
+    if ((eax & 0x8080) == 0) {
+        eax = ecx;
+    }
+    rcx = rdx + 2;
+    if ((eax & 0x8080) == 0) {
+        rdx = rcx;
+    }
+    esi = eax;
+    sil += al;
+    eax = *(obj.fit_wrap);
+    rdx -= 3;
+    rdx -= r15;
+    r12d += edx;
+    if (eax > r12d) {
+        goto label_0;
+    }
+    if (eax <= 0) {
+        goto label_0;
+    }
+    r8d = 0x20;
+    ecx = 4;
+    rdi = rbp;
+    eax = 0;
+    rdx = "\n%*c";
+    esi = 1;
+    r12d = 4;
+    _fprintf_chk ();
+    goto label_0;
+label_11:
+    rsi = rbp;
+    edi = 0xa;
+    _fprintf_chk ();
+label_3:
+    rax = *((rsp + 0x128));
+    rax ^= *(fs:0x28);
+    if (eax != 0) {
+        goto label_13;
+    }
+    return rax;
+label_8:
+    r9d = 0x2a;
+    r8 = loc__LC22;
+    goto label_1;
+label_7:
+    __asm ("movdqa xmm0, xmmword [loc..LC26]");
+    *((rsp + 0x40)) = 0;
+    *((rsp + 0x20)) = xmm0;
+    __asm ("movdqa xmm0, xmmword [loc..LC27]");
+    *((rsp + 0x30)) = xmm0;
+    if (*(obj.fit_show_lambda) != 0) {
+        goto label_14;
+    }
+label_6:
+    r15 = rsp + 0x20;
+    rsi = rbp;
+    rdi = r15;
+    _fprintf_chk ();
+    r11 = r15;
+    do {
+        edx = *(r11);
+        r11 += 4;
+        eax = rdx - 0x1010101;
+        edx = ~edx;
+        eax &= edx;
+        eax &= 0x80808080;
+    } while (eax == 0);
+    edx = eax;
+    edx >>= 0x10;
+    if ((eax & 0x8080) == 0) {
+        eax = edx;
+    }
+    rdx = r11 + 2;
+    if ((eax & 0x8080) == 0) {
+        r11 = rdx;
+    }
+    edx = num_params;
+    esi = eax;
+    sil += al;
+    r11 -= 3;
+    r14d = r11d;
+    r14d -= r15d;
+    if (edx <= 0) {
+        goto label_15;
+    }
+    r13d = 0;
+    r12d = 0;
+    goto label_16;
+label_2:
+    rsi = rbp;
+    rdi = r15;
+    r12d++;
+    r13 += 0x33;
+    eax = _fprintf_chk ();
+    if (*(obj.num_params) <= r12d) {
+        goto label_15;
+    }
+label_16:
+    edx = 1;
+    ecx = 0x100;
+    rdi = r15;
+    eax = 0;
+    r9 = par_name;
+    r8 = " %-13.13s";
+    esi = 0x100;
+    r9 += r13;
+    _fprintf_chk ();
+    rdx = r15;
+    do {
+        ecx = *(rdx);
+        rdx += 4;
+        eax = rcx - 0x1010101;
+        ecx = ~ecx;
+        eax &= ecx;
+        eax &= 0x80808080;
+    } while (eax == 0);
+    ecx = eax;
+    ecx >>= 0x10;
+    if ((eax & 0x8080) == 0) {
+        eax = ecx;
+    }
+    rcx = rdx + 2;
+    if ((eax & 0x8080) == 0) {
+        rdx = rcx;
+    }
+    edi = eax;
+    dil += al;
+    eax = *(obj.fit_wrap);
+    rdx -= 3;
+    rdx -= r15;
+    r14d += edx;
+    if (eax > r14d) {
+        goto label_2;
+    }
+    if (eax <= 0) {
+        goto label_2;
+    }
+    r8d = 0x20;
+    ecx = 4;
+    rdi = rbp;
+    eax = 0;
+    rdx = "\n%*c";
+    esi = 1;
+    r14d = 4;
+    _fprintf_chk ();
+    goto label_2;
+label_15:
+    rsi = rbp;
+    edi = 0xa;
+    _fprintf_chk ();
+    if (*((rsp + 8)) == 0xfffffffe) {
+        goto label_3;
+    }
+    goto label_4;
+label_9:
+    rdi = r15;
+    do {
+        edx = *(rdi);
+        rdi += 4;
+        eax = rdx - 0x1010101;
+        edx = ~edx;
+        eax &= edx;
+        eax &= 0x80808080;
+    } while (eax == 0);
+    edx = eax;
+    xmm0 = *((rsp + 0x18));
+    r8 = " %-9.2e";
+    rcx = 0xffffffffffffffff;
+    edx >>= 0x10;
+    if ((eax & 0x8080) == 0) {
+        eax = edx;
+    }
+    rdx = rdi + 2;
+    if ((eax & 0x8080) == 0) {
+        rdi = rdx;
+    }
+    edx = 1;
+    esi = eax;
+    sil += al;
+    esi = 0x100;
+    eax = 1;
+    rdi -= 3;
+    rdi -= r15;
+    rsi -= rdi;
+    rdi += r15;
+    _fprintf_chk ();
+    goto label_5;
+label_14:
+    rax = 0x206164626d616c20;
+    ecx = 0x20;
+    *((rsp + 0x40)) = rax;
+    *((rsp + 0x48)) = cx;
+    goto label_6;
+label_13:
+    _fprintf_chk ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8002280 */
+#include <stdint.h>
+ 
+void init_fit (void) {
+    __asm ("endbr64");
+    *(0x08005650) = 0;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8002290 */
+#include <stdint.h>
+ 
+uint64_t getfitlogfile (void) {
+    __asm ("endbr64");
+    rbp = *(obj.fitlogfile);
+    if (rbp != 0) {
+        rdi = rbp;
+        void (*0x8040d6c)() ();
+    }
+    rdi = "FIT_LOG";
+    rax = _fprintf_chk ();
+    r12 = rax;
+    if (rax == 0) {
+        goto label_0;
+    }
+    if (*(rax) == 0) {
+        goto label_1;
+    }
+    rdi = rax;
+    _fprintf_chk ();
+    edx = *((r12 + rax - 1));
+    if (dl != 0x2f) {
+        if (dl == 0x5c) {
+            goto label_2;
+        }
+        rdi = r12;
+        void (*0x8040d6c)() ();
+    }
+label_2:
+    rdi = rax + 8;
+    rsi = "logfile";
+    rax = _fprintf_chk ();
+    rsi = r12;
+    rdi = rax;
+    _fprintf_chk ();
+    rdx = "fit.log";
+    *(rax) = rdx;
+    do {
+        rax = rbp;
+        return rax;
+label_0:
+        rdi = "fit.log";
+        void (*0x8040d6c)() ();
+label_1:
+        *(obj.fit_suppress_log) = 1;
+    } while (1);
+}
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8005380 */
+#include <stdint.h>
+ 
+int64_t save_fit (void) {
+    __asm ("endbr64");
+    rax = last_fit_command;
+    if (rax != 0) {
+        if (*(rax) != 0) {
+            goto label_0;
+        }
+    }
+    rsi = "no previous fit command";
+    edi = 0xffffffff;
+    eax = 0;
+    void (*0x8040d6c)() ();
+label_0:
+    rcx = rdi;
+    edx = 2;
+    esi = 1;
+    rdi = loc__LC185;
+    _fprintf_chk (rbx, rbp);
+    rdi = last_fit_command;
+    rsi = rbp;
+    _fprintf_chk ();
+    edi = 0xa;
+    rsi = rbp;
+    _fprintf_chk ();
+    rdi = "FIT_STDFIT";
+    rax = _fprintf_chk ();
+    if (rax != 0) {
+        xmm0 = *((rax + 0x18));
+        esi = 1;
+        rdi = rbp;
+        eax = 1;
+        rdx = "# final sum of squares of residuals : %g\n";
+        _fprintf_chk ();
+    }
+    eax = last_num_params;
+    if (eax <= 0) {
+        goto label_1;
+    }
+    ebx = 0;
+    r12 = "%-15s = %-22s\n";
+    do {
+        rax = par_udv;
+        esi = 0;
+        rdi = *((rax + rbx*8));
+        rax = _fprintf_chk ();
+        rcx = rbx * 3;
+        rdx = r12;
+        rdi = rbp;
+        r8 = rax;
+        rax = rcx;
+        esi = 1;
+        rbx++;
+        rax <<= 4;
+        rcx += rax;
+        eax = 0;
+        rcx += *(obj.last_par_name);
+        _fprintf_chk ();
+    } while (*(obj.last_num_params) > ebx);
+label_1:
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x80002a0 */
+#include <stdint.h>
+ 
+uint64_t getdvar (void) {
+    rax = _fprintf_chk ();
+    xmm0 = 0;
+    if (rax != 0) {
+        if (*((rax + 0x10)) != 7) {
+            goto label_0;
+        }
+    }
+    return rax;
+label_0:
+    rdi = rax + 0x10;
+    return void (*0x8040d6c)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8000540 */
+#include <stdint.h>
+ 
+uint64_t get_next_word (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    r12 = *(rdi);
+    rbx = rdi;
+    eax = *(r12);
+    if (al > 0x3d) {
+        goto label_0;
+    }
+    rdx = 0x2000000100000200;
+    do {
+        if (((rdx >> rax) & 1) >= 0) {
+            goto label_2;
+        }
+        eax = *((r12 + 1));
+        r12++;
+    } while (al <= 0x3d);
+    do {
+label_0:
+        rsi = " =\t\n\r[";
+        rdi = r12;
+        rax = _fprintf_chk ();
+        *(rbx) = rax;
+        if (rax == 0) {
+            goto label_3;
+        }
+label_1:
+        eax = *(rax);
+        *(rbp) = al;
+        rax = *(rbx);
+        rdx = rax + 1;
+        *(rbx) = rdx;
+        *(rax) = 0;
+        rax = r12;
+        return rax;
+label_2:
+    } while (al > 0xd);
+    edx = 0x2401;
+    if (((rdx >> rax) & 1) >= 0) {
+        goto label_0;
+    }
+    r12d = 0;
+    rax = r12;
+    return rax;
+label_3:
+    rdi = r12;
+    rax = _fprintf_chk ();
+    rax += r12;
+    *(rbx) = rax;
+    goto label_1;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/fit.o @ 0x8000d40 */
+#include <stdint.h>
+ 
+int64_t regress_check_stop_part_0 (int64_t arg6, int64_t arg5, int64_t arg1, int64_t arg4) {
+    r9 = arg6;
+    r8 = arg5;
+    rdi = arg1;
+    rcx = arg4;
+    rdx = *(reloc.stderr);
+    rsi = a;
+    if (*(obj.fit_verbosity) == 4) {
+        goto label_4;
+    }
+    fit_show_brief ();
+label_2:
+    *(reloc.ctrlc_flag) = 0;
+    rbx = reloc__rodata;
+    rbp = "replot";
+    do {
+label_0:
+        rcx = *(reloc.stderr);
+        edx = 0x31;
+        esi = 1;
+        rdi = "\n\n(S)top fit, (C)ontinue, (E)xecute FIT_SCRIPT:  ";
+        _fprintf_chk ();
+        rdi = *(reloc.stdin);
+        eax = _fprintf_chk ();
+        if (eax > 0x65) {
+            goto label_5;
+        }
+        if (eax <= 0x42) {
+            goto label_6;
+        }
+        eax -= 0x43;
+    } while (eax > 0x22);
+    rax = *((rbx + rax*4));
+    rax += rbx;
+    /* switch table (35 cases) at 0x8006748 */
+    eax = void (*rax)() ();
+label_5:
+    if (eax != 0x73) {
+        goto label_0;
+    }
+label_1:
+    rcx = *(reloc.stderr);
+    edx = 6;
+    esi = 1;
+    rdi = "Stop.\n";
+    eax = _fprintf_chk ();
+    *(obj.user_stop) = 1;
+    eax = 0;
+    return rax;
+    r13 = *(obj.fit_script);
+    if (r13 == 0) {
+        goto label_7;
+    }
+label_3:
+    rdi = *(reloc.stderr);
+    rcx = r13;
+    eax = 0;
+    r12d = 0;
+    rdx = "executing: %s\n";
+    esi = 1;
+    _fprintf_chk ();
+    eax = num_params;
+    if (eax <= 0) {
+        goto label_8;
+    }
+    do {
+        rax = a;
+        xmm1 = 0;
+        xmm0 = *((rax + r12*8));
+        rax = scale_params;
+        __asm ("mulsd xmm0, qword [rax + r12*8]");
+        rax = par_udv;
+        rdi = *((rax + r12*8));
+        r12++;
+        _fprintf_chk ();
+    } while (*(obj.num_params) > r12d);
+label_8:
+    rdi = r13;
+    _fprintf_chk ();
+    goto label_0;
+    rcx = *(reloc.stderr);
+    edx = 0xa;
+    esi = 1;
+    rdi = "Continue.\n";
+    _fprintf_chk ();
+    eax = 1;
+    return rax;
+label_6:
+    if (eax != 0xffffffff) {
+        goto label_0;
+    }
+    goto label_1;
+label_4:
+    _text ();
+    goto label_2;
+label_7:
+    rdi = "FIT_SCRIPT";
+    rax = _fprintf_chk ();
+    r13 = rax;
+    if (rax == 0) {
+        r13 = rbp;
+    }
+    goto label_3;
+}
+
+

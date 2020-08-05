@@ -1,0 +1,1905 @@
+void sym.unset_textbox_style(void)
+{
+    undefined8 uVar1;
+    code *pcVar2;
+    int64_t iVar3;
+    
+    // [01] -r-x section size 14762 named .text
+    uVar1 = _reloc..LC3;
+    pcVar2 = reloc.textbox_opts;
+    iVar3 = 0;
+    while( true ) {
+        *pcVar2 = (code)0x0;
+        pcVar2[1] = (code)0x0;
+        *(undefined4 *)(pcVar2 + 0x20) = 1;
+        *(undefined4 *)(pcVar2 + 0x24) = 0xfffffffe;
+        *(undefined8 *)(pcVar2 + 0x28) = 0;
+        *(undefined4 *)(pcVar2 + 0x30) = 1;
+        *(undefined4 *)(pcVar2 + 0x34) = 0xfffffffc;
+        *(undefined8 *)(pcVar2 + 0x38) = 0;
+        *(undefined8 *)(pcVar2 + 8) = uVar1;
+        *(undefined8 *)(pcVar2 + 0x10) = uVar1;
+        *(undefined8 *)(pcVar2 + 0x18) = uVar1;
+        if ((iVar3 != 0) && (*(undefined8 *)(pcVar2 + 0x18) = 0, (int32_t)iVar3 == 3)) break;
+        iVar3 = iVar3 + 1;
+        pcVar2 = pcVar2 + 0x40;
+    }
+    return;
+}
+
+
+void sym.unset_style_spiderplot(int64_t arg7, int64_t arg8, int64_t arg9, int64_t arg10, int64_t arg11)
+{
+    int64_t iVar1;
+    int64_t iVar2;
+    undefined8 *puVar3;
+    undefined8 *puVar4;
+    int64_t in_FS_OFFSET;
+    uint8_t uVar5;
+    undefined4 uStack1212;
+    undefined8 uStack1184;
+    undefined4 uStack1176;
+    undefined4 uStack1168;
+    undefined8 uStack1160;
+    undefined8 uStack1144;
+    undefined4 uStack1124;
+    undefined4 uStack1116;
+    undefined8 uStack1104;
+    undefined8 uStack1080;
+    undefined8 uStack976;
+    undefined8 uStack960;
+    undefined8 uStack952;
+    int64_t iStack856;
+    undefined8 uStack848;
+    undefined8 uStack840;
+    undefined4 uStack832;
+    undefined4 uStack824;
+    undefined8 uStack816;
+    undefined8 uStack800;
+    undefined4 uStack780;
+    undefined4 uStack772;
+    undefined8 uStack760;
+    undefined8 uStack736;
+    undefined4 uStack680;
+    undefined4 uStack632;
+    undefined8 uStack616;
+    undefined8 uStack584;
+    undefined uStack576;
+    int64_t iStack512;
+    undefined8 uStack504;
+    undefined8 auStack496 [41];
+    int64_t iStack168;
+    undefined8 uStack160;
+    undefined8 uStack152;
+    undefined8 uStack144;
+    undefined8 uStack136;
+    undefined8 uStack128;
+    undefined8 uStack120;
+    undefined8 uStack112;
+    undefined8 uStack104;
+    undefined8 uStack96;
+    undefined8 uStack88;
+    undefined8 uStack80;
+    undefined8 uStack72;
+    undefined8 uStack64;
+    undefined8 uStack56;
+    undefined8 uStack48;
+    undefined4 uStack40;
+    uint32_t uStack36;
+    undefined8 uStack32;
+    int64_t iStack16;
+    
+    uVar5 = 0;
+    iStack16 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    uStack40 = 0;
+    uStack152 = 0xfffffffe00000000;
+    uStack144 = 0xffffffff00000000;
+    uStack136 = 0;
+    uStack128 = _reloc..LC3;
+    uStack112 = 0;
+    uStack120 = _reloc..LC5;
+    uStack104 = 0;
+    uStack96 = 0;
+    uStack88 = 0;
+    uStack80 = 0;
+    uStack72 = 0;
+    uStack64 = 0;
+    uStack48 = 0x6400000000;
+    uStack56 = 0;
+    uStack32 = 0;
+    _reloc.spiderplot_style = 0xfffffffe00000000;
+    _reloc.__stack_chk_fail = 0xffffffff00000000;
+    _reloc.default_rectangle = 0;
+    _reloc.default_circle = _reloc..LC3;
+    _reloc.default_ellipse = _reloc..LC5;
+    _reloc.parallel_axis_style = 0;
+    _reloc.pixmap_listhead = 0;
+    _reloc.free = 0;
+    _reloc.first_label = 0;
+    _reloc.first_object = 0;
+    _reloc.timefmt = 0;
+    _reloc.gp_strdup = 0;
+    _reloc.fit_errorvariables = (uint64_t)uStack36 << 0x20;
+    _reloc.fit_errorscaling = 0;
+    _reloc.fitlogfile = 0;
+    _reloc.FITLIMIT = 0x6400000000;
+    _reloc.fit_covarvariables = 0;
+    if (iStack16 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        _reloc.spiderplot_style = 0xfffffffe00000000;
+        _reloc.__stack_chk_fail = 0xffffffff00000000;
+        _reloc.default_rectangle = 0;
+        _reloc.default_circle = _reloc..LC3;
+        _reloc.default_ellipse = _reloc..LC5;
+        _reloc.parallel_axis_style = 0;
+        _reloc.pixmap_listhead = 0;
+        _reloc.free = 0;
+        _reloc.first_label = 0;
+        _reloc.first_object = 0;
+        _reloc.timefmt = 0;
+        _reloc.gp_strdup = 0;
+        _reloc.fitlogfile = 0;
+        _reloc.FITLIMIT = 0x6400000000;
+        _reloc.fit_covarvariables = 0;
+        _reloc.fit_errorscaling = 0;
+        return;
+    }
+    uStack160 = 0x8000212;
+    func_0x08034866(0xfffffffe00000000, 0, _reloc..LC5, 0, 0, 0, 0, _reloc.fit_errorvariables);
+    iVar2 = 0x29;
+    iStack168 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puVar3 = (undefined8 *)reloc..rodata;
+    puVar4 = auStack496;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar4 = *puVar3;
+        puVar3 = puVar3 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+        puVar4 = puVar4 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+    }
+    iVar2 = 0x29;
+    puVar3 = auStack496;
+    puVar4 = (undefined8 *)reloc.default_rectangle;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar4 = *puVar3;
+        puVar3 = puVar3 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+        puVar4 = puVar4 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+    }
+    if (iStack168 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    uStack504 = 0x800027e;
+    func_0x08034866();
+    iVar2 = 0x29;
+    iStack512 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puVar3 = &uStack840;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar3 = 0;
+        puVar3 = puVar3 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+    }
+    uStack832 = 0xffffffff;
+    iVar2 = 0x29;
+    uStack816 = 0x6400000001;
+    uStack800 = 0xfffffffe00000001;
+    uStack824 = 2;
+    uStack760 = _reloc..LC3;
+    uStack736 = 0xfffffffc00000001;
+    uStack780 = 0xfffffffc;
+    uStack616 = _reloc..LC6;
+    uStack772 = 0xffffffff;
+    uStack680 = 1;
+    uStack632 = 2;
+    uStack584 = _reloc..LC7;
+    uStack576 = 1;
+    puVar3 = &uStack840;
+    puVar4 = (undefined8 *)reloc.default_circle;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar4 = *puVar3;
+        puVar3 = puVar3 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+        puVar4 = puVar4 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+    }
+    if (iStack512 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    uStack848 = 0x800036c;
+    func_0x08034866();
+    iVar2 = 0x29;
+    iStack856 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puVar3 = &uStack1184;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar3 = 0;
+        puVar3 = puVar3 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+    }
+    uStack1176 = 0xffffffff;
+    iVar2 = 0x29;
+    uStack1160 = 0x6400000001;
+    uStack1144 = 0xfffffffe00000001;
+    uStack1168 = 3;
+    uStack1104 = _reloc..LC3;
+    uStack1080 = 0xfffffffc00000001;
+    uStack976 = 0x200000002;
+    uStack1124 = 0xfffffffc;
+    uStack960 = _reloc..LC8;
+    uStack1116 = 0xffffffff;
+    uStack952 = _reloc..LC9;
+    puVar3 = &uStack1184;
+    puVar4 = (undefined8 *)reloc.default_ellipse;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar4 = *puVar3;
+        puVar3 = puVar3 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+        puVar4 = puVar4 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+    }
+    if (iStack856 != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        func_0x08034866();
+        _reloc.fit_verbosity = CONCAT44(uStack1212, 1);
+        _reloc.parallel_axis_style = 0xfffffffe00000000;
+        _reloc.pixmap_listhead = -0x100000000;
+        _reloc.free = 0;
+        _reloc.first_label = _reloc..LC10;
+        _reloc.first_object = 0;
+        _reloc.timefmt = 0;
+        _reloc.gp_strdup = 0xfffffffe00000001;
+        _reloc.fitlogfile = 0;
+        _reloc.FITLIMIT = 0;
+        _reloc.fit_errorvariables = 0;
+        _reloc.fit_covarvariables = 0;
+        _reloc.fit_errorscaling = 0;
+        _reloc.fit_prescale = 0;
+        if (*(int64_t *)(in_FS_OFFSET + 0x28) != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            func_0x08034866(0xfffffffe00000000, 0, 0, 0xfffffffe00000001, 0, 0, 0);
+            iVar2 = _reloc.pixmap_listhead;
+            while (iVar2 != 0) {
+                func_0x08034866(*(undefined8 *)(iVar2 + 0x70));
+                func_0x08034866(*(undefined8 *)(iVar2 + 0x78));
+                iVar1 = *(int64_t *)(iVar2 + 8);
+                func_0x08034866(iVar2);
+                iVar2 = iVar1;
+            }
+            _reloc.pixmap_listhead = 0;
+            return;
+        }
+        _reloc.parallel_axis_style = 0xfffffffe00000000;
+        _reloc.pixmap_listhead = 0xffffffff00000000;
+        _reloc.free = 0;
+        _reloc.first_label = _reloc..LC10;
+        _reloc.first_object = 0;
+        _reloc.timefmt = 0;
+        _reloc.gp_strdup = 0xfffffffe00000001;
+        _reloc.fitlogfile = 0;
+        _reloc.FITLIMIT = 0;
+        _reloc.fit_errorvariables = 0;
+        _reloc.fit_covarvariables = 0;
+        _reloc.fit_errorscaling = 0;
+        _reloc.fit_prescale = 0;
+        return;
+    }
+    return;
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x080005cd: Changing call to branch
+
+void sym.delete_label(int64_t arg1, int64_t arg2)
+{
+    int32_t *piVar1;
+    char cVar2;
+    int32_t *piVar3;
+    
+    if (arg2 == 0) {
+        return;
+    }
+    piVar3 = *(int32_t **)arg2;
+    piVar1 = piVar3;
+    if (arg1 != 0) {
+        *(int32_t **)arg1 = piVar3;
+        piVar1 = _reloc.first_label;
+    }
+    _reloc.first_label = piVar1;
+    if ((*(int64_t *)(arg2 + 0x48) == 0) && (*(int64_t *)(arg2 + 0x50) != 0)) {
+        piVar3 = (int32_t *)func_0x08034866();
+    }
+    cVar2 = (char)piVar3;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *piVar3 = *piVar3 + (int32_t)piVar3;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x0800064c: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x08000651)
+
+void sym.delete_object(int64_t arg1, int64_t arg2)
+{
+    int32_t *piVar1;
+    int32_t *piVar2;
+    char cVar3;
+    
+    if (arg2 == 0) {
+        return;
+    }
+    piVar1 = *(int32_t **)arg2;
+    piVar2 = piVar1;
+    if (arg1 != 0) {
+        *(int32_t **)arg1 = piVar1;
+        piVar2 = _reloc.first_object;
+    }
+    _reloc.first_object = piVar2;
+    cVar3 = (char)piVar1;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    *piVar1 = *piVar1 + (int32_t)piVar1;
+    *(char *)piVar1 = *(char *)piVar1 + cVar3;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+
+void sym.free_arrowstyle(int64_t arg1)
+{
+    char cVar1;
+    int32_t *piVar2;
+    
+    if (arg1 != 0) {
+        piVar2 = (int32_t *)sym.free_arrowstyle(*(int64_t *)arg1);
+        cVar1 = (char)piVar2;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *piVar2 = *piVar2 + (int32_t)piVar2;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+    // WARNING: Bad instruction - Truncating control flow here
+        halt_baddata();
+    }
+    return;
+}
+
+
+void sym.unset_timefmt(void)
+{
+    func_0x08034866(_reloc.timefmt);
+    _reloc.timefmt = func_0x08034866("%d/%m/%y,%H:%M");
+    return;
+}
+
+
+void sym.unset_fit(void)
+{
+    func_0x08034866(_reloc.fitlogfile);
+    _reloc.fitlogfile = 0;
+    reloc.fit_errorvariables = (code)0x1;
+    reloc.fit_covarvariables = (code)0x0;
+    reloc.fit_errorscaling = (code)0x1;
+    reloc.fit_prescale = (code)0x1;
+    _reloc.fit_verbosity = 3;
+    func_0x08034866(_reloc.FITLIMIT, 0);
+    _reloc.epsilon_abs = 0;
+    func_0x08034866(_reloc.FITMAXITER, 0);
+    func_0x08034866(_reloc.FITSTARTLAMBDA, 0);
+    func_0x08034866(_reloc.FITLAMBDAFACTOR, 0);
+    func_0x08034866(_reloc.fit_script);
+    _reloc.fit_script = 0;
+    _reloc.fit_wrap = 0;
+    return;
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x08000784: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x08000789)
+// WARNING: Removing unreachable block (ram,0x08000792)
+// WARNING: Removing unreachable block (ram,0x080007ae)
+// WARNING: Removing unreachable block (ram,0x080007a0)
+// WARNING: Removing unreachable block (ram,0x080007c0)
+// WARNING: Removing unreachable block (ram,0x080007ab)
+// WARNING: Removing unreachable block (ram,0x080007b3)
+
+void sym.unset_linestyle(int64_t arg1)
+{
+    char cVar1;
+    int32_t in_EAX;
+    undefined4 in_register_00000004;
+    
+    cVar1 = (char)in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(int32_t *)CONCAT44(in_register_00000004, in_EAX) = *(int32_t *)CONCAT44(in_register_00000004, in_EAX) + in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+void sym.unset_samples(void)
+{
+    func_0x08034866(_reloc.first_plot);
+    _reloc.first_plot = 0;
+    func_0x08034866(_reloc.first_3dplot);
+    _reloc.first_3dplot = 0;
+    _reloc.samples_1 = 100;
+    _reloc.samples_2 = 100;
+    return;
+}
+
+
+void sym.unset_histogram(void)
+{
+    undefined8 uVar1;
+    int64_t iVar2;
+    undefined8 *puVar3;
+    undefined8 *puVar4;
+    int64_t in_FS_OFFSET;
+    uint8_t uVar5;
+    undefined8 auStack328 [39];
+    int64_t iStack16;
+    
+    uVar5 = 0;
+    iVar2 = 0x27;
+    iStack16 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puVar3 = (undefined8 *)0x8003b60;
+    puVar4 = auStack328;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar4 = *puVar3;
+        puVar3 = puVar3 + 1;
+        puVar4 = puVar4 + 1;
+    }
+    func_0x08034866(_reloc.theta_direction);
+    func_0x08034866(reloc.histogram_opts);
+    iVar2 = 0x27;
+    puVar3 = auStack328;
+    puVar4 = (undefined8 *)reloc.histogram_opts;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar4 = *puVar3;
+        puVar3 = puVar3 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+        puVar4 = puVar4 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+    }
+    if (iStack16 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    func_0x08034866();
+    *(undefined4 *)(puVar4 + 0x17) = 0;
+    if (puVar4[0x19] != 0) {
+        func_0x08034866();
+        puVar4[0x19] = 0;
+    }
+    puVar4[0x1a] = 0;
+    puVar4[0x21] = 0x400000004;
+    *(undefined2 *)(puVar4 + 0x26) = 0x100;
+    uVar1 = _reloc..LC3;
+    puVar4[0x1b] = 0;
+    puVar4[0x2a] = uVar1;
+    uVar1 = _reloc..LC12;
+    *(undefined4 *)(puVar4 + 0x22) = 4;
+    puVar4[0x23] = 0;
+    puVar4[0x24] = 0;
+    puVar4[0x25] = 0;
+    *(undefined4 *)(puVar4 + 0x27) = 0;
+    puVar4[0x2b] = uVar1;
+    *(undefined *)(puVar4 + 0x2d) = 1;
+    *(undefined *)(puVar4 + 0x52) = 0;
+    func_0x08034866(puVar4[0x1c]);
+    puVar4[0x1c] = 0;
+    if (10 < *(int32_t *)((int64_t)puVar4 + 0x18c)) {
+        *(undefined *)(puVar4 + 0x26) = 1;
+    }
+    return;
+}
+
+
+void sym.unset_dummy(void)
+{
+    undefined *puVar1;
+    
+    _reloc.set_dummy_var = 0x78;
+    puVar1 = (undefined *)0x80349f4;
+    *(undefined2 *)0x80349c1 = 0x79;
+    do {
+        *puVar1 = 0;
+        puVar1 = puVar1 + 0x33;
+    } while (puVar1 != (undefined *)0x8034bf2);
+    return;
+}
+
+
+void sym.unset_cntrlabel(void)
+{
+    reloc.clabel_onecolor = (code)0x0;
+    _reloc.clabel_start = 5;
+    _reloc.clabel_interval = 0x14;
+    _reloc.contour_format = 0x332e3825;
+    *(undefined2 *)0x80349ba = 0x67;
+    func_0x08034866(_reloc.clabel_font);
+    _reloc.clabel_font = 0;
+    return;
+}
+
+
+void sym.unset_polar(undefined8 placeholder_0, int64_t arg8, int64_t arg9, int64_t arg10, int64_t arg11)
+{
+    undefined8 uVar1;
+    
+    if (reloc.polar != (code)0x0) {
+        reloc.polar = (code)0x0;
+        if (reloc.parametric == (code)0x0) {
+            _reloc.set_dummy_var = 0x78;
+            if (reloc.interactive != (code)0x0) {
+                func_0x08034866(placeholder_0, arg8, arg9, arg10, arg11, "\n\tdummy variable is x for curves\n", 1, 0x21
+                                , _reloc.stderr);
+            }
+        } else {
+            if (*(int32_t *)0x8035f52 != 0) {
+                *(undefined8 *)0x8035f6e = _reloc.xyplane;
+                *(undefined8 *)0x8035f76 = *(undefined8 *)0x8035f6e;
+            }
+        }
+    }
+    reloc.raxis = (code)0x0;
+    _reloc.theta_origin = 0;
+    _reloc.theta_direction = _reloc..LC3;
+    uVar1 = sym.unset_tics((int64_t)reloc.THETA_AXIS);
+    *(undefined4 *)0x8034b2a = 0;
+    _reloc.theta_origin = 0;
+    _reloc.surface_rot_x = _reloc..LC14;
+    _reloc.forever_iteration = _reloc.default_axis_ticdef;
+    _reloc.set_tbl = _reloc.axis_array;
+    _reloc.theta_direction = _reloc..LC7;
+    _reloc.lookup_table = _reloc.axis_defaults;
+    _reloc.int_error = _reloc.default_axis_label;
+    _reloc.next_iteration = _reloc.default_axis_zeroaxis;
+    _reloc.update_gpval_variables = _reloc.bar_lp;
+    _reloc.yz_projection = _reloc.almost_equals;
+    _reloc.xyplane = _reloc.bar_size;
+    _reloc.link_command = _reloc.bar_layer;
+    _reloc.first_perm_linestyle = _reloc.keyT;
+    _reloc.locale_handler = _reloc.c_token;
+    _reloc.loadpath_handler = _reloc.monochrome;
+    _reloc.unset_vgrid = _reloc.equals;
+    _reloc.splot_map = _reloc.num_tokens;
+    _reloc.xz_projection = _reloc.term;
+    *(undefined4 *)0x8034b72 = 0x4d2;
+    func_0x08034866(uVar1, _reloc.default_axis_ticdef, _reloc.axis_defaults, _reloc.default_axis_zeroaxis, 
+                    _reloc.bar_size, _reloc.keyT, _reloc.monochrome, _reloc.num_tokens, _reloc.get_udv_by_name);
+    _reloc.get_udv_by_name = func_0x08034866(reloc..LC15);
+    _reloc.aspect_ratio_3D = 0;
+    _reloc.surface_lscale = _reloc..LC3;
+    _reloc.azimuth = _reloc..LC12;
+    reloc.surface_zscale = (code)0x1;
+    return;
+}
+
+
+void sym.unset_tics(int64_t arg1)
+{
+    undefined8 uVar1;
+    
+    *(undefined4 *)(arg1 + 0xb8) = 0;
+    if (*(int64_t *)(arg1 + 200) != 0) {
+        func_0x08034866();
+        *(undefined8 *)(arg1 + 200) = 0;
+    }
+    *(undefined8 *)(arg1 + 0xd0) = 0;
+    *(undefined8 *)(arg1 + 0x108) = 0x400000004;
+    *(undefined2 *)(arg1 + 0x130) = 0x100;
+    uVar1 = _reloc..LC3;
+    *(undefined8 *)(arg1 + 0xd8) = 0;
+    *(undefined8 *)(arg1 + 0x150) = uVar1;
+    uVar1 = _reloc..LC12;
+    *(undefined4 *)(arg1 + 0x110) = 4;
+    *(undefined8 *)(arg1 + 0x118) = 0;
+    *(undefined8 *)(arg1 + 0x120) = 0;
+    *(undefined8 *)(arg1 + 0x128) = 0;
+    *(undefined4 *)(arg1 + 0x138) = 0;
+    *(undefined8 *)(arg1 + 0x158) = uVar1;
+    *(undefined *)(arg1 + 0x168) = 1;
+    *(undefined *)(arg1 + 0x290) = 0;
+    func_0x08034866(*(undefined8 *)(arg1 + 0xe0));
+    *(undefined8 *)(arg1 + 0xe0) = 0;
+    if (10 < *(int32_t *)(arg1 + 0x18c)) {
+        *(undefined *)(arg1 + 0x130) = 1;
+    }
+    return;
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+
+void sym.unset_parametric(void)
+{
+    char cVar1;
+    int32_t *piVar2;
+    
+    if ((reloc.parametric != (code)0x0) && (reloc.parametric = (code)0x0, reloc.polar == (code)0x0)) {
+        piVar2 = (int32_t *)sym.unset_dummy();
+        if (reloc.interactive == (code)0x0) {
+            return;
+        }
+        cVar1 = (char)piVar2;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+        *piVar2 = *piVar2 + (int32_t)piVar2;
+        *(char *)piVar2 = *(char *)piVar2 + cVar1;
+    // WARNING: Bad instruction - Truncating control flow here
+        halt_baddata();
+    }
+    return;
+}
+
+
+void sym.unset_axislabel_or_title.part.0
+               (int64_t arg7, int64_t arg8, int64_t arg9, int64_t arg10, int64_t arg11, undefined8 placeholder_5,
+               undefined8 placeholder_6, undefined8 placeholder_7, int64_t arg1)
+{
+    undefined4 uVar1;
+    undefined4 uVar2;
+    undefined4 uVar3;
+    undefined4 uVar4;
+    undefined4 uVar5;
+    undefined4 uVar6;
+    undefined4 uVar7;
+    undefined4 uVar8;
+    undefined4 uVar9;
+    undefined4 uVar10;
+    undefined4 uVar11;
+    undefined4 uVar12;
+    undefined4 uVar13;
+    undefined4 uVar14;
+    undefined4 uVar15;
+    undefined4 uVar16;
+    undefined4 uVar17;
+    undefined4 uVar18;
+    undefined4 uVar19;
+    undefined4 uVar20;
+    undefined4 uVar21;
+    undefined4 uVar22;
+    undefined4 uVar23;
+    undefined4 uVar24;
+    undefined4 uVar25;
+    undefined4 uVar26;
+    undefined4 uVar27;
+    undefined4 uVar28;
+    undefined4 uVar29;
+    undefined4 uVar30;
+    undefined4 uVar31;
+    undefined4 uVar32;
+    
+    func_0x08034866(arg7, arg8, arg9, arg10, arg11, placeholder_5, placeholder_6, placeholder_7, 
+                    *(undefined8 *)(arg1 + 0x48));
+    func_0x08034866(*(undefined8 *)(arg1 + 0x50));
+    uVar23 = *(undefined4 *)0x8034a7a;
+    uVar22 = _reloc.almost_equals;
+    uVar21 = *(undefined4 *)0x8034a72;
+    uVar20 = _reloc.term;
+    uVar19 = *(undefined4 *)0x8034a6a;
+    uVar18 = _reloc.num_tokens;
+    uVar17 = *(undefined4 *)0x8034a62;
+    uVar16 = _reloc.equals;
+    uVar15 = *(undefined4 *)0x8034a5a;
+    uVar14 = _reloc.monochrome;
+    uVar13 = *(undefined4 *)0x8034a52;
+    uVar12 = _reloc.c_token;
+    uVar11 = *(undefined4 *)0x8034a4a;
+    uVar10 = _reloc.keyT;
+    uVar9 = *(undefined4 *)0x8034a42;
+    uVar8 = _reloc.bar_layer;
+    uVar7 = *(undefined4 *)0x8034a3a;
+    uVar6 = _reloc.bar_size;
+    uVar5 = *(undefined4 *)0x8034a32;
+    uVar4 = _reloc.bar_lp;
+    uVar3 = *(undefined4 *)0x8034a2a;
+    uVar2 = _reloc.default_axis_zeroaxis;
+    uVar1 = *(undefined4 *)0x8034a22;
+    *(undefined4 *)arg1 = _reloc.default_axis_label;
+    *(undefined4 *)(arg1 + 4) = uVar1;
+    *(undefined4 *)(arg1 + 8) = uVar2;
+    *(undefined4 *)(arg1 + 0xc) = uVar3;
+    uVar28 = *(undefined4 *)0x8034a9a;
+    uVar27 = _reloc.empty_iteration;
+    uVar26 = *(undefined4 *)0x8034a92;
+    uVar25 = _reloc.set_iterator;
+    uVar24 = *(undefined4 *)0x8034a8a;
+    uVar3 = _reloc.check_for_iteration;
+    uVar2 = *(undefined4 *)0x8034a82;
+    uVar1 = _reloc.first_mono_linestyle;
+    *(undefined4 *)(arg1 + 0x10) = uVar4;
+    *(undefined4 *)(arg1 + 0x14) = uVar5;
+    *(undefined4 *)(arg1 + 0x18) = uVar6;
+    *(undefined4 *)(arg1 + 0x1c) = uVar7;
+    uVar32 = *(undefined4 *)0x8034aba;
+    uVar31 = _reloc.lookup_table;
+    uVar30 = *(undefined4 *)0x8034ab2;
+    uVar29 = _reloc.set_tbl;
+    uVar7 = *(undefined4 *)0x8034aaa;
+    uVar6 = _reloc.forever_iteration;
+    uVar5 = *(undefined4 *)0x8034aa2;
+    uVar4 = _reloc.cleanup_iteration;
+    *(undefined4 *)(arg1 + 0x20) = uVar8;
+    *(undefined4 *)(arg1 + 0x24) = uVar9;
+    *(undefined4 *)(arg1 + 0x28) = uVar10;
+    *(undefined4 *)(arg1 + 0x2c) = uVar11;
+    *(undefined4 *)(arg1 + 0x30) = uVar12;
+    *(undefined4 *)(arg1 + 0x34) = uVar13;
+    *(undefined4 *)(arg1 + 0x38) = uVar14;
+    *(undefined4 *)(arg1 + 0x3c) = uVar15;
+    uVar15 = *(undefined4 *)0x8034ada;
+    uVar14 = _reloc.xyplane;
+    uVar13 = *(undefined4 *)0x8034ad2;
+    uVar12 = _reloc.update_gpval_variables;
+    uVar11 = *(undefined4 *)0x8034aca;
+    uVar10 = _reloc.next_iteration;
+    uVar9 = *(undefined4 *)0x8034ac2;
+    uVar8 = _reloc.int_error;
+    *(undefined4 *)(arg1 + 0x40) = uVar16;
+    *(undefined4 *)(arg1 + 0x44) = uVar17;
+    *(undefined4 *)(arg1 + 0x48) = uVar18;
+    *(undefined4 *)(arg1 + 0x4c) = uVar19;
+    uVar19 = *(undefined4 *)0x8034aea;
+    uVar18 = _reloc.first_perm_linestyle;
+    uVar17 = *(undefined4 *)0x8034ae2;
+    uVar16 = _reloc.link_command;
+    *(undefined4 *)(arg1 + 0x50) = uVar20;
+    *(undefined4 *)(arg1 + 0x54) = uVar21;
+    *(undefined4 *)(arg1 + 0x58) = uVar22;
+    *(undefined4 *)(arg1 + 0x5c) = uVar23;
+    uVar23 = *(undefined4 *)0x8034afa;
+    uVar22 = _reloc.loadpath_handler;
+    uVar21 = *(undefined4 *)0x8034af2;
+    uVar20 = _reloc.locale_handler;
+    *(undefined4 *)(arg1 + 0x60) = uVar1;
+    *(undefined4 *)(arg1 + 100) = uVar2;
+    *(undefined4 *)(arg1 + 0x68) = uVar3;
+    *(undefined4 *)(arg1 + 0x6c) = uVar24;
+    uVar24 = *(undefined4 *)0x8034b0a;
+    uVar3 = _reloc.splot_map;
+    uVar2 = *(undefined4 *)0x8034b02;
+    uVar1 = _reloc.unset_vgrid;
+    *(undefined4 *)(arg1 + 0x70) = uVar25;
+    *(undefined4 *)(arg1 + 0x74) = uVar26;
+    *(undefined4 *)(arg1 + 0x78) = uVar27;
+    *(undefined4 *)(arg1 + 0x7c) = uVar28;
+    uVar28 = *(undefined4 *)0x8034b1a;
+    uVar27 = _reloc.yz_projection;
+    uVar26 = *(undefined4 *)0x8034b12;
+    uVar25 = _reloc.xz_projection;
+    *(undefined4 *)(arg1 + 0x80) = uVar4;
+    *(undefined4 *)(arg1 + 0x84) = uVar5;
+    *(undefined4 *)(arg1 + 0x88) = uVar6;
+    *(undefined4 *)(arg1 + 0x8c) = uVar7;
+    *(undefined4 *)(arg1 + 0x90) = uVar29;
+    *(undefined4 *)(arg1 + 0x94) = uVar30;
+    *(undefined4 *)(arg1 + 0x98) = uVar31;
+    *(undefined4 *)(arg1 + 0x9c) = uVar32;
+    *(undefined4 *)(arg1 + 0xa0) = uVar8;
+    *(undefined4 *)(arg1 + 0xa4) = uVar9;
+    *(undefined4 *)(arg1 + 0xa8) = uVar10;
+    *(undefined4 *)(arg1 + 0xac) = uVar11;
+    *(undefined4 *)(arg1 + 0xb0) = uVar12;
+    *(undefined4 *)(arg1 + 0xb4) = uVar13;
+    *(undefined4 *)(arg1 + 0xb8) = uVar14;
+    *(undefined4 *)(arg1 + 0xbc) = uVar15;
+    *(undefined4 *)(arg1 + 0xc0) = uVar16;
+    *(undefined4 *)(arg1 + 0xc4) = uVar17;
+    *(undefined4 *)(arg1 + 200) = uVar18;
+    *(undefined4 *)(arg1 + 0xcc) = uVar19;
+    *(undefined4 *)(arg1 + 0xd0) = uVar20;
+    *(undefined4 *)(arg1 + 0xd4) = uVar21;
+    *(undefined4 *)(arg1 + 0xd8) = uVar22;
+    *(undefined4 *)(arg1 + 0xdc) = uVar23;
+    *(undefined4 *)(arg1 + 0xe0) = uVar1;
+    *(undefined4 *)(arg1 + 0xe4) = uVar2;
+    *(undefined4 *)(arg1 + 0xe8) = uVar3;
+    *(undefined4 *)(arg1 + 0xec) = uVar24;
+    *(undefined4 *)(arg1 + 0xf0) = uVar25;
+    *(undefined4 *)(arg1 + 0xf4) = uVar26;
+    *(undefined4 *)(arg1 + 0xf8) = uVar27;
+    *(undefined4 *)(arg1 + 0xfc) = uVar28;
+    return;
+}
+
+
+void sym.unset_axislabel(int64_t arg7, int64_t arg8, int64_t arg9, int64_t arg10, int64_t arg11,
+                        undefined8 placeholder_5, undefined8 placeholder_6, undefined8 placeholder_7, int64_t arg1)
+{
+    undefined4 uVar1;
+    undefined4 uVar2;
+    undefined4 uVar3;
+    undefined4 uVar4;
+    undefined4 uVar5;
+    undefined4 uVar6;
+    undefined4 uVar7;
+    undefined4 uVar8;
+    undefined4 uVar9;
+    undefined4 uVar10;
+    undefined4 uVar11;
+    undefined4 uVar12;
+    undefined4 uVar13;
+    undefined4 uVar14;
+    undefined4 uVar15;
+    undefined4 uVar16;
+    undefined4 uVar17;
+    undefined4 uVar18;
+    undefined4 uVar19;
+    undefined4 uVar20;
+    undefined4 uVar21;
+    undefined4 uVar22;
+    undefined4 uVar23;
+    undefined4 uVar24;
+    undefined4 uVar25;
+    undefined4 uVar26;
+    undefined4 uVar27;
+    undefined4 uVar28;
+    undefined4 uVar29;
+    undefined4 uVar30;
+    undefined4 uVar31;
+    undefined4 uVar32;
+    uint32_t uVar33;
+    int64_t iVar34;
+    
+    uVar33 = (uint32_t)arg1;
+    iVar34 = (int64_t)(int32_t)uVar33 * 0x2a8;
+    sym.unset_axislabel_or_title.part.0
+              (arg7, arg8, arg9, arg10, arg11, placeholder_5, placeholder_6, placeholder_7, 
+               (int64_t)(reloc.timelabel + iVar34));
+    uVar23 = *(undefined4 *)0x8034a7a;
+    uVar22 = _reloc.almost_equals;
+    uVar21 = *(undefined4 *)0x8034a72;
+    uVar20 = _reloc.term;
+    uVar19 = *(undefined4 *)0x8034a6a;
+    uVar18 = _reloc.num_tokens;
+    uVar17 = *(undefined4 *)0x8034a62;
+    uVar16 = _reloc.equals;
+    uVar15 = *(undefined4 *)0x8034a5a;
+    uVar14 = _reloc.monochrome;
+    uVar13 = *(undefined4 *)0x8034a52;
+    uVar12 = _reloc.c_token;
+    uVar11 = *(undefined4 *)0x8034a4a;
+    uVar10 = _reloc.keyT;
+    uVar9 = *(undefined4 *)0x8034a42;
+    uVar8 = _reloc.bar_layer;
+    uVar7 = *(undefined4 *)0x8034a3a;
+    uVar6 = _reloc.bar_size;
+    uVar5 = *(undefined4 *)0x8034a32;
+    uVar4 = _reloc.bar_lp;
+    uVar3 = *(undefined4 *)0x8034a2a;
+    uVar2 = _reloc.default_axis_zeroaxis;
+    uVar1 = *(undefined4 *)0x8034a22;
+    *(undefined4 *)(reloc.timelabel + iVar34) = _reloc.default_axis_label;
+    *(undefined4 *)(iVar34 + 0x8034ba2) = uVar1;
+    *(undefined4 *)(reloc.timelabel_bottom + iVar34) = uVar2;
+    *(undefined4 *)(iVar34 + 0x8034baa) = uVar3;
+    uVar28 = *(undefined4 *)0x8034a9a;
+    uVar27 = _reloc.empty_iteration;
+    uVar26 = *(undefined4 *)0x8034a92;
+    uVar25 = _reloc.set_iterator;
+    uVar24 = *(undefined4 *)0x8034a8a;
+    uVar3 = _reloc.check_for_iteration;
+    uVar2 = *(undefined4 *)0x8034a82;
+    uVar1 = _reloc.first_mono_linestyle;
+    *(undefined4 *)(reloc.title + iVar34) = uVar4;
+    *(undefined4 *)(iVar34 + 0x8034bb2) = uVar5;
+    *(undefined4 *)(reloc.table_outfile + iVar34) = uVar6;
+    *(undefined4 *)(iVar34 + 0x8034bba) = uVar7;
+    *(undefined4 *)(reloc.fclose + iVar34) = uVar8;
+    *(undefined4 *)(iVar34 + 0x8034bc2) = uVar9;
+    *(undefined4 *)(reloc.table_var + iVar34) = uVar10;
+    *(undefined4 *)(iVar34 + 0x8034bca) = uVar11;
+    uVar11 = *(undefined4 *)0x8034aba;
+    uVar10 = _reloc.lookup_table;
+    uVar9 = *(undefined4 *)0x8034ab2;
+    uVar8 = _reloc.set_tbl;
+    uVar7 = *(undefined4 *)0x8034aaa;
+    uVar6 = _reloc.forever_iteration;
+    uVar5 = *(undefined4 *)0x8034aa2;
+    uVar4 = _reloc.cleanup_iteration;
+    *(undefined4 *)(reloc.table_mode + iVar34) = uVar12;
+    *(undefined4 *)(iVar34 + 0x8034bd2) = uVar13;
+    *(undefined4 *)(reloc.spiderplot + iVar34) = uVar14;
+    *(undefined4 *)(iVar34 + 0x8034bda) = uVar15;
+    uVar32 = *(undefined4 *)0x8034ada;
+    uVar31 = _reloc.xyplane;
+    uVar30 = *(undefined4 *)0x8034ad2;
+    uVar29 = _reloc.update_gpval_variables;
+    uVar15 = *(undefined4 *)0x8034aca;
+    uVar14 = _reloc.next_iteration;
+    uVar13 = *(undefined4 *)0x8034ac2;
+    uVar12 = _reloc.int_error;
+    *(undefined4 *)(reloc.data_style + iVar34) = uVar16;
+    *(undefined4 *)(iVar34 + 0x8034be2) = uVar17;
+    *(undefined4 *)(reloc.aspect_ratio + iVar34) = uVar18;
+    *(undefined4 *)(iVar34 + 0x8034bea) = uVar19;
+    uVar19 = *(undefined4 *)0x8034aea;
+    uVar18 = _reloc.first_perm_linestyle;
+    uVar17 = *(undefined4 *)0x8034ae2;
+    uVar16 = _reloc.link_command;
+    *(undefined4 *)(reloc.xsize + iVar34) = uVar20;
+    *(undefined4 *)(iVar34 + 0x8034bf2) = uVar21;
+    *(undefined4 *)(reloc.ysize + iVar34) = uVar22;
+    *(undefined4 *)(iVar34 + 0x8034bfa) = uVar23;
+    uVar23 = *(undefined4 *)0x8034afa;
+    uVar22 = _reloc.loadpath_handler;
+    uVar21 = *(undefined4 *)0x8034af2;
+    uVar20 = _reloc.locale_handler;
+    *(undefined4 *)(reloc.zsize + iVar34) = uVar1;
+    *(undefined4 *)(iVar34 + 0x8034c02) = uVar2;
+    *(undefined4 *)(reloc.rgbmax + iVar34) = uVar3;
+    *(undefined4 *)(iVar34 + 0x8034c0a) = uVar24;
+    uVar24 = *(undefined4 *)0x8034b0a;
+    uVar3 = _reloc.splot_map;
+    uVar2 = *(undefined4 *)0x8034b02;
+    uVar1 = _reloc.unset_vgrid;
+    *(undefined4 *)(reloc.PS_psdir + iVar34) = uVar25;
+    *(undefined4 *)(iVar34 + 0x8034c12) = uVar26;
+    *(undefined4 *)(reloc.first_linestyle + iVar34) = uVar27;
+    *(undefined4 *)(iVar34 + 0x8034c1a) = uVar28;
+    uVar28 = *(undefined4 *)0x8034b1a;
+    uVar27 = _reloc.yz_projection;
+    uVar26 = *(undefined4 *)0x8034b12;
+    uVar25 = _reloc.xz_projection;
+    *(undefined4 *)(reloc.func_style + iVar34) = uVar4;
+    *(undefined4 *)(iVar34 + 0x8034c22) = uVar5;
+    *(undefined4 *)(reloc.delete_linestyle + iVar34) = uVar6;
+    *(undefined4 *)(iVar34 + 0x8034c2a) = uVar7;
+    *(undefined4 *)(reloc.default_fillstyle + iVar34) = uVar8;
+    *(undefined4 *)(iVar34 + 0x8034c32) = uVar9;
+    *(undefined4 *)(reloc.boxplot_opts + iVar34) = uVar10;
+    *(undefined4 *)(iVar34 + 0x8034c3a) = uVar11;
+    *(undefined4 *)(reloc.draw_surface + iVar34) = uVar12;
+    *(undefined4 *)(iVar34 + 0x8034c42) = uVar13;
+    *(undefined4 *)(reloc.print_set_output + iVar34) = uVar14;
+    *(undefined4 *)(iVar34 + 0x8034c4a) = uVar15;
+    *(undefined4 *)(reloc.pointsize + iVar34) = uVar29;
+    *(undefined4 *)(iVar34 + 0x8034c52) = uVar30;
+    *(undefined4 *)(reloc.pointintervalbox + iVar34) = uVar31;
+    *(undefined4 *)(iVar34 + 0x8034c5a) = uVar32;
+    *(undefined4 *)(reloc.grid_wall + iVar34) = uVar16;
+    *(undefined4 *)(iVar34 + 0x8034c62) = uVar17;
+    *(undefined4 *)(reloc.default_color_box + iVar34) = uVar18;
+    *(undefined4 *)(iVar34 + 0x8034c6a) = uVar19;
+    *(undefined4 *)(reloc.color_box + iVar34) = uVar20;
+    *(undefined4 *)(iVar34 + 0x8034c72) = uVar21;
+    *(undefined4 *)(reloc.pm3d + iVar34) = uVar22;
+    *(undefined4 *)(iVar34 + 0x8034c7a) = uVar23;
+    *(undefined4 *)(reloc.overflow_handling + iVar34) = uVar1;
+    *(undefined4 *)(iVar34 + 0x8034c82) = uVar2;
+    *(undefined4 *)(reloc.term_set_output + iVar34) = uVar3;
+    *(undefined4 *)(iVar34 + 0x8034c8a) = uVar24;
+    *(undefined4 *)(reloc.outstr + iVar34) = uVar25;
+    *(undefined4 *)(iVar34 + 0x8034c92) = uVar26;
+    *(undefined4 *)(reloc.xoffset + iVar34) = uVar27;
+    *(undefined4 *)(iVar34 + 0x8034c9a) = uVar28;
+    if (((uVar33 & 0xfffffffd) == 1) || (uVar33 == 5)) {
+        *(undefined4 *)((int64_t)(int32_t)uVar33 * 0x2a8 + 0x8034bda) = 0xfffffef2;
+    }
+    return;
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x08000e9b: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000ec8: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000f04: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000f20: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x08000f09)
+// WARNING: Removing unreachable block (ram,0x08000ecd)
+// WARNING: Removing unreachable block (ram,0x08000f30)
+// WARNING: Removing unreachable block (ram,0x08000ef8)
+// WARNING: Removing unreachable block (ram,0x08000ea0)
+// WARNING: Removing unreachable block (ram,0x08000eb8)
+// WARNING: Removing unreachable block (ram,0x08000f00)
+// WARNING: Removing unreachable block (ram,0x08000f25)
+// WARNING: Removing unreachable block (ram,0x08000ec1)
+
+void sym.free_axis_struct(int64_t arg1)
+{
+    char cVar1;
+    int32_t in_EAX;
+    undefined4 in_register_00000004;
+    
+    cVar1 = (char)in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(int32_t *)CONCAT44(in_register_00000004, in_EAX) = *(int32_t *)CONCAT44(in_register_00000004, in_EAX) + in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+void sym.reset_bars(undefined8 placeholder_0, int64_t arg8, int64_t arg9, int64_t arg10, int64_t arg11)
+{
+    int64_t iVar1;
+    code *arg1;
+    code *pcVar2;
+    undefined8 *puVar3;
+    undefined8 *puVar4;
+    int64_t in_FS_OFFSET;
+    uint8_t uVar5;
+    undefined8 auStack672 [67];
+    int64_t iStack136;
+    undefined8 uStack120;
+    undefined8 uStack112;
+    undefined8 uStack104;
+    undefined8 uStack96;
+    undefined8 uStack88;
+    undefined8 uStack80;
+    undefined8 uStack72;
+    undefined8 uStack64;
+    undefined8 uStack56;
+    undefined8 uStack48;
+    undefined8 uStack40;
+    undefined8 uStack32;
+    int64_t iStack16;
+    
+    uVar5 = 0;
+    iStack16 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    uStack104 = 0;
+    uStack120 = 0xfffffffe00000000;
+    uStack112 = 0xffffffff00000000;
+    uStack80 = 0;
+    uStack88 = _reloc..LC5;
+    uStack72 = 0;
+    uStack64 = 0;
+    uStack56 = 0;
+    uStack48 = 0;
+    uStack40 = 0;
+    uStack32 = 0;
+    uStack96 = _reloc..LC3;
+    _reloc.num_tokens = 0;
+    _reloc.set_iterator = 0;
+    _reloc.bar_lp = 0xfffffff900000000;
+    _reloc.equals = 7;
+    _reloc.keyT = _reloc..LC3;
+    _reloc.c_token = _reloc..LC5;
+    _reloc.monochrome = 0;
+    _reloc.term = 0;
+    _reloc.almost_equals = 0;
+    _reloc.first_mono_linestyle = 0;
+    _reloc.check_for_iteration = 0;
+    _reloc.bar_size = _reloc..LC3;
+    _reloc.bar_layer = 1;
+    if (iStack16 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        _reloc.bar_lp = 0xfffffff900000000;
+        _reloc.bar_size = _reloc..LC3;
+        _reloc.bar_layer = 1;
+        _reloc.keyT = _reloc..LC3;
+        _reloc.c_token = _reloc..LC5;
+        _reloc.monochrome = 0;
+        _reloc.equals = 7;
+        _reloc.num_tokens = 0;
+        _reloc.term = 0;
+        _reloc.almost_equals = 0;
+        _reloc.first_mono_linestyle = 0;
+        _reloc.check_for_iteration = 0;
+        _reloc.set_iterator = 0;
+        return;
+    }
+    func_0x08034866(_reloc..LC3, 0xfffffffe00000000, 0, _reloc..LC5, 0, 0, 0);
+    iVar1 = 0x42;
+    iStack136 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puVar3 = (undefined8 *)0x8003ca0;
+    puVar4 = auStack672;
+    while (iVar1 != 0) {
+        iVar1 = iVar1 + -1;
+        *puVar4 = *puVar3;
+        puVar3 = puVar3 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+        puVar4 = puVar4 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+    }
+    func_0x08034866(_reloc.surface_rot_z);
+    func_0x08034866(_reloc.timelabel);
+    func_0x08034866(_reloc.timelabel_bottom);
+    iVar1 = 0x42;
+    puVar3 = auStack672;
+    puVar4 = (undefined8 *)reloc.keyT;
+    while (iVar1 != 0) {
+        iVar1 = iVar1 + -1;
+        *puVar4 = *puVar3;
+        puVar3 = puVar3 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+        puVar4 = puVar4 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+    }
+    if (iStack136 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    func_0x08034866();
+    arg1 = reloc.axis_array;
+    do {
+        pcVar2 = arg1 + 0x2a8;
+        sym.unset_tics((int64_t)arg1);
+        arg1 = pcVar2;
+    } while (pcVar2 != (code *)0x8035f4e);
+    return;
+}
+
+
+void sym.unset_monochrome(void)
+{
+    int32_t iVar1;
+    
+    reloc.monochrome = (code)0x0;
+    iVar1 = func_0x08034866(_reloc.c_token, reloc..LC17);
+    if ((((iVar1 != 0) || (iVar1 = func_0x08034866(_reloc.c_token, "linet$ype"), iVar1 != 0)) &&
+        (_reloc.c_token = _reloc.c_token + 1, _reloc.c_token < _reloc.num_tokens)) &&
+       (iVar1 = func_0x08034866(_reloc.c_token, reloc..LC19), iVar1 == 0)) {
+        sym.unset_linestyle((int64_t)reloc.first_mono_linestyle);
+    }
+    *(uint32_t *)(_reloc.term + 0xa8) = *(uint32_t *)(_reloc.term + 0xa8) & 0xfffffbff;
+    return;
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x08001201: Changing call to branch
+// WARNING: Possible PIC construction at 0x08001237: Changing call to branch
+// WARNING: Possible PIC construction at 0x08002e7e: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800133f: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800135a: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800128a: Changing call to branch
+// WARNING: Possible PIC construction at 0x080012b9: Changing call to branch
+// WARNING: Possible PIC construction at 0x08002ee1: Changing call to branch
+// WARNING: Possible PIC construction at 0x08002f33: Changing call to branch
+// WARNING: Possible PIC construction at 0x08002f57: Changing call to branch
+// WARNING: Possible PIC construction at 0x08002f8b: Changing call to branch
+// WARNING: Possible PIC construction at 0x08002fca: Changing call to branch
+// WARNING: Possible PIC construction at 0x08003035: Changing call to branch
+// WARNING: Possible PIC construction at 0x080030da: Changing call to branch
+// WARNING: Possible PIC construction at 0x08003181: Changing call to branch
+// WARNING: Possible PIC construction at 0x080032ba: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800331a: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800336f: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800361e: Changing call to branch
+// WARNING: Possible PIC construction at 0x080037f6: Changing call to branch
+// WARNING: Possible PIC construction at 0x08003877: Changing call to branch
+// WARNING: Possible PIC construction at 0x080038c6: Changing call to branch
+// WARNING: Possible PIC construction at 0x080038f4: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800390c: Changing call to branch
+// WARNING: Possible PIC construction at 0x08003931: Changing call to branch
+// WARNING: Possible PIC construction at 0x08003977: Changing call to branch
+// WARNING: Possible PIC construction at 0x080039ce: Changing call to branch
+// WARNING: Possible PIC construction at 0x08003955: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x080039d3)
+// WARNING: Removing unreachable block (ram,0x080039b0)
+// WARNING: Removing unreachable block (ram,0x080039d7)
+// WARNING: Removing unreachable block (ram,0x0800397c)
+// WARNING: Removing unreachable block (ram,0x08003984)
+// WARNING: Removing unreachable block (ram,0x080039cb)
+// WARNING: Removing unreachable block (ram,0x080039ab)
+// WARNING: Removing unreachable block (ram,0x08003936)
+// WARNING: Removing unreachable block (ram,0x08003911)
+// WARNING: Removing unreachable block (ram,0x080038f9)
+// WARNING: Removing unreachable block (ram,0x080038cb)
+// WARNING: Removing unreachable block (ram,0x0800387c)
+// WARNING: Removing unreachable block (ram,0x080039e0)
+// WARNING: Removing unreachable block (ram,0x080038bf)
+// WARNING: Removing unreachable block (ram,0x080037fb)
+// WARNING: Removing unreachable block (ram,0x08003623)
+// WARNING: Removing unreachable block (ram,0x08003374)
+// WARNING: Removing unreachable block (ram,0x0800331f)
+// WARNING: Removing unreachable block (ram,0x0800337f)
+// WARNING: Removing unreachable block (ram,0x08003500)
+// WARNING: Removing unreachable block (ram,0x08003515)
+// WARNING: Removing unreachable block (ram,0x08003348)
+// WARNING: Removing unreachable block (ram,0x08003350)
+// WARNING: Removing unreachable block (ram,0x0800336f)
+// WARNING: Removing unreachable block (ram,0x080032bf)
+// WARNING: Removing unreachable block (ram,0x08003186)
+// WARNING: Removing unreachable block (ram,0x080032a2)
+// WARNING: Removing unreachable block (ram,0x08003140)
+// WARNING: Removing unreachable block (ram,0x08003149)
+// WARNING: Removing unreachable block (ram,0x080032e0)
+// WARNING: Removing unreachable block (ram,0x080032f0)
+// WARNING: Removing unreachable block (ram,0x08003311)
+// WARNING: Removing unreachable block (ram,0x080032b1)
+// WARNING: Removing unreachable block (ram,0x080030df)
+// WARNING: Removing unreachable block (ram,0x08003160)
+// WARNING: Removing unreachable block (ram,0x08003177)
+// WARNING: Removing unreachable block (ram,0x0800317a)
+// WARNING: Removing unreachable block (ram,0x0800303a)
+// WARNING: Removing unreachable block (ram,0x08003046)
+// WARNING: Removing unreachable block (ram,0x08003052)
+// WARNING: Removing unreachable block (ram,0x08002fcf)
+// WARNING: Removing unreachable block (ram,0x08002f90)
+// WARNING: Removing unreachable block (ram,0x08002fdb)
+// WARNING: Removing unreachable block (ram,0x08003000)
+// WARNING: Removing unreachable block (ram,0x08003013)
+// WARNING: Removing unreachable block (ram,0x0800305f)
+// WARNING: Removing unreachable block (ram,0x08003058)
+// WARNING: Removing unreachable block (ram,0x0800306b)
+// WARNING: Removing unreachable block (ram,0x08003097)
+// WARNING: Removing unreachable block (ram,0x080030b2)
+// WARNING: Removing unreachable block (ram,0x08003026)
+// WARNING: Removing unreachable block (ram,0x08003030)
+// WARNING: Removing unreachable block (ram,0x08002fc0)
+// WARNING: Removing unreachable block (ram,0x08002f5c)
+// WARNING: Removing unreachable block (ram,0x080032c8)
+// WARNING: Removing unreachable block (ram,0x08002f66)
+// WARNING: Removing unreachable block (ram,0x08003970)
+// WARNING: Removing unreachable block (ram,0x08002f78)
+// WARNING: Removing unreachable block (ram,0x08002f38)
+// WARNING: Removing unreachable block (ram,0x08003950)
+// WARNING: Removing unreachable block (ram,0x08002f40)
+// WARNING: Removing unreachable block (ram,0x08002ee6)
+// WARNING: Removing unreachable block (ram,0x080012be)
+// WARNING: Removing unreachable block (ram,0x080012c2)
+// WARNING: Removing unreachable block (ram,0x0800128f)
+// WARNING: Removing unreachable block (ram,0x08001270)
+// WARNING: Removing unreachable block (ram,0x08001293)
+// WARNING: Removing unreachable block (ram,0x0800135f)
+// WARNING: Removing unreachable block (ram,0x08001344)
+// WARNING: Removing unreachable block (ram,0x08001358)
+// WARNING: Removing unreachable block (ram,0x08001348)
+// WARNING: Removing unreachable block (ram,0x08001310)
+// WARNING: Removing unreachable block (ram,0x080012c8)
+// WARNING: Removing unreachable block (ram,0x080012e0)
+// WARNING: Removing unreachable block (ram,0x08001318)
+// WARNING: Removing unreachable block (ram,0x08002e83)
+// WARNING: Removing unreachable block (ram,0x08002a5e)
+// WARNING: Removing unreachable block (ram,0x08002a75)
+// WARNING: Removing unreachable block (ram,0x08002a8b)
+// WARNING: Removing unreachable block (ram,0x08002e8b)
+// WARNING: Removing unreachable block (ram,0x08001338)
+// WARNING: Removing unreachable block (ram,0x0800123c)
+// WARNING: Removing unreachable block (ram,0x08002e72)
+// WARNING: Removing unreachable block (ram,0x08001257)
+// WARNING: Removing unreachable block (ram,0x08001206)
+// WARNING: Removing unreachable block (ram,0x08001298)
+// WARNING: Removing unreachable block (ram,0x08002ec3)
+// WARNING: Removing unreachable block (ram,0x080012ac)
+// WARNING: Removing unreachable block (ram,0x08001219)
+// WARNING: Removing unreachable block (ram,0x08001287)
+// WARNING: Removing unreachable block (ram,0x08001230)
+// WARNING: Removing unreachable block (ram,0x0800395a)
+
+void sym.unset_command(undefined8 placeholder_0, int64_t arg8, int64_t arg9, int64_t arg10, int64_t arg11)
+{
+    uint32_t uVar1;
+    char cVar2;
+    int32_t *piVar3;
+    
+    uVar1 = _reloc.c_token;
+    piVar3 = (int32_t *)(uint64_t)_reloc.c_token;
+    cVar2 = (char)_reloc.c_token;
+    _reloc.c_token = _reloc.c_token + 1;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    *piVar3 = *piVar3 + uVar1;
+    *(char *)piVar3 = *(char *)piVar3 + cVar2;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+void sym.unset_style_rectangle(void)
+{
+    int64_t iVar1;
+    int64_t iVar2;
+    undefined8 *puVar3;
+    undefined8 *puVar4;
+    int64_t in_FS_OFFSET;
+    uint8_t uVar5;
+    undefined4 uStack1060;
+    undefined8 uStack1032;
+    undefined4 uStack1024;
+    undefined4 uStack1016;
+    undefined8 uStack1008;
+    undefined8 uStack992;
+    undefined4 uStack972;
+    undefined4 uStack964;
+    undefined8 uStack952;
+    undefined8 uStack928;
+    undefined8 uStack824;
+    undefined8 uStack808;
+    undefined8 uStack800;
+    int64_t iStack704;
+    undefined8 uStack696;
+    undefined8 uStack688;
+    undefined4 uStack680;
+    undefined4 uStack672;
+    undefined8 uStack664;
+    undefined8 uStack648;
+    undefined4 uStack628;
+    undefined4 uStack620;
+    undefined8 uStack608;
+    undefined8 uStack584;
+    undefined4 uStack528;
+    undefined4 uStack480;
+    undefined8 uStack464;
+    undefined8 uStack432;
+    undefined uStack424;
+    int64_t iStack360;
+    undefined8 uStack352;
+    undefined8 auStack344 [41];
+    int64_t iStack16;
+    
+    uVar5 = 0;
+    iVar2 = 0x29;
+    iStack16 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puVar3 = (undefined8 *)reloc..rodata;
+    puVar4 = auStack344;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar4 = *puVar3;
+        puVar3 = puVar3 + 1;
+        puVar4 = puVar4 + 1;
+    }
+    iVar2 = 0x29;
+    puVar3 = auStack344;
+    puVar4 = (undefined8 *)reloc.default_rectangle;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar4 = *puVar3;
+        puVar3 = puVar3 + 1;
+        puVar4 = puVar4 + 1;
+    }
+    if (iStack16 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    uStack352 = 0x800027e;
+    func_0x08034866();
+    iVar2 = 0x29;
+    iStack360 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puVar3 = &uStack688;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar3 = 0;
+        puVar3 = puVar3 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+    }
+    uStack680 = 0xffffffff;
+    iVar2 = 0x29;
+    uStack664 = 0x6400000001;
+    uStack648 = 0xfffffffe00000001;
+    uStack672 = 2;
+    uStack608 = _reloc..LC3;
+    uStack584 = 0xfffffffc00000001;
+    uStack628 = 0xfffffffc;
+    uStack464 = _reloc..LC6;
+    uStack620 = 0xffffffff;
+    uStack528 = 1;
+    uStack480 = 2;
+    uStack432 = _reloc..LC7;
+    uStack424 = 1;
+    puVar3 = &uStack688;
+    puVar4 = (undefined8 *)reloc.default_circle;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar4 = *puVar3;
+        puVar3 = puVar3 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+        puVar4 = puVar4 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+    }
+    if (iStack360 != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        uStack696 = 0x800036c;
+        func_0x08034866();
+        iVar2 = 0x29;
+        iStack704 = *(int64_t *)(in_FS_OFFSET + 0x28);
+        puVar3 = &uStack1032;
+        while (iVar2 != 0) {
+            iVar2 = iVar2 + -1;
+            *puVar3 = 0;
+            puVar3 = puVar3 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+        }
+        uStack1024 = 0xffffffff;
+        iVar2 = 0x29;
+        uStack1008 = 0x6400000001;
+        uStack992 = 0xfffffffe00000001;
+        uStack1016 = 3;
+        uStack952 = _reloc..LC3;
+        uStack928 = 0xfffffffc00000001;
+        uStack824 = 0x200000002;
+        uStack972 = 0xfffffffc;
+        uStack808 = _reloc..LC8;
+        uStack964 = 0xffffffff;
+        uStack800 = _reloc..LC9;
+        puVar3 = &uStack1032;
+        puVar4 = (undefined8 *)reloc.default_ellipse;
+        while (iVar2 != 0) {
+            iVar2 = iVar2 + -1;
+            *puVar4 = *puVar3;
+            puVar3 = puVar3 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+            puVar4 = puVar4 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+        }
+        if (iStack704 != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            func_0x08034866();
+            _reloc.fit_verbosity = CONCAT44(uStack1060, 1);
+            _reloc.parallel_axis_style = 0xfffffffe00000000;
+            _reloc.pixmap_listhead = -0x100000000;
+            _reloc.free = 0;
+            _reloc.first_label = _reloc..LC10;
+            _reloc.first_object = 0;
+            _reloc.timefmt = 0;
+            _reloc.gp_strdup = 0xfffffffe00000001;
+            _reloc.fitlogfile = 0;
+            _reloc.FITLIMIT = 0;
+            _reloc.fit_errorvariables = 0;
+            _reloc.fit_covarvariables = 0;
+            _reloc.fit_errorscaling = 0;
+            _reloc.fit_prescale = 0;
+            if (*(int64_t *)(in_FS_OFFSET + 0x28) != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+                func_0x08034866(0xfffffffe00000000, 0, 0, 0xfffffffe00000001, 0, 0, 0);
+                iVar2 = _reloc.pixmap_listhead;
+                while (iVar2 != 0) {
+                    func_0x08034866(*(undefined8 *)(iVar2 + 0x70));
+                    func_0x08034866(*(undefined8 *)(iVar2 + 0x78));
+                    iVar1 = *(int64_t *)(iVar2 + 8);
+                    func_0x08034866(iVar2);
+                    iVar2 = iVar1;
+                }
+                _reloc.pixmap_listhead = 0;
+                return;
+            }
+            _reloc.parallel_axis_style = 0xfffffffe00000000;
+            _reloc.pixmap_listhead = 0xffffffff00000000;
+            _reloc.free = 0;
+            _reloc.first_label = _reloc..LC10;
+            _reloc.first_object = 0;
+            _reloc.timefmt = 0;
+            _reloc.gp_strdup = 0xfffffffe00000001;
+            _reloc.fitlogfile = 0;
+            _reloc.FITLIMIT = 0;
+            _reloc.fit_errorvariables = 0;
+            _reloc.fit_covarvariables = 0;
+            _reloc.fit_errorscaling = 0;
+            _reloc.fit_prescale = 0;
+            return;
+        }
+        return;
+    }
+    return;
+}
+
+
+void sym.unset_style_circle(void)
+{
+    int64_t iVar1;
+    int64_t iVar2;
+    undefined8 *puVar3;
+    undefined8 *puVar4;
+    int64_t in_FS_OFFSET;
+    uint8_t uVar5;
+    undefined4 uStack716;
+    undefined8 uStack688;
+    undefined4 uStack680;
+    undefined4 uStack672;
+    undefined8 uStack664;
+    undefined8 uStack648;
+    undefined4 uStack628;
+    undefined4 uStack620;
+    undefined8 uStack608;
+    undefined8 uStack584;
+    undefined8 uStack480;
+    undefined8 uStack464;
+    undefined8 uStack456;
+    int64_t iStack360;
+    undefined8 uStack352;
+    undefined8 uStack344;
+    undefined4 uStack336;
+    undefined4 uStack328;
+    undefined8 uStack320;
+    undefined8 uStack304;
+    undefined4 uStack284;
+    undefined4 uStack276;
+    undefined8 uStack264;
+    undefined8 uStack240;
+    undefined4 uStack184;
+    undefined4 uStack136;
+    undefined8 uStack120;
+    undefined8 uStack88;
+    undefined uStack80;
+    int64_t iStack16;
+    
+    uVar5 = 0;
+    iVar2 = 0x29;
+    iStack16 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puVar3 = &uStack344;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar3 = 0;
+        puVar3 = puVar3 + 1;
+    }
+    uStack336 = 0xffffffff;
+    iVar2 = 0x29;
+    uStack320 = 0x6400000001;
+    uStack304 = 0xfffffffe00000001;
+    uStack328 = 2;
+    uStack264 = _reloc..LC3;
+    uStack240 = 0xfffffffc00000001;
+    uStack284 = 0xfffffffc;
+    uStack120 = _reloc..LC6;
+    uStack276 = 0xffffffff;
+    uStack184 = 1;
+    uStack136 = 2;
+    uStack88 = _reloc..LC7;
+    uStack80 = 1;
+    puVar3 = &uStack344;
+    puVar4 = (undefined8 *)reloc.default_circle;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar4 = *puVar3;
+        puVar3 = puVar3 + 1;
+        puVar4 = puVar4 + 1;
+    }
+    if (iStack16 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    uStack352 = 0x800036c;
+    func_0x08034866();
+    iVar2 = 0x29;
+    iStack360 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puVar3 = &uStack688;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar3 = 0;
+        puVar3 = puVar3 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+    }
+    uStack680 = 0xffffffff;
+    iVar2 = 0x29;
+    uStack664 = 0x6400000001;
+    uStack648 = 0xfffffffe00000001;
+    uStack672 = 3;
+    uStack608 = _reloc..LC3;
+    uStack584 = 0xfffffffc00000001;
+    uStack480 = 0x200000002;
+    uStack628 = 0xfffffffc;
+    uStack464 = _reloc..LC8;
+    uStack620 = 0xffffffff;
+    uStack456 = _reloc..LC9;
+    puVar3 = &uStack688;
+    puVar4 = (undefined8 *)reloc.default_ellipse;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar4 = *puVar3;
+        puVar3 = puVar3 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+        puVar4 = puVar4 + (uint64_t)uVar5 * 0x1ffffffffffffffe + 1;
+    }
+    if (iStack360 != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        func_0x08034866();
+        _reloc.fit_verbosity = CONCAT44(uStack716, 1);
+        _reloc.parallel_axis_style = 0xfffffffe00000000;
+        _reloc.pixmap_listhead = -0x100000000;
+        _reloc.free = 0;
+        _reloc.first_label = _reloc..LC10;
+        _reloc.first_object = 0;
+        _reloc.timefmt = 0;
+        _reloc.gp_strdup = 0xfffffffe00000001;
+        _reloc.fitlogfile = 0;
+        _reloc.FITLIMIT = 0;
+        _reloc.fit_errorvariables = 0;
+        _reloc.fit_covarvariables = 0;
+        _reloc.fit_errorscaling = 0;
+        _reloc.fit_prescale = 0;
+        if (*(int64_t *)(in_FS_OFFSET + 0x28) != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            func_0x08034866(0xfffffffe00000000, 0, 0, 0xfffffffe00000001, 0, 0, 0);
+            iVar2 = _reloc.pixmap_listhead;
+            while (iVar2 != 0) {
+                func_0x08034866(*(undefined8 *)(iVar2 + 0x70));
+                func_0x08034866(*(undefined8 *)(iVar2 + 0x78));
+                iVar1 = *(int64_t *)(iVar2 + 8);
+                func_0x08034866(iVar2);
+                iVar2 = iVar1;
+            }
+            _reloc.pixmap_listhead = 0;
+            return;
+        }
+        _reloc.parallel_axis_style = 0xfffffffe00000000;
+        _reloc.pixmap_listhead = 0xffffffff00000000;
+        _reloc.free = 0;
+        _reloc.first_label = _reloc..LC10;
+        _reloc.first_object = 0;
+        _reloc.timefmt = 0;
+        _reloc.gp_strdup = 0xfffffffe00000001;
+        _reloc.fitlogfile = 0;
+        _reloc.FITLIMIT = 0;
+        _reloc.fit_errorvariables = 0;
+        _reloc.fit_covarvariables = 0;
+        _reloc.fit_errorscaling = 0;
+        _reloc.fit_prescale = 0;
+        return;
+    }
+    return;
+}
+
+
+void sym.unset_style_ellipse(void)
+{
+    int64_t iVar1;
+    int64_t iVar2;
+    undefined8 *puVar3;
+    undefined8 *puVar4;
+    int64_t in_FS_OFFSET;
+    undefined4 uStack372;
+    undefined8 uStack344;
+    undefined4 uStack336;
+    undefined4 uStack328;
+    undefined8 uStack320;
+    undefined8 uStack304;
+    undefined4 uStack284;
+    undefined4 uStack276;
+    undefined8 uStack264;
+    undefined8 uStack240;
+    undefined8 uStack136;
+    undefined8 uStack120;
+    undefined8 uStack112;
+    int64_t iStack16;
+    
+    iVar2 = 0x29;
+    iStack16 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puVar3 = &uStack344;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar3 = 0;
+        puVar3 = puVar3 + 1;
+    }
+    uStack336 = 0xffffffff;
+    iVar2 = 0x29;
+    uStack320 = 0x6400000001;
+    uStack304 = 0xfffffffe00000001;
+    uStack328 = 3;
+    uStack264 = _reloc..LC3;
+    uStack240 = 0xfffffffc00000001;
+    uStack136 = 0x200000002;
+    uStack284 = 0xfffffffc;
+    uStack120 = _reloc..LC8;
+    uStack276 = 0xffffffff;
+    uStack112 = _reloc..LC9;
+    puVar3 = &uStack344;
+    puVar4 = (undefined8 *)reloc.default_ellipse;
+    while (iVar2 != 0) {
+        iVar2 = iVar2 + -1;
+        *puVar4 = *puVar3;
+        puVar3 = puVar3 + 1;
+        puVar4 = puVar4 + 1;
+    }
+    if (iStack16 != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        func_0x08034866();
+        _reloc.fit_verbosity = CONCAT44(uStack372, 1);
+        _reloc.parallel_axis_style = 0xfffffffe00000000;
+        _reloc.pixmap_listhead = -0x100000000;
+        _reloc.free = 0;
+        _reloc.first_label = _reloc..LC10;
+        _reloc.first_object = 0;
+        _reloc.timefmt = 0;
+        _reloc.gp_strdup = 0xfffffffe00000001;
+        _reloc.fitlogfile = 0;
+        _reloc.FITLIMIT = 0;
+        _reloc.fit_errorvariables = 0;
+        _reloc.fit_covarvariables = 0;
+        _reloc.fit_errorscaling = 0;
+        _reloc.fit_prescale = 0;
+        if (*(int64_t *)(in_FS_OFFSET + 0x28) != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            func_0x08034866(0xfffffffe00000000, 0, 0, 0xfffffffe00000001, 0, 0, 0);
+            iVar2 = _reloc.pixmap_listhead;
+            while (iVar2 != 0) {
+                func_0x08034866(*(undefined8 *)(iVar2 + 0x70));
+                func_0x08034866(*(undefined8 *)(iVar2 + 0x78));
+                iVar1 = *(int64_t *)(iVar2 + 8);
+                func_0x08034866(iVar2);
+                iVar2 = iVar1;
+            }
+            _reloc.pixmap_listhead = 0;
+            return;
+        }
+        _reloc.parallel_axis_style = 0xfffffffe00000000;
+        _reloc.pixmap_listhead = 0xffffffff00000000;
+        _reloc.free = 0;
+        _reloc.first_label = _reloc..LC10;
+        _reloc.first_object = 0;
+        _reloc.timefmt = 0;
+        _reloc.gp_strdup = 0xfffffffe00000001;
+        _reloc.fitlogfile = 0;
+        _reloc.FITLIMIT = 0;
+        _reloc.fit_errorvariables = 0;
+        _reloc.fit_covarvariables = 0;
+        _reloc.fit_errorscaling = 0;
+        _reloc.fit_prescale = 0;
+        return;
+    }
+    return;
+}
+
+
+void sym.unset_style_parallel(int64_t arg7, int64_t arg8, int64_t arg9, int64_t arg10, int64_t arg11)
+{
+    int64_t iVar1;
+    int64_t iVar2;
+    int64_t in_FS_OFFSET;
+    undefined4 uStack28;
+    
+    _reloc.fit_verbosity = CONCAT44(uStack28, 1);
+    _reloc.parallel_axis_style = 0xfffffffe00000000;
+    _reloc.pixmap_listhead = -0x100000000;
+    _reloc.free = 0;
+    _reloc.first_label = _reloc..LC10;
+    _reloc.first_object = 0;
+    _reloc.timefmt = 0;
+    _reloc.gp_strdup = 0xfffffffe00000001;
+    _reloc.fitlogfile = 0;
+    _reloc.FITLIMIT = 0;
+    _reloc.fit_errorvariables = 0;
+    _reloc.fit_covarvariables = 0;
+    _reloc.fit_errorscaling = 0;
+    _reloc.fit_prescale = 0;
+    if (*(int64_t *)(in_FS_OFFSET + 0x28) != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        func_0x08034866(0xfffffffe00000000, 0, 0, 0xfffffffe00000001, 0, 0, 0);
+        iVar2 = _reloc.pixmap_listhead;
+        while (iVar2 != 0) {
+            func_0x08034866(*(undefined8 *)(iVar2 + 0x70));
+            func_0x08034866(*(undefined8 *)(iVar2 + 0x78));
+            iVar1 = *(int64_t *)(iVar2 + 8);
+            func_0x08034866(iVar2);
+            iVar2 = iVar1;
+        }
+        _reloc.pixmap_listhead = 0;
+        return;
+    }
+    _reloc.parallel_axis_style = 0xfffffffe00000000;
+    _reloc.pixmap_listhead = 0xffffffff00000000;
+    _reloc.free = 0;
+    _reloc.first_label = _reloc..LC10;
+    _reloc.first_object = 0;
+    _reloc.timefmt = 0;
+    _reloc.gp_strdup = 0xfffffffe00000001;
+    _reloc.fitlogfile = 0;
+    _reloc.FITLIMIT = 0;
+    _reloc.fit_errorvariables = 0;
+    _reloc.fit_covarvariables = 0;
+    _reloc.fit_errorscaling = 0;
+    _reloc.fit_prescale = 0;
+    return;
+}
+
+
+void sym.unset_style_parallel(int64_t arg7, int64_t arg8, int64_t arg9, int64_t arg10, int64_t arg11)
+{
+    int64_t iVar1;
+    int64_t iVar2;
+    int64_t in_FS_OFFSET;
+    undefined4 uStack28;
+    
+    _reloc.fit_verbosity = CONCAT44(uStack28, 1);
+    _reloc.parallel_axis_style = 0xfffffffe00000000;
+    _reloc.pixmap_listhead = -0x100000000;
+    _reloc.free = 0;
+    _reloc.first_label = _reloc..LC10;
+    _reloc.first_object = 0;
+    _reloc.timefmt = 0;
+    _reloc.gp_strdup = 0xfffffffe00000001;
+    _reloc.fitlogfile = 0;
+    _reloc.FITLIMIT = 0;
+    _reloc.fit_errorvariables = 0;
+    _reloc.fit_covarvariables = 0;
+    _reloc.fit_errorscaling = 0;
+    _reloc.fit_prescale = 0;
+    if (*(int64_t *)(in_FS_OFFSET + 0x28) != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        func_0x08034866(0xfffffffe00000000, 0, 0, 0xfffffffe00000001, 0, 0, 0);
+        iVar2 = _reloc.pixmap_listhead;
+        while (iVar2 != 0) {
+            func_0x08034866(*(undefined8 *)(iVar2 + 0x70));
+            func_0x08034866(*(undefined8 *)(iVar2 + 0x78));
+            iVar1 = *(int64_t *)(iVar2 + 8);
+            func_0x08034866(iVar2);
+            iVar2 = iVar1;
+        }
+        _reloc.pixmap_listhead = 0;
+        return;
+    }
+    _reloc.parallel_axis_style = 0xfffffffe00000000;
+    _reloc.pixmap_listhead = 0xffffffff00000000;
+    _reloc.free = 0;
+    _reloc.first_label = _reloc..LC10;
+    _reloc.first_object = 0;
+    _reloc.timefmt = 0;
+    _reloc.gp_strdup = 0xfffffffe00000001;
+    _reloc.fitlogfile = 0;
+    _reloc.FITLIMIT = 0;
+    _reloc.fit_errorvariables = 0;
+    _reloc.fit_covarvariables = 0;
+    _reloc.fit_errorscaling = 0;
+    _reloc.fit_prescale = 0;
+    return;
+}
+
+

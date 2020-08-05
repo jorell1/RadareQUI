@@ -1,0 +1,632 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/stats.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int32_t comparator (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    /* [01] -r-x section size 18274 named .text */
+    __asm ("endbr64");
+    xmm1 = *(rdi);
+    xmm0 = *(rsi);
+    eax = 0xffffffff;
+    __asm ("comisd xmm0, xmm1");
+    if (? <= ?) {
+        eax = 0;
+        __asm ("comisd xmm1, xmm0");
+        al = (? > ?) ? 1 : 0;
+    }
+    return eax;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/stats.o @ 0x80000e0 */
+#include <stdint.h>
+ 
+uint64_t analyze_sgl_column (int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    int64_t var_28h;
+    int64_t var_30h;
+    int64_t var_38h;
+    int64_t var_40h;
+    int64_t var_48h;
+    int64_t var_50h;
+    int64_t var_58h;
+    int64_t var_60h;
+    int64_t var_68h;
+    int64_t var_70h;
+    int64_t var_78h;
+    int64_t var_80h;
+    int64_t var_88h;
+    int64_t var_90h;
+    int64_t var_94h;
+    int64_t var_98h;
+    int64_t var_a0h;
+    int64_t var_a8h;
+    int64_t var_b0h;
+    int64_t var_b8h;
+    int64_t var_c0h;
+    int64_t var_c8h;
+    int64_t var_d0h;
+    int64_t var_d8h;
+    int64_t var_e0h;
+    int64_t var_e8h;
+    int64_t var_f0h;
+    int64_t var_f8h;
+    int64_t var_100h;
+    int64_t var_108h;
+    int64_t var_110h;
+    int64_t var_118h;
+    int64_t var_120h;
+    int64_t var_128h;
+    int64_t var_130h;
+    int64_t var_138h;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    r15 = rsi;
+    rsi = "analyze_sgl_column";
+    r14 = rcx;
+    r13 = rdi;
+    r12 = rdx;
+    rbx = rdx;
+    rbx <<= 4;
+    rdi = rbx;
+    rax = strlen (rbx, rbp, r12, r13, r14);
+    rdi = rax;
+    if (r14 <= 0) {
+        goto label_11;
+    }
+    rax = r12;
+    xmm10 = 0;
+    xmm3 = 0;
+    __asm ("cqo");
+    __asm ("cvtsi2sd xmm10, r12");
+    rax = rdx:rax / r14;
+    rdx = rdx:rax % r14;
+    *((rsp + 0x78)) = rax;
+    if (r12 <= 0) {
+        goto label_12;
+    }
+label_2:
+    __asm ("movapd xmm12, xmm3");
+    __asm ("movapd xmm11, xmm3");
+    __asm ("movapd xmm7, xmm3");
+    esi = 0;
+    __asm ("movapd xmm9, xmm3");
+    rcx = (int64_t) ebp;
+    do {
+        xmm0 = *((r15 + rsi*8));
+        __asm ("movapd xmm1, xmm0");
+        __asm ("addsd xmm7, xmm0");
+        __asm ("mulsd xmm1, xmm0");
+        __asm ("addsd xmm9, xmm1");
+        if (r14 > 0) {
+            rax = rsi;
+            xmm1 = 0;
+            __asm ("cqo");
+            rax = rdx:rax / rcx;
+            rdx = rdx:rax % rcx;
+            __asm ("cvtsi2sd xmm1, rdx");
+            __asm ("mulsd xmm1, xmm0");
+            __asm ("addsd xmm11, xmm1");
+            xmm1 = 0;
+            __asm ("cvtsi2sd xmm1, rax");
+            __asm ("mulsd xmm0, xmm1");
+            __asm ("addsd xmm12, xmm0");
+        }
+        rsi++;
+    } while (r12 != rsi);
+    __asm ("movapd xmm13, xmm7");
+    rdx = r15 + r12*8;
+    __asm ("movapd xmm6, xmm3");
+    rax = r15;
+    __asm ("divsd xmm13, xmm10");
+    __asm ("movapd xmm8, xmm3");
+    __asm ("movapd xmm2, xmm3");
+    xmm14 = .rodata.cst16;
+    __asm ("movapd xmm4, xmm3");
+    __asm ("movapd xmm5, xmm3");
+    do {
+        xmm0 = *(rax);
+        rax += 8;
+        __asm ("subsd xmm0, xmm13");
+        __asm ("movapd xmm1, xmm0");
+        __asm ("addsd xmm4, xmm0");
+        __asm ("andpd xmm1, xmm14");
+        __asm ("addsd xmm5, xmm1");
+        __asm ("movapd xmm1, xmm0");
+        __asm ("mulsd xmm1, xmm0");
+        __asm ("addsd xmm2, xmm1");
+        __asm ("mulsd xmm1, xmm0");
+        __asm ("mulsd xmm0, xmm1");
+        __asm ("addsd xmm6, xmm1");
+        __asm ("addsd xmm8, xmm0");
+    } while (rdx != rax);
+    __asm ("mulsd xmm4, xmm4");
+    __asm ("ucomisd xmm11, xmm3");
+    edx = 0;
+    __asm ("setnp r14b");
+    if (rdx != rax) {
+        r14d = edx;
+    }
+    __asm ("ucomisd xmm12, xmm3");
+    __asm ("divsd xmm4, xmm10");
+    __asm ("setnp al");
+    if (rdx != rax) {
+        eax = edx;
+    }
+    r14d &= eax;
+label_3:
+    __asm ("subsd xmm2, xmm4");
+    __asm ("divsd xmm2, xmm10");
+    __asm ("ucomisd xmm3, xmm2");
+    __asm ("movapd xmm1, xmm2");
+    __asm ("sqrtsd xmm1, xmm1");
+    if (r14d > 0) {
+        goto label_13;
+    }
+label_7:
+    __asm ("divsd xmm5, xmm10");
+    __asm ("ucomisd xmm2, xmm3");
+    *(rsp) = xmm5;
+    __asm ("jp 0x800027a");
+    if (r14d == 0) {
+        goto label_14;
+    }
+    __asm ("movapd xmm0, xmm2");
+    __asm ("movapd xmm4, xmm1");
+    __asm ("mulsd xmm0, xmm10");
+    __asm ("mulsd xmm4, xmm0");
+    __asm ("mulsd xmm2, xmm0");
+    __asm ("divsd xmm6, xmm4");
+    __asm ("divsd xmm8, xmm2");
+    *((rsp + 0x80)) = xmm6;
+    *((rsp + 0x88)) = xmm8;
+label_4:
+    __asm ("ucomisd xmm3, xmm10");
+    __asm ("movapd xmm2, xmm10");
+    __asm ("sqrtsd xmm2, xmm2");
+    if (r14d > 0) {
+        goto label_15;
+    }
+label_6:
+    __asm ("movapd xmm6, xmm1");
+    __asm ("movapd xmm0, xmm10");
+    __asm ("divsd xmm6, xmm2");
+    __asm ("addsd xmm0, xmm10");
+    __asm ("ucomisd xmm3, xmm0");
+    __asm ("movapd xmm2, xmm0");
+    __asm ("sqrtsd xmm2, xmm2");
+    *((rsp + 8)) = xmm6;
+    if (r14d > 0) {
+        goto label_16;
+    }
+label_5:
+    xmm0 = .rodata.cst8;
+    __asm ("movapd xmm6, xmm1");
+    __asm ("divsd xmm6, xmm2");
+    __asm ("divsd xmm0, xmm10");
+    *((rsp + 0x10)) = xmm6;
+    __asm ("movapd xmm5, xmm0");
+    __asm ("ucomisd xmm3, xmm0");
+    __asm ("sqrtsd xmm5, xmm5");
+    *((rsp + 0x18)) = xmm5;
+    if (r14d > 0) {
+        goto label_17;
+    }
+label_10:
+    xmm0 = *(loc..LC6);
+    __asm ("divsd xmm0, xmm10");
+    __asm ("movapd xmm6, xmm0");
+    __asm ("ucomisd xmm3, xmm0");
+    __asm ("sqrtsd xmm6, xmm6");
+    *((rsp + 0x20)) = xmm6;
+    if (r14d > 0) {
+        goto label_18;
+    }
+label_9:
+    r9 = r12 - 1;
+    xmm0 = 0;
+    __asm ("cvtsi2sd xmm0, r9");
+    __asm ("divsd xmm10, xmm0");
+    __asm ("ucomisd xmm3, xmm10");
+    __asm ("movapd xmm2, xmm10");
+    __asm ("sqrtsd xmm2, xmm2");
+    if (r14d > 0) {
+        goto label_19;
+    }
+label_8:
+    __asm ("mulsd xmm2, xmm1");
+    rdx = rdi;
+    eax = 0;
+    *((rsp + 0x28)) = xmm2;
+    if (r12 <= 0) {
+        goto label_20;
+    }
+    do {
+        xmm0 = *((r15 + rax*8));
+        *((rdx + 8)) = rax;
+        rax++;
+        rdx += 0x10;
+        *((rdx - 0x10)) = xmm0;
+    } while (r12 != rax);
+label_20:
+    rcx = sym_comparator;
+    edx = 0x10;
+    rsi = r12;
+    *((rsp + 0x30)) = rdi;
+    *((rsp + 0x68)) = xmm3;
+    *((rsp + 0x60)) = xmm13;
+    *((rsp + 0x58)) = xmm9;
+    *((rsp + 0x50)) = xmm7;
+    *((rsp + 0x48)) = xmm12;
+    *((rsp + 0x40)) = xmm11;
+    *((rsp + 0x38)) = xmm1;
+    *((rsp + 0x70)) = r9;
+    strlen ();
+    rdi = *((rsp + 0x30));
+    xmm1 = *((rsp + 0x38));
+    xmm11 = *((rsp + 0x40));
+    xmm12 = *((rsp + 0x48));
+    __asm ("movdqu xmm5, xmmword [rdi]");
+    __asm ("movdqu xmm6, xmmword [rdi + rbx - 0x10]");
+    xmm7 = *((rsp + 0x50));
+    xmm9 = *((rsp + 0x58));
+    xmm13 = *((rsp + 0x60));
+    xmm3 = *((rsp + 0x68));
+    __asm ("movups xmmword [rsp + 0xf8], xmm5");
+    __asm ("movups xmmword [rsp + 0x108], xmm6");
+    if ((r12b & 1) != 0) {
+        goto label_21;
+    }
+    rax = r12;
+    rax >>= 0x3f;
+    rax += r12;
+    rax >>= 1;
+    rax <<= 4;
+    xmm4 = *((rdi + rax - 0x10));
+    __asm ("addsd xmm4, qword [rdi + rax]");
+    __asm ("mulsd xmm4, qword [loc..LC7]");
+    if ((r12b & 3) != 0) {
+        goto label_22;
+    }
+    do {
+        rax = r12 + 3;
+        xmm5 = *(loc..LC7);
+        __asm ("cmovns rax, r12");
+        rax >>= 2;
+        rdx = rax;
+        r12 -= rax;
+        rdx <<= 4;
+        r12 <<= 4;
+        xmm2 = *((rdi + rdx - 0x10));
+        xmm0 = *((rdi + r12 - 0x10));
+        __asm ("addsd xmm2, qword [rdi + rdx]");
+        __asm ("addsd xmm0, qword [rdi + r12]");
+        __asm ("mulsd xmm2, xmm5");
+        __asm ("mulsd xmm0, xmm5");
+        if (r14b != 0) {
+            goto label_23;
+        }
+label_0:
+        __asm ("divsd xmm11, xmm7");
+        __asm ("movapd xmm3, xmm12");
+        __asm ("divsd xmm3, xmm7");
+label_1:
+        *((rsp + 0x70)) = xmm13;
+        *((rsp + 0x68)) = xmm9;
+        *((rsp + 0x60)) = xmm7;
+        *((rsp + 0x58)) = xmm3;
+        *((rsp + 0x50)) = xmm11;
+        *((rsp + 0x48)) = xmm0;
+        *((rsp + 0x40)) = xmm2;
+        *((rsp + 0x38)) = xmm4;
+        *((rsp + 0x30)) = xmm1;
+        strlen ();
+        xmm5 = *(rsp);
+        xmm6 = *((rsp + 0x28));
+        *((rsp + 0x90)) = ebp;
+        xmm4 = *((rsp + 0x80));
+        xmm7 = *((rsp + 0x20));
+        *((rsp + 0xa0)) = xmm5;
+        eax = *((rsp + 0x78));
+        xmm5 = *((rsp + 0x88));
+        *((rsp + 0xb8)) = xmm4;
+        xmm4 = *((rsp + 0x10));
+        xmm13 = *((rsp + 0x70));
+        xmm1 = *((rsp + 0x30));
+        xmm9 = *((rsp + 0x68));
+        *((rsp + 0xb0)) = xmm6;
+        xmm2 = *((rsp + 0x40));
+        xmm6 = *((rsp + 8));
+        *((rsp + 0xc0)) = xmm5;
+        *((rsp + 0xd0)) = xmm4;
+        xmm5 = *((rsp + 0x18));
+        xmm4 = *((rsp + 0x38));
+        *((rsp + 0xe0)) = xmm7;
+        xmm0 = *((rsp + 0x48));
+        xmm7 = *((rsp + 0x60));
+        *((rsp + 0x94)) = eax;
+        rax = r13;
+        *((rsp + 0xc8)) = xmm6;
+        *((rsp + 0xd8)) = xmm5;
+        *((rsp + 0xe8)) = xmm7;
+        *((rsp + 0x118)) = xmm4;
+        *((rsp + 0x98)) = xmm13;
+        *((rsp + 0xa8)) = xmm1;
+        *((rsp + 0xf0)) = xmm9;
+        *((rsp + 0x120)) = xmm2;
+        *((rsp + 0x128)) = xmm0;
+        xmm11 = *((rsp + 0x50));
+        __asm ("movdqa xmm6, xmmword [rsp + 0x90]");
+        __asm ("movdqa xmm4, xmmword [rsp + 0xa0]");
+        xmm3 = *((rsp + 0x58));
+        __asm ("movdqa xmm5, xmmword [rsp + 0xb0]");
+        __asm ("movups xmmword [r13], xmm6");
+        __asm ("movdqa xmm7, xmmword [rsp + 0xc0]");
+        __asm ("movdqa xmm6, xmmword [rsp + 0xd0]");
+        __asm ("movups xmmword [r13 + 0x10], xmm4");
+        __asm ("movdqa xmm4, xmmword [rsp + 0xe0]");
+        __asm ("movups xmmword [r13 + 0x20], xmm5");
+        __asm ("movdqa xmm5, xmmword [rsp + 0xf0]");
+        __asm ("movups xmmword [r13 + 0x30], xmm7");
+        __asm ("movdqa xmm7, xmmword [rsp + 0x100]");
+        __asm ("movups xmmword [r13 + 0x40], xmm6");
+        __asm ("movdqa xmm6, xmmword [rsp + 0x110]");
+        __asm ("movups xmmword [r13 + 0x50], xmm4");
+        __asm ("movdqa xmm4, xmmword [rsp + 0x120]");
+        __asm ("movups xmmword [r13 + 0x60], xmm5");
+        *((rsp + 0x130)) = xmm11;
+        *((rsp + 0x138)) = xmm3;
+        __asm ("movdqa xmm5, xmmword [rsp + 0x130]");
+        __asm ("movups xmmword [r13 + 0x70], xmm7");
+        __asm ("movups xmmword [r13 + 0x80], xmm6");
+        __asm ("movups xmmword [r13 + 0x90], xmm4");
+        __asm ("movups xmmword [r13 + 0xa0], xmm5");
+        return rax;
+label_21:
+        r9 = *((rsp + 0x70));
+        rax = *((rsp + 0x70));
+        rax >>= 0x3f;
+        rax += r9;
+        rax >>= 1;
+        rax <<= 4;
+        xmm4 = *((rdi + rax));
+    } while ((r12b & 3) == 0);
+label_22:
+    rdx = r12;
+    rax = r12 + 6;
+    rdx += 3;
+    __asm ("cmovns rax, rdx");
+    rax >>= 2;
+    rdx = rax;
+    r12 -= rax;
+    rdx <<= 4;
+    r12 <<= 4;
+    xmm2 = *((rdi + rdx - 0x10));
+    xmm0 = *((rdi + r12));
+    if (r14b == 0) {
+        goto label_0;
+    }
+label_23:
+    __asm ("movapd xmm11, xmm3");
+    goto label_1;
+label_11:
+    xmm10 = 0;
+    *((rsp + 0x78)) = r12d;
+    ebp = 0;
+    xmm3 = 0;
+    __asm ("cvtsi2sd xmm10, r12");
+    if (r12 > 0) {
+        goto label_2;
+    }
+label_12:
+    __asm ("movapd xmm13, xmm3");
+    r14d = 1;
+    __asm ("movapd xmm12, xmm3");
+    __asm ("divsd xmm13, xmm10");
+    __asm ("movapd xmm11, xmm3");
+    __asm ("movapd xmm9, xmm3");
+    __asm ("movapd xmm7, xmm3");
+    __asm ("movapd xmm8, xmm3");
+    __asm ("movapd xmm6, xmm3");
+    __asm ("movapd xmm2, xmm3");
+    __asm ("movapd xmm5, xmm3");
+    __asm ("movapd xmm4, xmm13");
+    goto label_3;
+label_14:
+    *((rsp + 0x20)) = rdi;
+    *((rsp + 0x48)) = xmm3;
+    *((rsp + 0x40)) = xmm10;
+    *((rsp + 0x38)) = xmm13;
+    *((rsp + 0x30)) = xmm9;
+    *((rsp + 0x28)) = xmm7;
+    *((rsp + 0x18)) = xmm12;
+    *((rsp + 0x10)) = xmm11;
+    *((rsp + 8)) = xmm1;
+    strlen ();
+    xmm3 = *((rsp + 0x48));
+    xmm10 = *((rsp + 0x40));
+    xmm13 = *((rsp + 0x38));
+    xmm9 = *((rsp + 0x30));
+    *((rsp + 0x80)) = xmm0;
+    xmm7 = *((rsp + 0x28));
+    rdi = *((rsp + 0x20));
+    *((rsp + 0x88)) = xmm0;
+    xmm12 = *((rsp + 0x18));
+    xmm11 = *((rsp + 0x10));
+    xmm1 = *((rsp + 8));
+    goto label_4;
+label_16:
+    *((rsp + 0x30)) = rdi;
+    *((rsp + 0x58)) = xmm3;
+    *((rsp + 0x50)) = xmm10;
+    *((rsp + 0x48)) = xmm13;
+    *((rsp + 0x40)) = xmm9;
+    *((rsp + 0x38)) = xmm7;
+    *((rsp + 0x28)) = xmm12;
+    *((rsp + 0x20)) = xmm11;
+    *((rsp + 0x18)) = xmm2;
+    *((rsp + 0x10)) = xmm1;
+    strlen ();
+    xmm3 = *((rsp + 0x58));
+    xmm10 = *((rsp + 0x50));
+    xmm13 = *((rsp + 0x48));
+    xmm9 = *((rsp + 0x40));
+    xmm7 = *((rsp + 0x38));
+    rdi = *((rsp + 0x30));
+    xmm12 = *((rsp + 0x28));
+    xmm11 = *((rsp + 0x20));
+    xmm2 = *((rsp + 0x18));
+    xmm1 = *((rsp + 0x10));
+    goto label_5;
+label_15:
+    __asm ("movapd xmm0, xmm10");
+    *((rsp + 0x30)) = rdi;
+    *((rsp + 0x50)) = xmm3;
+    *((rsp + 0x48)) = xmm13;
+    *((rsp + 0x40)) = xmm9;
+    *((rsp + 0x38)) = xmm7;
+    *((rsp + 0x28)) = xmm12;
+    *((rsp + 0x20)) = xmm11;
+    *((rsp + 0x18)) = xmm2;
+    *((rsp + 0x10)) = xmm1;
+    *((rsp + 8)) = xmm10;
+    strlen ();
+    xmm3 = *((rsp + 0x50));
+    rdi = *((rsp + 0x30));
+    xmm13 = *((rsp + 0x48));
+    xmm9 = *((rsp + 0x40));
+    xmm7 = *((rsp + 0x38));
+    xmm12 = *((rsp + 0x28));
+    xmm11 = *((rsp + 0x20));
+    xmm2 = *((rsp + 0x18));
+    xmm1 = *((rsp + 0x10));
+    xmm10 = *((rsp + 8));
+    goto label_6;
+label_13:
+    __asm ("movapd xmm0, xmm2");
+    *((rsp + 0x20)) = rdi;
+    *((rsp + 0x60)) = xmm3;
+    *((rsp + 0x58)) = xmm10;
+    *((rsp + 0x50)) = xmm13;
+    *((rsp + 0x48)) = xmm9;
+    *((rsp + 0x40)) = xmm7;
+    *((rsp + 0x38)) = xmm8;
+    *((rsp + 0x30)) = xmm6;
+    *((rsp + 0x28)) = xmm5;
+    *((rsp + 0x18)) = xmm12;
+    *((rsp + 0x10)) = xmm11;
+    *((rsp + 8)) = xmm1;
+    *(rsp) = xmm2;
+    strlen ();
+    xmm3 = *((rsp + 0x60));
+    xmm10 = *((rsp + 0x58));
+    xmm13 = *((rsp + 0x50));
+    xmm9 = *((rsp + 0x48));
+    xmm7 = *((rsp + 0x40));
+    xmm8 = *((rsp + 0x38));
+    xmm6 = *((rsp + 0x30));
+    xmm5 = *((rsp + 0x28));
+    rdi = *((rsp + 0x20));
+    xmm12 = *((rsp + 0x18));
+    xmm11 = *((rsp + 0x10));
+    xmm1 = *((rsp + 8));
+    xmm2 = *(rsp);
+    goto label_7;
+label_19:
+    __asm ("movapd xmm0, xmm10");
+    *((rsp + 0x50)) = rdi;
+    *((rsp + 0x30)) = r9;
+    *((rsp + 0x70)) = xmm3;
+    *((rsp + 0x68)) = xmm13;
+    *((rsp + 0x60)) = xmm9;
+    *((rsp + 0x58)) = xmm7;
+    *((rsp + 0x48)) = xmm12;
+    *((rsp + 0x40)) = xmm11;
+    *((rsp + 0x38)) = xmm2;
+    *((rsp + 0x28)) = xmm1;
+    strlen ();
+    xmm3 = *((rsp + 0x70));
+    rdi = *((rsp + 0x50));
+    xmm13 = *((rsp + 0x68));
+    xmm9 = *((rsp + 0x60));
+    xmm7 = *((rsp + 0x58));
+    xmm12 = *((rsp + 0x48));
+    xmm11 = *((rsp + 0x40));
+    xmm2 = *((rsp + 0x38));
+    r9 = *((rsp + 0x30));
+    xmm1 = *((rsp + 0x28));
+    goto label_8;
+label_18:
+    *((rsp + 0x40)) = rdi;
+    *((rsp + 0x68)) = xmm3;
+    *((rsp + 0x60)) = xmm10;
+    *((rsp + 0x58)) = xmm13;
+    *((rsp + 0x50)) = xmm9;
+    *((rsp + 0x48)) = xmm7;
+    *((rsp + 0x38)) = xmm12;
+    *((rsp + 0x30)) = xmm11;
+    *((rsp + 0x28)) = xmm1;
+    strlen ();
+    xmm3 = *((rsp + 0x68));
+    xmm10 = *((rsp + 0x60));
+    xmm13 = *((rsp + 0x58));
+    xmm9 = *((rsp + 0x50));
+    xmm7 = *((rsp + 0x48));
+    rdi = *((rsp + 0x40));
+    xmm12 = *((rsp + 0x38));
+    xmm11 = *((rsp + 0x30));
+    xmm1 = *((rsp + 0x28));
+    goto label_9;
+label_17:
+    *((rsp + 0x38)) = rdi;
+    *((rsp + 0x60)) = xmm3;
+    *((rsp + 0x58)) = xmm10;
+    *((rsp + 0x50)) = xmm13;
+    *((rsp + 0x48)) = xmm9;
+    *((rsp + 0x40)) = xmm7;
+    *((rsp + 0x30)) = xmm12;
+    *((rsp + 0x28)) = xmm11;
+    *((rsp + 0x20)) = xmm1;
+    strlen ();
+    xmm3 = *((rsp + 0x60));
+    xmm10 = *((rsp + 0x58));
+    xmm13 = *((rsp + 0x50));
+    xmm9 = *((rsp + 0x48));
+    xmm7 = *((rsp + 0x40));
+    rdi = *((rsp + 0x38));
+    xmm12 = *((rsp + 0x30));
+    xmm11 = *((rsp + 0x28));
+    xmm1 = *((rsp + 0x20));
+    goto label_10;
+}
+
+
+
+
+
+
+
+

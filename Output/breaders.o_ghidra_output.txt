@@ -1,0 +1,29 @@
+uint8_t * sym.edf_findInHeader(undefined8 placeholder_0, int64_t arg2)
+{
+    uint8_t *puVar1;
+    int64_t iVar2;
+    int64_t *piVar3;
+    
+    // [01] -r-x section size 1810 named .text
+    puVar1 = (uint8_t *)func_0x080143e2();
+    if (puVar1 != (uint8_t *)0x0) {
+        iVar2 = func_0x080143e2(arg2);
+        puVar1 = (uint8_t *)func_0x080143e2(puVar1 + iVar2, 0x3d);
+        piVar3 = (int64_t *)func_0x080143e2();
+        do {
+            puVar1 = puVar1 + 1;
+        } while ((*(uint8_t *)(*piVar3 + 1 + (uint64_t)*puVar1 * 2) & 0x20) != 0);
+    }
+    return puVar1;
+}
+
+
+
+
+undefined8 sym.df_read_pixmap(void)
+{
+    func_0x080143e2(0xffffffff, "This copy of gnuplot cannot read png/gif/jpeg images");
+    return 0;
+}
+
+

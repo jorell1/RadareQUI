@@ -1,0 +1,1863 @@
+double sym.carlson_elliptic_rf(int64_t arg7, int64_t arg8, int64_t arg9)
+{
+    double dVar1;
+    undefined8 in_XMM0_Qb;
+    undefined8 in_XMM1_Qb;
+    undefined auVar2 [16];
+    double dVar3;
+    double dVar4;
+    undefined8 in_XMM2_Qb;
+    undefined auVar5 [16];
+    double dVar6;
+    double dVar7;
+    undefined auVar8 [16];
+    undefined auVar9 [16];
+    uint64_t uVar10;
+    undefined auVar11 [16];
+    undefined auVar12 [16];
+    undefined auVar13 [16];
+    
+    // [01] -r-x section size 18271 named .text
+    auVar2 = ZEXT816(_reloc..LC1);
+    auVar12 = ZEXT816(_reloc..LC2);
+    auVar11 = ZEXT816(_reloc..LC3);
+    auVar9 = ZEXT816(_reloc..LC4);
+    dVar3 = (double)arg9;
+    do {
+        auVar13 = sqrtsd(CONCAT88(in_XMM0_Qb, arg7), CONCAT88(in_XMM0_Qb, arg7));
+        if ((double)arg7 < 0.00000000) {
+            func_0x080281cb(arg7, arg8, dVar3);
+            auVar11 = ZEXT816(_reloc..LC3);
+            in_XMM2_Qb = 0;
+            in_XMM1_Qb = 0;
+            auVar9 = ZEXT816(_reloc..LC4);
+            in_XMM0_Qb = 0;
+            auVar12 = ZEXT816(_reloc..LC2);
+            auVar2 = ZEXT816(_reloc..LC1);
+        }
+        auVar8 = sqrtsd(CONCAT88(in_XMM1_Qb, arg8), CONCAT88(in_XMM1_Qb, arg8));
+        if ((double)arg8 < 0.00000000) {
+            func_0x080281cb(arg8, arg8);
+            in_XMM1_Qb = 0;
+            auVar11 = ZEXT816(_reloc..LC3);
+            in_XMM2_Qb = 0;
+            auVar9 = ZEXT816(_reloc..LC4);
+            in_XMM0_Qb = 0;
+            auVar12 = ZEXT816(_reloc..LC2);
+            auVar2 = ZEXT816(_reloc..LC1);
+        }
+        auVar5 = sqrtsd(CONCAT88(in_XMM2_Qb, arg9), CONCAT88(in_XMM2_Qb, arg9));
+        if ((double)arg9 < 0.00000000) {
+            func_0x080281cb(arg9, arg8, SUB168(auVar5, 0));
+            auVar11 = ZEXT816(_reloc..LC3);
+            in_XMM1_Qb = 0;
+            auVar9 = ZEXT816(_reloc..LC4);
+            in_XMM0_Qb = 0;
+            auVar5 = auVar5 & (undefined  [16])0xffffffffffffffff;
+            auVar12 = ZEXT816(_reloc..LC2);
+            auVar2 = ZEXT816(_reloc..LC1);
+        }
+        in_XMM2_Qb = SUB168(auVar5 >> 0x40, 0);
+        dVar3 = SUB168(auVar5, 0) * SUB168(auVar8, 0) + (SUB168(auVar8, 0) + SUB168(auVar5, 0)) * SUB168(auVar13, 0);
+        dVar1 = SUB168(auVar2, 0);
+        arg7 = (int64_t)(((double)arg7 + dVar3) * dVar1);
+        arg8 = (int64_t)(((double)arg8 + dVar3) * dVar1);
+        arg9 = (int64_t)((dVar3 + (double)arg9) * dVar1);
+        dVar1 = ((double)arg7 + (double)arg8 + (double)arg9) * SUB168(auVar12, 0);
+        dVar3 = (dVar1 - (double)arg7) / dVar1;
+        uVar10 = SUB168(auVar11, 0);
+        dVar4 = SUB168(auVar9, 0);
+    } while (((dVar4 < (double)((uint64_t)dVar3 & uVar10)) ||
+             (dVar6 = (dVar1 - (double)arg8) / dVar1, dVar4 < (double)((uint64_t)dVar6 & uVar10))) ||
+            (dVar7 = (dVar1 - (double)arg9) / dVar1, dVar4 < (double)((uint64_t)dVar7 & uVar10)));
+    dVar3 = dVar3 * dVar6;
+    dVar4 = dVar3 * dVar7;
+    dVar3 = dVar3 - dVar7 * dVar7;
+    dVar3 = dVar4 * _reloc..LC9 + ((_reloc..LC5 * dVar3 - _reloc..LC6) - _reloc..LC7 * dVar4) * dVar3 + _reloc..LC8;
+    auVar2 = sqrtsd(CONCAT88(in_XMM0_Qb, dVar1), CONCAT88(in_XMM0_Qb, dVar1));
+    if (dVar1 < 0.00000000) {
+        func_0x080281cb(dVar1, SUB168(auVar2, 0), dVar3);
+    }
+    return dVar3 / SUB168(auVar2, 0);
+}
+
+
+double sym.carlson_elliptic_rc(int64_t arg7, int64_t arg8)
+{
+    double dVar1;
+    undefined8 in_XMM0_Qb;
+    uint64_t in_XMM1_Qb;
+    undefined auVar2 [16];
+    double dVar3;
+    double dVar4;
+    double dVar5;
+    undefined auVar6 [16];
+    double dVar7;
+    undefined auVar8 [16];
+    undefined auVar9 [16];
+    undefined auVar10 [16];
+    undefined auVar11 [16];
+    
+    dVar5 = _reloc..LC8;
+    if ((double)arg8 <= 0.00000000) {
+        dVar5 = (double)arg7 - (double)arg8;
+        auVar2 = CONCAT88(in_XMM0_Qb, dVar5);
+        auVar8 = sqrtsd(CONCAT88(in_XMM0_Qb, arg7), CONCAT88(in_XMM0_Qb, arg7));
+        arg8 = arg8 ^ _reloc..LC10;
+        in_XMM1_Qb = in_XMM1_Qb ^ *(uint64_t *)0x8004d18;
+        if ((double)arg7 < 0.00000000) {
+            func_0x080281cb(arg7, arg8, dVar5, arg7, 0);
+            in_XMM1_Qb = 0;
+            auVar2 = ZEXT816((uint64_t)dVar5);
+        }
+        dVar5 = SUB168(auVar2, 0);
+        auVar9 = sqrtsd(auVar2, auVar2);
+        if (dVar5 < 0.00000000) {
+            func_0x080281cb(dVar5, arg8, dVar5, SUB168(auVar9, 0), 0);
+            in_XMM1_Qb = 0;
+            auVar2 = auVar2 & (undefined  [16])0xffffffffffffffff;
+        }
+        dVar5 = SUB168(auVar8, 0) / SUB168(auVar9, 0);
+        arg7 = (int64_t)SUB168(auVar2, 0);
+        in_XMM0_Qb = SUB168(auVar2 >> 0x40, 0);
+    }
+    dVar1 = _reloc..LC8;
+    auVar2 = ZEXT816(_reloc..LC1);
+    auVar9 = ZEXT816(_reloc..LC3);
+    auVar10 = ZEXT816(_reloc..LC2);
+    auVar8 = ZEXT816(_reloc..LC11);
+    do {
+        auVar6 = sqrtsd(CONCAT88(in_XMM0_Qb, arg7), CONCAT88(in_XMM0_Qb, arg7));
+        if ((double)arg7 < 0.00000000) {
+            func_0x080281cb(arg7, arg8, SUB168(auVar6, 0), arg7, 0, SUB168(auVar2, 0), SUB168(auVar8, 0), 
+                            SUB168(auVar9, 0));
+            in_XMM0_Qb = 0;
+            auVar9 = ZEXT816(_reloc..LC3);
+            auVar8 = ZEXT816(_reloc..LC11);
+            in_XMM1_Qb = 0;
+            auVar6 = auVar6 & (undefined  [16])0xffffffffffffffff;
+            auVar10 = ZEXT816(_reloc..LC2);
+            auVar2 = ZEXT816(_reloc..LC1);
+        }
+        auVar11 = CONCAT88(in_XMM1_Qb, arg8);
+        in_XMM1_Qb = SUB168(auVar6 >> 0x40, 0);
+        dVar3 = SUB168(auVar6, 0) + SUB168(auVar6, 0);
+        auVar6 = sqrtsd(auVar11, auVar11);
+        if ((double)arg8 < 0.00000000) {
+            func_0x080281cb(arg8, arg8, dVar3, arg7, 0, SUB168(auVar2, 0), SUB168(auVar8, 0), SUB168(auVar9, 0));
+            auVar9 = ZEXT816(_reloc..LC3);
+            auVar8 = ZEXT816(_reloc..LC11);
+            in_XMM0_Qb = 0;
+            auVar10 = ZEXT816(_reloc..LC2);
+            in_XMM1_Qb = 0;
+            auVar2 = ZEXT816(_reloc..LC1);
+        }
+        dVar3 = dVar3 * SUB168(auVar6, 0) + (double)arg8;
+        dVar7 = SUB168(auVar2, 0);
+        arg7 = (int64_t)(((double)arg7 + dVar3) * dVar7);
+        arg8 = (int64_t)((dVar3 + (double)arg8) * dVar7);
+        dVar3 = ((double)arg7 + (double)arg8 + (double)arg8) * SUB168(auVar10, 0);
+        dVar4 = ((double)arg8 - dVar3) / dVar3;
+    } while (SUB168(auVar8, 0) < (double)((uint64_t)dVar4 & SUB168(auVar9, 0)));
+    dVar4 = dVar4 * dVar4 * (((_reloc..LC12 * dVar4 + _reloc..LC13) * dVar4 + _reloc..LC14) * dVar4 + _reloc..LC15);
+    auVar2 = sqrtsd(CONCAT88(in_XMM0_Qb, dVar3), CONCAT88(in_XMM0_Qb, dVar3));
+    if (dVar3 < 0.00000000) {
+        func_0x080281cb(dVar3, SUB168(auVar2, 0), dVar4, arg7, 0, dVar7, SUB168(auVar8, 0), SUB168(auVar9, 0));
+    }
+    return (dVar5 * (dVar1 + dVar4)) / SUB168(auVar2, 0);
+}
+
+
+// WARNING: Removing unreachable block (ram,0x08000d9a)
+
+void sym.f_real(int64_t arg7)
+{
+    undefined8 uVar1;
+    int64_t in_FS_OFFSET;
+    double extraout_XMM0_Qa;
+    double extraout_XMM0_Qa_00;
+    double extraout_XMM0_Qa_01;
+    double extraout_XMM0_Qa_02;
+    double extraout_XMM0_Qa_03;
+    double extraout_XMM0_Qa_04;
+    double extraout_XMM0_Qa_05;
+    double extraout_XMM0_Qa_06;
+    double extraout_XMM0_Qa_07;
+    double extraout_XMM0_Qa_08;
+    uint64_t extraout_XMM0_Qa_09;
+    double extraout_XMM0_Qa_10;
+    double extraout_XMM0_Qa_11;
+    double extraout_XMM0_Qa_12;
+    double extraout_XMM0_Qa_13;
+    double extraout_XMM0_Qa_14;
+    double extraout_XMM0_Qa_15;
+    double extraout_XMM0_Qa_16;
+    double extraout_XMM0_Qa_17;
+    double extraout_XMM0_Qa_18;
+    double extraout_XMM0_Qa_19;
+    double extraout_XMM0_Qa_20;
+    double extraout_XMM0_Qa_21;
+    double extraout_XMM0_Qa_22;
+    double extraout_XMM0_Qa_23;
+    double extraout_XMM0_Qa_24;
+    double extraout_XMM0_Qa_25;
+    double extraout_XMM0_Qa_26;
+    uint64_t extraout_XMM0_Qa_27;
+    double dVar2;
+    double extraout_XMM0_Qa_28;
+    double extraout_XMM0_Qa_29;
+    double extraout_XMM0_Qa_30;
+    double dVar3;
+    undefined auVar4 [16];
+    undefined auVar5 [16];
+    double in_XMM5_Qa;
+    uint64_t uVar6;
+    double dVar7;
+    undefined in_XMM6 [16];
+    double dVar8;
+    double dVar9;
+    undefined in_XMM7 [16];
+    undefined auStack416 [24];
+    int64_t iStack392;
+    undefined *puStack384;
+    double dStack368;
+    double dStack360;
+    double dStack352;
+    undefined auStack344 [24];
+    int64_t iStack320;
+    undefined *puStack312;
+    double dStack304;
+    double dStack296;
+    undefined auStack288 [24];
+    int64_t iStack264;
+    undefined *puStack240;
+    double dStack232;
+    double dStack224;
+    undefined auStack216 [24];
+    int64_t iStack192;
+    undefined *puStack184;
+    undefined auStack160 [24];
+    int64_t iStack136;
+    undefined *puStack128;
+    undefined auStack120 [24];
+    int64_t iStack96;
+    undefined *puStack88;
+    undefined auStack80 [24];
+    int64_t iStack56;
+    undefined *puStack48;
+    undefined auStack40 [24];
+    int64_t iStack16;
+    
+    iStack16 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack48 = (undefined *)0x8000694;
+    uVar1 = func_0x080281cb(arg7, auStack40);
+    puStack48 = (undefined *)0x800069c;
+    func_0x080281cb(uVar1);
+    puStack48 = (undefined *)0x80006a8;
+    uVar1 = func_0x080281cb(auStack40);
+    puStack48 = (undefined *)0x80006b0;
+    func_0x080281cb(uVar1);
+    if (iStack16 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack48 = (undefined *)0x80006cb;
+    func_0x080281cb();
+    iStack56 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack88 = (undefined *)0x80006f4;
+    puStack48 = auStack40;
+    uVar1 = func_0x080281cb(auStack80);
+    puStack88 = (undefined *)0x80006fc;
+    func_0x080281cb(uVar1);
+    puStack88 = (undefined *)0x8000708;
+    uVar1 = func_0x080281cb(auStack80);
+    puStack88 = (undefined *)0x8000710;
+    func_0x080281cb(uVar1);
+    if (iStack56 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack88 = (undefined *)0x800072b;
+    func_0x080281cb();
+    iStack96 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack128 = (undefined *)0x8000754;
+    puStack88 = auStack80;
+    uVar1 = func_0x080281cb(auStack120);
+    puStack128 = (undefined *)0x800075c;
+    func_0x080281cb(uVar1);
+    puStack128 = (undefined *)0x8000770;
+    uVar1 = func_0x080281cb(extraout_XMM0_Qa / _reloc.ang2rad, 0, auStack120);
+    puStack128 = (undefined *)0x8000778;
+    func_0x080281cb(uVar1);
+    if (iStack96 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack128 = (undefined *)0x8000793;
+    func_0x080281cb();
+    iStack136 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack184 = (undefined *)0x80007c6;
+    puStack128 = auStack120;
+    func_0x080281cb(auStack160);
+    puStack184 = (undefined *)0x80007ce;
+    func_0x080281cb(auStack160);
+    puStack184 = (undefined *)0x80007dc;
+    func_0x080281cb(auStack160);
+    puStack184 = (undefined *)0x80007f2;
+    uVar1 = func_0x080281cb(auStack160);
+    puStack184 = (undefined *)0x80007fa;
+    func_0x080281cb(uVar1);
+    if (iStack136 != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        puStack184 = (undefined *)0x8000815;
+        func_0x080281cb();
+        iStack192 = *(int64_t *)(in_FS_OFFSET + 0x28);
+        puStack240 = (undefined *)0x8000846;
+        puStack184 = auStack160;
+        func_0x080281cb(auStack216);
+        puStack240 = (undefined *)0x800084e;
+        func_0x080281cb(auStack216);
+        puStack240 = (undefined *)0x800085b;
+        func_0x080281cb(extraout_XMM0_Qa_00 * _reloc.ang2rad);
+        puStack240 = (undefined *)0x8000868;
+        dStack232 = extraout_XMM0_Qa_01;
+        func_0x080281cb(auStack216);
+        puStack240 = (undefined *)0x8000875;
+        func_0x080281cb(extraout_XMM0_Qa_02 * _reloc.ang2rad);
+        dStack224 = dStack232 * extraout_XMM0_Qa_03;
+        puStack240 = (undefined *)0x800088c;
+        func_0x080281cb(auStack216);
+        puStack240 = (undefined *)0x8000899;
+        func_0x080281cb(extraout_XMM0_Qa_04 * _reloc.ang2rad);
+        puStack240 = (undefined *)0x80008a6;
+        dStack232 = extraout_XMM0_Qa_05;
+        func_0x080281cb(auStack216);
+        puStack240 = (undefined *)0x80008b3;
+        func_0x080281cb(extraout_XMM0_Qa_06 * _reloc.ang2rad);
+        puStack240 = (undefined *)0x80008c6;
+        uVar1 = func_0x080281cb(extraout_XMM0_Qa_07 * dStack232, dStack224, auStack216);
+        puStack240 = (undefined *)0x80008ce;
+        func_0x080281cb(uVar1);
+        if (iStack192 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return;
+        }
+        puStack240 = (undefined *)0x80008e9;
+        func_0x080281cb();
+        iStack264 = *(int64_t *)(in_FS_OFFSET + 0x28);
+        puStack312 = (undefined *)0x8000917;
+        puStack240 = auStack216;
+        func_0x080281cb(auStack288);
+        puStack312 = (undefined *)0x800091f;
+        func_0x080281cb(auStack288);
+        puStack312 = (undefined *)0x800092c;
+        func_0x080281cb(extraout_XMM0_Qa_08 * _reloc.ang2rad);
+        puStack312 = (undefined *)0x8000939;
+        func_0x080281cb(auStack288);
+        puStack312 = (undefined *)0x8000946;
+        func_0x080281cb(extraout_XMM0_Qa_10 * _reloc.ang2rad);
+        dStack296 = (double)(extraout_XMM0_Qa_09 ^ _reloc..LC10) * extraout_XMM0_Qa_11;
+        puStack312 = (undefined *)0x8000965;
+        func_0x080281cb(auStack288);
+        puStack312 = (undefined *)0x8000972;
+        func_0x080281cb(extraout_XMM0_Qa_12 * _reloc.ang2rad);
+        puStack312 = (undefined *)0x800097f;
+        dStack304 = extraout_XMM0_Qa_13;
+        func_0x080281cb(auStack288);
+        puStack312 = (undefined *)0x800098c;
+        func_0x080281cb(extraout_XMM0_Qa_14 * _reloc.ang2rad);
+        puStack312 = (undefined *)0x800099f;
+        uVar1 = func_0x080281cb(extraout_XMM0_Qa_15 * dStack304, dStack296, auStack288);
+        puStack312 = (undefined *)0x80009a7;
+        func_0x080281cb(uVar1);
+        if (iStack264 != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            puStack312 = (undefined *)0x80009c3;
+            func_0x080281cb();
+            iStack320 = *(int64_t *)(in_FS_OFFSET + 0x28);
+            puStack384 = (undefined *)0x80009f6;
+            puStack312 = auStack288;
+            func_0x080281cb(auStack344);
+            puStack384 = (undefined *)0x80009fe;
+            func_0x080281cb(auStack344);
+            if (extraout_XMM0_Qa_16 == 0.00000000) {
+                puStack384 = (undefined *)0x8000a12;
+                func_0x080281cb(auStack344);
+                puStack384 = (undefined *)0x8000a1f;
+                func_0x080281cb(extraout_XMM0_Qa_17 * _reloc.ang2rad);
+                puStack384 = (undefined *)0x8000a2b;
+                uVar1 = func_0x080281cb(auStack344);
+                puStack384 = (undefined *)0x8000a33;
+                func_0x080281cb(uVar1);
+            } else {
+                dStack368 = _reloc.ang2rad + _reloc.ang2rad;
+                puStack384 = (undefined *)0x8000a6a;
+                func_0x080281cb(dStack368, auStack344);
+                puStack384 = (undefined *)0x8000a75;
+                func_0x080281cb(extraout_XMM0_Qa_18 * dStack368);
+                in_XMM5_Qa = _reloc.ang2rad + _reloc.ang2rad;
+                puStack384 = (undefined *)0x8000a99;
+                dStack368 = extraout_XMM0_Qa_19;
+                dStack360 = in_XMM5_Qa;
+                func_0x080281cb(_reloc.ang2rad, auStack344);
+                puStack384 = (undefined *)0x8000aa4;
+                func_0x080281cb(extraout_XMM0_Qa_20 * dStack360);
+                in_XMM6 = (undefined  [16])0x0;
+                dVar8 = dStack368 + extraout_XMM0_Qa_21;
+                if (dVar8 == 0.00000000) {
+                    reloc.undefined = (code)0x1;
+                    puStack384 = (undefined *)0x8000ac9;
+                    func_0x080281cb(auStack344);
+                } else {
+                    dStack368 = _reloc.ang2rad + _reloc.ang2rad;
+                    puStack384 = (undefined *)0x8000af0;
+                    dStack360 = dVar8;
+                    func_0x080281cb(dStack368, auStack344);
+                    puStack384 = (undefined *)0x8000afb;
+                    func_0x080281cb(extraout_XMM0_Qa_22 * dStack368);
+                    dVar8 = extraout_XMM0_Qa_23 / dStack360;
+                    dStack352 = dStack360;
+                    dStack368 = _reloc.ang2rad + _reloc.ang2rad;
+                    puStack384 = (undefined *)0x8000b2f;
+                    dStack360 = dVar8;
+                    func_0x080281cb(dStack368, dVar8, auStack344);
+                    puStack384 = (undefined *)0x8000b3a;
+                    func_0x080281cb(extraout_XMM0_Qa_24 * dStack368);
+                    puStack384 = (undefined *)0x8000b52;
+                    uVar1 = func_0x080281cb(extraout_XMM0_Qa_25 / dStack352, dStack360, auStack344);
+                    puStack384 = (undefined *)0x8000b5a;
+                    func_0x080281cb(uVar1);
+                }
+            }
+            if (iStack320 != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+                puStack384 = (undefined *)0x8000b64;
+                func_0x080281cb();
+                iStack392 = *(int64_t *)(in_FS_OFFSET + 0x28);
+                puStack384 = auStack344;
+                func_0x080281cb(auStack416);
+                func_0x080281cb(auStack416);
+                dVar2 = 0.00000000;
+                uVar1 = 0;
+                func_0x080281cb(auStack416);
+                dVar3 = extraout_XMM0_Qa_26;
+                dVar8 = _reloc..LC8;
+                if ((dVar2 != 0.00000000) || (_reloc..LC8 < (double)((uint64_t)extraout_XMM0_Qa_26 & _reloc..LC3))) {
+                    if (extraout_XMM0_Qa_26 != 0.00000000) {
+                        dVar9 = dVar2 * dVar2;
+                        in_XMM5_Qa = (extraout_XMM0_Qa_26 + _reloc..LC8) * (extraout_XMM0_Qa_26 + _reloc..LC8) + dVar9;
+                        auVar5 = sqrtsd(ZEXT816((uint64_t)in_XMM5_Qa), ZEXT816((uint64_t)in_XMM5_Qa));
+                        uVar6 = SUB168(auVar5, 0);
+                        if (in_XMM5_Qa < 0.00000000) goto code_r0x08000dcf;
+                        goto code_r0x08000c82;
+                    }
+                    dVar8 = dVar2 * dVar2 + _reloc..LC8;
+                    in_XMM7 = CONCAT88(uVar1, dVar8);
+                    auVar5 = sqrtsd(CONCAT88(uVar1, dVar8), CONCAT88(uVar1, dVar8));
+                    if (dVar8 < 0.00000000) {
+                        func_0x080281cb(dVar8, 0, extraout_XMM0_Qa_26, dVar2, SUB168(auVar5, 0));
+                    }
+                    dVar8 = SUB168(auVar5, 0) - dVar2;
+                    func_0x080281cb(dVar8);
+                    uVar1 = func_0x080281cb(0, (double)(extraout_XMM0_Qa_27 ^ _reloc..LC10) / _reloc.ang2rad, auStack416
+                                           );
+                    func_0x080281cb(uVar1);
+                } else {
+                    func_0x080281cb(extraout_XMM0_Qa_26, 0, extraout_XMM0_Qa_26, dVar2, _reloc..LC8);
+                    uVar1 = func_0x080281cb(extraout_XMM0_Qa_30 / _reloc.ang2rad, 0, auStack416);
+                    func_0x080281cb(uVar1);
+                }
+                while( true ) {
+                    uVar6 = SUB168(in_XMM6, 0);
+                    dVar9 = SUB168(in_XMM7, 0);
+                    if (iStack392 == *(int64_t *)(in_FS_OFFSET + 0x28)) break;
+                    func_0x080281cb();
+code_r0x08000dcf:
+                    func_0x080281cb(in_XMM5_Qa);
+                    auVar5 = ZEXT816(uVar6);
+code_r0x08000c82:
+                    uVar1 = SUB168(auVar5 >> 0x40, 0);
+                    dVar7 = SUB168(auVar5, 0) * _reloc..LC17;
+                    dVar3 = (dVar3 - dVar8) * (dVar3 - dVar8) + dVar9;
+                    auVar5 = sqrtsd(ZEXT816((uint64_t)dVar3), ZEXT816((uint64_t)dVar3));
+                    if (dVar3 < 0.00000000) {
+                        func_0x080281cb(dVar3, 0, dVar3, dVar2, dVar8, in_XMM5_Qa, dVar7, SUB168(auVar5, 0));
+                        auVar5 = auVar5 & (undefined  [16])0xffffffffffffffff;
+                        uVar1 = 0;
+                    }
+                    dVar9 = SUB168(auVar5, 0) * _reloc..LC17;
+                    in_XMM7 = CONCAT88(SUB168(auVar5 >> 0x40, 0), dVar9);
+                    auVar5 = minsd(ZEXT816((uint64_t)dVar8), CONCAT88(uVar1, dVar7 - dVar9));
+                    if (in_XMM5_Qa < 0.00000000) {
+                        func_0x080281cb(in_XMM5_Qa, 0, dVar3, dVar2, dVar8, in_XMM5_Qa, dVar7, dVar9);
+                        uVar1 = 0;
+                        in_XMM7 = ZEXT816((uint64_t)dVar9);
+                    }
+                    if (dVar3 < 0.00000000) {
+                        func_0x080281cb(dVar3, 0, dVar3, dVar2, dVar8);
+                        uVar1 = 0;
+                        in_XMM7 = in_XMM7 & (undefined  [16])0xffffffffffffffff;
+                    }
+                    dVar7 = dVar7 + SUB168(in_XMM7, 0);
+                    in_XMM6 = CONCAT88(uVar1, dVar7);
+                    in_XMM5_Qa = dVar8;
+                    if (dVar2 < 0.00000000) {
+                        in_XMM5_Qa = _reloc..LC16;
+                    }
+                    dVar2 = dVar7 * dVar7 - dVar8;
+                    auVar4 = sqrtsd(CONCAT88(uVar1, dVar2), CONCAT88(uVar1, dVar2));
+                    if (dVar2 < 0.00000000) {
+                        func_0x080281cb(dVar2, 0);
+                        in_XMM6 = ZEXT816((uint64_t)dVar7);
+                    }
+                    dVar2 = SUB168(auVar4, 0) + SUB168(in_XMM6, 0);
+                    func_0x080281cb(dVar2);
+                    dVar9 = (extraout_XMM0_Qa_28 * in_XMM5_Qa) / _reloc.ang2rad;
+                    func_0x080281cb(SUB168(auVar5, 0), dVar9);
+                    uVar1 = func_0x080281cb(extraout_XMM0_Qa_29 / _reloc.ang2rad, dVar9, auStack416);
+                    func_0x080281cb(uVar1);
+                }
+                return;
+            }
+            return;
+        }
+        return;
+    }
+    return;
+}
+
+
+dg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.f pdg @ sym.f pdg @ sym.f_ pdg @ sym.f_ pdg @ sym.f_a pdg @ sym.f_a pdg @ sym.f_ac pdg @ sym.f_ac pdg @ sym.f_aco pdg @ sym.f_aco pdg @ sym.f_acos pdg @ sym.f_acosGhidra Decompiler Error: Deleting integrated varnode
+
+
+void sym.f_atan(int64_t arg7)
+{
+    undefined8 uVar1;
+    int64_t in_FS_OFFSET;
+    double extraout_XMM0_Qa;
+    double extraout_XMM0_Qa_00;
+    double extraout_XMM0_Qa_01;
+    double extraout_XMM0_Qa_02;
+    double extraout_XMM0_Qa_03;
+    double extraout_XMM0_Qa_04;
+    double extraout_XMM0_Qa_05;
+    double extraout_XMM0_Qa_06;
+    double extraout_XMM0_Qa_07;
+    double extraout_XMM0_Qa_08;
+    double extraout_XMM0_Qa_09;
+    double extraout_XMM0_Qa_10;
+    double extraout_XMM0_Qa_11;
+    double extraout_XMM0_Qa_12;
+    double extraout_XMM0_Qa_13;
+    double extraout_XMM0_Qa_14;
+    double extraout_XMM0_Qa_15;
+    double extraout_XMM0_Qa_16;
+    double extraout_XMM0_Qa_17;
+    double extraout_XMM0_Qa_18;
+    double extraout_XMM0_Qa_19;
+    uint64_t extraout_XMM0_Qa_20;
+    double extraout_XMM0_Qa_21;
+    undefined extraout_XMM0 [16];
+    undefined extraout_XMM0_00 [16];
+    double dVar2;
+    undefined auVar3 [16];
+    double dVar4;
+    undefined auVar5 [16];
+    double dVar6;
+    double dVar7;
+    double dVar8;
+    undefined in_XMM5 [16];
+    double dVar9;
+    undefined in_XMM6 [16];
+    undefined auVar10 [16];
+    double dStack440;
+    undefined auStack400 [24];
+    int64_t iStack376;
+    undefined *puStack352;
+    double dStack336;
+    double dStack328;
+    double dStack320;
+    double dStack312;
+    double dStack304;
+    undefined auStack296 [24];
+    int64_t iStack272;
+    undefined *puStack264;
+    double dStack256;
+    double dStack248;
+    undefined auStack240 [24];
+    int64_t iStack216;
+    undefined *puStack208;
+    double dStack200;
+    double dStack192;
+    undefined auStack184 [24];
+    int64_t iStack160;
+    undefined *puStack152;
+    double dStack144;
+    undefined auStack128 [24];
+    int64_t iStack104;
+    undefined *puStack96;
+    double dStack80;
+    double dStack72;
+    double dStack64;
+    double dStack56;
+    double dStack48;
+    undefined auStack40 [24];
+    int64_t iStack16;
+    
+    iStack16 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack96 = (undefined *)0x8001456;
+    func_0x080281cb(arg7, auStack40);
+    puStack96 = (undefined *)0x800145e;
+    func_0x080281cb(auStack40);
+    puStack96 = (undefined *)0x800146c;
+    dVar4 = 0.00000000;
+    dStack80 = extraout_XMM0_Qa;
+    func_0x080281cb(auStack40);
+    auVar5 = (undefined  [16])0x0;
+    if (dVar4 == 0.00000000) {
+        puStack96 = (undefined *)0x80015df;
+        func_0x080281cb(dStack80);
+        auVar5 = (undefined  [16])0x0;
+        puStack96 = (undefined *)0x80015f7;
+        uVar1 = func_0x080281cb(extraout_XMM0_Qa_02 / _reloc.ang2rad, 0, auStack40);
+        puStack96 = (undefined *)0x80015ff;
+        func_0x080281cb(uVar1);
+    } else {
+        dVar8 = dStack80;
+        if (dStack80 == 0.00000000) {
+            if (_reloc..LC8 <= (double)((uint64_t)dVar4 & _reloc..LC3)) {
+                reloc.undefined = (code)0x1;
+                puStack96 = (undefined *)0x800161f;
+                uVar1 = func_0x080281cb(0, 0, dVar4, dStack80, 0, auStack40);
+                puStack96 = (undefined *)0x8001627;
+                func_0x080281cb(uVar1);
+                goto code_r0x080015b8;
+            }
+        } else {
+            if (dStack80 < 0.00000000) {
+                dVar4 = (double)((uint64_t)dVar4 ^ _reloc..LC10);
+                dVar8 = (double)((uint64_t)dStack80 ^ _reloc..LC10);
+            }
+        }
+        dStack48 = dStack80;
+        dStack64 = dVar8 * dVar8;
+        dStack56 = _reloc..LC8;
+        dVar6 = (_reloc..LC8 - dStack64) - dVar4 * dVar4;
+        puStack96 = (undefined *)0x8001517;
+        dStack72 = dVar4;
+        func_0x080281cb((dVar8 + dVar8) / dVar6, _reloc..LC8, dVar4, dStack80, 0, dVar6, dStack64);
+        in_XMM6 = ZEXT816((uint64_t)dStack64);
+        dVar4 = (dStack72 - dStack56) * (dStack72 - dStack56) + dStack64;
+        puStack96 = (undefined *)0x8001554;
+        dStack80 = extraout_XMM0_Qa_00;
+        func_0x080281cb(((dStack72 + dStack56) * (dStack72 + dStack56) + dStack64) / dVar4, dStack56, dVar4);
+        auVar5 = (undefined  [16])0x0;
+        dVar4 = _reloc..LC1 * extraout_XMM0_Qa_01;
+        if (dStack80 < 0.00000000) {
+            dStack80 = dStack80 + _reloc..LC18;
+        }
+        if (dStack48 < 0.00000000) {
+            dStack80 = (double)((uint64_t)dStack80 ^ _reloc..LC10);
+            dVar4 = (double)((uint64_t)dVar4 ^ _reloc..LC10);
+        }
+        in_XMM5 = ZEXT816((uint64_t)(dStack80 * _reloc..LC17));
+        puStack96 = (undefined *)0x80015b0;
+        uVar1 = func_0x080281cb((dStack80 * _reloc..LC17) / _reloc.ang2rad, dVar4, auStack40);
+        puStack96 = (undefined *)0x80015b8;
+        func_0x080281cb(uVar1);
+    }
+code_r0x080015b8:
+    if (iStack16 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack96 = (undefined *)0x8001646;
+    func_0x080281cb();
+    iStack104 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack152 = (undefined *)0x8001676;
+    puStack96 = auStack40;
+    uVar1 = func_0x080281cb(auStack128);
+    puStack152 = (undefined *)0x800167e;
+    func_0x080281cb(uVar1);
+    puStack152 = (undefined *)0x800168b;
+    dStack144 = extraout_XMM0_Qa_03;
+    uVar1 = func_0x080281cb(auStack128);
+    puStack152 = (undefined *)0x8001693;
+    func_0x080281cb(uVar1);
+    if ((dStack144 == 0.00000000) && (extraout_XMM0_Qa_04 == 0.00000000)) {
+        reloc.undefined = (code)0x1;
+        puStack152 = (undefined *)0x800170f;
+        uVar1 = func_0x080281cb(auStack128, 0);
+        puStack152 = (undefined *)0x8001717;
+        func_0x080281cb(uVar1);
+    }
+    puStack152 = (undefined *)0x80016c2;
+    func_0x080281cb();
+    puStack152 = (undefined *)0x80016d6;
+    uVar1 = func_0x080281cb(extraout_XMM0_Qa_05 / _reloc.ang2rad, 0, auStack128);
+    puStack152 = (undefined *)0x80016de;
+    func_0x080281cb(uVar1);
+    if (iStack104 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack152 = (undefined *)0x8001729;
+    func_0x080281cb();
+    iStack160 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack208 = (undefined *)0x8001756;
+    puStack152 = auStack128;
+    func_0x080281cb(auStack184);
+    puStack208 = (undefined *)0x800175e;
+    func_0x080281cb(auStack184);
+    puStack208 = (undefined *)0x8001763;
+    func_0x080281cb();
+    puStack208 = (undefined *)0x8001770;
+    dStack200 = extraout_XMM0_Qa_06;
+    func_0x080281cb(auStack184);
+    puStack208 = (undefined *)0x8001775;
+    func_0x080281cb();
+    dStack192 = dStack200 * extraout_XMM0_Qa_07;
+    puStack208 = (undefined *)0x800178c;
+    func_0x080281cb(auStack184);
+    puStack208 = (undefined *)0x8001791;
+    func_0x080281cb();
+    puStack208 = (undefined *)0x800179e;
+    dStack200 = extraout_XMM0_Qa_08;
+    func_0x080281cb(auStack184);
+    puStack208 = (undefined *)0x80017a3;
+    func_0x080281cb();
+    puStack208 = (undefined *)0x80017b6;
+    uVar1 = func_0x080281cb(extraout_XMM0_Qa_09 * dStack200, dStack192, auStack184);
+    puStack208 = (undefined *)0x80017be;
+    func_0x080281cb(uVar1);
+    if (iStack160 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack208 = (undefined *)0x80017d9;
+    func_0x080281cb();
+    iStack216 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack264 = (undefined *)0x8001806;
+    puStack208 = auStack184;
+    func_0x080281cb(auStack240);
+    puStack264 = (undefined *)0x800180e;
+    func_0x080281cb(auStack240);
+    puStack264 = (undefined *)0x8001813;
+    func_0x080281cb();
+    puStack264 = (undefined *)0x8001820;
+    dStack256 = extraout_XMM0_Qa_10;
+    func_0x080281cb(auStack240);
+    puStack264 = (undefined *)0x8001825;
+    func_0x080281cb();
+    dStack248 = dStack256 * extraout_XMM0_Qa_11;
+    puStack264 = (undefined *)0x800183c;
+    func_0x080281cb(auStack240);
+    puStack264 = (undefined *)0x8001841;
+    func_0x080281cb();
+    puStack264 = (undefined *)0x800184e;
+    dStack256 = extraout_XMM0_Qa_12;
+    func_0x080281cb(auStack240);
+    puStack264 = (undefined *)0x8001853;
+    func_0x080281cb();
+    puStack264 = (undefined *)0x8001866;
+    uVar1 = func_0x080281cb(extraout_XMM0_Qa_13 * dStack256, dStack248, auStack240);
+    puStack264 = (undefined *)0x800186e;
+    func_0x080281cb(uVar1);
+    if (iStack216 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack264 = (undefined *)0x8001889;
+    func_0x080281cb();
+    iStack272 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack352 = (undefined *)0x80018b6;
+    puStack264 = auStack240;
+    func_0x080281cb(auStack296);
+    puStack352 = (undefined *)0x80018be;
+    func_0x080281cb(auStack296);
+    dStack336 = extraout_XMM0_Qa_14 + extraout_XMM0_Qa_14;
+    puStack352 = (undefined *)0x80018d4;
+    func_0x080281cb(auStack296);
+    if ((double)((uint64_t)dStack336 & _reloc..LC3) <= _reloc..LC19) {
+        dStack328 = dStack336;
+        puStack352 = (undefined *)0x8001959;
+        func_0x080281cb(extraout_XMM0_Qa_15 + extraout_XMM0_Qa_15, (uint64_t)dStack336 & _reloc..LC3, dStack336, 
+                        &dStack304, &dStack312);
+        auVar5 = ZEXT816((uint64_t)dStack312);
+        dStack336 = dStack312;
+        dStack320 = dStack304;
+        puStack352 = (undefined *)0x8001980;
+        func_0x080281cb(dStack328, dStack304, dStack328);
+        dStack336 = dStack336 + extraout_XMM0_Qa_16;
+        puStack352 = (undefined *)0x800199f;
+        func_0x080281cb(dStack328);
+        puStack352 = (undefined *)0x80019bb;
+        uVar1 = func_0x080281cb(extraout_XMM0_Qa_17 / dStack336, dStack320 / dStack336, auStack296);
+        puStack352 = (undefined *)0x80019c3;
+        func_0x080281cb(uVar1);
+    } else {
+        dVar4 = _reloc..LC16;
+        if (0.00000000 <= dStack336) {
+            dVar4 = _reloc..LC8;
+        }
+        puStack352 = (undefined *)0x8001916;
+        uVar1 = func_0x080281cb(dVar4, 0, dStack336, auStack296);
+        puStack352 = (undefined *)0x800191e;
+        func_0x080281cb(uVar1);
+    }
+    if (iStack272 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack352 = (undefined *)0x80019cd;
+    func_0x080281cb();
+    iStack376 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack352 = auStack296;
+    func_0x080281cb(auStack400);
+    func_0x080281cb(auStack400);
+    dStack440 = (double)((uint64_t)extraout_XMM0_Qa_18 ^ _reloc..LC10);
+    func_0x080281cb(auStack400);
+    dVar4 = _reloc..LC17;
+    dVar8 = SUB168(extraout_XMM0, 0);
+    uVar1 = SUB168(extraout_XMM0 >> 0x40, 0);
+    auVar10 = extraout_XMM0;
+    if (dVar8 == 0.00000000) {
+        if ((double)((uint64_t)extraout_XMM0_Qa_18 & _reloc..LC3) <= _reloc..LC8) {
+            func_0x080281cb(dStack440, (uint64_t)extraout_XMM0_Qa_18 & _reloc..LC3, dVar8, 0);
+            dVar4 = (double)(SUB168(extraout_XMM0_00, 0) ^ _reloc..LC10) / _reloc.ang2rad;
+            auVar3 = CONCAT88(SUB168(extraout_XMM0_00 >> 0x40, 0) ^ *(uint64_t *)0x8004d18, dVar4);
+            uVar1 = func_0x080281cb(0, dVar4, auStack400);
+            func_0x080281cb(uVar1);
+        } else {
+            auVar3 = ZEXT816(0) << 0x40;
+            uVar1 = func_0x080281cb(0, 0, dVar8, 0, auStack400);
+            func_0x080281cb(uVar1);
+            reloc.undefined = (code)0x1;
+        }
+    } else {
+        dVar6 = dVar8 * dVar8;
+        if (extraout_XMM0_Qa_18 != 0.00000000) {
+            dVar7 = (_reloc..LC8 - extraout_XMM0_Qa_18) * (_reloc..LC8 - extraout_XMM0_Qa_18) + dVar6;
+            auVar5 = sqrtsd(ZEXT816((uint64_t)dVar7), ZEXT816((uint64_t)dVar7));
+            dVar2 = SUB168(auVar5, 0);
+            if (dVar7 < 0.00000000) goto code_r0x08001c41;
+            dVar2 = dVar2 * _reloc..LC17;
+            dVar6 = dVar6 + (dStack440 - _reloc..LC8) * (dStack440 - _reloc..LC8);
+            auVar5 = CONCAT88(uVar1, dVar6);
+            auVar10 = sqrtsd(CONCAT88(uVar1, dVar6), CONCAT88(uVar1, dVar6));
+            dVar9 = SUB168(auVar10, 0);
+            if (0.00000000 <= dVar6) goto code_r0x08001b42;
+            func_0x080281cb(dVar6, dVar2, dVar8, 0, dVar6, dVar7, dVar9);
+            auVar5 = ZEXT816((uint64_t)dVar6);
+            dVar9 = dVar9 * dVar4;
+            dVar4 = dVar2 - dVar9;
+            goto code_r0x08001d57;
+        }
+        dVar6 = dVar6 + _reloc..LC8;
+        auVar5 = CONCAT88(uVar1, dVar6);
+        auVar3 = sqrtsd(CONCAT88(uVar1, dVar6), CONCAT88(uVar1, dVar6));
+        if (dVar6 < 0.00000000) {
+            func_0x080281cb(dVar6, SUB168(auVar3, 0), dVar8, 0, dVar6);
+            auVar10 = extraout_XMM0 & (undefined  [16])0xffffffffffffffff;
+            dStack440 = dVar8;
+        }
+        dVar4 = SUB168(auVar3, 0) + SUB168(auVar10, 0);
+        func_0x080281cb(dVar4, dVar4, SUB168(auVar10, 0));
+        auVar3 = (undefined  [16])0x0;
+        uVar1 = func_0x080281cb(extraout_XMM0_Qa_19 / _reloc.ang2rad, 0, auStack400);
+        func_0x080281cb(uVar1);
+    }
+    do {
+        dVar7 = SUB168(in_XMM5, 0);
+        dVar2 = SUB168(auVar3, 0);
+        dVar8 = SUB168(auVar10, 0);
+        dVar6 = SUB168(auVar5, 0);
+        if (iStack376 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return;
+        }
+        func_0x080281cb();
+code_r0x08001c41:
+        func_0x080281cb(dVar7);
+        dVar4 = _reloc..LC17;
+        dVar2 = dVar2 * _reloc..LC17;
+        dVar6 = dVar6 + (dStack440 - _reloc..LC8) * (dStack440 - _reloc..LC8);
+        auVar5 = ZEXT816((uint64_t)dVar6);
+        auVar10 = sqrtsd(in_XMM6, auVar5);
+        dVar9 = SUB168(auVar10, 0);
+        if (0.00000000 <= dVar6) {
+code_r0x08001b42:
+            dVar9 = dVar9 * _reloc..LC17;
+            dVar4 = dVar2 - dVar9;
+            if (dVar7 < 0.00000000) {
+                func_0x080281cb(dVar7, dVar2, dVar8, 0, SUB168(auVar5, 0), dVar7, dVar9);
+            }
+        } else {
+            func_0x080281cb(dVar6, dVar2, dVar8, 0, dVar6, dVar7, dVar9);
+            dVar9 = dVar9 * dVar4;
+            auVar5 = ZEXT816((uint64_t)dVar6);
+            dVar4 = dVar2 - dVar9;
+            if (dVar7 < 0.00000000) {
+                func_0x080281cb(dVar7, dVar2, dVar8, 0, dVar6, dVar7, dVar9);
+                auVar5 = ZEXT816((uint64_t)dVar6);
+                if (0.00000000 <= dVar6) goto code_r0x08001b58;
+            }
+code_r0x08001d57:
+            func_0x080281cb(SUB168(auVar5, 0), dVar2, dVar8);
+        }
+code_r0x08001b58:
+        dVar9 = dVar9 + dVar2;
+        func_0x080281cb(dVar4, dVar2, dVar8, 0);
+        dVar8 = (double)(-(uint32_t)(dVar8 < 0.00000000) | 1);
+        in_XMM5 = ZEXT816((uint64_t)dVar8);
+        dStack440 = (double)(extraout_XMM0_Qa_20 ^ _reloc..LC10) / _reloc.ang2rad;
+        dVar4 = dVar9 * dVar9 - _reloc..LC8;
+        auVar10 = sqrtsd(ZEXT816((uint64_t)dVar4), ZEXT816((uint64_t)dVar4));
+        if (dVar4 < 0.00000000) {
+            func_0x080281cb(dVar4, dStack440, SUB168(auVar10, 0), 0);
+            auVar10 = auVar10 & (undefined  [16])0xffffffffffffffff;
+        }
+        in_XMM6 = ZEXT816((uint64_t)dVar9);
+        dVar9 = SUB168(auVar10, 0) + dVar9;
+        auVar10 = CONCAT88(SUB168(auVar10 >> 0x40, 0), dVar9);
+        func_0x080281cb(dVar9, dStack440, dVar9);
+        auVar3 = ZEXT816((uint64_t)dStack440);
+        uVar1 = func_0x080281cb((extraout_XMM0_Qa_21 * dVar8) / _reloc.ang2rad, dStack440, auStack400);
+        func_0x080281cb(uVar1);
+    } while( true );
+}
+
+
+void sym.f_acosh(int64_t arg7)
+{
+    undefined8 uVar1;
+    int64_t in_FS_OFFSET;
+    double dVar2;
+    double dVar3;
+    uint64_t extraout_XMM0_Qb;
+    undefined8 extraout_XMM0_Qb_00;
+    uint64_t uVar4;
+    uint64_t uVar5;
+    double dVar6;
+    undefined in_XMM4 [16];
+    undefined auVar7 [16];
+    double dVar8;
+    undefined in_XMM5 [16];
+    double dVar9;
+    undefined in_XMM6 [16];
+    undefined auVar10 [16];
+    double dVar11;
+    undefined auStack40 [24];
+    int64_t iStack16;
+    
+    iStack16 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    func_0x080281cb(auStack40);
+    dVar2 = (double)func_0x080281cb(auStack40);
+    dVar3 = (double)func_0x080281cb(auStack40);
+    dVar6 = _reloc..LC17;
+    if (dVar3 != 0.00000000) {
+        dVar11 = dVar3 * dVar3;
+        dVar9 = (dVar2 + _reloc..LC8) * (dVar2 + _reloc..LC8) + dVar11;
+        in_XMM4 = ZEXT816((uint64_t)dVar9);
+        auVar7 = sqrtsd(ZEXT816((uint64_t)dVar9), ZEXT816((uint64_t)dVar9));
+        dVar8 = SUB168(auVar7, 0);
+        if (dVar9 < 0.00000000) goto code_r0x080020c7;
+        uVar1 = SUB168(auVar7 >> 0x40, 0);
+        dVar8 = dVar8 * _reloc..LC17;
+        dVar2 = (dVar2 - _reloc..LC8) * (dVar2 - _reloc..LC8) + dVar11;
+        auVar7 = sqrtsd(ZEXT816((uint64_t)dVar2), ZEXT816((uint64_t)dVar2));
+        uVar5 = extraout_XMM0_Qb;
+        if (0.00000000 <= dVar2) goto code_r0x08001fbe;
+        func_0x080281cb(dVar2, dVar2, dVar3, 0, dVar9, dVar8, SUB168(auVar7, 0), _reloc..LC8);
+        dVar6 = SUB168(auVar7, 0) * dVar6;
+        dVar11 = dVar6 + dVar8;
+        goto code_r0x08002206;
+    }
+    dVar3 = (double)((uint64_t)dVar2 & _reloc..LC3);
+    if (dVar3 <= _reloc..LC8) {
+        dVar6 = (double)func_0x080281cb(dVar2, dVar2, dVar3, 0);
+        auVar7 = CONCAT88(extraout_XMM0_Qb_00, dVar6 / _reloc.ang2rad);
+        uVar1 = func_0x080281cb(0, dVar6 / _reloc.ang2rad, auStack40);
+        func_0x080281cb(uVar1);
+    } else {
+        dVar3 = dVar2 * dVar2 - _reloc..LC8;
+        auVar7 = sqrtsd(ZEXT816((uint64_t)dVar3), ZEXT816((uint64_t)dVar3));
+        if (dVar3 < 0.00000000) {
+            func_0x080281cb(dVar3, dVar2, dVar3, 0, SUB168(auVar7, 0));
+            auVar7 = auVar7 & (undefined  [16])0xffffffffffffffff;
+        }
+        dVar6 = SUB168(auVar7, 0) + dVar2;
+        in_XMM4 = CONCAT88(SUB168(auVar7 >> 0x40, 0), dVar6);
+        dVar6 = (double)func_0x080281cb(dVar6, dVar2);
+        auVar7 = (undefined  [16])0x0;
+        uVar1 = func_0x080281cb(dVar6 / _reloc.ang2rad, 0, auStack40);
+        func_0x080281cb(uVar1);
+    }
+    do {
+        dVar9 = SUB168(in_XMM4, 0);
+        dVar11 = SUB168(in_XMM6, 0);
+        dVar8 = SUB168(in_XMM5, 0);
+        dVar2 = SUB168(auVar7, 0);
+        if (iStack16 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return;
+        }
+        func_0x080281cb();
+code_r0x080020c7:
+        func_0x080281cb(dVar9);
+        dVar6 = _reloc..LC17;
+        in_XMM4 = ZEXT816((uint64_t)dVar9);
+        uVar5 = 0;
+        dVar8 = dVar8 * _reloc..LC17;
+        uVar1 = 0;
+        dVar2 = (dVar2 - _reloc..LC8) * (dVar2 - _reloc..LC8) + dVar11;
+        auVar7 = sqrtsd(ZEXT816((uint64_t)dVar11), ZEXT816((uint64_t)dVar2));
+        if (0.00000000 <= dVar2) {
+code_r0x08001fbe:
+            auVar10 = ZEXT816((uint64_t)_reloc..LC8);
+            dVar9 = SUB168(auVar7, 0) * _reloc..LC17;
+            in_XMM6 = CONCAT88(SUB168(auVar7 >> 0x40, 0), dVar9);
+            dVar6 = SUB168(in_XMM4, 0);
+            dVar11 = dVar8 + dVar9;
+            if (dVar6 < 0.00000000) {
+                func_0x080281cb(dVar6, dVar2, dVar3, 0, dVar6, dVar8, dVar9, _reloc..LC8);
+                uVar5 = 0;
+                in_XMM6 = ZEXT816((uint64_t)dVar9);
+                uVar1 = 0;
+                auVar10 = ZEXT816((uint64_t)_reloc..LC8);
+            }
+        } else {
+            func_0x080281cb(dVar2, dVar2, dVar3, 0, dVar9, dVar8, SUB168(auVar7, 0), _reloc..LC8);
+            in_XMM4 = ZEXT816((uint64_t)dVar9);
+            dVar6 = SUB168(auVar7, 0) * dVar6;
+            dVar11 = dVar8 + dVar6;
+            if (dVar9 < 0.00000000) {
+                func_0x080281cb(dVar9, dVar2, dVar3, 0, dVar9, dVar8, dVar6);
+                uVar5 = 0;
+                in_XMM6 = ZEXT816((uint64_t)dVar6);
+                uVar1 = 0;
+                auVar10 = ZEXT816((uint64_t)_reloc..LC8);
+                if (0.00000000 <= dVar2) goto code_r0x08001fd7;
+            }
+code_r0x08002206:
+            func_0x080281cb(dVar2, dVar2, dVar3);
+            uVar5 = 0;
+            uVar1 = 0;
+            in_XMM6 = ZEXT816((uint64_t)dVar6);
+            auVar10 = ZEXT816((uint64_t)_reloc..LC8);
+        }
+code_r0x08001fd7:
+        dVar8 = dVar8 - SUB168(in_XMM6, 0);
+        in_XMM5 = CONCAT88(uVar1, dVar8);
+        uVar4 = ~-(uint64_t)(dVar3 < 0.00000000) & SUB168(auVar10, 0);
+        auVar7 = orpd(ZEXT816(_reloc..LC16 & -(uint64_t)(dVar3 < 0.00000000)), 
+                      CONCAT88(~uVar5 & SUB168(auVar10 >> 0x40, 0), uVar4));
+        dVar6 = (double)func_0x080281cb(dVar8, SUB168(auVar7, 0), uVar4, 0);
+        dVar2 = (SUB168(auVar7, 0) * dVar6) / _reloc.ang2rad;
+        dVar6 = dVar11 * dVar11 - _reloc..LC8;
+        auVar7 = sqrtsd(ZEXT816((uint64_t)dVar6), ZEXT816((uint64_t)dVar6));
+        if (dVar6 < 0.00000000) {
+            func_0x080281cb(dVar6, dVar2, SUB168(auVar7, 0), 0);
+        }
+        dVar3 = SUB168(auVar7, 0) + dVar11;
+        dVar6 = (double)func_0x080281cb(dVar3, dVar2, dVar3);
+        auVar7 = ZEXT816((uint64_t)dVar2);
+        uVar1 = func_0x080281cb(dVar6 / _reloc.ang2rad, dVar2, auStack40);
+        func_0x080281cb(uVar1);
+    } while( true );
+}
+
+
+void sym.f_atanh(int64_t arg7, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3,
+                undefined8 placeholder_4, undefined8 placeholder_5, undefined8 placeholder_6, undefined8 placeholder_7,
+                undefined8 placeholder_8, undefined8 placeholder_9, int64_t arg3)
+{
+    undefined8 uVar1;
+    int64_t in_FS_OFFSET;
+    double dVar2;
+    uint64_t uVar3;
+    double dVar4;
+    double dVar5;
+    undefined auVar6 [16];
+    double dVar7;
+    double dVar8;
+    double dVar9;
+    double dVar10;
+    double dVar11;
+    undefined auVar12 [16];
+    undefined auVar13 [16];
+    double dVar14;
+    undefined auVar15 [16];
+    undefined auVar16 [16];
+    double dVar17;
+    undefined in_XMM11 [16];
+    double in_XMM12_Qa;
+    undefined auVar18 [16];
+    undefined auVar19 [16];
+    undefined auVar20 [16];
+    double dStack248;
+    double dStack240;
+    undefined auStack168 [24];
+    int64_t iStack144;
+    undefined *puStack136;
+    undefined auStack128 [24];
+    int64_t iStack104;
+    undefined *puStack96;
+    double dStack80;
+    double dStack72;
+    double dStack64;
+    double dStack56;
+    double dStack48;
+    undefined auStack40 [24];
+    int64_t iStack16;
+    
+    dVar17 = SUB168(in_XMM11, 0);
+    iStack16 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack96 = (undefined *)0x8002376;
+    func_0x080281cb(arg7, placeholder_1, placeholder_2, placeholder_3, placeholder_4, placeholder_5, placeholder_6, 
+                    placeholder_7, auStack40);
+    puStack96 = (undefined *)0x800237e;
+    dStack72 = (double)func_0x080281cb(auStack40);
+    dStack80 = (double)((uint64_t)dStack72 ^ _reloc..LC10);
+    puStack96 = (undefined *)0x800239e;
+    dVar2 = (double)func_0x080281cb(dStack72, dStack80, auStack40);
+    dVar7 = dStack72;
+    if (dVar2 == 0.00000000) {
+        puStack96 = (undefined *)0x800250f;
+        uVar3 = func_0x080281cb(dStack80, dStack80, dVar2, dStack72, 0);
+        dVar2 = (double)(uVar3 ^ _reloc..LC10) / _reloc.ang2rad;
+code_r0x08002527:
+        puStack96 = (undefined *)0x8002533;
+        uVar1 = func_0x080281cb(0, dVar2, auStack40);
+        puStack96 = (undefined *)0x800253b;
+        func_0x080281cb(uVar1);
+    } else {
+        dVar4 = dStack80;
+        if (dStack72 == 0.00000000) {
+            if (_reloc..LC8 <= (double)((uint64_t)dVar2 & _reloc..LC3)) {
+                reloc.undefined = (code)0x1;
+                dVar2 = 0.00000000;
+                goto code_r0x08002527;
+            }
+        } else {
+            if (0.00000000 < dStack72) {
+                dVar2 = (double)((uint64_t)dVar2 ^ _reloc..LC10);
+                dVar4 = dStack72;
+            }
+        }
+        dStack48 = dStack72;
+        dStack64 = dVar4 * dVar4;
+        dStack56 = _reloc..LC8;
+        dVar4 = (dVar4 + dVar4) / ((_reloc..LC8 - dStack64) - dVar2 * dVar2);
+        puStack96 = (undefined *)0x800244f;
+        dStack72 = dVar2;
+        dStack80 = (double)func_0x080281cb(dVar4, dVar4, dVar2, dVar7, 0, _reloc..LC8, dStack64, dVar2 * dVar2);
+        puStack96 = (undefined *)0x800248c;
+        dVar4 = (double)func_0x080281cb(((dStack72 + dStack56) * (dStack72 + dStack56) + dStack64) /
+                                        ((dStack72 - dStack56) * (dStack72 - dStack56) + dStack64));
+        dVar4 = dVar4 * _reloc..LC1;
+        dVar7 = dStack80;
+        if (dStack80 < 0.00000000) {
+            dVar7 = dStack80 + _reloc..LC18;
+        }
+        if (0.00000000 < dStack48) {
+            dVar7 = (double)((uint64_t)dVar7 ^ _reloc..LC10);
+            dVar4 = (double)((uint64_t)dVar4 ^ _reloc..LC10);
+        }
+        dVar2 = (dVar7 * _reloc..LC20) / _reloc.ang2rad;
+        puStack96 = (undefined *)0x80024e0;
+        dVar7 = dStack48;
+        uVar1 = func_0x080281cb(dVar4, dVar2, auStack40);
+        puStack96 = (undefined *)0x80024e8;
+        func_0x080281cb(uVar1);
+    }
+    if (iStack16 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack96 = (undefined *)0x8002542;
+    func_0x080281cb();
+    iStack104 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack136 = (undefined *)0x8002574;
+    puStack96 = auStack40;
+    func_0x080281cb(auStack128);
+    puStack136 = (undefined *)0x800257c;
+    uVar3 = func_0x080281cb(auStack128);
+    if (_reloc.zero < (double)(uVar3 & _reloc..LC3)) {
+        puStack136 = (undefined *)0x8002612;
+        func_0x080281cb(0xffffffff, "can only do elliptic integrals of reals");
+    } else {
+        puStack136 = (undefined *)0x8002596;
+        dVar4 = (double)func_0x080281cb(auStack128);
+        dVar7 = 0.00000000;
+        dVar2 = (_reloc..LC8 - dVar4) * (dVar4 + _reloc..LC8);
+        if (dVar2 <= 0.00000000) {
+            puStack136 = (undefined *)0x80025f8;
+            func_0x080281cb(dVar4 + _reloc..LC8, dVar2, _reloc..LC8, 0, auStack128);
+            reloc.undefined = (code)0x1;
+        } else {
+            puStack136 = (undefined *)0x80025c1;
+            uVar1 = sym.carlson_elliptic_rf(0, (int64_t)dVar2, (int64_t)_reloc..LC8);
+            dVar7 = 0.00000000;
+            dVar2 = 0.00000000;
+            puStack136 = (undefined *)0x80025d1;
+            uVar1 = func_0x080281cb(uVar1, 0, auStack128);
+            puStack136 = (undefined *)0x80025d9;
+            func_0x080281cb(uVar1);
+        }
+        if (iStack104 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return;
+        }
+    }
+    puStack136 = (undefined *)0x8002617;
+    func_0x080281cb();
+    iStack144 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack136 = auStack128;
+    func_0x080281cb(auStack168);
+    uVar3 = func_0x080281cb(auStack168);
+    if (_reloc.zero < (double)(uVar3 & _reloc..LC3)) {
+        func_0x080281cb(0xffffffff, "can only do elliptic integrals of reals");
+        goto code_r0x08002b8a;
+    }
+    dStack248 = (double)func_0x080281cb(auStack168);
+    dVar2 = (dStack248 + _reloc..LC8) * (_reloc..LC8 - dStack248);
+    if (dVar2 <= 0.00000000) {
+        in_XMM12_Qa = dStack248;
+        if (0.00000000 <= dVar2) {
+            dVar2 = 0.00000000;
+            uVar1 = func_0x080281cb(_reloc..LC8, 0, _reloc..LC8, auStack168);
+            func_0x080281cb(uVar1);
+        } else {
+            reloc.undefined = (code)0x1;
+            func_0x080281cb(_reloc..LC8 - dStack248, dVar2, _reloc..LC8, auStack168);
+        }
+        while (iStack144 != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+code_r0x08002b8a:
+            func_0x080281cb();
+code_r0x08002b8f:
+            func_0x080281cb(dVar7);
+            dVar10 = _reloc..LC22;
+code_r0x0800294d:
+            dVar7 = dVar7 * dVar2;
+            dVar2 = 0.00000000;
+            dVar17 = ((dVar17 / dVar7 + in_XMM12_Qa) * dStack248) / dVar10;
+            uVar1 = func_0x080281cb(dStack240 - dVar17, 0, auStack168);
+            func_0x080281cb(uVar1);
+        }
+        return;
+    }
+    dStack240 = (double)sym.carlson_elliptic_rf(0, (int64_t)dVar2, (int64_t)_reloc..LC8);
+    dVar9 = 0.00000000;
+    uVar1 = 0;
+    auVar12 = ZEXT816(0);
+    auVar16 = ZEXT816((uint64_t)_reloc..LC1);
+    dStack248 = dStack248 * dStack248;
+    auVar6 = ZEXT816((uint64_t)_reloc..LC8);
+    auVar19 = ZEXT816((uint64_t)_reloc..LC22);
+    auVar18 = ZEXT816(_reloc..LC24);
+    auVar13 = ZEXT816(_reloc..LC3);
+    in_XMM12_Qa = dVar9;
+    dVar4 = _reloc..LC8;
+    dVar14 = _reloc..LC8;
+    while( true ) {
+        auVar20 = sqrtsd(CONCAT88(uVar1, dVar2), CONCAT88(uVar1, dVar2));
+        if (dVar2 < 0.00000000) {
+            func_0x080281cb(dVar2, dVar2, SUB168(auVar6, 0));
+            auVar6 = ZEXT816((uint64_t)_reloc..LC8);
+            auVar20 = auVar20 & (undefined  [16])0xffffffffffffffff;
+            auVar16 = ZEXT816((uint64_t)_reloc..LC1);
+            auVar13 = ZEXT816(_reloc..LC3);
+            auVar18 = ZEXT816(_reloc..LC24);
+            auVar19 = ZEXT816((uint64_t)_reloc..LC22);
+        }
+        auVar15 = sqrtsd(ZEXT816((uint64_t)dVar4), ZEXT816((uint64_t)dVar4));
+        dVar7 = SUB168(auVar15, 0);
+        if (dVar4 < 0.00000000) {
+            func_0x080281cb(dVar4, dVar2, SUB168(auVar6, 0));
+            auVar6 = ZEXT816((uint64_t)_reloc..LC8);
+            auVar16 = ZEXT816((uint64_t)_reloc..LC1);
+            auVar13 = ZEXT816(_reloc..LC3);
+            auVar20 = auVar20 & (undefined  [16])0xffffffffffffffff;
+            auVar18 = ZEXT816(_reloc..LC24);
+            auVar19 = ZEXT816((uint64_t)_reloc..LC22);
+        }
+        uVar1 = SUB168(auVar20 >> 0x40, 0);
+        dVar10 = (SUB168(auVar20, 0) + dVar7) * SUB168(auVar12, 0) + SUB168(auVar20, 0) * dVar7;
+        dVar11 = SUB168(auVar16, 0);
+        dVar17 = dVar14 * dVar11;
+        dVar8 = dVar4 + dVar10;
+        dVar4 = dVar8 * dVar11;
+        dVar9 = (dVar9 + dVar10) * dVar11;
+        dVar2 = (dVar10 + dVar2) * dVar11;
+        dVar10 = SUB168(auVar19, 0);
+        in_XMM12_Qa = in_XMM12_Qa + dVar14 / (dVar7 * dVar8);
+        dVar7 = (dVar9 + dVar2 + dVar4 * dVar10) * _reloc..LC23;
+        dVar14 = (dVar7 - dVar9) / dVar7;
+        uVar3 = SUB168(auVar13, 0);
+        dVar8 = SUB168(auVar18, 0);
+        if ((((double)((uint64_t)dVar14 & uVar3) <= dVar8) &&
+            (dVar11 = (dVar7 - dVar2) / dVar7, (double)((uint64_t)dVar11 & uVar3) <= dVar8)) &&
+           (dVar5 = (dVar7 - dVar4) / dVar7, (double)((uint64_t)dVar5 & uVar3) <= dVar8)) break;
+        auVar12 = sqrtsd(ZEXT816((uint64_t)dVar9), ZEXT816((uint64_t)dVar9));
+        dVar14 = dVar17;
+        if (dVar9 < 0.00000000) {
+            func_0x080281cb(dVar9, dVar2, SUB168(auVar6, 0), dVar7, dVar4, dVar9, 0, SUB168(auVar12, 0));
+            uVar1 = 0;
+            auVar6 = ZEXT816((uint64_t)_reloc..LC8);
+            auVar12 = auVar12 & (undefined  [16])0xffffffffffffffff;
+            auVar13 = ZEXT816(_reloc..LC3);
+            auVar16 = ZEXT816((uint64_t)_reloc..LC1);
+            auVar18 = ZEXT816(_reloc..LC24);
+            auVar19 = ZEXT816((uint64_t)_reloc..LC22);
+        }
+    }
+    dVar11 = dVar11 * dVar14;
+    in_XMM12_Qa = in_XMM12_Qa * dVar10;
+    dVar4 = dVar11 - dVar5 * dVar5;
+    dVar2 = dVar11 - dVar5 * dVar5 * _reloc..LC25;
+    dVar14 = dVar4 + dVar2 + dVar4;
+    dVar17 = dVar17 * (((_reloc..LC26 * dVar5 * dVar11 + dVar4 * _reloc..LC27) * dVar5 + _reloc..LC28 * dVar14) * dVar5
+                      + SUB168(auVar6, 0) +
+                        ((_reloc..LC29 * dVar2 - _reloc..LC30) - dVar5 * _reloc..LC31 * dVar14) * dVar2);
+    auVar6 = sqrtsd(ZEXT816((uint64_t)dVar7), ZEXT816((uint64_t)dVar7));
+    dVar2 = SUB168(auVar6, 0);
+    if (dVar7 < 0.00000000) goto code_r0x08002b8f;
+    goto code_r0x0800294d;
+}
+
+
+void sym.f_ellip_third(int64_t arg7, double placeholder_1, double placeholder_2, int64_t arg10, int64_t arg11,
+                      undefined8 placeholder_5, double placeholder_6, double placeholder_7, undefined8 placeholder_8,
+                      undefined8 placeholder_9, int64_t arg3)
+{
+    undefined8 uVar1;
+    int64_t in_FS_OFFSET;
+    uint64_t uVar2;
+    double dVar3;
+    double dVar4;
+    double dVar5;
+    undefined auVar6 [16];
+    double dVar7;
+    undefined auVar8 [16];
+    double in_XMM8_Qa;
+    double dVar9;
+    double dVar10;
+    double dVar11;
+    double dStack152;
+    double dStack144;
+    double dStack136;
+    double dStack128;
+    double dStack120;
+    double dStack112;
+    undefined auStack88 [32];
+    undefined auStack56 [24];
+    int64_t iStack32;
+    
+    iStack32 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    func_0x080281cb(arg7, placeholder_1, placeholder_2, arg10, arg11, placeholder_5, placeholder_6, placeholder_7, 
+                    auStack88);
+    func_0x080281cb(auStack56);
+    uVar2 = func_0x080281cb(auStack88);
+    if ((_reloc.zero < (double)(uVar2 & _reloc..LC3)) ||
+       (uVar2 = func_0x080281cb(auStack56), _reloc.zero < (double)(uVar2 & _reloc..LC3))) {
+        func_0x080281cb(0xffffffff, "can only do elliptic integrals of reals");
+        do {
+            func_0x080281cb();
+code_r0x08003377:
+            func_0x080281cb(placeholder_1);
+code_r0x08003090:
+            placeholder_7 = placeholder_7 / (placeholder_1 * placeholder_6);
+            dVar3 = placeholder_7 + in_XMM8_Qa;
+            if (dStack144 <= 0.00000000) {
+                dVar5 = (double)sym.carlson_elliptic_rf(arg11, arg10, (int64_t)placeholder_2);
+                dVar3 = ((dStack112 - dVar5) * _reloc..LC22 + dVar3 * dStack120) * dStack128;
+            }
+            placeholder_1 = 0.00000000;
+            uVar1 = func_0x080281cb((dVar3 * dStack152) / _reloc..LC22 + dStack136, 0, auStack56);
+            func_0x080281cb(uVar1);
+code_r0x08002cbe:
+        } while (iStack32 != *(int64_t *)(in_FS_OFFSET + 0x28));
+        return;
+    }
+    dVar3 = (double)func_0x080281cb(auStack88);
+    dStack152 = (double)func_0x080281cb(auStack56);
+    placeholder_1 = dVar3 + _reloc..LC8;
+    arg10 = (int64_t)((_reloc..LC8 - dVar3) * placeholder_1);
+    if ((0.00000000 < (double)arg10) && (placeholder_7 = _reloc..LC8, dStack152 < _reloc..LC8)) {
+        dStack136 = (double)sym.carlson_elliptic_rf(0, arg10, (int64_t)_reloc..LC8);
+        dStack144 = _reloc..LC8 - dStack152;
+        placeholder_2 = _reloc..LC8;
+        if (dStack144 <= 0.00000000) {
+            dVar3 = 0.00000000;
+            if ((0.00000000 <= (double)arg10) && (_reloc..LC8 < (double)arg10)) {
+                dVar3 = (double)arg10 * 0.00000000;
+                placeholder_2 = (double)arg10;
+            }
+            arg10 = (int64_t)(((double)arg10 + 0.00000000 + _reloc..LC8) - placeholder_2);
+            dStack128 = _reloc..LC8 / ((double)arg10 - dStack144);
+            dStack120 = (placeholder_2 - (double)arg10) * dStack128 * (double)arg10;
+            dVar5 = dStack120 + (double)arg10;
+            dStack112 = (double)sym.carlson_elliptic_rc
+                                          ((int64_t)(dVar3 / (double)arg10), 
+                                           (int64_t)((dStack144 * dVar5) / (double)arg10));
+        } else {
+            dStack112 = 0.00000000;
+            dStack120 = 0.00000000;
+            dStack128 = 0.00000000;
+            dVar5 = dStack144;
+        }
+        arg11 = 0;
+        auVar6 = ZEXT816(0);
+        auVar8 = ZEXT816((uint64_t)_reloc..LC8);
+        in_XMM8_Qa = (double)arg11;
+        while( true ) {
+            dVar11 = SUB168(auVar6, 0);
+            dVar10 = SUB168(auVar8, 0);
+            auVar6 = sqrtsd(ZEXT816((uint64_t)arg10), ZEXT816((uint64_t)arg10));
+            dVar3 = SUB168(auVar6, 0);
+            if ((double)arg10 < 0.00000000) {
+                func_0x080281cb(arg10, dVar3, placeholder_2, arg10, arg11, 0, dVar11, dVar10);
+            }
+            auVar6 = sqrtsd(ZEXT816((uint64_t)placeholder_2), ZEXT816((uint64_t)placeholder_2));
+            dVar4 = SUB168(auVar6, 0);
+            if (placeholder_2 < 0.00000000) {
+                func_0x080281cb(placeholder_2, dVar3, placeholder_2, arg10, arg11, 0, dVar11, dVar10);
+            }
+            dVar9 = (dVar3 + dVar4) * dVar11 + dVar3 * dVar4;
+            dVar7 = dVar9 + dVar5;
+            dVar3 = (dVar11 + dVar3 + dVar4) * dVar5 + dVar4 * dVar3 * dVar11;
+            dVar3 = (double)sym.carlson_elliptic_rc((int64_t)(dVar3 * dVar3), (int64_t)(dVar7 * dVar7 * dVar5));
+            dVar5 = dVar7 * _reloc..LC1;
+            arg11 = (int64_t)(((double)arg11 + dVar9) * _reloc..LC1);
+            arg10 = (int64_t)(((double)arg10 + dVar9) * _reloc..LC1);
+            placeholder_2 = (placeholder_2 + dVar9) * _reloc..LC1;
+            placeholder_7 = dVar10 * _reloc..LC1;
+            auVar8 = ZEXT816((uint64_t)placeholder_7);
+            in_XMM8_Qa = in_XMM8_Qa + dVar3 * dVar10;
+            placeholder_1 = ((double)arg11 + (double)arg10 + placeholder_2 + dVar5 + dVar5) * _reloc..LC23;
+            dVar3 = (placeholder_1 - (double)arg11) / placeholder_1;
+            if (((((double)((uint64_t)dVar3 & _reloc..LC3) <= _reloc..LC24) &&
+                 (dVar11 = (placeholder_1 - (double)arg10) / placeholder_1,
+                 (double)((uint64_t)dVar11 & _reloc..LC3) <= _reloc..LC24)) &&
+                (dVar10 = (placeholder_1 - placeholder_2) / placeholder_1,
+                (double)((uint64_t)dVar10 & _reloc..LC3) <= _reloc..LC24)) &&
+               (dVar4 = (placeholder_1 - dVar5) / placeholder_1, (double)((uint64_t)dVar4 & _reloc..LC3) <= _reloc..LC24
+               )) break;
+            auVar6 = sqrtsd(ZEXT816((uint64_t)arg11), ZEXT816((uint64_t)arg11));
+            if ((double)arg11 < 0.00000000) {
+                func_0x080281cb(arg11);
+                auVar8 = ZEXT816((uint64_t)placeholder_7);
+                auVar6 = auVar6 & (undefined  [16])0xffffffffffffffff;
+            }
+        }
+        dVar5 = (dVar11 + dVar10) * dVar3 + dVar11 * dVar10;
+        in_XMM8_Qa = in_XMM8_Qa * _reloc..LC22;
+        dVar10 = dVar3 * dVar11 * dVar10;
+        dVar3 = dVar4 * dVar4;
+        dVar11 = dVar5 - dVar3 * _reloc..LC22;
+        placeholder_7 =
+             placeholder_7 *
+             ((dVar10 * ((_reloc..LC26 * dVar4 - _reloc..LC33) * dVar4 + _reloc..LC28) +
+               dVar11 * ((_reloc..LC32 * dVar11 - _reloc..LC30) -
+                        ((dVar4 + dVar4) * (dVar5 - dVar3) + dVar10) * _reloc..LC31) + _reloc..LC8 +
+              dVar5 * dVar4 * (_reloc..LC2 - _reloc..LC34 * dVar4)) - dVar3 * dVar4 * _reloc..LC2);
+        auVar6 = sqrtsd(ZEXT816((uint64_t)placeholder_1), ZEXT816((uint64_t)placeholder_1));
+        placeholder_6 = SUB168(auVar6, 0);
+        if (placeholder_1 < 0.00000000) goto code_r0x08003377;
+        goto code_r0x08003090;
+    }
+    reloc.undefined = (code)0x1;
+    func_0x080281cb(dStack152, placeholder_1, auStack88);
+    goto code_r0x08002cbe;
+}
+
+
+pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.f pdg @ sym.f pdg @ sym.f_ pdg @ sym.f_ pdg @ sym.f_i pdg @ sym.f_i pdg @ sym.f_in pdg @ sym.f_in pdg @ sym.f_int pdg @ sym.f_intGhidra Decompiler Error: Deleting integrated varnode
+
+
+pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.f pdg @ sym.f pdg @ sym.f_ pdg @ sym.f_ pdg @ sym.f_b pdg @ sym.f_b pdg @ sym.f_be pdg @ sym.f_be pdg @ sym.f_bes pdg @ sym.f_bes pdg @ sym.f_besi pdg @ sym.f_besi pdg @ sym.f_besi1 pdg @ sym.f_besi1Ghidra Decompiler Error: Deleting integrated varnode
+
+
+void sym.f_besj0(int64_t arg7)
+{
+    undefined8 uVar1;
+    char *UNRECOVERED_JUMPTABLE;
+    int64_t in_FS_OFFSET;
+    uint64_t extraout_XMM0_Qa;
+    double dVar2;
+    uint64_t extraout_XMM0_Qa_00;
+    uint64_t extraout_XMM0_Qa_01;
+    double extraout_XMM0_Qa_02;
+    uint64_t extraout_XMM0_Qa_03;
+    double extraout_XMM0_Qa_04;
+    uint64_t extraout_XMM0_Qa_05;
+    uint64_t extraout_XMM0_Qa_06;
+    undefined auStack1136 [32];
+    undefined auStack1104 [28];
+    int32_t iStack1076;
+    int64_t iStack1048;
+    undefined *puStack1040;
+    undefined auStack1032 [32];
+    undefined auStack1000 [24];
+    int32_t iStack976;
+    int64_t iStack944;
+    undefined *puStack936;
+    undefined auStack928 [32];
+    undefined auStack896 [20];
+    int32_t iStack876;
+    int64_t iStack840;
+    undefined *puStack832;
+    undefined auStack824 [32];
+    undefined auStack792 [16];
+    int32_t iStack776;
+    int64_t iStack736;
+    undefined *puStack728;
+    undefined auStack720 [32];
+    undefined auStack688 [12];
+    int32_t iStack676;
+    int64_t iStack632;
+    undefined *puStack624;
+    undefined auStack616 [32];
+    undefined auStack584 [8];
+    int32_t iStack576;
+    int64_t iStack528;
+    undefined *puStack520;
+    undefined auStack512 [32];
+    undefined auStack480 [4];
+    int32_t iStack476;
+    int64_t iStack424;
+    undefined *puStack416;
+    undefined auStack408 [32];
+    int32_t aiStack376 [14];
+    int64_t iStack320;
+    undefined *puStack312;
+    undefined auStack304 [32];
+    int32_t aiStack272 [2];
+    undefined4 uStack264;
+    int64_t iStack248;
+    undefined *puStack240;
+    undefined auStack232 [32];
+    int32_t aiStack200 [2];
+    undefined4 uStack192;
+    int64_t iStack176;
+    undefined *puStack168;
+    undefined auStack160 [24];
+    int64_t iStack136;
+    undefined *puStack128;
+    undefined auStack120 [24];
+    int64_t iStack96;
+    undefined *puStack88;
+    undefined auStack80 [24];
+    int64_t iStack56;
+    undefined *puStack48;
+    undefined auStack40 [24];
+    int64_t iStack16;
+    
+    iStack16 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack48 = (undefined *)0x8004004;
+    func_0x080281cb(arg7, auStack40);
+    puStack48 = (undefined *)0x800400c;
+    func_0x080281cb(auStack40);
+    dVar2 = (double)(extraout_XMM0_Qa & _reloc..LC3);
+    if (_reloc.zero < dVar2) {
+        UNRECOVERED_JUMPTABLE = "can only do bessel functions of reals";
+        puStack48 = (undefined *)0x8004066;
+        func_0x080281cb(dVar2, 0xffffffff);
+    } else {
+        puStack48 = (undefined *)0x8004026;
+        func_0x080281cb(dVar2, auStack40);
+        puStack48 = (undefined *)0x800402b;
+        func_0x080281cb();
+        puStack48 = (undefined *)0x8004037;
+        uVar1 = func_0x080281cb(auStack40);
+        puStack48 = (undefined *)0x800403f;
+        func_0x080281cb(uVar1);
+        if (iStack16 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return;
+        }
+    }
+    puStack48 = (undefined *)0x800406b;
+    func_0x080281cb();
+    iStack56 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack88 = (undefined *)0x8004094;
+    puStack48 = auStack40;
+    func_0x080281cb(auStack80);
+    puStack88 = (undefined *)0x800409c;
+    func_0x080281cb(auStack80);
+    dVar2 = (double)(extraout_XMM0_Qa_00 & _reloc..LC3);
+    if (_reloc.zero < dVar2) {
+        UNRECOVERED_JUMPTABLE = "can only do bessel functions of reals";
+        puStack88 = (undefined *)0x80040f6;
+        func_0x080281cb(dVar2, 0xffffffff);
+    } else {
+        puStack88 = (undefined *)0x80040b6;
+        func_0x080281cb(dVar2, auStack80);
+        puStack88 = (undefined *)0x80040bb;
+        func_0x080281cb();
+        puStack88 = (undefined *)0x80040c7;
+        uVar1 = func_0x080281cb(auStack80);
+        puStack88 = (undefined *)0x80040cf;
+        func_0x080281cb(uVar1);
+        if (iStack56 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return;
+        }
+    }
+    puStack88 = (undefined *)0x80040fb;
+    func_0x080281cb();
+    iStack96 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack128 = (undefined *)0x8004124;
+    puStack88 = auStack80;
+    func_0x080281cb(auStack120);
+    puStack128 = (undefined *)0x800412c;
+    func_0x080281cb(auStack120);
+    dVar2 = (double)(extraout_XMM0_Qa_01 & _reloc..LC3);
+    if (_reloc.zero < dVar2) {
+        UNRECOVERED_JUMPTABLE = "can only do bessel functions of reals";
+        puStack128 = (undefined *)0x80041be;
+        func_0x080281cb(dVar2, 0xffffffff);
+    } else {
+        puStack128 = (undefined *)0x8004146;
+        func_0x080281cb(dVar2, auStack120);
+        if (extraout_XMM0_Qa_02 <= 0.00000000) {
+            puStack128 = (undefined *)0x800419c;
+            uVar1 = func_0x080281cb(0, 0, auStack120);
+            puStack128 = (undefined *)0x80041a4;
+            func_0x080281cb(uVar1);
+            reloc.undefined = (code)0x1;
+        } else {
+            puStack128 = (undefined *)0x8004158;
+            func_0x080281cb(auStack120);
+            puStack128 = (undefined *)0x800415d;
+            func_0x080281cb();
+            puStack128 = (undefined *)0x8004169;
+            uVar1 = func_0x080281cb(auStack120);
+            puStack128 = (undefined *)0x8004171;
+            func_0x080281cb(uVar1);
+        }
+        if (iStack96 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return;
+        }
+    }
+    puStack128 = (undefined *)0x80041c3;
+    func_0x080281cb();
+    iStack136 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack168 = (undefined *)0x80041f4;
+    puStack128 = auStack120;
+    func_0x080281cb(auStack160);
+    puStack168 = (undefined *)0x80041fc;
+    func_0x080281cb(auStack160);
+    dVar2 = (double)(extraout_XMM0_Qa_03 & _reloc..LC3);
+    if (_reloc.zero < dVar2) {
+        UNRECOVERED_JUMPTABLE = "can only do bessel functions of reals";
+        puStack168 = (undefined *)0x800428e;
+        func_0x080281cb(dVar2, 0xffffffff);
+    } else {
+        puStack168 = (undefined *)0x8004216;
+        func_0x080281cb(dVar2, auStack160);
+        if (extraout_XMM0_Qa_04 <= 0.00000000) {
+            puStack168 = (undefined *)0x800426c;
+            uVar1 = func_0x080281cb(0, 0, auStack160);
+            puStack168 = (undefined *)0x8004274;
+            func_0x080281cb(uVar1);
+            reloc.undefined = (code)0x1;
+        } else {
+            puStack168 = (undefined *)0x8004228;
+            func_0x080281cb(auStack160);
+            puStack168 = (undefined *)0x800422d;
+            func_0x080281cb();
+            puStack168 = (undefined *)0x8004239;
+            uVar1 = func_0x080281cb(auStack160);
+            puStack168 = (undefined *)0x8004241;
+            func_0x080281cb(uVar1);
+        }
+        if (iStack136 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return;
+        }
+    }
+    puStack168 = (undefined *)0x8004293;
+    func_0x080281cb();
+    iStack176 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack240 = (undefined *)0x80042c4;
+    puStack168 = auStack160;
+    func_0x080281cb(auStack232);
+    puStack240 = (undefined *)0x80042ce;
+    func_0x080281cb(aiStack200);
+    if (aiStack200[0] == 1) {
+        puStack240 = (undefined *)0x8004318;
+        func_0x080281cb(auStack232);
+        if (_reloc.zero < (double)(extraout_XMM0_Qa_05 & _reloc..LC3)) goto code_r0x080042d5;
+        puStack240 = (undefined *)0x8004332;
+        func_0x080281cb(extraout_XMM0_Qa_05 & _reloc..LC3, auStack232);
+        puStack240 = (undefined *)0x800433b;
+        func_0x080281cb(uStack192);
+        puStack240 = (undefined *)0x8004347;
+        uVar1 = func_0x080281cb(auStack232);
+        puStack240 = (undefined *)0x800434f;
+        func_0x080281cb(uVar1);
+    } else {
+code_r0x080042d5:
+        puStack240 = (undefined *)0x80042e5;
+        uVar1 = func_0x080281cb(0, 0, auStack232);
+        puStack240 = (undefined *)0x80042ed;
+        func_0x080281cb(uVar1);
+        reloc.undefined = (code)0x1;
+    }
+    if (iStack176 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack240 = (undefined *)0x8004356;
+    func_0x080281cb();
+    iStack248 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack312 = (undefined *)0x8004384;
+    puStack240 = auStack232;
+    func_0x080281cb(auStack304);
+    puStack312 = (undefined *)0x800438e;
+    func_0x080281cb(aiStack272);
+    if (aiStack272[0] == 1) {
+        puStack312 = (undefined *)0x80043d8;
+        func_0x080281cb(auStack304);
+        if ((double)(extraout_XMM0_Qa_06 & _reloc..LC3) <= _reloc.zero) {
+            puStack312 = (undefined *)0x80043f2;
+            func_0x080281cb(extraout_XMM0_Qa_06 & _reloc..LC3, auStack304);
+            puStack312 = (undefined *)0x80043fb;
+            func_0x080281cb(uStack264);
+            puStack312 = (undefined *)0x8004407;
+            uVar1 = func_0x080281cb(auStack304);
+            puStack312 = (undefined *)0x800440f;
+            func_0x080281cb(uVar1);
+            goto code_r0x080043b4;
+        }
+    }
+    puStack312 = (undefined *)0x80043a5;
+    uVar1 = func_0x080281cb(0, 0, auStack304);
+    puStack312 = (undefined *)0x80043ad;
+    func_0x080281cb(uVar1);
+    reloc.undefined = (code)0x1;
+code_r0x080043b4:
+    if (iStack248 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack312 = (undefined *)0x8004416;
+    func_0x080281cb();
+    iStack320 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack416 = (undefined *)0x8004444;
+    puStack312 = auStack304;
+    func_0x080281cb(auStack408);
+    puStack416 = (undefined *)0x800444c;
+    func_0x080281cb(auStack408);
+    puStack416 = (undefined *)0x8004456;
+    func_0x080281cb(aiStack376);
+    puStack416 = (undefined *)0x800446c;
+    uVar1 = func_0x080281cb((double)aiStack376[0], 0, auStack408);
+    puStack416 = (undefined *)0x8004474;
+    func_0x080281cb(uVar1);
+    if (iStack320 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack416 = (undefined *)0x800448f;
+    func_0x080281cb();
+    iStack424 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack520 = (undefined *)0x80044b4;
+    puStack416 = auStack408;
+    func_0x080281cb(auStack512);
+    puStack520 = (undefined *)0x80044bc;
+    func_0x080281cb(auStack512);
+    puStack520 = (undefined *)0x80044c6;
+    func_0x080281cb(auStack480);
+    puStack520 = (undefined *)0x80044dc;
+    uVar1 = func_0x080281cb((double)iStack476, 0, auStack512);
+    puStack520 = (undefined *)0x80044e4;
+    func_0x080281cb(uVar1);
+    if (iStack424 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack520 = (undefined *)0x80044ff;
+    func_0x080281cb();
+    iStack528 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack624 = (undefined *)0x8004524;
+    puStack520 = auStack512;
+    func_0x080281cb(auStack616);
+    puStack624 = (undefined *)0x800452c;
+    func_0x080281cb(auStack616);
+    puStack624 = (undefined *)0x8004536;
+    func_0x080281cb(auStack584);
+    puStack624 = (undefined *)0x800454c;
+    uVar1 = func_0x080281cb((double)iStack576, 0, auStack616);
+    puStack624 = (undefined *)0x8004554;
+    func_0x080281cb(uVar1);
+    if (iStack528 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack624 = (undefined *)0x800456f;
+    func_0x080281cb();
+    iStack632 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack728 = (undefined *)0x8004594;
+    puStack624 = auStack616;
+    func_0x080281cb(auStack720);
+    puStack728 = (undefined *)0x800459c;
+    func_0x080281cb(auStack720);
+    puStack728 = (undefined *)0x80045a6;
+    func_0x080281cb(auStack688);
+    puStack728 = (undefined *)0x80045bc;
+    uVar1 = func_0x080281cb((double)iStack676, 0, auStack720);
+    puStack728 = (undefined *)0x80045c4;
+    func_0x080281cb(uVar1);
+    if (iStack632 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack728 = (undefined *)0x80045df;
+    func_0x080281cb();
+    iStack736 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack832 = (undefined *)0x8004604;
+    puStack728 = auStack720;
+    func_0x080281cb(auStack824);
+    puStack832 = (undefined *)0x800460c;
+    func_0x080281cb(auStack824);
+    puStack832 = (undefined *)0x8004616;
+    func_0x080281cb(auStack792);
+    puStack832 = (undefined *)0x800462c;
+    uVar1 = func_0x080281cb((double)iStack776, 0, auStack824);
+    puStack832 = (undefined *)0x8004634;
+    func_0x080281cb(uVar1);
+    if (iStack736 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack832 = (undefined *)0x800464f;
+    func_0x080281cb();
+    iStack840 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack936 = (undefined *)0x8004674;
+    puStack832 = auStack824;
+    func_0x080281cb(auStack928);
+    puStack936 = (undefined *)0x800467c;
+    func_0x080281cb(auStack928);
+    puStack936 = (undefined *)0x8004686;
+    func_0x080281cb(auStack896);
+    puStack936 = (undefined *)0x800469c;
+    uVar1 = func_0x080281cb((double)iStack876, 0, auStack928);
+    puStack936 = (undefined *)0x80046a4;
+    func_0x080281cb(uVar1);
+    if (iStack840 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack936 = (undefined *)0x80046bf;
+    func_0x080281cb();
+    iStack944 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack1040 = (undefined *)0x80046e4;
+    puStack936 = auStack928;
+    func_0x080281cb(auStack1032);
+    puStack1040 = (undefined *)0x80046ec;
+    func_0x080281cb(auStack1032);
+    puStack1040 = (undefined *)0x80046f6;
+    func_0x080281cb(auStack1000);
+    puStack1040 = (undefined *)0x800470c;
+    uVar1 = func_0x080281cb((double)iStack976, 0, auStack1032);
+    puStack1040 = (undefined *)0x8004714;
+    func_0x080281cb(uVar1);
+    if (iStack944 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    puStack1040 = (undefined *)0x800472f;
+    func_0x080281cb();
+    iStack1048 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    puStack1040 = auStack1032;
+    func_0x080281cb(auStack1136);
+    func_0x080281cb(auStack1136);
+    func_0x080281cb(auStack1104);
+    uVar1 = func_0x080281cb((double)iStack1076, 0, auStack1136);
+    func_0x080281cb(uVar1);
+    if (iStack1048 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    func_0x080281cb();
+    // WARNING: Could not recover jumptable at 0x0800479f. Too many branches
+    // WARNING: Treating indirect jump as call
+    (*(code *)UNRECOVERED_JUMPTABLE)();
+    return;
+}
+
+
