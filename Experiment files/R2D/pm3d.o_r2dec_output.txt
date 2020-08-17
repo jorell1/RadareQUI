@@ -1,0 +1,4206 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int32_t compare_quadrangles (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    /* [01] -r-x section size 15916 named .text */
+    __asm ("endbr64");
+    xmm0 = *((rdi + 8));
+    xmm1 = *((rsi + 8));
+    eax = 1;
+    __asm ("comisd xmm0, xmm1");
+    if (? <= ?) {
+        eax = 0;
+        __asm ("comisd xmm1, xmm0");
+        al = (? > ?) ? 1 : 0;
+        eax = -eax;
+    }
+    return eax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x8000070 */
+#include <stdint.h>
+ 
+int64_t pm3d_rearrange_part (int64_t arg7, int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4) {
+    int64_t var_8h_2;
+    int64_t var_8h_3;
+    int64_t var_18h_2;
+    int64_t var_20h;
+    int64_t var_28h;
+    int64_t var_4h;
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_1fh;
+    int64_t var_20h_2;
+    int64_t var_28h_2;
+    int64_t var_30h;
+    int64_t var_70h;
+    int64_t var_80h;
+    int64_t var_b0h;
+    int64_t var_c0h;
+    int64_t var_e8h;
+    xmm0 = arg7;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    r12d = esi;
+    rbx = rdx;
+    *(rax) += al;
+    *(rax) += al;
+    *(rax) += al;
+    al &= 0x10;
+    rax = *(fs:0x28);
+    *((rsp + 0xe8)) = rax;
+    eax = 0;
+    rax = (int64_t) esi;
+    rsi = "pm3d scan array";
+    rax <<= 3;
+    rdi = rax;
+    *((rsp + 8)) = rax;
+    rax = gp_alloc (rbx, rbp, r12, r13, r14);
+    *((rsp + 4)) = 0;
+    *(rbx) = rax;
+    r14 = rax;
+    eax = *(0x0800000c);
+    if (eax != 0) {
+        goto label_11;
+    }
+    if (rbp == 0) {
+        goto label_11;
+    }
+    *((rsp + 0x20)) = r14;
+    r13 = rbp;
+    *((rsp + 0x28)) = rbp;
+label_0:
+    ebx = *((r13 + 0xc));
+    ebp = r12 - 1;
+    r14d = rbx - 1;
+    if (r14d <= 0) {
+        goto label_12;
+    }
+    rax = *((r13 + 0x10));
+    r15d = 0;
+    do {
+        if (*(rax) != 2) {
+            goto label_13;
+        }
+        r15d++;
+        rax += 0x40;
+    } while (ebx != r15d);
+    if (ebx >= r14d) {
+        goto label_14;
+    }
+label_4:
+    rax = (int64_t) r14d;
+    r15d = r14d;
+    rax <<= 6;
+    rax += *((r13 + 0x10));
+    while (*(rax) == 2) {
+        r15d--;
+        rax -= 0x40;
+        if (ebx == r15d) {
+            goto label_15;
+        }
+    }
+    xmm0 = *((rax + 8));
+    xmm1 = *((rax + 0x10));
+    rdi = rsp + 0x70;
+    xmm2 = 0;
+    gp_alloc ();
+label_5:
+    xmm1 = 0;
+    r15d -= ebx;
+    xmm0 = 0;
+    r8 = *(r13);
+    __asm ("cvtsi2sd xmm1, r14d");
+    __asm ("mulsd xmm1, qword [loc..LC2]");
+    __asm ("cvtsi2sd xmm0, r15d");
+    __asm ("comisd xmm0, xmm1");
+    if (r15d > 0) {
+        goto label_16;
+    }
+    r13 = r8;
+label_3:
+    r12d = ebp;
+    eax = 1;
+label_7:
+    if (r13 == 0) {
+        goto label_17;
+    }
+    if (al != 0) {
+        goto label_0;
+    }
+label_17:
+    r14 = *((rsp + 0x20));
+    rbp = *((rsp + 0x28));
+label_11:
+    eax = *((rsp + 0x18));
+    if (eax <= 0) {
+        goto label_18;
+    }
+    eax--;
+    edx = *(0x0800000c);
+    rdi = *((rsp + 8));
+    rcx = r14 + rax*8 + 8;
+    esi = *((rsp + 4));
+    rax = r14;
+    while (edx == 0) {
+        if (esi == 1) {
+            goto label_19;
+        }
+label_1:
+        *(rax) = rbp;
+        rax += 8;
+        rbp = *(rbp);
+        if (rcx == rax) {
+            goto label_18;
+        }
+label_2:
+    }
+    if (edx != 1) {
+        goto label_1;
+    }
+label_19:
+    r8 = rdi;
+    r8 -= rax;
+    rax += 8;
+    *((r8 + r14*2 - 8)) = rbp;
+    rbp = *(rbp);
+    if (rcx != rax) {
+        goto label_2;
+    }
+label_18:
+    rax = *((rsp + 0xe8));
+    rax ^= *(fs:0x28);
+    if (rcx != rax) {
+        goto label_20;
+    }
+    return rax;
+label_12:
+    r13 = *(r13);
+    goto label_3;
+label_13:
+    xmm0 = *((rax + 8));
+    xmm1 = *((rax + 0x10));
+    xmm2 = 0;
+    ebx = r15d;
+    rdi = rsp + 0x30;
+    eax = gp_alloc ();
+    if (ebx < r14d) {
+        goto label_4;
+    }
+label_14:
+    r15d = r14d;
+    goto label_5;
+label_15:
+    r15d = ebx;
+    goto label_5;
+label_16:
+    xmm0 = *((rsp + 0x80));
+    eax = 0;
+    rdi = *((rsp + 0x10));
+    __asm ("comisd xmm0, xmmword [rsp + 0x40]");
+    al = (ebx <= r14d) ? 1 : 0;
+    *(rdi) = eax;
+    if (r12d <= 2) {
+        goto label_21;
+    }
+    r10 = (int64_t) ebx;
+    r11d = ebx;
+    edi = r12d;
+    r15 = r10;
+    r11d = ~r11d;
+    r15 <<= 6;
+label_6:
+    r12d = rdi - 2;
+    r9d = edi;
+    if (r8 == 0) {
+        goto label_8;
+    }
+    ecx = r12d;
+    rdx = r8;
+    do {
+        rdx = *(rdx);
+        ecx--;
+        al = (ecx != 0) ? 1 : 0;
+        sil = (rdx != 0) ? 1 : 0;
+        al &= sil;
+    } while (al != 0);
+    if (rdx != 0) {
+        ecx = *((rdx + 0xc));
+        if (ecx != 0) {
+            goto label_22;
+        }
+    }
+label_8:
+    edi--;
+    if (r9d > 3) {
+        goto label_6;
+    }
+label_10:
+    r13 = r8;
+    eax = 1;
+    goto label_7;
+label_22:
+    if (ebx >= ecx) {
+        goto label_8;
+    }
+    ecx += r11d;
+    rsi = *((rdx + 0x10));
+    rcx += r10;
+    rcx <<= 6;
+    rdx = rsi + r15;
+    rcx = rsi + rcx + 0x40;
+    goto label_23;
+label_9:
+    rdx += 0x40;
+    if (rcx == rdx) {
+        goto label_8;
+    }
+label_23:
+    if (*(rdx) == 2) {
+        goto label_9;
+    }
+    xmm0 = *((rdx + 8));
+    xmm1 = *((rdx + 0x10));
+    xmm2 = 0;
+    *((rsp + 0x1f)) = al;
+    rdi = rsp + 0xb0;
+    eax = gp_alloc ();
+    eax = 0;
+    r13 = *(r13);
+    xmm0 = *((rsp + 0xc0));
+    __asm ("comisd xmm0, xmmword [rsp + 0x40]");
+    al = (*(rdx) <= 2) ? 1 : 0;
+    *((rsp + 4)) = eax;
+    eax = *((rsp + 0x1f));
+    goto label_7;
+label_21:
+    r12d = ebp;
+    goto label_10;
+label_20:
+    return gp_alloc ();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x8000b40 */
+#include <stdint.h>
+ 
+int64_t apply_lighting_model_isra_0 (int64_t arg1, int64_t arg2, int64_t arg3) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    int64_t var_28h;
+    int64_t var_30h;
+    int64_t var_38h;
+    int64_t var_40h;
+    int64_t var_48h;
+    int64_t var_50h;
+    int64_t var_58h;
+    int64_t var_60h;
+    int64_t var_68h;
+    int64_t var_70h;
+    int64_t var_78h;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    r13 = rdi;
+    r12 = rdx;
+    rax = *(fs:0x28);
+    *((rsp + 0x78)) = rax;
+    eax = 0;
+    if (*(obj.color_from_rgbvar) == 0) {
+        goto label_6;
+    }
+    __asm ("cvttsd2si rbx, xmm0");
+    xmm4 = 0;
+    xmm5 = 0;
+    xmm0 = *(loc..LC8);
+    xmm6 = 0;
+    edx = ebx;
+    edx >>= 0x10;
+    edx = (int32_t) dl;
+    __asm ("cvtsi2sd xmm4, edx");
+    edx = (int32_t) bh;
+    __asm ("cvtsi2sd xmm5, edx");
+    edx = (int32_t) bl;
+    ebx &= 0xff000000;
+    __asm ("cvtsi2sd xmm6, edx");
+    __asm ("divsd xmm4, xmm0");
+    __asm ("divsd xmm5, xmm0");
+    __asm ("divsd xmm6, xmm0");
+label_3:
+    xmm2 = *((r13 + 0x18));
+    xmm10 = *((r12 + 0x18));
+    xmm1 = *((rbp + 0x18));
+    xmm0 = *((r13 + 0x10));
+    xmm3 = *((rbp + 0x10));
+    __asm ("subsd xmm10, xmm2");
+    xmm11 = *(reloc.yscale3d);
+    __asm ("subsd xmm1, xmm2");
+    xmm2 = *((r12 + 0x10));
+    xmm14 = *(reloc.zscale3d);
+    __asm ("subsd xmm3, xmm0");
+    xmm15 = *((r13 + 8));
+    xmm13 = *((rbp + 8));
+    __asm ("subsd xmm2, xmm0");
+    xmm0 = *(reloc.xscale3d);
+    xmm7 = *(reloc.surface_rot_z);
+    __asm ("movapd xmm12, xmm1");
+    __asm ("subsd xmm13, xmm15");
+    xmm8 = *(reloc.surface_rot_x);
+    __asm ("movapd xmm9, xmm3");
+    __asm ("mulsd xmm9, xmm10");
+    __asm ("mulsd xmm12, xmm2");
+    __asm ("mulsd xmm10, xmm13");
+    __asm ("mulsd xmm2, xmm13");
+    __asm ("mulsd xmm9, xmm11");
+    __asm ("mulsd xmm12, xmm11");
+    __asm ("mulsd xmm10, xmm0");
+    __asm ("mulsd xmm2, xmm0");
+    __asm ("mulsd xmm9, xmm14");
+    __asm ("mulsd xmm12, xmm14");
+    __asm ("mulsd xmm10, xmm14");
+    __asm ("mulsd xmm2, xmm11");
+    __asm ("subsd xmm9, xmm12");
+    xmm12 = *((r12 + 8));
+    __asm ("subsd xmm12, xmm15");
+    __asm ("mulsd xmm1, xmm12");
+    __asm ("mulsd xmm3, xmm12");
+    __asm ("mulsd xmm1, xmm0");
+    __asm ("mulsd xmm3, xmm0");
+    __asm ("movapd xmm0, xmm9");
+    __asm ("mulsd xmm0, xmm9");
+    __asm ("mulsd xmm1, xmm14");
+    __asm ("mulsd xmm3, xmm11");
+    __asm ("subsd xmm1, xmm10");
+    __asm ("subsd xmm2, xmm3");
+    __asm ("movapd xmm3, xmm1");
+    __asm ("mulsd xmm3, xmm1");
+    __asm ("addsd xmm0, xmm3");
+    __asm ("movapd xmm3, xmm2");
+    __asm ("mulsd xmm3, xmm2");
+    __asm ("addsd xmm0, xmm3");
+    xmm3 = 0;
+    __asm ("ucomisd xmm3, xmm0");
+    __asm ("movapd xmm10, xmm0");
+    __asm ("sqrtsd xmm10, xmm10");
+    if (ebx > 0) {
+        goto label_7;
+    }
+label_4:
+    *((rsp + 8)) = xmm7;
+    __asm ("divsd xmm9, xmm10");
+    __asm ("divsd xmm1, xmm10");
+    __asm ("divsd xmm2, xmm10");
+    if (*(0x08000028) != 0) {
+        xmm0 = 0;
+        rbp = rsp + 0x58;
+        r12 = rsp + 0x50;
+        *((rsp + 0x48)) = xmm1;
+        __asm ("cvtss2sd xmm0, xmm8");
+        rsi = r12;
+        rdi = rbp;
+        *((rsp + 0x40)) = xmm9;
+        __asm ("mulsd xmm0, qword [loc..LC9]");
+        *((rsp + 0x38)) = xmm2;
+        *((rsp + 0x30)) = xmm6;
+        *((rsp + 0x28)) = xmm5;
+        *((rsp + 0x20)) = xmm4;
+        gp_alloc ();
+        xmm0 = 0;
+        rsi = r12;
+        rdi = rbp;
+        xmm7 = *((rsp + 8));
+        xmm10 = *((rsp + 0x50));
+        xmm11 = *((rsp + 0x58));
+        __asm ("cvtss2sd xmm0, xmm7");
+        __asm ("mulsd xmm0, qword [loc..LC9]");
+        *((rsp + 0x18)) = xmm10;
+        *((rsp + 0x10)) = xmm11;
+        eax = gp_alloc ();
+        xmm9 = *((rsp + 0x40));
+        xmm3 = 0;
+        xmm1 = *((rsp + 0x48));
+        xmm0 = *((rsp + 0x50));
+        xmm8 = *((rsp + 0x58));
+        __asm ("movapd xmm12, xmm9");
+        __asm ("movapd xmm7, xmm1");
+        xmm2 = *((rsp + 0x38));
+        xmm10 = *((rsp + 0x18));
+        __asm ("mulsd xmm7, xmm8");
+        xmm11 = *((rsp + 0x10));
+        xmm6 = *((rsp + 0x30));
+        __asm ("mulsd xmm12, xmm0");
+        __asm ("movapd xmm13, xmm2");
+        xmm5 = *((rsp + 0x28));
+        xmm4 = *((rsp + 0x20));
+        __asm ("mulsd xmm8, xmm9");
+        __asm ("mulsd xmm13, xmm3");
+        __asm ("mulsd xmm9, xmm3");
+        __asm ("subsd xmm12, xmm7");
+        __asm ("movapd xmm7, xmm0");
+        __asm ("mulsd xmm7, xmm1");
+        __asm ("mulsd xmm1, xmm3");
+        __asm ("addsd xmm12, xmm13");
+        __asm ("addsd xmm8, xmm7");
+        __asm ("addsd xmm9, xmm1");
+        __asm ("movapd xmm7, xmm8");
+        __asm ("movapd xmm8, xmm12");
+        __asm ("addsd xmm7, xmm13");
+        __asm ("addsd xmm2, xmm9");
+        __asm ("mulsd xmm8, xmm3");
+        __asm ("movapd xmm9, xmm7");
+        __asm ("movapd xmm0, xmm2");
+        __asm ("movapd xmm1, xmm7");
+        __asm ("mulsd xmm9, xmm3");
+        __asm ("mulsd xmm0, xmm3");
+        __asm ("mulsd xmm1, xmm10");
+        __asm ("mulsd xmm7, xmm11");
+        __asm ("addsd xmm9, xmm12");
+        __asm ("addsd xmm1, xmm8");
+        __asm ("addsd xmm9, xmm0");
+        __asm ("movapd xmm0, xmm2");
+        __asm ("addsd xmm7, xmm8");
+        __asm ("mulsd xmm0, xmm11");
+        __asm ("mulsd xmm2, xmm10");
+        __asm ("subsd xmm1, xmm0");
+        __asm ("addsd xmm2, xmm7");
+    }
+    __asm ("comisd xmm3, xmm2");
+    if (*(0x08000028) > 0) {
+        xmm0 = *(loc..LC5);
+        __asm ("xorpd xmm9, xmm0");
+        __asm ("xorpd xmm1, xmm0");
+        __asm ("xorpd xmm2, xmm0");
+    }
+    xmm11 = light;
+    xmm8 = *(0x08003f28);
+    xmm7 = *(0x08003f30);
+    xmm13 = pm3d.c;
+    __asm ("movapd xmm0, xmm11");
+    __asm ("movapd xmm10, xmm8");
+    __asm ("mulsd xmm10, xmm1");
+    __asm ("mulsd xmm0, xmm9");
+    __asm ("addsd xmm0, xmm10");
+    __asm ("movapd xmm10, xmm7");
+    __asm ("mulsd xmm10, xmm2");
+    __asm ("addsd xmm0, xmm10");
+    __asm ("movapd xmm10, xmm0");
+    __asm ("movapd xmm12, xmm0");
+    __asm ("xorpd xmm12, xmmword [loc..LC5]");
+    __asm ("cmpltsd xmm10, xmm3");
+    __asm ("andpd xmm12, xmm10");
+    __asm ("andnpd xmm10, xmm3");
+    __asm ("orpd xmm12, xmm10");
+    xmm10 = *(0x08000010);
+    __asm ("mulsd xmm12, xmm13");
+    __asm ("subsd xmm10, xmm13");
+    __asm ("addsd xmm10, xmm12");
+    __asm ("mulsd xmm4, xmm10");
+    __asm ("mulsd xmm5, xmm10");
+    __asm ("mulsd xmm6, xmm10");
+    xmm10 = *(0x08000008);
+    __asm ("comisd xmm10, xmm3");
+    if (*(0x08000028) > 0) {
+        goto label_8;
+    }
+label_2:
+    eax = 0;
+    __asm ("comisd xmm3, xmm4");
+    if (*(0x08000028) <= 0) {
+        __asm ("comisd xmm4, xmmword [loc..LC6]");
+        eax = 0xff0000;
+        if (*(0x08000028) <= 0) {
+            goto label_9;
+        }
+    }
+label_0:
+    __asm ("comisd xmm3, xmm5");
+    if (*(0x08000028) > 0) {
+        goto label_10;
+    }
+    __asm ("comisd xmm5, xmmword [loc..LC6]");
+    if (*(0x08000028) <= 0) {
+        goto label_11;
+    }
+    eax += 0xff00;
+    do {
+label_10:
+        __asm ("comisd xmm3, xmm6");
+        if (eax <= 0) {
+            __asm ("comisd xmm6, xmmword [loc..LC6]");
+            if (eax <= 0) {
+                goto label_12;
+            }
+            eax += 0xff;
+        }
+label_1:
+        eax |= ebx;
+        rcx = *((rsp + 0x78));
+        rcx ^= *(fs:0x28);
+        if (eax != 0) {
+            goto label_13;
+        }
+        return rax;
+label_11:
+        __asm ("mulsd xmm5, qword [loc..LC8]");
+        __asm ("cvttsd2si edx, xmm5");
+        edx = (int32_t) dl;
+        edx <<= 8;
+        eax += edx;
+    } while (1);
+label_9:
+    __asm ("mulsd xmm4, qword [loc..LC8]");
+    __asm ("cvttsd2si eax, xmm4");
+    eax = (int32_t) al;
+    eax <<= 0x10;
+    goto label_0;
+label_12:
+    __asm ("mulsd xmm6, qword [loc..LC8]");
+    __asm ("cvttsd2si edx, xmm6");
+    edx = (int32_t) dl;
+    eax += edx;
+    goto label_1;
+label_8:
+    __asm ("addsd xmm0, xmm0");
+    __asm ("movapd xmm10, xmm0");
+    __asm ("movapd xmm0, xmm9");
+    __asm ("mulsd xmm0, xmm10");
+    __asm ("mulsd xmm1, xmm10");
+    __asm ("mulsd xmm2, xmm10");
+    __asm ("subsd xmm0, xmm11");
+    __asm ("subsd xmm1, xmm8");
+    __asm ("subsd xmm2, xmm7");
+    __asm ("mulsd xmm0, xmm0");
+    __asm ("mulsd xmm1, xmm1");
+    __asm ("addsd xmm0, xmm1");
+    __asm ("movapd xmm1, xmm2");
+    __asm ("mulsd xmm1, xmm2");
+    __asm ("addsd xmm0, xmm1");
+    __asm ("ucomisd xmm3, xmm0");
+    __asm ("movapd xmm1, xmm0");
+    __asm ("sqrtsd xmm1, xmm1");
+    if (eax > 0) {
+        goto label_14;
+    }
+label_5:
+    __asm ("divsd xmm2, xmm1");
+    xmm1 = *(0x08000018);
+    *((rsp + 0x20)) = xmm6;
+    *((rsp + 0x18)) = xmm5;
+    *((rsp + 0x10)) = xmm4;
+    __asm ("movapd xmm0, xmm2");
+    __asm ("andpd xmm0, xmmword [loc..LC4]");
+    *((rsp + 8)) = xmm2;
+    gp_alloc ();
+    xmm2 = *((rsp + 8));
+    xmm3 = 0;
+    xmm4 = *((rsp + 0x10));
+    xmm5 = *((rsp + 0x18));
+    xmm6 = *((rsp + 0x20));
+    __asm ("comisd xmm3, xmm2");
+    if (eax > 0) {
+        xmm1 = *(0x08000008);
+        __asm ("mulsd xmm1, xmm0");
+        __asm ("addsd xmm4, xmm1");
+        __asm ("addsd xmm5, xmm1");
+        __asm ("addsd xmm6, xmm1");
+    }
+    __asm ("comisd xmm2, xmm3");
+    if (eax <= 0) {
+        goto label_2;
+    }
+    xmm1 = *(0x08000030);
+    __asm ("comisd xmm1, xmm3");
+    if (eax <= 0) {
+        goto label_2;
+    }
+    __asm ("mulsd xmm0, xmm1");
+    __asm ("addsd xmm4, xmm0");
+    goto label_2;
+label_6:
+    rdi = rsp + 0x60;
+    ebx = 0;
+    gp_alloc ();
+    xmm4 = *((rsp + 0x60));
+    xmm5 = *((rsp + 0x68));
+    xmm6 = *((rsp + 0x70));
+    goto label_3;
+label_7:
+    *((rsp + 0x48)) = xmm10;
+    *((rsp + 0x40)) = xmm2;
+    *((rsp + 0x38)) = xmm1;
+    *((rsp + 0x30)) = xmm9;
+    *((rsp + 0x28)) = xmm8;
+    *((rsp + 0x20)) = xmm7;
+    *((rsp + 0x18)) = xmm6;
+    *((rsp + 0x10)) = xmm5;
+    *((rsp + 8)) = xmm4;
+    gp_alloc ();
+    xmm10 = *((rsp + 0x48));
+    xmm3 = 0;
+    xmm2 = *((rsp + 0x40));
+    xmm1 = *((rsp + 0x38));
+    xmm9 = *((rsp + 0x30));
+    xmm8 = *((rsp + 0x28));
+    xmm7 = *((rsp + 0x20));
+    xmm6 = *((rsp + 0x18));
+    xmm5 = *((rsp + 0x10));
+    xmm4 = *((rsp + 8));
+    goto label_4;
+label_13:
+    gp_alloc ();
+label_14:
+    *((rsp + 0x28)) = xmm1;
+    *((rsp + 0x20)) = xmm2;
+    *((rsp + 0x18)) = xmm6;
+    *((rsp + 0x10)) = xmm5;
+    *((rsp + 8)) = xmm4;
+    gp_alloc ();
+    xmm1 = *((rsp + 0x28));
+    xmm2 = *((rsp + 0x20));
+    xmm6 = *((rsp + 0x18));
+    xmm5 = *((rsp + 0x10));
+    xmm4 = *((rsp + 8));
+    goto label_5;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.i pdg @ sym.i pdg @ sym.il pdg @ sym.il pdg @ sym.ill pdg @ sym.ill pdg @ sym.illu pdg @ sym.illu pdg @ sym.illum pdg @ sym.illum pdg @ sym.illumi pdg @ sym.illumi pdg @ sym.illumin pdg @ sym.illumin pdg @ sym.illumina pdg @ sym.illumina pdg @ sym.illuminat pdg @ sym.illuminat pdg @ sym.illuminate pdg @ sym.illuminate pdg @ sym.illuminate_ pdg @ sym.illuminate_ pdg @ sym.illuminate_o pdg @ sym.illuminate_o pdg @ sym.illuminate_on pdg @ sym.illuminate_on pdg @ sym.illuminate_one pdg @ sym.illuminate_one pdg @ sym.illuminate_one_ pdg @ sym.illuminate_one_ pdg @ sym.illuminate_one_q pdg @ sym.illuminate_one_q pdg @ sym.illuminate_one_qu pdg @ sym.illuminate_one_qu pdg @ sym.illuminate_one_qua pdg @ sym.illuminate_one_qua pdg @ sym.illuminate_one_quad pdg @ sym.illuminate_one_quad pdg @ sym.illuminate_one_quadr pdg @ sym.illuminate_one_quadr pdg @ sym.illuminate_one_quadra pdg @ sym.illuminate_one_quadra pdg @ sym.illuminate_one_quadran pdg @ sym.illuminate_one_quadran pdg @ sym.illuminate_one_quadrang pdg @ sym.illuminate_one_quadrang pdg @ sym.illuminate_one_quadrangl pdg @ sym.illuminate_one_quadrangl pdg @ sym.illuminate_one_quadrangle pdg @ sym.illuminate_one_quadrangle
+void sym.illuminate_one_quadrangle(int64_t arg1)
+{
+    int32_t iVar1;
+    int64_t in_FS_OFFSET;
+    double extraout_XMM0_Qa;
+    undefined8 uStack296;
+    undefined8 uStack288;
+    undefined8 uStack280;
+    undefined auStack232 [8];
+    undefined8 uStack224;
+    undefined8 uStack216;
+    undefined8 uStack208;
+    undefined auStack168 [8];
+    undefined8 uStack160;
+    undefined8 uStack152;
+    undefined8 uStack144;
+    undefined auStack104 [8];
+    undefined8 uStack96;
+    undefined8 uStack88;
+    undefined8 uStack80;
+    int64_t iStack32;
+    
+    iStack32 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    func_0x0802aa0f(*(undefined8 *)(arg1 + 0x10), *(undefined8 *)(arg1 + 0x18), *(undefined8 *)(arg1 + 0x20), &uStack296
+                   );
+    uStack224 = uStack296;
+    uStack216 = uStack288;
+    uStack208 = uStack280;
+    func_0x0802aa0f(*(undefined8 *)(arg1 + 0x30), *(undefined8 *)(arg1 + 0x38), *(undefined8 *)(arg1 + 0x40), &uStack296
+                   );
+    uStack160 = uStack296;
+    uStack152 = uStack288;
+    uStack144 = uStack280;
+    func_0x0802aa0f(*(undefined8 *)(arg1 + 0x50), *(undefined8 *)(arg1 + 0x58), *(undefined8 *)(arg1 + 0x60), &uStack296
+                   );
+    uStack96 = uStack296;
+    uStack88 = uStack288;
+    uStack80 = uStack280;
+    func_0x0802aa0f(*(undefined8 *)(arg1 + 0x70), *(undefined8 *)(arg1 + 0x78), *(undefined8 *)(arg1 + 0x80), &uStack296
+                   );
+    iVar1 = sym.apply_lighting_model.isra.0((int64_t)auStack232, (int64_t)auStack168, (int64_t)auStack104);
+    *(double *)arg1 = (double)iVar1;
+    if (iStack32 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return;
+    }
+    func_0x0802aa0f((double)iVar1);
+    if (extraout_XMM0_Qa <= *(double *)0x802b257) {
+        if (*(char *)0x802aac3 != 'p') {
+            return;
+        }
+    } else {
+        if (extraout_XMM0_Qa < *(double *)0x802b25f) {
+            if ((*(int64_t *)0x802b2e7 != 0) && (*(int64_t *)(*(int64_t *)0x802b2f7 + 0x10) != 0)) {
+                func_0x0802aa0f(*(int64_t *)0x802b2e7);
+            }
+            return;
+        }
+        if (*(char *)0x802aac3 == 'p') {
+            return;
+        }
+    }
+    return;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.i pdd @ sym.i pdd @ sym.il pdd @ sym.il pdd @ sym.ill pdd @ sym.ill pdd @ sym.illu pdd @ sym.illu pdd @ sym.illum pdd @ sym.illum pdd @ sym.illumi pdd @ sym.illumi pdd @ sym.illumin pdd @ sym.illumin pdd @ sym.illumina pdd @ sym.illumina pdd @ sym.illuminat pdd @ sym.illuminat pdd @ sym.illuminate pdd @ sym.illuminate pdd @ sym.illuminate_ pdd @ sym.illuminate_ pdd @ sym.illuminate_o pdd @ sym.illuminate_o pdd @ sym.illuminate_on pdd @ sym.illuminate_on pdd @ sym.illuminate_one pdd @ sym.illuminate_one pdd @ sym.illuminate_one_ pdd @ sym.illuminate_one_ pdd @ sym.illuminate_one_q pdd @ sym.illuminate_one_q pdd @ sym.illuminate_one_qu pdd @ sym.illuminate_one_qu pdd @ sym.illuminate_one_qua pdd @ sym.illuminate_one_qua pdd @ sym.illuminate_one_quad pdd @ sym.illuminate_one_quad pdd @ sym.illuminate_one_quadr pdd @ sym.illuminate_one_quadr pdd @ sym.illuminate_one_quadra pdd @ sym.illuminate_one_quadra pdd @ sym.illuminate_one_quadran pdd @ sym.illuminate_one_quadran pdd @ sym.illuminate_one_quadrang pdd @ sym.illuminate_one_quadrang pdd @ sym.illuminate_one_quadrangl pdd @ sym.illuminate_one_quadrangl pdd @ sym.illuminate_one_quadrangle pdd @ sym.illuminate_one_quadrangle/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x80011e0 */
+#include <stdint.h>
+ 
+int64_t illuminate_one_quadrangle (int64_t arg1) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_40h;
+    int64_t var_48h;
+    int64_t var_50h;
+    int64_t var_58h;
+    int64_t var_80h;
+    int64_t var_88h;
+    int64_t var_90h;
+    int64_t var_98h;
+    int64_t var_c0h;
+    int64_t var_c8h;
+    int64_t var_d0h;
+    int64_t var_d8h;
+    int64_t var_108h;
+    rdi = arg1;
+    rbx = rdi;
+    xmm0 = *((rdi + 0x10));
+    xmm2 = *((rbx + 0x20));
+    rax = *(fs:0x28);
+    *((rsp + 0x108)) = rax;
+    eax = 0;
+    xmm1 = *((rbx + 0x18));
+    rdi = rbp;
+    gp_alloc (rbx);
+    xmm0 = *(rsp);
+    xmm2 = *((rbx + 0x40));
+    rdi = rbp;
+    xmm1 = *((rbx + 0x38));
+    *((rsp + 0x48)) = xmm0;
+    xmm0 = *((rsp + 8));
+    *((rsp + 0x50)) = xmm0;
+    xmm0 = *((rsp + 0x10));
+    *((rsp + 0x58)) = xmm0;
+    xmm0 = *((rbx + 0x30));
+    gp_alloc ();
+    xmm0 = *(rsp);
+    xmm2 = *((rbx + 0x60));
+    rdi = rbp;
+    xmm1 = *((rbx + 0x58));
+    *((rsp + 0x88)) = xmm0;
+    xmm0 = *((rsp + 8));
+    *((rsp + 0x90)) = xmm0;
+    xmm0 = *((rsp + 0x10));
+    *((rsp + 0x98)) = xmm0;
+    xmm0 = *((rbx + 0x50));
+    gp_alloc ();
+    xmm0 = *(rsp);
+    xmm1 = *((rbx + 0x78));
+    rdi = rbp;
+    xmm2 = *((rbx + 0x80));
+    *((rsp + 0xc8)) = xmm0;
+    xmm0 = *((rsp + 8));
+    *((rsp + 0xd0)) = xmm0;
+    xmm0 = *((rsp + 0x10));
+    *((rsp + 0xd8)) = xmm0;
+    xmm0 = *((rbx + 0x70));
+    gp_alloc ();
+    xmm0 = *(rbx);
+    rdi = rsp + 0x40;
+    rdx = rsp + 0xc0;
+    rsi = rsp + 0x80;
+    eax = apply_lighting_model_isra_0 ();
+    xmm0 = 0;
+    __asm ("cvtsi2sd xmm0, eax");
+    *(rbx) = xmm0;
+    rax = *((rsp + 0x108));
+    rax ^= *(fs:0x28);
+    if (? == ?) {
+        return rax;
+    }
+    gp_alloc ();
+    __asm ("endbr64");
+    xmm1 = *(0x0802b257);
+    __asm ("comisd xmm1, xmm0");
+    if (? >= ?) {
+        goto label_0;
+    }
+    xmm2 = *(0x0802b25f);
+    __asm ("comisd xmm0, xmm2");
+    if (? < ?) {
+        rbx = *(0x0802b2e7);
+        if (rbx != 0) {
+            rax = *(0x0802b2f7);
+            if (*((rax + 0x10)) == 0) {
+                goto label_1;
+            }
+            rdi = rbx;
+            gp_alloc ();
+            xmm1 = *((rbx + 0x10));
+            xmm2 = *((rbx + 0x18));
+        }
+label_1:
+        __asm ("subsd xmm0, xmm1");
+        __asm ("subsd xmm2, xmm1");
+        __asm ("divsd xmm0, xmm2");
+        if (*(0x0802aac3) != 0x70) {
+            xmm1 = *(loc..LC6);
+            __asm ("subsd xmm1, xmm0");
+            __asm ("movapd xmm0, xmm1");
+        }
+        return rax;
+    }
+    xmm0 = 0;
+    if (*(0x0802aac3) == 0x70) {
+        goto label_2;
+    }
+    do {
+        return rax;
+label_0:
+        xmm0 = 0;
+    } while (*(0x0802aac3) == 0x70);
+label_2:
+    xmm0 = *(loc..LC6);
+    return rax;
+}
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x8001e50 */
+#include <stdint.h>
+ 
+int64_t pm3d_plot (int64_t arg8, int64_t arg1, uint32_t arg2) {
+    uint32_t var_8h;
+    uint32_t var_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    int64_t var_28h;
+    uint32_t var_33h;
+    int64_t var_34h;
+    int64_t var_38h;
+    int64_t var_40h;
+    signed int64_t var_44h;
+    uint32_t var_48h;
+    int64_t var_50h;
+    int64_t var_58h;
+    int64_t var_60h;
+    int32_t var_64h;
+    int64_t var_68h;
+    int32_t var_70h;
+    uint32_t var_74h;
+    uint32_t var_78h;
+    uint32_t var_80h;
+    uint32_t var_88h;
+    uint32_t var_8ch;
+    int32_t var_90h;
+    int64_t var_98h;
+    uint32_t var_9eh;
+    uint32_t var_9fh;
+    int64_t var_a0h;
+    int64_t var_a8h;
+    int64_t var_b1h;
+    int64_t var_b2h;
+    int64_t var_b3h;
+    int64_t var_b4h;
+    int64_t var_b8h;
+    int64_t var_c0h;
+    int64_t var_c8h;
+    int64_t var_d0h;
+    int64_t var_d8h;
+    int64_t var_e0h;
+    int64_t var_e8h;
+    int64_t var_f0h;
+    int64_t var_f8h;
+    int64_t var_100h;
+    int64_t var_108h;
+    int64_t var_110h;
+    int64_t var_118h;
+    int64_t var_120h;
+    int64_t var_128h;
+    int64_t var_130h;
+    int64_t var_138h;
+    int64_t var_140h;
+    int64_t var_180h;
+    int64_t var_1c0h;
+    int64_t var_248h;
+    xmm1 = arg8;
+    rdi = arg1;
+    rsi = arg2;
+    *((rsp + 0x18)) = rdi;
+    *((rsp + 0x8c)) = esi;
+    rax = *(fs:0x28);
+    *((rsp + 0x248)) = rax;
+    eax = 0;
+    *((rsp + 0xb4)) = 0;
+    if (rdi == 0) {
+        goto label_38;
+    }
+    rbx = rdi;
+    rdi = rdi + 0x138;
+    eax = gp_alloc ();
+    *(obj.color_from_rgbvar) = "bl-interp along scan";
+    r15d = *((rbx + 0x183));
+    r14d = eax;
+    if (*((rbx + 0x60)) == 3) {
+        goto label_39;
+    }
+label_6:
+    rax = *((rsp + 0x18));
+    *((rsp + 0x33)) = 0;
+    eax = *((rax + 0x148));
+    *(rsp) = eax;
+    eax -= 2;
+    if (eax <= 1) {
+        goto label_40;
+    }
+label_5:
+    rax = *((rsp + 0x18));
+    rdi = rax + 0x30;
+    gp_alloc ();
+    ecx = *((rsp + 0x8c));
+    eax = rcx - 0x73;
+    if (eax > 1) {
+        if (ecx != 0x62) {
+            goto label_38;
+        }
+    }
+    eax = *((rsp + 0x8c));
+    *(obj.pm3d_plot_at) = eax;
+    rax = *(reloc.term);
+    if (*((rax + 0xe8)) == 0) {
+        goto label_38;
+    }
+    if (*(0x0800000c) != 3) {
+        edi = 0xf;
+        uint64_t (*rax + 0x110)() ();
+    }
+    eax = *((rsp + 0x8c));
+    if (eax == 0x62) {
+        goto label_41;
+    }
+    if (eax == 0x74) {
+        xmm0 = *(reloc.ceiling_z);
+        *((rsp + 0x130)) = xmm0;
+        *((rsp + 0x110)) = xmm0;
+        *((rsp + 0xf0)) = xmm0;
+        *((rsp + 0xd0)) = xmm0;
+    }
+label_32:
+    rbx = *((rsp + 0x18));
+    rcx = rsp + 0xb4;
+    rdx = rsp + 0xb8;
+    esi = *((rbx + 0x1a0));
+    rdi = *((rbx + 0x1b0));
+    pm3d_rearrange_part ();
+    eax = *(0x0800001c);
+    ecx = *(0x08000020);
+    r9d = *((rbx + 0x1a0));
+    *((rsp + 0x88)) = eax;
+    *((rsp + 0x64)) = ecx;
+    if (eax <= 0) {
+        goto label_42;
+    }
+    if (ecx <= 0) {
+        goto label_42;
+    }
+    if (*(0x0800000c) == 3) {
+        goto label_43;
+    }
+label_8:
+    rsp + 0x9f = (*((rsp + 0x64)) > 1) ? 1 : 0;
+    ecx = *((rsp + 0x9f));
+    al = (*((rsp + 0x88)) > 1) ? 1 : 0;
+    al |= cl;
+    *((rsp + 0x9e)) = al;
+    if (al != 0) {
+        goto label_44;
+    }
+label_29:
+    rax = *((rsp + 0x18));
+    *((rsp + 0x90)) = 0;
+    if (*((rax + 0x1a0)) <= 1) {
+        goto label_45;
+    }
+label_30:
+    rax = *((rsp + 0x64));
+    rbx = *((rsp + 0x90));
+    *((rsp + 0x80)) = 0;
+    r13 = 0x08004010;
+    *(rsp) = 0;
+    rcx = rax;
+    rax <<= 5;
+    *((rsp + 0x74)) = 0xfffffc19;
+    *((rsp + 0xa0)) = rax;
+    eax = *((rsp + 0x88));
+    *((rsp + 0x70)) = 0xfffffc19;
+    eax--;
+    rax = rbx + rax*8 + 8;
+    *((rsp + 0x78)) = rax;
+    eax = rcx - 1;
+    rax++;
+    rax <<= 5;
+    *((rsp + 0x10)) = rax;
+    eax = r15d;
+    r15d = r14d;
+    r14d = eax;
+label_4:
+    rax = *((rsp + 0xb8));
+    rbx = *((rsp + 0x80));
+    rcx = *((rax + rbx*8));
+    rbx = *((rax + rbx*8 + 8));
+    rax = *((rcx + 0x10));
+    edx = *((rcx + 0xc));
+    *((rsp + 0x50)) = rcx;
+    *((rsp + 0x58)) = rbx;
+    ecx = *((rbx + 0xc));
+    *((rsp + 0x20)) = rax;
+    rax = *((rbx + 0x10));
+    *((rsp + 0x38)) = rax;
+    eax = *(0x08000007);
+    if (al == 0x72) {
+        goto label_46;
+    }
+    *((rsp + 0x40)) = 0;
+    if (al == 0x63) {
+        eax = edx;
+        eax -= ecx;
+        esi = eax;
+        esi >>= 0x1f;
+        eax ^= esi;
+        eax -= esi;
+        eax >>= 1;
+        *((rsp + 0x40)) = eax;
+    }
+label_25:
+    eax = ecx;
+    if (edx <= ecx) {
+        eax = edx;
+    }
+    ebx = rax - 2;
+    *((rsp + 0x98)) = ebx;
+    if (*(0x08000008) == 0) {
+        goto label_47;
+    }
+    if (edx == ecx) {
+        goto label_47;
+    }
+    eax = ecx;
+    ebx = *((rsp + 0x98));
+    *((rsp + 0x60)) = 1;
+    if (edx >= ecx) {
+        eax = edx;
+    }
+    eax--;
+    *((rsp + 0x44)) = eax;
+    eax = *((rsp + 0x40));
+    ebx += eax;
+    *((rsp + 0x70)) = eax;
+    *((rsp + 0x74)) = ebx;
+label_14:
+    eax = *((rsp + 0x44));
+    if (eax <= 0) {
+        goto label_48;
+    }
+    eax = 0;
+    while (*(0x08000009) != 0x34) {
+        if (eax != 2) {
+            rbx = (int64_t) ebx;
+            rcx = *((rsp + 0x20));
+            rdx = rbx;
+            rdx <<= 6;
+            edx = *((rcx + rdx));
+            if (edx == 2) {
+                goto label_0;
+            }
+            rcx = (int64_t) edi;
+            r10 = *((rsp + 0x38));
+            rsi = rcx;
+            rsi <<= 6;
+            esi = *((r10 + rsi));
+            if (esi == 2) {
+                goto label_0;
+            }
+            r8 = (int64_t) r8d;
+            rdi = r8;
+            rdi <<= 6;
+            edi = *((r10 + rdi));
+            if (edi == 2) {
+                goto label_0;
+            }
+            al = (eax == 1) ? 1 : 0;
+            dl = (edx == 1) ? 1 : 0;
+            eax &= edx;
+            dl = (esi == 1) ? 1 : 0;
+            if ((al & dl) != 0) {
+                if (edi == 1) {
+                    goto label_0;
+                }
+            }
+            if (*((rsp + 0x88)) > 1) {
+                goto label_49;
+            }
+label_1:
+            if (*((rsp + 0x64)) > 1) {
+                goto label_49;
+            }
+label_2:
+            if (r14b == 0) {
+                goto label_50;
+            }
+            rax = *((rsp + 0x28));
+            rdi = *((rsp + 0x20));
+            xmm0 = *((rax + 0x28));
+            rax = rbx;
+            rax <<= 6;
+            xmm1 = *((rdi + rax + 0x28));
+            rdi = *((rsp + 0x38));
+            rax = rcx;
+            rax <<= 6;
+            xmm2 = *((rdi + rax + 0x28));
+            rax = r8;
+            rax <<= 6;
+            xmm3 = *((rdi + rax + 0x28));
+label_12:
+            eax = *(0x08000018);
+            if (*(obj.color_from_rgbvar) == 0) {
+                goto label_51;
+            }
+            if (eax == 2) {
+                goto label_52;
+            }
+            if (eax > 2) {
+                goto label_53;
+            }
+            if (eax != 0) {
+                __asm ("movapd xmm0, xmm1");
+            }
+label_10:
+            __asm ("ucomisd xmm0, xmm0");
+            __asm ("jp 0x8002478");
+            if (*(0x0800000a) != 0) {
+                __asm ("comisd xmm0, xmmword [0x0802b25f]");
+                if (*(0x0800000a) > 0) {
+                    goto label_0;
+                }
+                xmm1 = *(0x0802b257);
+                __asm ("comisd xmm1, xmm0");
+                if (*(0x0800000a) > 0) {
+                    goto label_0;
+                }
+            }
+            if (*(obj.color_from_rgbvar) == 0) {
+                goto label_54;
+            }
+label_24:
+            xmm1 = pm3d.c;
+            rbx <<= 6;
+            xmm5 = 0;
+            rcx <<= 6;
+            rbx += *((rsp + 0x20));
+            rcx += *((rsp + 0x38));
+            __asm ("comisd xmm1, xmm5");
+            *((rsp + 0x48)) = rcx;
+            if (rcx <= 0) {
+                goto label_27;
+            }
+            if (*((rsp + 0x8c)) == 0x73) {
+                goto label_55;
+            }
+            if (*(obj.color_from_rgbvar) == 0) {
+                goto label_56;
+            }
+            if (*(0x0800000c) == 3) {
+                goto label_57;
+            }
+label_13:
+            __asm ("cvttsd2si rdi, xmm0");
+            *((rsp + 8)) = r8;
+            *(rsp) = xmm0;
+            gp_alloc ();
+            r8 = *((rsp + 8));
+label_3:
+            rax = *((rsp + 0x28));
+            r8 <<= 6;
+            r8 += *((rsp + 0x38));
+            xmm2 = *((rbx + 0x10));
+            *((rsp + 0x68)) = r8;
+            xmm1 = *((rax + 8));
+            xmm0 = *((rax + 0x10));
+            rax = *((rsp + 0x48));
+            *((rsp + 0xc8)) = xmm0;
+            *((rsp + 0xc0)) = xmm1;
+            xmm0 = *((rax + 8));
+            *((rsp + 0xe0)) = xmm0;
+            xmm0 = *((rax + 0x10));
+            *((rsp + 0xe8)) = xmm0;
+            xmm0 = *((r8 + 8));
+            *((rsp + 0x100)) = xmm0;
+            xmm0 = *((r8 + 0x10));
+            *((rsp + 0x108)) = xmm0;
+            xmm0 = *((rbx + 8));
+            *((rsp + 0x128)) = xmm2;
+            *((rsp + 0x120)) = xmm0;
+            if (*((rsp + 0x8c)) != 0x73) {
+                if (*((rsp + 0x9e)) == 0) {
+                    goto label_58;
+                }
+            }
+            rax = *((rsp + 0x28));
+            rcx = *((rsp + 0x48));
+            rdi = *((rsp + 0x68));
+            xmm2 = *((rax + 0x18));
+            *((rsp + 0xd0)) = xmm2;
+            xmm2 = *((rcx + 0x18));
+            *((rsp + 0xf0)) = xmm2;
+            xmm2 = *((rdi + 0x18));
+            *((rsp + 0x110)) = xmm2;
+            xmm2 = *((rbx + 0x18));
+            *((rsp + 0x130)) = xmm2;
+            if (r14b != 0) {
+                xmm2 = *((rax + 0x28));
+                *((rsp + 0xd8)) = xmm2;
+                xmm2 = *((rcx + 0x28));
+                *((rsp + 0xf8)) = xmm2;
+                xmm2 = *((rdi + 0x28));
+                *((rsp + 0x118)) = xmm2;
+                xmm2 = *((rbx + 0x28));
+                *((rsp + 0x138)) = xmm2;
+            }
+            if (*((rsp + 0x9e)) != 0) {
+                goto label_59;
+            }
+label_58:
+            if (*(0x0800000c) == 3) {
+                goto label_60;
+            }
+            rdi = rsp + 0xc0;
+            edx = 4;
+            esi = r15d;
+            filled_polygon ();
+        }
+label_0:
+        eax = *((rsp + 0x34));
+        if (*((rsp + 0x44)) <= eax) {
+            goto label_48;
+        }
+        rbx = *((rsp + 0x50));
+        edx = *((rbx + 0xc));
+        rbx = *((rsp + 0x58));
+        ecx = *((rbx + 0xc));
+        r12d = *((rsp + 0x60));
+        esi = eax;
+        if (r12d != 0) {
+            if (*((rsp + 0x70)) > eax) {
+                goto label_61;
+            }
+            dil = (*((rsp + 0x74)) < eax) ? 1 : 0;
+            esi -= *((rsp + 0x40));
+            if (dil != 0) {
+                goto label_61;
+            }
+        }
+        ebp = *(0x0800000c);
+        if (ebp == 0) {
+            ebx = *((rsp + 0xb4));
+            if (ebx == 0) {
+                goto label_62;
+            }
+            ebx = *((rsp + 0x98));
+            ebx -= esi;
+            esi = ebx;
+        }
+label_62:
+        ebx = *((rsp + 0x40));
+        eax++;
+        *((rsp + 0x34)) = eax;
+        edi = rsi + rbx;
+        ebx = rsi + 1;
+        r8d = rdi + 1;
+label_11:
+        if (edx > ecx) {
+            eax = ebx;
+            ebx = r8d;
+            r8d = eax;
+            eax = esi;
+            esi = edi;
+            edi = eax;
+        }
+        rsi = (int64_t) esi;
+        rsi <<= 6;
+        rsi += *((rsp + 0x20));
+        *((rsp + 0x28)) = rsi;
+        eax = *(rsi);
+    }
+    if (eax != 0) {
+        goto label_0;
+    }
+    rbx = (int64_t) ebx;
+    rcx = *((rsp + 0x20));
+    rax = rbx;
+    rax <<= 6;
+    r11d = *((rcx + rax));
+    if (r11d != 0) {
+        goto label_0;
+    }
+    rcx = (int64_t) edi;
+    rdi = *((rsp + 0x38));
+    rax = rcx;
+    rax <<= 6;
+    r10d = *((rdi + rax));
+    if (r10d != 0) {
+        goto label_0;
+    }
+    r8 = (int64_t) r8d;
+    rax = r8;
+    rax <<= 6;
+    r9d = *((rdi + rax));
+    if (r9d != 0) {
+        goto label_0;
+    }
+    if (*((rsp + 0x88)) <= 1) {
+        goto label_1;
+    }
+label_49:
+    if (*(0x0800000c) == 3) {
+        goto label_2;
+    }
+    rcx <<= 6;
+    rcx += *((rsp + 0x38));
+    rbx <<= 6;
+    rbx += *((rsp + 0x20));
+    *((rsp + 0x48)) = rcx;
+    goto label_3;
+label_48:
+    *((rsp + 0x80))++;
+    rax = *((rsp + 0x18));
+    rcx = *((rsp + 0x80));
+    eax = *((rax + 0x1a0));
+    *((rsp + 8)) = eax;
+    eax--;
+    if (eax > ecx) {
+        goto label_4;
+    }
+label_31:
+    if (*((rsp + 0x90)) == 0) {
+        goto label_45;
+    }
+    eax = *((rsp + 0x88));
+    if (eax < 0) {
+        goto label_63;
+    }
+    rcx = *((rsp + 0x90));
+    rax = *((rsp + 0x88));
+    rbx = rcx;
+    rbp = rcx + rax*8 + 8;
+    do {
+        rdi = *(rbx);
+        rbx += 8;
+        gp_alloc ();
+    } while (rbp != rbx);
+label_63:
+    rdi = *((rsp + 0x90));
+    gp_alloc ();
+label_45:
+    rdi = *((rsp + 0xb8));
+    gp_alloc ();
+    *(obj.pm3d_plot_at) = 0;
+    if (*(0x0800000c) != 3) {
+        rax = *(reloc.term);
+        edi = 0x10;
+        uint64_t (*rax + 0x110)() ();
+    }
+label_38:
+    rax = *((rsp + 0x248));
+    rax ^= *(fs:0x28);
+    if (*(0x0800000c) != 3) {
+        goto label_64;
+    }
+    return rax;
+label_40:
+    *(obj.color_from_rgbvar) = "bl-interp along scan";
+    *((rsp + 0x33)) = 1;
+    goto label_5;
+label_39:
+    rax = *((rsp + 0x18));
+    xmm0 = *(loc..LC17);
+    __asm ("ucomisd xmm0, qword [rax + 0x68]");
+    __asm ("jp 0x8001ebf");
+    goto label_6;
+    if (*(0x0800000c) != 3) {
+        goto label_6;
+    }
+    *(obj.color_from_rgbvar) = "bl-interp along scan";
+    goto label_6;
+label_42:
+    if (r9d <= 1) {
+        goto label_65;
+    }
+    rdi = *((rsp + 0xb8));
+    edx = r9 - 2;
+    r8d = 0;
+    r10d = 0;
+    r9 = rdx;
+    rsi = rdi + 8;
+    rax = rdi;
+    r11 = rsi + rdx*8;
+label_7:
+    rdx = *(rax);
+    rax = *((rdx + 0x10));
+    edx = *((rdx + 0xc));
+    if (edx <= 0) {
+        goto label_66;
+    }
+    edx--;
+    rdx <<= 6;
+    rcx = rax + rdx + 0x40;
+    edx = 0;
+    do {
+        edx += 0;
+        rax += 0x40;
+    } while (rcx != rax);
+    if (edx != 0) {
+        if (r10d < edx) {
+            r10d = edx;
+        }
+        r8d++;
+    }
+label_66:
+    rax = rsi;
+    if (r11 == rsi) {
+        goto label_67;
+    }
+    rsi += 8;
+    goto label_7;
+label_43:
+    if (r9d <= 1) {
+        goto label_8;
+    }
+    rdi = *((rsp + 0xb8));
+    r9d -= 2;
+label_28:
+    rdx = rdi + 8;
+    esi = *(0x08000008);
+    r8d = 0;
+    r9 = rdx + r9*8;
+    while (sil != 0) {
+        if (eax == ecx) {
+            goto label_68;
+        }
+        if (eax < ecx) {
+            eax = ecx;
+        }
+        rdi = rdx;
+        r8d = r8 + rax - 1;
+        if (r9 == rdx) {
+            goto label_69;
+        }
+label_9:
+        rdx += 8;
+        rax = *(rdi);
+        rcx = *((rdi + 8));
+        eax = *((rax + 0xc));
+        ecx = *((rcx + 0xc));
+    }
+label_68:
+    rdi = rdx;
+    if (eax > ecx) {
+        eax = ecx;
+    }
+    r8d = r8 + rax - 1;
+    if (r9 != rdx) {
+        goto label_9;
+    }
+label_69:
+    ecx = *((rsp + 0x88));
+    eax = 1;
+    if (ecx <= 0) {
+        ecx = eax;
+    }
+    r8d *= ecx;
+    ecx = *((rsp + 0x64));
+    if (ecx > 0) {
+        eax = ecx;
+    }
+    eax *= r8d;
+    ebx = eax;
+    if (eax <= 0) {
+        goto label_70;
+    }
+    edx = current_quadrangle;
+    eax = "pm3d_add_quadrangle";
+    edx += ebx;
+    if (edx < eax) {
+        goto label_70;
+    }
+    rdi = quadrangles;
+    rbp = "pm3d_plot->quadrangles";
+    do {
+        eax = rbx + rax*2;
+        rdx = rbp;
+        *(obj.allocated_quadrangles) = "pm3d_add_quadrangle";
+        rax = (int64_t) eax;
+        rsi = rax * 5;
+        rsi <<= 5;
+        rax = gp_alloc ();
+        edx = current_quadrangle;
+        *(obj.quadrangles) = rax;
+        rdi = rax;
+        eax = "pm3d_add_quadrangle";
+        edx += ebx;
+    } while (edx >= eax);
+    goto label_70;
+label_51:
+    if (eax > 0xa) {
+        goto label_71;
+    }
+    rdx = reloc__rodata;
+    rax = *((rdx + rax*4));
+    rax += rdx;
+    /* switch table (11 cases) at 0x8003fe4 */
+    void (*rax)() ();
+    do {
+        __asm ("movapd xmm0, xmm3");
+        goto label_10;
+label_52:
+        __asm ("movapd xmm0, xmm2");
+        goto label_10;
+label_71:
+        __asm ("addsd xmm0, xmm1");
+        __asm ("addsd xmm0, xmm2");
+        __asm ("addsd xmm0, xmm3");
+        __asm ("mulsd xmm0, qword [loc..LC22]");
+        goto label_10;
+        __asm ("maxsd xmm0, xmm1");
+        __asm ("maxsd xmm2, xmm3");
+        __asm ("maxsd xmm0, xmm2");
+        goto label_10;
+        __asm ("minsd xmm0, xmm1");
+        __asm ("minsd xmm2, xmm3");
+        __asm ("minsd xmm0, xmm2");
+        goto label_10;
+        __asm ("mulsd xmm1, xmm1");
+        xmm4 = 0;
+        __asm ("mulsd xmm0, xmm0");
+        __asm ("mulsd xmm2, xmm2");
+        __asm ("mulsd xmm3, xmm3");
+        __asm ("addsd xmm0, xmm1");
+        __asm ("addsd xmm0, xmm2");
+        __asm ("addsd xmm0, xmm3");
+        __asm ("ucomisd xmm4, xmm0");
+        __asm ("movapd xmm1, xmm0");
+        __asm ("sqrtsd xmm1, xmm1");
+        if (rax > 0) {
+            goto label_72;
+        }
+label_37:
+        __asm ("mulsd xmm1, qword [loc..LC23]");
+        __asm ("movapd xmm0, xmm1");
+        goto label_10;
+        __asm ("comisd xmm0, xmm1");
+        if (rax > 0) {
+            rax = xmm0;
+            __asm ("movapd xmm0, xmm1");
+            xmm1 = rax;
+        }
+        __asm ("comisd xmm2, xmm3");
+        if (rax > 0) {
+            rax = xmm2;
+            __asm ("movapd xmm2, xmm3");
+            xmm3 = rax;
+        }
+        __asm ("maxsd xmm2, xmm0");
+        __asm ("minsd xmm1, xmm3");
+        xmm0 = *(loc..LC23);
+        __asm ("addsd xmm2, xmm1");
+        __asm ("mulsd xmm0, xmm2");
+        goto label_10;
+        *((rsp + 0x48)) = r8;
+        *((rsp + 8)) = rcx;
+        harmean4 ();
+        rcx = *((rsp + 8));
+        r8 = *((rsp + 0x48));
+        goto label_10;
+        *((rsp + 0x48)) = r8;
+        *((rsp + 8)) = rcx;
+        eax = geomean4 ();
+        rcx = *((rsp + 8));
+        r8 = *((rsp + 0x48));
+        goto label_10;
+label_61:
+        ebx = *((rsp + 0x74));
+        ebx -= *((rsp + 0x40));
+        esi = 0;
+        edi = rax + 1;
+        ebx++;
+        *((rsp + 0x34)) = edi;
+        r8d = edi;
+        if (*((rsp + 0x70)) >= eax) {
+            ebx = esi;
+        }
+        edi = eax;
+        esi = ebx;
+        goto label_11;
+label_50:
+        if (*((rsp + 0x33)) == 0) {
+            goto label_73;
+        }
+        rax = *((rsp + 0x18));
+        xmm0 = 0;
+        r9d = *((rax + 0x14c));
+        __asm ("cvtsi2sd xmm0, r9d");
+        if (*((rax + 0x148)) == 2) {
+            goto label_74;
+        }
+        __asm ("movapd xmm3, xmm0");
+        __asm ("movapd xmm2, xmm0");
+        __asm ("movapd xmm1, xmm0");
+        goto label_12;
+label_53:
+    } while (eax == 3);
+    __asm ("cvttsd2si rax, xmm0");
+    xmm0 = 0;
+    __asm ("cvttsd2si rdx, xmm1");
+    xmm1 = 0;
+    __asm ("cvttsd2si rdi, xmm2");
+    __asm ("cvttsd2si rsi, xmm3");
+    r11d = eax;
+    r10d = eax;
+    r9d = edx;
+    r11d &= 0xff0000;
+    r10d &= 0xff00;
+    r9d &= 0xff0000;
+    r11d += r9d;
+    r9d = edi;
+    r9d &= 0xff0000;
+    r11d += r9d;
+    r9d = esi;
+    r9d &= 0xff0000;
+    r11d += r9d;
+    r9d = edx;
+    r9d &= 0xff00;
+    r11d >>= 2;
+    r10d += r9d;
+    r9d = edi;
+    r11d &= 0xff0000;
+    r9d &= 0xff00;
+    r9d += r10d;
+    r10d = esi;
+    r10d &= 0xff00;
+    r9d += r10d;
+    r10d = (int32_t) al;
+    eax >>= 0x18;
+    r9d >>= 2;
+    r9d &= 0xff00;
+    r11d |= r9d;
+    r9d = (int32_t) dl;
+    edx >>= 0x18;
+    r10d += r9d;
+    eax += edx;
+    r9d = (int32_t) dil;
+    edi >>= 0x18;
+    r9d += r10d;
+    eax += edi;
+    r10d = (int32_t) sil;
+    esi >>= 0x18;
+    r9d += r10d;
+    eax += esi;
+    r9d >>= 2;
+    eax <<= 0x16;
+    r11d += r9d;
+    eax &= 0xff000000;
+    __asm ("cvtsi2sd xmm1, r11d");
+    __asm ("cvtsi2sd xmm0, rax");
+    __asm ("addsd xmm0, xmm1");
+    goto label_10;
+label_56:
+    rdi = rsp + 0xb1;
+    gp_alloc (r8);
+    xmm0 = 0;
+    r8 = *(rsp);
+    eax = *((rsp + 0xb1));
+    edx = *((rsp + 0xb2));
+    eax <<= 0x10;
+    edx <<= 8;
+    eax += edx;
+    edx = *((rsp + 0xb3));
+    eax += edx;
+    __asm ("cvtsi2sd xmm0, eax");
+label_27:
+    *(rsp) = xmm0;
+    if (*(0x0800000c) == 3) {
+        goto label_3;
+    }
+    if (*(obj.color_from_rgbvar) != 0) {
+        goto label_13;
+    }
+    xmm1 = pm3d.c;
+    xmm4 = 0;
+    __asm ("comisd xmm1, xmm4");
+    if (*(obj.color_from_rgbvar) > 0) {
+        goto label_13;
+    }
+    xmm0 = *(rsp);
+    *((rsp + 8)) = r8;
+    eax = gp_alloc ();
+    r8 = *((rsp + 8));
+    goto label_3;
+label_47:
+    eax--;
+    *((rsp + 0x60)) = 0;
+    *((rsp + 0x44)) = eax;
+    goto label_14;
+label_59:
+    eax = *((rsp + 0x88));
+    if (eax < 0) {
+        goto label_0;
+    }
+    xmm5 = 0;
+    r9d = *((rsp + 0x64));
+    r8d = eax;
+    edi = 0;
+    __asm ("cvtsi2sd xmm5, eax");
+    r10 = *((rsp + 0xa0));
+    r11 = *((rsp + 0x90));
+    ebx = *((rsp + 0x9f));
+label_15:
+    __asm ("subsd xmm0, xmm1");
+    xmm3 = 0;
+    rdx = *((r11 + rdi*8));
+    xmm2 = *((rsp + 0xc8));
+    xmm4 = *((rsp + 0xd0));
+    __asm ("cvtsi2sd xmm3, edi");
+    rsi = rdx + r10;
+    __asm ("divsd xmm0, xmm5");
+    __asm ("mulsd xmm0, xmm3");
+    __asm ("addsd xmm0, xmm1");
+    *(rdx) = xmm0;
+    xmm1 = *((rsp + 0xe0));
+    xmm0 = *((rsp + 0x100));
+    __asm ("subsd xmm0, xmm1");
+    __asm ("divsd xmm0, xmm5");
+    __asm ("mulsd xmm0, xmm3");
+    __asm ("addsd xmm0, xmm1");
+    xmm1 = *((rsp + 0x128));
+    __asm ("subsd xmm1, xmm2");
+    *(rsi) = xmm0;
+    __asm ("divsd xmm1, xmm5");
+    __asm ("mulsd xmm1, xmm3");
+    __asm ("addsd xmm1, xmm2");
+    *((rdx + 8)) = xmm1;
+    xmm2 = *((rsp + 0xe8));
+    xmm1 = *((rsp + 0x108));
+    __asm ("subsd xmm1, xmm2");
+    __asm ("divsd xmm1, xmm5");
+    __asm ("mulsd xmm1, xmm3");
+    __asm ("addsd xmm1, xmm2");
+    xmm2 = *((rsp + 0x130));
+    __asm ("subsd xmm2, xmm4");
+    *((rsi + 8)) = xmm1;
+    __asm ("divsd xmm2, xmm5");
+    __asm ("mulsd xmm2, xmm3");
+    __asm ("addsd xmm2, xmm4");
+    *((rdx + 0x10)) = xmm2;
+    xmm2 = *((rsp + 0xf0));
+    xmm6 = *((rsp + 0x110));
+    __asm ("subsd xmm6, xmm2");
+    __asm ("divsd xmm6, xmm5");
+    __asm ("mulsd xmm6, xmm3");
+    __asm ("addsd xmm6, xmm2");
+    *((rsi + 0x10)) = xmm6;
+    if (r14b != 0) {
+        xmm4 = *((rsp + 0xd8));
+        xmm2 = *((rsp + 0x138));
+        __asm ("subsd xmm2, xmm4");
+        __asm ("divsd xmm2, xmm5");
+        __asm ("mulsd xmm2, xmm3");
+        __asm ("addsd xmm2, xmm4");
+        *((rdx + 0x18)) = xmm2;
+        xmm4 = *((rsp + 0xf8));
+        xmm2 = *((rsp + 0x118));
+        __asm ("subsd xmm2, xmm4");
+        __asm ("divsd xmm2, xmm5");
+        __asm ("mulsd xmm3, xmm2");
+        __asm ("addsd xmm3, xmm4");
+        *((rsi + 0x18)) = xmm3;
+    }
+    if (bl == 0) {
+        goto label_75;
+    }
+    xmm4 = 0;
+    rax = rdx + 0x20;
+    ecx = 1;
+    __asm ("cvtsi2sd xmm4, r9d");
+    while (ecx != r9d) {
+        xmm0 = *(rsi);
+        xmm1 = *((rsi + 8));
+        xmm6 = *((rsi + 0x10));
+        xmm7 = *(rdx);
+        __asm ("movapd xmm2, xmm0");
+        xmm3 = 0;
+        __asm ("cvtsi2sd xmm3, ecx");
+        __asm ("subsd xmm2, xmm7");
+        __asm ("divsd xmm2, xmm4");
+        __asm ("mulsd xmm2, xmm3");
+        __asm ("addsd xmm2, xmm7");
+        *(rax) = xmm2;
+        xmm0 = *((rdx + 8));
+        __asm ("subsd xmm1, xmm0");
+        __asm ("divsd xmm1, xmm4");
+        __asm ("mulsd xmm1, xmm3");
+        __asm ("addsd xmm1, xmm0");
+        *((rax + 8)) = xmm1;
+        xmm1 = *((rdx + 0x10));
+        __asm ("subsd xmm6, xmm1");
+        __asm ("movapd xmm0, xmm6");
+        __asm ("divsd xmm0, xmm4");
+        __asm ("mulsd xmm0, xmm3");
+        __asm ("addsd xmm0, xmm1");
+        *((rax + 0x10)) = xmm0;
+        if (r14b != 0) {
+            xmm1 = *((rdx + 0x18));
+            xmm0 = *((rsi + 0x18));
+            __asm ("subsd xmm0, xmm1");
+            __asm ("divsd xmm0, xmm4");
+            __asm ("mulsd xmm3, xmm0");
+            __asm ("addsd xmm3, xmm1");
+            *((rax + 0x18)) = xmm3;
+        }
+        ecx++;
+        rax += 0x20;
+    }
+label_75:
+    rax = rdi + 1;
+    if (r8 != rdi) {
+        xmm0 = *((rsp + 0x120));
+        rdi = rax;
+        xmm1 = *((rsp + 0xc0));
+        goto label_15;
+label_60:
+        __asm ("movdqa xmm4, xmmword [rsp + 0xc0]");
+        rax = *(obj.current_quadrangle);
+        rcx = rax;
+        rax *= 5;
+        rax <<= 5;
+        rax += *(obj.quadrangles);
+        __asm ("movups xmmword [rax + 0x10], xmm4");
+        __asm ("movdqa xmm7, xmmword [rsp + 0xd0]");
+        __asm ("movups xmmword [rax + 0x20], xmm7");
+        __asm ("movdqa xmm5, xmmword [rsp + 0xe0]");
+        __asm ("movups xmmword [rax + 0x30], xmm5");
+        __asm ("movdqa xmm4, xmmword [rsp + 0xf0]");
+        __asm ("movups xmmword [rax + 0x40], xmm4");
+        __asm ("movdqa xmm7, xmmword [rsp + 0x100]");
+        __asm ("movups xmmword [rax + 0x50], xmm7");
+        __asm ("movdqa xmm5, xmmword [rsp + 0x110]");
+        __asm ("movups xmmword [rax + 0x60], xmm5");
+        __asm ("movdqa xmm4, xmmword [rsp + 0x120]");
+        __asm ("movups xmmword [rax + 0x70], xmm4");
+        __asm ("movdqa xmm7, xmmword [rsp + 0x130]");
+        __asm ("movups xmmword [rax + 0x80], xmm7");
+        if (*(obj.color_from_rgbvar) == 0) {
+            goto label_76;
+        }
+        __asm ("cvttsd2si rdx, qword [rsp]");
+        rbx = *(loc..LC12);
+        *(rax) = rbx;
+        *((rax + 0x90)) = edx;
+label_26:
+        edx = 0;
+        ecx++;
+        *((rax + 0x98)) = r15w;
+        *((rax + 0x9a)) = dx;
+        *(obj.current_quadrangle) = ecx;
+        goto label_0;
+    }
+    r8d = *((rsp + 0x88));
+    if (r8d <= 0) {
+        goto label_0;
+    }
+    *((rsp + 8)) = r14b;
+    rbx = *((rsp + 0x90));
+    ebp = *((rsp + 0x8c));
+label_16:
+    ecx = *((rsp + 0x64));
+    r14d = 0;
+    if (ecx <= 0) {
+        goto label_77;
+    }
+    do {
+        rax = *(rbx);
+        rdx = *((rbx + 8));
+        rdi = rax + r14;
+        rsi = rdx + r14;
+        r14 += 0x20;
+        xmm0 = *(rdi);
+        rdx += r14;
+        rax += r14;
+        *((rsp + 0xc0)) = xmm0;
+        xmm0 = *((rdi + 8));
+        xmm1 = *(rsi);
+        *((rsp + 0xc8)) = xmm0;
+        xmm0 = *((rdi + 0x10));
+        *((rsp + 0xe0)) = xmm1;
+        xmm1 = *((rsi + 8));
+        xmm2 = *(rdx);
+        *((rsp + 0xd0)) = xmm0;
+        *((rsp + 0xe8)) = xmm1;
+        xmm1 = *((rsi + 0x10));
+        *((rsp + 0x100)) = xmm2;
+        xmm2 = *((rdx + 8));
+        xmm3 = *(rax);
+        *((rsp + 0xf0)) = xmm1;
+        *((rsp + 0x108)) = xmm2;
+        xmm2 = *((rdx + 0x10));
+        *((rsp + 0x120)) = xmm3;
+        xmm3 = *((rax + 8));
+        *((rsp + 0x110)) = xmm2;
+        *((rsp + 0x128)) = xmm3;
+        xmm3 = *((rax + 0x10));
+        *((rsp + 0x130)) = xmm3;
+        if (*((rsp + 8)) != 0) {
+            xmm0 = *((rdi + 0x18));
+            *((rsp + 0xd8)) = xmm0;
+            xmm1 = *((rsi + 0x18));
+            *((rsp + 0xf8)) = xmm1;
+            xmm2 = *((rdx + 0x18));
+            *((rsp + 0x118)) = xmm2;
+            xmm3 = *((rax + 0x18));
+            *((rsp + 0x138)) = xmm3;
+        }
+        if (*(0x08000018) > 0xa) {
+            goto label_78;
+        }
+        eax = *(0x08000018);
+        rax = *((r13 + rax*4));
+        rax += r13;
+        void (*rax)() ();
+label_19:
+        if (*((rsp + 0x33)) == 0) {
+            goto label_79;
+        }
+        rax = *((rsp + 0x18));
+        xmm7 = 0;
+        r12d = *((rax + 0x14c));
+        __asm ("cvtsi2sd xmm7, r12d");
+        *(rsp) = xmm7;
+        if (*((rax + 0x148)) == 2) {
+            goto label_80;
+        }
+label_18:
+        xmm0 = pm3d.c;
+        xmm5 = 0;
+        r12 = rsp + 0xc0;
+        __asm ("comisd xmm0, xmm5");
+        if (*((rax + 0x148)) > 2) {
+            goto label_81;
+        }
+label_20:
+        if (*(0x0800000c) == 3) {
+            goto label_82;
+        }
+label_21:
+        xmm0 = pm3d.c;
+        xmm5 = 0;
+        __asm ("comisd xmm0, xmm5");
+        if (*(0x0800000c) <= 3) {
+            if (*(obj.color_from_rgbvar) == 0) {
+                goto label_83;
+            }
+        }
+        __asm ("cvttsd2si rdi, qword [rsp]");
+        gp_alloc ();
+label_23:
+        if (ebp == 0x62) {
+            goto label_84;
+        }
+        if (ebp == 0x74) {
+            xmm0 = *(reloc.ceiling_z);
+            *((rsp + 0x130)) = xmm0;
+            *((rsp + 0x110)) = xmm0;
+            *((rsp + 0xf0)) = xmm0;
+            *((rsp + 0xd0)) = xmm0;
+        }
+label_22:
+        edx = 4;
+        esi = r15d;
+        rdi = r12;
+        filled_polygon ();
+label_17:
+    } while (*((rsp + 0x10)) != r14);
+label_77:
+    rbx += 8;
+    if (*((rsp + 0x78)) != rbx) {
+        goto label_16;
+    }
+    r14d = *((rsp + 8));
+    goto label_0;
+label_79:
+    if (*(obj.color_from_rgbvar) != 0) {
+        goto label_85;
+    }
+    if (*(0x0800000a) == 0) {
+        goto label_86;
+    }
+    xmm1 = *(0x0802b257);
+    __asm ("comisd xmm1, xmm0");
+    if (*(0x0800000a) > 0) {
+        goto label_17;
+    }
+    __asm ("comisd xmm0, xmmword [0x0802b25f]");
+    if (*(0x0800000a) > 0) {
+        goto label_17;
+    }
+label_86:
+    gp_alloc ();
+    *(rsp) = xmm0;
+    goto label_18;
+label_36:
+    xmm0 = *(loc..LC23);
+    __asm ("mulsd xmm0, xmm1");
+    goto label_19;
+label_78:
+    __asm ("addsd xmm1, xmm0");
+    __asm ("addsd xmm1, xmm2");
+    __asm ("movapd xmm0, xmm1");
+    __asm ("addsd xmm0, xmm3");
+    __asm ("mulsd xmm0, qword [loc..LC22]");
+    goto label_19;
+label_81:
+    rdx = rsp + 0x140;
+    rax = r12;
+    rdi = rdx;
+    rsi = rdx;
+    do {
+        xmm0 = *(rax);
+        rax += 0x20;
+        rdx += 0x40;
+        *((rdx - 0x38)) = xmm0;
+        xmm0 = *((rax - 0x18));
+        *((rdx - 0x30)) = xmm0;
+        xmm0 = *((rax - 0x10));
+        *((rdx - 0x28)) = xmm0;
+    } while (rsi != rax);
+    if (ebp == 0x73) {
+        goto label_87;
+    }
+    if (*(obj.color_from_rgbvar) != 0) {
+        goto label_20;
+    }
+    xmm0 = *(rsp);
+    rdi = rsp + 0xb1;
+    gp_alloc ();
+    eax = *((rsp + 0xb1));
+    xmm7 = 0;
+    eax <<= 0x10;
+    edx = eax;
+    eax = *((rsp + 0xb2));
+    eax <<= 8;
+    eax += edx;
+    edx = *((rsp + 0xb3));
+    eax += edx;
+    __asm ("cvtsi2sd xmm7, eax");
+    *(rsp) = xmm7;
+    if (*(0x0800000c) != 3) {
+        goto label_21;
+    }
+label_82:
+    rax = *(obj.current_quadrangle);
+    __asm ("movdqa xmm7, xmmword [r12]");
+    rsi = rax;
+    rax *= 5;
+    rax <<= 5;
+    rax += *(obj.quadrangles);
+    __asm ("movups xmmword [rax + 0x10], xmm7");
+    __asm ("movdqa xmm5, xmmword [r12 + 0x10]");
+    __asm ("movups xmmword [rax + 0x20], xmm5");
+    __asm ("movdqa xmm4, xmmword [r12 + 0x20]");
+    __asm ("movups xmmword [rax + 0x30], xmm4");
+    __asm ("movdqa xmm7, xmmword [r12 + 0x30]");
+    __asm ("movups xmmword [rax + 0x40], xmm7");
+    __asm ("movdqa xmm5, xmmword [r12 + 0x40]");
+    __asm ("movups xmmword [rax + 0x50], xmm5");
+    __asm ("movdqa xmm4, xmmword [r12 + 0x50]");
+    __asm ("movups xmmword [rax + 0x60], xmm4");
+    __asm ("movdqa xmm7, xmmword [r12 + 0x60]");
+    __asm ("movups xmmword [rax + 0x70], xmm7");
+    __asm ("movdqa xmm5, xmmword [r12 + 0x70]");
+    __asm ("movups xmmword [rax + 0x80], xmm5");
+    if (*(obj.color_from_rgbvar) == 0) {
+        goto label_88;
+    }
+    __asm ("cvttsd2si rdx, qword [rsp]");
+    rcx = *(loc..LC12);
+    *(rax) = rcx;
+    *((rax + 0x90)) = edx;
+    do {
+        edi = 0;
+        esi++;
+        *((rax + 0x98)) = r15w;
+        *((rax + 0x9a)) = di;
+        *(obj.current_quadrangle) = esi;
+        goto label_17;
+label_85:
+        *(rsp) = xmm0;
+        goto label_18;
+label_84:
+        xmm0 = *(reloc.base_z);
+        *((rsp + 0x130)) = xmm0;
+        *((rsp + 0x110)) = xmm0;
+        *((rsp + 0xf0)) = xmm0;
+        *((rsp + 0xd0)) = xmm0;
+        goto label_22;
+label_83:
+        xmm0 = *(rsp);
+        gp_alloc ();
+        goto label_23;
+label_80:
+        rdx = *((rsp + 0x68));
+        rsi = *((rsp + 0x48));
+        rdi = *((rsp + 0x28));
+        eax = gp_alloc ();
+        if (eax < 0) {
+            xmm0 = *(rsp);
+            __asm ("addsd xmm0, qword [loc..LC6]");
+            __asm ("cvttsd2si r12d, xmm0");
+        }
+        rdi = rsp + 0x140;
+        esi = r12d;
+        gp_alloc ();
+        xmm4 = 0;
+        __asm ("cvtsi2sd xmm4, dword [rsp + 0x174]");
+        *(rsp) = xmm4;
+        goto label_18;
+label_88:
+        rcx = *((rsp + 0x18));
+        xmm7 = *(rsp);
+        rdx = rcx + 0x60;
+        *(rax) = xmm7;
+        *((rax + 0x90)) = rdx;
+    } while (1);
+label_87:
+    xmm0 = *(rsp);
+    rdx = rsp + 0x1c0;
+    rsi = rsp + 0x180;
+    eax = apply_lighting_model_isra_0 ();
+    xmm4 = 0;
+    __asm ("cvtsi2sd xmm4, eax");
+    *(rsp) = xmm4;
+    goto label_20;
+label_73:
+    rax = *((rsp + 0x28));
+    rdi = *((rsp + 0x20));
+    xmm0 = *((rax + 0x18));
+    rax = rbx;
+    rax <<= 6;
+    xmm1 = *((rdi + rax + 0x18));
+    rdi = *((rsp + 0x38));
+    rax = rcx;
+    rax <<= 6;
+    xmm2 = *((rdi + rax + 0x18));
+    rax = r8;
+    rax <<= 6;
+    xmm3 = *((rdi + rax + 0x18));
+    goto label_12;
+label_54:
+    *((rsp + 8)) = r8;
+    gp_alloc (rcx);
+    r8 = *((rsp + 8));
+    rcx = *(rsp);
+    goto label_24;
+label_46:
+    esi = edx;
+    esi -= ecx;
+    eax = esi;
+    eax >>= 0x1f;
+    esi ^= eax;
+    esi -= eax;
+    *((rsp + 0x40)) = esi;
+    goto label_25;
+label_76:
+    rbx = *((rsp + 0x18));
+    xmm5 = *(rsp);
+    rdx = rbx + 0x60;
+    *(rax) = xmm5;
+    *((rax + 0x90)) = rdx;
+    goto label_26;
+label_55:
+    rdi = *((rsp + 0x28));
+    rdx = rcx;
+    rsi = rbx;
+    *(rsp) = r8;
+    eax = apply_lighting_model_isra_0 ();
+    xmm0 = 0;
+    r8 = *(rsp);
+    __asm ("cvtsi2sd xmm0, eax");
+    goto label_27;
+label_57:
+    *(rsp) = xmm0;
+    goto label_3;
+label_74:
+    rdx = rcx;
+    rdi = *((rsp + 0x28));
+    rsi = rbx;
+    *((rsp + 0x48)) = r9d;
+    rdx <<= 6;
+    rsi <<= 6;
+    rdx += *((rsp + 0x38));
+    rsi += *((rsp + 0x20));
+    *((rsp + 0xa8)) = r8;
+    *((rsp + 8)) = rcx;
+    *((rsp + 0x68)) = xmm0;
+    eax = gp_alloc ();
+    rcx = *((rsp + 8));
+    r9d = *((rsp + 0x48));
+    r8 = *((rsp + 0xa8));
+    if (eax < 0) {
+        xmm0 = *((rsp + 0x68));
+        __asm ("addsd xmm0, qword [loc..LC6]");
+        __asm ("cvttsd2si r9d, xmm0");
+    }
+    rdi = rsp + 0x140;
+    esi = r9d;
+    *((rsp + 0x48)) = r8;
+    *((rsp + 8)) = rcx;
+    gp_alloc ();
+    xmm0 = 0;
+    rcx = *((rsp + 8));
+    r8 = *((rsp + 0x48));
+    __asm ("cvtsi2sd xmm0, dword [rsp + 0x174]");
+    __asm ("movapd xmm3, xmm0");
+    __asm ("movapd xmm2, xmm0");
+    __asm ("movapd xmm1, xmm0");
+    goto label_12;
+label_67:
+    if (r10d == 0) {
+        goto label_65;
+    }
+    if (r8d == 0) {
+        goto label_65;
+    }
+    ecx = *((rsp + 0x88));
+    xmm1 = *(loc..LC6);
+    if (ecx <= 0) {
+        goto label_89;
+    }
+label_34:
+    ecx = *((rsp + 0x64));
+    edx = 0xc8;
+    xmm0 = 0;
+    eax = ecx;
+    eax = -eax;
+    if (ecx == 0) {
+        eax = edx;
+    }
+    edx:eax = (int64_t) eax;
+    eax = edx:eax / r8d;
+    edx = edx:eax % r8d;
+    __asm ("cvtsi2sd xmm0, eax");
+    __asm ("addsd xmm0, xmm1");
+    __asm ("cvttsd2si eax, xmm0");
+    *((rsp + 0x64)) = eax;
+label_33:
+    if (*(0x0800000c) == 3) {
+        goto label_28;
+    }
+label_70:
+    rsp + 0x9f = (*((rsp + 0x64)) > 1) ? 1 : 0;
+    ecx = *((rsp + 0x9f));
+    al = (*((rsp + 0x88)) > 1) ? 1 : 0;
+    al |= cl;
+    *((rsp + 0x9e)) = al;
+    if (al == 0) {
+        goto label_29;
+    }
+    ebx = *((rsp + 0x88));
+    rsi = "bl-interp along scan";
+    edi = rbx + 1;
+    rdi = (int64_t) edi;
+    rdi <<= 3;
+    rax = gp_alloc ();
+    *((rsp + 0x90)) = rax;
+    if (ebx < 0) {
+        goto label_90;
+    }
+label_35:
+    eax = *((rsp + 0x64));
+    rcx = *((rsp + 0x90));
+    rbp = "bl-interp between scan";
+    ebx = rax + 1;
+    rax = *((rsp + 0x88));
+    r13 = rcx;
+    rbx = (int64_t) ebx;
+    rbx <<= 5;
+    r12 = rcx + rax*8 + 8;
+    do {
+        rsi = rbp;
+        rdi = rbx;
+        r13 += 8;
+        rax = gp_alloc ();
+        *((r13 - 8)) = rax;
+    } while (r12 != r13);
+label_90:
+    rax = *((rsp + 0x18));
+    if (*((rax + 0x1a0)) > 1) {
+        goto label_30;
+    }
+    goto label_31;
+label_41:
+    xmm0 = *(reloc.base_z);
+    *((rsp + 0x130)) = xmm0;
+    *((rsp + 0x110)) = xmm0;
+    *((rsp + 0xf0)) = xmm0;
+    *((rsp + 0xd0)) = xmm0;
+    goto label_32;
+label_89:
+    eax = ecx;
+    edx = 0xc8;
+    xmm0 = 0;
+    eax = -eax;
+    if (ecx == 0) {
+        eax = edx;
+    }
+    edx:eax = (int64_t) eax;
+    eax = edx:eax / r10d;
+    edx = edx:eax % r10d;
+    __asm ("cvtsi2sd xmm0, eax");
+    __asm ("addsd xmm0, xmm1");
+    __asm ("cvttsd2si eax, xmm0");
+    *((rsp + 0x88)) = eax;
+    eax = *((rsp + 0x64));
+    if (eax > 0) {
+        goto label_33;
+    }
+    goto label_34;
+label_44:
+    eax = *((rsp + 0x88));
+    rsi = "bl-interp along scan";
+    edi = rax + 1;
+    rdi = (int64_t) edi;
+    rdi <<= 3;
+    rax = gp_alloc ();
+    *((rsp + 0x90)) = rax;
+    goto label_35;
+label_65:
+    rsi = "all scans empty";
+    edi |= 0xffffffff;
+    eax = 0;
+    gp_alloc ();
+label_64:
+    gp_alloc ();
+    *((rsp + 0xa8)) = xmm1;
+    gp_alloc ();
+    xmm1 = *((rsp + 0xa8));
+    goto label_36;
+label_72:
+    *((rsp + 0x68)) = r8;
+    *((rsp + 0x48)) = rcx;
+    *((rsp + 8)) = xmm1;
+    gp_alloc ();
+    r8 = *((rsp + 0x68));
+    rcx = *((rsp + 0x48));
+    xmm1 = *((rsp + 8));
+    goto label_37;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.p pdg @ sym.p pdg @ sym.pm pdg @ sym.pm pdg @ sym.pm3 pdg @ sym.pm3 pdg @ sym.pm3d pdg @ sym.pm3d pdg @ sym.pm3d_ pdg @ sym.pm3d_ pdg @ sym.pm3d_r pdg @ sym.pm3d_r pdg @ sym.pm3d_re pdg @ sym.pm3d_re pdg @ sym.pm3d_rea pdg @ sym.pm3d_rea pdg @ sym.pm3d_rear pdg @ sym.pm3d_rear pdg @ sym.pm3d_rearr pdg @ sym.pm3d_rearr pdg @ sym.pm3d_rearra pdg @ sym.pm3d_rearra pdg @ sym.pm3d_rearran pdg @ sym.pm3d_rearran pdg @ sym.pm3d_rearrang pdg @ sym.pm3d_rearrang pdg @ sym.pm3d_rearrange pdg @ sym.pm3d_rearrange pdg @ sym.pm3d_rearrange_ pdg @ sym.pm3d_rearrange_ pdg @ sym.pm3d_rearrange_s pdg @ sym.pm3d_rearrange_s pdg @ sym.pm3d_rearrange_sc pdg @ sym.pm3d_rearrange_sc pdg @ sym.pm3d_rearrange_sca pdg @ sym.pm3d_rearrange_sca pdg @ sym.pm3d_rearrange_scan pdg @ sym.pm3d_rearrange_scan pdg @ sym.pm3d_rearrange_scan_ pdg @ sym.pm3d_rearrange_scan_ pdg @ sym.pm3d_rearrange_scan_a pdg @ sym.pm3d_rearrange_scan_a pdg @ sym.pm3d_rearrange_scan_ar pdg @ sym.pm3d_rearrange_scan_ar pdg @ sym.pm3d_rearrange_scan_arr pdg @ sym.pm3d_rearrange_scan_arr pdg @ sym.pm3d_rearrange_scan_arra pdg @ sym.pm3d_rearrange_scan_arra pdg @ sym.pm3d_rearrange_scan_array pdg @ sym.pm3d_rearrange_scan_arrayGhidra Decompiler Error: Deleting integrated varnode
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.p pdd @ sym.p pdd @ sym.pm pdd @ sym.pm pdd @ sym.pm3 pdd @ sym.pm3 pdd @ sym.pm3d pdd @ sym.pm3d pdd @ sym.pm3d_ pdd @ sym.pm3d_ pdd @ sym.pm3d_r pdd @ sym.pm3d_r pdd @ sym.pm3d_re pdd @ sym.pm3d_re pdd @ sym.pm3d_rea pdd @ sym.pm3d_rea pdd @ sym.pm3d_rear pdd @ sym.pm3d_rear pdd @ sym.pm3d_rearr pdd @ sym.pm3d_rearr pdd @ sym.pm3d_rearra pdd @ sym.pm3d_rearra pdd @ sym.pm3d_rearran pdd @ sym.pm3d_rearran pdd @ sym.pm3d_rearrang pdd @ sym.pm3d_rearrang pdd @ sym.pm3d_rearrange pdd @ sym.pm3d_rearrange pdd @ sym.pm3d_rearrange_ pdd @ sym.pm3d_rearrange_ pdd @ sym.pm3d_rearrange_s pdd @ sym.pm3d_rearrange_s pdd @ sym.pm3d_rearrange_sc pdd @ sym.pm3d_rearrange_sc pdd @ sym.pm3d_rearrange_sca pdd @ sym.pm3d_rearrange_sca pdd @ sym.pm3d_rearrange_scan pdd @ sym.pm3d_rearrange_scan pdd @ sym.pm3d_rearrange_scan_ pdd @ sym.pm3d_rearrange_scan_ pdd @ sym.pm3d_rearrange_scan_a pdd @ sym.pm3d_rearrange_scan_a pdd @ sym.pm3d_rearrange_scan_ar pdd @ sym.pm3d_rearrange_scan_ar pdd @ sym.pm3d_rearrange_scan_arr pdd @ sym.pm3d_rearrange_scan_arr pdd @ sym.pm3d_rearrange_scan_arra pdd @ sym.pm3d_rearrange_scan_arra pdd @ sym.pm3d_rearrange_scan_array pdd @ sym.pm3d_rearrange_scan_array/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x80013e0 */
+#include <stdint.h>
+ 
+int64_t pm3d_rearrange_scan_array (int64_t arg_30h, int64_t arg6, int64_t arg5, int64_t arg1, int64_t arg2) {
+    r9 = arg6;
+    r8 = arg5;
+    rdi = arg1;
+    rsi = arg2;
+    __asm ("endbr64");
+    r12 = r8;
+    rbx = rdi;
+    r14 = *((rsp + 0x30));
+    if (rsi != 0) {
+        r10 = rsi;
+        esi = *((rdi + 0x1a0));
+        rdi = *((rdi + 0x1b0));
+        r13 = rdx;
+        rdx = r10;
+        pm3d_rearrange_part ();
+        eax = *((rbx + 0x1a0));
+        *(r13) = eax;
+    }
+    if (r12 == 0) {
+        goto label_0;
+    }
+    edx = *((rbx + 0x1a0));
+    rdi = *((rbx + 0x1b0));
+    if (edx <= 0) {
+        goto label_1;
+    }
+    eax = 0;
+    do {
+        eax++;
+        rdi = *(rdi);
+    } while (eax != edx);
+label_1:
+    if (rdi == 0) {
+        goto label_2;
+    }
+    rax = rdi;
+    esi = 0;
+    do {
+        rax = *(rax);
+        esi++;
+    } while (rax != 0);
+    *(rbp) = esi;
+    rcx = r14;
+    rdx = r12;
+    void (*0x8000070)() ();
+label_2:
+    *(r12) = 0;
+label_0:
+    return rax;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.p pdg @ sym.p pdg @ sym.pm pdg @ sym.pm pdg @ sym.pm3 pdg @ sym.pm3 pdg @ sym.pm3d pdg @ sym.pm3d pdg @ sym.pm3d_ pdg @ sym.pm3d_ pdg @ sym.pm3d_d pdg @ sym.pm3d_d pdg @ sym.pm3d_de pdg @ sym.pm3d_de pdg @ sym.pm3d_dep pdg @ sym.pm3d_dep pdg @ sym.pm3d_dept pdg @ sym.pm3d_dept pdg @ sym.pm3d_depth pdg @ sym.pm3d_depth pdg @ sym.pm3d_depth_ pdg @ sym.pm3d_depth_ pdg @ sym.pm3d_depth_q pdg @ sym.pm3d_depth_q pdg @ sym.pm3d_depth_qu pdg @ sym.pm3d_depth_qu pdg @ sym.pm3d_depth_que pdg @ sym.pm3d_depth_que pdg @ sym.pm3d_depth_queu pdg @ sym.pm3d_depth_queu pdg @ sym.pm3d_depth_queue pdg @ sym.pm3d_depth_queue pdg @ sym.pm3d_depth_queue_ pdg @ sym.pm3d_depth_queue_ pdg @ sym.pm3d_depth_queue_c pdg @ sym.pm3d_depth_queue_c pdg @ sym.pm3d_depth_queue_cl pdg @ sym.pm3d_depth_queue_cl pdg @ sym.pm3d_depth_queue_cle pdg @ sym.pm3d_depth_queue_cle pdg @ sym.pm3d_depth_queue_clea pdg @ sym.pm3d_depth_queue_clea pdg @ sym.pm3d_depth_queue_clear pdg @ sym.pm3d_depth_queue_clear
+void sym.pm3d_depth_queue_clear(void)
+{
+    func_0x0802aa0f(_obj.quadrangles);
+    _obj.quadrangles = 0;
+    _obj.current_quadrangle = 0;
+    "\x06"._0_4_ = 0;
+    return;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.p pdd @ sym.p pdd @ sym.pm pdd @ sym.pm pdd @ sym.pm3 pdd @ sym.pm3 pdd @ sym.pm3d pdd @ sym.pm3d pdd @ sym.pm3d_ pdd @ sym.pm3d_ pdd @ sym.pm3d_d pdd @ sym.pm3d_d pdd @ sym.pm3d_de pdd @ sym.pm3d_de pdd @ sym.pm3d_dep pdd @ sym.pm3d_dep pdd @ sym.pm3d_dept pdd @ sym.pm3d_dept pdd @ sym.pm3d_depth pdd @ sym.pm3d_depth pdd @ sym.pm3d_depth_ pdd @ sym.pm3d_depth_ pdd @ sym.pm3d_depth_q pdd @ sym.pm3d_depth_q pdd @ sym.pm3d_depth_qu pdd @ sym.pm3d_depth_qu pdd @ sym.pm3d_depth_que pdd @ sym.pm3d_depth_que pdd @ sym.pm3d_depth_queu pdd @ sym.pm3d_depth_queu pdd @ sym.pm3d_depth_queue pdd @ sym.pm3d_depth_queue pdd @ sym.pm3d_depth_queue_ pdd @ sym.pm3d_depth_queue_ pdd @ sym.pm3d_depth_queue_c pdd @ sym.pm3d_depth_queue_c pdd @ sym.pm3d_depth_queue_cl pdd @ sym.pm3d_depth_queue_cl pdd @ sym.pm3d_depth_queue_cle pdd @ sym.pm3d_depth_queue_cle pdd @ sym.pm3d_depth_queue_clea pdd @ sym.pm3d_depth_queue_clea pdd @ sym.pm3d_depth_queue_clear pdd @ sym.pm3d_depth_queue_clear/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x80014a0 */
+#include <stdint.h>
+ 
+void pm3d_depth_queue_clear (void) {
+    __asm ("endbr64");
+    rdi = quadrangles;
+    gp_alloc ();
+    *(obj.quadrangles) = 0;
+    *(obj.allocated_quadrangles) = "pm3d_add_quadrangle";
+    *(obj.current_quadrangle) = 0;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.p pdg @ sym.p pdg @ sym.pm pdg @ sym.pm pdg @ sym.pm3 pdg @ sym.pm3 pdg @ sym.pm3d pdg @ sym.pm3d pdg @ sym.pm3d_ pdg @ sym.pm3d_ pdg @ sym.pm3d_d pdg @ sym.pm3d_d pdg @ sym.pm3d_de pdg @ sym.pm3d_de pdg @ sym.pm3d_dep pdg @ sym.pm3d_dep pdg @ sym.pm3d_dept pdg @ sym.pm3d_dept pdg @ sym.pm3d_depth pdg @ sym.pm3d_depth pdg @ sym.pm3d_depth_ pdg @ sym.pm3d_depth_ pdg @ sym.pm3d_depth_q pdg @ sym.pm3d_depth_q pdg @ sym.pm3d_depth_qu pdg @ sym.pm3d_depth_qu pdg @ sym.pm3d_depth_que pdg @ sym.pm3d_depth_que pdg @ sym.pm3d_depth_queu pdg @ sym.pm3d_depth_queu pdg @ sym.pm3d_depth_queue pdg @ sym.pm3d_depth_queue pdg @ sym.pm3d_depth_queue_ pdg @ sym.pm3d_depth_queue_ pdg @ sym.pm3d_depth_queue_f pdg @ sym.pm3d_depth_queue_f pdg @ sym.pm3d_depth_queue_fl pdg @ sym.pm3d_depth_queue_fl pdg @ sym.pm3d_depth_queue_flu pdg @ sym.pm3d_depth_queue_flu pdg @ sym.pm3d_depth_queue_flus pdg @ sym.pm3d_depth_queue_flus pdg @ sym.pm3d_depth_queue_flush pdg @ sym.pm3d_depth_queue_flush
+void sym.pm3d_depth_queue_flush
+               (int64_t arg7, int64_t arg8, int64_t arg9, int64_t arg10, int64_t arg11, undefined8 placeholder_5,
+               undefined8 placeholder_6, undefined8 placeholder_7, undefined8 placeholder_8, undefined8 placeholder_9,
+               undefined8 placeholder_10, int64_t arg4)
+{
+    double *pdVar1;
+    double dVar2;
+    undefined4 extraout_var;
+    undefined4 uVar3;
+    undefined4 extraout_var_00;
+    undefined4 extraout_var_01;
+    undefined4 extraout_var_02;
+    undefined4 extraout_var_03;
+    double *pdVar4;
+    double *pdVar5;
+    int32_t iVar6;
+    int64_t arg1;
+    double *pdVar7;
+    int32_t iVar8;
+    int64_t in_FS_OFFSET;
+    undefined auVar9 [16];
+    double dVar10;
+    double dStack152;
+    double dStack136;
+    double dStack128;
+    undefined auStack120 [16];
+    double dStack104;
+    int64_t iStack64;
+    
+    iStack64 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    if ((*(int32_t *)0x800000c == 3) || (segment.ehdr != (code)0x0)) {
+        (**(code **)(_reloc.term + 0x110))
+                  (arg7, arg8, arg9, arg10, arg11, placeholder_5, placeholder_6, placeholder_7, 0x11);
+        pdVar7 = _obj.quadrangles;
+        if ((0 < _obj.current_quadrangle) && (_obj.quadrangles != (double *)0x0)) {
+            if (*(char *)0x8000010 == '\0') {
+                dStack136 = 0.00000000;
+            } else {
+                dVar10 = *(double *)(reloc.sqrt + (int64_t)_reloc.z_axis * 0x2a8);
+                dStack136 = *(double *)(reloc.yscale3d + (int64_t)_reloc.z_axis * 0x2a8);
+                auVar9 = ZEXT816((uint64_t)dStack136);
+                if (dStack136 <= dVar10) {
+                    dStack136 = dVar10;
+                    if (0.00000000 <= dVar10) {
+                        auVar9 = maxsd(auVar9, (undefined  [16])0x0);
+                        dStack136 = SUB168(auVar9, 0);
+                    }
+                } else {
+                    if (0.00000000 <= dStack136) {
+                        auVar9 = maxsd(ZEXT816((uint64_t)dVar10), (undefined  [16])0x0);
+                        dStack136 = SUB168(auVar9, 0);
+                    }
+                }
+            }
+            dStack128 = 0.00000000;
+            pdVar4 = _obj.quadrangles + (int64_t)_obj.current_quadrangle * 0x14;
+            do {
+                pdVar5 = pdVar7 + 2;
+                iVar8 = 4;
+                dVar10 = dStack128;
+                if (*(int16_t *)((int64_t)pdVar7 + 0x9a) == 5) {
+                    pdVar5 = (double *)((int64_t)*(int32_t *)(pdVar7 + 2) * 0x20 + _obj.polygonlist);
+                    iVar8 = (int32_t)pdVar5[0xb];
+                    if (0 < iVar8) goto code_r0x08001593;
+                    dStack152 = 0.00000000;
+                } else {
+code_r0x08001593:
+                    iVar6 = 0;
+                    dStack152 = 0.00000000;
+                    do {
+                        while( true ) {
+                            if (*(char *)0x8000010 != '\0') break;
+                            func_0x0802aa0f(*pdVar5, pdVar5[1], pdVar5[2], dVar10, auStack120);
+                            dVar10 = dVar10 + dStack104;
+                            if (iVar6 != 0) goto code_r0x080015cf;
+code_r0x0800161e:
+                            iVar6 = iVar6 + 1;
+                            dStack152 = dStack104;
+                            pdVar5 = pdVar5 + 4;
+                            if (iVar8 <= iVar6) goto code_r0x0800162f;
+                        }
+                        func_0x0802aa0f(*pdVar5, pdVar5[1], dStack136, dVar10, auStack120);
+                        dVar10 = dVar10 + dStack104;
+                        if (iVar6 == 0) goto code_r0x0800161e;
+code_r0x080015cf:
+                        auVar9 = maxsd(ZEXT816((uint64_t)dStack104), dStack152);
+                        iVar6 = iVar6 + 1;
+                        pdVar5 = pdVar5 + 4;
+                        dStack152 = SUB168(auVar9, 0);
+                    } while (iVar6 < iVar8);
+                }
+code_r0x0800162f:
+                if (*(char *)0x8000011 != '\0') {
+                    dStack152 = dVar10 / (double)iVar8;
+                }
+                pdVar5 = pdVar7 + 0x14;
+                pdVar7[1] = dStack152;
+                pdVar7 = pdVar5;
+            } while (pdVar4 != pdVar5);
+            func_0x0802aa0f(_obj.quadrangles, (int64_t)_obj.current_quadrangle, 0xa0, sym.compare_quadrangles);
+            pdVar5 = _obj.quadrangles + (int64_t)_obj.current_quadrangle * 0x14;
+            pdVar7 = pdVar5;
+            pdVar4 = _obj.quadrangles;
+            while (pdVar4 != pdVar5) {
+                while( true ) {
+                    dVar10 = *pdVar4;
+                    if (dVar10 == _reloc..LC10) {
+                        func_0x0802aa0f(dVar10, pdVar4[0x12]);
+                        uVar3 = extraout_var_00;
+                    } else {
+                        if (dVar10 == _reloc..LC11) {
+                            (**(code **)(_reloc.term + 0x68))(dVar10, 0xfffffffc);
+                            uVar3 = extraout_var;
+                        } else {
+                            if (dVar10 == _reloc..LC12) {
+                                func_0x0802aa0f(dVar10, *(undefined4 *)(pdVar4 + 0x12));
+                                uVar3 = extraout_var_02;
+                            } else {
+                                dVar2 = (double)CONCAT17(*(undefined *)0x8000007, 
+                                                         CONCAT52(*(unkbyte5 *)0x8000002, 
+                                                                  CONCAT11(*(undefined *)0x8000001, segment.ehdr)));
+                                if (dVar2 <= 0.00000000) {
+                                    func_0x0802aa0f(dVar10, dVar2);
+                                    uVar3 = extraout_var_03;
+                                } else {
+                                    func_0x0802aa0f(dVar10, dVar2, (int64_t)dVar10);
+                                    uVar3 = extraout_var_01;
+                                }
+                            }
+                        }
+                    }
+                    pdVar7 = pdVar4 + 0x13;
+                    if (*(int16_t *)((int64_t)pdVar4 + 0x9a) != 5) break;
+                    pdVar1 = pdVar4 + 2;
+                    pdVar4 = pdVar4 + 0x14;
+                    arg1 = (int64_t)*(int32_t *)pdVar1 * 0x20 + _obj.polygonlist;
+                    sym.filled_polygon(arg1, (uint64_t)(uint32_t)(int32_t)*(int16_t *)pdVar7, 
+                                       CONCAT44(uVar3, (int32_t)*(double *)(arg1 + 0x58)));
+                    pdVar7 = _obj.quadrangles;
+                    if (pdVar5 == pdVar4) goto code_r0x0800173c;
+                }
+                pdVar1 = pdVar4 + 2;
+                pdVar4 = pdVar4 + 0x14;
+                sym.filled_polygon((int64_t)pdVar1, (uint64_t)(uint32_t)(int32_t)*(int16_t *)pdVar7, 4);
+                pdVar7 = _obj.quadrangles;
+            }
+        }
+code_r0x0800173c:
+        func_0x0802aa0f(pdVar7);
+        _obj.quadrangles = (double *)0x0;
+        "\x06"._0_4_ = 0;
+        _obj.current_quadrangle = 0;
+        func_0x0802aa0f(_obj.polygonlist);
+        _obj.polygonlist = 0;
+        _obj.current_polygon = 0;
+        _obj.next_polygon = 0;
+        _obj.polygonlistsize = 0;
+        (**(code **)(_reloc.term + 0x110))(0x12);
+    }
+    if (iStack64 != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        func_0x0802aa0f();
+        *(undefined4 *)0x8000028 = CONCAT31((unkint3)((uint32_t)_reloc.default_pm3d_border >> 8), 1);
+        segment.ehdr = (code)0x0;
+        *(undefined *)0x8000001 = 0;
+        *(unkbyte5 *)0x8000002 = 0;
+        *(undefined4 *)0x8000007 = 0;
+        *(undefined *)0x800000b = 0;
+        *(undefined4 *)0x800000c = 0;
+        *(undefined2 *)0x8000010 = 0x100;
+        *(undefined8 *)0x8000014 = 0x400000000;
+        *(undefined8 *)0x800001c = 0x100000001;
+        *(undefined4 *)0x800002c = 0xfffffffd;
+        *(undefined4 *)0x8000030 = *(undefined4 *)0x8003e88;
+        *(undefined4 *)0x8000034 = *(undefined4 *)0x8003e8c;
+        *(undefined4 *)0x8000038 = *(undefined4 *)0x8003e90;
+        *(undefined4 *)0x800003c = *(undefined4 *)0x8003e94;
+        _sym.compare_quadrangles = *(undefined4 *)0x8003e98;
+        *(undefined4 *)0x8000044 = *(undefined4 *)0x8003e9c;
+        *(undefined4 *)0x8000048 = *(undefined4 *)0x8003ea0;
+        *(undefined4 *)0x800004c = *(undefined4 *)0x8003ea4;
+        *(undefined4 *)0x8000050 = *(undefined4 *)0x8003ea8;
+        *(undefined4 *)0x8000054 = *(undefined4 *)0x8003eac;
+        *(undefined4 *)0x8000058 = *(undefined4 *)0x8003eb0;
+        *(undefined4 *)0x800005c = *(undefined4 *)0x8003eb4;
+        *(undefined4 *)0x8000060 = *(undefined4 *)0x8003eb8;
+        *(undefined4 *)0x8000064 = *(undefined4 *)0x8003ebc;
+        *(undefined4 *)0x8000068 = *(undefined4 *)0x8003ec0;
+        *(undefined4 *)0x800006c = *(undefined4 *)0x8003ec4;
+        _sym.pm3d_rearrange_part = *(undefined4 *)0x8003ec8;
+        *(undefined4 *)0x8000074 = *(undefined4 *)0x8003ecc;
+        *(undefined4 *)0x8000078 = *(undefined4 *)0x8003ed0;
+        *(undefined4 *)0x800007c = *(undefined4 *)0x8003ed4;
+        *(undefined4 *)0x8000080 = *(undefined4 *)0x8003ed8;
+        *(undefined4 *)0x8000084 = *(undefined4 *)0x8003edc;
+        *(undefined8 *)0x8000088 = *(undefined8 *)0x8003ee0;
+        _obj.pm3d_plot_at = 0;
+        return;
+    }
+    return;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.p pdd @ sym.p pdd @ sym.pm pdd @ sym.pm pdd @ sym.pm3 pdd @ sym.pm3 pdd @ sym.pm3d pdd @ sym.pm3d pdd @ sym.pm3d_ pdd @ sym.pm3d_ pdd @ sym.pm3d_d pdd @ sym.pm3d_d pdd @ sym.pm3d_de pdd @ sym.pm3d_de pdd @ sym.pm3d_dep pdd @ sym.pm3d_dep pdd @ sym.pm3d_dept pdd @ sym.pm3d_dept pdd @ sym.pm3d_depth pdd @ sym.pm3d_depth pdd @ sym.pm3d_depth_ pdd @ sym.pm3d_depth_ pdd @ sym.pm3d_depth_q pdd @ sym.pm3d_depth_q pdd @ sym.pm3d_depth_qu pdd @ sym.pm3d_depth_qu pdd @ sym.pm3d_depth_que pdd @ sym.pm3d_depth_que pdd @ sym.pm3d_depth_queu pdd @ sym.pm3d_depth_queu pdd @ sym.pm3d_depth_queue pdd @ sym.pm3d_depth_queue pdd @ sym.pm3d_depth_queue_ pdd @ sym.pm3d_depth_queue_ pdd @ sym.pm3d_depth_queue_f pdd @ sym.pm3d_depth_queue_f pdd @ sym.pm3d_depth_queue_fl pdd @ sym.pm3d_depth_queue_fl pdd @ sym.pm3d_depth_queue_flu pdd @ sym.pm3d_depth_queue_flu pdd @ sym.pm3d_depth_queue_flus pdd @ sym.pm3d_depth_queue_flus pdd @ sym.pm3d_depth_queue_flush pdd @ sym.pm3d_depth_queue_flush/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x80014e0 */
+#include <stdint.h>
+ 
+int64_t pm3d_depth_queue_flush (int64_t arg11, int64_t arg10, int64_t arg9, int64_t arg8, int64_t arg7, int64_t arg4) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    int64_t var_30h;
+    int64_t var_58h;
+    xmm4 = arg11;
+    xmm3 = arg10;
+    xmm2 = arg9;
+    xmm1 = arg8;
+    xmm0 = arg7;
+    rcx = arg4;
+    __asm ("endbr64");
+    rax = *(fs:0x28);
+    *((rsp + 0x58)) = rax;
+    eax = 0;
+    if (*(0x0800000c) != 3) {
+        if (*(obj.pm3d) == 0) {
+            goto label_9;
+        }
+    }
+    rax = *(reloc.term);
+    edi = 0x11;
+    uint64_t (*rax + 0x110)() ();
+    rax = *(obj.current_quadrangle);
+    r12 = quadrangles;
+    if (eax <= 0) {
+        goto label_10;
+    }
+    if (r12 == 0) {
+        goto label_10;
+    }
+    if (*(0x08000010) != 0) {
+        goto label_11;
+    }
+    xmm7 = 0;
+    *((rsp + 0x18)) = xmm7;
+    *((rsp + 0x10)) = xmm7;
+label_4:
+    r13 = rax * 5;
+    r13 <<= 5;
+    r13 += r12;
+label_2:
+    rbx = r12 + 0x10;
+    r14d = 4;
+    if (*((r12 + 0x9a)) == 5) {
+        goto label_12;
+    }
+label_5:
+    xmm5 = *((rsp + 0x18));
+    ebp = 0;
+    r15 = rsp + 0x20;
+    __asm ("movapd xmm3, xmm5");
+    *(rsp) = xmm5;
+    while (*(0x08000010) != 0) {
+        xmm2 = *((rsp + 0x10));
+        gp_alloc ();
+        xmm3 = *((rsp + 8));
+        xmm0 = *((rsp + 0x30));
+        __asm ("addsd xmm3, xmm0");
+        if (ebp == 0) {
+            goto label_13;
+        }
+label_0:
+        __asm ("maxsd xmm0, qword [rsp]");
+        ebp++;
+        rbx += 0x20;
+        *(rsp) = xmm0;
+        if (r14d <= ebp) {
+            goto label_6;
+        }
+label_1:
+        xmm1 = *((rbx + 8));
+        *((rsp + 8)) = xmm3;
+        rdi = r15;
+        xmm0 = *(rbx);
+    }
+    xmm2 = *((rbx + 0x10));
+    gp_alloc ();
+    xmm3 = *((rsp + 8));
+    xmm0 = *((rsp + 0x30));
+    __asm ("addsd xmm3, xmm0");
+    if (ebp != 0) {
+        goto label_0;
+    }
+label_13:
+    ebp++;
+    *(rsp) = xmm0;
+    rbx += 0x20;
+    if (r14d > ebp) {
+        goto label_1;
+    }
+label_6:
+    if (*(0x08000011) != 0) {
+        xmm0 = 0;
+        __asm ("cvtsi2sd xmm0, r14d");
+        __asm ("divsd xmm3, xmm0");
+        *(rsp) = xmm3;
+    }
+    xmm6 = *(rsp);
+    r12 += 0xa0;
+    *((r12 - 0x98)) = xmm6;
+    if (r13 != r12) {
+        goto label_2;
+    }
+    rsi = *(obj.current_quadrangle);
+    rdi = quadrangles;
+    edx = 0xa0;
+    rcx = sym_compare_quadrangles;
+    gp_alloc ();
+    rax = *(obj.current_quadrangle);
+    rbx = quadrangles;
+    r12 = rax * 5;
+    r12 <<= 5;
+    r12 += rbx;
+    if (rbx != r12) {
+        goto label_3;
+    }
+    goto label_10;
+    do {
+        rdi = rbx + 0x10;
+        edx = 4;
+        rbx += 0xa0;
+        filled_polygon ();
+        if (r12 == rbx) {
+            goto label_14;
+        }
+label_3:
+        xmm0 = *(rbx);
+        __asm ("ucomisd xmm0, qword [loc..LC10]");
+        __asm ("jnp 0x8001860");
+label_7:
+        __asm ("ucomisd xmm0, qword [loc..LC11]");
+        __asm ("jp 0x8001880");
+        if (r12 != rbx) {
+            goto label_15;
+        }
+        rax = *(reloc.term);
+        edi = 0xfffffffc;
+        uint64_t (*rax + 0x68)() ();
+label_8:
+        esi = *((rbx + 0x98));
+    } while (*((rbx + 0x9a)) != 5);
+    rdi = *((rbx + 0x10));
+    rbx += 0xa0;
+    rdi <<= 5;
+    rdi += *(obj.polygonlist);
+    __asm ("cvttsd2si edx, qword [rdi + 0x58]");
+    filled_polygon ();
+    if (r12 != rbx) {
+        goto label_3;
+    }
+label_14:
+    r12 = quadrangles;
+label_10:
+    rdi = quadrangles;
+    gp_alloc ();
+    rdi = polygonlist;
+    *(obj.quadrangles) = 0;
+    *(obj.allocated_quadrangles) = "pm3d_add_quadrangle";
+    *(obj.current_quadrangle) = 0;
+    gp_alloc ();
+    rax = *(reloc.term);
+    edi = 0x12;
+    *(obj.polygonlist) = 0;
+    *(obj.current_polygon) = 0;
+    *(obj.next_polygon) = 0;
+    *(obj.polygonlistsize) = 0;
+    uint64_t (*rax + 0x110)() ();
+label_9:
+    rax = *((rsp + 0x58));
+    rax ^= *(fs:0x28);
+    if (r12 != rbx) {
+        goto label_16;
+    }
+    return rax;
+label_11:
+    rdx = *(reloc.z_axis);
+    rcx = rdx * 0x2a8;
+    rdx = reloc_axis_array;
+    rdx += rcx;
+    xmm7 = *((rdx + 0x10));
+    xmm0 = *((rdx + 0x18));
+    __asm ("comisd xmm0, xmm7");
+    *((rsp + 0x10)) = xmm7;
+    if (rdx <= 0) {
+        goto label_17;
+    }
+    xmm6 = 0;
+    __asm ("comisd xmm6, xmm0");
+    *((rsp + 0x18)) = xmm6;
+    if (rdx > 0) {
+        goto label_18;
+    }
+    __asm ("maxsd xmm7, xmm6");
+    *((rsp + 0x10)) = xmm7;
+    goto label_4;
+label_12:
+    rbx = *((r12 + 0x10));
+    rbx <<= 5;
+    rbx += *(obj.polygonlist);
+    __asm ("cvttsd2si r14d, qword [rbx + 0x58]");
+    if (r14d > 0) {
+        goto label_5;
+    }
+    xmm7 = *((rsp + 0x18));
+    __asm ("movapd xmm3, xmm7");
+    *(rsp) = xmm7;
+    goto label_6;
+    if (r14d != 0) {
+        goto label_7;
+    }
+    rdi = *((rbx + 0x90));
+    gp_alloc ();
+    goto label_8;
+label_15:
+    __asm ("ucomisd xmm0, qword [loc..LC12]");
+    __asm ("jnp 0x80018b0");
+    while (r14d != 0) {
+        xmm1 = pm3d.c;
+        __asm ("comisd xmm1, xmmword [rsp + 0x18]");
+        if (r14d <= 0) {
+            goto label_19;
+        }
+        __asm ("cvttsd2si rdi, xmm0");
+        gp_alloc ();
+        goto label_8;
+    }
+    edi = *((rbx + 0x90));
+    gp_alloc ();
+    goto label_8;
+label_19:
+    gp_alloc ();
+    goto label_8;
+label_17:
+    xmm7 = 0;
+    __asm ("comisd xmm7, xmmword [rsp + 0x10]");
+    *((rsp + 0x18)) = xmm7;
+    if (r14d > 0) {
+        goto label_4;
+    }
+    __asm ("maxsd xmm0, xmm7");
+    *((rsp + 0x10)) = xmm0;
+    goto label_4;
+label_18:
+    *((rsp + 0x10)) = xmm0;
+    goto label_4;
+label_16:
+    gp_alloc ();
+    __asm ("endbr64");
+    eax = 0x73;
+    __asm ("movdqa xmm0, xmmword [obj.default_pm3d_border]");
+    __asm ("movdqa xmm1, xmmword [0x08003e90]");
+    edx = 0x100;
+    *(obj.pm3d) = ax;
+    __asm ("movdqa xmm2, xmmword [0x08003ea0]");
+    rax = 0x400000000;
+    *(0x08000014) = rax;
+    __asm ("movdqa xmm3, xmmword [0x08003eb0]");
+    rax = 0x100000001;
+    *(0x0800001c) = rax;
+    __asm ("movdqa xmm4, xmmword [0x08003ec0]");
+    __asm ("movdqa xmm5, xmmword [0x08003ed0]");
+    rax = *(0x08003ee0);
+    __asm ("movups xmmword [0x08000028], xmm0");
+    *(obj.pm3d_plot_at) = 0;
+    *(0x08000007) = 0x62;
+    *(0x0800000c) = 0;
+    *(0x08000010) = dx;
+    *(0x08000088) = rax;
+    *(0x0800002c) = 0xfffffffd;
+    *(obj.pm3d) = 0;
+    *(0x08000008) = 0;
+    *(0x08000028) = 1;
+    __asm ("movups xmmword [0x08000038], xmm1");
+    __asm ("movups xmmword [0x08000048], xmm2");
+    __asm ("movups xmmword [0x08000058], xmm3");
+    __asm ("movups xmmword [0x08000068], xmm4");
+    __asm ("movups xmmword [0x08000078], xmm5");
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x8001a00 */
+#include <stdint.h>
+ 
+int64_t get_pm3d_at_option (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    rbx = rdi;
+    edi = *(reloc.c_token);
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_4;
+    }
+    rsi = loc__LC14;
+    eax = gp_alloc ();
+    if (eax != 0) {
+        goto label_5;
+    }
+    rax = *(reloc.c_token);
+    rdx = rax * 5;
+    rdi = rax;
+    rax = *(reloc.token);
+    rdx = rax + rdx*8;
+    ecx = *((rdx + 0x24));
+    if (ecx > 6) {
+        goto label_4;
+    }
+    rsi = *((rdx + 0x20));
+    rsi += *(reloc.gp_input_line);
+    if (ecx == 0) {
+        goto label_6;
+    }
+    eax = 0;
+    do {
+        edx = eax;
+        eax++;
+        edi = *((rsi + rdx));
+        *((rbx + rdx)) = dil;
+    } while (eax < ecx);
+    rdi = *(reloc.c_token);
+    rax = *(reloc.token);
+label_6:
+    rdx = rdi * 5;
+    rax = *((rax + rdx*8 + 0x24));
+    *((rbx + rax)) = 0;
+    eax = *(rbx);
+    if (al == 0) {
+        goto label_7;
+    }
+    do {
+        edx = rax - 0x73;
+        if (dl > 1) {
+            if (al != 0x62) {
+                goto label_8;
+            }
+        }
+        eax = *((rbx + 1));
+        rbx++;
+    } while (al != 0);
+label_7:
+    eax = 0;
+    *(reloc.c_token)++;
+    return rax;
+label_8:
+    edi = *(reloc.c_token);
+    rsi = "parameter to `pm3d at` requires combination of up to 6 characters b,s,t\n\t(drawing at bottom, surface, top)";
+    eax = 0;
+    eax = gp_alloc ();
+label_5:
+    edi = *(reloc.c_token);
+label_4:
+    rsi = "parameter to `pm3d at` requires combination of up to 6 characters b,s,t\n\t(drawing at bottom, surface, top)";
+    eax = 0;
+    gp_alloc ();
+    __asm ("endbr64");
+    *(obj.plot_has_palette) = 1;
+    rcx = *(reloc.first_3dplot);
+    rdx = *(reloc.first_plot);
+    rax = *(reloc.first_label);
+    if (*(0x08000014) == 1) {
+        goto label_1;
+    }
+    if (esi == 1) {
+        goto label_9;
+    }
+    if (esi != 2) {
+        goto label_0;
+    }
+    r9d = rdi + 1;
+    r8d = 1;
+    if (edi <= 0) {
+        goto label_0;
+    }
+    edx = *((rcx + 0x10));
+    if (edx == 0x640) {
+        goto label_1;
+    }
+    do {
+        if (edx == 0x588) {
+            goto label_1;
+        }
+        edi = *((rcx + 0x60));
+        edx = rdi - 1;
+        if (edx > 2) {
+            goto label_1;
+        }
+        rdx = *((rcx + 0x158));
+        if (rdx != 0) {
+            if (*((rdx + 0x58)) > 3) {
+                goto label_1;
+            }
+        }
+        r8d++;
+        rcx = *(rcx);
+        if (r9d == r8d) {
+            goto label_0;
+        }
+        edx = *((rcx + 0x10));
+    } while (edx != 0x640);
+label_1:
+    return rax;
+    do {
+        rax = *(rax);
+label_0:
+        if (rax == 0) {
+            goto label_10;
+        }
+        edi = *((rax + 0x58));
+        edx = rdi - 4;
+    } while (edx > 2);
+    return rax;
+label_9:
+    if (rdx != 0) {
+        goto label_11;
+    }
+    goto label_0;
+label_2:
+    edi = *((rdx + 0x60));
+    ecx = rdi - 4;
+    if (ecx <= 2) {
+        goto label_1;
+    }
+    rcx = *((rdx + 0x158));
+    if (rcx == 0) {
+        goto label_12;
+    }
+    ecx = *((rcx + 0x58));
+    ecx -= 4;
+    if (ecx <= 2) {
+        goto label_1;
+    }
+label_12:
+    rdx = *(rdx);
+    if (rdx == 0) {
+        goto label_0;
+    }
+label_11:
+    if (*((rdx + 0x10)) != 0x640) {
+        goto label_2;
+    }
+    return rax;
+label_10:
+    eax = *(reloc.not_a_number);
+    eax -= 4;
+    if (eax <= 2) {
+        goto label_1;
+    }
+    eax = *(0x0802b187);
+    eax -= 4;
+    if (eax <= 2) {
+        goto label_1;
+    }
+    eax = *(0x0802aedf);
+    eax -= 4;
+    if (eax <= 2) {
+        goto label_1;
+    }
+    eax = *(0x0802bc27);
+    eax -= 4;
+    if (eax <= 2) {
+        goto label_1;
+    }
+    eax = *(0x0802b97f);
+    eax -= 4;
+    if (eax <= 2) {
+        goto label_1;
+    }
+    if (esi == 2) {
+        goto label_13;
+    }
+label_3:
+    eax = *(0x0802b42f);
+    eax -= 4;
+    if (eax <= 2) {
+        goto label_1;
+    }
+    rax = *(reloc.first_object);
+    if (rax != 0) {
+        goto label_14;
+    }
+    goto label_15;
+    do {
+        rax = *(rax);
+        if (rax == 0) {
+            goto label_15;
+        }
+label_14:
+        esi = *((rax + 0x68));
+        edx = rsi - 4;
+    } while (edx > 2);
+    return rax;
+label_13:
+    eax = *(0x0802ac37);
+    eax -= 4;
+    if (eax > 2) {
+        goto label_3;
+    }
+    return rax;
+label_15:
+    *(obj.plot_has_palette) = 0;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x8001c80 */
+#include <stdint.h>
+ 
+uint32_t is_plot_with_palette (void) {
+    __asm ("endbr64");
+    eax = *(obj.plot_has_palette);
+    return eax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x8001c90 */
+#include <stdint.h>
+ 
+uint32_t is_plot_with_colorbox (void) {
+    __asm ("endbr64");
+    eax = *(obj.plot_has_palette);
+    if (al != 0) {
+        al = (*(reloc.color_box) != 0x6e) ? 1 : 0;
+    }
+    return eax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x8001cb0 */
+#include <stdint.h>
+ 
+void pm3d_init_lighting_model (void) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    __asm ("endbr64");
+    xmm0 = 0;
+    __asm ("cvtsi2sd xmm0, dword [0x08000024]");
+    __asm ("mulsd xmm0, qword [loc..LC9]");
+    rdi = rsp + 0x18;
+    rsi = rsp + 0x10;
+    gp_alloc ();
+    xmm1 = 0;
+    xmm2 = *((rsp + 0x10));
+    __asm ("cvtsi2sd xmm1, dword [0x08000020]");
+    __asm ("mulsd xmm1, qword [loc..LC15]");
+    __asm ("addsd xmm1, qword [loc..LC16]");
+    *(rsp) = xmm2;
+    __asm ("movapd xmm0, xmm1");
+    *((rsp + 8)) = xmm1;
+    gp_alloc ();
+    __asm ("mulsd xmm0, qword [rsp]");
+    xmm1 = *((rsp + 8));
+    __asm ("xorpd xmm1, xmmword [loc..LC5]");
+    *(obj.light) = xmm0;
+    __asm ("movapd xmm0, xmm1");
+    gp_alloc ();
+    __asm ("mulsd xmm0, qword [rsp]");
+    *(0x08003f30) = xmm0;
+    xmm0 = *((rsp + 0x18));
+    *(0x08003f28) = xmm0;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x8001d60 */
+#include <stdint.h>
+ 
+int64_t pm3d_side (int64_t arg1, int64_t arg2, int64_t arg3) {
+    int64_t var_18h;
+    int64_t var_8ch;
+    int64_t var_b4h;
+    int64_t var_248h;
+    int64_t var_8h;
+    int64_t var_38h;
+    int64_t var_40h;
+    int64_t var_70h;
+    int64_t var_78h;
+    int64_t var_a8h;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    __asm ("endbr64");
+    rax = rdi;
+    rbx = rdx;
+    xmm0 = *((rax + 8));
+    xmm2 = *((rax + 0x18));
+    rcx = *(fs:0x28);
+    *((rsp + 0xa8)) = rcx;
+    ecx = 0;
+    xmm1 = *((rax + 0x10));
+    rdi = rsp;
+    gp_alloc (rbx);
+    xmm0 = *((rbp + 8));
+    xmm2 = *((rbp + 0x18));
+    rdi = rsp + 0x38;
+    xmm1 = *((rbp + 0x10));
+    gp_alloc ();
+    xmm0 = *((rbx + 8));
+    xmm2 = *((rbx + 0x18));
+    rdi = rsp + 0x70;
+    xmm1 = *((rbx + 0x10));
+    gp_alloc ();
+    xmm2 = *((rsp + 8));
+    xmm3 = *(rsp);
+    eax = 1;
+    xmm0 = *((rsp + 0x38));
+    xmm1 = *((rsp + 0x78));
+    __asm ("subsd xmm0, xmm3");
+    __asm ("subsd xmm1, xmm2");
+    __asm ("mulsd xmm0, xmm1");
+    xmm1 = *((rsp + 0x40));
+    __asm ("subsd xmm1, xmm2");
+    xmm2 = *((rsp + 0x70));
+    __asm ("subsd xmm2, xmm3");
+    __asm ("mulsd xmm1, xmm2");
+    __asm ("subsd xmm0, xmm1");
+    xmm1 = 0;
+    __asm ("comisd xmm0, xmm1");
+    if (? <= ?) {
+        eax = 0;
+        __asm ("comisd xmm1, xmm0");
+        al = (? > ?) ? 1 : 0;
+        eax = -eax;
+    }
+    rcx = *((rsp + 0xa8));
+    rcx ^= *(fs:0x28);
+    if (? == ?) {
+        return rax;
+    }
+    rax = gp_alloc ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x8003840 */
+#include <stdint.h>
+ 
+void pm3d_draw_one (uint32_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    if (*((rdi + 0x1b8)) != 0) {
+        goto label_1;
+    }
+    rbx = obj_pm3d;
+    while (sil == 0) {
+        return;
+label_1:
+        rbx = rdi + 0x1b8;
+        xmm0 = pm3d.c;
+        __asm ("comisd xmm0, xmmword [loc..LC1]");
+        if (*(obj.pm3d) > 0) {
+            goto label_2;
+        }
+label_0:
+        esi = *(rbx);
+    }
+    rbx++;
+    do {
+        rdi = rbp;
+        rbx++;
+        pm3d_plot ();
+        esi = *((rbx - 1));
+    } while (sil != 0);
+    return;
+label_2:
+    gp_alloc ();
+    goto label_0;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x80038c0 */
+#include <stdint.h>
+ 
+int64_t pm3d_add_polygon (int64_t arg11, int64_t arg10, int64_t arg9, int64_t arg8, int64_t arg1, int64_t arg2, int64_t arg3) {
+    int64_t var_34h;
+    int64_t var_70h;
+    int64_t var_b0h;
+    int64_t var_f0h;
+    int64_t var_130h;
+    int64_t var_138h;
+    xmm4 = arg11;
+    xmm3 = arg10;
+    xmm2 = arg9;
+    xmm1 = arg8;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+label_9:
+    __asm ("endbr64");
+    r13d = edx;
+    r12 = rdi;
+    rbx = rsi;
+    rdx = *(obj.current_quadrangle);
+    ecx = "pm3d_add_quadrangle";
+    rax = *(fs:0x28);
+    *((rsp + 0x138)) = rax;
+    eax = 0;
+    rdi = quadrangles;
+    if (r12 == 0) {
+        goto label_10;
+    }
+    if (*((r12 + 0x10)) == 0x928) {
+        goto label_10;
+    }
+    rax = *((r12 + 0x1b0));
+    eax = *((rax + 0xc));
+    esi = rax + rdx;
+    if (esi > ecx) {
+        goto label_11;
+    }
+label_4:
+    rbp = rdx * 5;
+    __asm ("movdqu xmm2, xmmword [rbx]");
+    eax = rdx + 1;
+    rbp <<= 5;
+    *(obj.current_quadrangle) = eax;
+    rbp += rdi;
+    __asm ("movups xmmword [rbp + 0x10], xmm2");
+    __asm ("movdqu xmm3, xmmword [rbx + 0x10]");
+    __asm ("movups xmmword [rbp + 0x20], xmm3");
+    __asm ("movdqu xmm4, xmmword [rbx + 0x20]");
+    __asm ("movups xmmword [rbp + 0x30], xmm4");
+    __asm ("movdqu xmm5, xmmword [rbx + 0x30]");
+    __asm ("movups xmmword [rbp + 0x40], xmm5");
+    __asm ("movdqu xmm6, xmmword [rbx + 0x40]");
+    __asm ("movups xmmword [rbp + 0x50], xmm6");
+    __asm ("movdqu xmm7, xmmword [rbx + 0x50]");
+    __asm ("movups xmmword [rbp + 0x60], xmm7");
+    __asm ("movdqu xmm2, xmmword [rbx + 0x60]");
+    __asm ("movups xmmword [rbp + 0x70], xmm2");
+    __asm ("movdqu xmm3, xmmword [rbx + 0x70]");
+    __asm ("movups xmmword [rbp + 0x80], xmm3");
+    do {
+        rdi = r12 + 0x138;
+        ax = gp_alloc ();
+        *((rbp + 0x98)) = ax;
+label_0:
+        esi = 0;
+        xmm0 = *((rbx + 0x60));
+        __asm ("ucomisd xmm0, qword [rbx + 0x40]");
+        *((rbp + 0x9a)) = si;
+        __asm ("jp 0x80039e0");
+        if (rbp == 0) {
+            xmm0 = *((rbx + 0x68));
+            __asm ("ucomisd xmm0, qword [rbx + 0x48]");
+            __asm ("jp 0x80039e0");
+            if (rbp != 0) {
+                goto label_12;
+            }
+            xmm0 = *((rbx + 0x70));
+            __asm ("ucomisd xmm0, qword [rbx + 0x50]");
+            __asm ("jp 0x80039e0");
+            if (rbp != 0) {
+                goto label_12;
+            }
+            ecx = 3;
+            *((rbp + 0x9a)) = cx;
+        }
+label_12:
+        if (r13d > 4) {
+            goto label_13;
+        }
+        if (r12 == 0) {
+            goto label_14;
+        }
+label_2:
+        if (*((r12 + 0x183)) == 0) {
+            goto label_15;
+        }
+        xmm0 = pm3d.c;
+        __asm ("comisd xmm0, xmmword [loc..LC1]");
+        *(obj.color_from_rgbvar) = "bl-interp along scan";
+        eax = *((r12 + 0x64));
+        if (*((r12 + 0x183)) > 0) {
+            goto label_16;
+        }
+        *((rbp + 0x90)) = eax;
+        rax = *(loc..LC12);
+        *(rbp) = rax;
+label_1:
+        rax = *((rsp + 0x138));
+        rax ^= *(fs:0x28);
+        if (*((r12 + 0x183)) != 0) {
+            goto label_17;
+        }
+        return rax;
+label_10:
+        eax = rdx + 0x63;
+        if (eax >= ecx) {
+            goto label_18;
+        }
+label_3:
+        rbp = rdx * 5;
+        __asm ("movdqu xmm1, xmmword [rbx]");
+        eax = rdx + 1;
+        rbp <<= 5;
+        *(obj.current_quadrangle) = eax;
+        rbp += rdi;
+        __asm ("movups xmmword [rbp + 0x10], xmm1");
+        __asm ("movdqu xmm2, xmmword [rbx + 0x10]");
+        __asm ("movups xmmword [rbp + 0x20], xmm2");
+        __asm ("movdqu xmm3, xmmword [rbx + 0x20]");
+        __asm ("movups xmmword [rbp + 0x30], xmm3");
+        __asm ("movdqu xmm4, xmmword [rbx + 0x30]");
+        __asm ("movups xmmword [rbp + 0x40], xmm4");
+        __asm ("movdqu xmm5, xmmword [rbx + 0x40]");
+        __asm ("movups xmmword [rbp + 0x50], xmm5");
+        __asm ("movdqu xmm6, xmmword [rbx + 0x50]");
+        __asm ("movups xmmword [rbp + 0x60], xmm6");
+        __asm ("movdqu xmm7, xmmword [rbx + 0x60]");
+        __asm ("movups xmmword [rbp + 0x70], xmm7");
+        __asm ("movdqu xmm1, xmmword [rbx + 0x70]");
+        __asm ("movups xmmword [rbp + 0x80], xmm1");
+    } while (r12 != 0);
+    edi = 0;
+    *((rbp + 0x98)) = di;
+    goto label_0;
+label_15:
+    if (*((r12 + 0x60)) == 6) {
+        goto label_19;
+    }
+    eax = *((r12 + 0x10));
+    if (eax == 0x928) {
+        goto label_20;
+    }
+    if (eax == 0x988) {
+        goto label_20;
+    }
+    rax = *(loc..LC10);
+    r12 += 0x148;
+    *((rbp + 0x90)) = r12;
+    *(rbp) = rax;
+    goto label_1;
+label_13:
+    edx = next_polygon;
+    ecx = polygonlistsize;
+    rdi = polygonlist;
+    eax = r13 + rdx;
+    if (eax >= ecx) {
+        goto label_21;
+    }
+label_5:
+    *(obj.current_polygon) = edx;
+    rsi = rbx;
+    *(obj.next_polygon) = eax;
+    rax = (int64_t) edx;
+    *((rbp + 0x10)) = edx;
+    edx = 5;
+    rax <<= 5;
+    *((rbp + 0x9a)) = dx;
+    rdx = (int64_t) r13d;
+    rdi += rax;
+    rdx <<= 5;
+    gp_alloc ();
+    xmm0 = 0;
+    __asm ("cvtsi2sd xmm0, r13d");
+    *((rax + 0x58)) = xmm0;
+    if (r12 != 0) {
+        goto label_2;
+    }
+label_14:
+    xmm0 = *((rbx + 0x18));
+    __asm ("ucomisd xmm0, qword [loc..LC26]");
+    __asm ("jp 0x8003c10");
+    if (r12 != 0) {
+        goto label_22;
+    }
+    rax = *(loc..LC11);
+    *(rbp) = rax;
+    do {
+        __asm ("cvttsd2si eax, qword [rbx + 0x38]");
+        *((rbp + 0x98)) = ax;
+        goto label_1;
+label_18:
+        xmm0 = 0;
+        __asm ("cvtsi2sd xmm0, ecx");
+        __asm ("addsd xmm0, qword [loc..LC24]");
+        __asm ("cvttsd2si edx, xmm0");
+        *(obj.allocated_quadrangles) = "pm3d_add_quadrangle";
+        rdx = (int64_t) edx;
+        rsi = rdx * 5;
+        rdx = "pm3d_add_quadrangle";
+        rsi <<= 5;
+        rax = gp_alloc ();
+        rdx = *(obj.current_quadrangle);
+        *(obj.quadrangles) = rax;
+        rdi = rax;
+        goto label_3;
+label_22:
+        __asm ("cvttsd2si rax, xmm0");
+        *((rbp + 0x90)) = eax;
+        rax = *(loc..LC12);
+        *(rbp) = rax;
+    } while (1);
+label_20:
+    xmm0 = *((rbx + 0x18));
+    __asm ("ucomisd xmm0, qword [loc..LC26]");
+    __asm ("cvttsd2si edx, xmm0");
+    __asm ("jp 0x8003d70");
+    if (rsi != 0) {
+        goto label_23;
+    }
+    xmm0 = *(loc..LC11);
+label_7:
+    *(rbp) = xmm0;
+    if (eax == 0x928) {
+        goto label_24;
+    }
+label_8:
+    xmm0 = pm3d.c;
+    __asm ("comisd xmm0, xmmword [loc..LC1]");
+    *((rbp + 0x90)) = edx;
+    if (eax <= 0x928) {
+        goto label_1;
+    }
+    xmm0 = 0;
+    *(obj.color_from_rgbvar) = "bl-interp along scan";
+    __asm ("cvtsi2sd xmm0, edx");
+    *(rbp) = xmm0;
+label_6:
+    rdi = rbp;
+    illuminate_one_quadrangle ();
+    goto label_1;
+label_11:
+    eax = rcx + rax*2;
+    rdx = "pm3d_add_quadrangle";
+    *(obj.allocated_quadrangles) = "pm3d_add_quadrangle";
+    rax = (int64_t) eax;
+    rsi = rax * 5;
+    rsi <<= 5;
+    rax = gp_alloc ();
+    rdx = *(obj.current_quadrangle);
+    *(obj.quadrangles) = rax;
+    rdi = rax;
+    goto label_4;
+label_16:
+    xmm0 = 0;
+    rdi = rbp;
+    __asm ("cvtsi2sd xmm0, eax");
+    *(rbp) = xmm0;
+    illuminate_one_quadrangle ();
+    goto label_1;
+label_21:
+    esi = r13 + rcx*2;
+    edx = 0;
+    *(obj.polygonlistsize) = esi;
+    rsi = (int64_t) esi;
+    rsi <<= 5;
+    rax = gp_alloc ();
+    edx = next_polygon;
+    *(obj.polygonlist) = rax;
+    rdi = rax;
+    eax = r13 + rdx;
+    goto label_5;
+label_19:
+    xmm0 = *((rbx + 0x30));
+    gp_alloc ();
+    *(obj.color_from_rgbvar) = "bl-interp along scan";
+    *(rbp) = xmm0;
+    xmm0 = pm3d.c;
+    __asm ("comisd xmm0, xmmword [loc..LC1]");
+    if (rsi <= 0) {
+        goto label_1;
+    }
+    goto label_6;
+label_23:
+    xmm0 = *(loc..LC12);
+    goto label_7;
+label_24:
+    eax = *(0x0802ab83);
+    if (eax <= 0) {
+        goto label_8;
+    }
+    rdi = rsp + 0x70;
+    rdx = rsp + 0x130;
+    rax = rdi;
+    do {
+        xmm0 = *(rbx);
+        rax += 0x40;
+        rbx += 0x20;
+        *((rax - 0x38)) = xmm0;
+        xmm0 = *((rbx - 0x18));
+        *((rax - 0x30)) = xmm0;
+        xmm0 = *((rbx - 0x10));
+        *((rax - 0x28)) = xmm0;
+    } while (rdx != rax);
+    r12d = *((r12 + 0x188));
+    rdx = rsp + 0xf0;
+    rsi = rsp + 0xb0;
+    r12d++;
+    eax = gp_alloc ();
+    if (eax < 0) {
+        r12d += *(0x0802ab83);
+    }
+    rdi = rsp;
+    esi = r12d;
+    gp_alloc ();
+    edx = *((rsp + 0x34));
+    goto label_8;
+label_17:
+    rax = gp_alloc ();
+    __asm ("endbr64");
+    edx = 4;
+    pm3d_add_polygon ();
+    goto label_9;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x8003e20 */
+#include <stdint.h>
+ 
+void pm3d_reset_after_error (void) {
+    __asm ("endbr64");
+    rdi = polygonlist;
+    *(obj.pm3d_plot_at) = 0;
+    gp_alloc ();
+    *(obj.polygonlist) = 0;
+    *(obj.current_polygon) = 0;
+    *(obj.next_polygon) = 0;
+    *(obj.polygonlistsize) = 0;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x80003b0 */
+#include <stdint.h>
+ 
+int64_t filled_polygon (int64_t arg1, int64_t arg2, int64_t arg3) {
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    r14d = esi;
+    r12 = (int64_t) edx;
+    rbx = rdi;
+    rax = *(fs:0x28);
+    *((rsp + 0x28)) = rax;
+    eax = 0;
+    if (*(obj.max_vertices.12697) < r12d) {
+        goto label_10;
+    }
+label_1:
+    if (*(0x08000009) == 0) {
+        eax = pm3d_plot_at;
+        if (eax == 0x62) {
+            goto label_11;
+        }
+        if (eax != 0x74) {
+            goto label_12;
+        }
+    }
+label_11:
+    if (r12d <= 0) {
+        goto label_13;
+    }
+label_4:
+    ebp = 0;
+    r15 = rsp + 0x20;
+    r13 = rsp + 0x18;
+    do {
+        xmm2 = *((rbx + 0x10));
+        xmm1 = *((rbx + 8));
+        rsi = r15;
+        rdi = r13;
+        xmm0 = *(rbx);
+        rbx += 0x20;
+        gp_alloc ();
+        __asm ("cvttsd2si edx, qword [rsp + 0x18]");
+        rax = rbp + rbp*2;
+        rsi = *(obj.icorners.12698);
+        rbp++;
+        rax = rsi + rax*4;
+        *(rax) = edx;
+        __asm ("cvttsd2si edx, qword [rsp + 0x20]");
+        *((rax + 4)) = edx;
+    } while (r12d > ebp);
+label_9:
+    if (r14d != 0) {
+        goto label_14;
+    }
+    eax = *(reloc.default_fillstyle);
+    if (eax != 0) {
+        goto label_15;
+    }
+    *((rsi + 8)) = 0x641;
+label_0:
+    rax = *(reloc.term);
+    edi = r12d;
+    uint64_t (*rax + 0xe8)() ();
+    eax = *(0x0800002c);
+    if (eax == 0xfffffffd) {
+        goto label_5;
+    }
+    if (eax != 0xfffffff9) {
+        rdi = 0x08000028;
+        gp_alloc ();
+    }
+    rax = *(obj.icorners.12698);
+    esi = *((rax + 4));
+    edi = *(rax);
+    rax = *(reloc.term);
+    uint64_t (*rax + 0x58)() ();
+    eax = r12d;
+    eax--;
+    if (eax < 0) {
+        goto label_5;
+    }
+    rdx = (int64_t) eax;
+    r12 -= rax;
+    rbx = rdx * 3;
+    rax = r12 * 3;
+    rbx <<= 2;
+    rbp = rax*4 - 0x18;
+    do {
+        rax = *(obj.icorners.12698);
+        rax += rbx;
+        rbx -= 0xc;
+        esi = *((rax + 4));
+        edi = *(rax);
+        rax = *(reloc.term);
+        uint64_t (*rax + 0x60)() ();
+    } while (rbx != rbp);
+label_5:
+    rax = *((rsp + 0x28));
+    rax ^= *(fs:0x28);
+    if (rbx != rbp) {
+        goto label_16;
+    }
+    return rax;
+label_14:
+    *((rsi + 8)) = r14d;
+    goto label_0;
+label_10:
+    eax = r12 + r12;
+    rdi = *(obj.icorners.12698);
+    rdx = "filled_polygon";
+    *(obj.max_vertices.12697) = r12d;
+    rax = (int64_t) eax;
+    rsi = rax * 3;
+    rsi <<= 2;
+    rax = gp_alloc ();
+    rdi = "filled_polygon";
+    rdx = "filled_polygon";
+    *(obj.icorners.12698) = rax;
+    eax = max_vertices.12697;
+    esi = rax + rax;
+    rsi = (int64_t) esi;
+    rsi <<= 5;
+    rax = gp_alloc ();
+    *(obj.clipcorners.12699) = "filled_polygon";
+    goto label_1;
+label_12:
+    rbp = "filled_polygon";
+    xmm1 = *(reloc.sqrt);
+    xmm0 = *(reloc.yscale3d);
+    if (r12d > *(obj.maxvert.12722)) {
+        goto label_17;
+    }
+    if (r12d <= 0) {
+        goto label_13;
+    }
+label_8:
+    rdi = "pm3d scan array";
+    rdx = rbx + 0x10;
+    eax = 0;
+    r8d = 0;
+    esi = 0;
+    ecx = 0;
+    while (r12d > eax) {
+        __asm ("comisd xmm2, xmm1");
+        if (r12d < 0) {
+            goto label_18;
+        }
+        __asm ("comisd xmm0, xmm2");
+        if (r12d < 0) {
+            goto label_18;
+        }
+label_2:
+        *((rdi + rax*4)) = 0;
+label_7:
+        rax++;
+        rdx += 0x20;
+        if (r12d <= eax) {
+            goto label_19;
+        }
+label_3:
+        __asm ("comisd xmm0, xmm1");
+        xmm2 = *(rdx);
+    }
+    __asm ("comisd xmm2, xmm0");
+    if (r12d < eax) {
+        goto label_18;
+    }
+    __asm ("comisd xmm1, xmm2");
+    if (r12d >= eax) {
+        goto label_2;
+    }
+label_18:
+    xmm2 = *(rdx);
+    __asm ("comisd xmm2, xmm0");
+    if (r12d <= eax) {
+        goto label_20;
+    }
+    *((rdi + rax*4)) = 1;
+    rax++;
+    ecx++;
+    esi++;
+    rdx += 0x20;
+    if (r12d > eax) {
+        goto label_3;
+    }
+label_19:
+    if (ecx == 0) {
+        goto label_4;
+    }
+    if (r12d == r8d) {
+        goto label_5;
+    }
+    if (r12d == esi) {
+        goto label_5;
+    }
+    r9d = r12 - 1;
+    rsi = rbx;
+    ecx = 1;
+    r8d = 0;
+    r9 += 2;
+    while (r11d != 0) {
+        if (r10d != 0) {
+            goto label_21;
+        }
+        xmm4 = *((rsi + 0x10));
+        __asm ("movapd xmm2, xmm0");
+        __asm ("movapd xmm3, xmm0");
+        rax = (int64_t) r8d;
+        rdx <<= 5;
+        rax <<= 5;
+        r8d++;
+        __asm ("cmplesd xmm2, xmm4");
+        rdx += rbx;
+        rax += rbp;
+        xmm5 = *((rdx + 0x10));
+        __asm ("andpd xmm3, xmm2");
+        __asm ("andnpd xmm2, xmm1");
+        __asm ("subsd xmm4, xmm5");
+        __asm ("orpd xmm2, xmm3");
+        __asm ("movapd xmm3, xmm2");
+        __asm ("subsd xmm3, xmm5");
+        __asm ("movapd xmm5, xmm3");
+        xmm3 = *(rdx);
+        __asm ("divsd xmm5, xmm4");
+        xmm4 = *(rsi);
+        __asm ("subsd xmm4, xmm3");
+        __asm ("mulsd xmm4, xmm5");
+        __asm ("addsd xmm4, xmm3");
+        *(rax) = xmm4;
+        xmm4 = *((rdx + 8));
+        xmm3 = *((rsi + 8));
+        *((rax + 0x10)) = xmm2;
+        __asm ("subsd xmm3, xmm4");
+        __asm ("mulsd xmm3, xmm5");
+        __asm ("addsd xmm3, xmm4");
+        *((rax + 8)) = xmm3;
+label_6:
+        rcx++;
+        rsi += 0x20;
+        if (r9 == rcx) {
+            goto label_22;
+        }
+        eax = ecx;
+        r11d = *((rdi + rcx*4 - 4));
+        edx:eax = (int64_t) eax;
+        eax = edx:eax / r12d;
+        edx = edx:eax % r12d;
+        rdx = (int64_t) edx;
+        r10d = *((rdi + rdx*4));
+    }
+    __asm ("movdqu xmm7, xmmword [rsi]");
+    rax = (int64_t) r8d;
+    r11d = r8 + 1;
+    rax <<= 5;
+    __asm ("movups xmmword [rbp + rax], xmm7");
+    __asm ("movdqu xmm6, xmmword [rsi + 0x10]");
+    __asm ("movups xmmword [rbp + rax + 0x10], xmm6");
+    if (r10d == 0) {
+        goto label_23;
+    }
+    rdx <<= 5;
+    __asm ("movapd xmm2, xmm0");
+    __asm ("movapd xmm3, xmm0");
+    r8d += 2;
+    rdx += rbx;
+    xmm5 = *((rsi + 0x10));
+    rax = rbp + rax + 0x20;
+    xmm4 = *((rdx + 0x10));
+    __asm ("cmplesd xmm2, xmm4");
+    __asm ("subsd xmm4, xmm5");
+    __asm ("andpd xmm3, xmm2");
+    __asm ("andnpd xmm2, xmm1");
+    __asm ("orpd xmm2, xmm3");
+    __asm ("movapd xmm3, xmm2");
+    __asm ("subsd xmm3, xmm5");
+    __asm ("movapd xmm5, xmm3");
+    xmm3 = *(rsi);
+    __asm ("divsd xmm5, xmm4");
+    xmm4 = *(rdx);
+    __asm ("subsd xmm4, xmm3");
+    __asm ("mulsd xmm4, xmm5");
+    __asm ("addsd xmm4, xmm3");
+    xmm3 = *((rdx + 8));
+    *(rax) = xmm4;
+    xmm4 = *((rsi + 8));
+    *((rax + 0x10)) = xmm2;
+    __asm ("subsd xmm3, xmm4");
+    __asm ("mulsd xmm3, xmm5");
+    __asm ("addsd xmm3, xmm4");
+    *((rax + 8)) = xmm3;
+    goto label_6;
+label_20:
+    __asm ("comisd xmm1, xmm2");
+    if (rdx <= 0) {
+        goto label_7;
+    }
+    *((rdi + rax*4)) = 0xffffffff;
+    ecx++;
+    r8d++;
+    goto label_7;
+label_15:
+    rdi = reloc_default_fillstyle;
+    eax = gp_alloc (rsi);
+    rsi = *(rsp);
+    *((rsi + 8)) = eax;
+    rsi = *(obj.icorners.12698);
+    goto label_0;
+label_21:
+    eax = r11d;
+    eax *= r10d;
+    if (eax >= 0) {
+        goto label_6;
+    }
+    xmm3 = *((rsi + 0x10));
+    __asm ("movapd xmm5, xmm0");
+    rdx <<= 5;
+    __asm ("movapd xmm2, xmm0");
+    rax = rbx + rdx;
+    rdx = (int64_t) r8d;
+    r8d += 2;
+    __asm ("cmplesd xmm5, xmm3");
+    xmm4 = *((rax + 0x10));
+    rdx <<= 5;
+    r10 = rbp + rdx;
+    rdx = rbp + rdx + 0x20;
+    __asm ("subsd xmm3, xmm4");
+    __asm ("andpd xmm2, xmm5");
+    __asm ("andnpd xmm5, xmm1");
+    __asm ("orpd xmm5, xmm2");
+    __asm ("movapd xmm2, xmm5");
+    __asm ("subsd xmm2, xmm4");
+    xmm4 = *(rax);
+    __asm ("movapd xmm6, xmm2");
+    __asm ("divsd xmm6, xmm3");
+    xmm3 = *(rsi);
+    __asm ("subsd xmm3, xmm4");
+    __asm ("mulsd xmm3, xmm6");
+    __asm ("addsd xmm4, xmm3");
+    xmm3 = *((rax + 8));
+    *(r10) = xmm4;
+    xmm2 = *((rsi + 8));
+    *((r10 + 0x10)) = xmm5;
+    xmm7 = *((rax + 0x10));
+    __asm ("subsd xmm2, xmm3");
+    __asm ("mulsd xmm2, xmm6");
+    __asm ("movapd xmm6, xmm0");
+    __asm ("cmplesd xmm6, xmm7");
+    __asm ("subsd xmm7, xmm5");
+    __asm ("addsd xmm2, xmm3");
+    __asm ("movapd xmm3, xmm0");
+    __asm ("andpd xmm3, xmm6");
+    __asm ("andnpd xmm6, xmm1");
+    __asm ("orpd xmm6, xmm3");
+    __asm ("movapd xmm3, xmm6");
+    *((r10 + 8)) = xmm2;
+    __asm ("subsd xmm3, xmm5");
+    __asm ("movapd xmm5, xmm3");
+    xmm3 = *(rax);
+    __asm ("divsd xmm5, xmm7");
+    __asm ("subsd xmm3, xmm4");
+    __asm ("mulsd xmm3, xmm5");
+    __asm ("addsd xmm3, xmm4");
+    *(rdx) = xmm3;
+    __asm ("movapd xmm3, xmm2");
+    xmm2 = *((rax + 8));
+    *((rdx + 0x10)) = xmm6;
+    __asm ("subsd xmm2, xmm3");
+    __asm ("mulsd xmm2, xmm5");
+    __asm ("addsd xmm2, xmm3");
+    *((rdx + 8)) = xmm2;
+    goto label_6;
+label_23:
+    r8d = r11d;
+    goto label_6;
+label_22:
+    if (r8d <= 1) {
+        goto label_5;
+    }
+    rbx = "filled_polygon";
+    r12 = (int64_t) r8d;
+    goto label_4;
+label_17:
+    rdi = "pm3d scan array";
+    rsi = (int64_t) r12d;
+    edx = 0;
+    *(rsp) = xmm1;
+    rsi <<= 2;
+    *((rsp + 8)) = xmm0;
+    *(obj.maxvert.12722) = r12d;
+    rax = gp_alloc ();
+    xmm1 = *(rsp);
+    xmm0 = *((rsp + 8));
+    *(obj.outrange.12721) = "pm3d scan array";
+    if (r12d > 0) {
+        goto label_8;
+    }
+label_13:
+    rsi = *(obj.icorners.12698);
+    goto label_9;
+label_16:
+    rax = gp_alloc ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/pm3d.o @ 0x80009e0 */
+#include <stdint.h>
+ 
+int32_t geomean4 (int64_t arg7) {
+    xmm0 = arg7;
+    __asm ("movapd xmm4, xmm0");
+    xmm5 = 0;
+    __asm ("mulsd xmm4, xmm1");
+    __asm ("mulsd xmm4, xmm2");
+    __asm ("mulsd xmm4, xmm3");
+    __asm ("ucomisd xmm4, xmm5");
+    __asm ("jnp 0x8000a88");
+label_0:
+    ebx = 0;
+    __asm ("comisd xmm5, xmm0");
+    bl = (? > ?) ? 1 : 0;
+    eax = 0;
+    __asm ("comisd xmm5, xmm1");
+    __asm ("movapd xmm1, xmm5");
+    al = (? > ?) ? 1 : 0;
+    ebx += eax;
+    eax = 0;
+    __asm ("comisd xmm5, xmm2");
+    al = (ebx > 0) ? 1 : 0;
+    ebx += eax;
+    eax = 0;
+    __asm ("comisd xmm5, xmm3");
+    al = (ebx > 0) ? 1 : 0;
+    ebx += eax;
+    eax = rbx - 1;
+    while (ebx == 0) {
+        __asm ("movapd xmm0, xmm1");
+        return eax;
+        __asm ("andpd xmm4, xmmword [loc..LC4]");
+        __asm ("ucomisd xmm5, xmm4");
+        __asm ("movapd xmm2, xmm4");
+        __asm ("sqrtsd xmm2, xmm2");
+        if (eax > 2) {
+            goto label_3;
+        }
+label_2:
+        __asm ("ucomisd xmm5, xmm2");
+        __asm ("movapd xmm1, xmm2");
+        __asm ("sqrtsd xmm1, xmm1");
+        if (eax > 2) {
+            goto label_4;
+        }
+label_1:
+    }
+    __asm ("xorpd xmm1, xmmword [loc..LC5]");
+    __asm ("movapd xmm0, xmm1");
+    return eax;
+    if (ebx != 0) {
+        goto label_0;
+    }
+    __asm ("movapd xmm0, xmm5");
+    return eax;
+label_4:
+    __asm ("movapd xmm0, xmm2");
+    *((rsp + 8)) = xmm1;
+    gp_alloc ();
+    xmm1 = *((rsp + 8));
+    goto label_1;
+label_3:
+    __asm ("movapd xmm0, xmm4");
+    *((rsp + 8)) = xmm2;
+    gp_alloc ();
+    xmm2 = *((rsp + 8));
+    xmm5 = 0;
+    goto label_2;
+}
+
+

@@ -1,0 +1,479 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/jitter.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int32_t compare_xypoints (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    /* [01] -r-x section size 1962 named .text */
+    __asm ("endbr64");
+    xmm0 = *((rdi + 8));
+    xmm1 = *((rsi + 8));
+    eax = 1;
+    __asm ("comisd xmm0, xmm1");
+    if (? <= ?) {
+        __asm ("comisd xmm1, xmm0");
+        eax = 0xffffffff;
+        if (? > ?) {
+            goto label_0;
+        }
+        xmm0 = *((rdi + 0x10));
+        xmm1 = *((rsi + 0x10));
+        eax = 1;
+        __asm ("comisd xmm0, xmm1");
+        if (? > ?) {
+            goto label_0;
+        }
+        eax = 0;
+        __asm ("comisd xmm1, xmm0");
+        al = (? > ?) ? 1 : 0;
+        eax = -eax;
+    }
+label_0:
+    return eax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/jitter.o @ 0x8000090 */
+#include <stdint.h>
+ 
+int64_t jitter_points (int64_t arg1) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_1ch;
+    int64_t var_20h;
+    int64_t var_28h;
+    int64_t var_30h;
+    int64_t var_34h;
+    int64_t var_40h;
+    int64_t var_48h;
+    int64_t var_58h;
+    rdi = arg1;
+    __asm ("endbr64");
+    rcx = "jitter";
+    r14 = rdi;
+    xmm0 = *(0x08000810);
+    rax = *(fs:0x28);
+    *((rsp + 0x58)) = rax;
+    eax = 0;
+    eax = "jitter";
+    rdi = rsp + 0x30;
+    rdx = rsp + 0x28;
+    rsi = rsp + 0x20;
+    *((rsp + 0x48)) = xmm0;
+    *((rsp + 0x40)) = 0;
+    *((rsp + 0x34)) = eax;
+    map_position_r (rbx, rbp, r12, r13, r14);
+    edi = *((r14 + 0x1c8));
+    if (edi <= 0) {
+        goto label_7;
+    }
+    r8 = *((r14 + 0x1e8));
+    rcx = *((r14 + 0x1e0));
+    esi = rdi - 1;
+    rsi <<= 6;
+    rax = r8 + 0x20;
+    rdx = rcx;
+    rsi = r8 + rsi + 0x60;
+    do {
+        if (rcx != 0) {
+            xmm0 = *(rdx);
+            *(rax) = xmm0;
+        }
+        *((rax + 0x18)) = 0;
+        rax += 0x40;
+        rdx += 8;
+        *((rax - 0x38)) = 0;
+    } while (rax != rsi);
+label_3:
+    rsi = (int64_t) edi;
+    edx = 0x40;
+    rcx = sym_compare_xypoints;
+    rdi = r8;
+    rax = map_position_r ();
+    edx = *((r14 + 0x1c8));
+    *((rsp + 0x18)) = 0;
+    if (edx <= 1) {
+        goto label_8;
+    }
+label_2:
+    eax = *((rsp + 0x18));
+    r12d = rax + 1;
+    if (r12d >= edx) {
+        goto label_9;
+    }
+    rbp = *((rsp + 0x18));
+    rax = *((r14 + 0x1e8));
+    edx = 1;
+    rbp <<= 6;
+    *((rsp + 0x10)) = rbp;
+    while (eax <= 0) {
+label_0:
+        edx &= 1;
+        if (edx != 0) {
+            __asm ("xorpd xmm0, xmmword [loc..LC2]");
+            *((rsp + 0x20)) = xmm0;
+        }
+        rax = *((r14 + 0x1e8));
+        edx = *(0x08000838);
+        r13 += rax;
+        *((r13 + 0x38)) = xmm0;
+        if (edx == 2) {
+            goto label_10;
+        }
+        if (edx == 3) {
+            *((r13 + 0x38)) = 0;
+            *((r13 + 0x28)) = xmm0;
+        }
+label_1:
+        ecx = *((rsp + 0x18));
+        edx = *((r14 + 0x1c8));
+        r12d = rsi + rcx;
+        if (edx <= r12d) {
+            goto label_9;
+        }
+        edx = esi;
+        rdi = *((rsp + 0x10));
+        r13 = (int64_t) r12d;
+        *((rsp + 8)) = edx;
+        r13 <<= 6;
+        r15 = rax + rdi;
+        rbp = rax + r13;
+        xmm0 = *((r15 + 8));
+        eax = map_position_r ();
+        xmm0 = *((rbp + 8));
+        ebx = eax;
+        eax = map_position_r ();
+        xmm0 = *((r15 + 0x10));
+        ebx -= eax;
+        map_position_r ();
+        xmm0 = *((rbp + 0x10));
+        ebx *= ebx;
+        r15d = eax;
+        eax = map_position_r ();
+        xmm0 = 0;
+        xmm2 = 0;
+        edx = *((rsp + 8));
+        r15d -= eax;
+        eax = r15d;
+        eax *= r15d;
+        ebx += eax;
+        __asm ("cvtsi2sd xmm0, ebx");
+        __asm ("ucomisd xmm2, xmm0");
+        __asm ("movapd xmm1, xmm0");
+        __asm ("sqrtsd xmm1, xmm1");
+        if (ebx > 0) {
+            goto label_11;
+        }
+label_4:
+        __asm ("comisd xmm1, xmmword [rsp + 0x28]");
+        if (ebx >= 0) {
+            goto label_12;
+        }
+        esi = rdx + 1;
+        xmm0 = 0;
+        xmm1 = *(0x08000830);
+        xmm3 = 0;
+        eax = esi;
+        eax >>= 1;
+        __asm ("comisd xmm1, xmm3");
+        __asm ("cvtsi2sd xmm0, eax");
+        __asm ("mulsd xmm0, qword [0x08000828]");
+        __asm ("mulsd xmm0, qword [r14 + 0x50]");
+        *((rsp + 0x20)) = xmm0;
+    }
+    __asm ("comisd xmm0, xmm1");
+    if (eax <= 0) {
+        goto label_0;
+    }
+    do {
+        __asm ("subsd xmm0, xmm1");
+        __asm ("comisd xmm0, xmm1");
+    } while (eax > 0);
+    *((rsp + 0x20)) = xmm0;
+    goto label_0;
+label_10:
+    rdi = *((rsp + 0x10));
+    xmm0 = *((rax + rdi + 0x10));
+    __asm ("subsd xmm0, qword [r13 + 0x10]");
+    *((r13 + 0x28)) = xmm0;
+    goto label_1;
+label_12:
+    edx = *((r14 + 0x1c8));
+label_9:
+    eax = rdx - 1;
+    *((rsp + 0x18)) = r12d;
+    if (eax > r12d) {
+        goto label_2;
+    }
+label_8:
+    rcx = *((r14 + 0x1e0));
+    if (rcx == 0) {
+        goto label_13;
+    }
+    if (edx <= 0) {
+        goto label_13;
+    }
+    rsi = *((r14 + 0x1e8));
+    edx--;
+    rdx <<= 6;
+    rax = rsi + 0x20;
+    rdx = rsi + rdx + 0x60;
+    do {
+        xmm0 = *(rax);
+        rax += 0x40;
+        rcx += 8;
+        *((rcx - 8)) = xmm0;
+        xmm0 = *((rax - 0x50));
+        *((rax - 0x40)) = xmm0;
+    } while (rax != rdx);
+label_13:
+    rax = *((rsp + 0x58));
+    rax ^= *(fs:0x28);
+    if (rax == rdx) {
+        return rax;
+label_7:
+        r8 = *((r14 + 0x1e8));
+        goto label_3;
+label_11:
+        *((rsp + 0x1c)) = edx;
+        *((rsp + 8)) = xmm1;
+        map_position_r ();
+        edx = *((rsp + 0x1c));
+        xmm1 = *((rsp + 8));
+        goto label_4;
+    }
+    map_position_r ();
+    __asm ("endbr64");
+    *(loc..LC1) = "jitter";
+    eax = *(reloc.c_token);
+    *(0x08000830) = 0;
+    *(0x08000838) = 0;
+    edi = rax + 1;
+    rax = *(loc..LC3);
+    *(reloc.c_token) = edi;
+    *(0x08000810) = rax;
+    *(0x08000828) = rax;
+    if (edi >= *(reloc.num_tokens)) {
+        return rax;
+    }
+    rsi = loc__LC4;
+    eax = map_position_r ();
+    if (eax != 0) {
+        goto label_14;
+    }
+    edi = *(reloc.c_token);
+    if (edi < *(reloc.num_tokens)) {
+        goto label_6;
+    }
+    goto label_14;
+    do {
+        rdi = "jitter";
+        edx = 2;
+        esi = 4;
+        *(reloc.c_token)++;
+        map_position_r ();
+        edi = *(reloc.c_token);
+label_5:
+        if (*(reloc.num_tokens) <= edi) {
+            goto label_14;
+        }
+label_6:
+        rsi = loc__LC4;
+        eax = map_position_r ();
+        if (eax != 0) {
+            goto label_14;
+        }
+        edi = *(reloc.c_token);
+        rsi = "over$lap";
+        eax = map_position_r ();
+    } while (eax != 0);
+    edi = *(reloc.c_token);
+    rsi = "spread";
+    eax = map_position_r ();
+    if (eax == 0) {
+        goto label_15;
+    }
+    *(reloc.c_token)++;
+    map_position_r ();
+    xmm1 = 0;
+    edi = *(reloc.c_token);
+    __asm ("comisd xmm1, xmm0");
+    *(0x08000828) = xmm0;
+    if (*(reloc.c_token) < 0) {
+        goto label_5;
+    }
+    rax = *(loc..LC3);
+    edi = *(reloc.c_token);
+    *(0x08000828) = rax;
+    if (*(reloc.num_tokens) > edi) {
+        goto label_6;
+    }
+label_14:
+    return rax;
+label_15:
+    edi = *(reloc.c_token);
+    rsi = "swarm";
+    eax = map_position_r ();
+    if (eax != 0) {
+        *(0x08000838) = 1;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_5;
+    }
+    edi = *(reloc.c_token);
+    rsi = "square";
+    eax = map_position_r ();
+    if (eax != 0) {
+        *(0x08000838) = 2;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_5;
+    }
+    edi = *(reloc.c_token);
+    rsi = "wrap";
+    eax = map_position_r ();
+    if (eax != 0) {
+        *(reloc.c_token)++;
+        map_position_r ();
+        edi = *(reloc.c_token);
+        *(0x08000830) = xmm0;
+        goto label_5;
+    }
+    edi = *(reloc.c_token);
+    rsi = "vert$ical";
+    eax = map_position_r ();
+    if (eax != 0) {
+        *(0x08000838) = 3;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_5;
+    }
+    edi = *(reloc.c_token);
+    rsi = "unrecognized keyword";
+    eax = 0;
+    map_position_r ();
+    __asm ("endbr64");
+    xmm1 = 0;
+    __asm ("comisd xmm1, xmmword [0x08000828]");
+    rdi = *(reloc.stderr);
+    if (eax >= 0) {
+        goto label_16;
+    }
+    edx = "jitter";
+    rax = reloc_coord_msg;
+    xmm0 = *(0x08000810);
+    esi = 1;
+    rcx = *((rax + rdx*8));
+    rdx = "\toverlap criterion  %g %s coords\n";
+    eax = 1;
+    map_position_r ();
+    esi = 1;
+    eax = 1;
+    xmm0 = *(0x08000828);
+    rdi = *(reloc.stderr);
+    rdx = "\tspread multiplier on x (or y): %g\n";
+    map_position_r ();
+    xmm0 = *(0x08000830);
+    xmm2 = 0;
+    __asm ("comisd xmm0, xmm2");
+    while (1) {
+        eax = *(0x08000838);
+        rcx = "square";
+        if (eax != 2) {
+            rcx = "vertical";
+            rax = "swarm";
+            if (eax == 3) {
+                rcx = rax;
+                goto label_17;
+            }
+        }
+label_17:
+        rdi = *(reloc.stderr);
+        rdx = "\tstyle: %s\n";
+        esi = 1;
+        eax = 0;
+        void (*0x8011ff2)() ();
+        rdi = *(reloc.stderr);
+        esi = 1;
+        eax = 1;
+        rdx = "\twrap at %g character widths\n";
+        map_position_r ();
+    }
+label_16:
+    rcx = rdi;
+    edx = 0xb;
+    esi = 1;
+    rdi = "\tno jitter\n";
+    return void (*0x8011ff2)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/jitter.o @ 0x8000700 */
+#include <stdint.h>
+ 
+void unset_jitter (void) {
+    __asm ("endbr64");
+    *(0x08000828) = 0;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/jitter.o @ 0x8000710 */
+#include <stdint.h>
+ 
+uint64_t save_jitter (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    xmm0 = 0;
+    __asm ("comisd xmm0, xmmword [0x08000828]");
+    if (? < ?) {
+        eax = "jitter";
+        xmm0 = *(0x08000810);
+        rcx = loc__LC18;
+        if (eax != 4) {
+            rdx = reloc_coord_msg;
+            rcx = *((rdx + rax*8));
+        }
+        rdx = "set jitter overlap %s%g";
+        esi = 1;
+        rdi = rbp;
+        eax = 1;
+        map_position_r ();
+        xmm1 = *(0x08000830);
+        esi = 1;
+        xmm0 = *(0x08000828);
+        rdx = "  spread %g  wrap %g";
+        rdi = rbp;
+        eax = 2;
+        map_position_r ();
+        eax = *(0x08000838);
+        rdx = " square\n";
+        if (eax != 2) {
+            rdx = " vertical\n";
+            rax = loc__LC21;
+            if (eax == 3) {
+                rdx = rax;
+                goto label_0;
+            }
+        }
+label_0:
+        rdi = rbp;
+        esi = 1;
+        eax = 0;
+        void (*0x8011ff2)() ();
+    }
+    rcx = rdi;
+    edx = 0xd;
+    esi = 1;
+    rdi = "unset jitter\n";
+    return void (*0x8011ff2)() ();
+}
+
+

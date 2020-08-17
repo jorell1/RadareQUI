@@ -1,0 +1,2013 @@
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x080000cd: Changing call to branch
+// WARNING: Possible PIC construction at 0x080000f1: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800013c: Changing call to branch
+// WARNING: Possible PIC construction at 0x080001ea: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800015c: Changing call to branch
+// WARNING: Possible PIC construction at 0x080001ca: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x08000161)
+// WARNING: Removing unreachable block (ram,0x08000196)
+// WARNING: Removing unreachable block (ram,0x080001aa)
+// WARNING: Removing unreachable block (ram,0x080001ef)
+// WARNING: Removing unreachable block (ram,0x08000141)
+// WARNING: Removing unreachable block (ram,0x080000f6)
+// WARNING: Removing unreachable block (ram,0x080000fd)
+// WARNING: Removing unreachable block (ram,0x08000101)
+// WARNING: Removing unreachable block (ram,0x08000108)
+// WARNING: Removing unreachable block (ram,0x0800010d)
+// WARNING: Removing unreachable block (ram,0x08000121)
+// WARNING: Removing unreachable block (ram,0x080000d2)
+// WARNING: Removing unreachable block (ram,0x080001cf)
+// WARNING: Removing unreachable block (ram,0x080001d2)
+// WARNING: Removing unreachable block (ram,0x080001d7)
+
+void sym.load_rcfile.part.0
+               (int64_t arg7, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3,
+               undefined8 placeholder_4, undefined8 placeholder_5, undefined8 placeholder_6, undefined8 placeholder_7,
+               int64_t arg1)
+{
+    char cVar1;
+    int32_t in_EAX;
+    undefined4 in_register_00000004;
+    
+    cVar1 = (char)in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(int32_t *)CONCAT44(in_register_00000004, in_EAX) = *(int32_t *)CONCAT44(in_register_00000004, in_EAX) + in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x08000246: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000257: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800026d: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x0800025c)
+// WARNING: Removing unreachable block (ram,0x0800024b)
+// WARNING: Removing unreachable block (ram,0x08000272)
+
+void sym.inter(void)
+{
+    char cVar1;
+    int32_t *in_RAX;
+    
+    cVar1 = (char)in_RAX;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *in_RAX = *in_RAX + (int32_t)in_RAX;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x08000226: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000252: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000268: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000294: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x0800026d)
+// WARNING: Removing unreachable block (ram,0x08000257)
+// WARNING: Removing unreachable block (ram,0x0800022b)
+// WARNING: Removing unreachable block (ram,0x08000299)
+
+void sym.bail_to_command_line(void)
+{
+    char cVar1;
+    int32_t *in_RAX;
+    
+    cVar1 = (char)in_RAX;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *in_RAX = *in_RAX + (int32_t)in_RAX;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    *(char *)in_RAX = *(char *)in_RAX + cVar1;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x080002cb: Changing call to branch
+// WARNING: Possible PIC construction at 0x080002e3: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x080002d0)
+// WARNING: Removing unreachable block (ram,0x080002e8)
+
+void sym.init_constants(void)
+{
+    char cVar1;
+    int32_t in_EAX;
+    undefined4 in_register_00000004;
+    
+    cVar1 = (char)in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(int32_t *)CONCAT44(in_register_00000004, in_EAX) = *(int32_t *)CONCAT44(in_register_00000004, in_EAX) + in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x0800031b: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000334: Changing call to branch
+// WARNING: Possible PIC construction at 0x080000cd: Changing call to branch
+// WARNING: Possible PIC construction at 0x080000f1: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800013c: Changing call to branch
+// WARNING: Possible PIC construction at 0x080001ea: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800015c: Changing call to branch
+// WARNING: Possible PIC construction at 0x080001ca: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x08000161)
+// WARNING: Removing unreachable block (ram,0x08000196)
+// WARNING: Removing unreachable block (ram,0x080001aa)
+// WARNING: Removing unreachable block (ram,0x080001ef)
+// WARNING: Removing unreachable block (ram,0x08000141)
+// WARNING: Removing unreachable block (ram,0x080000f6)
+// WARNING: Removing unreachable block (ram,0x080000fd)
+// WARNING: Removing unreachable block (ram,0x08000101)
+// WARNING: Removing unreachable block (ram,0x08000108)
+// WARNING: Removing unreachable block (ram,0x0800010d)
+// WARNING: Removing unreachable block (ram,0x08000121)
+// WARNING: Removing unreachable block (ram,0x080000d2)
+// WARNING: Removing unreachable block (ram,0x08000339)
+// WARNING: Removing unreachable block (ram,0x08000347)
+// WARNING: Removing unreachable block (ram,0x08000370)
+// WARNING: Removing unreachable block (ram,0x08000357)
+// WARNING: Removing unreachable block (ram,0x080000a0)
+// WARNING: Removing unreachable block (ram,0x08000150)
+// WARNING: Removing unreachable block (ram,0x080000af)
+// WARNING: Removing unreachable block (ram,0x080000ba)
+// WARNING: Removing unreachable block (ram,0x080000ca)
+// WARNING: Removing unreachable block (ram,0x08000320)
+// WARNING: Removing unreachable block (ram,0x080001cf)
+// WARNING: Removing unreachable block (ram,0x080001d2)
+// WARNING: Removing unreachable block (ram,0x080001f6)
+// WARNING: Removing unreachable block (ram,0x080001d7)
+
+void sym.init_session(void)
+{
+    char cVar1;
+    int32_t in_EAX;
+    undefined4 in_register_00000004;
+    
+    "\x01"[0] = '\0';
+    cVar1 = (char)in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(int32_t *)CONCAT44(in_register_00000004, in_EAX) = *(int32_t *)CONCAT44(in_register_00000004, in_EAX) + in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+void sym.get_user_env(void)
+{
+    int64_t iVar1;
+    char *pcVar2;
+    
+    if (_obj.user_homedir == 0) {
+        iVar1 = func_0x0801aba2("\x01");
+        if ((iVar1 == 0) && (iVar1 = func_0x0801aba2("\x01"), iVar1 == 0)) {
+            if (reloc.interactive != (code)0x0) {
+                func_0x0801aba2(0xffffffff, "");
+            }
+        } else {
+            _obj.user_homedir = func_0x0801aba2(iVar1);
+        }
+    }
+    if (_reloc.user_shell == 0) {
+        pcVar2 = (char *)func_0x0801aba2("");
+        if (pcVar2 == (char *)0x0) {
+            pcVar2 = "\x01\x01\x01";
+        }
+        _reloc.user_shell = func_0x0801aba2(pcVar2);
+        return;
+    }
+    return;
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x08000488: Changing call to branch
+// WARNING: Possible PIC construction at 0x080004a6: Changing call to branch
+// WARNING: Possible PIC construction at 0x080004cd: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000521: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x080004d2)
+// WARNING: Removing unreachable block (ram,0x080004ab)
+// WARNING: Removing unreachable block (ram,0x0800048d)
+// WARNING: Removing unreachable block (ram,0x08000526)
+
+void sym.gp_expand_tilde(int64_t arg1)
+{
+    char *pcVar1;
+    char cVar2;
+    int32_t *in_RAX;
+    
+    pcVar1 = *(char **)arg1;
+    if (pcVar1 == (char *)0x0) {
+        in_RAX = (int32_t *)0x0;
+    } else {
+        if ((*pcVar1 != '~') || (pcVar1[1] != '/')) {
+            return;
+        }
+        if (_obj.user_homedir == 0) {
+            in_RAX = (int32_t *)0x0;
+        }
+    }
+    cVar2 = (char)in_RAX;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *in_RAX = *in_RAX + (int32_t)in_RAX;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    *(char *)in_RAX = *(char *)in_RAX + cVar2;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+// WARNING: [r2ghidra] Failed to match type int for variable argc to Decompiler type: Unknown type identifier int
+
+undefined4 sym.main(undefined8 argc, char **argv)
+{
+    uint8_t *puVar1;
+    char **ppcVar2;
+    code cVar3;
+    undefined4 uVar4;
+    int32_t iVar5;
+    undefined8 uVar6;
+    undefined8 uVar7;
+    int32_t iVar8;
+    int64_t iVar9;
+    int64_t iVar10;
+    uint8_t *puVar11;
+    uint8_t *puVar12;
+    undefined8 *puVar13;
+    bool bVar14;
+    bool bVar15;
+    uint8_t uVar16;
+    char **ppcStack64;
+    
+    uVar16 = 0;
+    "\x01\x01\x01"._4_4_ = (int32_t)argc;
+    uVar4 = func_0x0801aba2();
+    iVar5 = func_0x0801aba2(uVar4);
+    if (iVar5 != 0) {
+        func_0x0801aba2("gnuplot: refusing to run at elevated privilege\n", 1, 0x2f, _reloc.stderr);
+        func_0x0801aba2(1);
+code_r0x08000a18:
+        func_0x0801aba2(1, "", reloc.gnuplot_version, reloc.gnuplot_patchlevel);
+        return 0;
+    }
+    iVar10 = 0;
+    if (1 < "\x01\x01\x01"._4_4_) {
+        do {
+            puVar1 = (uint8_t *)argv[iVar10 + 1];
+            if (puVar1 != (uint8_t *)0x0) {
+                bVar14 = *puVar1 < 0x2d;
+                bVar15 = *puVar1 == 0x2d;
+                if (bVar15) {
+                    bVar14 = puVar1[1] < 0x56;
+                    bVar15 = puVar1[1] == 0x56;
+                    if (bVar15) {
+                        bVar14 = false;
+                        bVar15 = puVar1[2] == 0;
+                        if (bVar15) goto code_r0x08000a18;
+                    }
+                }
+                iVar9 = 10;
+                puVar11 = puVar1;
+                puVar12 = (uint8_t *)"";
+                do {
+                    if (iVar9 == 0) break;
+                    iVar9 = iVar9 + -1;
+                    bVar14 = *puVar11 < *puVar12;
+                    bVar15 = *puVar11 == *puVar12;
+                    puVar11 = puVar11 + (uint64_t)uVar16 * -2 + 1;
+                    puVar12 = puVar12 + (uint64_t)uVar16 * -2 + 1;
+                } while (bVar15);
+                if ((!bVar14 && !bVar15) == bVar14) goto code_r0x08000a18;
+                bVar14 = *puVar1 < 0x2d;
+                bVar15 = *puVar1 == 0x2d;
+                if (bVar15) {
+                    bVar14 = puVar1[1] < 0x68;
+                    bVar15 = puVar1[1] == 0x68;
+                    if (bVar15) {
+                        bVar14 = false;
+                        bVar15 = puVar1[2] == 0;
+                        if (bVar15) goto code_r0x08000a4a;
+                    }
+                }
+                iVar9 = 7;
+                puVar11 = puVar1;
+                puVar12 = (uint8_t *)"";
+                do {
+                    if (iVar9 == 0) break;
+                    iVar9 = iVar9 + -1;
+                    bVar14 = *puVar11 < *puVar12;
+                    bVar15 = *puVar11 == *puVar12;
+                    puVar11 = puVar11 + (uint64_t)uVar16 * -2 + 1;
+                    puVar12 = puVar12 + (uint64_t)uVar16 * -2 + 1;
+                } while (bVar15);
+                if ((!bVar14 && !bVar15) == bVar14) {
+code_r0x08000a4a:
+                    func_0x0801aba2(1, 
+                                    "Usage: gnuplot [OPTION] ... [FILE]\n  -V, --version\n  -h, --help\n  -p  --persist\n  -s  --slow\n  -d  --default-settings\n  -c  scriptfile ARG1 ARG2 ... \n  -e  \"command1; command2; ...\"\ngnuplot %s patchlevel %s\n"
+                                    , reloc.gnuplot_version, reloc.gnuplot_patchlevel);
+                    return 0;
+                }
+                bVar14 = *puVar1 < 0x2d;
+                bVar15 = *puVar1 == 0x2d;
+                if (bVar15) {
+                    bVar14 = puVar1[1] < 0x70;
+                    bVar15 = puVar1[1] == 0x70;
+                    if (!bVar15) goto code_r0x08000974;
+                } else {
+code_r0x08000974:
+                    iVar9 = 10;
+                    puVar11 = puVar1;
+                    puVar12 = (uint8_t *)"";
+                    do {
+                        if (iVar9 == 0) break;
+                        iVar9 = iVar9 + -1;
+                        bVar14 = *puVar11 < *puVar12;
+                        bVar15 = *puVar11 == *puVar12;
+                        puVar11 = puVar11 + (uint64_t)uVar16 * -2 + 1;
+                        puVar12 = puVar12 + (uint64_t)uVar16 * -2 + 1;
+                    } while (bVar15);
+                    if ((!bVar14 && !bVar15) != bVar14) {
+                        bVar14 = *puVar1 < 0x2d;
+                        bVar15 = *puVar1 == 0x2d;
+                        if (bVar15) {
+                            bVar14 = puVar1[1] < 0x73;
+                            bVar15 = puVar1[1] == 0x73;
+                            if (!bVar15) goto code_r0x080009b0;
+                        } else {
+code_r0x080009b0:
+                            iVar9 = 7;
+                            puVar11 = puVar1;
+                            puVar12 = (uint8_t *)"";
+                            do {
+                                if (iVar9 == 0) break;
+                                iVar9 = iVar9 + -1;
+                                bVar14 = *puVar11 < *puVar12;
+                                bVar15 = *puVar11 == *puVar12;
+                                puVar11 = puVar11 + (uint64_t)uVar16 * -2 + 1;
+                                puVar12 = puVar12 + (uint64_t)uVar16 * -2 + 1;
+                            } while (bVar15);
+                            if ((!bVar14 && !bVar15) != bVar14) {
+                                iVar5 = func_0x0801aba2(puVar1, reloc..LC22, 2);
+                                if ((iVar5 == 0) || (iVar5 = func_0x0801aba2(puVar1), iVar5 == 0)) {
+                                    "\x01\x01\x01"[2] = '\x01';
+                                }
+                                goto code_r0x080008e1;
+                            }
+                        }
+                        "\x01\x01\x01"[0] = '\x01';
+                        goto code_r0x080008e1;
+                    }
+                }
+                "\x01\x01\x01"[1] = '\x01';
+            }
+code_r0x080008e1:
+            iVar5 = (int32_t)iVar10;
+            iVar10 = iVar10 + 1;
+        } while (iVar5 + 2 < "\x01\x01\x01"._4_4_);
+    }
+    func_0x0801aba2(_reloc.stderr);
+    iVar5 = func_0x0801aba2(_reloc.stdout, 0, 1, 0x400);
+    if (iVar5 != 0) {
+        func_0x0801aba2("", 1, 0x1c, _reloc.stderr);
+    }
+    func_0x0801aba2(_reloc.stdin, 0, 2, 0);
+    _reloc.gpoutfile = _reloc.stdout;
+    func_0x0801aba2("");
+    func_0x0801aba2(reloc..LC6);
+    func_0x0801aba2();
+    _reloc.udv_user_head = _reloc.udv_NaN;
+    func_0x0801aba2();
+    func_0x0801aba2();
+    _reloc.replot_line = func_0x0801aba2(reloc..LC7);
+    reloc.interactive = (code)0x0;
+    uVar4 = func_0x0801aba2(_reloc.stdin);
+    iVar5 = func_0x0801aba2(uVar4);
+    iVar10 = 8;
+    iVar8 = 1;
+    reloc.interactive = (code)(iVar5 != 0);
+    if (1 < "\x01\x01\x01"._4_4_) {
+        do {
+            if ((**(char **)((int64_t)argv + iVar10) != '-') ||
+               (((*(char **)((int64_t)argv + iVar10))[1] + 0x9dU & 0xfd) == 0)) {
+                reloc.interactive = (code)0x0;
+                goto code_r0x08000bbd;
+            }
+            iVar8 = iVar8 + 1;
+            iVar10 = iVar10 + 8;
+        } while (iVar8 < "\x01\x01\x01"._4_4_);
+    }
+    if (iVar5 == 0) {
+code_r0x08000bbd:
+        func_0x0801aba2(0);
+    } else {
+        func_0x0801aba2(_reloc.stderr);
+    }
+    func_0x0801aba2(3);
+    iVar5 = func_0x0801aba2(obj.command_line_env, 1);
+    if (iVar5 == 0) {
+        func_0x0801aba2();
+        func_0x0801aba2();
+        func_0x0801aba2(1, 0);
+        func_0x0801aba2(1, 0);
+        iVar10 = 0x88;
+        puVar13 = (undefined8 *)reloc.sm_palette;
+        while (iVar10 != 0) {
+            iVar10 = iVar10 + -1;
+            *puVar13 = 0;
+            puVar13 = puVar13 + (uint64_t)uVar16 * 0x1ffffffffffffffe + 1;
+        }
+        func_0x0801aba2();
+        func_0x0801aba2();
+        func_0x0801aba2();
+        func_0x0801aba2();
+        func_0x0801aba2(0);
+        func_0x0801aba2(*(undefined8 *)0x8000f2c);
+        func_0x0801aba2();
+        cVar3 = reloc.interactive;
+        if ((reloc.interactive != (code)0x0) && (_reloc.term != 0)) {
+            ""._9_8_ = func_0x0801aba2("");
+            func_0x0801aba2(obj.expanded_history_filename);
+            func_0x0801aba2(""._9_8_);
+            func_0x0801aba2(sym.wrapper_for_write_history);
+            cVar3 = reloc.interactive;
+        }
+    } else {
+        if ("\x01"[0] == '\0') {
+            "\x01"[0] = '\x01';
+            func_0x0801aba2("WARNING: Error during initialization\n\n", 1, 0x26, _reloc.stderr);
+        }
+        if (reloc.interactive == (code)0x0) {
+            "\x01"._0_4_ = 1;
+        }
+        func_0x0801aba2();
+        cVar3 = reloc.interactive;
+        if (reloc.reading_from_dash == (code)0x0) {
+            if (reloc.interactive != (code)0x0) goto joined_r0x08000c59;
+        } else {
+            ppcStack64 = argv;
+            if (reloc.interactive != (code)0x0) goto code_r0x08000fae;
+            reloc.reading_from_dash = (code)0x0;
+        }
+        if (reloc.noinputfiles == (code)0x0) {
+            func_0x0801aba2();
+            func_0x0801aba2(1);
+            cVar3 = reloc.interactive;
+        }
+    }
+joined_r0x08000c59:
+    iVar5 = "\x01\x01\x01"._4_4_;
+    ppcVar2 = argv;
+    "\x01\x01\x01"._4_4_ = iVar5 + -1;
+    reloc.interactive = cVar3;
+    if ("\x01\x01\x01"._4_4_ < 1) {
+        if (reloc.noinputfiles != (code)0x0) {
+            while (iVar5 = func_0x0801aba2(), iVar5 == 0) {
+                reloc.ctrlc_flag = (code)0x0;
+            }
+        }
+        func_0x0801aba2();
+        return "\x01"._0_4_;
+    }
+    puVar1 = (uint8_t *)ppcVar2[1];
+    ppcStack64 = ppcVar2 + 1;
+    _reloc.c_token = 0;
+    bVar14 = *puVar1 < 0x2d;
+    bVar15 = *puVar1 == 0x2d;
+    if (bVar15) goto code_r0x08000c80;
+    goto code_r0x08000cbf;
+code_r0x08000c80:
+    bVar14 = puVar1[1] < 0x70;
+    bVar15 = puVar1[1] == 0x70;
+    argv = ppcStack64;
+    if (bVar15) goto joined_r0x08000c59;
+code_r0x08000cbf:
+    iVar10 = 10;
+    puVar11 = puVar1;
+    puVar12 = (uint8_t *)"";
+    do {
+        if (iVar10 == 0) break;
+        iVar10 = iVar10 + -1;
+        bVar14 = *puVar11 < *puVar12;
+        bVar15 = *puVar11 == *puVar12;
+        puVar11 = puVar11 + (uint64_t)uVar16 * -2 + 1;
+        puVar12 = puVar12 + (uint64_t)uVar16 * -2 + 1;
+    } while (bVar15);
+    argv = ppcStack64;
+    if ((!bVar14 && !bVar15) == bVar14) goto joined_r0x08000c59;
+    if ((*puVar1 == 0x2d) && (puVar1[1] == 0)) {
+        uVar4 = func_0x0801aba2(_reloc.stdin);
+        iVar5 = func_0x0801aba2(uVar4);
+        reloc.interactive = (code)(iVar5 != 0);
+code_r0x08000fae:
+        reloc.reading_from_dash = (code)0x1;
+        do {
+            iVar5 = func_0x0801aba2();
+        } while (iVar5 == 0);
+        reloc.reading_from_dash = (code)0x0;
+        reloc.interactive = (code)0x0;
+        reloc.noinputfiles = (code)0x0;
+        argv = ppcStack64;
+        cVar3 = reloc.interactive;
+        goto joined_r0x08000c59;
+    }
+    if (((*puVar1 == 0x2d) && (puVar1[1] == 0x65)) && (puVar1[2] == 0)) {
+        "\x01\x01\x01"._4_4_ = iVar5 + -2;
+        if ("\x01\x01\x01"._4_4_ < 1) {
+            func_0x0801aba2("syntax:  gnuplot -e \"commands\"\n", 1, 0x1f, _reloc.stderr);
+            return 0;
+        }
+        reloc.interactive = (code)0x0;
+        reloc.noinputfiles = (code)0x0;
+        func_0x0801aba2(ppcVar2[2]);
+        argv = ppcVar2 + 2;
+        goto joined_r0x08000c59;
+    }
+    bVar14 = *puVar1 < 0x2d;
+    bVar15 = *puVar1 == 0x2d;
+    if (bVar15) {
+        bVar14 = puVar1[1] < 0x73;
+        bVar15 = puVar1[1] == 0x73;
+        if (bVar15) goto code_r0x08000d5c;
+    }
+    iVar10 = 7;
+    puVar11 = puVar1;
+    puVar12 = (uint8_t *)"";
+    do {
+        if (iVar10 == 0) break;
+        iVar10 = iVar10 + -1;
+        bVar14 = *puVar11 < *puVar12;
+        bVar15 = *puVar11 == *puVar12;
+        puVar11 = puVar11 + (uint64_t)uVar16 * -2 + 1;
+        puVar12 = puVar12 + (uint64_t)uVar16 * -2 + 1;
+    } while (bVar15);
+    if ((!bVar14 && !bVar15) == bVar14) {
+code_r0x08000d5c:
+        "\x01\x01\x01"[0] = '\x01';
+        argv = ppcStack64;
+        goto joined_r0x08000c59;
+    }
+    bVar14 = *puVar1 < 0x2d;
+    bVar15 = *puVar1 == 0x2d;
+    if (bVar15) {
+        bVar14 = puVar1[1] < 100;
+        bVar15 = puVar1[1] == 100;
+        argv = ppcStack64;
+        if (bVar15) goto joined_r0x08000c59;
+    }
+    iVar10 = 0x13;
+    puVar11 = puVar1;
+    puVar12 = (uint8_t *)"";
+    do {
+        if (iVar10 == 0) break;
+        iVar10 = iVar10 + -1;
+        bVar14 = *puVar11 < *puVar12;
+        bVar15 = *puVar11 == *puVar12;
+        puVar11 = puVar11 + (uint64_t)uVar16 * -2 + 1;
+        puVar12 = puVar12 + (uint64_t)uVar16 * -2 + 1;
+    } while (bVar15);
+    argv = ppcStack64;
+    if ((!bVar14 && !bVar15) == bVar14) goto joined_r0x08000c59;
+    iVar5 = func_0x0801aba2(puVar1, reloc..LC29);
+    if (iVar5 != 0) {
+        if (*puVar1 == 0x2d) {
+            func_0x0801aba2(_reloc.stderr, 1, "", puVar1);
+            argv = ppcStack64;
+            cVar3 = reloc.interactive;
+        } else {
+            reloc.interactive = (code)0x0;
+            reloc.noinputfiles = (code)0x0;
+            uVar6 = func_0x0801aba2(puVar1);
+            uVar7 = func_0x0801aba2(ppcVar2[1], reloc..LC2);
+            func_0x0801aba2(uVar7, uVar6, 4);
+            argv = ppcStack64;
+            cVar3 = reloc.interactive;
+        }
+        goto joined_r0x08000c59;
+    }
+    reloc.interactive = (code)0x0;
+    reloc.noinputfiles = (code)0x0;
+    "\x01\x01\x01"._4_4_ = "\x01\x01\x01"._4_4_ + -1;
+    if ("\x01\x01\x01"._4_4_ < 1) {
+        func_0x0801aba2("syntax:  gnuplot -c scriptname args\n", 1, 0x24, _reloc.stderr);
+        func_0x0801aba2(1);
+    }
+    if ("\x01\x01\x01"._4_4_ < 0xb) {
+        _reloc.call_argc = "\x01\x01\x01"._4_4_ + -1;
+        if (_reloc.call_argc < 0) goto code_r0x08000e4a;
+    } else {
+        _reloc.call_argc = 9;
+    }
+    iVar10 = 0;
+    do {
+        uVar6 = func_0x0801aba2(ppcVar2[iVar10 + 3]);
+        *(undefined8 *)(reloc.call_args + iVar10 * 8) = uVar6;
+        iVar10 = iVar10 + 1;
+    } while ((int32_t)iVar10 <= _reloc.call_argc);
+code_r0x08000e4a:
+    uVar6 = func_0x0801aba2(ppcVar2[2]);
+    uVar7 = func_0x0801aba2(ppcVar2[2], reloc..LC2);
+    func_0x0801aba2(uVar7, uVar6, 5);
+    func_0x0801aba2(0);
+    argv = ppcVar2 + 2;
+    cVar3 = reloc.interactive;
+    goto joined_r0x08000c59;
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+
+void sym.restrict_popen(int64_t arg1, undefined8 placeholder_1, undefined8 placeholder_2, int64_t arg4)
+{
+    char *pcVar1;
+    
+    if ("\x01"[0] != '\0') {
+        return;
+    }
+    pcVar1 = (char *)func_0x0801aba2(0xffffffff, "Pipes and shell commands not permitted during initialization");
+    // [03] -rw- section size 2 named .data
+    *pcVar1 = *pcVar1 + (char)pcVar1;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+

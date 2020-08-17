@@ -1,0 +1,2560 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int64_t auto_filetype_function (void) {
+    /* [01] -r-x section size 42779 named .text */
+    *(rax) += al;
+    *(rax) += al;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8000050 */
+#include <stdint.h>
+ 
+int64_t gpbin_filetype_function (void) {
+    eax += *(rax);
+    *(rax) += al;
+    *(rax) += al;
+    *(rax) += al;
+    *(rcx)++;
+    *(0x51000000) = 0;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8000070 */
+#include <stdint.h>
+ 
+void raw_filetype_function (void) {
+    __asm ("endbr64");
+    *(obj.df_matrix_file) = 0;
+    *(obj.df_matrix_file) = 1;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8000090 */
+#include <stdint.h>
+ 
+uint64_t expand_df_column (int64_t arg1) {
+    rdi = arg1;
+    rsi = (int64_t) edi;
+    rdi = "auto";
+    rdx = "datafile column";
+    rbx = rsi;
+    rsi <<= 5;
+    rax = gp_realloc (rbx);
+    ecx = df_max_cols;
+    *(obj.df_column) = "auto";
+    if (ebx <= ecx) {
+        goto label_0;
+    }
+    rsi = (int64_t) ecx;
+    ecx = ~ecx;
+    ecx += ebx;
+    rdx = rsi;
+    rcx = rsi + rcx + 1;
+    rdx <<= 5;
+    rcx <<= 5;
+    rdx += rax;
+    rax += rcx;
+    do {
+        *(rdx) = 0;
+        rdx += 0x20;
+        *((rdx - 8)) = 0;
+        *((rdx - 0x10)) = 0;
+    } while (rdx != rax);
+    *(obj.df_max_cols) = ebx;
+label_0:
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8000110 */
+#include <stdint.h>
+ 
+int32_t clear_binary_records (int64_t arg1) {
+    rdi = arg1;
+    r12 = obj_df_matrix_file;
+    rbx = *(obj.df_bin_record_default);
+    if (edi == 0) {
+        rbx = *(loc..LC2);
+        r12 = obj_df_matrix_file;
+    }
+    eax = *(r12);
+    if (eax <= 0) {
+        goto label_0;
+    }
+    rbx += 0xf0;
+    ebp = 0;
+    do {
+        rdi = *(rbx);
+        if (rdi != 0) {
+            gp_realloc ();
+            *(rbx) = 0;
+        }
+        ebp++;
+        rbx += 0xf8;
+    } while (*(r12) > ebp);
+label_0:
+    *(r12) = 0;
+    return eax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8000180 */
+#include <stdint.h>
+ 
+void initialize_use_spec (void) {
+    *(obj.df_matrix_file) = 0;
+    r12 = 0x07fffffc;
+    rbx = obj_df_matrix_file;
+    do {
+        rdi = *((rbx + 8));
+        *(rbx) = ebp;
+        *((rbx + 4)) = 0;
+        if (rdi != 0) {
+            gp_realloc ();
+            *((rbx + 8)) = 0;
+        }
+        *((r12 + rbp*4)) = 0xfffffffe;
+        rbp++;
+        rbx += 0x18;
+        *((rbx - 8)) = 0xffffffff;
+    } while (rbp != 0xf);
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x80001f0 */
+#include <stdint.h>
+ 
+uint64_t plot_ticlabel_using (int64_t arg1) {
+    int64_t var_fh;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    int64_t var_28h;
+    rdi = arg1;
+    eax = *(reloc.c_token);
+    rsi = loc__LC2;
+    ebx = edi;
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    eax = gp_realloc (rbx, rbp);
+    if (eax == 0) {
+        goto label_1;
+    }
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    eax = gp_realloc ();
+    while (eax == 1) {
+        eax = gp_realloc ();
+        edx = "def$ault";
+        edx += *(obj.df_matrix_file);
+        r12 = obj_df_matrix_file;
+        rdx = (int64_t) edx;
+        rdx *= 3;
+        *((r12 + rdx*8 + 8)) = 0;
+        if (eax <= 0) {
+            goto label_2;
+        }
+label_0:
+        edi = *(reloc.c_token);
+        rsi = loc__LC5;
+        eax = gp_realloc ();
+        if (eax == 0) {
+            goto label_3;
+        }
+        eax = "def$ault";
+        edx = datafile.c;
+        *(reloc.c_token)++;
+        edx += eax;
+        eax++;
+        rdx = (int64_t) edx;
+        *(obj.df_no_tic_specs) = "def$ault";
+        rdx *= 3;
+        rdx = r12 + rdx*8;
+        *((rdx + 4)) = ebx;
+        *(rdx) = ebp;
+        return eax;
+        edi = *(reloc.c_token);
+        eax = gp_realloc ();
+    }
+    eax = "def$ault";
+    eax += *(obj.df_matrix_file);
+    r12 = obj_df_matrix_file;
+    rax = gp_realloc ();
+    *(obj.fast_columns) = 0;
+    r8 = rax;
+    rax = (int64_t) ebp;
+    rax *= 3;
+    *((r12 + rax*8 + 8)) = r8;
+    goto label_0;
+label_1:
+    edi = *(reloc.c_token);
+    rsi = "missing '(';
+    gp_realloc ();
+label_3:
+    edi = *(reloc.c_token);
+    rsi = "missing ')';
+    eax = gp_realloc ();
+label_2:
+    edi = *(reloc.c_token);
+    rsi = "ticlabels must come from a real column";
+    eax = 0;
+    rax = gp_realloc ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8000a40 */
+#include <stdint.h>
+ 
+uint64_t df_swap_bytes_by_endianess (char * arg1, uint32_t arg2, int64_t arg3) {
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    r9d = rsi - 1;
+    esi -= 2;
+    if (esi <= 1) {
+        goto label_2;
+    }
+    while (ecx <= 0) {
+label_0:
+        return;
+        ecx = rdx - 1;
+    }
+    r10 = (int64_t) ecx;
+label_1:
+    rdi += r10;
+    ecx -= edi;
+    edx = ecx;
+    do {
+        eax = *((rdi - 1));
+        ecx = *(rdi);
+        rdi -= 2;
+        *((rdi + 1)) = cl;
+        *((rdi + 2)) = al;
+        eax = rdx + rdi;
+    } while (eax > 0);
+    return eax;
+label_2:
+    ecx = rdx - 1;
+    eax = 0;
+    r10 = (int64_t) ecx;
+    rdx = r10;
+    if (ecx <= 0) {
+        goto label_0;
+    }
+    do {
+        esi = *((rdi + rax));
+        r8d = *((rdi + rdx));
+        *((rdi + rax)) = r8b;
+        rax++;
+        *((rdi + rdx)) = sil;
+        rdx--;
+    } while (eax < edx);
+    if (r9d <= 1) {
+        goto label_1;
+    }
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8000ad0 */
+#include <stdint.h>
+ 
+uint64_t df_insert_scanned_use_spec (int64_t arg7, signed int64_t arg1) {
+    xmm0 = arg7;
+    rdi = arg1;
+    esi = datafile.c;
+    if (esi > 0xd) {
+        goto label_0;
+    }
+    r8 = obj_df_matrix_file;
+    if (esi <= edi) {
+        goto label_1;
+    }
+    ecx = rsi - 1;
+    rdx = (int64_t) esi;
+    r8 = obj_df_matrix_file;
+    ecx -= edi;
+    rax = rdx * 3;
+    rdx -= rcx;
+    rax = r8 + rax*8;
+    rcx = rdx * 3;
+    rdx = r8 - 0x18;
+    rcx = rdx + rcx*8;
+    do {
+        __asm ("movdqu xmm0, xmmword [rax - 0x18]");
+        rdx = *((rax - 8));
+        rax -= 0x18;
+        __asm ("movups xmmword [rax + 0x18], xmm0");
+        *((rax + 0x28)) = rdx;
+    } while (rax != rcx);
+label_1:
+    rax = (int64_t) edi;
+    esi++;
+    rax *= 3;
+    *(obj.df_matrix_file) = esi;
+    rdx = r8 + rax*8;
+    eax = 0xfffffffd;
+    eax -= edi;
+    *((rdx + 8)) = 0;
+    *(rdx) = eax;
+    return rax;
+label_0:
+    rsi = "Too many columns in using specification and implied sampling array";
+    edi |= 0xffffffff;
+    eax = 0;
+    rax = gp_realloc (rax);
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8000c10 */
+#include <stdint.h>
+ 
+int64_t df_skip_bytes (int64_t arg11, int64_t arg7, int64_t arg1) {
+    int64_t var_4h;
+    int64_t var_8h_2;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    int64_t var_28h;
+    int64_t var_30h;
+    int64_t var_44h;
+    int64_t var_48h;
+    int64_t var_7h;
+    int64_t var_8h;
+    xmm4 = arg11;
+    xmm0 = arg7;
+    rdi = arg1;
+    rax = *(fs:0x28);
+    *((rsp + 8)) = rax;
+    eax = 0;
+    if (*(obj.df_pipe_open) == 0) {
+        if (*(obj.plotted_data_from_stdin) == 0) {
+            goto label_1;
+        }
+    }
+    rbx = rdi;
+    rbp = rsp + 7;
+    do {
+        if (rbx == 0) {
+            goto label_2;
+        }
+        rcx = data_fp;
+        edx = 1;
+        esi = 1;
+        rdi = rbp;
+        rbx--;
+        rax = gp_realloc ();
+    } while (rax == 1);
+    rdi = data_fp;
+    eax = gp_realloc ();
+    if (eax == 0) {
+        goto label_3;
+    }
+label_0:
+    *(obj.df_eof) = 1;
+    eax = 0xffffffff;
+    do {
+        rcx = *((rsp + 8));
+        rcx ^= *(fs:0x28);
+        if (eax != 0) {
+            goto label_4;
+        }
+        return rax;
+label_1:
+        rsi = rdi;
+        rdi = data_fp;
+        edx = 1;
+        eax = gp_realloc ();
+        if (eax != 0) {
+            goto label_5;
+        }
+label_2:
+        eax = 0;
+    } while (1);
+label_5:
+    rdi = data_fp;
+    eax = gp_realloc ();
+    if (eax != 0) {
+        goto label_0;
+    }
+    rsi = *(obj.read_error_msg);
+    edi |= 0xffffffff;
+    gp_realloc ();
+label_4:
+    eax = gp_realloc ();
+label_3:
+    rsi = *(obj.read_error_msg);
+    edi |= 0xffffffff;
+    eax = 0;
+    gp_realloc ();
+}
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x800c430 */
+#include <stdint.h>
+ 
+int32_t df_readline_cold (void) {
+    /* [09] -r-x section size 12 named .text.unlikely */
+    edx = 0;
+    eax = 2;
+    return void (*0x8005547)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8005547 */
+#include <stdint.h>
+ 
+int64_t fcn_08005547 (uint32_t arg_ch, int64_t arg_38h, uint32_t arg_90h, int64_t arg_98h, int64_t arg_c8h, int64_t arg3) {
+    rdx = arg3;
+label_1:
+    rbx = arg_c8h;
+    rbx ^= *(fs:0x28);
+    if (? != ?) {
+        goto label_4;
+    }
+    return;
+label_0:
+    if (*((r13 + 4)) <= 2) {
+        goto label_3;
+    }
+    rdi = *((r13 + 8));
+    if (rdi == 0) {
+        goto label_3;
+    }
+    rsi = rbp;
+    *(obj.evaluate_inside_using) = 1;
+    gp_realloc ();
+    eax = *((r13 + 4));
+    *(obj.evaluate_inside_using) = 0;
+    eax -= 4;
+    if (eax > 4) {
+        void (*0x800c430)() ();
+    }
+    rax = *((rbx + rax*4));
+    rax += rbx;
+    void (*rax)() ();
+label_2:
+    ecx = datafile.c;
+    if (arg_90h == 3) {
+        goto label_5;
+    }
+label_3:
+    eax = "def$ault";
+    r14d++;
+    r13 += 0x18;
+    eax += ecx;
+    if (r14d < eax) {
+        goto label_0;
+    }
+    eax = r15d;
+    sil = (ecx != 0) ? 1 : 0;
+    dl = (ecx != eax) ? 1 : 0;
+    if ((sil & dl) == 0) {
+        goto label_1;
+    }
+    if (arg_ch == eax) {
+        goto label_1;
+    }
+    rdx = "df_no_use_specs == 0 || output == df_no_use_specs || output == max";
+    rsi = loc__LC77;
+    edi |= 0xffffffff;
+    eax = 0;
+    rax = gp_realloc ();
+    eax = *(0x08000008);
+    if (eax != 0) {
+        ecx = datafile.c;
+        eax = 3;
+        edx = rcx - 1;
+        goto label_2;
+label_5:
+        rdi = (int64_t) eax;
+        rsi = arg_38h;
+        rdx = (int64_t) edx;
+        rdi *= 0x2a8;
+        xmm0 = *((rsi + rdx*8));
+        rsi = arg_98h;
+        edx = 0xffffffff;
+        rdi += r12;
+        gp_realloc ();
+        rdi = rbp;
+        gp_realloc ();
+        ecx = datafile.c;
+        goto label_3;
+    }
+    edx = 2;
+    eax = 3;
+    goto label_2;
+label_4:
+    gp_realloc ();
+    eax = 0xfffffff9;
+    goto label_1;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8005e20 */
+#include <stdint.h>
+ 
+int64_t plot_option_array (void) {
+    int64_t var_ch;
+    uint32_t var_10h;
+    int64_t var_11h;
+    int64_t var_18h;
+    rsi = loc__LC10;
+    edi = *(reloc.c_token);
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    eax = gp_realloc (rbx);
+    if (eax == 0) {
+        goto label_5;
+    }
+    ebx = 0;
+    rbp = rsp + 0x10;
+    while (eax != 0) {
+        ebx++;
+        if (ebx > *(obj.df_matrix_file)) {
+            goto label_6;
+        }
+label_2:
+        rax = gp_realloc ();
+        rdx = *(obj.df_matrix_file);
+        rdi = *(loc..LC2);
+        r8 = rax;
+        rax = rdx;
+        rax <<= 5;
+        rax -= rdx;
+        rax = rdi + rax*8;
+        edi = *(reloc.c_token);
+        *((rax - 0xf8)) = r8d;
+        if (edi < *(reloc.num_tokens)) {
+            goto label_7;
+        }
+label_1:
+        rsi = loc__LC38;
+        eax = gp_realloc ();
+        if (eax == 0) {
+            goto label_8;
+        }
+label_0:
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        eax = gp_realloc ();
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC2;
+    eax = gp_realloc ();
+    if (eax == 0) {
+        goto label_9;
+    }
+    *(reloc.c_token)++;
+    ebx++;
+    if (ebx > *(obj.df_matrix_file)) {
+        goto label_10;
+    }
+label_4:
+    rax = gp_realloc ();
+    rdx = *(obj.df_matrix_file);
+    rcx = *(loc..LC2);
+    rsi = loc__LC12;
+    r8 = rax;
+    edi = *(reloc.c_token);
+    rax = rdx;
+    rax <<= 5;
+    rax -= rdx;
+    rax = rcx + rax*8;
+    *((rax - 0xf8)) = r8d;
+    eax = gp_realloc ();
+    if (eax != 0) {
+        goto label_11;
+    }
+label_3:
+    edi = *(reloc.c_token);
+    rsi = loc__LC5;
+    eax = gp_realloc ();
+    if (eax == 0) {
+        goto label_12;
+    }
+    eax = *(reloc.c_token);
+    rsi = loc__LC38;
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    eax = gp_realloc ();
+    if (eax != 0) {
+        goto label_0;
+    }
+label_8:
+    rax = *((rsp + 0x18));
+    rax ^= *(fs:0x28);
+    if (eax == 0) {
+        return rax;
+label_7:
+        rsi = loc__LC14;
+        eax = gp_realloc ();
+        if (eax == 0) {
+            esi = *(reloc.c_token);
+            edx = 6;
+            rdi = rbp;
+            *((rsp + 0xc)) = 0;
+            gp_realloc ();
+            if (*((rsp + 0x10)) == 0x78) {
+                goto label_13;
+            }
+        }
+label_9:
+        edi = *(reloc.c_token);
+        goto label_1;
+label_6:
+        esi = 0;
+        edi = 1;
+        gp_realloc ();
+        goto label_2;
+label_11:
+        *(reloc.c_token)++;
+        rax = gp_realloc ();
+        rdx = *(obj.df_matrix_file);
+        r8 = rax;
+        rax = rdx;
+        rax <<= 5;
+        rax -= rdx;
+        rdx = *(loc..LC2);
+        rax = rdx + rax*8;
+        *((rax - 0xf4)) = r8d;
+        goto label_3;
+label_10:
+        esi = 0;
+        edi = 1;
+        eax = gp_realloc ();
+        goto label_4;
+label_13:
+        rdx = rsp + 0xc;
+        rdi = rsp + 0x11;
+        eax = 0;
+        rsi = loc__LC98;
+        gp_realloc ();
+        rdx = *(obj.df_matrix_file);
+        rsi = *(loc..LC2);
+        rax = rdx;
+        rax <<= 5;
+        rax -= rdx;
+        edx = *((rsp + 0xc));
+        rax = rsi + rax*8;
+        *((rax - 0xf4)) = edx;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_1;
+label_12:
+        edi = *(reloc.c_token);
+        rsi = "tuple syntax error";
+        gp_realloc ();
+label_5:
+        rsi = *(obj.equal_symbol_msg);
+        edi = *(reloc.c_token);
+        gp_realloc ();
+    }
+    gp_realloc ();
+    __asm ("endbr64");
+    if (edi > 0) {
+        r12 = (int64_t) edi;
+        ebx = edi;
+        rdi = df_column_bininfo;
+        r12 <<= 4;
+        if (*(obj.df_max_bininfo_cols) >= ebx) {
+            rsi = (int64_t) ebp;
+            *((rdi + r12 - 0x10)) = rsi;
+            r12 = rbx;
+            return rax;
+        }
+        rsi = r12;
+        rdx = "datafile columns binary information";
+        rax = gp_realloc ();
+        rsi = (int64_t) ebp;
+        *(obj.df_max_bininfo_cols) = ebx;
+        rdi = rax;
+        *(obj.df_column_bininfo) = rax;
+        *((rdi + r12 - 0x10)) = rsi;
+        return rax;
+    }
+    rdx = "col > 0";
+    rsi = loc__LC77;
+    edi |= 0xffffffff;
+    eax = 0;
+    rax = gp_realloc ();
+}
+
+
+
+
+
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8006170 */
+#include <stdint.h>
+ 
+int64_t initialize_binary_vars (int64_t arg11, int64_t arg10, int64_t arg9, int64_t arg8, int64_t arg7) {
+    xmm4 = arg11;
+    xmm3 = arg10;
+    xmm2 = arg9;
+    xmm1 = arg8;
+    xmm0 = arg7;
+label_1:
+    __asm ("endbr64");
+    if (esi != 0) {
+        goto label_2;
+    }
+    r13d = datafile.c;
+    eax = *(obj.df_max_num_bin_records);
+    r14 = obj_df_max_num_bin_records;
+    rbx = obj_df_matrix_file;
+    r12 = loc__LC2;
+    r13d += ebp;
+    if (eax < r13d) {
+        goto label_3;
+    }
+label_0:
+    if (ebp <= 0) {
+        goto label_4;
+    }
+    eax = *(rbx);
+    ecx = 0;
+    rsi = obj_df_bin_record_reset;
+    do {
+        rax = (int64_t) eax;
+        __asm ("movdqa xmm0, xmmword [rsi]");
+        ecx++;
+        rdx = rax;
+        rdx <<= 5;
+        rdx -= rax;
+        rax = rdx;
+        rdx = *(r12);
+        rax = rdx + rax*8;
+        __asm ("movups xmmword [rax], xmm0");
+        __asm ("movdqa xmm1, xmmword [0x0800a930]");
+        __asm ("movups xmmword [rax + 0x10], xmm1");
+        __asm ("movdqa xmm2, xmmword [0x0800a940]");
+        __asm ("movups xmmword [rax + 0x20], xmm2");
+        __asm ("movdqa xmm3, xmmword [0x0800a950]");
+        __asm ("movups xmmword [rax + 0x30], xmm3");
+        __asm ("movdqa xmm4, xmmword [0x0800a960]");
+        __asm ("movups xmmword [rax + 0x40], xmm4");
+        __asm ("movdqa xmm5, xmmword [0x0800a970]");
+        __asm ("movups xmmword [rax + 0x50], xmm5");
+        __asm ("movdqa xmm6, xmmword [0x0800a980]");
+        __asm ("movups xmmword [rax + 0x60], xmm6");
+        __asm ("movdqa xmm7, xmmword [0x0800a990]");
+        __asm ("movups xmmword [rax + 0x70], xmm7");
+        __asm ("movdqa xmm0, xmmword [0x0800a9a0]");
+        __asm ("movups xmmword [rax + 0x80], xmm0");
+        __asm ("movdqa xmm1, xmmword [0x0800a9b0]");
+        __asm ("movups xmmword [rax + 0x90], xmm1");
+        __asm ("movdqa xmm2, xmmword [0x0800a9c0]");
+        __asm ("movups xmmword [rax + 0xa0], xmm2");
+        __asm ("movdqa xmm3, xmmword [0x0800a9d0]");
+        __asm ("movups xmmword [rax + 0xb0], xmm3");
+        __asm ("movdqa xmm4, xmmword [0x0800a9e0]");
+        __asm ("movups xmmword [rax + 0xc0], xmm4");
+        __asm ("movdqa xmm5, xmmword [0x0800a9f0]");
+        __asm ("movups xmmword [rax + 0xd0], xmm5");
+        __asm ("movdqa xmm6, xmmword [0x0800aa00]");
+        __asm ("movups xmmword [rax + 0xe0], xmm6");
+        rdx = *(0x0800aa10);
+        *((rax + 0xf0)) = rdx;
+        eax = *(rbx);
+        eax++;
+        *(rbx) = eax;
+    } while (ebp != ecx);
+label_4:
+    r12 = rbx;
+    r13 = rbx;
+    r14 = rbx;
+    return rax;
+label_2:
+    r13d = datafile.c;
+    eax = "datafile column";
+    r14 = "datafile column";
+    rbx = obj_df_matrix_file;
+    r12 = obj_df_bin_record_default;
+    r13d += ebp;
+    if (eax >= r13d) {
+        goto label_0;
+    }
+label_3:
+    rax = (int64_t) r13d;
+    rdi = *(r12);
+    rdx = "binary file data records";
+    rsi = rax;
+    rsi <<= 5;
+    rsi -= rax;
+    rsi <<= 3;
+    rax = gp_realloc ();
+    *(r14) = r13d;
+    *(r12) = rax;
+    goto label_0;
+    esi = 0;
+    edi = 1;
+    *(obj.df_matrix_file) = 0;
+    *(obj.df_O_count) = 0;
+    *(obj.df_N_count) = 0;
+    *(obj.df_M_count) = 0;
+    *(obj.df_matrix_file) = 0;
+    gp_realloc ();
+    edi = 0;
+    clear_binary_records ();
+    edi = datafile.c;
+    if (edi == 0) {
+        *(obj.df_bin_filetype) = 0xffffffff;
+        esi = 0;
+        edi = 1;
+        *(obj.df_matrix_file) = 0;
+        goto label_1;
+    }
+    eax = df_bin_filetype_default;
+    esi = 0;
+    *(obj.df_bin_filetype) = eax;
+    eax = df_bin_file_endianess_default;
+    *(obj.df_matrix_file) = eax;
+    gp_realloc ();
+    rax = *(obj.df_matrix_file);
+    rsi = *(obj.df_bin_record_default);
+    rdi = *(loc..LC2);
+    rdx = rax;
+    rdx <<= 5;
+    rdx -= rax;
+    rdx <<= 3;
+    return void (*0x808b4e1)() ();
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.d pdg @ sym.d pdg @ sym.df pdg @ sym.df pdg @ sym.df_ pdg @ sym.df_ pdg @ sym.df_t pdg @ sym.df_t pdg @ sym.df_to pdg @ sym.df_to pdg @ sym.df_tok pdg @ sym.df_tok pdg @ sym.df_toke pdg @ sym.df_toke pdg @ sym.df_token pdg @ sym.df_token pdg @ sym.df_tokeni pdg @ sym.df_tokeni pdg @ sym.df_tokenis pdg @ sym.df_tokenis pdg @ sym.df_tokenise pdg @ sym.df_tokenise
+// WARNING: Removing unreachable block (ram,0x080007ae)
+
+int32_t sym.df_tokenise(int64_t arg7, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3,
+                       undefined8 placeholder_4, undefined8 placeholder_5, undefined8 placeholder_6,
+                       undefined8 placeholder_7, int64_t arg1)
+{
+    uint8_t *puVar1;
+    char *pcVar2;
+    char cVar3;
+    uint8_t uVar4;
+    int32_t iVar5;
+    int64_t iVar6;
+    code *pcVar7;
+    int64_t iVar8;
+    int64_t *piVar9;
+    int64_t iVar10;
+    undefined8 *in_RCX;
+    undefined8 *unaff_RBX;
+    uint16_t uVar11;
+    int64_t unaff_RBP;
+    code *pcVar12;
+    uint32_t uVar13;
+    int32_t iVar14;
+    uint8_t uVar15;
+    uint8_t *unaff_R15;
+    uint8_t *puVar16;
+    int64_t in_FS_OFFSET;
+    bool bVar17;
+    bool bVar18;
+    undefined8 uVar19;
+    uint8_t *puStack72;
+    int64_t iStack64;
+    
+    iStack64 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    iVar6 = func_0x0808b4e1();
+    pcVar2 = (char *)(arg1 + -1 + iVar6);
+    cVar3 = *pcVar2;
+    if ((cVar3 == '\r') || (cVar3 == '\n')) {
+        *pcVar2 = '\0';
+    }
+    pcVar7 = segment.ehdr;
+    do {
+        *(undefined8 *)pcVar7 = 0;
+        pcVar7 = (code *)((int64_t)pcVar7 + 8);
+    } while (pcVar7 != sym.raw_filetype_function);
+    _obj.df_no_cols = 0;
+    iVar14 = 0;
+    if (*(char *)arg1 == '\0') goto code_r0x080005f0;
+    unaff_RBX = (undefined8 *)0x8000150;
+code_r0x080003c0:
+    if (_obj.df_max_cols <= iVar14 + 2) {
+        uVar13 = _obj.df_max_cols * 2;
+        if (_obj.df_max_cols < 0x14) {
+            uVar13 = _obj.df_max_cols + 0x14;
+        }
+        sym.expand_df_column((uint64_t)uVar13);
+        iVar14 = _obj.df_no_cols;
+    }
+    pcVar7 = segment.ehdr;
+    pcVar12 = segment.ehdr;
+    in_RCX = (undefined8 *)((int64_t)iVar14 * 0x20 + _str.auto);
+    in_RCX[2] = arg1;
+    do {
+        while ((*(int32_t *)pcVar7 + -1 == iVar14 &&
+               (iVar5 = *(int32_t *)((int64_t)pcVar7 + 4), *(int64_t *)pcVar12 = arg1, iVar5 == 1))) {
+            pcVar7 = (code *)((int64_t)pcVar7 + 0x18);
+            *(undefined4 *)(in_RCX + 1) = 1;
+            pcVar12 = (code *)((int64_t)pcVar12 + 8);
+            if (unaff_RBX == (undefined8 *)pcVar7) goto code_r0x08000448;
+        }
+        pcVar7 = (code *)((int64_t)pcVar7 + 0x18);
+        pcVar12 = (code *)((int64_t)pcVar12 + 8);
+    } while (unaff_RBX != (undefined8 *)pcVar7);
+code_r0x08000448:
+    unaff_RBP = _reloc.df_separators;
+    if (*(uint8_t *)arg1 == 0x22) {
+        if (_reloc.df_separators != 0) {
+            puVar16 = (uint8_t *)(arg1 + 1);
+            in_RCX[2] = puVar16;
+            puVar1 = (uint8_t *)(arg1 + 1);
+            arg1 = (int64_t)puVar16;
+            if (*puVar1 != 0x22) goto code_r0x08000a13;
+            iVar14 = iVar14 + 1;
+            *(undefined4 *)(in_RCX + 1) = 0xfffffff8;
+            goto code_r0x0800052d;
+        }
+        iVar14 = iVar14 + 1;
+        *(undefined4 *)(in_RCX + 1) = 0xfffffff8;
+        _obj.df_no_cols = iVar14;
+        goto code_r0x08000638;
+    }
+    bVar17 = false;
+    if (_reloc.missing_val == 0) goto code_r0x080007c0;
+code_r0x08000467:
+    iVar6 = _reloc.missing_val;
+    iVar8 = func_0x0808b4e1(_reloc.missing_val);
+    iVar5 = func_0x0808b4e1(arg1, iVar6, iVar8);
+    iVar6 = _reloc.df_separators;
+    if (iVar5 == 0) {
+        uVar15 = *(uint8_t *)(arg1 + iVar8);
+        if (uVar15 == 0) goto code_r0x080004d9;
+        if (_reloc.df_separators != 0) goto code_r0x080004ba;
+        piVar9 = (int64_t *)func_0x0808b4e1();
+        if ((*(uint8_t *)(*piVar9 + 1 + (uint64_t)uVar15 * 2) & 0x20) != 0) goto code_r0x080004d9;
+    } else {
+code_r0x080007c0:
+        iVar6 = _reloc.df_separators;
+        if (_reloc.df_separators != 0) goto code_r0x080004ba;
+    }
+code_r0x080006d6:
+    iVar14 = iVar14 + 1;
+    if (((_obj.fast_columns == 0) || (_segment.ehdr == 0)) ||
+       ((0 < _segment.ehdr &&
+        ((_segment.ehdr == iVar14 ||
+         ((_segment.ehdr != 1 &&
+          ((*(int32_t *)0x8000018 == iVar14 ||
+           ((_segment.ehdr != 2 &&
+            ((*(int32_t *)0x8000030 == iVar14 ||
+             ((_segment.ehdr != 3 &&
+              ((*(int32_t *)0x8000048 == iVar14 ||
+               ((_segment.ehdr != 4 && ((*(int32_t *)0x8000060 == iVar14 || (_segment.ehdr != 5)))))))))))))))))))))) {
+        uVar19 = func_0x0808b4e1(arg1, &puStack72);
+        iVar5 = (int32_t)puStack72 - (int32_t)arg1;
+        *in_RCX = uVar19;
+        iVar6 = (int64_t)iVar5;
+        uVar13 = (uint32_t)(iVar5 != 0);
+        goto code_r0x08000787;
+    }
+    piVar9 = (int64_t *)func_0x0808b4e1();
+    iVar8 = *piVar9;
+    while( true ) {
+        uVar15 = *(uint8_t *)arg1;
+        uVar11 = *(uint16_t *)(iVar8 + (uint64_t)uVar15 * 2) & 0x2000;
+        if (uVar11 == 0) break;
+        if ((iVar6 != 0) && (iVar10 = func_0x0808b4e1(), iVar10 != 0)) goto code_r0x08000903;
+        arg1 = arg1 + 1;
+    }
+    if (uVar15 == 0) {
+        if (iVar6 != 0) {
+code_r0x08000903:
+            uVar13 = 0;
+            goto code_r0x08000906;
+        }
+        bVar18 = false;
+        uVar13 = 0;
+code_r0x08000913:
+        if ((uVar11 == 0) && (bVar18)) goto code_r0x08000924;
+    } else {
+        if (iVar6 != 0) {
+            iVar10 = func_0x0808b4e1();
+            uVar13 = 1;
+            if (iVar10 != 0) goto code_r0x08000903;
+code_r0x08000906:
+            if (bVar17) {
+                do {
+                    uVar15 = *(uint8_t *)(arg1 + 1);
+                    arg1 = arg1 + 1;
+                    bVar18 = uVar15 != 0;
+                    bVar17 = uVar15 != 0x22 && bVar18;
+                } while (bVar17);
+                uVar11 = *(uint16_t *)(iVar8 + (uint64_t)uVar15 * 2) & 0x2000;
+            } else {
+                bVar18 = uVar15 != 0;
+            }
+            goto code_r0x08000913;
+        }
+        uVar13 = 1;
+code_r0x08000924:
+        while ((iVar6 == 0 || (iVar10 = func_0x0808b4e1(), iVar10 == 0))) {
+            puVar16 = (uint8_t *)(arg1 + 1);
+            arg1 = arg1 + 1;
+            if (((*(uint8_t *)(iVar8 + 1 + (uint64_t)*puVar16 * 2) & 0x20) != 0) || (*puVar16 == 0)) break;
+        }
+    }
+    iVar6 = 0;
+code_r0x08000787:
+    if ((reloc.df_fortran_constants != (code)0x0) && (uVar13 == 1)) {
+        puVar16 = (uint8_t *)(arg1 + iVar6);
+        uVar15 = *puVar16;
+        uVar4 = uVar15 & 0xdf;
+        if ((uVar4 == 0x44) || (uVar4 == 0x51)) {
+            *puVar16 = 0x65;
+            uVar19 = func_0x0808b4e1(arg1, &puStack72);
+            uVar13 = (uint32_t)(puStack72 != (uint8_t *)arg1);
+            *in_RCX = uVar19;
+            *puVar16 = uVar15;
+        }
+    }
+    unaff_RBP = _reloc.df_separators;
+    *(uint32_t *)(in_RCX + 1) = uVar13;
+    puVar16 = (uint8_t *)arg1;
+    do {
+        arg1 = (int64_t)puVar16;
+        _obj.df_no_cols = iVar14;
+        if (bVar17) {
+code_r0x08000638:
+            do {
+                uVar15 = *(uint8_t *)(arg1 + 1);
+                arg1 = arg1 + 1;
+                bVar17 = uVar15 != 0;
+                if (uVar15 == 0x22) goto code_r0x08000537;
+            } while (bVar17);
+            unaff_R15 = (uint8_t *)arg1;
+            if (unaff_RBP == 0) goto code_r0x08000670;
+code_r0x0800054b:
+            if (bVar17) {
+                do {
+                    iVar6 = func_0x0808b4e1(unaff_RBP, (int32_t)(char)uVar15);
+                    if (iVar6 != 0) break;
+                    uVar15 = unaff_R15[1];
+                    unaff_R15 = unaff_R15 + 1;
+                    if (uVar15 == 0) goto code_r0x080005f0;
+                } while (uVar15 != 10);
+            }
+            if ((uVar15 != 0) && (uVar15 != 10)) {
+                uVar15 = unaff_R15[1];
+                arg1 = (int64_t)(unaff_R15 + 1);
+                if ((uVar15 == 9) || (uVar15 == 0x20)) {
+                    do {
+                        iVar6 = func_0x0808b4e1(unaff_RBP, (int32_t)(char)uVar15);
+                        if (iVar6 != 0) break;
+                        uVar15 = *(uint8_t *)(arg1 + 1);
+                        arg1 = arg1 + 1;
+                    } while ((uVar15 == 0x20) || (uVar15 == 9));
+                }
+                if ((uVar15 != 0) && (uVar15 != 10)) {
+                    uVar15 = *(uint8_t *)arg1;
+                    goto code_r0x080005e5;
+                }
+                unaff_RBX = (undefined8 *)((int64_t)iVar14 * 0x20 + _str.auto);
+                *(int32_t *)(unaff_RBX + 1) = -5;
+                uVar19 = func_0x0808b4e1();
+                *unaff_RBX = uVar19;
+                iVar14 = _obj.df_no_cols + 1;
+                _obj.df_no_cols = iVar14;
+            }
+        } else {
+code_r0x0800052d:
+            uVar15 = *puVar16;
+            bVar17 = uVar15 != 0;
+            arg1 = (int64_t)puVar16;
+            _obj.df_no_cols = iVar14;
+code_r0x08000537:
+            bVar17 = (bool)(uVar15 != 10 & bVar17);
+            unaff_R15 = (uint8_t *)arg1;
+            if (unaff_RBP != 0) goto code_r0x0800054b;
+code_r0x08000670:
+            piVar9 = (int64_t *)func_0x0808b4e1();
+            in_RCX = (undefined8 *)*piVar9;
+            unaff_R15 = (uint8_t *)arg1;
+            if (bVar17) {
+                while ((*(uint8_t *)((int64_t)in_RCX + (uint64_t)uVar15 * 2 + 1) & 0x20) == 0) {
+                    uVar15 = *(uint8_t *)(arg1 + 1);
+                    arg1 = arg1 + 1;
+                    unaff_R15 = (uint8_t *)arg1;
+                    if ((uVar15 == 0) || (uVar15 == 10)) goto code_r0x080006c3;
+                }
+                uVar15 = *(uint8_t *)arg1;
+                unaff_R15 = (uint8_t *)arg1;
+            }
+code_r0x080006c3:
+            while (((*(uint8_t *)((int64_t)in_RCX + (uint64_t)uVar15 * 2 + 1) & 0x20) != 0 && (uVar15 != 10))) {
+                uVar15 = *(uint8_t *)(arg1 + 1);
+                arg1 = arg1 + 1;
+            }
+code_r0x080005e5:
+            if (uVar15 != 0) goto code_r0x080003c0;
+        }
+code_r0x080005f0:
+        if (iStack64 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return iVar14;
+        }
+        func_0x0808b4e1();
+        arg1 = (int64_t)unaff_R15;
+code_r0x08000a13:
+        if (_reloc.missing_val != 0) {
+            bVar17 = true;
+            goto code_r0x08000467;
+        }
+        bVar17 = true;
+        iVar6 = unaff_RBP;
+code_r0x080004ba:
+        iVar8 = func_0x0808b4e1();
+        if (iVar8 == 0) goto code_r0x080006d6;
+code_r0x080004d9:
+        *(undefined4 *)(in_RCX + 1) = 0xfffffffb;
+        uVar19 = func_0x0808b4e1();
+        unaff_RBP = _reloc.df_separators;
+        iVar6 = (int64_t)_obj.df_no_cols * 0x20 + _str.auto;
+        *in_RCX = uVar19;
+        *(undefined8 *)(iVar6 + 0x10) = 0;
+        iVar14 = _obj.df_no_cols + 1;
+        puVar16 = (uint8_t *)arg1;
+    } while( true );
+}
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8000b70 */
+#include <stdint.h>
+ 
+uint64_t valid_format_part_0 (void) {
+    r14 = "fFeEgG";
+    r13d = 0;
+    r12 = "+-#0123456789.";
+label_0:
+    esi = 0x25;
+    rax = gp_realloc (rbx, rbp, r12, r13, r14);
+    rbx = rax;
+    if (rax == 0) {
+        goto label_2;
+    }
+    do {
+        r15 = rbx;
+        esi = *((rbx + 1));
+        rdi = r12;
+        rbx++;
+        rax = gp_realloc ();
+    } while (rax != 0);
+    if (bpl == 0x2a) {
+        goto label_3;
+    }
+    if (bpl == 0x6c) {
+        goto label_4;
+    }
+    if (bpl == 0x25) {
+        goto label_3;
+    }
+    do {
+        eax = 0;
+label_1:
+        return rax;
+label_4:
+        esi = *((rbx + 1));
+        rdi = r14;
+        rax = gp_realloc ();
+    } while (rax == 0);
+    r13d++;
+label_3:
+    rdi = r15 + 2;
+    goto label_0;
+label_2:
+    r13d--;
+    al = (r13d <= 6) ? 1 : 0;
+    goto label_1;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8002340 */
+#include <stdint.h>
+ 
+void df_showdata (void) {
+    __asm ("endbr64");
+    if (*(obj.data_fp) != 0) {
+        rbx = *(obj.df_filename);
+        if (rbx != 0) {
+            r12 = df_line;
+            if (r12 == 0) {
+                goto label_0;
+            }
+            rdi = r12;
+            rax = gp_realloc ();
+            r9 = rbx;
+            rcx = r12;
+            esi = 1;
+            r8 = loc__LC59;
+            rax = loc__LC43;
+            rdi = *(reloc.stderr);
+            if (rax <= 0x4d) {
+                r8 = rax;
+            }
+            eax = datafile.c;
+            rdx = "%.77s%s\n%s:%d:";
+            eax = 0;
+            gp_realloc (rax);
+        }
+label_0:
+        return;
+    }
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x80023d0 */
+#include <stdint.h>
+ 
+int64_t df_read_a_float (int64_t arg1) {
+    int64_t var_8h_2;
+    int64_t var_18h;
+    int64_t var_4h;
+    int64_t var_8h;
+    rdi = arg1;
+    __asm ("endbr64");
+    rcx = rdi;
+    edx = 1;
+    esi = 4;
+    rax = *(fs:0x28);
+    *((rsp + 8)) = rax;
+    eax = 0;
+    r12 = rsp + 4;
+    rdi = r12;
+    rax = gp_realloc (rbp);
+    if (rax != 1) {
+        goto label_8;
+    }
+    eax = datafile.c;
+    esi = 3;
+    while (1) {
+        edx = 4;
+        rdi = r12;
+        df_swap_bytes_by_endianess ();
+        xmm0 = *((rsp + 4));
+        rax = *((rsp + 8));
+        rax ^= *(fs:0x28);
+        if (eax != 2) {
+            goto label_9;
+        }
+        return rax;
+        rdx = obj_df_byte_read_order_map;
+        esi = *((rdx + rax));
+    }
+label_8:
+    rdi = rbp;
+    eax = gp_realloc ();
+    if (eax != 0) {
+        rsi = "Data file is empty";
+        edi = 0xffffffff;
+        eax = 0;
+        eax = gp_realloc ();
+    }
+    rsi = *(obj.read_error_msg);
+    edi = 0xffffffff;
+    eax = 0;
+    gp_realloc ();
+label_9:
+    gp_realloc ();
+label_7:
+    __asm ("endbr64");
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    r13 = rsp;
+    rdi = rsp;
+    rax = gp_realloc (rbx, rbp, r12, r13, r14);
+    if (*(obj.evaluate_inside_using) == 0) {
+        goto label_10;
+    }
+    if (*(rsp) != 3) {
+        goto label_11;
+    }
+    edx = df_no_cols;
+    r12 = *((rsp + 8));
+    if (edx <= 0) {
+        goto label_12;
+    }
+    ebx = 0;
+    do {
+        rax = "auto";
+        r14 = rbx;
+        r14 <<= 5;
+        rsi = *((rax + r14 + 0x18));
+        if (rsi != 0) {
+            eax = 0;
+            rdi = r12;
+            al = (*(rsi) == 0x22) ? 1 : 0;
+            rsi += rax;
+            al = gp_realloc ();
+            if (al != 0) {
+                goto label_13;
+            }
+        }
+        rbx++;
+    } while (*(obj.df_no_cols) > ebx);
+label_12:
+    if (*(r12) != 0) {
+        if (*(loc..LC6) != 0) {
+            goto label_14;
+        }
+    }
+label_4:
+    rdi = r13;
+    gp_realloc ();
+    do {
+label_0:
+        *(reloc.undefined) = 1;
+        gp_realloc ();
+label_2:
+        rdi = r13;
+        xmm1 = 0;
+        rax = gp_realloc ();
+        rdi = rax;
+        gp_realloc ();
+label_1:
+        rax = *((rsp + 0x18));
+        rax ^= *(fs:0x28);
+        if (*(loc..LC6) != 0) {
+            goto label_15;
+        }
+        return rax;
+label_11:
+        rdi = r13;
+        gp_realloc ();
+        __asm ("cvttsd2si ebp, xmm0");
+label_3:
+        if (ebp == 0xfffffffe) {
+            goto label_16;
+        }
+        if (ebp == 0xffffffff) {
+            goto label_17;
+        }
+        if (ebp == 0) {
+            goto label_18;
+        }
+        if (ebp == 0xfffffffd) {
+            goto label_19;
+        }
+    } while (ebp <= 0);
+    if (*(obj.df_no_cols) < ebp) {
+        goto label_0;
+    }
+    rax = "auto";
+    rbp = (int64_t) ebp;
+    rbp <<= 5;
+    rdx = rax + rbp - 0x20;
+    eax = *((rdx + 8));
+    if (eax == 0xfffffffb) {
+        goto label_20;
+    }
+    if (eax != 1) {
+        goto label_0;
+    }
+    xmm0 = *(rdx);
+    rdi = r13;
+    xmm1 = 0;
+    rax = gp_realloc ();
+    rdi = rax;
+    gp_realloc ();
+    goto label_1;
+label_18:
+    xmm0 = 0;
+    __asm ("cvtsi2sd xmm0, dword [obj.df_matrix_file]");
+    goto label_2;
+label_16:
+    rsi = *(obj.df_current_index);
+    rdi = r13;
+    rax = gp_realloc ();
+    rdi = rax;
+    gp_realloc ();
+    goto label_1;
+label_19:
+    rax = *(obj.df_no_cols);
+    rdi = r13;
+    xmm1 = 0;
+    rax <<= 5;
+    rax += *(obj.df_column);
+    xmm0 = *((rax - 0x20));
+    rax = gp_realloc ();
+    rdi = rax;
+    gp_realloc ();
+    goto label_1;
+label_13:
+    ebp++;
+    if (*(obj.df_key_title) == 0) {
+        goto label_21;
+    }
+label_6:
+    rdi = r13;
+    gp_realloc ();
+    goto label_3;
+label_17:
+    rsi = *(obj.line_count);
+    rdi = r13;
+    rax = gp_realloc ();
+    rdi = rax;
+    eax = gp_realloc ();
+    goto label_1;
+label_14:
+    rdx = *((rsp + 8));
+    eax = 0;
+    rsi = "no column with header \"%s\";
+    edi = 0xffffffff;
+    *(loc..LC6) = "missing ')';
+    gp_realloc ();
+    eax = df_no_cols;
+    if (eax <= 0) {
+        goto label_4;
+    }
+    ebx = 0;
+    rbp = "partial match against column %d header \"%s\";
+    while (r14 == 0) {
+label_5:
+        rbx++;
+        if (*(obj.df_no_cols) <= ebx) {
+            goto label_22;
+        }
+        rax = rbx;
+        r15d = rbx + 1;
+        rax <<= 5;
+        rax += *(obj.df_column);
+        r14 = *((rax + 0x18));
+    }
+    rdi = r12;
+    rax = gp_realloc ();
+    esi = 0;
+    rdi = r12;
+    sil = (*(r14) == 0x22) ? 1 : 0;
+    rdx = rax;
+    rsi += r14;
+    eax = gp_realloc ();
+    if (eax != 0) {
+        goto label_5;
+    }
+    rcx = r14;
+    edx = r15d;
+    rsi = rbp;
+    edi = 0xffffffff;
+    gp_realloc ();
+    goto label_5;
+label_21:
+    rax = "auto";
+    rdi = *((rax + r14 + 0x18));
+    rax = gp_realloc ();
+    *(obj.df_key_title) = rax;
+    goto label_6;
+label_20:
+    gp_realloc ();
+    xmm1 = *(loc..LC65);
+    rdi = r13;
+    rax = gp_realloc ();
+    rdi = rax;
+    gp_realloc ();
+    goto label_1;
+label_22:
+    goto label_6;
+label_15:
+    gp_realloc ();
+label_10:
+    eax = *(reloc.c_token);
+    rsi = "column() called from invalid context";
+    edi = rax - 1;
+    eax = 0;
+    rax = gp_realloc ();
+    __asm ("endbr64");
+    gp_realloc ();
+    rdi = rbp;
+    f_column ();
+    goto label_7;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8002800 */
+#include <stdint.h>
+ 
+void df_reset_after_error (void) {
+    __asm ("endbr64");
+    *(obj.evaluate_inside_using) = 0;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8002810 */
+#include <stdint.h>
+ 
+int64_t f_columnhead (int64_t arg7) {
+    int64_t var_8h;
+    int64_t var_10h;
+    uint32_t var_30h;
+    int64_t var_38h;
+    int64_t var_50h;
+    int64_t var_88h;
+    int64_t var_18h_2;
+    int64_t var_18h;
+    xmm0 = arg7;
+    __asm ("endbr64");
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    if (*(obj.evaluate_inside_using) == 0) {
+        goto label_2;
+    }
+    rdi = rsp;
+    gp_realloc ();
+    rdi = rbp;
+    eax = gp_realloc ();
+    __asm ("cvttsd2si eax, xmm0");
+    *(obj.column_for_key_title) = eax;
+    if (eax == 0xffffffff) {
+        goto label_3;
+    }
+    rdx = "auto";
+    if (eax > 0x270f) {
+        goto label_4;
+    }
+    if (rdx == 0) {
+        goto label_5;
+    }
+    if (eax == 0) {
+        goto label_6;
+    }
+    if (eax > *(obj.df_max_cols)) {
+        goto label_6;
+    }
+    rax = (int64_t) eax;
+    rax <<= 5;
+    rsi = *((rdx + rax - 8));
+    if (rsi == 0) {
+        goto label_6;
+    }
+    do {
+        rdi = rbp;
+        rax = gp_realloc ();
+        rdi = rax;
+        gp_realloc ();
+        *(reloc.parse_1st_row_as_headers) = 1;
+label_0:
+        rax = *((rsp + 0x18));
+        rax ^= *(fs:0x28);
+        if (rsi != 0) {
+            goto label_7;
+        }
+        return rax;
+label_4:
+        *(obj.column_for_key_title) = 0;
+        if (rdx == 0) {
+label_5:
+            rsi = "Internal error: df_column[] not initialized\n";
+            edi = 0xffffffff;
+            eax = 0;
+            gp_realloc ();
+        }
+label_6:
+        rsi = obj_unknown_column_12776;
+    } while (1);
+label_3:
+    rsi = *(obj.df_key_title);
+    rdi = rbp;
+    rax = gp_realloc ();
+    rdi = rax;
+    gp_realloc ();
+    goto label_0;
+label_7:
+    gp_realloc ();
+label_2:
+    eax = *(reloc.c_token);
+    rsi = "columnhead() called from invalid context";
+    edi = rax - 1;
+    eax = 0;
+    rax = gp_realloc ();
+    __asm ("endbr64");
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    rdi = rsp;
+    gp_realloc ();
+    rdi = rbp;
+    eax = gp_realloc ();
+    esi = 0;
+    __asm ("cvttsd2si eax, xmm0");
+    eax--;
+    if (eax < 0) {
+        goto label_8;
+    }
+    while (1) {
+label_8:
+        rdi = rbp;
+        rax = gp_realloc ();
+        rdi = rax;
+        gp_realloc ();
+        rax = *((rsp + 0x18));
+        rax ^= *(fs:0x28);
+        if (*(obj.df_no_cols) != eax) {
+            goto label_9;
+        }
+        return rax;
+        rax = (int64_t) eax;
+        esi = 0;
+        rax <<= 5;
+        rax += *(obj.df_column);
+        sil = (*((rax + 8)) == 1) ? 1 : 0;
+    }
+label_9:
+    gp_realloc ();
+    __asm ("endbr64");
+    rax = *(fs:0x28);
+    *((rsp + 0x88)) = rax;
+    eax = 0;
+    rbp = rsp + 0x30;
+    rdi = rbp;
+    gp_realloc (rbx, rbp, r12);
+    rbx = *((rsp + 0x38));
+    rdi = rbp;
+    gp_realloc ();
+    if (ebx == 1) {
+        goto label_10;
+    }
+    if (ebx != 2) {
+        goto label_11;
+    }
+    r12 = rsp + 0x10;
+    rdi = r12;
+    rax = gp_realloc ();
+    rdi = rax;
+    gp_realloc ();
+    __asm ("cvttsd2si ebx, xmm0");
+    if (*(obj.evaluate_inside_using) == 0) {
+        goto label_12;
+    }
+    if (*((rsp + 0x30)) != 3) {
+        goto label_13;
+    }
+    do {
+        if (ebx > 0) {
+            if (*(obj.df_no_cols) < ebx) {
+                goto label_14;
+            }
+            rbx = (int64_t) ebx;
+            rbx <<= 5;
+            rbx += *(obj.df_column);
+            rdi = *((rbx - 0x10));
+            if (rdi == 0) {
+                goto label_14;
+            }
+            r13 = rsp + 0x50;
+            rsi = *((rsp + 0x38));
+            rcx = rsp;
+            r8 = rsp + 8;
+            rdx = r13;
+            eax = gp_realloc ();
+            if (eax == 1) {
+                goto label_15;
+            }
+            if (eax == 2) {
+                goto label_16;
+            }
+        }
+label_14:
+        *(reloc.undefined) = 1;
+label_1:
+        rdi = r12;
+        gp_realloc ();
+        rdi = rbp;
+        gp_realloc ();
+        rax = *((rsp + 0x88));
+        rax ^= *(fs:0x28);
+        if (eax != 2) {
+            goto label_17;
+        }
+        return rax;
+label_10:
+        rdi = rbp;
+        gp_realloc ();
+        rdi = *(reloc.timefmt);
+        __asm ("cvttsd2si ebx, xmm0");
+        rax = gp_realloc ();
+        *((rsp + 0x30)) = 3;
+        *((rsp + 0x38)) = rax;
+        if (*(obj.evaluate_inside_using) == 0) {
+            goto label_12;
+        }
+        r12 = rsp + 0x10;
+    } while (1);
+label_16:
+    xmm0 = *((rsp + 8));
+    xmm1 = 0;
+    rdi = r12;
+    gp_realloc ();
+    goto label_1;
+label_12:
+    eax = *(reloc.c_token);
+    rsi = "timecolumn() called from invalid context";
+    edi = rax - 1;
+    eax = 0;
+    gp_realloc ();
+label_15:
+    rdi = r13;
+    gp_realloc ();
+    __asm ("addsd xmm0, qword [rsp]");
+    xmm1 = 0;
+    rdi = r12;
+    eax = gp_realloc ();
+    goto label_1;
+label_11:
+    rsi = "wrong number of parameters to timecolumn";
+    edi |= 0xffffffff;
+    eax = 0;
+    eax = gp_realloc ();
+label_13:
+    rsi = "non-string passed as a format to timecolumn";
+    edi |= 0xffffffff;
+    eax = 0;
+    gp_realloc ();
+label_17:
+    gp_realloc ();
+    __asm ("endbr64");
+    if (edi > 0) {
+        rax = "auto";
+        if (rax == 0) {
+            goto label_18;
+        }
+        rdi = (int64_t) edi;
+        rdi <<= 5;
+        rax = *((rax + rdi - 8));
+        return rax;
+    }
+    eax = 0;
+label_18:
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8002bc0 */
+#include <stdint.h>
+ 
+int64_t expect_string (void) {
+    __asm ("endbr64");
+    if (dil <= 0) {
+        goto label_1;
+    }
+    eax = (int32_t) dil;
+    rcx = obj_df_matrix_file;
+    eax--;
+    rax = (int64_t) eax;
+    rdx = rax * 3;
+    rdx = rcx + rdx*8;
+    *((rdx + 4)) = 1;
+    rdx = *((rdx + 8));
+    if (rdx == 0) {
+        goto label_0;
+    }
+    while (*((rdx + 0x28)) != 0x2f) {
+label_0:
+        rax *= 3;
+        eax = *((rcx + rax*8));
+        return rax;
+    }
+    *((rdx + 0x28)) = 0x30;
+    goto label_0;
+label_1:
+    *(obj.df_tabulate_strings) = 1;
+    eax = 0xffffffff;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8002c20 */
+#include <stdint.h>
+ 
+int64_t df_set_key_title (uint32_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    rsi = *(obj.df_key_title);
+    if (rsi == 0) {
+        goto label_0;
+    }
+    while (*(reloc.histogram_opts) != 2) {
+        if (*(obj.df_matrix_file) == 0) {
+            if (*((rbp + 0x2a)) == 0) {
+                rdi = *((rbp + 0x18));
+                gp_realloc ();
+                rax = *(obj.df_key_title);
+                *(obj.df_key_title) = 0;
+                *((rbp + 0x18)) = rax;
+                eax = *(0x0808b780);
+                eax ^= 1;
+                *((rbp + 0x28)) = al;
+            }
+            return rax;
+        }
+        rdi = rbp;
+        void (*0x808b4e1)() ();
+    }
+    rax = *((rdi + 0x1a8));
+    xmm0 = 0;
+    edx = 0xffffffff;
+    __asm ("cvtsi2sd xmm0, dword [rdi + 0x1b0]");
+    rdi = 0x0808bb51;
+    __asm ("addsd xmm0, qword [rax + 0x10]");
+    gp_realloc ();
+    rdi = *(obj.df_key_title);
+    gp_realloc ();
+    *(obj.df_key_title) = 0;
+    return rax;
+label_0:
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x8002cf0 */
+#include <stdint.h>
+ 
+uint64_t df_set_key_title_columnhead (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    eax = *(reloc.c_token);
+    rbx = rdi;
+    rsi = loc__LC2;
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    eax = gp_realloc (rbx);
+    if (eax != 0) {
+        goto label_3;
+    }
+    edi = *(reloc.c_token);
+    while (eax != 0) {
+label_0:
+        if (rbx != 0) {
+            eax = *((rbx + 0x10));
+            if (eax != 0x608) {
+                if (eax == 0x801) {
+                    goto label_4;
+                }
+                if (*(obj.df_matrix_file) == 1) {
+                    goto label_4;
+                }
+                if (*((rbx + 0xc)) == 3) {
+                    goto label_5;
+                }
+                edx = *(0x08000018);
+                *(obj.column_for_key_title) = edx;
+            }
+        } else {
+label_4:
+            edx = datafile.c;
+            *(obj.column_for_key_title) = edx;
+        }
+label_1:
+        if (edx == 0xffffff9d) {
+            goto label_6;
+        }
+label_2:
+        *(reloc.parse_1st_row_as_headers) = 1;
+        return eax;
+        rsi = loc__LC14;
+        eax = gp_realloc ();
+    }
+    edi = *(reloc.c_token);
+    eax = gp_realloc ();
+    if (eax == 0) {
+        goto label_0;
+    }
+    eax = gp_realloc ();
+    *(obj.column_for_key_title) = eax;
+    edx = eax;
+    goto label_1;
+label_3:
+    *(reloc.c_token)++;
+    eax = gp_realloc ();
+    *(reloc.c_token)++;
+    edx = eax;
+    *(obj.column_for_key_title) = eax;
+    if (edx != 0xffffff9d) {
+        goto label_2;
+    }
+label_6:
+    rdi = datafile.c;
+    gp_realloc ();
+    *(obj.df_matrix_file) = 0;
+    rax = gp_realloc ();
+    *(reloc.parse_1st_row_as_headers) = 1;
+    *(obj.df_matrix_file) = rax;
+    return rax;
+label_5:
+    edx = *(0x08000030);
+    *(obj.column_for_key_title) = edx;
+    goto label_1;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x800a540 */
+#include <stdint.h>
+ 
+uint64_t df_show_datasizes (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    rcx = rdi;
+    edx = 0x52;
+    esi = 1;
+    r13 = "\"%s\" ";
+    r12 = rdi;
+    rdi = "\tThe following binary data sizes are machine dependent:\n\n\t  name (size in bytes)\n\n";
+    rbp = obj_df_binary_details;
+    r14 = rbp + 0x120;
+    rax = gp_realloc (rbx, rbp, r12, r13);
+label_0:
+    rcx = r12;
+    edx = 3;
+    esi = 1;
+    rdi = loc__LC253;
+    gp_realloc ();
+    if (*((rbp + 8)) == 0) {
+        goto label_3;
+    }
+    ebx = 0;
+    do {
+        rax = *(rbp);
+        rdx = r13;
+        esi = 1;
+        rdi = r12;
+        rcx = *((rax + rbx*8));
+        eax = 0;
+        rbx++;
+        gp_realloc ();
+        eax = *((rbp + 8));
+    } while (eax > ebx);
+label_3:
+    ecx = *((rbp + 0x10));
+    rdx = "(%d)\n";
+    rdi = r12;
+    eax = 0;
+    esi = 1;
+    rbp += 0x18;
+    gp_realloc ();
+    if (rbp != r14) {
+        goto label_0;
+    }
+    rcx = r12;
+    edx = 0x5f;
+    esi = 1;
+    rdi = "\n\tThe following binary data sizes attempt to be machine independent:\n\n\t  name (size in bytes)\n\n";
+    rbp = obj_df_binary_details_independent;
+    gp_realloc ();
+    r14 = rbp + 0xf0;
+    r13 = "\"%s\" ";
+label_1:
+    rcx = r12;
+    edx = 3;
+    esi = 1;
+    rdi = loc__LC253;
+    gp_realloc ();
+    if (*((rbp + 8)) == 0) {
+        goto label_4;
+    }
+    ebx = 0;
+    do {
+        rax = *(rbp);
+        rdx = r13;
+        esi = 1;
+        rdi = r12;
+        rcx = *((rax + rbx*8));
+        eax = 0;
+        rbx++;
+        gp_realloc ();
+        eax = *((rbp + 8));
+    } while (eax > ebx);
+label_4:
+    ecx = *((rbp + 0x10));
+    eax = 0;
+    rdx = "(%d)";
+    rdi = r12;
+    esi = 1;
+    gp_realloc ();
+    if (*((rbp + 0xc)) == 0xc) {
+        goto label_5;
+    }
+label_2:
+    rsi = r12;
+    edi = 0xa;
+    rbp += 0x18;
+    gp_realloc ();
+    if (r14 != rbp) {
+        goto label_1;
+    }
+    return rax;
+label_5:
+    rcx = r12;
+    edx = 0x28;
+    esi = 1;
+    rdi = " -- processor does not support this size";
+    gp_realloc ();
+    goto label_2;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.d pdg @ sym.d pdg @ sym.df pdg @ sym.df pdg @ sym.df_ pdg @ sym.df_ pdg @ sym.df_s pdg @ sym.df_s pdg @ sym.df_sh pdg @ sym.df_sh pdg @ sym.df_sho pdg @ sym.df_sho pdg @ sym.df_show pdg @ sym.df_show pdg @ sym.df_show_ pdg @ sym.df_show_ pdg @ sym.df_show_f pdg @ sym.df_show_f pdg @ sym.df_show_fi pdg @ sym.df_show_fi pdg @ sym.df_show_fil pdg @ sym.df_show_fil pdg @ sym.df_show_file pdg @ sym.df_show_file pdg @ sym.df_show_filet pdg @ sym.df_show_filet pdg @ sym.df_show_filety pdg @ sym.df_show_filety pdg @ sym.df_show_filetyp pdg @ sym.df_show_filetyp pdg @ sym.df_show_filetype pdg @ sym.df_show_filetype pdg @ sym.df_show_filetypes pdg @ sym.df_show_filetypes
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x0800a6ff: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x0800a704)
+// WARNING: Removing unreachable block (ram,0x0800a710)
+// WARNING: Removing unreachable block (ram,0x0800a720)
+// WARNING: Removing unreachable block (ram,0x0800a73e)
+
+void sym.df_show_filetypes(int64_t arg1)
+{
+    char cVar1;
+    int32_t in_EAX;
+    undefined4 in_register_00000004;
+    
+    cVar1 = (char)in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(int32_t *)CONCAT44(in_register_00000004, in_EAX) = *(int32_t *)CONCAT44(in_register_00000004, in_EAX) + in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(int32_t *)CONCAT44(in_register_00000004, in_EAX) = *(int32_t *)CONCAT44(in_register_00000004, in_EAX) + in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(int32_t *)CONCAT44(in_register_00000004, in_EAX) = *(int32_t *)CONCAT44(in_register_00000004, in_EAX) + in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(int32_t *)CONCAT44(in_register_00000004, in_EAX) = *(int32_t *)CONCAT44(in_register_00000004, in_EAX) + in_EAX;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    *(char *)CONCAT44(in_register_00000004, in_EAX) = *(char *)CONCAT44(in_register_00000004, in_EAX) + cVar1;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.d pdd @ sym.d pdd @ sym.df pdd @ sym.df pdd @ sym.df_ pdd @ sym.df_ pdd @ sym.df_s pdd @ sym.df_s pdd @ sym.df_sh pdd @ sym.df_sh pdd @ sym.df_sho pdd @ sym.df_sho pdd @ sym.df_show pdd @ sym.df_show pdd @ sym.df_show_ pdd @ sym.df_show_ pdd @ sym.df_show_f pdd @ sym.df_show_f pdd @ sym.df_show_fi pdd @ sym.df_show_fi pdd @ sym.df_show_fil pdd @ sym.df_show_fil pdd @ sym.df_show_file pdd @ sym.df_show_file pdd @ sym.df_show_filet pdd @ sym.df_show_filet pdd @ sym.df_show_filety pdd @ sym.df_show_filety pdd @ sym.df_show_filetyp pdd @ sym.df_show_filetyp pdd @ sym.df_show_filetype pdd @ sym.df_show_filetype pdd @ sym.df_show_filetypes pdd @ sym.df_show_filetypes/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x800a6e0 */
+#include <stdint.h>
+ 
+uint32_t df_show_filetypes (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    rcx = rdi;
+    edx = 0x46;
+    esi = 1;
+    rdi = "\tThis version of gnuplot understands the following binary file types:\n";
+    eax = gp_realloc (rbx, rbp);
+    rcx = .data.rel;
+    if (rcx == 0) {
+        goto label_0;
+    }
+    rbx = 0x0800c970;
+    r12 = "\t  %s";
+    do {
+        rdx = r12;
+        esi = 1;
+        rdi = rbp;
+        eax = 0;
+        gp_realloc ();
+        rcx = *(rbx);
+        rbx += 0x10;
+    } while (rcx != 0);
+label_0:
+    rsi = rbp;
+    edi = 0xa;
+    return void (*0x808b4e1)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datafile.o @ 0x800a750 */
+#include <stdint.h>
+ 
+void df_set_plot_mode (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    *(obj.df_plot_mode) = edi;
+}
+
+
+
+

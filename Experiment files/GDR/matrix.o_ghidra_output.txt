@@ -1,0 +1,1249 @@
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable arg1 to Decompiler type: Unknown type identifier
+// signed
+
+double sym.sumsq_vec.part.0(undefined8 arg1, int64_t arg2)
+{
+    double *pdVar1;
+    double *pdVar2;
+    double dVar3;
+    double dVar4;
+    double dVar5;
+    double dVar6;
+    
+    // [01] -r-x section size 3236 named .text
+    dVar3 = *(double *)arg2 * *(double *)arg2;
+    if ((int32_t)arg1 < 2) {
+        return dVar3 + 0.00000000;
+    }
+    pdVar2 = (double *)(arg2 + 8);
+    dVar6 = 0.00000000;
+    pdVar1 = (double *)(arg2 + 0x10 + (uint64_t)((int32_t)arg1 - 2) * 8);
+    do {
+        while( true ) {
+            dVar5 = *pdVar2 * *pdVar2;
+            dVar4 = dVar3 + dVar5;
+            if (dVar5 <= (double)((uint64_t)dVar3 & _reloc..LC1)) break;
+            pdVar2 = pdVar2 + 1;
+            dVar6 = dVar6 + (dVar5 - dVar4) + dVar3;
+            dVar3 = dVar4;
+            if (pdVar2 == pdVar1) goto code_r0x080000b8;
+        }
+        pdVar2 = pdVar2 + 1;
+        dVar6 = dVar6 + dVar5 + (dVar3 - dVar4);
+        dVar3 = dVar4;
+    } while (pdVar2 != pdVar1);
+code_r0x080000b8:
+    return dVar4 + dVar6;
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+
+undefined8 sym.vec(int64_t arg1)
+{
+    char cVar1;
+    char *in_RAX;
+    
+    if (0 < (int32_t)arg1) {
+        cVar1 = (char)in_RAX;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+        *in_RAX = *in_RAX + cVar1;
+    // WARNING: Bad instruction - Truncating control flow here
+        halt_baddata();
+    }
+    return 0;
+}
+
+
+// WARNING: Variable defined which should be unmapped: var_2h
+
+int64_t * sym.matr(int64_t arg1, int64_t arg2)
+{
+    int64_t *piVar1;
+    int64_t iVar2;
+    int64_t *piVar3;
+    int32_t iVar4;
+    int32_t iVar5;
+    int64_t var_2h;
+    
+    iVar5 = (int32_t)arg1;
+    if ((0 < iVar5) && (iVar4 = (int32_t)arg2, 0 < iVar4)) {
+        piVar1 = (int64_t *)func_0x08008915((int64_t)iVar5 << 3, "matrix row pointers");
+        iVar2 = func_0x08008915((int64_t)(iVar5 * iVar4) << 3);
+        *piVar1 = iVar2;
+        if (iVar5 != 1) {
+            piVar3 = piVar1;
+            do {
+                piVar3 = piVar3 + 1;
+                iVar2 = iVar2 + (int64_t)iVar4 * 8;
+                *piVar3 = iVar2;
+            } while (piVar3 != piVar1 + (uint64_t)(iVar5 - 2) + 1);
+        }
+        return piVar1;
+    }
+    return (int64_t *)0x0;
+}
+
+
+
+
+undefined8 sym.redim_vec(int64_t arg1, int64_t arg2)
+{
+    undefined8 uVar1;
+    
+    if ((int32_t)arg2 < 1) {
+        *(undefined8 *)arg1 = 0;
+        return 0;
+    }
+    uVar1 = func_0x08008915(*(undefined8 *)arg1, (int64_t)(int32_t)arg2 << 3, reloc..LC2);
+    *(undefined8 *)arg1 = uVar1;
+    return uVar1;
+}
+
+
+void sym.Givens(undefined8 placeholder_0, int64_t arg8, undefined8 placeholder_2, undefined8 placeholder_3,
+               undefined8 placeholder_4, undefined8 placeholder_5, undefined8 placeholder_6, undefined8 placeholder_7,
+               int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4, int64_t arg5)
+{
+    int64_t iVar1;
+    uint64_t uVar2;
+    uint32_t uVar3;
+    int32_t iVar4;
+    uint64_t uVar5;
+    uint64_t uVar6;
+    int64_t iVar7;
+    double *pdVar8;
+    int64_t iVar9;
+    int64_t iVar10;
+    int32_t iVar11;
+    uint64_t uVar12;
+    uint64_t uVar13;
+    double *pdVar14;
+    uint64_t uVar15;
+    uint64_t uVar16;
+    undefined uVar17;
+    double dVar18;
+    double dVar19;
+    double dVar20;
+    undefined auVar21 [16];
+    double dVar22;
+    double dVar23;
+    undefined auVar24 [16];
+    undefined auVar25 [16];
+    undefined auVar26 [16];
+    
+    if ((int32_t)arg5 < 1) {
+        return;
+    }
+    uVar3 = (int32_t)arg5 - 1;
+    uVar12 = arg5 & 0xffffffff;
+    auVar24 = ZEXT816(_reloc..LC1);
+    uVar5 = (uint64_t)uVar3 + 2;
+    auVar26 = ZEXT816((uint64_t)_reloc..LC7);
+    uVar16 = 1;
+    dVar18 = _reloc..LC7;
+    do {
+        while( true ) {
+            uVar15 = uVar16 & 0xffffffff;
+            iVar11 = (int32_t)uVar12;
+            if ((int32_t)arg4 <= (int32_t)uVar16) break;
+            uVar2 = uVar16 + 1;
+            iVar7 = uVar16 * 8 + -8;
+            auVar25 = ZEXT816(_reloc..LC6);
+            uVar13 = uVar16;
+            do {
+                iVar10 = *(int64_t *)(arg1 + uVar13 * 8);
+                pdVar8 = (double *)(iVar10 + iVar7);
+                dVar20 = *pdVar8;
+                dVar22 = 0.00000000;
+                if (dVar20 != 0.00000000) {
+                    iVar9 = *(int64_t *)(arg1 + -8 + uVar16 * 8);
+                    pdVar14 = (double *)(iVar9 + iVar7);
+                    dVar23 = *pdVar14;
+                    iVar4 = (int32_t)uVar15;
+                    if ((double)((uint64_t)dVar20 & SUB168(auVar24, 0)) * SUB168(auVar25, 0) <=
+                        (double)((uint64_t)dVar23 & SUB168(auVar24, 0))) {
+                        dVar19 = _reloc..LC5;
+                        if (dVar23 <= 0.00000000) {
+                            dVar19 = (double)-(uint32_t)(dVar23 < 0.00000000);
+                        }
+                        dVar22 = dVar23 * dVar23 + dVar20 * dVar20;
+                        auVar21 = sqrtsd(ZEXT816((uint64_t)dVar22), ZEXT816((uint64_t)dVar22));
+                        if (dVar22 < 0.00000000) {
+                            func_0x08008915(dVar22, dVar20, SUB168(auVar21, 0), dVar22, dVar19);
+                            iVar9 = *(int64_t *)(arg1 + -8 + uVar16 * 8);
+                            iVar10 = *(int64_t *)(arg1 + uVar13 * 8);
+                            auVar26 = ZEXT816((uint64_t)_reloc..LC7);
+                            pdVar14 = (double *)(iVar9 + iVar7);
+                            pdVar8 = (double *)(iVar10 + iVar7);
+                            dVar23 = *pdVar14;
+                            dVar20 = *pdVar8;
+                            auVar25 = ZEXT816(_reloc..LC6);
+                            auVar24 = ZEXT816(_reloc..LC1);
+                            dVar18 = _reloc..LC7;
+                        }
+                        dVar19 = SUB168(auVar21, 0) * dVar19;
+                        uVar17 = dVar19 == 0.00000000;
+                        if ((bool)uVar17) {
+                            iVar4 = 0x8000d68;
+                            dVar18 = (double)func_0x08008915(dVar23, dVar20, dVar19, 0xffffffff);
+                            goto code_r0x08000518;
+                        }
+                        dVar22 = dVar23 / dVar19;
+                        dVar20 = (double)((uint64_t)dVar20 ^ (uint64_t)dVar18) / dVar19;
+                        dVar23 = dVar20;
+                        if (dVar22 <= (double)((uint64_t)dVar20 & SUB168(auVar24, 0))) {
+                            dVar23 = _reloc..LC5;
+                            if (dVar20 <= 0.00000000) {
+                                dVar23 = (double)-(uint32_t)(dVar20 < 0.00000000);
+                            }
+                            dVar23 = dVar23 / dVar22;
+                        }
+                    } else {
+                        dVar19 = (double)((uint64_t)dVar20 ^ SUB168(auVar26, 0));
+                        dVar20 = _reloc..LC5;
+                        dVar23 = _reloc..LC5;
+                    }
+                    *pdVar14 = dVar19;
+                    *pdVar8 = dVar23;
+                    uVar6 = uVar16;
+                    while (iVar4 < iVar11) {
+                        dVar23 = *(double *)(iVar9 + uVar6 * 8);
+                        dVar19 = *(double *)(iVar10 + uVar6 * 8);
+                        *(double *)(iVar10 + uVar6 * 8) = dVar23 * dVar20 + dVar19 * dVar22;
+                        *(double *)(iVar9 + uVar6 * 8) = dVar23 * dVar22 - dVar19 * dVar20;
+                        uVar6 = uVar6 + 1;
+                        iVar4 = (int32_t)uVar6;
+                    }
+                    if (arg2 != 0) {
+                        dVar23 = *(double *)(arg2 + -8 + uVar16 * 8);
+                        dVar19 = *(double *)(arg2 + uVar13 * 8);
+                        *(double *)(arg2 + uVar13 * 8) = dVar23 * dVar20 + dVar19 * dVar22;
+                        *(double *)(arg2 + -8 + uVar16 * 8) = dVar22 * dVar23 - dVar20 * dVar19;
+                    }
+                }
+                uVar13 = uVar13 + 1;
+            } while ((uint32_t)(((int32_t)arg4 + -1) - (int32_t)uVar16) + uVar2 != uVar13);
+            uVar16 = uVar2;
+            if (uVar5 == uVar2) goto code_r0x080003a0;
+        }
+        uVar16 = uVar16 + 1;
+    } while (uVar5 != uVar16);
+code_r0x080003a0:
+    if (arg2 != 0) {
+        dVar22 = 0.00000000;
+        iVar9 = (int64_t)(int32_t)uVar3 << 3;
+        uVar15 = arg3;
+        dVar19 = _reloc..LC7;
+        while( true ) {
+            dVar20 = *(double *)(arg2 + iVar9);
+            iVar4 = (int32_t)uVar12;
+            if (iVar4 < iVar11) {
+                iVar7 = (int64_t)iVar4;
+                do {
+                    iVar10 = iVar7 * 8;
+                    iVar1 = iVar7 * 8;
+                    iVar7 = iVar7 + 1;
+                    dVar20 = dVar20 + *(double *)(*(int64_t *)(arg1 + iVar9) + iVar10) * *(double *)(uVar15 + iVar1);
+                } while ((int32_t)iVar7 < iVar11);
+            }
+            dVar18 = *(double *)(*(int64_t *)(arg1 + iVar9) + iVar9);
+            uVar17 = dVar18 == dVar22;
+code_r0x08000518:
+            if ((bool)uVar17) {
+                func_0x08008915(0xffffffff, "Singular matrix in Givens()");
+                return;
+            }
+            *(double *)(uVar15 + iVar9) = (double)((uint64_t)dVar20 ^ (uint64_t)dVar19) / dVar18;
+            iVar9 = iVar9 + -8;
+            if (iVar4 + -2 < 0) break;
+            uVar12 = (uint64_t)(iVar4 - 1);
+        }
+    }
+    return;
+}
+
+
+// WARNING: Removing unreachable block (ram,0x08000617)
+
+void sym.Invert_RtR(int64_t arg1, int64_t arg2, int64_t arg3)
+{
+    undefined8 *puVar1;
+    undefined8 uVar2;
+    int32_t iVar3;
+    undefined8 *puVar4;
+    uint64_t uVar5;
+    int64_t iVar6;
+    uint64_t uVar7;
+    int32_t iVar8;
+    double *pdVar9;
+    uint64_t uVar10;
+    int32_t iVar11;
+    int64_t iVar12;
+    int64_t iVar13;
+    uint32_t uVar14;
+    uint64_t in_R10;
+    int64_t iVar15;
+    uint32_t uVar16;
+    bool bVar17;
+    double dVar18;
+    
+    uVar2 = _reloc..LC5;
+    if ((int32_t)(uint32_t)arg3 < 1) {
+        return;
+    }
+    iVar15 = 0;
+    pdVar9 = *(double **)arg1;
+    **(undefined8 **)arg2 = _reloc..LC5;
+    dVar18 = *pdVar9;
+    uVar16 = 0;
+    while (dVar18 != 0.00000000) {
+        uVar14 = uVar16 + 1;
+        in_R10 = (uint64_t)uVar14;
+        if ((uint32_t)arg3 == uVar14) goto code_r0x08000680;
+        puVar1 = *(undefined8 **)(arg2 + 8 + iVar15);
+        iVar15 = iVar15 + 8;
+        puVar4 = puVar1;
+        do {
+            *puVar4 = 0;
+            puVar4 = puVar4 + 1;
+        } while (puVar4 != (undefined8 *)((int64_t)puVar1 + iVar15));
+        iVar6 = *(int64_t *)(arg1 + iVar15);
+        *(undefined8 *)((int64_t)puVar1 + iVar15) = uVar2;
+        dVar18 = *(double *)(iVar6 + iVar15);
+        uVar16 = uVar14;
+    }
+    func_0x08008915(0, 0xffffffff);
+code_r0x08000680:
+    uVar7 = (uint64_t)uVar16;
+    iVar15 = 0;
+    uVar10 = 0;
+    do {
+        uVar5 = uVar10 & 0xffffffff;
+        iVar11 = (int32_t)(in_R10 & 0xffffffff);
+        if ((int32_t)uVar10 < iVar11) {
+            iVar6 = *(int64_t *)(arg2 + iVar15);
+            pdVar9 = (double *)(iVar6 + iVar15);
+            dVar18 = *pdVar9;
+            iVar13 = iVar15;
+            while( true ) {
+                *pdVar9 = dVar18 / *(double *)(*(int64_t *)(arg1 + iVar13) + iVar13);
+                uVar14 = (uint32_t)uVar5;
+                if (uVar16 == uVar14) break;
+                iVar13 = iVar13 + 8;
+                pdVar9 = (double *)(*(int64_t *)(arg2 + iVar13) + iVar15);
+                dVar18 = *pdVar9;
+                uVar5 = uVar10;
+                iVar12 = iVar6;
+                if ((int32_t)uVar10 < (int32_t)(uVar14 + 1)) {
+                    while (dVar18 = dVar18 - *(double *)(*(int64_t *)(arg1 + uVar5 * 8) + iVar13) *
+                                             *(double *)(iVar12 + iVar15), (int32_t)uVar5 < (int32_t)uVar14) {
+                        iVar12 = uVar5 * 8;
+                        uVar5 = uVar5 + 1;
+                        iVar12 = *(int64_t *)(arg2 + 8 + iVar12);
+                    }
+                }
+                uVar5 = (uint64_t)(uVar14 + 1);
+            }
+        }
+        iVar15 = iVar15 + 8;
+        bVar17 = uVar7 != uVar10;
+        uVar10 = uVar10 + 1;
+    } while (bVar17);
+    uVar10 = 0;
+    do {
+        uVar5 = in_R10 & 0xffffffff;
+        iVar15 = uVar7 * 8;
+        if ((int32_t)(uint32_t)uVar10 <= (int32_t)uVar16) {
+            do {
+                iVar8 = (int32_t)uVar5;
+                iVar6 = (int64_t)iVar8;
+                pdVar9 = (double *)(*(int64_t *)(arg2 + iVar15) + uVar10 * 8);
+                dVar18 = *pdVar9;
+                iVar3 = iVar8;
+                while (iVar3 < iVar11) {
+                    iVar13 = iVar6 * 8;
+                    iVar12 = iVar6 * 8;
+                    iVar6 = iVar6 + 1;
+                    dVar18 = dVar18 - *(double *)(*(int64_t *)(arg2 + iVar13) + uVar10 * 8) *
+                                      *(double *)(*(int64_t *)(arg1 + iVar15) + iVar12);
+                    iVar3 = (int32_t)iVar6;
+                }
+                *pdVar9 = dVar18 / *(double *)(*(int64_t *)(arg1 + iVar15) + iVar15);
+                uVar5 = (uint64_t)(iVar8 - 1U);
+                iVar15 = iVar15 + -8;
+            } while (iVar8 - 1U != (uint32_t)uVar10);
+        }
+        bVar17 = uVar7 != uVar10;
+        uVar10 = uVar10 + 1;
+    } while (bVar17);
+    return;
+}
+
+
+
+
+void sym.sumsq_vec(int64_t arg1, int64_t arg2)
+{
+    double *pdVar1;
+    double *pdVar2;
+    int32_t iVar3;
+    double dVar4;
+    double dVar5;
+    double dVar6;
+    
+    iVar3 = (int32_t)arg1;
+    if ((arg2 != 0) && (iVar3 != 0)) {
+        dVar4 = *(double *)arg2 * *(double *)arg2;
+        if (iVar3 < 2) {
+            return;
+        }
+        pdVar2 = (double *)(arg2 + 8);
+        pdVar1 = (double *)(arg2 + 0x10 + (uint64_t)(iVar3 - 2) * 8);
+        do {
+            while (dVar5 = *pdVar2 * *pdVar2, dVar6 = (double)((uint64_t)dVar4 & _reloc..LC1), dVar4 = dVar4 + dVar5,
+                  dVar6 < dVar5) {
+                pdVar2 = pdVar2 + 1;
+                if (pdVar2 == pdVar1) {
+                    return;
+                }
+            }
+            pdVar2 = pdVar2 + 1;
+        } while (pdVar2 != pdVar1);
+        return;
+    }
+    return;
+}
+
+
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable arg1 to Decompiler type: Unknown type identifier
+// signed
+
+undefined8 sym.enorm_vec(int64_t arg1, int64_t arg2)
+{
+    double dVar1;
+    undefined8 extraout_XMM0_Qb;
+    undefined auVar2 [16];
+    
+    if ((arg2 != 0) && ((int32_t)arg1 != 0)) {
+        dVar1 = (double)sym.sumsq_vec.part.0(arg1, arg2);
+        auVar2 = sqrtsd(CONCAT88(extraout_XMM0_Qb, dVar1), CONCAT88(extraout_XMM0_Qb, dVar1));
+        if (dVar1 < 0.00000000) {
+            func_0x08008915(dVar1, SUB168(auVar2, 0), 0);
+        }
+        return SUB168(auVar2, 0);
+    }
+    return 0;
+}
+
+

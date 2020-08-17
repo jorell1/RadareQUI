@@ -1,0 +1,458 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/multiplot.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int32_t mp_layout_size_and_offset (void) {
+    /* [01] -r-x section size 5693 named .text */
+    if (*(obj.mp_layout) == 0) {
+        goto label_0;
+    }
+    ecx = *(0x0800168c);
+    xmm5 = 0;
+    xmm4 = 0;
+    xmm1 = 0;
+    edx = *(0x08001688);
+    __asm ("cvtsi2sd xmm1, dword [0x08001698]");
+    xmm6 = *(0x080016a0);
+    __asm ("cvtsi2sd xmm5, ecx");
+    xmm3 = *(0x080016a8);
+    __asm ("cvtsi2sd xmm4, edx");
+    __asm ("movapd xmm0, xmm6");
+    eax = *(0x08001694);
+    __asm ("movapd xmm2, xmm3");
+    __asm ("divsd xmm0, xmm5");
+    __asm ("divsd xmm2, xmm4");
+    __asm ("cvtsd2ss xmm0, xmm0");
+    *(reloc.xsize) = xmm0;
+    __asm ("divsd xmm1, xmm5");
+    __asm ("cvtsd2ss xmm2, xmm2");
+    *(reloc.ysize) = xmm2;
+    __asm ("cvtsd2ss xmm1, xmm1");
+    if (*(0x08001691) != 0) {
+        goto label_1;
+    }
+    xmm0 = 0;
+    __asm ("cvtsi2sd xmm0, eax");
+    __asm ("divsd xmm0, xmm4");
+    xmm4 = .rodata.cst8;
+    __asm ("cvtsd2ss xmm0, xmm0");
+    do {
+        __asm ("cvtss2sd xmm0, xmm0");
+        if (*(0x080018c0) != 0) {
+            __asm ("movapd xmm7, xmm4");
+            __asm ("subsd xmm7, qword [0x08001978]");
+            xmm5 = 0;
+            __asm ("cvtss2sd xmm5, xmm2");
+            __asm ("mulsd xmm5, xmm7");
+            __asm ("mulsd xmm0, xmm7");
+            __asm ("cvtsd2ss xmm5, xmm5");
+            *(reloc.ysize) = xmm5;
+            __asm ("cvtsd2ss xmm0, xmm0");
+            __asm ("cvtss2sd xmm0, xmm0");
+        }
+        ecx += ecx;
+        xmm5 = 0;
+        __asm ("subsd xmm6, xmm4");
+        __asm ("cvtss2sd xmm1, xmm1");
+        __asm ("cvtsi2sd xmm5, ecx");
+        edx += edx;
+        __asm ("subsd xmm3, xmm4");
+        __asm ("movapd xmm2, xmm6");
+        __asm ("divsd xmm2, xmm5");
+        __asm ("subsd xmm1, xmm2");
+        __asm ("cvtsd2ss xmm1, xmm1");
+        __asm ("cvtss2sd xmm1, xmm1");
+        __asm ("addsd xmm1, qword [0x080016b0]");
+        __asm ("cvtsd2ss xmm1, xmm1");
+        *(reloc.xoffset) = xmm1;
+        xmm1 = 0;
+        __asm ("cvtsi2sd xmm1, edx");
+        __asm ("divsd xmm3, xmm1");
+        __asm ("subsd xmm0, xmm3");
+        __asm ("cvtsd2ss xmm0, xmm0");
+        __asm ("cvtss2sd xmm0, xmm0");
+        __asm ("addsd xmm0, qword [0x080016b8]");
+        __asm ("cvtsd2ss xmm0, xmm0");
+        *(reloc.yoffset) = xmm0;
+label_0:
+        return eax;
+label_1:
+        eax++;
+        xmm0 = 0;
+        __asm ("cvtsi2sd xmm0, eax");
+        __asm ("divsd xmm0, xmm4");
+        xmm4 = .rodata.cst8;
+        __asm ("movapd xmm7, xmm4");
+        __asm ("subsd xmm7, xmm0");
+        xmm0 = 0;
+        __asm ("cvtsd2ss xmm0, xmm7");
+    } while (1);
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/multiplot.o @ 0x80001c0 */
+#include <stdint.h>
+ 
+int32_t mp_layout_margins_and_spacing (void) {
+    if (*(0x080016c0) == 0) {
+        goto label_0;
+    }
+    xmm7 = *(0x080016d8);
+    if (*(0x080016c8) != 3) {
+        rdx = *(reloc.term);
+        xmm1 = 0;
+        xmm0 = 0;
+        eax = *((rdx + 0x1c));
+        __asm ("cvtsi2sd xmm1, rax");
+        eax = *((rdx + 0x10));
+        __asm ("cvtsi2sd xmm0, rax");
+        __asm ("mulsd xmm1, xmm7");
+        __asm ("movapd xmm7, xmm1");
+        __asm ("divsd xmm7, xmm0");
+    }
+    xmm0 = *(0x08001700);
+    if (*(0x080016f0) != 3) {
+        rdx = *(reloc.term);
+        xmm1 = 0;
+        eax = *((rdx + 0x1c));
+        __asm ("cvtsi2sd xmm1, rax");
+        eax = *((rdx + 0x10));
+        __asm ("mulsd xmm0, xmm1");
+        xmm1 = 0;
+        __asm ("cvtsi2sd xmm1, rax");
+        __asm ("divsd xmm0, xmm1");
+        __asm ("movapd xmm1, xmm0");
+        xmm0 = .rodata.cst8;
+        __asm ("subsd xmm0, xmm1");
+    }
+    xmm2 = *(0x08001750);
+    if (*(0x08001740) != 3) {
+        rdx = *(reloc.term);
+        xmm1 = 0;
+        eax = *((rdx + 0x18));
+        __asm ("cvtsi2sd xmm1, rax");
+        eax = *((rdx + 0x14));
+        __asm ("mulsd xmm2, xmm1");
+        xmm1 = 0;
+        __asm ("cvtsi2sd xmm1, rax");
+        __asm ("divsd xmm2, xmm1");
+        __asm ("movapd xmm1, xmm2");
+        xmm2 = .rodata.cst8;
+        __asm ("subsd xmm2, xmm1");
+    }
+    xmm3 = *(0x08001728);
+    if (*(0x08001718) != 3) {
+        rdx = *(reloc.term);
+        xmm1 = 0;
+        eax = *((rdx + 0x18));
+        __asm ("cvtsi2sd xmm1, rax");
+        eax = *((rdx + 0x14));
+        __asm ("mulsd xmm3, xmm1");
+        xmm1 = 0;
+        __asm ("cvtsi2sd xmm1, rax");
+        __asm ("divsd xmm3, xmm1");
+    }
+    xmm5 = *(0x08001778);
+    if (*(0x08001768) != 3) {
+        rdx = *(reloc.term);
+        xmm1 = 0;
+        eax = *((rdx + 0x1c));
+        __asm ("cvtsi2sd xmm1, rax");
+        eax = *((rdx + 0x10));
+        __asm ("mulsd xmm5, xmm1");
+        xmm1 = 0;
+        __asm ("cvtsi2sd xmm1, rax");
+        __asm ("divsd xmm5, xmm1");
+    }
+    xmm4 = *(0x080017a0);
+    if (*(0x08001790) != 3) {
+        rdx = *(reloc.term);
+        xmm1 = 0;
+        eax = *((rdx + 0x18));
+        __asm ("cvtsi2sd xmm1, rax");
+        eax = *((rdx + 0x14));
+        __asm ("mulsd xmm4, xmm1");
+        xmm1 = 0;
+        __asm ("cvtsi2sd xmm1, rax");
+        __asm ("divsd xmm4, xmm1");
+    }
+    edx = *(0x0800168c);
+    xmm1 = 0;
+    __asm ("subsd xmm0, xmm7");
+    xmm6 = 0;
+    __asm ("subsd xmm2, xmm3");
+    *(reloc.lmargin) = 3;
+    *(reloc.rmargin) = 3;
+    eax = rdx - 1;
+    __asm ("cvtsi2sd xmm1, eax");
+    eax = *(0x08001688);
+    __asm ("mulsd xmm1, xmm5");
+    __asm ("subsd xmm0, xmm1");
+    xmm1 = 0;
+    __asm ("cvtsi2sd xmm1, edx");
+    edx = rax - 1;
+    __asm ("cvtsi2sd xmm6, edx");
+    edx = *(0x08001694);
+    __asm ("mulsd xmm6, xmm4");
+    __asm ("divsd xmm0, xmm1");
+    xmm1 = 0;
+    __asm ("cvtsi2sd xmm1, eax");
+    __asm ("subsd xmm2, xmm6");
+    __asm ("divsd xmm2, xmm1");
+    xmm1 = 0;
+    __asm ("cvtsi2sd xmm1, dword [0x08001698]");
+    __asm ("addsd xmm5, xmm0");
+    __asm ("mulsd xmm1, xmm5");
+    __asm ("addsd xmm1, xmm7");
+    __asm ("addsd xmm0, xmm1");
+    *(reloc.bmargin) = xmm1;
+    *(reloc.tmargin) = xmm0;
+    __asm ("addsd xmm4, xmm2");
+    if (*(0x08001691) != 0) {
+        goto label_1;
+    }
+    xmm0 = 0;
+    __asm ("cvtsi2sd xmm0, edx");
+    __asm ("mulsd xmm0, xmm4");
+    __asm ("addsd xmm0, xmm3");
+    do {
+        *(reloc.c_token) = xmm0;
+        __asm ("addsd xmm0, xmm2");
+        *(reloc.bmargin) = 3;
+        *(reloc.tmargin) = 3;
+        *(reloc.num_tokens) = xmm0;
+label_0:
+        return eax;
+label_1:
+        eax -= edx;
+        xmm0 = 0;
+        eax--;
+        __asm ("cvtsi2sd xmm0, eax");
+        __asm ("mulsd xmm0, xmm4");
+        __asm ("addsd xmm0, xmm3");
+    } while (1);
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/multiplot.o @ 0x8000440 */
+#include <stdint.h>
+ 
+int64_t mp_layout_set_margin_or_spacing_isra_0 (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    rax = *(loc..LC2);
+    edi = *(reloc.c_token);
+    *(rsi) = rax;
+    while (eax != 0) {
+label_0:
+        return rax;
+        rbx = rsi;
+        rsi = loc__LC3;
+        eax = xsize ();
+    }
+    edi = *(reloc.c_token);
+    rsi = "sc$reen";
+    eax = xsize ();
+    if (eax == 0) {
+        goto label_2;
+    }
+    *(rbp) = 3;
+    *(reloc.c_token)++;
+label_1:
+    xsize ();
+    xmm1 = 0;
+    __asm ("comisd xmm1, xmm0");
+    if (*(reloc.c_token) > 0) {
+        goto label_3;
+    }
+    *(rbx) = xmm0;
+    if (*(rbp) != 3) {
+        goto label_0;
+    }
+    __asm ("comisd xmm1, xmm0");
+    if (*(rbp) > 3) {
+        goto label_4;
+    }
+    xmm1 = .rodata.cst8;
+    __asm ("comisd xmm0, xmm1");
+    if (*(rbp) <= 3) {
+        goto label_5;
+    }
+    *(rbx) = xmm1;
+    goto label_0;
+label_2:
+    edi = *(reloc.c_token);
+    rsi = "char$acter";
+    eax = xsize ();
+    if (eax == 0) {
+        goto label_1;
+    }
+    *(rbp) = 4;
+    *(reloc.c_token)++;
+    goto label_1;
+label_3:
+    rax = *(loc..LC2);
+    *(rbx) = rax;
+    if (*(rbp) != 3) {
+        goto label_0;
+    }
+label_4:
+    __asm ("movapd xmm0, xmm1");
+label_5:
+    *(rbx) = xmm0;
+    goto label_0;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/multiplot.o @ 0x8000540 */
+#include <stdint.h>
+ 
+int32_t multiplot_next_part_0 (void) {
+    if (*(0x08001690) == 0) {
+        goto label_1;
+    }
+    eax = *(0x08001694);
+    eax++;
+    *(0x08001694) = eax;
+    if (eax == *(0x08001688)) {
+        goto label_2;
+    }
+    do {
+label_0:
+        if (*(0x080016c0) == 0) {
+            goto label_3;
+        }
+        void (*0x80001c0)() ();
+label_1:
+        eax = *(0x08001698);
+        eax++;
+        *(0x08001698) = eax;
+    } while (eax != *(0x0800168c));
+    *(0x08001698) = 0;
+    eax = *(0x08001694);
+    eax++;
+    *(0x08001694) = eax;
+    if (eax != *(0x08001688)) {
+        goto label_0;
+    }
+    *(0x08001694) = 0;
+    goto label_0;
+label_3:
+    void (*0x8000040)() ();
+label_2:
+    *(0x08001694) = 0;
+    eax = *(0x08001698);
+    eax++;
+    *(0x08001698) = eax;
+    if (eax != *(0x0800168c)) {
+        goto label_0;
+    }
+    *(0x08001698) = 0;
+    goto label_0;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/multiplot.o @ 0x8000600 */
+#include <stdint.h>
+ 
+int32_t multiplot_previous_part_0 (void) {
+    if (*(0x08001690) == 0) {
+        goto label_1;
+    }
+    *(0x08001694)--;
+    if (*(0x08001694) < 0) {
+        goto label_2;
+    }
+    do {
+label_0:
+        if (*(0x080016c0) == 0) {
+            goto label_3;
+        }
+        void (*0x80001c0)() ();
+label_1:
+        *(0x08001698)--;
+    } while (*(0x08001698) >= 0);
+    eax = *(0x0800168c);
+    eax--;
+    *(0x08001694)--;
+    *(0x08001698) = eax;
+    if (*(0x08001694) >= 0) {
+        goto label_0;
+    }
+    eax = *(0x08001688);
+    eax--;
+    *(0x08001694) = eax;
+    goto label_0;
+label_3:
+    void (*0x8000040)() ();
+label_2:
+    eax = *(0x08001688);
+    eax--;
+    *(0x08001698)--;
+    *(0x08001694) = eax;
+    if (*(0x08001698) >= 0) {
+        goto label_0;
+    }
+    eax = *(0x0800168c);
+    eax--;
+    *(0x08001698) = eax;
+    goto label_0;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/multiplot.o @ 0x8000690 */
+#include <stdint.h>
+ 
+void multiplot_next (void) {
+    __asm ("endbr64");
+    *(0x08001684)++;
+    if (*(obj.mp_layout) != 0) {
+        void (*0x8000540)() ();
+    }
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/multiplot.o @ 0x80006c0 */
+#include <stdint.h>
+ 
+void multiplot_previous (void) {
+    __asm ("endbr64");
+    *(0x08001684)--;
+    if (*(obj.mp_layout) != 0) {
+        void (*0x8000600)() ();
+    }
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/multiplot.o @ 0x80006f0 */
+#include <stdint.h>
+ 
+int32_t multiplot_current_panel (void) {
+    __asm ("endbr64");
+    eax = *(0x08001684);
+    return eax;
+}
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/multiplot.o @ 0x8001660 */
+#include <stdint.h>
+ 
+void multiplot_reset (void) {
+    __asm ("endbr64");
+    if (*(0x080016c0) != 0) {
+        void (*0x80001c0)() ();
+    }
+    return mp_layout_size_and_offset ();
+}
+
+

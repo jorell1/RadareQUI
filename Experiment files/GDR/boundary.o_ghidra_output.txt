@@ -1,0 +1,1124 @@
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/boundary.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int64_t do_key_bounds (int64_t arg1) {
+    int64_t var_8h_2;
+    int64_t var_8h_3;
+    signed int64_t var_14h;
+    int64_t var_18h;
+    int64_t var_4h;
+    int64_t var_8h;
+    rdi = arg1;
+    /* [01] -r-x section size 14932 named .text */
+    __asm ("endbr64");
+    xmm1 = 0;
+    xmm0 = 0;
+    rbx = rdi;
+    edx = boundary.c;
+    ecx = boundary.c;
+    rax = *(fs:0x28);
+    *((rsp + 8)) = rax;
+    eax = 0;
+    eax = *(obj.key_title_extra);
+    eax += *(obj.key_title_height);
+    ecx *= edx;
+    rsi = *(reloc.term);
+    __asm ("cvtsi2sd xmm1, edx");
+    __asm ("mulsd xmm1, qword [rdi + 0x68]");
+    edx = *(obj.key_col_wth);
+    edx *= *(obj.key_entry_height);
+    eax += ecx;
+    ecx = *((rdi + 4));
+    __asm ("cvtsi2sd xmm0, eax");
+    *(obj.key_width) = edx;
+    __asm ("addsd xmm0, xmm1");
+    __asm ("cvttsd2si eax, xmm0");
+    *(obj.key_height) = eax;
+    if (ecx != 0) {
+        if (ecx != 1) {
+            if (ecx == 2) {
+                goto label_25;
+            }
+            rdx = rsp + 4;
+            rcx = obj_yl;
+            rsi = rsp;
+            rdi = rdi + 0x10;
+            term ();
+            eax = *(rsp);
+            edx = *((rbx + 0x3c));
+            ecx = key_width;
+            *((rbx + 0xf8)) = eax;
+            if (edx == 1) {
+                goto label_26;
+            }
+            if (edx == 2) {
+                goto label_27;
+            }
+            eax += ecx;
+label_3:
+            ecx = *((rbx + 0x38));
+            edx = key_height;
+            *((rbx + 0xfc)) = eax;
+            eax = *((rsp + 4));
+            *((rbx + 0x104)) = eax;
+            if (ecx == 1) {
+                goto label_28;
+            }
+            if (ecx == 2) {
+                goto label_29;
+            }
+            eax -= edx;
+label_2:
+            *((rbx + 0x100)) = eax;
+            goto label_0;
+        }
+        rcx = 0x100000001;
+        if (*((rdi + 0x38)) != rcx) {
+            goto label_25;
+        }
+    }
+    edi = *((rbx + 0x38));
+    if (edi != 0) {
+        goto label_30;
+    }
+    ecx = *(obj.ptitl_cnt);
+    ecx -= *((rsi + 0x20));
+    *((rbx + 0x104)) = ecx;
+    ecx -= eax;
+    *((rbx + 0x100)) = ecx;
+label_1:
+    ecx = *((rbx + 0x3c));
+    if (ecx != 0) {
+        goto label_31;
+    }
+    do {
+        eax = *((rsi + 0x1c));
+        eax += *(reloc.plot_bounds);
+        edx += eax;
+        *((rbx + 0xf8)) = eax;
+        *((rbx + 0xfc)) = edx;
+label_0:
+        rax = *((rsp + 8));
+        rax ^= *(fs:0x28);
+        if (edx != 0) {
+            goto label_32;
+        }
+        return rax;
+label_30:
+        ecx = *(reloc.ysize);
+        if (edi == 2) {
+            goto label_33;
+        }
+        ecx += *(obj.ptitl_cnt);
+        r8d = ecx;
+        r8d -= eax;
+        eax += ecx;
+        ecx = eax;
+        edi = r8d;
+        ecx >>= 0x1f;
+        edi >>= 0x1f;
+        eax += ecx;
+        edi += r8d;
+        ecx = *((rbx + 0x3c));
+        edi >>= 1;
+        eax >>= 1;
+        *((rbx + 0x100)) = edi;
+        *((rbx + 0x104)) = eax;
+    } while (ecx == 0);
+label_31:
+    eax = *(obj.ptitl_cnt);
+    while (ecx == 1) {
+        eax += *(reloc.plot_bounds);
+        esi = eax;
+        esi -= edx;
+        edx += eax;
+        eax = edx;
+        ecx = esi;
+        ecx >>= 0x1f;
+        eax >>= 0x1f;
+        ecx += esi;
+        edx += eax;
+        ecx >>= 1;
+        edx >>= 1;
+        *((rbx + 0xf8)) = ecx;
+        *((rbx + 0xfc)) = edx;
+        goto label_0;
+label_25:
+        ecx = *((rbx + 8));
+        if (ecx == 0) {
+            ecx = *((rsi + 0x14));
+            xmm1 = 0;
+            xmm0 = *(reloc.ysize);
+            __asm ("addss xmm0, dword [reloc.yoffset]");
+            __asm ("cvtsi2ss xmm1, rcx");
+            ecx = *((rsi + 0x20));
+            __asm ("mulss xmm0, xmm1");
+            xmm1 = 0;
+            __asm ("cvtsi2ss xmm1, rcx");
+            __asm ("subss xmm0, xmm1");
+            __asm ("cvttss2si ecx, xmm0");
+            *((rbx + 0x104)) = ecx;
+            ecx -= eax;
+            *((rbx + 0x100)) = ecx;
+label_5:
+            ecx = *((rbx + 0x3c));
+            if (ecx != 0) {
+                goto label_34;
+            }
+            eax = *(reloc.plot_bounds);
+            edx += eax;
+            *((rbx + 0xf8)) = eax;
+            *((rbx + 0xfc)) = edx;
+            goto label_0;
+        }
+        if (ecx == 1) {
+            goto label_35;
+        }
+        edi = *((rbx + 0x38));
+        if (edi == 0) {
+            goto label_36;
+        }
+        r8d = *(reloc.ysize);
+        if (edi == 1) {
+            goto label_37;
+        }
+        eax += r8d;
+        *((rbx + 0x100)) = r8d;
+        *((rbx + 0x104)) = eax;
+label_4:
+        if (ecx != 2) {
+            goto label_38;
+        }
+        eax = *((rsi + 0x10));
+        xmm0 = 0;
+        xmm1 = 0;
+        __asm ("cvtsi2ss xmm0, rax");
+        eax = *((rsi + 0x1c));
+        __asm ("mulss xmm0, dword [reloc.xoffset]");
+        __asm ("cvtsi2ss xmm1, rax");
+        __asm ("addss xmm0, xmm1");
+        __asm ("cvttss2si eax, xmm0");
+        edx += eax;
+        *((rbx + 0xf8)) = eax;
+        *((rbx + 0xfc)) = edx;
+        goto label_0;
+label_33:
+        ecx += *((rsi + 0x20));
+        *((rbx + 0x100)) = ecx;
+        ecx += eax;
+        *((rbx + 0x104)) = ecx;
+        goto label_1;
+        eax -= *((rsi + 0x1c));
+        *((rbx + 0xfc)) = eax;
+        eax -= edx;
+        *((rbx + 0xf8)) = eax;
+        goto label_0;
+label_28:
+        ecx = edx;
+        ecx >>= 0x1f;
+        ecx += edx;
+        ecx >>= 1;
+        eax += ecx;
+        *((rbx + 0x104)) = eax;
+        eax -= edx;
+        goto label_2;
+label_26:
+        edx = ecx;
+        edx >>= 0x1f;
+        edx += ecx;
+        edx >>= 1;
+        eax -= edx;
+        *((rbx + 0xf8)) = eax;
+        eax += ecx;
+        goto label_3;
+label_34:
+        eax = *(obj.ptitl_cnt);
+    }
+    *((rbx + 0xfc)) = eax;
+    eax -= edx;
+    *((rbx + 0xf8)) = eax;
+    goto label_0;
+label_36:
+    edi = *(obj.ptitl_cnt);
+    *((rbx + 0x104)) = edi;
+    edi -= eax;
+    *((rbx + 0x100)) = edi;
+    goto label_4;
+label_38:
+    if (ecx != 3) {
+        goto label_5;
+    }
+    eax = *((rsi + 0x10));
+    xmm1 = 0;
+    xmm0 = *(reloc.xsize);
+    __asm ("addss xmm0, dword [reloc.xoffset]");
+    eax--;
+    __asm ("cvtsi2ss xmm1, rax");
+    eax = *((rsi + 0x1c));
+    __asm ("mulss xmm0, xmm1");
+    xmm1 = 0;
+    __asm ("cvtsi2ss xmm1, rax");
+    __asm ("subss xmm0, xmm1");
+    __asm ("cvttss2si eax, xmm0");
+    *((rbx + 0xfc)) = eax;
+    eax -= edx;
+    *((rbx + 0xf8)) = eax;
+    goto label_0;
+label_35:
+    ecx = *((rsi + 0x14));
+    xmm0 = 0;
+    xmm1 = 0;
+    edi = *(0x0802635e);
+    __asm ("cvtsi2ss xmm0, rcx");
+    ecx = *((rsi + 0x20));
+    __asm ("mulss xmm0, dword [reloc.yoffset]");
+    __asm ("cvtsi2ss xmm1, rcx");
+    __asm ("addss xmm0, xmm1");
+    __asm ("cvttss2si ecx, xmm0");
+    *((rbx + 0x100)) = ecx;
+    if (edi == 0) {
+        esi = *(reloc.timelabel_bottom);
+        if (esi == 0) {
+            goto label_39;
+        }
+        xmm0 = *(reloc.tmargin);
+        __asm ("comisd xmm0, xmmword [loc..LC0]");
+        if (esi <= 0) {
+            goto label_39;
+        }
+        __asm ("cvttsd2si esi, xmm0");
+        ecx += esi;
+        *((rbx + 0x100)) = ecx;
+    }
+label_39:
+    eax += ecx;
+    *((rbx + 0x104)) = eax;
+    goto label_5;
+label_29:
+    edx += eax;
+    *((rbx + 0x104)) = edx;
+    goto label_2;
+label_27:
+    edx = eax;
+    edx -= ecx;
+    *((rbx + 0xf8)) = edx;
+    goto label_3;
+label_37:
+    r8d += *(obj.ptitl_cnt);
+    r9d = r8d;
+    r9d -= eax;
+    eax += r8d;
+    edi = r9d;
+    edi >>= 0x1f;
+    edi += r9d;
+    edi >>= 1;
+    *((rbx + 0x100)) = edi;
+    edi = eax;
+    edi >>= 0x1f;
+    eax += edi;
+    eax >>= 1;
+    *((rbx + 0x104)) = eax;
+    goto label_4;
+label_32:
+    term ();
+    __asm ("endbr64");
+    rbx = rdi;
+    rdi = *((rdi + 0xe0));
+    rbp = *(reloc.term);
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    if (rdi != 0) {
+        uint64_t (*rbp + 0x98)() ();
+    }
+    xmm1 = *((rbx + 0x50));
+    xmm3 = 0;
+    edx = 0;
+    *(obj.key_entry_height) = 0;
+    *(obj.key_xleft) = 0;
+    *(obj.yl) = 0;
+    __asm ("comisd xmm1, xmm3");
+    *(obj.xl) = 0;
+    if (rdi >= 0) {
+        eax = *((rbp + 0x1c));
+        xmm0 = 0;
+        __asm ("cvtsi2sd xmm0, rax");
+        eax = *((rbp + 0x24));
+        __asm ("mulsd xmm0, xmm1");
+        xmm1 = 0;
+        __asm ("cvtsi2sd xmm1, rax");
+        __asm ("addsd xmm0, xmm1");
+        __asm ("cvttsd2si edx, xmm0");
+    }
+    eax = *((rbp + 0x20));
+    ecx = *((rbp + 0x18));
+    xmm0 = 0;
+    xmm1 = 0;
+    *(obj.key_sample_width) = edx;
+    __asm ("cvtsi2sd xmm0, rax");
+    __asm ("mulsd xmm0, qword [loc..LC2]");
+    rax = rcx;
+    __asm ("cvtsi2sd xmm1, rcx");
+    __asm ("comisd xmm0, xmm1");
+    if (rdi > 0) {
+        __asm ("cvttsd2si eax, xmm0");
+    }
+    xmm0 = 0;
+    *(obj.key_sample_height) = eax;
+    ecx = 1;
+    rdi = *((rbx + 0x158));
+    *(obj.key_title_height) = 0;
+    __asm ("cvtsi2sd xmm0, eax");
+    __asm ("mulsd xmm0, qword [rbx + 0x58]");
+    *(obj.key_title_extra) = 0;
+    __asm ("cvttsd2si eax, xmm0");
+    if (eax == 0) {
+        eax = ecx;
+    }
+    *(obj.key_entry_height) = eax;
+    if (rdi != 0) {
+        rsi = rsp + 0x14;
+        term ();
+        rdi = *((rbx + 0x160));
+        if (rdi == 0) {
+            goto label_40;
+        }
+        uint64_t (*rbp + 0x98)() ();
+        eax = *((rbp + 0x18));
+        eax *= *((rsp + 0x14));
+        *(obj.key_title_height) = eax;
+        if (*((rbx + 0x160)) != 0) {
+            rdi = obj_xl;
+            uint64_t (*rbp + 0x98)() ();
+        }
+label_14:
+        rdi = *((rbx + 0x158));
+        if (*(rdi) != 0) {
+            if ((*((rbp + 0xa8)) & 0x20) == 0) {
+                goto label_18;
+            }
+            esi = 0x5e;
+            *((rsp + 8)) = rdi;
+            rax = term ();
+            rdi = *((rsp + 8));
+            if (rax == 0) {
+                goto label_41;
+            }
+label_17:
+            eax = *((rbp + 0x18));
+            *(obj.key_title_extra) = eax;
+        }
+label_18:
+        edx = key_sample_width;
+    }
+    eax = max_ptitl_len;
+    esi = *((rbp + 0x1c));
+    xmm0 = 0;
+    xmm1 = 0;
+    eax++;
+    ecx = rdx + rsi;
+    __asm ("cvtsi2sd xmm0, eax");
+    eax = esi;
+    __asm ("addsd xmm0, qword [rbx + 0x60]");
+    __asm ("cvtsi2sd xmm1, rax");
+    __asm ("mulsd xmm0, xmm1");
+    __asm ("cvttsd2si eax, xmm0");
+    if (*((rbx + 0x75)) == 0) {
+        goto label_42;
+    }
+    edx = -edx;
+    *(obj.key_text_left) = esi;
+    *(obj.key_sample_left) = edx;
+    *(obj.key_sample_right) = "key sample";
+    *(obj.key_text_right) = eax;
+    *(obj.key_size_left) = ecx;
+    *(obj.key_size_right) = eax;
+    do {
+        *(obj.key_entry_height) = 1;
+        esi = edx;
+        ecx += eax;
+        esi >>= 0x1f;
+        *(obj.key_col_wth) = ecx;
+        edx += esi;
+        esi = ptitl_cnt;
+        edx >>= 1;
+        *(obj.key_entry_height) = edx;
+        *(obj.key_entry_height) = esi;
+        if (*((rbx + 0x48)) == 1) {
+            goto label_43;
+        }
+        xmm1 = 0;
+        xmm2 = *((rbx + 0x68));
+        eax = *(obj.ptitl_cnt);
+        xmm0 = 0;
+        __asm ("cvtsi2sd xmm1, dword [obj.key_entry_height]");
+        eax -= *(reloc.ysize);
+        __asm ("cvtsi2sd xmm0, eax");
+        eax = *((rbx + 0x10c));
+        __asm ("mulsd xmm2, xmm1");
+        __asm ("subsd xmm0, xmm2");
+        xmm2 = 0;
+        __asm ("cvtsi2sd xmm2, dword [obj.key_title_height]");
+        __asm ("subsd xmm0, xmm2");
+        xmm2 = 0;
+        __asm ("cvtsi2sd xmm2, dword [obj.key_title_extra]");
+        __asm ("subsd xmm0, xmm2");
+        __asm ("divsd xmm0, xmm1");
+        __asm ("cvttsd2si ecx, xmm0");
+        if (eax > 0) {
+            if (ecx <= eax) {
+                ecx = eax;
+                goto label_44;
+            }
+        }
+label_44:
+        r13d = 0;
+        if (ecx == 0) {
+            ecx = 1;
+            r13d = 1;
+        }
+        if (esi > ecx) {
+            goto label_45;
+        }
+label_6:
+        if (rdi != 0) {
+            esi = 0;
+            eax = term ();
+            xmm0 = 0;
+            rdi = *((rbx + 0x160));
+            __asm ("cvtsi2sd xmm0, eax");
+            __asm ("subsd xmm0, qword [rbx + 0x50]");
+            __asm ("addsd xmm0, qword [loc..LC4]");
+            __asm ("cvttsd2si r12d, xmm0");
+            if (rdi == 0) {
+                goto label_46;
+            }
+            uint64_t (*rbp + 0x98)() ();
+            eax = *((rbp + 0x1c));
+            ecx = boundary.c;
+            edx = *(obj.key_col_wth);
+            rsi = *((rbx + 0x160));
+            eax *= r12d;
+            edx *= ecx;
+            if (edx < eax) {
+                goto label_47;
+            }
+label_11:
+            if (rsi == 0) {
+                goto label_13;
+            }
+            rdi = obj_xl;
+            uint64_t (*rbp + 0x98)() ();
+        }
+label_13:
+        eax = *((rbx + 4));
+        rdx = *((rbx + 0xe0));
+        if (eax == 1) {
+            goto label_48;
+        }
+        if (eax == 2) {
+            goto label_49;
+        }
+label_7:
+        if (rdx != 0) {
+            rdi = obj_xl;
+            uint64_t (*rbp + 0x98)() ();
+        }
+        if (r13b != 0) {
+            goto label_10;
+        }
+label_8:
+        rax = *((rsp + 0x18));
+        rax ^= *(fs:0x28);
+        if (r13b != 0) {
+            goto label_50;
+        }
+        return rax;
+label_42:
+        r8d = eax;
+        esi = -esi;
+        *(obj.key_size_left) = eax;
+        *(obj.key_text_right) = esi;
+        r8d = -r8d;
+        esi = ecx;
+        *(obj.key_size_right) = ecx;
+        ecx = eax;
+        eax = esi;
+        *(obj.key_sample_left) = 0;
+        *(obj.key_sample_right) = "key sample";
+        *(obj.key_text_left) = r8d;
+    } while (1);
+label_45:
+    eax = rsi + rcx - 1;
+    edx:eax = (int64_t) eax;
+    eax = edx:eax / ecx;
+    edx = edx:eax % ecx;
+    ecx = eax;
+    if (eax == 0) {
+        goto label_51;
+    }
+    *(obj.key_entry_height) = eax;
+label_12:
+    eax = rsi + rcx - 1;
+    edx:eax = (int64_t) eax;
+    eax = edx:eax / ecx;
+    edx = edx:eax % ecx;
+    *(obj.key_entry_height) = eax;
+    goto label_6;
+label_48:
+    rax = 0x100000001;
+    if (*((rbx + 0x38)) == rax) {
+        goto label_7;
+    }
+label_49:
+    eax = *((rbx + 8));
+    if (eax == 1) {
+        goto label_52;
+    }
+    if (eax != 0) {
+        goto label_53;
+    }
+    xmm4 = 0;
+    __asm ("comisd xmm4, xmmword [reloc.lmargin]");
+    if (eax <= 0) {
+        goto label_7;
+    }
+    ecx = boundary.c;
+    eax = boundary.c;
+    xmm1 = 0;
+    xmm0 = 0;
+    eax *= ecx;
+    eax += *(obj.key_title_height);
+    eax += *(obj.key_title_extra);
+    __asm ("cvtsi2sd xmm1, ecx");
+    __asm ("mulsd xmm1, qword [rbx + 0x68]");
+    ebx = *(obj.ptitl_cnt);
+    __asm ("cvtsi2sd xmm0, eax");
+    __asm ("addsd xmm0, xmm1");
+    __asm ("cvttsd2si eax, xmm0");
+    ebx -= eax;
+    if (ebx >= *(reloc.ysize)) {
+        goto label_54;
+    }
+label_15:
+    if (rdx != 0) {
+label_9:
+        rdi = obj_xl;
+        eax = uint64_t (*rbp + 0x98)() ();
+    }
+label_10:
+    rsi = "Warning - difficulty fitting plot titles into key";
+    edi = 0xffffffff;
+    eax = 0;
+    term ();
+    goto label_8;
+label_43:
+    r8d = *(obj.ptitl_cnt);
+    r8d -= *(reloc.plot_bounds);
+    eax = r8d;
+    edx:eax = (int64_t) eax;
+    eax = edx:eax / ecx;
+    edx = edx:eax % ecx;
+    ecx = *((rbx + 0x108));
+    r13b = (ecx > 0) ? 1 : 0;
+    dl = (eax > ecx) ? 1 : 0;
+    r13b &= dl;
+    if (r13b != 0) {
+        goto label_55;
+    }
+    ecx = eax;
+    if (eax == 0) {
+        *(obj.key_col_wth) = r8d;
+        ecx = 1;
+        r13d = 1;
+    }
+label_16:
+    eax = rsi + rcx - 1;
+    edx:eax = (int64_t) eax;
+    eax = edx:eax / ecx;
+    edx = edx:eax % ecx;
+    *(obj.key_entry_height) = eax;
+    ecx = eax;
+    if (eax == 0) {
+        goto label_56;
+    }
+    eax = rsi + rax - 1;
+    edx:eax = (int64_t) eax;
+    eax = edx:eax / ecx;
+    edx = edx:eax % ecx;
+    edx = 1;
+    if (eax == 0) {
+        eax = edx;
+    }
+    *(obj.key_entry_height) = eax;
+    goto label_6;
+label_53:
+    if (eax != 2) {
+        goto label_57;
+    }
+    xmm6 = 0;
+    __asm ("comisd xmm6, xmmword [reloc.bmargin]");
+    if (eax <= 2) {
+        goto label_7;
+    }
+    eax = *(obj.key_col_wth);
+    eax *= *(obj.key_entry_height);
+    ecx = *(reloc.plot_bounds);
+    esi = rcx + rax;
+    if (esi <= *(obj.ptitl_cnt)) {
+        goto label_58;
+    }
+    ecx += *(obj.key_xleft);
+    *(reloc.plot_bounds) = ecx;
+    if (rdx != 0) {
+        goto label_9;
+    }
+    goto label_10;
+label_47:
+    edx:eax = (int64_t) eax;
+    eax = edx:eax / ecx;
+    edx = edx:eax % ecx;
+    *(obj.key_col_wth) = eax;
+    goto label_11;
+label_56:
+    *(obj.key_entry_height) = 1;
+    goto label_6;
+label_51:
+    ecx = 1;
+    r13d = 1;
+    goto label_12;
+label_46:
+    eax = *((rbp + 0x1c));
+    ecx = boundary.c;
+    edx = *(obj.key_col_wth);
+    eax *= r12d;
+    edx *= ecx;
+    if (eax <= edx) {
+        goto label_13;
+    }
+    edx:eax = (int64_t) eax;
+    eax = edx:eax / ecx;
+    edx = edx:eax % ecx;
+    *(obj.key_col_wth) = eax;
+    goto label_13;
+label_40:
+    eax = *((rsp + 0x14));
+    eax *= *((rbp + 0x18));
+    *(obj.key_title_height) = eax;
+    goto label_14;
+label_57:
+    if (eax != 3) {
+        goto label_7;
+    }
+    xmm7 = 0;
+    __asm ("comisd xmm7, xmmword [reloc.estimate_strlen]");
+    if (eax <= 3) {
+        goto label_7;
+    }
+    eax = *(obj.key_col_wth);
+    eax *= *(obj.key_entry_height);
+    ebx = *(obj.ptitl_cnt);
+    ebx -= eax;
+    if (ebx < *(reloc.plot_bounds)) {
+        goto label_15;
+    }
+    *(obj.ptitl_cnt) = ebx;
+    goto label_7;
+label_52:
+    xmm5 = 0;
+    __asm ("comisd xmm5, xmmword [reloc.ignore_enhanced]");
+    if (ebx <= *(reloc.plot_bounds)) {
+        goto label_7;
+    }
+    ecx = boundary.c;
+    eax = boundary.c;
+    xmm1 = 0;
+    xmm0 = 0;
+    eax *= ecx;
+    eax += *(obj.key_title_height);
+    eax += *(obj.key_title_extra);
+    __asm ("cvtsi2sd xmm1, ecx");
+    __asm ("mulsd xmm1, qword [rbx + 0x68]");
+    __asm ("cvtsi2sd xmm0, eax");
+    __asm ("addsd xmm0, xmm1");
+    __asm ("cvttsd2si eax, xmm0");
+    eax += *(reloc.ysize);
+    if (eax > *(obj.ptitl_cnt)) {
+        goto label_15;
+    }
+    *(reloc.ysize) = eax;
+    goto label_7;
+label_55:
+    r13d = 0;
+    goto label_16;
+label_54:
+    *(obj.ptitl_cnt) = ebx;
+    goto label_7;
+label_41:
+    esi = 0x5f;
+    rax = term ();
+    rdi = *((rsp + 8));
+    if (rax != 0) {
+        goto label_17;
+    }
+    goto label_18;
+label_58:
+    *(obj.key_xleft) = eax;
+    *(reloc.plot_bounds) = esi;
+    goto label_7;
+label_50:
+    term ();
+    __asm ("endbr64");
+    *((rsp + 8)) = rdx;
+    if (esi <= 0) {
+        goto label_59;
+    }
+    rbx = rdi;
+    r12d = esi;
+    ebp = 0;
+    r13d = 0;
+    r15d = 0;
+    r14d = 0;
+    do {
+        eax = *((rbx + 0x10));
+        if (eax != 0x801) {
+            if (*((rbx + 0x18)) != 0) {
+                if (*((rbx + 0x2a)) != 0) {
+                    goto label_23;
+                }
+                if (*((rbx + 0x20)) == 0) {
+                    goto label_60;
+                }
+            }
+label_23:
+            if (eax == 0x608) {
+                goto label_61;
+            }
+            rcx = *((rbx + 0x158));
+            if (rcx != 0) {
+                if (eax == 0x94a) {
+                    goto label_22;
+                }
+            }
+label_20:
+        }
+label_19:
+        r15d++;
+        rbx = *(rbx);
+    } while (r12d != r15d);
+label_24:
+    rax = *((rsp + 8));
+    if (rax != 0) {
+        *(rax) = r13d;
+    }
+    eax = r14d;
+    return rax;
+label_61:
+    if (ebp == 0x608) {
+        goto label_62;
+    }
+label_21:
+    rcx = *((rbx + 0x158));
+    if (rcx == 0) {
+        goto label_19;
+    }
+label_22:
+    rbp = *(rcx);
+    if (rbp == 0) {
+        goto label_20;
+    }
+    do {
+        rdi = *((rbp + 0x48));
+        r13d++;
+        eax = 0;
+        if (rdi != 0) {
+            eax = term ();
+        }
+        rbp = *(rbp);
+        if (r14d < eax) {
+            r14d = eax;
+        }
+    } while (rbp != 0);
+    ebp = *((rbx + 0x10));
+    goto label_19;
+label_62:
+    edx = *((rbx + 0x1b0));
+    if (edx != 0) {
+        goto label_21;
+    }
+    cl = (r13d > 1) ? 1 : 0;
+    r13d -= 0xffffffff;
+    goto label_21;
+label_60:
+    if (eax != 0x94a) {
+        goto label_63;
+    }
+    if (*((rbx + 0xc)) == 5) {
+        goto label_63;
+    }
+    rcx = *((rbx + 0x158));
+    if (rcx == 0) {
+        goto label_20;
+    }
+    goto label_22;
+label_63:
+    edi = *((rbx + 0x28));
+    term ();
+    rdi = *((rbx + 0x18));
+    eax = term ();
+    if (eax != 0) {
+        r13d++;
+        if (r14d >= eax) {
+            r14d = eax;
+            goto label_64;
+        }
+    }
+label_64:
+    edi = 0;
+    term ();
+    eax = *((rbx + 0x10));
+    goto label_23;
+label_59:
+    r13d = 0;
+    r14d = 0;
+    goto label_24;
+}
+
+
+
+
+  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.d pdg @ sym.d pdg @ sym.do pdg @ sym.do pdg @ sym.do_ pdg @ sym.do_ pdg @ sym.do_k pdg @ sym.do_k pdg @ sym.do_ke pdg @ sym.do_ke pdg @ sym.do_key pdg @ sym.do_key pdg @ sym.do_key_ pdg @ sym.do_key_ pdg @ sym.do_key_s pdg @ sym.do_key_s pdg @ sym.do_key_sa pdg @ sym.do_key_sa pdg @ sym.do_key_sam pdg @ sym.do_key_sam pdg @ sym.do_key_samp pdg @ sym.do_key_samp pdg @ sym.do_key_sampl pdg @ sym.do_key_sampl pdg @ sym.do_key_sample pdg @ sym.do_key_sample
+void sym.do_key_sample(int64_t arg7, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3,
+                      undefined8 placeholder_4, undefined8 placeholder_5, undefined8 placeholder_6,
+                      undefined8 placeholder_7, int64_t arg1, int64_t arg2, int64_t arg3)
+{
+    int64_t iVar1;
+    int32_t *piVar2;
+    int64_t iVar3;
+    undefined8 uVar4;
+    char cVar5;
+    int32_t iVar6;
+    uint32_t uVar7;
+    int32_t iVar8;
+    int64_t iVar9;
+    int32_t iVar10;
+    int32_t iVar11;
+    uint32_t uVar12;
+    double dVar13;
+    undefined8 uVar14;
+    int64_t aiStack64 [2];
+    
+    uVar4 = _reloc.clip_area;
+    iVar3 = _reloc.term;
+    _reloc.clip_area = reloc.canvas;
+    piVar2 = *(int32_t **)(arg1 + 0x20);
+    if ((*(uint8_t *)(_reloc.term + 0xa8) & 0x80) != 0) {
+        _reloc.clip_area = (code *)0x0;
+    }
+    aiStack64[0] = arg7;
+    if ((piVar2 != (int32_t *)0x0) && (*piVar2 != 4)) {
+        func_0x080262ea(arg7, placeholder_1, placeholder_2, piVar2, reloc..LC3, reloc..bss);
+        iVar10 = _obj.key_text_right;
+        if (*(int32_t *)(arg2 + 0x44) == 0) {
+            iVar10 = _obj.key_text_left;
+        }
+        _reloc..LC3 = _reloc..LC3 - iVar10;
+    }
+    uVar14 = 0x8002b2a;
+    (**(code **)(iVar3 + 0x110))(0xb);
+    if (*(int32_t *)(arg2 + 0xe8) != 7) {
+        if (*(int32_t *)(arg2 + 0xe8) == 0) {
+            uVar14 = 0x8002b47;
+            (**(code **)(iVar3 + 0x68))(0xfffffffe);
+        } else {
+            uVar14 = 0x8002f35;
+            func_0x080262ea(arg2 + 0xe8);
+        }
+    }
+    if ((*(char *)(arg1 + 0x29) != '\0') && ((*(uint8_t *)(iVar3 + 0xa9) & 0x40) != 0)) {
+        uVar14 = 0x80030ab;
+        arg3 = func_0x080262ea(arg3, *(undefined4 *)(arg1 + 0xc));
+    }
+    if (*(int32_t *)(arg2 + 0x44) == 0) {
+        iVar10 = _obj.key_text_left + _reloc..LC3;
+code_r0x08002ef8:
+        func_0x080262ea(iVar10, _reloc..bss, arg3, 0, 1, 0, *(undefined8 *)(arg2 + 0xe0), uVar14);
+    } else {
+        uVar14 = 0x8002b73;
+        iVar6 = (**(code **)(iVar3 + 0x80))();
+        iVar10 = _obj.key_text_right + _reloc..LC3;
+        if (iVar6 == 0) {
+            iVar6 = *(int32_t *)(iVar3 + 0x1c);
+            uVar14 = 0x8002eb7;
+            iVar11 = func_0x080262ea();
+            iVar10 = iVar10 - iVar6 * iVar11;
+            if (1 < *(int32_t *)(arg2 + 4) - 1U) {
+                iVar6 = *(int32_t *)0x80262fe;
+                iVar11 = _reloc.plot_bounds;
+                if (_reloc.plot_bounds < *(int32_t *)0x80262fe) {
+                    iVar6 = _reloc.plot_bounds;
+                    iVar11 = *(int32_t *)0x80262fe;
+                }
+                if ((iVar11 < iVar10) || (iVar10 < iVar6)) goto code_r0x08002bb2;
+            }
+            goto code_r0x08002ef8;
+        }
+        func_0x080262ea(iVar10, _reloc..bss, arg3, 2, 1, 0, *(undefined8 *)(arg2 + 0xe0), uVar14);
+    }
+code_r0x08002bb2:
+    cVar5 = func_0x080262ea(arg1, aiStack64);
+    if (cVar5 == '\0') {
+        func_0x080262ea(arg1 + 0x30);
+    }
+    uVar12 = *(uint32_t *)(arg1 + 0x10);
+    if (((uVar12 & 8) == 0) || (*(int64_t *)(iVar3 + 0xc0) == 0)) {
+        if (((uVar12 & 0x10) == 0) || (*(int64_t *)(iVar3 + 0x90) == 0)) {
+            if (*(int32_t *)(arg1 + 0x34) != -3) {
+                if ((uVar12 & 4) == 0) {
+                    if ((uVar12 & 1) != 0) goto code_r0x08003070;
+                } else {
+                    if (*(int32_t *)(arg1 + 0xc) == 0) {
+                        if ((uVar12 & 1) == 0) goto code_r0x08002e20;
+code_r0x08003070:
+                        func_0x080262ea(_reloc..LC3 + str.key_sample._4_4_, _reloc..bss, 
+                                        str.key_sample._0_4_ + _reloc..LC3, _reloc..bss);
+                    } else {
+                        if (((uint8_t)reloc.bar_lp & 8) != 0) {
+                            func_0x080262ea(reloc.bar_lp);
+                        }
+                        func_0x080262ea(_reloc..LC3 + str.key_sample._4_4_, _reloc..bss, 
+                                        str.key_sample._0_4_ + _reloc..LC3, _reloc..bss);
+                        if (((uint8_t)reloc.bar_lp & 8) != 0) {
+                            (**(code **)(_reloc.term + 0x140))(0xffffffff, 0);
+                        }
+                    }
+                }
+            }
+        } else {
+            dVar13 = (double)_reloc..bss;
+            iVar6 = str.key_sample._4_4_ + _reloc..LC3;
+            iVar10 = _reloc..LC3 + str.key_sample._0_4_;
+            func_0x080262ea((double)iVar6, dVar13, (double)iVar10, arg1 + 0x98);
+            func_0x080262ea((double)iVar6, dVar13, (double)iVar10, dVar13, *(undefined4 *)(arg1 + 0x108));
+        }
+    } else {
+        iVar1 = arg1 + 0x138;
+        iVar10 = func_0x080262ea(iVar1);
+        iVar6 = str.key_sample._0_4_ - str.key_sample._4_4_;
+        if (*(int32_t *)(arg1 + 0x10) == 0x709) {
+            if (iVar6 < 1) goto code_r0x08002e20;
+            iVar6 = *(int32_t *)0x8003ae0;
+            if (*(int32_t *)0x8003ae0 < 0) {
+                iVar6 = *(int32_t *)0x8003ae0 + 3;
+            }
+            func_0x080262ea((double)(iVar6 >> 2), 0, _reloc..LC29, _reloc..LC3 + _segment.ehdr, _reloc..bss, iVar10, 0);
+            cVar5 = func_0x080262ea(iVar1);
+            if (cVar5 != '\0') {
+                iVar10 = *(int32_t *)0x8003ae0 + 3;
+                if (-1 < *(int32_t *)0x8003ae0) {
+                    iVar10 = *(int32_t *)0x8003ae0;
+                }
+                func_0x080262ea((double)(iVar10 >> 2), 0, _reloc..LC29, _segment.ehdr + _reloc..LC3, _reloc..bss, 0, 0);
+            }
+        } else {
+            iVar11 = *(int32_t *)0x8003ae0 / 2;
+            if (*(int32_t *)(arg1 + 0x10) == 0x789) {
+                if (iVar6 < 1) goto code_r0x08002e20;
+                iVar9 = func_0x080262ea(0x60, "cute little ellipse for the key sample");
+                iVar8 = _segment.ehdr + _reloc..LC3;
+                *(undefined8 *)(iVar9 + 0x58) = 0;
+                *(double *)(iVar9 + 0x18) = (double)iVar8;
+                *(double *)(iVar9 + 0x20) = (double)_reloc..bss;
+                *(double *)(iVar9 + 0x40) = (double)((uint32_t)(iVar6 * 2) / 3);
+                *(double *)(iVar9 + 0x48) = (double)iVar11;
+                func_0x080262ea((double)iVar11, 2, iVar9, iVar10, 0);
+                cVar5 = func_0x080262ea(iVar1);
+                if (cVar5 != '\0') {
+                    func_0x080262ea(2, iVar9, 0, 0);
+                }
+                func_0x080262ea(iVar9);
+            } else {
+                if (0 < iVar6) {
+                    if (iVar10 == 0) {
+code_r0x08002c88:
+                        func_0x080262ea();
+                        iVar10 = *(int32_t *)0x8003ae0 + 3;
+                        if (-1 < *(int32_t *)0x8003ae0) {
+                            iVar10 = *(int32_t *)0x8003ae0;
+                        }
+                        iVar10 = _reloc..bss - (iVar10 >> 2);
+                        func_0x080262ea(_reloc..LC3 + str.key_sample._4_4_, iVar10, str.key_sample._0_4_ + _reloc..LC3, 
+                                        iVar10);
+                        iVar10 = *(int32_t *)0x8003ae0 + 3;
+                        if (-1 < *(int32_t *)0x8003ae0) {
+                            iVar10 = *(int32_t *)0x8003ae0;
+                        }
+                        func_0x080262ea(str.key_sample._0_4_ + _reloc..LC3, _reloc..bss - (iVar10 >> 2), 
+                                        str.key_sample._0_4_ + _reloc..LC3, (iVar10 >> 2) + _reloc..bss);
+                        iVar10 = *(int32_t *)0x8003ae0 + 3;
+                        if (-1 < *(int32_t *)0x8003ae0) {
+                            iVar10 = *(int32_t *)0x8003ae0;
+                        }
+                        iVar10 = (iVar10 >> 2) + _reloc..bss;
+                        func_0x080262ea(_reloc..LC3 + str.key_sample._0_4_, iVar10, str.key_sample._4_4_ + _reloc..LC3, 
+                                        iVar10);
+                        iVar10 = *(int32_t *)0x8003ae0 + 3;
+                        if (-1 < *(int32_t *)0x8003ae0) {
+                            iVar10 = *(int32_t *)0x8003ae0;
+                        }
+                        func_0x080262ea(str.key_sample._4_4_ + _reloc..LC3, (iVar10 >> 2) + _reloc..bss, 
+                                        str.key_sample._4_4_ + _reloc..LC3, _reloc..bss - (iVar10 >> 2));
+                        func_0x080262ea();
+                    } else {
+                        iVar11 = *(int32_t *)0x8003ae0;
+                        if (*(int32_t *)0x8003ae0 < 0) {
+                            iVar11 = *(int32_t *)0x8003ae0 + 3;
+                        }
+                        (**(code **)(iVar3 + 0xc0))
+                                  (iVar10, _reloc..LC3 + str.key_sample._4_4_, _reloc..bss - (iVar11 >> 2), iVar6);
+                        if (((*(int32_t *)(arg1 + 0x10) == 0x3cc) && (*(int64_t *)(arg1 + 0x148) == -0x2ffffffff)) ||
+                           (cVar5 = func_0x080262ea(iVar1), cVar5 != '\0')) goto code_r0x08002c88;
+                    }
+                    if (((*(int32_t *)(arg1 + 0x138) != 0) && (*(int32_t *)(arg1 + 0x138) != 3)) &&
+                       (*(int64_t *)(arg1 + 0x148) != -0x2ffffffff)) {
+                        func_0x080262ea(arg1 + 0x30);
+                    }
+                }
+            }
+        }
+    }
+    uVar12 = *(uint32_t *)(arg1 + 0xc) & 0xfffffffb;
+    if (((uVar12 == 1) && ((*(uint32_t *)(arg1 + 0x10) & 4) != 0)) &&
+       ((*(uint32_t *)(arg1 + 0x10) != 0x3cc && (_reloc..LC0 < _reloc.bar_size)))) {
+        uVar7 = *(uint32_t *)(iVar3 + 0x24) >> 1;
+        if (*(uint32_t *)(iVar3 + 0x24) < 4) {
+            uVar7 = uVar12;
+        }
+        func_0x080262ea(_reloc.bar_size, str.key_sample._4_4_ + _reloc..LC3, _reloc..bss + uVar7, 
+                        str.key_sample._4_4_ + _reloc..LC3, _reloc..bss - uVar7);
+        if (3 < *(uint32_t *)(iVar3 + 0x24)) {
+            uVar12 = *(uint32_t *)(iVar3 + 0x24) >> 1;
+        }
+        func_0x080262ea(str.key_sample._0_4_ + _reloc..LC3, _reloc..bss + uVar12, str.key_sample._0_4_ + _reloc..LC3, 
+                        _reloc..bss - uVar12);
+    }
+code_r0x08002e20:
+    (**(code **)(iVar3 + 0x110))(0xc);
+    if (((*(int32_t *)(arg1 + 0xc) != 0) && ((*(uint8_t *)(arg1 + 0x10) & 4) != 0)) &&
+       (((uint8_t)reloc.bar_lp & 8) != 0)) {
+        func_0x080262ea(arg1 + 0x30);
+    }
+    _reloc.clip_area = (code *)uVar4;
+    return;
+}
+
+
+uint32_t sym.at_left_of_key(void)
+{
+    return ""._0_4_ & 0xffffff00 | (uint32_t)(_reloc..bss == ""._0_4_);
+}
+
+

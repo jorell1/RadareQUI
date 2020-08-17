@@ -1,0 +1,261 @@
+char sym.cover_point_poly
+               (int64_t arg7, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3,
+               undefined8 placeholder_4, undefined8 placeholder_5, undefined8 placeholder_6, undefined8 placeholder_7,
+               int64_t arg1, int64_t arg2, int64_t arg3)
+{
+    double *pdVar1;
+    double *pdVar2;
+    double dVar3;
+    double dVar4;
+    double dVar5;
+    double dVar6;
+    double dVar7;
+    double dVar8;
+    double dVar9;
+    double dVar10;
+    double dVar11;
+    
+    // [01] -r-x section size 18562 named .text
+    if (*(double *)(arg3 + 0x58) != 0.00000000) {
+        pdVar1 = (double *)(*(int64_t *)0x8006640 + *(int64_t *)arg3 * 0x38);
+        dVar9 = pdVar1[1];
+        pdVar2 = (double *)(*(int64_t *)0x8006640 + *(int64_t *)(arg3 + 8) * 0x38);
+        dVar11 = *pdVar2;
+        dVar3 = pdVar2[1];
+        dVar7 = (*(double *)arg2 - *(double *)arg1) * (double)arg7 + *(double *)arg1;
+        pdVar2 = (double *)(*(int64_t *)0x8006640 + *(int64_t *)(arg3 + 0x10) * 0x38);
+        dVar4 = pdVar2[1];
+        dVar8 = (*(double *)(arg2 + 8) - *(double *)(arg1 + 8)) * (double)arg7 + *(double *)(arg1 + 8);
+        dVar5 = *pdVar1;
+        dVar6 = *pdVar2;
+        dVar10 = (dVar11 - dVar5) * (dVar8 - dVar9) - (dVar7 - dVar5) * (dVar3 - dVar9);
+        dVar11 = (dVar6 - dVar11) * (dVar8 - dVar3) - (dVar7 - dVar11) * (dVar4 - dVar3);
+        dVar9 = (dVar5 - dVar6) * (dVar8 - dVar4) - (dVar9 - dVar4) * (dVar7 - dVar6);
+        if ((((_reloc..LC1 <= dVar10) && (_reloc..LC1 <= dVar11)) && (_reloc..LC1 <= dVar9)) ||
+           (((dVar10 - _reloc..LC2 <= 0.00000000 && (dVar11 - _reloc..LC2 <= 0.00000000)) &&
+            (dVar9 - _reloc..LC2 <= 0.00000000)))) {
+            dVar11 = (double)((uint64_t)
+                              (dVar7 * *(double *)(arg3 + 0x48) + dVar8 * *(double *)(arg3 + 0x50) +
+                              *(double *)(arg3 + 0x60)) ^ _reloc..LC3) / *(double *)(arg3 + 0x58);
+            dVar9 = (double)arg7 * (*(double *)(arg2 + 0x10) - *(double *)(arg1 + 0x10)) + *(double *)(arg1 + 0x10);
+            if (dVar9 - _reloc..LC2 <= dVar11) {
+                return (dVar11 - _reloc..LC2 <= dVar9) + '\x01';
+            }
+        }
+    }
+    return '\0';
+}
+
+
+uint64_t sym.compare_edges_by_zmin(int64_t arg1, int64_t arg2)
+{
+    uint64_t uVar1;
+    double dVar2;
+    
+    dVar2 = *(double *)
+             (*(int64_t *)0x8006640 + 0x10 + *(int64_t *)(*(int64_t *)0x8006600 + 8 + *(int64_t *)arg1 * 0x28) * 0x38) -
+            *(double *)
+             (*(int64_t *)0x8006640 + 0x10 + *(int64_t *)(*(int64_t *)0x8006600 + 8 + *(int64_t *)arg2 * 0x28) * 0x38);
+    uVar1 = 0xffffffff;
+    if (_reloc..LC1 <= dVar2) {
+        uVar1 = (uint64_t)(_reloc..LC2 < dVar2);
+    }
+    return uVar1;
+}
+
+
+uint64_t sym.compare_polys_by_zmax(int64_t arg1, int64_t arg2)
+{
+    uint64_t uVar1;
+    double dVar2;
+    
+    dVar2 = *(double *)(*(int64_t *)0x80065c0 + 0x40 + *(int64_t *)arg1 * 0x70) -
+            *(double *)(*(int64_t *)0x80065c0 + 0x40 + *(int64_t *)arg2 * 0x70);
+    uVar1 = 0xffffffff;
+    if (_reloc..LC1 <= dVar2) {
+        uVar1 = (uint64_t)(_reloc..LC2 < dVar2);
+    }
+    return uVar1;
+}
+
+
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable arg1 to Decompiler type: Unknown type identifier
+// signed
+
+void sym.color_edges(int64_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4, undefined8 placeholder_4, uint32_t arg6)
+{
+    double *pdVar1;
+    uint8_t uVar2;
+    int64_t iVar3;
+    int64_t *piVar4;
+    int64_t iVar5;
+    int64_t *piVar6;
+    undefined4 in_register_0000000c;
+    int64_t iVar7;
+    undefined4 in_register_00000014;
+    int64_t iVar8;
+    int64_t iVar9;
+    undefined4 in_RSI;
+    int64_t iVar10;
+    uint32_t uVar11;
+    uint64_t uVar12;
+    uint64_t uVar13;
+    undefined auVar14 [16];
+    
+    iVar9 = *(int64_t *)0x8006600;
+    iVar10 = CONCAT44(in_RSI, arg2);
+    iVar8 = CONCAT44(in_register_00000014, arg3);
+    if (iVar8 < -1) {
+        return;
+    }
+    iVar7 = CONCAT44(in_register_0000000c, arg4);
+    if (CONCAT44(in_register_0000000c, arg4) < -1) {
+        iVar7 = iVar8;
+    }
+    piVar6 = (int64_t *)(iVar8 * 0x70 + *(int64_t *)0x80065c0);
+    uVar2 = *(uint8_t *)(piVar6 + 0xd);
+    uVar13 = (uint64_t)uVar2;
+    iVar8 = iVar7 * 0x70 + *(int64_t *)0x80065c0;
+    uVar12 = (uint64_t)*(uint8_t *)(iVar8 + 0x68);
+    if (*(uint8_t *)(iVar8 + 0x68) == 0) {
+        if (uVar2 == 0) {
+            iVar8 = *(int64_t *)0x8006600 + arg1 * 0x28;
+            if (*(int32_t *)(iVar8 + 0x10) != -3) {
+                *(uint32_t *)(iVar8 + 0x10) = arg6;
+            }
+            iVar9 = iVar9 + iVar10 * 0x28;
+            if (*(int32_t *)(iVar9 + 0x10) == -3) {
+                return;
+            }
+            *(uint32_t *)(iVar9 + 0x10) = arg6;
+            return;
+        }
+    } else {
+        if (uVar2 != 0) {
+            return;
+        }
+        iVar7 = *(int64_t *)0x8006600 + arg1 * 0x28;
+        if (*(int32_t *)(iVar7 + 0x10) != -3) {
+            *(uint32_t *)(iVar7 + 0x10) = arg6;
+        }
+    }
+    piVar4 = (int64_t *)(iVar9 + iVar10 * 0x28);
+    if (((arg1 != iVar10) || (_reloc..data == 0)) && (*(int32_t *)(piVar4 + 2) == -3)) {
+        return;
+    }
+    iVar9 = *piVar6;
+    iVar10 = *piVar4;
+    iVar7 = piVar6[1];
+    iVar3 = piVar6[2];
+    iVar5 = iVar7;
+    if (((iVar9 != iVar10) && (iVar5 = iVar9, iVar10 != iVar7)) && (iVar3 = iVar7, iVar10 != iVar3))
+    goto code_r0x080004ee;
+    auVar14 = CONCAT88(iVar8, iVar3);
+    if ((piVar4[1] != iVar5) && (auVar14 = CONCAT88(iVar8, iVar5), piVar4[1] != iVar3)) goto code_r0x080004ee;
+    while( true ) {
+        iVar9 = SUB168(auVar14 >> 0x40, 0);
+        if (-1 < SUB168(auVar14, 0)) break;
+code_r0x080004ee:
+        auVar14 = func_0x0803053f(0xffffffff, "", "\x01");
+    }
+    pdVar1 = (double *)(*(int64_t *)0x8006640 + SUB168(auVar14, 0) * 0x38);
+    if (*(double *)(iVar9 + 0x48) * *pdVar1 + *(double *)(iVar9 + 0x50) * pdVar1[1] +
+        *(double *)(iVar9 + 0x58) * pdVar1[2] + *(double *)(iVar9 + 0x60) <= _reloc..LC0) {
+        uVar11 = (uint32_t)placeholder_4;
+        if ((char)uVar12 == '\0') {
+            uVar11 = arg6;
+        }
+        *(uint32_t *)(piVar4 + 2) = uVar11;
+        return;
+    }
+    uVar11 = (uint32_t)placeholder_4;
+    if ((char)uVar13 == '\0') {
+        uVar11 = arg6;
+    }
+    *(uint32_t *)(piVar4 + 2) = uVar11;
+    return;
+}
+
+
+int64_t sym.split_line_at_ratio
+                  (int64_t arg7, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3,
+                  undefined8 placeholder_4, undefined8 placeholder_5, undefined8 placeholder_6, undefined8 placeholder_7
+                  , int64_t arg1, int64_t arg2)
+{
+    double *pdVar1;
+    double *pdVar2;
+    double dVar3;
+    double dVar4;
+    double dVar5;
+    double dVar6;
+    uint64_t uVar7;
+    int64_t iVar8;
+    double *pdVar9;
+    double dVar10;
+    double dVar11;
+    double dVar12;
+    
+    pdVar9 = (double *)func_0x0803053f(obj.vertices);
+    iVar8 = *(int64_t *)0x8006640;
+    dVar6 = _reloc..LC2;
+    pdVar1 = (double *)(*(int64_t *)0x8006640 + arg2 * 0x38);
+    dVar11 = pdVar1[1];
+    pdVar2 = (double *)(*(int64_t *)0x8006640 + arg1 * 0x38);
+    dVar3 = pdVar1[2];
+    dVar4 = pdVar2[4];
+    dVar10 = (*pdVar1 - *pdVar2) * (double)arg7 + *pdVar2;
+    dVar12 = pdVar2[1];
+    *pdVar9 = dVar10;
+    dVar12 = (dVar11 - dVar12) * (double)arg7 + dVar12;
+    dVar11 = pdVar2[2];
+    pdVar9[1] = dVar12;
+    dVar11 = (dVar3 - dVar11) * (double)arg7 + dVar11;
+    dVar3 = pdVar1[4];
+    pdVar9[3] = 0.00000000;
+    pdVar9[2] = dVar11;
+    uVar7 = _reloc..LC6;
+    dVar5 = pdVar2[1];
+    pdVar9[4] = (dVar3 - dVar4) * (double)arg7 + dVar4;
+    if (((double)((uint64_t)(dVar10 - *pdVar2) & uVar7) + (double)((uint64_t)(dVar12 - dVar5) & uVar7) +
+        (double)((uint64_t)(dVar11 - pdVar2[2]) & uVar7)) - dVar6 <= 0.00000000) {
+        func_0x0803053f(obj.vertices);
+        return arg1;
+    }
+    if (0.00000000 <
+        ((double)((uint64_t)(dVar10 - *pdVar1) & uVar7) + (double)((uint64_t)(dVar12 - pdVar1[1]) & uVar7) +
+        (double)((uint64_t)(dVar11 - pdVar1[2]) & uVar7)) - dVar6) {
+        return ((int64_t)((int64_t)pdVar9 - iVar8) >> 3) * 0x6db6db6db6db6db7;
+    }
+    func_0x0803053f(obj.vertices);
+    return arg2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,128 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/stdfn.o @ 0x8000040 */
+#include <stdint.h>
+ 
+uint64_t safe_strncpy (int64_t arg1, int64_t arg2, int64_t arg3) {
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    /* [01] -r-x section size 387 named .text */
+    __asm ("endbr64");
+    r12 = rsi;
+    rbx = rdi;
+    r13 = rdi;
+    strncpy (rbx, rbp, r12);
+    rdi = r12;
+    rax = strncpy ();
+    if (rax >= rbp) {
+        rax = rbx + rbp - 1;
+        if (rbp != 0) {
+            rbx = rax;
+        }
+        *(rbx) = 0;
+    }
+    rax = r13;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/stdfn.o @ 0x8000120 */
+#include <stdint.h>
+ 
+void debug_exit_handler (void) {
+label_0:
+    __asm ("endbr64");
+    rbx = "Gnuplot exiting abnormally. Trying to execute exit handlers anyway.\n";
+    if (rbx == 0) {
+        goto label_1;
+    }
+    do {
+        uint64_t (*rbx)() ();
+        rdi = rbx;
+        rbx = *((rbx + 8));
+        *(obj.exit_handlers) = "Gnuplot exiting abnormally. Trying to execute exit handlers anyway.\n";
+        strncpy ();
+    } while (rbx != 0);
+label_1:
+    return;
+    __asm ("endbr64");
+    if (*(obj.exit_handlers) != 0) {
+        rcx = *(reloc.stderr);
+        edx = 0x44;
+        esi = 1;
+        rdi = "Gnuplot exiting abnormally. Trying to execute exit handlers anyway.\n";
+        strncpy ();
+        goto label_0;
+    }
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/stdfn.o @ 0x8000090 */
+#include <stdint.h>
+ 
+void not_a_number (void) {
+    __asm ("endbr64");
+    esi = 0;
+    rdi = obj_debug_exit_handler_registered_9414;
+    return void (*0x80036e7)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/stdfn.o @ 0x80000b0 */
+#include <stdint.h>
+ 
+uint64_t gp_basename (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    esi = 0x2f;
+    rbx = rdi;
+    rax = strncpy (rbx);
+    rdi = rax + 1;
+    rax = rbx;
+    if (rax != 0) {
+        rax = rdi;
+    }
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/stdfn.o @ 0x8000160 */
+#include <stdint.h>
+ 
+int64_t gp_atexit (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    rbx = rdi;
+    edi = 0x10;
+    strncpy (rbx);
+    rdx = "Gnuplot exiting abnormally. Trying to execute exit handlers anyway.\n";
+    *(rax) = rbx;
+    *((rax + 8)) = rdx;
+    *(obj.exit_handlers) = "Gnuplot exiting abnormally. Trying to execute exit handlers anyway.\n";
+    if (*(obj.debug_exit_handler_registered.9414) != 0) {
+        return rax;
+    }
+    rdi = sym_debug_exit_handler;
+    strncpy ();
+    *(obj.debug_exit_handler_registered.9414) = 1;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/stdfn.o @ 0x80001b0 */
+#include <stdint.h>
+ 
+void gp_exit (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    strncpy ();
+    edi = ebp;
+    return strncpy ();
+}
+
+

@@ -1,0 +1,5487 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int64_t check_palette_grayscale (int64_t arg7) {
+    int64_t var_18h;
+    int64_t var_8h;
+    xmm0 = arg7;
+    /* [01] -r-x section size 67679 named .text */
+    rsi = *(0x08090060);
+    rdi = *(reloc.set_colorbox_tbl);
+    r8d = rsi - 1;
+    if (r8d <= 0) {
+        goto label_0;
+    }
+    edx = rsi - 2;
+    rcx = rdi + 0x20;
+    rax = rdi;
+    rdx <<= 5;
+    rdx += rcx;
+    do {
+        xmm0 = *(rax);
+        __asm ("comisd xmm0, xmmword [rax + 0x20]");
+        if (rdx > 0) {
+            goto label_1;
+        }
+        rax += 0x20;
+    } while (rdx != rax);
+    rax = (int64_t) esi;
+    xmm2 = *(rdi);
+    xmm1 = .rodata.cst8;
+    rax <<= 5;
+    r9 = rdi + rax - 0x20;
+    __asm ("movapd xmm3, xmm1");
+    xmm0 = *(r9);
+    __asm ("subsd xmm0, xmm2");
+    __asm ("divsd xmm3, xmm0");
+    if (r8d <= 1) {
+        goto label_2;
+    }
+    r8d = rsi - 3;
+    rdx = rcx;
+    rax = rdi;
+    r8 <<= 5;
+    rsi = rdi + r8 + 0x40;
+    do {
+        xmm0 = *(rdx);
+        rdx += 0x20;
+        __asm ("subsd xmm0, xmm2");
+        __asm ("mulsd xmm0, xmm3");
+        *((rdx - 0x20)) = xmm0;
+    } while (rdx != rsi);
+    *(rdi) = 0;
+    rdx = rcx + r8;
+    xmm2 = 0;
+    ecx = 0;
+    *(r9) = xmm1;
+    *(reloc.lookup_table) = xmm1;
+    do {
+        xmm0 = *((rax + 0x20));
+        __asm ("subsd xmm0, qword [rax]");
+        __asm ("comisd xmm0, xmm2");
+        if (rdx > rsi) {
+            __asm ("comisd xmm1, xmm0");
+            if (rdx <= rsi) {
+                goto label_3;
+            }
+            __asm ("movapd xmm1, xmm0");
+            ecx = 1;
+        }
+label_3:
+        rax += 0x20;
+    } while (rdx != rax);
+    if (cl != 0) {
+        *(reloc.lookup_table) = xmm1;
+        return rax;
+    }
+    return rax;
+label_0:
+    rsi <<= 5;
+    xmm1 = .rodata.cst8;
+    r9 = rdi + rsi - 0x20;
+label_2:
+    *(rdi) = 0;
+    *(r9) = xmm1;
+    *(reloc.lookup_table) = xmm1;
+    return rax;
+label_1:
+    edi = *(reloc.c_token);
+    rsi = "Palette gradient not monotonic";
+    eax = 0;
+    sm_palette ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8001430 */
+#include <stdint.h>
+ 
+int64_t new_object (int64_t arg11, int64_t arg10, int64_t arg9, int64_t arg8, int64_t arg7, int64_t arg1, int64_t arg2, int64_t arg3) {
+    int64_t var_8h_2;
+    int64_t var_10h_2;
+    int64_t var_18h;
+    int64_t var_20h;
+    int64_t var_28h;
+    int64_t var_sp_ch;
+    int64_t var_10h_3;
+    int64_t var_14h;
+    int64_t var_18h_2;
+    int64_t var_1ch;
+    int64_t var_20h_2;
+    int64_t var_28h_2;
+    int64_t var_sp_30h;
+    int64_t var_38h;
+    int64_t var_40h;
+    int64_t var_44h;
+    int64_t var_48h;
+    int64_t var_50h;
+    int64_t var_58h;
+    int64_t var_60h;
+    int64_t var_68h;
+    int64_t var_70h;
+    int64_t var_78h;
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_160h;
+    int64_t var_168h;
+    int64_t var_170h;
+    int64_t var_178h;
+    int64_t var_188h;
+    int64_t var_19ch;
+    int64_t var_1a4h;
+    int64_t var_1b0h;
+    int64_t var_1c8h;
+    int64_t var_230h;
+    int64_t var_240h;
+    int64_t var_248h;
+    int64_t var_2b0h;
+    int64_t var_2b8h;
+    int64_t var_2c0h;
+    int64_t var_2c8h;
+    int64_t var_2d8h;
+    int64_t var_2ech;
+    int64_t var_2f4h;
+    int64_t var_300h;
+    int64_t var_318h;
+    int64_t var_350h;
+    int64_t var_380h;
+    int64_t var_390h;
+    int64_t var_3b0h;
+    int64_t var_3b8h;
+    int64_t var_400h;
+    int64_t var_408h;
+    int64_t var_410h;
+    int64_t var_418h;
+    int64_t var_428h;
+    int64_t var_43ch;
+    int64_t var_444h;
+    int64_t var_450h;
+    int64_t var_468h;
+    int64_t var_548h;
+    xmm4 = arg11;
+    xmm3 = arg10;
+    xmm2 = arg9;
+    xmm1 = arg8;
+    xmm0 = arg7;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    r13d = edi;
+    ebx = esi;
+    rsi = 0x08012740;
+    rax = *(fs:0x28);
+    *((rsp + 0x548)) = rax;
+    eax = 0;
+    rbp = rsp + 0x10;
+    eax = 0x29;
+    r15 = rsp + 0x160;
+    rcx = rax;
+    rdi = rbp;
+    r8 = rsp + 0x2b0;
+    do {
+        *(rdi) = *(rsi);
+        rcx--;
+        rsi += 8;
+        rdi += 8;
+    } while (rcx != 0);
+    rdi = r15;
+    r14 = rsp + 0x400;
+    rax = rcx;
+    ecx = 0x29;
+    *(rdi) = rax;
+    rcx--;
+    rdi += 8;
+    ecx = 0x29;
+    rdi = r8;
+    *(rdi) = rax;
+    rcx--;
+    rdi += 8;
+    ecx = 0x29;
+    rdi = r14;
+    *(rdi) = rax;
+    rcx--;
+    rdi += 8;
+    if (rdx == 0) {
+        goto label_2;
+    }
+    r12 = rdx;
+    if (*((rdx + 0x10)) == 4) {
+        goto label_3;
+    }
+label_1:
+    if (ebx == 1) {
+        goto label_4;
+    }
+    if (ebx == 3) {
+        goto label_5;
+    }
+    if (ebx == 2) {
+        goto label_6;
+    }
+    if (ebx != 4) {
+        goto label_7;
+    }
+    do {
+        rax = 0x6400000001;
+    } while (rcx != 0);
+    ecx = 0x29;
+    rdx = .rodata.cst8;
+    *((rsp + 0x408)) = 0xffffffff;
+    *((rsp + 0x418)) = rax;
+    rdi = r12;
+    rax = 0xfffffffe00000001;
+    rsi = r14;
+    *((rsp + 0x410)) = 4;
+    *((rsp + 0x428)) = rax;
+    *((rsp + 0x43c)) = 0xfffffffe;
+    *((rsp + 0x444)) = 0xffffffff;
+    *((rsp + 0x450)) = rdx;
+    *((rsp + 0x468)) = rax;
+    *(rdi) = *(rsi);
+    rcx--;
+    rsi += 8;
+    rdi += 8;
+    do {
+label_0:
+        *((r12 + 8)) = r13d;
+        *((r12 + 0x10)) = ebx;
+        rax = *((rsp + 0x548));
+        rax ^= *(fs:0x28);
+        if (ebx != 4) {
+            goto label_8;
+        }
+        rax = r12;
+        return rax;
+label_5:
+        rax = 0x6400000001;
+        ecx = 0x29;
+        *((rsp + 0x168)) = 0xffffffff;
+        rdi = r12;
+        *((rsp + 0x178)) = rax;
+        rsi = r15;
+        rax = 0xfffffffe00000001;
+        *((rsp + 0x188)) = rax;
+        rax = .rodata.cst8;
+        *((rsp + 0x170)) = 3;
+        *((rsp + 0x1b0)) = rax;
+        rax = 0xfffffffc00000001;
+        *((rsp + 0x1c8)) = rax;
+        rax = 0x200000002;
+        *((rsp + 0x230)) = rax;
+        rax = *(loc..LC48);
+        *((rsp + 0x19c)) = 0xfffffffc;
+        *((rsp + 0x240)) = rax;
+        rax = *(loc..LC49);
+        *((rsp + 0x1a4)) = 0xffffffff;
+        *((rsp + 0x248)) = rax;
+        *(rdi) = *(rsi);
+        rcx--;
+        rsi += 8;
+        rdi += 8;
+    } while (1);
+label_4:
+    ecx = 0x29;
+    rdi = r12;
+    rsi = rbp;
+    *(rdi) = *(rsi);
+    rcx--;
+    rsi += 8;
+    rdi += 8;
+    *((r12 + 0x3c)) = 0xfffffff9;
+    *((r12 + 0x18)) = 3;
+    goto label_0;
+    do {
+label_2:
+        rsi = "object";
+    } while (rcx != 0);
+    edi = 0x148;
+    *((rsp + 8)) = r8;
+    rax = sm_palette ();
+    r8 = *((rsp + 8));
+    r12 = rax;
+    goto label_1;
+label_3:
+    rdi = *((rdx + 0xa8));
+    *((rsp + 8)) = r8;
+    sm_palette ();
+    r8 = *((rsp + 8));
+    goto label_1;
+label_6:
+    rax = 0x6400000001;
+    ecx = 0x29;
+    *((rsp + 0x2b8)) = 0xffffffff;
+    rdi = r12;
+    *((rsp + 0x2c8)) = rax;
+    rsi = r8;
+    rax = 0xfffffffe00000001;
+    *((rsp + 0x2d8)) = rax;
+    rax = .rodata.cst8;
+    *((rsp + 0x2c0)) = 2;
+    *((rsp + 0x300)) = rax;
+    rax = 0xfffffffc00000001;
+    *((rsp + 0x318)) = rax;
+    rax = *(loc..LC50);
+    *((rsp + 0x2ec)) = 0xfffffffc;
+    *((rsp + 0x390)) = rax;
+    rax = *(loc..LC51);
+    *((rsp + 0x2f4)) = 0xffffffff;
+    *((rsp + 0x350)) = 1;
+    *((rsp + 0x380)) = 2;
+    *((rsp + 0x3b0)) = rax;
+    *((rsp + 0x3b8)) = 1;
+    *(rdi) = *(rsi);
+    rcx--;
+    rsi += 8;
+    rdi += 8;
+    goto label_0;
+label_8:
+    eax = sm_palette ();
+label_7:
+    rsi = "object initialization failure";
+    edi |= 0xffffffff;
+    eax = 0;
+    sm_palette ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8002350 */
+#include <stdint.h>
+ 
+int64_t set_termoptions (void) {
+    eax = *(reloc.c_token);
+    ebx = *(reloc.num_tokens);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    while (eax != 0) {
+label_0:
+        return eax;
+        rsi = loc__LC4;
+        eax = sm_palette ();
+    }
+    if (*(reloc.term) == 0) {
+        goto label_0;
+    }
+    edi = *(reloc.c_token);
+    rsi = "enh$anced";
+    eax = sm_palette ();
+    while (eax != 0) {
+        eax = *(reloc.num_tokens);
+        edx = *(reloc.c_token);
+        ecx = rdx + 1;
+        if (edx < eax) {
+            eax = ecx;
+        }
+        *(reloc.num_tokens) = eax;
+        rax = *(reloc.term);
+        if (*((rax + 0xf8)) == 0) {
+            goto label_8;
+        }
+label_1:
+        *(reloc.term_options) = 0;
+        uint64_t (*rax + 0x28)() ();
+label_2:
+        *(reloc.num_tokens) = ebx;
+        return rax;
+        edi = *(reloc.c_token);
+        rsi = "noenh$anced";
+        eax = sm_palette ();
+    }
+    edi = *(reloc.c_token);
+    rsi = "font";
+    eax = sm_palette ();
+    while (eax != 0) {
+        edx = *(reloc.c_token);
+        eax = *(reloc.num_tokens);
+        ecx = rdx + 1;
+        edx += 2;
+        if (ecx < eax) {
+            eax = edx;
+        }
+        *(reloc.num_tokens) = eax;
+        rax = *(reloc.term);
+        goto label_1;
+label_8:
+        *(reloc.c_token) = ecx;
+        goto label_2;
+        edi = *(reloc.c_token);
+        rsi = "fname";
+        eax = sm_palette ();
+    }
+    edi = *(reloc.c_token);
+    rsi = "fontscale";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_9;
+    }
+    edx = *(reloc.c_token);
+    eax = *(reloc.num_tokens);
+    ecx = rdx + 1;
+    edx += 2;
+    if (ecx < eax) {
+        eax = edx;
+    }
+    *(reloc.num_tokens) = eax;
+    rax = *(reloc.term);
+    if ((*((rax + 0xa9)) & 0x10) != 0) {
+        goto label_1;
+    }
+    *(reloc.c_token) = ecx;
+    sm_palette ();
+    goto label_2;
+label_9:
+    edi = *(reloc.c_token);
+    rsi = "pointscale";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_10;
+    }
+label_3:
+    ecx = *(reloc.c_token);
+    eax = *(reloc.num_tokens);
+    edx = rcx + 1;
+    if (edx < eax) {
+        eax = rcx + 2;
+    }
+    *(reloc.num_tokens) = eax;
+    rax = *(reloc.term);
+    if ((*((rax + 0xa9)) & 0x20) != 0) {
+        goto label_1;
+    }
+label_4:
+    *(reloc.c_token) = edx;
+    sm_palette ();
+    goto label_2;
+label_10:
+    edi = *(reloc.c_token);
+    rsi = loc__LC88;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_3;
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC89;
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_11;
+    }
+label_5:
+    ecx = *(reloc.c_token);
+    eax = *(reloc.num_tokens);
+    edx = rcx + 1;
+    if (edx < eax) {
+        eax = rcx + 2;
+    }
+    *(reloc.num_tokens) = eax;
+    rax = *(reloc.term);
+    if ((*((rax + 0xa9)) & 8) != 0) {
+        goto label_1;
+    }
+    goto label_4;
+label_11:
+    edi = *(reloc.c_token);
+    rsi = "linew$idth";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_5;
+    }
+    edi = *(reloc.c_token);
+    rsi = "dash$ed";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_12;
+    }
+label_6:
+    eax = *(reloc.c_token);
+    edx = rax + 1;
+    *(reloc.c_token) = edx;
+    if (edx > *(reloc.num_tokens)) {
+        goto label_2;
+    }
+    eax += 2;
+    *(reloc.c_token) = eax;
+    goto label_2;
+label_12:
+    edi = *(reloc.c_token);
+    rsi = "solid";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_6;
+    }
+    edi = *(reloc.c_token);
+    rsi = "dashl$ength";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_13;
+    }
+label_7:
+    edx = *(reloc.c_token);
+    eax = *(reloc.num_tokens);
+    ecx = rdx + 1;
+    if (ecx < eax) {
+        eax = rdx + 2;
+    }
+    *(reloc.num_tokens) = eax;
+    rax = *(reloc.term);
+    if ((*((rax + 0xa9)) & 1) != 0) {
+        goto label_1;
+    }
+    edx += 2;
+    *(reloc.c_token) = edx;
+    goto label_2;
+label_13:
+    edi = *(reloc.c_token);
+    rsi = loc__LC94;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_7;
+    }
+    rax = *(reloc.term);
+    rsi = loc__LC95;
+    rdi = *(rax);
+    eax = sm_palette ();
+    edi = *(reloc.c_token);
+    if (eax != 0) {
+        goto label_14;
+    }
+    rsi = "delay";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_15;
+    }
+    rax = *(reloc.term);
+    if (*(reloc.num_tokens) == 4) {
+        goto label_1;
+    }
+label_15:
+    edi = *(reloc.c_token);
+label_14:
+    rsi = "This option cannot be changed using 'set termoption';
+    eax = 0;
+    sm_palette ();
+}
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8005f30 */
+#include <stdint.h>
+ 
+uint64_t set_range (int64_t arg1) {
+    rdi = arg1;
+    rsi = "re$store";
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    eax = sm_palette (rbx);
+    if (eax == 0) {
+        goto label_4;
+    }
+    xmm0 = *((rbp + 0x30));
+    *(reloc.c_token)++;
+    *((rbp + 4)) = 0;
+    *((rbp + 0x20)) = xmm0;
+    xmm0 = *((rbp + 0x38));
+    *((rbp + 0x28)) = xmm0;
+label_0:
+    rsi = *((rbp + 0xa8));
+    while (rsi != 0) {
+        rdi = rbp;
+        void (*0x8090034)() ();
+        rsi = *((rbp + 0xa0));
+    }
+    return eax;
+label_4:
+    edi = *(reloc.c_token);
+    rsi = loc__LC204;
+    eax = sm_palette ();
+    edi = *(reloc.c_token);
+    if (eax != 0) {
+        goto label_5;
+    }
+label_3:
+    rbx = loc__LC4;
+    if (edi < *(reloc.num_tokens)) {
+        goto label_6;
+    }
+    goto label_0;
+label_1:
+    eax = *(reloc.c_token);
+    *((rbp + 8)) |= 4;
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+label_2:
+    if (*(reloc.num_tokens) <= edi) {
+        goto label_0;
+    }
+label_6:
+    rsi = rbx;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_0;
+    }
+    edi = *(reloc.c_token);
+    rsi = "rev$erse";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_1;
+    }
+    edi = *(reloc.c_token);
+    rsi = "norev$erse";
+    eax = sm_palette ();
+    if (eax != 0) {
+        eax = *(reloc.c_token);
+        *((rbp + 8)) &= 0xfffffffb;
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_2;
+    }
+    edi = *(reloc.c_token);
+    rsi = "wr$iteback";
+    eax = sm_palette ();
+    if (eax != 0) {
+        eax = *(reloc.c_token);
+        *((rbp + 8)) |= 1;
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_2;
+    }
+    edi = *(reloc.c_token);
+    rsi = "nowri$teback";
+    eax = sm_palette ();
+    if (eax != 0) {
+        eax = *(reloc.c_token);
+        *((rbp + 8)) &= 0xfffffffe;
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_2;
+label_5:
+        ecx = *((rbp + 4));
+        rsi = rbp + 0x20;
+        rdi = rbp;
+        rdx = rbp + 0x28;
+        *(reloc.c_token)++;
+        eax = sm_palette ();
+        edi = *(reloc.c_token);
+        rsi = loc__LC209;
+        *((rbp + 4)) = eax;
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_7;
+        }
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_3;
+    }
+    edi = *(reloc.c_token);
+    rsi = "ext$end";
+    eax = sm_palette ();
+    if (eax != 0) {
+        eax = *(reloc.c_token);
+        *((rbp + 4)) &= 0xfffffff3;
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_2;
+    }
+    edi = *(reloc.c_token);
+    rsi = "noext$end";
+    eax = sm_palette ();
+    if (eax != 0) {
+        eax = *(reloc.c_token);
+        *((rbp + 4)) |= 0xc;
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_2;
+label_7:
+        edi = *(reloc.c_token);
+        rsi = "expecting ']';
+        eax = sm_palette ();
+    }
+    edi = *(reloc.c_token);
+    rsi = "unrecognized option";
+    eax = 0;
+    rax = sm_palette ();
+}
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8006920 */
+#include <stdint.h>
+ 
+int32_t set_timedata_isra_0 (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    rsi = "t$ime";
+    rbx = rdi;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    *(rbx) = 0;
+    eax = sm_palette (rbx);
+    if (eax == 0) {
+        goto label_0;
+    }
+    *(rbx) = 1;
+    *(reloc.c_token)++;
+    do {
+        eax = *(rbx);
+        *(rbp) = eax;
+        return eax;
+label_0:
+        edi = *(reloc.c_token);
+        rsi = "geo$graphic";
+        eax = sm_palette ();
+    } while (eax == 0);
+    *(rbx) = 2;
+    *(reloc.c_token)++;
+    eax = *(rbx);
+    *(rbp) = eax;
+    return eax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x80069a0 */
+#include <stdint.h>
+ 
+int64_t set_margin_isra_0 (int64_t arg1, int64_t arg2) {
+    int64_t var_8h;
+    rdi = arg1;
+    rsi = arg2;
+    rbx = rdi;
+    rax = *(loc..LC275);
+    *(rdi) = 4;
+    *(rsi) = rax;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    while (eax != 0) {
+label_0:
+        return rax;
+        rsi = loc__LC4;
+        eax = sm_palette ();
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC16;
+    eax = sm_palette ();
+    if (eax != 0) {
+        eax = *(reloc.c_token);
+        rsi = "sc$reen";
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_1;
+        }
+    }
+    edi = *(reloc.c_token);
+    rsi = "sc$reen";
+    eax = sm_palette ();
+    if (eax != 0) {
+        *(rbx) = 3;
+        *(reloc.c_token)++;
+    }
+    sm_palette ();
+    xmm1 = 0;
+    __asm ("comisd xmm1, xmm0");
+    if (*(reloc.c_token) > 0) {
+        goto label_2;
+    }
+    *(rbp) = xmm0;
+    if (*(rbx) != 3) {
+        goto label_0;
+    }
+    __asm ("comisd xmm1, xmm0");
+    if (*(rbx) > 3) {
+        goto label_3;
+    }
+    xmm1 = .rodata.cst8;
+    __asm ("comisd xmm0, xmm1");
+    if (*(rbx) <= 3) {
+        goto label_4;
+    }
+    *(rbp) = xmm1;
+    goto label_0;
+label_2:
+    rax = *(loc..LC275);
+    *(rbp) = rax;
+    if (*(rbx) != 3) {
+        goto label_0;
+    }
+label_3:
+    __asm ("movapd xmm0, xmm1");
+label_4:
+    *(rbp) = xmm0;
+    goto label_0;
+label_1:
+    edi = *(reloc.c_token);
+    rsi = "expecting 'screen <fraction>';
+    sm_palette ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8006c40 */
+#include <stdint.h>
+ 
+int64_t set_zeroaxis (int64_t arg11, int64_t arg10, int64_t arg9, int64_t arg8, int64_t arg7, int64_t arg1) {
+    xmm4 = arg11;
+    xmm3 = arg10;
+    xmm2 = arg9;
+    xmm1 = arg8;
+    xmm0 = arg7;
+    rdi = arg1;
+    eax = *(reloc.c_token);
+    r12 = reloc_default_axis_zeroaxis;
+    rbp = reloc_axis_array;
+    rbx = (int64_t) edi;
+    r8d = rax + 1;
+    rax = rbx * 0x2a8;
+    *(reloc.c_token) = r8d;
+    rdi = *((rbp + rax + 0x298));
+    if (rdi != r12) {
+        sm_palette ();
+        r8d = *(reloc.c_token);
+    }
+    while (eax != 0) {
+        rbx *= 0x2a8;
+        *((rbp + rbx + 0x298)) = r12;
+        return rax;
+        rsi = loc__LC4;
+        edi = r8d;
+        eax = sm_palette ();
+    }
+    rbx *= 0x2a8;
+    rsi = "zeroaxis";
+    edi = 0x68;
+    rax = sm_palette ();
+    __asm ("movdqu xmm0, xmmword [reloc.default_axis_zeroaxis]");
+    edx = 0;
+    __asm ("movdqu xmm1, xmmword [reloc.df_separators]");
+    __asm ("movdqu xmm2, xmmword [reloc.strdup]");
+    rdi = rax;
+    esi = 2;
+    __asm ("movdqu xmm3, xmmword [reloc.df_fortran_constants]");
+    __asm ("movdqu xmm4, xmmword [reloc.df_columnheaders]");
+    __asm ("movdqu xmm5, xmmword [reloc.init_color]");
+    *((rbp + rbx + 0x298)) = rax;
+    __asm ("movups xmmword [rax], xmm0");
+    __asm ("movups xmmword [rax + 0x10], xmm1");
+    __asm ("movups xmmword [rax + 0x20], xmm2");
+    __asm ("movups xmmword [rax + 0x30], xmm3");
+    __asm ("movups xmmword [rax + 0x40], xmm4");
+    __asm ("movups xmmword [rax + 0x50], xmm5");
+    rax = *(reloc.pm3d_color_names_tbl);
+    *((rdi + 0x60)) = rax;
+    return void (*0x8090034)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8006d40 */
+#include <stdint.h>
+ 
+uint64_t set_separator (int64_t arg1) {
+    rdi = arg1;
+    rbx = rdi;
+    rdi = *(rdi);
+    *(reloc.c_token)++;
+    sm_palette (rbx);
+    edi = *(reloc.c_token);
+    *(rbx) = 0;
+    while (eax != 0) {
+label_0:
+        return;
+        rsi = loc__LC4;
+        eax = sm_palette ();
+    }
+    edi = *(reloc.c_token);
+    rsi = "white$space";
+    eax = sm_palette ();
+    while (1) {
+        *(reloc.c_token)++;
+        return eax;
+        edi = *(reloc.c_token);
+        rsi = "space";
+        eax = sm_palette ();
+        if (eax != 0) {
+            goto label_1;
+        }
+        edi = *(reloc.c_token);
+        rsi = "comma";
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_2;
+        }
+        rdi = loc__LC9;
+        rax = sm_palette ();
+        *(rbx) = rax;
+    }
+label_1:
+    rdi = loc__LC281;
+    rax = sm_palette ();
+    *(rbx) = rax;
+    *(reloc.c_token)++;
+    return rax;
+label_2:
+    edi = *(reloc.c_token);
+    rsi = loc__LC283;
+    eax = sm_palette ();
+    if (eax == 0) {
+        edi = *(reloc.c_token);
+        rsi = loc__LC285;
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_3;
+        }
+    }
+    rdi = loc__LC284;
+    rax = sm_palette ();
+    *(rbx) = rax;
+    *(reloc.c_token)++;
+    return rax;
+label_3:
+    rax = sm_palette ();
+    *(rbx) = rax;
+    if (rax != 0) {
+        goto label_0;
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC286;
+    sm_palette ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x80072a0 */
+#include <stdint.h>
+ 
+int64_t set_palette_defined (int64_t arg7) {
+    int64_t var_ch;
+    int64_t var_68h;
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_24h;
+    int64_t var_28h;
+    int64_t var_2ch;
+    int64_t var_50h;
+    int64_t var_58h;
+    int64_t var_60h;
+    int64_t var_68h_2;
+    int64_t var_70h;
+    int64_t var_78h;
+    int64_t var_80h;
+    int64_t var_88h;
+    int64_t var_90h;
+    int64_t var_98h;
+    int64_t var_a0h;
+    int64_t var_a8h;
+    int64_t var_b0h;
+    int64_t var_b8h;
+    int64_t var_c0h;
+    int64_t var_c8h;
+    int64_t var_d0h;
+    int64_t var_d8h;
+    int64_t var_e0h;
+    int64_t var_e8h;
+    int64_t var_f0h;
+    int64_t var_f8h;
+    int64_t var_100h;
+    int64_t var_108h;
+    int64_t var_110h;
+    int64_t var_118h;
+    int64_t var_120h;
+    int64_t var_128h;
+    int64_t var_130h;
+    int64_t var_138h;
+    xmm0 = arg7;
+    rax = *(fs:0x28);
+    *((rsp + 0x138)) = rax;
+    eax = 0;
+    sm_palette (rbx, rbp, r12, r13, r14);
+    rdi = *(reloc.set_colorbox_tbl);
+    sm_palette ();
+    edi = 0x100;
+    rsi = "pm3d gradient";
+    rax = sm_palette ();
+    rcx = .rodata.cst8;
+    edi = *(reloc.c_token);
+    *(reloc.set_colorbox_tbl) = rax;
+    *(reloc.lookup_table) = rcx;
+    if (edi < *(reloc.num_tokens)) {
+        goto label_6;
+    }
+label_0:
+    rcx = .rodata.cst8;
+    xmm0 = .LC307;
+    *((rsp + 0x58)) = 0;
+    rdx = rsp + 0x50;
+    xmm1 = *(loc..LC305);
+    xmm4 = *(loc..LC153);
+    *((rsp + 0x60)) = 0;
+    *((rsp + 0x68)) = rcx;
+    rcx = *(loc..LC304);
+    *((rsp + 0x88)) = xmm0;
+    *((rsp + 0x70)) = rcx;
+    rcx = *(loc..LC306);
+    *((rsp + 0xf0)) = xmm0;
+    xmm0 = *(loc..LC310);
+    *((rsp + 0x80)) = rcx;
+    rcx = *(loc..LC308);
+    *((rsp + 0x78)) = xmm1;
+    *((rsp + 0x90)) = rcx;
+    rcx = *(loc..LC309);
+    *((rsp + 0xd0)) = xmm1;
+    xmm1 = 0;
+    *((rsp + 0xa0)) = rcx;
+    rcx = *(loc..LC191);
+    *((rsp + 0x98)) = 0;
+    *((rsp + 0xb0)) = rcx;
+    rcx = .rodata.cst8;
+    *((rsp + 0xa8)) = 0;
+    *((rsp + 0xb8)) = rcx;
+    *((rsp + 0xc0)) = rcx;
+    *((rsp + 0xd8)) = rcx;
+    *((rsp + 0xc8)) = 0;
+    *((rsp + 0xe0)) = 0;
+    *((rsp + 0xe8)) = 0;
+    *((rsp + 0x50)) = xmm4;
+    *((rsp + 0xf8)) = xmm0;
+    xmm3 = *(loc..LC192);
+    *((rsp + 0x100)) = xmm0;
+    *((rsp + 0x108)) = xmm0;
+    xmm0 = *(loc..LC311);
+    *((rsp + 0x110)) = rcx;
+    rcx = rsp + 0x130;
+    *((rsp + 0x118)) = xmm0;
+    *((rsp + 0x120)) = xmm0;
+    *((rsp + 0x128)) = xmm0;
+    xmm0 = *(loc..LC48);
+    __asm ("movapd xmm2, xmm0");
+    while (rcx != rdx) {
+        xmm1 = *(rdx);
+        xmm2 = *((rdx + 8));
+        rdx += 0x20;
+        xmm0 = *((rdx - 0x10));
+        xmm3 = *((rdx - 8));
+        *(rax) = xmm1;
+        rax += 0x20;
+        *((rax - 0x18)) = xmm2;
+        *((rax - 0x10)) = xmm0;
+        *((rax - 8)) = xmm3;
+    }
+    edi--;
+    *(reloc.lookup_table) = xmm4;
+    r15d = 0;
+    *(0x08090060) = 8;
+    *(reloc.get_position_default) = 0x72;
+    *(reloc.c_token) = edi;
+label_2:
+    rax = *((rsp + 0x138));
+    rax ^= *(fs:0x28);
+    if (edi != 0) {
+        goto label_7;
+    }
+    eax = r15d;
+    return rax;
+label_6:
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    r15d = eax;
+    if (eax != 0) {
+        rax = *(reloc.set_colorbox_tbl);
+        edi = *(reloc.c_token);
+        goto label_0;
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC312;
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_8;
+    }
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_9;
+    }
+    r12d = 0;
+    r13d = 8;
+    r14 = rsp + 0x2c;
+label_1:
+    rsi = loc__LC4;
+    ebx = r12 - 1;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_10;
+    }
+    sm_palette ();
+    *(rsp) = xmm0;
+    rax = sm_palette ();
+    if (rax == 0) {
+        goto label_11;
+    }
+    eax = *(rax);
+    if (al == 0x23) {
+        goto label_12;
+    }
+    if (al == 0x30) {
+        goto label_12;
+    }
+    rbx = *(reloc.pm3d_color_names_tbl);
+    rsi = *(rbx);
+    if (rsi != 0) {
+        goto label_13;
+    }
+    goto label_14;
+    do {
+        rsi = *((rbx + 0x10));
+        rbx += 0x10;
+        if (rsi == 0) {
+            goto label_14;
+        }
+label_13:
+        rdi = rbp;
+        eax = sm_palette ();
+    } while (eax != 0);
+    eax = *((rbx + 8));
+    xmm0 = 0;
+    r15d = 1;
+    edx = eax;
+    edx >>= 0x10;
+    edx = (int32_t) dl;
+    __asm ("cvtsi2sd xmm0, edx");
+    edx = (int32_t) ah;
+    __asm ("divsd xmm0, qword [loc..LC317]");
+    *((rsp + 8)) = xmm0;
+    xmm0 = 0;
+    eax = (int32_t) al;
+    __asm ("cvtsi2sd xmm0, edx");
+    __asm ("divsd xmm0, qword [loc..LC317]");
+    *((rsp + 0x10)) = xmm0;
+    xmm0 = 0;
+    __asm ("cvtsi2sd xmm0, eax");
+    __asm ("divsd xmm0, qword [loc..LC317]");
+    *((rsp + 0x18)) = xmm0;
+label_3:
+    rdi = rbp;
+    sm_palette ();
+label_5:
+    rdi = *(reloc.set_colorbox_tbl);
+    ebx = r12d;
+    if (r13d <= r12d) {
+        goto label_15;
+    }
+label_4:
+    rax = r12;
+    xmm5 = *(rsp);
+    xmm6 = *((rsp + 8));
+    rsi = loc__LC319;
+    rax <<= 5;
+    xmm7 = *((rsp + 0x10));
+    xmm4 = *((rsp + 0x18));
+    rdi += rax;
+    *(rdi) = xmm5;
+    *((rdi + 8)) = xmm6;
+    *((rdi + 0x10)) = xmm7;
+    *((rdi + 0x18)) = xmm4;
+    edi = *(reloc.c_token);
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_10;
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC9;
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_16;
+    }
+    eax = *(reloc.c_token);
+    r12++;
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi < *(reloc.num_tokens)) {
+        goto label_1;
+    }
+label_10:
+    if (ebx <= 0) {
+        goto label_9;
+    }
+    ebx++;
+    *(0x08090060) = ebx;
+    eax = _text ();
+    goto label_2;
+label_12:
+    rbx = rsp + 0x24;
+    rcx = rsp + 0x28;
+    eax = 0;
+    r8 = r14;
+    rdx = rbx;
+    rsi = "#%2x%2x%2x";
+    rdi = rbp;
+    *((rsp + 8)) = rcx;
+    eax = sm_palette ();
+    if (eax != 3) {
+        rcx = *((rsp + 8));
+        eax = 0;
+        r8 = r14;
+        rdx = rbx;
+        rsi = "0x%2x%2x%2x";
+        rdi = rbp;
+        eax = sm_palette ();
+        if (eax != 3) {
+            goto label_17;
+        }
+    }
+    xmm0 = 0;
+    __asm ("cvtsi2sd xmm0, dword [rsp + 0x24]");
+    __asm ("divsd xmm0, qword [loc..LC317]");
+    *((rsp + 8)) = xmm0;
+    xmm0 = 0;
+    __asm ("cvtsi2sd xmm0, dword [rsp + 0x28]");
+    __asm ("divsd xmm0, qword [loc..LC317]");
+    *((rsp + 0x10)) = xmm0;
+    xmm0 = 0;
+    __asm ("cvtsi2sd xmm0, dword [rsp + 0x2c]");
+    __asm ("divsd xmm0, qword [loc..LC317]");
+    *((rsp + 0x18)) = xmm0;
+    goto label_3;
+label_15:
+    r13d += 0xa;
+    rdx = "pm3d gradient";
+    rsi = (int64_t) r13d;
+    rsi <<= 5;
+    rax = sm_palette ();
+    *(reloc.set_colorbox_tbl) = rax;
+    rdi = rax;
+    goto label_4;
+label_11:
+    sm_palette ();
+    xmm4 = 0;
+    __asm ("comisd xmm4, xmm0");
+    *((rsp + 8)) = xmm0;
+    if (rsi > 0) {
+        goto label_18;
+    }
+    __asm ("comisd xmm0, xmmword [loc..LC1]");
+    if (rsi > 0) {
+        goto label_18;
+    }
+    sm_palette ();
+    xmm4 = 0;
+    __asm ("comisd xmm4, xmm0");
+    *((rsp + 0x10)) = xmm0;
+    if (rsi > 0) {
+        goto label_18;
+    }
+    __asm ("comisd xmm0, xmmword [loc..LC1]");
+    if (rsi > 0) {
+        goto label_18;
+    }
+    sm_palette ();
+    xmm2 = 0;
+    __asm ("comisd xmm2, xmm0");
+    *((rsp + 0x18)) = xmm0;
+    if (rsi > 0) {
+        goto label_18;
+    }
+    __asm ("comisd xmm0, xmmword [loc..LC1]");
+    if (rsi <= 0) {
+        goto label_5;
+    }
+label_18:
+    eax = *(reloc.c_token);
+    rsi = "Value out of range [0,1].";
+    edi = rax - 1;
+    eax = 0;
+    sm_palette ();
+label_9:
+    eax = .data;
+    if (eax != 0) {
+        eax = reset_palette_part_0 ();
+    }
+    edi = *(reloc.c_token);
+    rsi = "invalid palette syntax";
+    eax = 0;
+    sm_palette ();
+label_16:
+    edi = *(reloc.c_token);
+    rsi = "expected comma";
+    sm_palette ();
+label_7:
+    sm_palette ();
+label_8:
+    edi = *(reloc.c_token);
+    rsi = "expected ( to start gradient definition";
+    sm_palette ();
+label_14:
+    eax = *(reloc.c_token);
+    rsi = "Unknown color name.";
+    edi = rax - 1;
+    eax = 0;
+    sm_palette ();
+label_17:
+    eax = *(reloc.c_token);
+    rsi = "Unknown color specifier. Use '#RRGGBB' of '0xRRGGBB'.";
+    edi = rax - 1;
+    eax = 0;
+    sm_palette ();
+}
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x800b160 */
+#include <stdint.h>
+ 
+int64_t set_key (void) {
+    int64_t var_18h;
+    rsi = "keyt$itle";
+    edi = *(reloc.c_token);
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    eax = sm_palette (rbx, rbp, r12, r13);
+    if (eax == 0) {
+        *(rdi) = al;
+        rdi++;
+        *(rax) += al;
+        eax = *(reloc.c_token);
+        r13d = 0;
+    }
+    r13d = 0;
+    r12d = 0;
+    ebp = 0;
+    ebx = 0;
+}
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8008670 */
+#include <stdint.h>
+ 
+int64_t set_format (void) {
+    int64_t var_dh;
+    int64_t var_eh;
+    int64_t var_15h;
+    int64_t var_17h;
+    int64_t var_18h;
+    __asm ("endbr64");
+    edx = 0;
+    rdi = reloc_axisname_tbl;
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    eax = *(reloc.c_token);
+    *((rsp + 0x15)) = dx;
+    *((rsp + 0xd)) = 0;
+    esi = rax + 1;
+    *((rsp + 0x17)) = 0;
+    *(reloc.c_token) = esi;
+    eax = sm_palette (rbx, rbp, r12, r13);
+    if (eax < 0) {
+        goto label_6;
+    }
+    rax = (int64_t) eax;
+    *((rsp + rax + 0xd)) = 1;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+label_4:
+    if (*(reloc.num_tokens) > edi) {
+        goto label_7;
+    }
+label_1:
+    rbx = reloc_Ginteger;
+    rbp = rsp + 0xd;
+    r12 = rbx + 0x1540;
+    r13 = loc__LC346;
+    while (*(rbp) == 0) {
+        rbx += 0x2a8;
+        rbp++;
+        if (r12 == rbx) {
+            goto label_8;
+        }
+label_0:
+    }
+    rdi = *(rbx);
+    rbx += 0x2a8;
+    rbp++;
+    sm_palette ();
+    rdi = r13;
+    rax = sm_palette ();
+    *((rbx - 0x2b0)) = 0;
+    *((rbx - 0x2a8)) = rax;
+    if (r12 != rbx) {
+        goto label_0;
+    }
+label_8:
+    rax = *((rsp + 0x18));
+    rax ^= *(fs:0x28);
+    if (r12 != rbx) {
+        goto label_9;
+    }
+    return rax;
+label_7:
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_1;
+    }
+    rax = sm_palette ();
+    r13 = rax;
+    if (rax == 0) {
+        goto label_10;
+    }
+    edi = *(reloc.c_token);
+    rsi = "time$date";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_11;
+    }
+    *(reloc.c_token)++;
+    r14d = 1;
+label_5:
+    rbx = reloc_Ginteger;
+    rbp = rsp + 0xd;
+    r12 = rbx + 0x1540;
+    while (*(rbp) == 0) {
+label_2:
+        rbx += 0x2a8;
+        rbp++;
+        if (rbx == r12) {
+            goto label_12;
+        }
+label_3:
+    }
+    rdi = *(rbx);
+    sm_palette ();
+    rdi = r13;
+    rax = sm_palette ();
+    *(rbx) = rax;
+    if (r14d == 3) {
+        goto label_2;
+    }
+    *((rbx - 8)) = r14d;
+    rbx += 0x2a8;
+    rbp++;
+    if (rbx != r12) {
+        goto label_3;
+    }
+label_12:
+    rax = *((rsp + 0x18));
+    rax ^= *(fs:0x28);
+    if (rbx != r12) {
+        goto label_9;
+    }
+    rdi = r13;
+    void (*0x8090034)() ();
+label_6:
+    edi = *(reloc.c_token);
+    rsi = loc__LC41;
+    eax = sm_palette ();
+    while (eax != 0) {
+        eax = 0x101;
+        *((rsp + 0xe)) = ax;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_4;
+        edi = *(reloc.c_token);
+        rsi = loc__LC42;
+        eax = sm_palette ();
+    }
+    rax = rsp + 0xd;
+    rdx = rsp + 0x18;
+    do {
+        *(rax) = 1;
+        rax++;
+    } while (rax != rdx);
+    edi = *(reloc.c_token);
+    goto label_4;
+label_11:
+    edi = *(reloc.c_token);
+    rsi = "geo$graphic";
+    eax = sm_palette ();
+    if (eax != 0) {
+        *(reloc.c_token)++;
+        r14d = 2;
+        goto label_5;
+    }
+    edi = *(reloc.c_token);
+    rsi = "num$eric";
+    r14d = 3;
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_5;
+    }
+    *(reloc.c_token)++;
+    r14d = 0;
+    goto label_5;
+label_9:
+    eax = sm_palette ();
+label_10:
+    edi = *(reloc.c_token);
+    rsi = "expecting format string";
+    eax = 0;
+    sm_palette ();
+    __asm ("endbr64");
+    eax = .data;
+    if (eax == 0) {
+        return rax;
+    }
+    return reset_palette_part_0 ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8008960 */
+#include <stdint.h>
+ 
+int64_t delete_linestyle (int64_t arg1, int64_t arg2, int64_t arg3) {
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    __asm ("endbr64");
+    rax = rdi;
+    rdi = rdx;
+    if (rdx != 0) {
+        rdx = *(rdx);
+        if (*(rax) != rdi) {
+            *(rsi) = rdx;
+            void (*0x8090034)() ();
+        }
+        *(rax) = rdx;
+        void (*0x8090034)() ();
+    }
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x80089a0 */
+#include <stdint.h>
+ 
+void free_marklist (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    if (rdi == 0) {
+        goto label_0;
+    }
+    rbx = rdi;
+    do {
+        rbx = *((rbx + 0x18));
+        rdi = *((rbp + 8));
+        if (rdi != 0) {
+            sm_palette ();
+        }
+        rdi = rbp;
+        sm_palette ();
+    } while (rbx != 0);
+    return;
+label_0:
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8009be0 */
+#include <stdint.h>
+ 
+int64_t prune_dataticks (int64_t arg1) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_28h;
+    rdi = arg1;
+    __asm ("endbr64");
+    rax = *(fs:0x28);
+    *((rsp + 0x28)) = rax;
+    eax = 0;
+    *(rsp) = 0;
+    *((rsp + 8)) = 0;
+    *((rsp + 0x10)) = 0;
+    *((rsp + 0x18)) = 0;
+    if (rdi == 0) {
+        goto label_1;
+    }
+    rbx = rsp;
+    while (eax >= 0) {
+        *((rbx + 0x18)) = rbp;
+        rbx = rbp;
+        rbp = *((rbp + 0x18));
+        if (rbp == 0) {
+            goto label_2;
+        }
+label_0:
+        eax = *((rbp + 0x10));
+    }
+    rdi = *((rbp + 8));
+    sm_palette ();
+    r12 = *((rbp + 0x18));
+    rdi = rbp;
+    sm_palette ();
+    if (rbp != 0) {
+        goto label_0;
+    }
+    do {
+label_2:
+        *((rbx + 0x18)) = 0;
+        rax = *((rsp + 0x18));
+        rdx = *((rsp + 0x28));
+        rdx ^= *(fs:0x28);
+        if (rbp != 0) {
+            goto label_3;
+        }
+        return rax;
+label_1:
+        rbx = rsp;
+    } while (1);
+label_3:
+    sm_palette ();
+    __asm ("endbr64");
+    rsi = "text_label";
+    ebx = edi;
+    edi = 0x100;
+    rax = sm_palette (rbx);
+    rdi = rax + 8;
+    rcx = rax;
+    *(rax) = 0;
+    r8 = rax;
+    *((rax + 0xf8)) = 0;
+    rdi &= 0xfffffffffffffff8;
+    eax = 0;
+    rcx -= rdi;
+    ecx += 0x100;
+    ecx >>= 3;
+    *(rdi) = rax;
+    rcx--;
+    rdi += 8;
+    *((r8 + 8)) = ebx;
+    rax = 0x400000004;
+    *((r8 + 0xd0)) = rax;
+    rax = r8;
+    *((r8 + 0x10)) = 0;
+    *((r8 + 0x18)) = 0;
+    *((r8 + 0x20)) = 0;
+    *((r8 + 0x28)) = 0;
+    *((r8 + 0x30)) = 0;
+    *((r8 + 0x38)) = 0;
+    *((r8 + 0x58)) = 0;
+    *((r8 + 0x70)) = 1;
+    *((r8 + 0xd8)) = 4;
+    *((r8 + 0xe0)) = 0;
+    *((r8 + 0xe8)) = 0;
+    *((r8 + 0xf0)) = 0;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x800dae0 */
+#include <stdint.h>
+ 
+int64_t set_command (void) {
+    int64_t var_18h;
+    __asm ("endbr64");
+    edi = *(reloc.c_token);
+    rdx = *(reloc.gp_input_line);
+    rax = *(fs:0x28);
+    *(rax) += al;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x80063a0 */
+#include <stdint.h>
+ 
+uint64_t set_cntrlabel (void) {
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_2;
+    }
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_2;
+    }
+    edi = *(reloc.c_token);
+    rbx = loc__LC4;
+    if (edi < *(reloc.num_tokens)) {
+        goto label_3;
+    }
+    goto label_4;
+    do {
+        *(reloc.c_token)++;
+        rax = sm_palette ();
+        if (rax != 0) {
+            edx = 0x20;
+            rsi = rax;
+            rdi = reloc_contour_format;
+            sm_palette ();
+        }
+        rdi = rbp;
+        sm_palette ();
+        edi = *(reloc.c_token);
+label_0:
+        if (*(reloc.num_tokens) <= edi) {
+            goto label_4;
+        }
+label_3:
+        rsi = rbx;
+        eax = sm_palette ();
+        if (eax != 0) {
+            goto label_4;
+        }
+        edi = *(reloc.c_token);
+        rsi = "form$at";
+        eax = sm_palette ();
+    } while (eax != 0);
+    edi = *(reloc.c_token);
+    rsi = "font";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_5;
+    }
+    *(reloc.c_token)++;
+    rax = sm_palette ();
+    edi = *(reloc.c_token);
+    if (rax == 0) {
+        goto label_0;
+    }
+    rdi = *(reloc.clabel_font);
+    sm_palette ();
+    *(reloc.clabel_font) = rbp;
+    edi = *(reloc.c_token);
+    goto label_0;
+label_2:
+    eax = 0x67;
+    *(reloc.clabel_onecolor) = 0;
+    *(reloc.contour_format) = 0x332e3825;
+    *(0x08090438) = ax;
+label_4:
+    return rax;
+label_5:
+    edi = *(reloc.c_token);
+    rsi = "one$color";
+    eax = sm_palette ();
+    if (eax != 0) {
+        eax = *(reloc.c_token);
+        *(reloc.clabel_onecolor) = 1;
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_0;
+    }
+    edi = *(reloc.c_token);
+    rsi = "start";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_6;
+    }
+    *(reloc.c_token)++;
+    eax = sm_palette ();
+    *(reloc.clabel_start) = eax;
+    while (1) {
+        edi = *(reloc.c_token);
+        goto label_0;
+label_6:
+        edi = *(reloc.c_token);
+        rsi = "int$erval";
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_7;
+        }
+        *(reloc.c_token)++;
+        eax = sm_palette ();
+        edi = *(reloc.c_token);
+        *(reloc.clabel_interval) = eax;
+        goto label_0;
+        *(reloc.clabel_start) = 5;
+    }
+label_7:
+    edi = *(reloc.c_token);
+    rsi = "unrecognized option";
+    eax = 0;
+    sm_palette ();
+    rbx = rsi;
+    rsi += 2;
+    edi = *(reloc.c_token);
+    eax = sm_palette (rbx);
+    if (eax == 0) {
+        goto label_8;
+    }
+    rdi = (int64_t) ebp;
+    rax = reloc_axis_array;
+    rdi *= 0x2a8;
+    if (*((rbx + 2)) == 0x6d) {
+        goto label_9;
+    }
+    *((rax + rdi + 0x140)) = 1;
+label_1:
+    *(reloc.c_token)++;
+    eax = 1;
+    do {
+        return rax;
+label_8:
+        edi = *(reloc.c_token);
+        rsi = rbx;
+        eax = sm_palette ();
+        r8d = eax;
+        eax = 0;
+    } while (r8d == 0);
+    if (*((rbx + 2)) != 0x6d) {
+        rax = (int64_t) ebp;
+        rdx = reloc_axis_array;
+        rax *= 0x2a8;
+        *((rdx + rax + 0x140)) = 0;
+        goto label_1;
+label_9:
+        *((rax + rdi + 0x141)) = 1;
+        goto label_1;
+    }
+    rdi = (int64_t) ebp;
+    rax = reloc_axis_array;
+    rdi *= 0x2a8;
+    *((rax + rdi + 0x141)) = 0;
+    goto label_1;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8007220 */
+#include <stdint.h>
+ 
+uint64_t set_datafile (void) {
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_3;
+    }
+    rbx = loc__LC4;
+    do {
+        rsi = rbx;
+        eax = sm_palette (rbx);
+        if (eax == 0) {
+            edi = *(reloc.c_token);
+            rsi = "miss$ing";
+            eax = sm_palette ();
+            if (eax == 0) {
+                goto label_4;
+            }
+            rdi = *(reloc.missing_val);
+            *(reloc.c_token)++;
+            sm_palette ();
+            edi = *(reloc.c_token);
+            *(reloc.missing_val) = 0;
+            if (edi < *(reloc.num_tokens)) {
+                goto label_5;
+            }
+        }
+label_0:
+        return eax;
+label_4:
+        edi = *(reloc.c_token);
+        rsi = "sep$arators";
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_6;
+        }
+        rdi = reloc_df_separators;
+        set_separator ();
+        edi = *(reloc.c_token);
+label_1:
+    } while (*(reloc.num_tokens) > edi);
+    goto label_0;
+label_6:
+    edi = *(reloc.c_token);
+    rsi = "com$mentschars";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_7;
+    }
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi < *(reloc.num_tokens)) {
+        rsi = rbx;
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_8;
+        }
+    }
+    rdi = *(reloc.df_commentschars);
+    sm_palette ();
+    rdi = loc__LC293;
+    rax = sm_palette ();
+    *(reloc.df_commentschars) = rax;
+label_2:
+    edi = *(reloc.c_token);
+    goto label_1;
+label_5:
+    rsi = rbx;
+    eax = sm_palette ();
+    edi = *(reloc.c_token);
+    if (eax != 0) {
+        goto label_1;
+    }
+    rsi = loc__LC288;
+    eax = sm_palette ();
+    if (eax == 0) {
+        edi = *(reloc.c_token);
+        rsi = loc__LC289;
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_9;
+        }
+    }
+    rdi = loc__LC288;
+    rax = sm_palette ();
+    *(reloc.missing_val) = rax;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    goto label_1;
+label_7:
+    edi = *(reloc.c_token);
+    rsi = "bin$ary";
+    eax = sm_palette ();
+    if (eax != 0) {
+        sm_palette ();
+        edi = *(reloc.c_token);
+        goto label_1;
+    }
+    edi = *(reloc.c_token);
+    rsi = "fort$ran";
+    eax = sm_palette ();
+    if (eax != 0) {
+        eax = *(reloc.c_token);
+        *(reloc.df_fortran_constants) = 1;
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_1;
+label_8:
+        rax = sm_palette ();
+        if (rax == 0) {
+            goto label_10;
+        }
+        rdi = *(reloc.df_commentschars);
+        sm_palette ();
+        *(reloc.df_commentschars) = rbp;
+        edi = *(reloc.c_token);
+        goto label_1;
+    }
+    edi = *(reloc.c_token);
+    rsi = "nofort$ran";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_11;
+    }
+    eax = *(reloc.c_token);
+    *(reloc.df_fortran_constants) = 0;
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    goto label_1;
+label_9:
+    rax = sm_palette ();
+    *(reloc.missing_val) = rax;
+    if (rax != 0) {
+        goto label_2;
+    }
+    edi = *(reloc.c_token);
+    rsi = "expected missing-value string";
+    eax = 0;
+    rax = sm_palette ();
+label_11:
+    edi = *(reloc.c_token);
+    rsi = "fpe_trap";
+    eax = sm_palette ();
+    if (eax != 0) {
+        eax = *(reloc.c_token);
+        *(reloc.df_nofpe_trap) = 0;
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_1;
+label_3:
+        return rax;
+    }
+    edi = *(reloc.c_token);
+    rsi = "nofpe_trap";
+    eax = sm_palette ();
+    if (eax != 0) {
+        eax = *(reloc.c_token);
+        *(reloc.df_nofpe_trap) = 1;
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_1;
+    }
+    edi = *(reloc.c_token);
+    rsi = "columnhead$ers";
+    eax = sm_palette ();
+    if (eax != 0) {
+        eax = *(reloc.c_token);
+        *(reloc.df_columnheaders) = 1;
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_1;
+    }
+    edi = *(reloc.c_token);
+    rsi = "nocolumnhead$ers";
+    eax = sm_palette ();
+    if (eax != 0) {
+        eax = *(reloc.c_token);
+        *(reloc.df_columnheaders) = 0;
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_1;
+label_10:
+        edi = *(reloc.c_token);
+        rsi = "expected string with comments chars";
+        eax = 0;
+        eax = sm_palette ();
+    }
+    edi = *(reloc.c_token);
+    rsi = "expecting datafile modifier";
+    eax = 0;
+    sm_palette ();
+    rdi = *(reloc.set_colorbox_tbl);
+    sm_palette ();
+    rdi = *(reloc.color_box);
+    sm_palette ();
+    rdi = *(reloc.dgrid3d_mode);
+    sm_palette ();
+    rdi = *(reloc.decimalsign);
+    *(reloc.dgrid3d_mode) = 0;
+    sm_palette ();
+    rdi = *(reloc.lookup_table_nth_reverse);
+    *(reloc.decimalsign) = 0;
+    sm_palette ();
+    *(reloc.lookup_table_nth_reverse) = 0;
+    sm_palette ();
+    *(obj.pm3d_last_set_palette_mode) = 0x30;
+    return rax;
+}
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x80017a0 */
+#include <stdint.h>
+ 
+int64_t set_linestyle (int64_t arg11, int64_t arg10, int64_t arg9, int64_t arg8, int64_t arg7, int64_t arg1, int64_t arg2) {
+    xmm4 = arg11;
+    xmm3 = arg10;
+    xmm2 = arg9;
+    xmm1 = arg8;
+    xmm0 = arg7;
+    rdi = arg1;
+    rsi = arg2;
+    r13 = rdi;
+    rax = *(fs:0x28);
+    *((rsp + 0x78)) = rax;
+    eax = 0;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_4;
+    }
+    r14d = esi;
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_4;
+    }
+    rax = sm_palette ();
+    r15 = rax;
+    edx = eax;
+    if (eax <= 0) {
+        goto label_4;
+    }
+    rbp = *(r13);
+    if (rbp == 0) {
+        goto label_5;
+    }
+    r12d = 0;
+    while (eax < edx) {
+        rbx = *(rbp);
+        r12 = rbp;
+        if (rbx == 0) {
+            goto label_6;
+        }
+        eax = *((rbp + 8));
+    }
+    if (eax != r15d) {
+        edx = r15 - 1;
+        rsi = "linestyle";
+        edi = 0x78;
+        *((rsp + 0x38)) = 0;
+        *((rsp + 0xc)) = edx;
+        *((rsp + 0x70)) = 0;
+        rax = sm_palette ();
+        edx = *((rsp + 0xc));
+        if (r12 != 0) {
+            goto label_7;
+        }
+label_3:
+        *(r13) = rax;
+        rbx = rbp;
+        r12d = 0;
+label_1:
+        rax = .rodata.cst8;
+        *((rsp + 0x10)) = 0;
+        *((rsp + 0x14)) = edx;
+        *((rsp + 0x28)) = rax;
+        rax = *(loc..LC57);
+        *((rsp + 0x18)) = edx;
+        *((rsp + 0x30)) = rax;
+        rax = *((rsp + 0x70));
+        *((rsp + 0x1c)) = 0xffffffff;
+        __asm ("movdqa xmm2, xmmword [rsp + 0x30]");
+        *((rsp + 0x20)) = 0;
+        __asm ("movdqa xmm0, xmmword [rsp + 0x10]");
+        *((rsp + 0x40)) = 1;
+        __asm ("movdqa xmm1, xmmword [rsp + 0x20]");
+        *((rsp + 0x44)) = edx;
+        *((rsp + 0x48)) = 0;
+        __asm ("movdqa xmm3, xmmword [rsp + 0x40]");
+        *((rsp + 0x50)) = 0;
+        *((rsp + 0x58)) = 0;
+        __asm ("movdqa xmm4, xmmword [rsp + 0x50]");
+        *((rsp + 0x60)) = 0;
+        *((rsp + 0x68)) = 0;
+        __asm ("movdqa xmm5, xmmword [rsp + 0x60]");
+        *((rbp + 8)) = r15d;
+        *(rbp) = rbx;
+        *((rbp + 0x70)) = rax;
+        __asm ("movups xmmword [rbp + 0x10], xmm0");
+        __asm ("movups xmmword [rbp + 0x20], xmm1");
+        __asm ("movups xmmword [rbp + 0x30], xmm2");
+        __asm ("movups xmmword [rbp + 0x40], xmm3");
+        __asm ("movups xmmword [rbp + 0x50], xmm4");
+        __asm ("movups xmmword [rbp + 0x60], xmm5");
+    }
+    edi = *(reloc.c_token);
+    rsi = "def$ault";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_8;
+    }
+    rdi = rbp + 0x10;
+    edx = 1;
+    esi = r14d;
+    sm_palette ();
+    edi = *(reloc.c_token);
+    if (*(reloc.num_tokens) > edi) {
+        goto label_9;
+    }
+    do {
+label_0:
+        rax = *((rsp + 0x78));
+        rax ^= *(fs:0x28);
+        if (*(reloc.num_tokens) != edi) {
+            goto label_10;
+        }
+        return rax;
+label_8:
+        rax = *(rbp);
+        if (*(r13) == rbp) {
+            goto label_11;
+        }
+        *(r12) = rax;
+label_2:
+        rdi = rbp;
+        sm_palette ();
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+    } while (*(reloc.num_tokens) <= edi);
+label_9:
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_0;
+    }
+    rax = reloc_first_perm_linestyle;
+    rdx = "linetype";
+    edi = *(reloc.c_token);
+    rax = "style line";
+    rsi = "Extraneous arguments to set %s";
+    if (r13 != rax) {
+        rdx = rax;
+    }
+    eax = 0;
+    rax = sm_palette ();
+label_6:
+    edx = r15 - 1;
+    rsi = "linestyle";
+    edi = 0x78;
+    *((rsp + 0x38)) = 0;
+    *((rsp + 0xc)) = edx;
+    *((rsp + 0x70)) = 0;
+    rax = sm_palette ();
+    edx = *((rsp + 0xc));
+    do {
+        *(r12) = rbp;
+        goto label_1;
+label_11:
+        *(r13) = rax;
+        goto label_2;
+label_5:
+        edx = rax - 1;
+        rsi = "linestyle";
+        edi = 0x78;
+        *((rsp + 0x38)) = 0;
+        *((rsp + 0xc)) = edx;
+        *((rsp + 0x70)) = 0;
+        rax = sm_palette ();
+        edx = *((rsp + 0xc));
+        goto label_3;
+label_7:
+        rbx = rbp;
+    } while (1);
+label_4:
+    edi = *(reloc.c_token);
+    rsi = "tag must be > zero";
+    eax = 0;
+    sm_palette ();
+label_10:
+    rax = sm_palette ();
+}
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8004ac0 */
+#include <stdint.h>
+ 
+uint64_t set_object (int64_t arg11) {
+    xmm4 = arg11;
+label_4:
+    eax = edi;
+    ebx = esi;
+    *((rsp + 0x20)) = edi;
+    edi = *(reloc.c_token);
+    edx = rdi + 1;
+    rcx = *(fs:0x28);
+    *((rsp + 0x98)) = rcx;
+    ecx = 0;
+    *(reloc.c_token) = edx;
+    if (eax < 0xffffffff) {
+        *(reloc.c_token) = edi;
+        if (esi != 1) {
+            goto label_7;
+        }
+        rax = reloc_default_rectangle;
+        ebp = 0;
+        *((rsp + 0x18)) = 0;
+        *(rsp) = rax;
+        r13 = rax + 0xa0;
+label_0:
+        if (*(reloc.num_tokens) > edi) {
+            rax = rsp + 0x30;
+            *((rsp + 0x24)) = 0;
+            r15d = 0;
+            r14d = 0;
+            *((rsp + 0x27)) = 0;
+            *((rsp + 0x25)) = 0;
+            *((rsp + 0x26)) = 0;
+            *((rsp + 0x28)) = rax;
+            void (*0x8004c48)() ();
+        }
+        rax = *((rsp + 0x98));
+        rax ^= *(fs:0x28);
+        if (*(reloc.num_tokens) != edi) {
+            goto label_8;
+        }
+    }
+    rbp = *(reloc.first_object);
+    if (rbp == 0) {
+        goto label_9;
+    }
+    ecx = *((rsp + 0x20));
+    r12d = 0;
+    while (rax != 0) {
+        if (ecx > 0) {
+            if (*((rbp + 8)) >= ecx) {
+                goto label_10;
+            }
+        }
+        rax = *(rbp);
+        r12 = rbp;
+    }
+    if (*((rsp + 0x20)) != 0xffffffff) {
+        goto label_11;
+    }
+    eax = *((rbp + 8));
+    edx = 0;
+    esi = ebx;
+    r12 = rbp;
+    ebp = 0;
+    eax++;
+    edi = eax;
+    *((rsp + 0x20)) = eax;
+    rax = new_object ();
+    *(rsp) = rax;
+    do {
+label_2:
+        rax = *(rsp);
+        *(r12) = rax;
+label_1:
+        rax = *(rsp);
+        edi = *(reloc.c_token);
+        *(rax) = rbp;
+        *((rsp + 0x18)) = rax;
+        if (ebx == 1) {
+            __asm ("movdqu xmm6, xmmword [reloc.load_range]");
+            __asm ("movdqu xmm4, xmmword [reloc.first_object]");
+            rcx = rax;
+            __asm ("movups xmmword [rax + 0x18], xmm4");
+            __asm ("movdqu xmm5, xmmword [reloc.parse_fillstyle]");
+            __asm ("movups xmmword [rax + 0x38], xmm6");
+            __asm ("movdqu xmm7, xmmword [reloc.safe_strncpy]");
+            __asm ("movups xmmword [rax + 0x28], xmm5");
+            __asm ("movups xmmword [rax + 0x48], xmm7");
+            __asm ("movdqu xmm4, xmmword [reloc.clabel_onecolor]");
+            __asm ("movups xmmword [rax + 0x58], xmm4");
+            __asm ("movdqu xmm5, xmmword [reloc.clabel_interval]");
+            __asm ("movups xmmword [rax + 0x68], xmm5");
+            __asm ("movdqu xmm6, xmmword [reloc.might_be_numeric]");
+            __asm ("movups xmmword [rax + 0x78], xmm6");
+            __asm ("movdqu xmm7, xmmword [reloc.some_grid_selected]");
+            __asm ("movups xmmword [rax + 0x88], xmm7");
+            rax = *(reloc.spiderplot);
+            *((rcx + 0x98)) = rax;
+        }
+        rax = *(rsp);
+        r13 = rax + 0xa0;
+        goto label_0;
+        if (ebx == 1) {
+label_10:
+            goto label_12;
+        }
+        edi = *((rsp + 0x20));
+        edx = 0;
+        esi = ebx;
+        rax = new_object ();
+        *(rsp) = rax;
+    } while (r12 != 0);
+label_3:
+    rax = *(rsp);
+    *(reloc.first_object) = rax;
+    goto label_1;
+label_12:
+    if (*((rbp + 0x10)) != ebx) {
+        void (*0x800570f)() ();
+    }
+label_11:
+    edi = *((rsp + 0x20));
+    edx = 0;
+    esi = ebx;
+    ebp = 0;
+    rax = new_object ();
+    *(rsp) = rax;
+    goto label_2;
+label_9:
+    if (*((rsp + 0x20)) != 0xffffffff) {
+        edi = *((rsp + 0x20));
+        edx = 0;
+        rax = new_object ();
+        *(rsp) = rax;
+        goto label_3;
+    }
+    edx = 0;
+    edi = 1;
+    rax = new_object ();
+    *((rsp + 0x20)) = 1;
+    *(rsp) = rax;
+    goto label_3;
+label_7:
+    rsi = "Unknown object type";
+    eax = 0;
+    eax = sm_palette ();
+    edi = *(reloc.c_token);
+    rsi = "Expecting to or rto";
+    eax = 0;
+    sm_palette ();
+label_8:
+    eax = sm_palette ();
+    rsi = "Inconsistent options";
+    edi |= 0xffffffff;
+    eax = 0;
+    sm_palette ();
+    eax = *(reloc.c_token);
+    rsi = "rect$angle";
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    eax = sm_palette ();
+    if (eax == 0) {
+        edi = *(reloc.c_token);
+        rsi = "ell$ipse";
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_13;
+        }
+    }
+label_5:
+label_6:
+    edi = *(reloc.c_token);
+    rsi = "rect$angle";
+    eax = sm_palette ();
+    if (eax == 0) {
+        edi = *(reloc.c_token);
+        rsi = "ell$ipse";
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_14;
+        }
+        edi = ebp;
+        esi = 3;
+        goto label_4;
+    }
+    edi = ebp;
+    esi = 1;
+    goto label_4;
+label_14:
+    edi = *(reloc.c_token);
+    rsi = "circ$le";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_15;
+    }
+    edi = *(reloc.c_token);
+    rsi = "poly$gon";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_16;
+    }
+    edi = *(reloc.c_token);
+    if (ebp <= 0) {
+        goto label_17;
+    }
+    rax = *(reloc.first_object);
+    if (rax != 0) {
+        void (*0x8005b74)() ();
+    }
+label_13:
+    edi = *(reloc.c_token);
+    rsi = "circ$le";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_5;
+    }
+    edi = *(reloc.c_token);
+    rsi = "poly$gon";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_5;
+    }
+    eax = sm_palette ();
+    if (eax > 0) {
+        goto label_6;
+    }
+    edi = *(reloc.c_token);
+    rsi = "tag must be > zero";
+    eax = 0;
+    eax = sm_palette ();
+label_15:
+    edi = ebp;
+    esi = 2;
+    goto label_4;
+label_16:
+    edi = ebp;
+    esi = 4;
+    goto label_4;
+label_17:
+    rsi = "unrecognized object type";
+    eax = 0;
+    rax = sm_palette ();
+    rsi = loc__LC234;
+    rax = *(fs:0x28);
+    *((rsp + 0x68)) = rax;
+    eax = 0;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    eax = sm_palette (rbx, rbp);
+    /* Beware that this jump is a conditional jump.
+     * r2dec transformed it as a return, due being the
+     * last instruction. Please, check 'pdda' output
+     * for more hints. */
+    return void (*0x8005de0)() ();
+}
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x80078e0 */
+#include <stdint.h>
+ 
+int64_t set_palette (void) {
+    rax = *(fs:0x28);
+    *((rsp + 0x68)) = rax;
+    eax = 0;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    while (eax != 0) {
+        ecx = .data;
+        if (ecx == 0) {
+        }
+        reset_palette_part_0 ();
+        void (*0x800791f)() ();
+        rsi = loc__LC4;
+        eax = sm_palette ();
+        ebx = eax;
+    }
+    edi = *(reloc.c_token);
+    if (*(reloc.num_tokens) <= edi) {
+        void (*0x800791f)() ();
+    }
+    *((rsp + 0xc)) = 0;
+    r12 = 0x08012924;
+}
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8000190 */
+#include <stdint.h>
+ 
+int64_t set_colorbox (void) {
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi >= *(reloc.num_tokens)) {
+        *(reloc.color_box) = 0x64;
+        return eax;
+    }
+    rsi = loc__LC4;
+    eax = sm_palette (rbx);
+    if (eax != 0) {
+        goto label_2;
+    }
+    edi = *(reloc.c_token);
+    if (*(reloc.num_tokens) <= edi) {
+        goto label_3;
+    }
+    rbx = reloc__rodata;
+    do {
+        rsi = loc__LC4;
+        eax = sm_palette ();
+        if (eax != 0) {
+            goto label_3;
+        }
+        esi = *(reloc.c_token);
+        rdi = reloc_set_colorbox_tbl;
+        eax = sm_palette ();
+        if (eax > 0xd) {
+            goto label_4;
+        }
+        rax = *((rbx + rax*4));
+        rax += rbx;
+        /* switch table (14 cases) at 0x8012700 */
+        void (*rax)() ();
+        *(reloc.equals) = 0;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        eax = *(reloc.num_tokens);
+label_0:
+        *(reloc.c_token) = edi;
+    } while (edi < eax);
+label_3:
+    if (*(reloc.color_box) == 0x6e) {
+label_2:
+        *(reloc.color_box) = 0x64;
+    }
+    return rax;
+    *(reloc.equals) = 1;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    eax = *(reloc.num_tokens);
+    goto label_0;
+    eax = *(reloc.c_token);
+    *(reloc.dgrid3d_norm_value) = 0;
+    edi = rax + 2;
+    eax = *(reloc.num_tokens);
+    goto label_0;
+    eax = *(reloc.c_token);
+    *(reloc.dgrid3d_norm_value) = 1;
+    edi = rax + 2;
+    eax = *(reloc.num_tokens);
+    goto label_0;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_5;
+    }
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_5;
+    }
+    rdi = reloc_dgrid3d_mode;
+    edx = 3;
+    esi = 3;
+    sm_palette ();
+    edi = *(reloc.c_token);
+    eax = *(reloc.num_tokens);
+    goto label_0;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_6;
+    }
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_6;
+    }
+    edx = 3;
+    esi = 3;
+    rdi = reloc_set_colorbox_tbl;
+    sm_palette ();
+label_1:
+    edi = *(reloc.c_token);
+    eax = *(reloc.num_tokens);
+    goto label_0;
+    eax = *(reloc.c_token);
+    *(0x08090056) = 0;
+    edi = rax + 1;
+    eax = *(reloc.num_tokens);
+    goto label_0;
+    *(0x08090058) = 0xffffffff;
+    do {
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        eax = *(reloc.num_tokens);
+        goto label_0;
+        edi = *(reloc.c_token);
+        eax = *(reloc.num_tokens);
+        *(0x08090056) = 1;
+        r8d = rdi + 1;
+        *(reloc.c_token) = r8d;
+        if (r8d >= eax) {
+            goto label_7;
+        }
+        rsi = loc__LC4;
+        edi = r8d;
+        eax = sm_palette ();
+    } while (eax != 0);
+    eax = sm_palette ();
+    *(0x08090058) = eax;
+    if (eax > 0) {
+        goto label_1;
+    }
+    edi = *(reloc.c_token);
+    eax = 0;
+    rsi = "tag must be strictly positive (see `help set style line')";
+    *(0x08090058) = 0;
+    sm_palette ();
+    eax = *(reloc.c_token);
+    *(reloc.color_box) = 0x75;
+    edi = rax + 1;
+    eax = *(reloc.num_tokens);
+    goto label_0;
+    eax = *(reloc.c_token);
+    *(reloc.color_box) = 0x64;
+    edi = rax + 1;
+    eax = *(reloc.num_tokens);
+    goto label_0;
+    eax = *(reloc.c_token);
+    *(0x08090055) = 0x68;
+    edi = rax + 1;
+    eax = *(reloc.num_tokens);
+    goto label_0;
+    eax = *(reloc.c_token);
+    *(0x08090055) = 0x76;
+    edi = rax + 1;
+    eax = *(reloc.num_tokens);
+    goto label_0;
+label_7:
+    edi += 2;
+    goto label_0;
+label_4:
+    edi = *(reloc.c_token);
+    rsi = "invalid colorbox option";
+    eax = 0;
+    eax = sm_palette ();
+label_6:
+    edi = *(reloc.c_token);
+    rsi = "expecting screen value [0 - 1]";
+    eax = 0;
+    eax = sm_palette ();
+label_5:
+    edi = *(reloc.c_token);
+    rsi = "expecting screen value [0 - 1]";
+    eax = 0;
+    sm_palette ();
+}
+
+
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8001070 */
+#include <stdint.h>
+ 
+uint64_t set_dgrid3d (int64_t arg7) {
+    xmm0 = arg7;
+    ebp = 0;
+    rbx = loc__LC4;
+    eax = *(reloc.c_token);
+    xmm1 = *(reloc.dgrid3d_x_scale);
+    *(reloc.dgrid3d_mode) = 0;
+    xmm2 = *(reloc.dgrid3d_y_scale);
+    *(reloc.dgrid3d_kdensity) = 0;
+    edi = rax + 1;
+    r14d = *(reloc.dgrid3d_row_fineness);
+    *(rsp) = xmm1;
+    *(reloc.c_token) = edi;
+    r12d = *(reloc.dgrid3d_col_fineness);
+    r13d = *(reloc.dgrid3d_norm_value);
+    *((rsp + 8)) = xmm2;
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_0;
+    }
+label_1:
+    rsi = rbx;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_0;
+    }
+    esi = *(reloc.c_token);
+    rdi = reloc_dgrid3d_mode_tbl;
+    eax = sm_palette ();
+    if (eax == 8) {
+        goto label_23;
+    }
+    edx = *(reloc.c_token);
+    *(reloc.dgrid3d_mode) = eax;
+    edi = rdx + 1;
+    *(reloc.c_token) = edi;
+    if (eax == 2) {
+        goto label_24;
+    }
+    if (eax > 2) {
+        goto label_25;
+    }
+    if (eax != 1) {
+        goto label_23;
+    }
+    if (edi < *(reloc.num_tokens)) {
+        goto label_26;
+    }
+    do {
+label_0:
+        eax = r14 - 2;
+        if (eax > 0x3e6) {
+            goto label_27;
+        }
+        eax = r12 - 2;
+        if (eax > 0x3e6) {
+            goto label_27;
+        }
+        eax = *(reloc.dgrid3d_mode);
+        if (eax == 0) {
+            goto label_28;
+        }
+label_4:
+        xmm0 = 0;
+        __asm ("comisd xmm0, xmmword [rsp]");
+        if (eax > 0) {
+            goto label_29;
+        }
+        __asm ("comisd xmm0, xmmword [rsp + 8]");
+        if (eax > 0) {
+            goto label_29;
+        }
+        xmm5 = *(rsp);
+        xmm6 = *((rsp + 8));
+        *(reloc.dgrid3d_row_fineness) = r14d;
+        *(reloc.dgrid3d_col_fineness) = r12d;
+        *(reloc.dgrid3d_norm_value) = r13d;
+        *(reloc.dgrid3d) = 1;
+        *(reloc.dgrid3d_x_scale) = xmm5;
+        *(reloc.dgrid3d_y_scale) = xmm6;
+        return eax;
+label_25:
+        eax -= 3;
+        if (eax > 4) {
+            goto label_23;
+        }
+    } while (edi >= *(reloc.num_tokens));
+    rsi = rbx;
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_30;
+    }
+label_5:
+    edi = *(reloc.c_token);
+label_6:
+    if (*(reloc.num_tokens) <= edi) {
+        goto label_0;
+    }
+    rsi = rbx;
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_31;
+    }
+label_2:
+    edi = *(reloc.c_token);
+label_24:
+    if (*(reloc.num_tokens) > edi) {
+        goto label_1;
+    }
+    goto label_0;
+label_23:
+    edi = *(reloc.c_token);
+    rsi = loc__LC9;
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_32;
+    }
+    eax = *(reloc.c_token);
+    ebp++;
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (*(reloc.num_tokens) > edi) {
+        goto label_1;
+    }
+    goto label_0;
+label_32:
+    if (ebp == 0) {
+        goto label_33;
+    }
+    if (ebp == 1) {
+        goto label_34;
+    }
+    if (ebp != 2) {
+        goto label_35;
+    }
+label_3:
+    eax = sm_palette ();
+    edi = *(reloc.c_token);
+    r13d = eax;
+    if (*(reloc.num_tokens) > edi) {
+        goto label_1;
+    }
+    goto label_0;
+label_26:
+    rsi = rbx;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_2;
+    }
+    goto label_3;
+label_33:
+    rax = sm_palette ();
+    r12 = rax;
+    r14d = eax;
+    goto label_2;
+label_28:
+    *(reloc.dgrid3d_mode) = 1;
+    goto label_4;
+label_31:
+    sm_palette ();
+    edi = *(reloc.c_token);
+    rsi = loc__LC9;
+    *(rsp) = xmm0;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_36;
+    }
+    xmm7 = *(rsp);
+    edi = *(reloc.c_token);
+    *((rsp + 8)) = xmm7;
+    if (*(reloc.num_tokens) > edi) {
+        goto label_1;
+    }
+    goto label_0;
+label_30:
+    edi = *(reloc.c_token);
+    rsi = "kdens$ity2d";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_5;
+    }
+    eax = *(reloc.c_token);
+    *(reloc.dgrid3d_kdensity) = 1;
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    goto label_6;
+label_34:
+    eax = sm_palette ();
+    edi = *(reloc.c_token);
+    r12d = eax;
+    if (*(reloc.num_tokens) > edi) {
+        goto label_1;
+    }
+    goto label_0;
+label_36:
+    *(reloc.c_token)++;
+    eax = sm_palette ();
+    edi = *(reloc.c_token);
+    *((rsp + 8)) = xmm0;
+    if (*(reloc.num_tokens) > edi) {
+        goto label_1;
+    }
+    goto label_0;
+label_27:
+    rsi = "Number of grid points must be in [2:1000] - not changed!";
+    edi |= 0xffffffff;
+    eax = 0;
+    eax = sm_palette ();
+label_29:
+    rsi = "Scale factors must be greater than zero - not changed!";
+    edi |= 0xffffffff;
+    eax = 0;
+    eax = sm_palette ();
+label_35:
+    edi = *(reloc.c_token);
+    rsi = "Unrecognized keyword or unexpected value";
+    eax = 0;
+    sm_palette ();
+    eax = *(reloc.c_token);
+    rsi = "back$head";
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    eax = sm_palette (rbx, rbp, r12, r13);
+    if (eax == 0) {
+        goto label_37;
+    }
+label_14:
+    r12 = *(reloc.first_arrow);
+    ebp = 0;
+    rax = r12;
+    if (r12 != 0) {
+        goto label_38;
+    }
+    goto label_39;
+    do {
+        rax = *(rax);
+        if (rax == 0) {
+            goto label_40;
+        }
+label_38:
+        edx = ebp;
+        ebp++;
+    } while (*((rax + 8)) == ebp);
+label_13:
+    r14d = 0;
+    while (r13 != 0) {
+        r12 = r13;
+        if (*((r12 + 8)) >= ebp) {
+            goto label_41;
+        }
+        r13 = *(r12);
+        r14 = r12;
+    }
+    rsi = "arrow";
+    edi = 0x108;
+    rax = sm_palette ();
+    rbx = rax;
+label_10:
+    *(r12) = rbx;
+label_11:
+    *((rbx + 8)) = ebp;
+    rdi = rbx + 0x68;
+    *(rbx) = r13;
+    *((rbx + 0x20)) = 0;
+    *((rbx + 0x28)) = 0;
+    *((rbx + 0x30)) = 0;
+    *((rbx + 0x38)) = 0;
+    *((rbx + 0x40)) = 0;
+    *((rbx + 0x48)) = 0;
+    *((rbx + 0x50)) = 0;
+    *((rbx + 0x58)) = 0;
+    *((rbx + 0x60)) = 0;
+    *((rbx + 0xc)) = 3;
+    *((rbx + 0x14)) = 0;
+    sm_palette ();
+label_9:
+    edi = *(reloc.c_token);
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_16;
+    }
+    r13d = 0;
+    ebp = 0;
+    r12 = rbx + 0x68;
+    while (eax != 0) {
+label_7:
+        edi = *(reloc.c_token);
+        if (bpl != 0) {
+            goto label_42;
+        }
+        edi++;
+        *(reloc.c_token) = edi;
+        if (edi >= *(reloc.num_tokens)) {
+            goto label_43;
+        }
+        rsi = loc__LC4;
+        eax = sm_palette ();
+        if (eax != 0) {
+            goto label_44;
+        }
+        rdi = rbx + 0x10;
+        sm_palette ();
+        edi = *(reloc.c_token);
+label_15:
+        if (*(reloc.num_tokens) <= edi) {
+            goto label_16;
+        }
+label_8:
+        rsi = loc__LC4;
+        eax = sm_palette ();
+        if (eax != 0) {
+            goto label_16;
+        }
+        edi = *(reloc.c_token);
+        rsi = "from";
+        eax = sm_palette ();
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC16;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_7;
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC17;
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_45;
+    }
+label_12:
+    edi = *(reloc.c_token);
+    if (r13b != 0) {
+        goto label_42;
+    }
+    rsi = loc__LC18;
+    eax = sm_palette ();
+    al = (eax != 0) ? 1 : 0;
+    eax = (int32_t) al;
+    *((rbx + 0xc)) = eax;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_46;
+    }
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_46;
+    }
+    rdi = rbx + 0x38;
+    r13d = 1;
+    sm_palette ();
+    edi = *(reloc.c_token);
+    if (*(reloc.num_tokens) > edi) {
+        goto label_8;
+    }
+label_16:
+    return rax;
+label_41:
+    rbx = r12;
+    if (*(reloc.num_tokens) == edi) {
+        goto label_9;
+    }
+    rsi = "arrow";
+    edi = 0x108;
+    r13 = r12;
+    r12 = r14;
+    rax = sm_palette ();
+    rbx = rax;
+    if (r14 != 0) {
+        goto label_10;
+    }
+    *(reloc.first_arrow) = rbx;
+    goto label_11;
+label_45:
+    edi = *(reloc.c_token);
+    rsi = loc__LC18;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_12;
+    }
+    edi = *(reloc.c_token);
+    rsi = "len$gth";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_47;
+    }
+    edi = *(reloc.c_token);
+    if (r13b == 0) {
+        goto label_48;
+    }
+label_42:
+    rsi = "duplicate or contradictory arguments";
+    eax = 0;
+    rax = sm_palette ();
+label_40:
+    ebp = rdx + 2;
+    goto label_13;
+label_37:
+    edi = *(reloc.c_token);
+    rsi = "front";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_14;
+    }
+    edi = *(reloc.c_token);
+    rsi = "from";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_14;
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC16;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_14;
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC17;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_14;
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC18;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_14;
+    }
+    edi = *(reloc.c_token);
+    rsi = "size";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_14;
+    }
+    edi = *(reloc.c_token);
+    rsi = "filled";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_14;
+    }
+    edi = *(reloc.c_token);
+    rsi = "empty";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_14;
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC22;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_14;
+    }
+    edi = *(reloc.c_token);
+    rsi = "arrowstyle";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_14;
+    }
+    edi = *(reloc.c_token);
+    rsi = "head$s";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_14;
+    }
+    edi = *(reloc.c_token);
+    rsi = "nohead";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_14;
+    }
+    edi = *(reloc.c_token);
+    rsi = "nobo$rder";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_14;
+    }
+    eax = sm_palette ();
+    if (eax > 0) {
+        goto label_49;
+    }
+    edi = *(reloc.c_token);
+    rsi = "tag must be > 0";
+    eax = 0;
+    rax = sm_palette ();
+label_47:
+    edi = *(reloc.c_token);
+    rsi = "ang$le";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_50;
+    }
+    rdi = r12;
+    esi = 1;
+    r14d = *(reloc.c_token);
+    sm_palette ();
+    edi = *(reloc.c_token);
+    if (edi != r14d) {
+        goto label_15;
+    }
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_16;
+    }
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_51;
+    }
+    edi = *(reloc.c_token);
+    goto label_15;
+label_39:
+    do {
+        rsi = "arrow";
+        edi = 0x108;
+        r13d = 0;
+        rax = sm_palette ();
+        rbx = rax;
+        *(reloc.first_arrow) = rbx;
+        goto label_11;
+label_50:
+        *(reloc.c_token)++;
+        sm_palette ();
+        edi = *(reloc.c_token);
+        *((rbx + 0x60)) = xmm0;
+        goto label_15;
+label_49:
+        r12 = *(reloc.first_arrow);
+    } while (r12 == 0);
+    goto label_13;
+label_48:
+    edi++;
+    edx = 1;
+    esi = 0;
+    r13d = 1;
+    *((rbx + 0xc)) = 2;
+    *(reloc.c_token) = edi;
+    rdi = rbx + 0x38;
+    eax = sm_palette ();
+    edi = *(reloc.c_token);
+    goto label_15;
+label_44:
+    edi = *(reloc.c_token);
+label_43:
+    rsi = "start coordinates expected";
+    eax = 0;
+    eax = sm_palette ();
+label_46:
+    edi = *(reloc.c_token);
+    rsi = "end coordinates expected";
+    eax = 0;
+    eax = sm_palette ();
+label_51:
+    edi = *(reloc.c_token);
+    rsi = "wrong argument in set arrow";
+    eax = 0;
+    sm_palette ();
+label_19:
+    rbx = rdi;
+    edi = *((rdi + 0x18c));
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    rax = sm_palette (rbx, rbp);
+    edi = *(reloc.c_token);
+    rsi = rax;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_52;
+    }
+    r12 = rsp;
+    esi = 1;
+    eax = 0;
+    r8 = rbp;
+    rdi = r12;
+    rcx = "%smi$n";
+    edx = 0x10;
+    sm_palette ();
+    edi = *(reloc.c_token);
+    rsi = r12;
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_53;
+    }
+    *((rbx + 4)) |= 1;
+    eax = 1;
+    *(reloc.c_token)++;
+    *((rbx + 0x50)) = 0;
+    do {
+label_17:
+        rdx = *((rsp + 0x18));
+        rdx ^= *(fs:0x28);
+        if (*(reloc.c_token) != 0) {
+            goto label_54;
+        }
+        return rax;
+label_53:
+        esi = 1;
+        rdi = r12;
+        eax = 0;
+        r8 = rbp;
+        rcx = "%sma$x";
+        edx = 0x10;
+        sm_palette ();
+        edi = *(reloc.c_token);
+        rsi = r12;
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_55;
+        }
+        *((rbx + 4)) |= 2;
+        eax = 1;
+        *(reloc.c_token)++;
+        *((rbx + 0x54)) = 0;
+    } while (1);
+label_52:
+    eax = *(reloc.c_token);
+    *((rbx + 4)) = 3;
+    rsi = "noext$end";
+    *((rbx + 0x50)) = 0;
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    eax = sm_palette ();
+    r8d = eax;
+    eax = 1;
+    if (r8d == 0) {
+        goto label_17;
+    }
+    *((rbx + 4)) |= 0xc;
+    *(reloc.c_token)++;
+    goto label_17;
+label_55:
+    esi = 1;
+    rdi = r12;
+    eax = 0;
+    r8 = rbp;
+    rcx = "%sfix";
+    edx = 0x10;
+    sm_palette ();
+    edi = *(reloc.c_token);
+    rsi = r12;
+    eax = sm_palette ();
+    if (eax != 0) {
+        *((rbx + 4)) |= 0xc;
+        eax = 1;
+        *(reloc.c_token)++;
+        goto label_17;
+    }
+    esi = 1;
+    rdi = r12;
+    eax = 0;
+    r8 = rbp;
+    rcx = "%sfixmi$n";
+    edx = 0x10;
+    sm_palette ();
+    edi = *(reloc.c_token);
+    rsi = r12;
+    eax = sm_palette ();
+    if (eax != 0) {
+        *((rbx + 4)) |= 4;
+        eax = 1;
+        *(reloc.c_token)++;
+        goto label_17;
+    }
+    r8 = rbp;
+    rcx = "%sfixma$x";
+    rdi = r12;
+    eax = 0;
+    edx = 0x10;
+    esi = 1;
+    sm_palette ();
+    edi = *(reloc.c_token);
+    rsi = r12;
+    eax = sm_palette ();
+    r8d = eax;
+    eax = 0;
+    if (r8d == 0) {
+        goto label_17;
+    }
+    *((rbx + 4)) |= 8;
+    eax = 1;
+    *(reloc.c_token)++;
+    goto label_17;
+label_54:
+    sm_palette ();
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi < *(reloc.num_tokens)) {
+        goto label_56;
+    }
+label_18:
+    rax = 0x08090120;
+    rdx = rax + 0x1d38;
+    do {
+        *(rax) = 3;
+        rax += 0x2a8;
+    } while (rdx != rax);
+    edx = *(reloc.num_parallel_axes);
+    if (edx <= 0) {
+        goto label_20;
+    }
+    edx--;
+    rcx = *(reloc.parallel_axis_array);
+    rdx *= 0x2a8;
+    rax = rcx + 4;
+    rdx = rcx + rdx + 0x2ac;
+    do {
+        *(rax) = 3;
+        rax += 0x2a8;
+    } while (rdx != rax);
+label_20:
+    return rax;
+label_56:
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_18;
+    }
+    edi = *(reloc.c_token);
+    rsi = loc__LC41;
+    eax = sm_palette ();
+    while (eax != 0) {
+        *(reloc.c_token)++;
+        *(0x080903c8) = 3;
+        *(0x08090670) = 3;
+        *(reloc.default_fillstyle) = 0;
+        *(reloc.eval_link_function) = 0;
+        return rax;
+        edi = *(reloc.c_token);
+        rsi = loc__LC42;
+        eax = sm_palette ();
+    }
+    edi = *(reloc.c_token);
+    rsi = "paxis";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_57;
+    }
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_58;
+    }
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_58;
+    }
+    eax = sm_palette ();
+    eax--;
+    if (eax >= 0) {
+        if (*(reloc.num_parallel_axes) > eax) {
+            goto label_59;
+        }
+    }
+label_21:
+    rdi = reloc_default_circle;
+    al = set_autoscale_axis ();
+    goto label_19;
+    if (al != 0) {
+        goto label_20;
+    }
+    rdi = reloc_isanumber;
+    al = set_autoscale_axis ();
+    goto label_19;
+    if (al != 0) {
+        goto label_20;
+    }
+    rdi = reloc_axis_array;
+    al = set_autoscale_axis ();
+    goto label_19;
+    if (al != 0) {
+        goto label_20;
+    }
+    rdi = 0x0809110c;
+    al = set_autoscale_axis ();
+    goto label_19;
+    if (al != 0) {
+        goto label_20;
+    }
+    rdi = 0x08090e64;
+    al = set_autoscale_axis ();
+    goto label_19;
+    if (al != 0) {
+        goto label_20;
+    }
+    rdi = reloc_term_start_multiplot;
+    al = set_autoscale_axis ();
+    goto label_19;
+    if (al != 0) {
+        goto label_20;
+    }
+    rdi = 0x080913b4;
+    al = set_autoscale_axis ();
+    goto label_19;
+    if (al != 0) {
+        goto label_20;
+    }
+    rdi = 0x0809165c;
+    al = set_autoscale_axis ();
+    goto label_19;
+    if (al != 0) {
+        goto label_20;
+    }
+    rdi = 0x08091904;
+    al = set_autoscale_axis ();
+    goto label_19;
+    if (al != 0) {
+        goto label_20;
+    }
+    rdi = 0x08091bac;
+    al = set_autoscale_axis ();
+    goto label_19;
+    if (al != 0) {
+        goto label_20;
+    }
+    edi = *(reloc.c_token);
+    rsi = "Invalid axis";
+    sm_palette ();
+label_57:
+    edi = *(reloc.c_token);
+    rsi = loc__LC44;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_60;
+    }
+    edi = *(reloc.c_token);
+    rsi = "noext$end";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_60;
+    }
+    edi = *(reloc.c_token);
+    rsi = "ke$epfix";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_21;
+    }
+    rax = 0x08090120;
+    rdx = rax + 0x1d38;
+    do {
+        *(rax) |= 3;
+        rax += 0x2a8;
+    } while (rax != rdx);
+    edx = *(reloc.num_parallel_axes);
+    if (edx <= 0) {
+        goto label_22;
+    }
+    edx--;
+    rcx = *(reloc.parallel_axis_array);
+    rdx *= 0x2a8;
+    rax = rcx + 4;
+    rdx = rcx + rdx + 0x2ac;
+    do {
+        *(rax) |= 3;
+        rax += 0x2a8;
+    } while (rax != rdx);
+label_22:
+    *(reloc.c_token)++;
+    goto label_20;
+label_58:
+    edx = *(reloc.num_parallel_axes);
+    if (edx <= 0) {
+        goto label_20;
+    }
+    edx--;
+    rcx = *(reloc.parallel_axis_array);
+    rdx *= 0x2a8;
+    rax = rcx + 4;
+    rdx = rcx + rdx + 0x2ac;
+    do {
+        *(rax) = 3;
+        rax += 0x2a8;
+    } while (rax != rdx);
+    goto label_20;
+label_60:
+    rax = 0x08090120;
+    rdx = rax + 0x1d38;
+    do {
+        *(rax) |= 0xc;
+        rax += 0x2a8;
+    } while (rax != rdx);
+    edx = *(reloc.num_parallel_axes);
+    if (edx <= 0) {
+        goto label_22;
+    }
+    edx--;
+    rcx = *(reloc.parallel_axis_array);
+    rdx *= 0x2a8;
+    rax = rcx + 4;
+    rdx = rcx + rdx + 0x2ac;
+    do {
+        *(rax) |= 0xc;
+        rax += 0x2a8;
+    } while (rdx != rax);
+    goto label_22;
+label_59:
+    rax = (int64_t) eax;
+    rax *= 0x2a8;
+    rax += *(reloc.parallel_axis_array);
+    *((rax + 4)) = 3;
+    goto label_20;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.s pdg @ sym.s pdg @ sym.se pdg @ sym.se pdg @ sym.set pdg @ sym.set pdg @ sym.set_ pdg @ sym.set_ pdg @ sym.set_c pdg @ sym.set_c pdg @ sym.set_cn pdg @ sym.set_cn pdg @ sym.set_cnt pdg @ sym.set_cnt pdg @ sym.set_cntr pdg @ sym.set_cntr pdg @ sym.set_cntrp pdg @ sym.set_cntrp pdg @ sym.set_cntrpa pdg @ sym.set_cntrpa pdg @ sym.set_cntrpar pdg @ sym.set_cntrpar pdg @ sym.set_cntrpara pdg @ sym.set_cntrpara pdg @ sym.set_cntrparam pdg @ sym.set_cntrparam
+void sym.set_cntrparam(int64_t arg7)
+{
+    int64_t iVar1;
+    int32_t iVar2;
+    int32_t iVar3;
+    int32_t iVar4;
+    int32_t iVar5;
+    uint32_t uVar6;
+    undefined4 uVar7;
+    double **ppdVar8;
+    double **unaff_RBX;
+    code *unaff_RBP;
+    double **unaff_R12;
+    double **unaff_R13;
+    int32_t unaff_R14D;
+    int64_t in_FS_OFFSET;
+    undefined uVar9;
+    double *extraout_XMM0_Qa;
+    double *extraout_XMM0_Qa_00;
+    double *extraout_XMM0_Qa_01;
+    double *extraout_XMM0_Qa_02;
+    double extraout_XMM0_Qa_03;
+    
+    _reloc.c_token = _reloc.c_token + 1;
+    if ((_reloc.c_token < _reloc.num_tokens) && (iVar2 = func_0x08090034(arg7, _reloc.c_token, reloc..LC4), iVar2 == 0))
+    {
+        iVar2 = _reloc.c_token;
+        if (_reloc.c_token < _reloc.num_tokens) {
+            do {
+                iVar2 = func_0x08090034(iVar2, reloc..LC4);
+                if (iVar2 != 0) {
+                    return;
+                }
+                iVar2 = func_0x08090034(_reloc.c_token, "p$oints");
+                if (iVar2 == 0) {
+                    iVar2 = func_0x08090034(_reloc.c_token, "first$linetype");
+                    if (iVar2 == 0) {
+                        iVar2 = func_0x08090034(_reloc.c_token, "sort$ed");
+                        if (iVar2 == 0) {
+                            iVar2 = func_0x08090034(_reloc.c_token, "unsort$ed");
+                            if (iVar2 == 0) {
+                                iVar2 = func_0x08090034(_reloc.c_token, "li$near");
+                                if (iVar2 == 0) {
+                                    iVar2 = func_0x08090034(_reloc.c_token, "c$ubicspline");
+                                    if (iVar2 == 0) {
+                                        iVar2 = func_0x08090034(_reloc.c_token, "b$spline");
+                                        if (iVar2 == 0) {
+                                            iVar2 = func_0x08090034(_reloc.c_token, "le$vels");
+                                            if (iVar2 == 0) {
+                                                iVar2 = func_0x08090034(_reloc.c_token, "o$rder");
+                                                if (iVar2 != 0) {
+                                                    _reloc.c_token = _reloc.c_token + 1;
+                                                    iVar5 = func_0x08090034();
+                                                    iVar3 = _reloc.num_tokens;
+                                                    iVar2 = _reloc.c_token;
+                                                    if (iVar5 - 2U < 9) goto code_r0x08001b5e;
+code_r0x0800208f:
+                                                    func_0x08090034(_reloc.c_token, 
+                                                                    "bspline order must be in [2..10] range.");
+                                                }
+                                                func_0x08090034(_reloc.c_token, 
+                                                                
+                                                            "expecting \'linear\', \'cubicspline\', \'bspline\', \'points\', \'levels\' or \'order\'"
+                                                            );
+                                                iVar1 = *(int64_t *)(in_FS_OFFSET + 0x28);
+                                                _reloc.c_token = _reloc.c_token + 1;
+                                                if (_reloc.num_tokens <= _reloc.c_token) {
+code_r0x08002323:
+                                                    func_0x08090034(_reloc.c_token, "tag must be > zero");
+                                                    goto code_r0x08002337;
+                                                }
+                                                uVar6 = func_0x08090034(_reloc.c_token, reloc..LC4);
+                                                unaff_R13 = (double **)(uint64_t)uVar6;
+                                                if ((uVar6 != 0) ||
+                                                   (unaff_R14D = func_0x08090034(),
+                                                   ppdVar8 = _reloc.first_custom_dashtype, unaff_R14D < 1))
+                                                goto code_r0x08002323;
+                                                if (_reloc.first_custom_dashtype == (double **)0x0) {
+                                                    unaff_RBP = (code *)func_0x08090034(0x38, "dashtype");
+                                                } else {
+                                                    unaff_RBX = _reloc.first_custom_dashtype;
+                                                    unaff_R12 = (double **)0x0;
+                                                    while (ppdVar8 = unaff_RBX, *(int32_t *)(ppdVar8 + 1) < unaff_R14D)
+                                                    {
+                                                        unaff_RBX = (double **)*ppdVar8;
+                                                        unaff_R12 = ppdVar8;
+                                                        if (unaff_RBX == (double **)0x0) goto code_r0x080022c0;
+                                                    }
+                                                    unaff_RBX = (double **)0x0;
+                                                    unaff_RBP = (code *)ppdVar8;
+                                                    if (*(int32_t *)(ppdVar8 + 1) == unaff_R14D) goto code_r0x080021e3;
+                                                    unaff_RBP = (code *)func_0x08090034(0x38, "dashtype");
+                                                    if (unaff_R12 != (double **)0x0) goto code_r0x080022dd;
+                                                }
+                                                unaff_R12 = (double **)0x0;
+                                                _reloc.first_custom_dashtype = (double **)unaff_RBP;
+                                                do {
+                                                    *(int32_t *)((int64_t)unaff_RBP + 8) = unaff_R14D;
+                                                    *(undefined4 *)((int64_t)unaff_RBP + 0xc) = 0xffffffff;
+                                                    *(double **)((int64_t)unaff_RBP + 0x30) = (double *)0x0;
+                                                    *(double ***)unaff_RBP = ppdVar8;
+                                                    unaff_RBX = (double **)0x1;
+                                                    *(double **)((int64_t)unaff_RBP + 0x10) = (double *)0x0;
+                                                    *(double **)((int64_t)unaff_RBP + 0x18) = (double *)0x0;
+                                                    *(undefined4 *)((int64_t)unaff_RBP + 0x20) = 0;
+                                                    *(undefined4 *)((int64_t)unaff_RBP + 0x24) = 0;
+                                                    *(undefined4 *)((int64_t)unaff_RBP + 0x28) = 0;
+                                                    *(undefined4 *)((int64_t)unaff_RBP + 0x2c) = 0;
+code_r0x080021e3:
+                                                    iVar2 = func_0x08090034(_reloc.c_token, "def$ault");
+                                                    if (iVar2 == 0) {
+                                                        uVar7 = func_0x08090034();
+                                                        iVar3 = _reloc.num_tokens;
+                                                        iVar2 = _reloc.c_token;
+                                                        *(undefined4 *)((int64_t)unaff_RBP + 0xc) = uVar7;
+                                                        unaff_R13 = unaff_RBX;
+                                                        if (iVar3 <= iVar2) goto code_r0x08002216;
+code_r0x08002274:
+                                                        iVar2 = func_0x08090034(iVar2, reloc..LC4);
+                                                        if (iVar2 != 0) goto code_r0x08002216;
+                                                        if ((int32_t)unaff_R13 != 0) {
+                                                            ppdVar8 = *(double ***)unaff_RBP;
+                                                            if (_reloc.first_custom_dashtype != (double **)unaff_RBP) {
+                                                                *unaff_R12 = (double *)*(double ***)unaff_RBP;
+                                                                ppdVar8 = _reloc.first_custom_dashtype;
+                                                            }
+                                                            goto code_r0x0800229e;
+                                                        }
+                                                    } else {
+                                                        ppdVar8 = *(double ***)unaff_RBP;
+                                                        if (_reloc.first_custom_dashtype != (double **)unaff_RBP) {
+                                                            *unaff_R12 = (double *)*(double ***)unaff_RBP;
+                                                            ppdVar8 = _reloc.first_custom_dashtype;
+                                                        }
+                                                        _reloc.first_custom_dashtype = ppdVar8;
+                                                        func_0x08090034();
+                                                        iVar2 = _reloc.c_token + 1;
+                                                        _reloc.c_token = iVar2;
+                                                        if (iVar2 < _reloc.num_tokens) goto code_r0x08002274;
+code_r0x08002216:
+                                                        if (iVar1 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+                                                            return;
+                                                        }
+code_r0x08002337:
+                                                        ppdVar8 = (double **)func_0x08090034();
+code_r0x0800229e:
+                                                        _reloc.first_custom_dashtype = ppdVar8;
+                                                        func_0x08090034(unaff_RBP);
+                                                    }
+                                                    func_0x08090034(_reloc.c_token, 
+                                                                    "Extraneous arguments to set dashtype");
+code_r0x080022c0:
+                                                    ppdVar8 = unaff_RBX;
+                                                    unaff_RBP = (code *)func_0x08090034(0x38, "dashtype");
+code_r0x080022dd:
+                                                    *unaff_R12 = (double *)unaff_RBP;
+                                                } while( true );
+                                            }
+                                            _reloc.c_token = _reloc.c_token + 1;
+                                            if ((_reloc.set_iterator == 0) ||
+                                               (*(int32_t *)(_reloc.set_iterator + 0x40) == 0)) {
+                                                func_0x08090034(reloc.dyn_contour_levels_list);
+                                                func_0x08090034(reloc.dyn_contour_levels_list, 8, 5, 10);
+                                            }
+                                            iVar2 = func_0x08090034(_reloc.c_token, "di$screte");
+                                            if (iVar2 == 0) {
+                                                iVar2 = func_0x08090034(_reloc.c_token, "in$cremental");
+                                                ppdVar8 = _reloc.first_custom_dashtype;
+                                                if (iVar2 == 0) {
+                                                    iVar2 = func_0x08090034(_reloc.c_token, "au$to");
+                                                    if (iVar2 == 0) {
+                                                        if (_reloc.contour_levels_kind == 2) {
+                                                            func_0x08090034(_reloc.c_token, 
+                                                                            
+                                                            "Levels type is discrete, ignoring new number of contour levels"
+                                                            );
+                                                            goto code_r0x08001fcb;
+                                                        }
+                                                    } else {
+                                                        _reloc.contour_levels_kind = 0;
+                                                        _reloc.c_token = _reloc.c_token + 1;
+                                                        if (_reloc.num_tokens <= _reloc.c_token) {
+                                                            _reloc.contour_levels_kind = 0;
+                                                            return;
+                                                        }
+                                                        iVar4 = func_0x08090034(_reloc.c_token, reloc..LC4);
+                                                        iVar3 = _reloc.num_tokens;
+                                                        iVar5 = _reloc.contour_order;
+                                                        iVar2 = _reloc.c_token;
+                                                        if (iVar4 != 0) goto code_r0x08001b5e;
+                                                    }
+                                                    _reloc.contour_levels = func_0x08090034();
+                                                    iVar3 = _reloc.num_tokens;
+                                                    iVar5 = _reloc.contour_order;
+                                                    iVar2 = _reloc.c_token;
+                                                } else {
+                                                    _reloc.c_token = _reloc.c_token + 1;
+                                                    _reloc.contour_levels_kind = 1;
+                                                    func_0x08090034();
+                                                    iVar2 = _reloc.c_token;
+                                                    *ppdVar8 = extraout_XMM0_Qa;
+                                                    iVar2 = func_0x08090034(iVar2, reloc..LC9);
+                                                    unaff_RBX = _reloc.first_custom_dashtype;
+                                                    if (iVar2 == 0) {
+code_r0x0800207d:
+                                                        func_0x08090034(_reloc.c_token, 
+                                                                        "expecting comma to separate start,incr levels")
+                                                        ;
+                                                        unaff_RBX = ppdVar8;
+                                                        goto code_r0x0800208f;
+                                                    }
+                                                    _reloc.c_token = _reloc.c_token + 1;
+                                                    func_0x08090034();
+                                                    uVar9 = (double)extraout_XMM0_Qa_00 == 0.00000000;
+                                                    unaff_RBX[1] = extraout_XMM0_Qa_00;
+                                                    while( true ) {
+                                                        if ((bool)uVar9) {
+                                                            func_0x08090034(_reloc.c_token, "increment cannot be 0");
+                                                            ppdVar8 = unaff_RBX;
+                                                            goto code_r0x0800207d;
+                                                        }
+                                                        if (_reloc.num_tokens <= _reloc.c_token) {
+                                                            return;
+                                                        }
+                                                        iVar4 = func_0x08090034(_reloc.c_token, reloc..LC4);
+                                                        iVar3 = _reloc.num_tokens;
+                                                        iVar5 = _reloc.contour_order;
+                                                        iVar2 = _reloc.c_token;
+                                                        if (iVar4 != 0) goto code_r0x08001b5e;
+code_r0x08001fcb:
+                                                        iVar2 = func_0x08090034(_reloc.c_token, reloc..LC9);
+                                                        uVar9 = iVar2 == 0;
+                                                        if (!(bool)uVar9) break;
+code_r0x08002051:
+                                                        func_0x08090034(_reloc.c_token, 
+                                                                        "expecting comma to separate incr,stop levels");
+                                                    }
+                                                    _reloc.c_token = _reloc.c_token + 1;
+                                                    _reloc.free_dynarray = 2;
+                                                    func_0x08090034();
+                                                    _reloc.contour_levels =
+                                                         (int32_t)((extraout_XMM0_Qa_03 -
+                                                                   (double)*_reloc.first_custom_dashtype) /
+                                                                   (double)_reloc.first_custom_dashtype[1] + _reloc..LC1
+                                                                  );
+                                                    iVar3 = _reloc.num_tokens;
+                                                    iVar5 = _reloc.contour_order;
+                                                    iVar2 = _reloc.c_token;
+                                                }
+                                            } else {
+                                                _reloc.contour_levels_kind = 2;
+                                                _reloc.c_token = _reloc.c_token + 1;
+                                                if ((_reloc.num_tokens <= _reloc.c_token) ||
+                                                   (iVar2 = func_0x08090034(_reloc.c_token, reloc..LC4), iVar2 != 0)) {
+                                                    uVar9 = 1;
+                                                    func_0x08090034(_reloc.c_token, "expecting discrete level");
+code_r0x0800203f:
+                                                    func_0x08090034(_reloc.c_token, 
+                                                                    "expecting comma to separate discrete levels");
+                                                    goto code_r0x08002051;
+                                                }
+                                                unaff_RBP = reloc..LC4;
+                                                unaff_RBX = (double **)func_0x08090034();
+                                                func_0x08090034();
+                                                iVar3 = _reloc.num_tokens;
+                                                iVar2 = _reloc.c_token;
+                                                *unaff_RBX = extraout_XMM0_Qa_01;
+                                                if (iVar2 < iVar3) {
+                                                    do {
+                                                        iVar5 = func_0x08090034(iVar2, reloc..LC4);
+                                                        iVar3 = _reloc.num_tokens;
+                                                        iVar2 = _reloc.c_token;
+                                                        if (iVar5 != 0) break;
+                                                        iVar2 = func_0x08090034(_reloc.c_token, reloc..LC9);
+                                                        uVar9 = iVar2 == 0;
+                                                        if ((bool)uVar9) goto code_r0x0800203f;
+                                                        _reloc.c_token = _reloc.c_token + 1;
+                                                        unaff_RBX = (double **)func_0x08090034();
+                                                        func_0x08090034();
+                                                        iVar3 = _reloc.num_tokens;
+                                                        iVar2 = _reloc.c_token;
+                                                        *unaff_RBX = extraout_XMM0_Qa_02;
+                                                    } while (iVar2 < iVar3);
+                                                }
+                                                _reloc.contour_levels = (int32_t)_reloc.free_dynarray;
+                                                iVar5 = _reloc.contour_order;
+                                            }
+                                        } else {
+                                            _reloc.contour_kind = 2;
+                                            _reloc.c_token = _reloc.c_token + 1;
+                                            iVar3 = _reloc.num_tokens;
+                                            iVar5 = _reloc.contour_order;
+                                            iVar2 = _reloc.c_token;
+                                        }
+                                    } else {
+                                        _reloc.contour_kind = 1;
+                                        _reloc.c_token = _reloc.c_token + 1;
+                                        iVar3 = _reloc.num_tokens;
+                                        iVar5 = _reloc.contour_order;
+                                        iVar2 = _reloc.c_token;
+                                    }
+                                } else {
+                                    _reloc.contour_kind = 0;
+                                    _reloc.c_token = _reloc.c_token + 1;
+                                    iVar3 = _reloc.num_tokens;
+                                    iVar5 = _reloc.contour_order;
+                                    iVar2 = _reloc.c_token;
+                                }
+                            } else {
+                                reloc.contour_sortlevels = (code)0x0;
+                                _reloc.c_token = _reloc.c_token + 1;
+                                iVar3 = _reloc.num_tokens;
+                                iVar5 = _reloc.contour_order;
+                                iVar2 = _reloc.c_token;
+                            }
+                        } else {
+                            reloc.contour_sortlevels = (code)0x1;
+                            _reloc.c_token = _reloc.c_token + 1;
+                            iVar3 = _reloc.num_tokens;
+                            iVar5 = _reloc.contour_order;
+                            iVar2 = _reloc.c_token;
+                        }
+                    } else {
+                        _reloc.c_token = _reloc.c_token + 1;
+                        _reloc.contour_firstlinetype = func_0x08090034();
+                        iVar3 = _reloc.num_tokens;
+                        iVar5 = _reloc.contour_order;
+                        iVar2 = _reloc.c_token;
+                    }
+                } else {
+                    _reloc.c_token = _reloc.c_token + 1;
+                    _reloc.contour_pts = func_0x08090034();
+                    iVar3 = _reloc.num_tokens;
+                    iVar5 = _reloc.contour_order;
+                    iVar2 = _reloc.c_token;
+                }
+code_r0x08001b5e:
+                _reloc.contour_order = iVar5;
+            } while (iVar2 < iVar3);
+        }
+    } else {
+        _reloc.contour_pts = 5;
+        _reloc.contour_kind = 0;
+        _reloc.contour_order = 4;
+        _reloc.contour_levels = 5;
+        _reloc.contour_levels_kind = 0;
+        _reloc.contour_firstlinetype = 0;
+    }
+    return;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.s pdd @ sym.s pdd @ sym.se pdd @ sym.se pdd @ sym.set pdd @ sym.set pdd @ sym.set_ pdd @ sym.set_ pdd @ sym.set_c pdd @ sym.set_c pdd @ sym.set_cn pdd @ sym.set_cn pdd @ sym.set_cnt pdd @ sym.set_cnt pdd @ sym.set_cntr pdd @ sym.set_cntr pdd @ sym.set_cntrp pdd @ sym.set_cntrp pdd @ sym.set_cntrpa pdd @ sym.set_cntrpa pdd @ sym.set_cntrpar pdd @ sym.set_cntrpar pdd @ sym.set_cntrpara pdd @ sym.set_cntrpara pdd @ sym.set_cntrparam pdd @ sym.set_cntrparam/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8001ac0 */
+#include <stdint.h>
+ 
+int64_t set_cntrparam (int64_t arg7) {
+    xmm0 = arg7;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    while (eax != 0) {
+        *(reloc.contour_pts) = 5;
+        *(reloc.contour_kind) = 0;
+        *(reloc.contour_order) = 4;
+        *(reloc.contour_levels) = 5;
+        *(reloc.contour_levels_kind) = 0;
+        *(reloc.contour_firstlinetype) = 0;
+label_0:
+        return eax;
+        rsi = loc__LC4;
+        eax = sm_palette ();
+    }
+    edi = *(reloc.c_token);
+    if (*(reloc.num_tokens) > edi) {
+        goto label_5;
+    }
+    goto label_0;
+label_1:
+    *(reloc.c_token)++;
+    eax = sm_palette ();
+    edi = *(reloc.c_token);
+    *(reloc.contour_pts) = eax;
+    eax = *(reloc.num_tokens);
+label_2:
+    if (edi >= eax) {
+        goto label_0;
+    }
+label_5:
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_0;
+    }
+    edi = *(reloc.c_token);
+    rsi = "p$oints";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_1;
+    }
+    edi = *(reloc.c_token);
+    rsi = "first$linetype";
+    eax = sm_palette ();
+    if (eax != 0) {
+        *(reloc.c_token)++;
+        eax = sm_palette ();
+        edi = *(reloc.c_token);
+        *(reloc.contour_firstlinetype) = eax;
+        eax = *(reloc.num_tokens);
+        goto label_2;
+    }
+    edi = *(reloc.c_token);
+    rsi = "sort$ed";
+    eax = sm_palette ();
+    if (eax != 0) {
+        eax = *(reloc.c_token);
+        *(reloc.contour_sortlevels) = 1;
+        edi = rax + 1;
+        eax = *(reloc.num_tokens);
+        *(reloc.c_token) = edi;
+        goto label_2;
+    }
+    edi = *(reloc.c_token);
+    rsi = "unsort$ed";
+    eax = sm_palette ();
+    if (eax != 0) {
+        eax = *(reloc.c_token);
+        *(reloc.contour_sortlevels) = 0;
+        edi = rax + 1;
+        eax = *(reloc.num_tokens);
+        *(reloc.c_token) = edi;
+        goto label_2;
+    }
+    edi = *(reloc.c_token);
+    rsi = "li$near";
+    eax = sm_palette ();
+    if (eax != 0) {
+        *(reloc.contour_kind) = 0;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        eax = *(reloc.num_tokens);
+        *(reloc.c_token) = edi;
+        goto label_2;
+    }
+    edi = *(reloc.c_token);
+    rsi = "c$ubicspline";
+    eax = sm_palette ();
+    if (eax != 0) {
+        *(reloc.contour_kind) = 1;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        eax = *(reloc.num_tokens);
+        *(reloc.c_token) = edi;
+        goto label_2;
+    }
+    edi = *(reloc.c_token);
+    rsi = "b$spline";
+    eax = sm_palette ();
+    if (eax != 0) {
+        *(reloc.contour_kind) = 2;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        eax = *(reloc.num_tokens);
+        *(reloc.c_token) = edi;
+        goto label_2;
+    }
+    edi = *(reloc.c_token);
+    rsi = "le$vels";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_6;
+    }
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    rax = *(reloc.set_iterator);
+    *(reloc.c_token) = edi;
+    if (rax != 0) {
+        eax = *((rax + 0x40));
+        if (eax != 0) {
+            goto label_7;
+        }
+    }
+    rdi = reloc_dyn_contour_levels_list;
+    sm_palette ();
+    ecx = 0xa;
+    edx = 5;
+    rdi = reloc_dyn_contour_levels_list;
+    esi = 8;
+    sm_palette ();
+    edi = *(reloc.c_token);
+label_7:
+    rsi = "di$screte";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_8;
+    }
+    edi = *(reloc.c_token);
+    rsi = "in$cremental";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_9;
+    }
+    rbx = *(reloc.first_custom_dashtype);
+    *(reloc.c_token)++;
+    *(reloc.contour_levels_kind) = 1;
+    sm_palette ();
+    edi = *(reloc.c_token);
+    rsi = loc__LC9;
+    *(rbx) = xmm0;
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_10;
+    }
+    *(reloc.c_token)++;
+    rbx = *(reloc.first_custom_dashtype);
+    sm_palette ();
+    xmm1 = 0;
+    __asm ("ucomisd xmm0, xmm1");
+    *((rbx + 8)) = xmm0;
+    __asm ("jnp 0x8002063");
+label_4:
+    edi = *(reloc.c_token);
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_0;
+    }
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_11;
+    }
+label_3:
+    edi = *(reloc.c_token);
+    eax = *(reloc.num_tokens);
+    goto label_2;
+label_6:
+    edi = *(reloc.c_token);
+    rsi = "o$rder";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_12;
+    }
+    *(reloc.c_token)++;
+    eax = sm_palette ();
+    edx = rax - 2;
+    if (edx > 8) {
+        goto label_13;
+    }
+    *(reloc.contour_order) = eax;
+    edi = *(reloc.c_token);
+    eax = *(reloc.num_tokens);
+    goto label_2;
+label_8:
+    *(reloc.contour_levels_kind) = 2;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_14;
+    }
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_14;
+    }
+    rdi = reloc_dyn_contour_levels_list;
+    rbp = loc__LC4;
+    rax = sm_palette ();
+    rbx = rax;
+    sm_palette ();
+    edi = *(reloc.c_token);
+    eax = *(reloc.num_tokens);
+    *(rbx) = xmm0;
+    if (eax > edi) {
+        goto label_15;
+    }
+    goto label_16;
+    do {
+        edi = *(reloc.c_token);
+        rsi = loc__LC9;
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_17;
+        }
+        rdi = reloc_dyn_contour_levels_list;
+        *(reloc.c_token)++;
+        rax = sm_palette ();
+        rbx = rax;
+        sm_palette ();
+        edi = *(reloc.c_token);
+        eax = *(reloc.num_tokens);
+        *(rbx) = xmm0;
+        if (edi >= eax) {
+            goto label_16;
+        }
+label_15:
+        rsi = rbp;
+        eax = sm_palette ();
+    } while (eax == 0);
+    edi = *(reloc.c_token);
+    eax = *(reloc.num_tokens);
+label_16:
+    rdx = *(reloc.free_dynarray);
+    *(reloc.contour_levels) = edx;
+    goto label_2;
+label_9:
+    edi = *(reloc.c_token);
+    rsi = "au$to";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_18;
+    }
+    *(reloc.contour_levels_kind) = 0;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_0;
+    }
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_3;
+    }
+    do {
+        eax = sm_palette ();
+        edi = *(reloc.c_token);
+        *(reloc.contour_levels) = eax;
+        eax = *(reloc.num_tokens);
+        goto label_2;
+label_18:
+    } while (*(reloc.contour_levels_kind) != 2);
+    edi = *(reloc.c_token);
+    rsi = "Levels type is discrete, ignoring new number of contour levels";
+    eax = 0;
+    sm_palette ();
+label_11:
+    edi = *(reloc.c_token);
+    rsi = loc__LC9;
+    eax = sm_palette ();
+    if (eax != 0) {
+        *(reloc.c_token)++;
+        *(reloc.free_dynarray) = 2;
+        sm_palette ();
+        rax = *(reloc.first_custom_dashtype);
+        edi = *(reloc.c_token);
+        __asm ("subsd xmm0, qword [rax]");
+        __asm ("divsd xmm0, qword [rax + 8]");
+        __asm ("addsd xmm0, qword [loc..LC1]");
+        __asm ("cvttsd2si eax, xmm0");
+        *(reloc.contour_levels) = eax;
+        eax = *(reloc.num_tokens);
+        goto label_2;
+label_14:
+        edi = *(reloc.c_token);
+        rsi = "expecting discrete level";
+        eax = 0;
+        sm_palette ();
+label_17:
+        edi = *(reloc.c_token);
+        rsi = "expecting comma to separate discrete levels";
+        sm_palette ();
+    }
+    edi = *(reloc.c_token);
+    rsi = "expecting comma to separate incr,stop levels";
+    eax = sm_palette ();
+    if (*(reloc.c_token) != 0) {
+        goto label_4;
+    }
+    edi = *(reloc.c_token);
+    rsi = "increment cannot be 0";
+    eax = 0;
+    sm_palette ();
+label_10:
+    edi = *(reloc.c_token);
+    rsi = "expecting comma to separate start,incr levels";
+    eax = sm_palette ();
+label_13:
+    edi = *(reloc.c_token);
+    rsi = "bspline order must be in [2..10] range.";
+    eax = 0;
+    eax = sm_palette ();
+label_12:
+    edi = *(reloc.c_token);
+    rsi = "expecting 'linear', 'cubicspline', 'bspline', 'points', 'levels' or 'order';
+    eax = 0;
+    sm_palette ();
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.s pdg @ sym.s pdg @ sym.se pdg @ sym.se pdg @ sym.set pdg @ sym.set pdg @ sym.set_ pdg @ sym.set_ pdg @ sym.set_c pdg @ sym.set_c pdg @ sym.set_cn pdg @ sym.set_cn pdg @ sym.set_cnt pdg @ sym.set_cnt pdg @ sym.set_cntr pdg @ sym.set_cntr pdg @ sym.set_cntrl pdg @ sym.set_cntrl pdg @ sym.set_cntrla pdg @ sym.set_cntrla pdg @ sym.set_cntrlab pdg @ sym.set_cntrlab pdg @ sym.set_cntrlabe pdg @ sym.set_cntrlabe pdg @ sym.set_cntrlabel pdg @ sym.set_cntrlabel
+uint64_t sym.set_cntrlabel(void)
+{
+    int32_t iVar1;
+    uint64_t uVar2;
+    int64_t iVar3;
+    uint64_t uVar4;
+    char *pcVar5;
+    uint32_t uVar6;
+    
+    _reloc.c_token = _reloc.c_token + 1;
+    if (((int32_t)_reloc.c_token < _reloc.num_tokens) &&
+       (uVar2 = func_0x08090034(_reloc.c_token, reloc..LC4), (int32_t)uVar2 == 0)) {
+        if ((int32_t)_reloc.c_token < _reloc.num_tokens) {
+            do {
+                uVar2 = func_0x08090034(_reloc.c_token, reloc..LC4);
+                if ((int32_t)uVar2 != 0) {
+                    return uVar2;
+                }
+                iVar1 = func_0x08090034(_reloc.c_token, "form$at");
+                if (iVar1 == 0) {
+                    iVar1 = func_0x08090034(_reloc.c_token, "font");
+                    if (iVar1 == 0) {
+                        iVar1 = func_0x08090034(_reloc.c_token, "one$color");
+                        if (iVar1 == 0) {
+                            iVar1 = func_0x08090034(_reloc.c_token, "start");
+                            if (iVar1 == 0) {
+                                iVar1 = func_0x08090034(_reloc.c_token, "int$erval");
+                                if (iVar1 == 0) {
+                                    pcVar5 = "unrecognized option";
+                                    uVar6 = _reloc.c_token;
+                                    func_0x08090034();
+                                    iVar1 = func_0x08090034(_reloc.c_token, pcVar5 + 2);
+                                    if (iVar1 == 0) {
+                                        iVar1 = func_0x08090034(_reloc.c_token, pcVar5);
+                                        if (iVar1 == 0) {
+                                            return 0;
+                                        }
+                                        if (pcVar5[2] == 'm') {
+                                            *(undefined *)((int64_t)(int32_t)uVar6 * 0x2a8 + 0x809025d) = 0;
+                                        } else {
+                                            reloc.FITLIMIT[(int64_t)(int32_t)uVar6 * 0x2a8] = (code)0x0;
+                                        }
+                                    } else {
+                                        if (pcVar5[2] == 'm') {
+                                            *(undefined *)((int64_t)(int32_t)uVar6 * 0x2a8 + 0x809025d) = 1;
+                                        } else {
+                                            reloc.FITLIMIT[(int64_t)(int32_t)uVar6 * 0x2a8] = (code)0x1;
+                                        }
+                                    }
+                                    _reloc.c_token = _reloc.c_token + 1;
+                                    return 1;
+                                }
+                                _reloc.c_token = _reloc.c_token + 1;
+                                uVar2 = func_0x08090034();
+                                _reloc.clabel_interval = (undefined4)uVar2;
+                            } else {
+                                _reloc.c_token = _reloc.c_token + 1;
+                                uVar2 = func_0x08090034();
+                                _reloc.clabel_start = (int32_t)uVar2;
+                                if (_reloc.clabel_start < 1) {
+                                    _reloc.clabel_start = 5;
+                                }
+                            }
+                        } else {
+                            uVar2 = (uint64_t)_reloc.c_token;
+                            reloc.clabel_onecolor = (code)0x1;
+                            _reloc.c_token = _reloc.c_token + 1;
+                        }
+                    } else {
+                        _reloc.c_token = _reloc.c_token + 1;
+                        uVar4 = func_0x08090034();
+                        uVar2 = uVar4;
+                        if (uVar4 != 0) {
+                            uVar2 = func_0x08090034();
+                            _reloc.clabel_font = uVar4;
+                        }
+                    }
+                } else {
+                    _reloc.c_token = _reloc.c_token + 1;
+                    iVar3 = func_0x08090034();
+                    if (iVar3 != 0) {
+                        func_0x08090034(reloc.contour_format, iVar3, 0x20);
+                    }
+                    uVar2 = func_0x08090034();
+                }
+            } while ((int32_t)_reloc.c_token < _reloc.num_tokens);
+        }
+    } else {
+        uVar2 = 0x67;
+        reloc.clabel_onecolor = (code)0x0;
+        _reloc.contour_format = 0x332e3825;
+        *(undefined2 *)0x8090438 = 0x67;
+    }
+    return uVar2;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.s pdd @ sym.s pdd @ sym.se pdd @ sym.se pdd @ sym.set pdd @ sym.set pdd @ sym.set_ pdd @ sym.set_ pdd @ sym.set_c pdd @ sym.set_c pdd @ sym.set_cn pdd @ sym.set_cn pdd @ sym.set_cnt pdd @ sym.set_cnt pdd @ sym.set_cntr pdd @ sym.set_cntr pdd @ sym.set_cntrl pdd @ sym.set_cntrl pdd @ sym.set_cntrla pdd @ sym.set_cntrla pdd @ sym.set_cntrlab pdd @ sym.set_cntrlab pdd @ sym.set_cntrlabe pdd @ sym.set_cntrlabe pdd @ sym.set_cntrlabel pdd @ sym.set_cntrlabel/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x80061a0 */
+#include <stdint.h>
+ 
+uint64_t set_cntrlabel (void) {
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_2;
+    }
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_2;
+    }
+    edi = *(reloc.c_token);
+    rbx = loc__LC4;
+    if (edi < *(reloc.num_tokens)) {
+        goto label_3;
+    }
+    goto label_4;
+    do {
+        *(reloc.c_token)++;
+        rax = sm_palette ();
+        if (rax != 0) {
+            edx = 0x20;
+            rsi = rax;
+            rdi = reloc_contour_format;
+            sm_palette ();
+        }
+        rdi = rbp;
+        sm_palette ();
+        edi = *(reloc.c_token);
+label_0:
+        if (*(reloc.num_tokens) <= edi) {
+            goto label_4;
+        }
+label_3:
+        rsi = rbx;
+        eax = sm_palette ();
+        if (eax != 0) {
+            goto label_4;
+        }
+        edi = *(reloc.c_token);
+        rsi = "form$at";
+        eax = sm_palette ();
+    } while (eax != 0);
+    edi = *(reloc.c_token);
+    rsi = "font";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_5;
+    }
+    *(reloc.c_token)++;
+    rax = sm_palette ();
+    edi = *(reloc.c_token);
+    if (rax == 0) {
+        goto label_0;
+    }
+    rdi = *(reloc.clabel_font);
+    sm_palette ();
+    *(reloc.clabel_font) = rbp;
+    edi = *(reloc.c_token);
+    goto label_0;
+label_2:
+    eax = 0x67;
+    *(reloc.clabel_onecolor) = 0;
+    *(reloc.contour_format) = 0x332e3825;
+    *(0x08090438) = ax;
+label_4:
+    return rax;
+label_5:
+    edi = *(reloc.c_token);
+    rsi = "one$color";
+    eax = sm_palette ();
+    if (eax != 0) {
+        eax = *(reloc.c_token);
+        *(reloc.clabel_onecolor) = 1;
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+        goto label_0;
+    }
+    edi = *(reloc.c_token);
+    rsi = "start";
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_6;
+    }
+    *(reloc.c_token)++;
+    eax = sm_palette ();
+    *(reloc.clabel_start) = eax;
+    while (1) {
+        edi = *(reloc.c_token);
+        goto label_0;
+label_6:
+        edi = *(reloc.c_token);
+        rsi = "int$erval";
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_7;
+        }
+        *(reloc.c_token)++;
+        eax = sm_palette ();
+        edi = *(reloc.c_token);
+        *(reloc.clabel_interval) = eax;
+        goto label_0;
+        *(reloc.clabel_start) = 5;
+    }
+label_7:
+    edi = *(reloc.c_token);
+    rsi = "unrecognized option";
+    eax = 0;
+    sm_palette ();
+    rbx = rsi;
+    rsi += 2;
+    edi = *(reloc.c_token);
+    eax = sm_palette (rbx);
+    if (eax == 0) {
+        goto label_8;
+    }
+    rdi = (int64_t) ebp;
+    rax = reloc_axis_array;
+    rdi *= 0x2a8;
+    if (*((rbx + 2)) == 0x6d) {
+        goto label_9;
+    }
+    *((rax + rdi + 0x140)) = 1;
+label_1:
+    *(reloc.c_token)++;
+    eax = 1;
+    do {
+        return rax;
+label_8:
+        edi = *(reloc.c_token);
+        rsi = rbx;
+        eax = sm_palette ();
+        r8d = eax;
+        eax = 0;
+    } while (r8d == 0);
+    if (*((rbx + 2)) != 0x6d) {
+        rax = (int64_t) ebp;
+        rdx = reloc_axis_array;
+        rax *= 0x2a8;
+        *((rdx + rax + 0x140)) = 0;
+        goto label_1;
+label_9:
+        *((rax + rdi + 0x141)) = 1;
+        goto label_1;
+    }
+    rdi = (int64_t) ebp;
+    rax = reloc_axis_array;
+    rdi *= 0x2a8;
+    *((rax + rdi + 0x141)) = 0;
+    goto label_1;
+}
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x80020c0 */
+#include <stdint.h>
+ 
+int64_t set_dashtype (int64_t arg8, int64_t arg7) {
+    xmm1 = arg8;
+    xmm0 = arg7;
+    rax = *(fs:0x28);
+    *((rsp + 0x28)) = rax;
+    eax = 0;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_5;
+    }
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    r13d = eax;
+    if (eax != 0) {
+        goto label_5;
+    }
+    rax = sm_palette ();
+    r14 = rax;
+    edx = eax;
+    if (eax <= 0) {
+        goto label_5;
+    }
+    rbp = *(reloc.first_custom_dashtype);
+    if (rbp == 0) {
+        goto label_6;
+    }
+    r12d = 0;
+    while (eax < edx) {
+        rbx = *(rbp);
+        r12 = rbp;
+        if (rbx == 0) {
+            goto label_7;
+        }
+        eax = *((rbp + 8));
+    }
+    ebx = 0;
+    if (eax != r14d) {
+        rsi = "dashtype";
+        edi = 0x38;
+        *((rsp + 0x20)) = 0;
+        rax = sm_palette ();
+        if (r12 != 0) {
+            goto label_8;
+        }
+label_3:
+        *(reloc.first_custom_dashtype) = rax;
+        rbx = rbp;
+        r12d = 0;
+label_1:
+        rax = *((rsp + 0x20));
+        *((rbp + 8)) = r14d;
+        *((rsp + 8)) = 0;
+        __asm ("movdqa xmm0, xmmword [rsp]");
+        *((rsp + 0x10)) = 0;
+        *((rsp + 0x18)) = 0;
+        __asm ("movdqa xmm1, xmmword [rsp + 0x10]");
+        *((rbp + 0xc)) = 0xffffffff;
+        *((rbp + 0x30)) = rax;
+        *(rbp) = rbx;
+        ebx = 1;
+        __asm ("movups xmmword [rbp + 0x10], xmm0");
+        __asm ("movups xmmword [rbp + 0x20], xmm1");
+    }
+    edi = *(reloc.c_token);
+    rsi = "def$ault";
+    eax = sm_palette (0);
+    if (eax != 0) {
+        goto label_9;
+    }
+    rdi = rbp + 0x10;
+    r13d = ebx;
+    eax = sm_palette ();
+    edi = *(reloc.c_token);
+    *((rbp + 0xc)) = eax;
+    if (*(reloc.num_tokens) > edi) {
+        goto label_10;
+    }
+    do {
+label_0:
+        rax = *((rsp + 0x28));
+        rax ^= *(fs:0x28);
+        if (*(reloc.num_tokens) != edi) {
+            goto label_11;
+        }
+        return rax;
+label_9:
+        rax = *(rbp);
+        if (*(reloc.first_custom_dashtype) == rbp) {
+            goto label_12;
+        }
+        *(r12) = rax;
+label_2:
+        rdi = rbp;
+        sm_palette ();
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        *(reloc.c_token) = edi;
+    } while (*(reloc.num_tokens) <= edi);
+label_10:
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_0;
+    }
+    if (r13d != 0) {
+        rax = *(rbp);
+        if (*(reloc.first_custom_dashtype) == rbp) {
+            goto label_13;
+        }
+        *(r12) = rax;
+label_4:
+        rdi = rbp;
+        eax = sm_palette ();
+    }
+    edi = *(reloc.c_token);
+    rsi = "Extraneous arguments to set dashtype";
+    eax = 0;
+    sm_palette ();
+label_7:
+    rsi = "dashtype";
+    edi = 0x38;
+    *((rsp + 0x20)) = 0;
+    rax = sm_palette ();
+    do {
+        *(r12) = rbp;
+        goto label_1;
+label_12:
+        *(reloc.first_custom_dashtype) = rax;
+        goto label_2;
+label_6:
+        rsi = "dashtype";
+        edi = 0x38;
+        *((rsp + 0x20)) = 0;
+        rax = sm_palette ();
+        goto label_3;
+label_8:
+        rbx = rbp;
+    } while (1);
+label_5:
+    edi = *(reloc.c_token);
+    rsi = "tag must be > zero";
+    eax = 0;
+    sm_palette ();
+label_11:
+    rax = sm_palette ();
+label_13:
+    *(reloc.first_custom_dashtype) = rax;
+    goto label_4;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8002690 */
+#include <stdint.h>
+ 
+uint64_t set_decimalsign (void) {
+    rdi = *(reloc.decimalsign);
+    *(reloc.c_token)++;
+    sm_palette (rbx);
+    edi = *(reloc.c_token);
+    *(reloc.decimalsign) = 0;
+    if (edi < *(reloc.num_tokens)) {
+        goto label_3;
+    }
+label_1:
+    rdi = *(reloc.numeric_locale);
+    if (rdi == 0) {
+        goto label_4;
+    }
+    while (*((rdi + 1)) != 0) {
+        edi = 1;
+        rsi = loc__LC99;
+        sm_palette ();
+        rdi = *(reloc.numeric_locale);
+label_4:
+        sm_palette ();
+        *(reloc.numeric_locale) = 0;
+label_0:
+        return;
+    }
+    sm_palette ();
+    *(reloc.numeric_locale) = 0;
+    goto label_0;
+label_3:
+    rsi = loc__LC4;
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_1;
+    }
+    edi = *(reloc.c_token);
+    rsi = "locale";
+    eax = sm_palette ();
+    if (eax != 0) {
+        *(reloc.c_token)++;
+        rax = sm_palette ();
+        rsi = rax;
+        rbx = rax;
+        if (rax == 0) {
+            goto label_5;
+        }
+label_2:
+        edi = 1;
+        rax = sm_palette ();
+        if (rax == 0) {
+            goto label_6;
+        }
+        rax = sm_palette ();
+        rdi = *(rax);
+        rax = sm_palette ();
+        rdi = *(reloc.stderr);
+        esi = 1;
+        rdx = "decimal_sign in locale is %s\n";
+        rcx = rax;
+        *(reloc.decimalsign) = rax;
+        eax = 0;
+        sm_palette ();
+        rdi = *(reloc.numeric_locale);
+        sm_palette ();
+        *(reloc.numeric_locale) = rbx;
+        edi = 1;
+        rsi = loc__LC99;
+        void (*0x8090034)() ();
+    }
+    rax = sm_palette ();
+    *(reloc.decimalsign) = rax;
+    if (rax != 0) {
+        goto label_0;
+    }
+    edi = *(reloc.c_token);
+    rsi = "expecting string";
+    sm_palette ();
+label_5:
+    rsi = loc__LC98;
+    edi = 1;
+    rax = sm_palette ();
+    rdi = rax;
+    rax = sm_palette ();
+    rsi = rax;
+    if (rax == 0) {
+        rdi = "LC_ALL";
+        rax = sm_palette ();
+        rdi = rax;
+        rax = sm_palette ();
+        rsi = rax;
+        if (rax != 0) {
+            goto label_7;
+        }
+        rdi = "LC_NUMERIC";
+        rax = sm_palette ();
+        rdi = rax;
+        rax = sm_palette ();
+        rsi = rax;
+        if (rax != 0) {
+            goto label_7;
+        }
+        rdi = "LANG";
+        rax = sm_palette ();
+        rdi = rax;
+        rax = sm_palette ();
+        rsi = loc__LC98;
+        rbx = rax;
+        if (rax != 0) {
+            rsi = rax;
+        }
+        goto label_2;
+label_6:
+        eax = *(reloc.c_token);
+        rsi = "Could not find requested locale";
+        edi = rax - 1;
+        eax = 0;
+        sm_palette ();
+    }
+label_7:
+    rbx = rsi;
+    goto label_2;
+}
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8006ad0 */
+#include <stdint.h>
+ 
+uint64_t set_ticscale (void) {
+    rsi = "def$ault";
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    eax = sm_palette (rbx, rbp);
+    if (eax == 0) {
+        goto label_3;
+    }
+    *(reloc.c_token)++;
+    rax = reloc_epsilon_abs;
+    xmm0 = .rodata.cst8;
+    xmm1 = *(loc..LC191);
+    rdx = rax + 0x1d38;
+    do {
+        *(rax) = xmm0;
+        rax += 0x2a8;
+        *((rax - 0x2a0)) = xmm1;
+    } while (rdx != rax);
+    *(reloc.ticscale) = xmm0;
+    *(reloc.default_axis_zeroaxis) = xmm1;
+    *(reloc.missing_val) = xmm0;
+    *(reloc.df_separators) = xmm0;
+    *(reloc.df_commentschars) = xmm0;
+label_0:
+    return rax;
+label_3:
+    sm_palette ();
+    edi = *(reloc.c_token);
+    rsi = loc__LC9;
+    *((rsp + 8)) = xmm0;
+    eax = sm_palette ();
+    xmm1 = *((rsp + 8));
+    if (eax != 0) {
+        goto label_4;
+    }
+    xmm0 = *(loc..LC191);
+    __asm ("mulsd xmm0, xmm1");
+label_2:
+    rax = reloc_epsilon_abs;
+    rdx = rax + 0x1540;
+    do {
+        *(rax) = xmm1;
+        rax += 0x2a8;
+        *((rax - 0x2a0)) = xmm0;
+    } while (rax != rdx);
+    rbx = reloc_ticscale;
+    rbp = loc__LC9;
+    r12 = rbx + 0x18;
+label_1:
+    edi = *(reloc.c_token);
+    rsi = rbp;
+    eax = sm_palette ();
+    if (eax == 0) {
+        goto label_0;
+    }
+    *(reloc.c_token)++;
+    rbx += 8;
+    sm_palette ();
+    *((rbx + 8)) = xmm0;
+    if (rbx != r12) {
+        goto label_1;
+    }
+    return rax;
+label_4:
+    *(reloc.c_token)++;
+    sm_palette ();
+    xmm1 = *((rsp + 8));
+    goto label_2;
+}
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8005c30 */
+#include <stdint.h>
+ 
+uint64_t set_object (int64_t arg11) {
+    xmm4 = arg11;
+label_4:
+    eax = edi;
+    ebx = esi;
+    *((rsp + 0x20)) = edi;
+    edi = *(reloc.c_token);
+    edx = rdi + 1;
+    rcx = *(fs:0x28);
+    *((rsp + 0x98)) = rcx;
+    ecx = 0;
+    *(reloc.c_token) = edx;
+    if (eax < 0xffffffff) {
+        *(reloc.c_token) = edi;
+        if (esi != 1) {
+            goto label_7;
+        }
+        rax = reloc_default_rectangle;
+        ebp = 0;
+        *((rsp + 0x18)) = 0;
+        *(rsp) = rax;
+        r13 = rax + 0xa0;
+label_0:
+        if (*(reloc.num_tokens) > edi) {
+            rax = rsp + 0x30;
+            *((rsp + 0x24)) = 0;
+            r15d = 0;
+            r14d = 0;
+            *((rsp + 0x27)) = 0;
+            *((rsp + 0x25)) = 0;
+            *((rsp + 0x26)) = 0;
+            *((rsp + 0x28)) = rax;
+            void (*0x8004c48)() ();
+        }
+        rax = *((rsp + 0x98));
+        rax ^= *(fs:0x28);
+        if (*(reloc.num_tokens) != edi) {
+            goto label_8;
+        }
+    }
+    rbp = *(reloc.first_object);
+    if (rbp == 0) {
+        goto label_9;
+    }
+    ecx = *((rsp + 0x20));
+    r12d = 0;
+    while (rax != 0) {
+        if (ecx > 0) {
+            if (*((rbp + 8)) >= ecx) {
+                goto label_10;
+            }
+        }
+        rax = *(rbp);
+        r12 = rbp;
+    }
+    if (*((rsp + 0x20)) != 0xffffffff) {
+        goto label_11;
+    }
+    eax = *((rbp + 8));
+    edx = 0;
+    esi = ebx;
+    r12 = rbp;
+    ebp = 0;
+    eax++;
+    edi = eax;
+    *((rsp + 0x20)) = eax;
+    rax = new_object ();
+    *(rsp) = rax;
+    do {
+label_2:
+        rax = *(rsp);
+        *(r12) = rax;
+label_1:
+        rax = *(rsp);
+        edi = *(reloc.c_token);
+        *(rax) = rbp;
+        *((rsp + 0x18)) = rax;
+        if (ebx == 1) {
+            __asm ("movdqu xmm6, xmmword [reloc.load_range]");
+            __asm ("movdqu xmm4, xmmword [reloc.first_object]");
+            rcx = rax;
+            __asm ("movups xmmword [rax + 0x18], xmm4");
+            __asm ("movdqu xmm5, xmmword [reloc.parse_fillstyle]");
+            __asm ("movups xmmword [rax + 0x38], xmm6");
+            __asm ("movdqu xmm7, xmmword [reloc.safe_strncpy]");
+            __asm ("movups xmmword [rax + 0x28], xmm5");
+            __asm ("movups xmmword [rax + 0x48], xmm7");
+            __asm ("movdqu xmm4, xmmword [reloc.clabel_onecolor]");
+            __asm ("movups xmmword [rax + 0x58], xmm4");
+            __asm ("movdqu xmm5, xmmword [reloc.clabel_interval]");
+            __asm ("movups xmmword [rax + 0x68], xmm5");
+            __asm ("movdqu xmm6, xmmword [reloc.might_be_numeric]");
+            __asm ("movups xmmword [rax + 0x78], xmm6");
+            __asm ("movdqu xmm7, xmmword [reloc.some_grid_selected]");
+            __asm ("movups xmmword [rax + 0x88], xmm7");
+            rax = *(reloc.spiderplot);
+            *((rcx + 0x98)) = rax;
+        }
+        rax = *(rsp);
+        r13 = rax + 0xa0;
+        goto label_0;
+        if (ebx == 1) {
+label_10:
+            goto label_12;
+        }
+        edi = *((rsp + 0x20));
+        edx = 0;
+        esi = ebx;
+        rax = new_object ();
+        *(rsp) = rax;
+    } while (r12 != 0);
+label_3:
+    rax = *(rsp);
+    *(reloc.first_object) = rax;
+    goto label_1;
+label_12:
+    if (*((rbp + 0x10)) != ebx) {
+        void (*0x800570f)() ();
+    }
+label_11:
+    edi = *((rsp + 0x20));
+    edx = 0;
+    esi = ebx;
+    ebp = 0;
+    rax = new_object ();
+    *(rsp) = rax;
+    goto label_2;
+label_9:
+    if (*((rsp + 0x20)) != 0xffffffff) {
+        edi = *((rsp + 0x20));
+        edx = 0;
+        rax = new_object ();
+        *(rsp) = rax;
+        goto label_3;
+    }
+    edx = 0;
+    edi = 1;
+    rax = new_object ();
+    *((rsp + 0x20)) = 1;
+    *(rsp) = rax;
+    goto label_3;
+label_7:
+    rsi = "Unknown object type";
+    eax = 0;
+    eax = sm_palette ();
+    edi = *(reloc.c_token);
+    rsi = "Expecting to or rto";
+    eax = 0;
+    sm_palette ();
+label_8:
+    eax = sm_palette ();
+    rsi = "Inconsistent options";
+    edi |= 0xffffffff;
+    eax = 0;
+    sm_palette ();
+    eax = *(reloc.c_token);
+    rsi = "rect$angle";
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    eax = sm_palette ();
+    if (eax == 0) {
+        edi = *(reloc.c_token);
+        rsi = "ell$ipse";
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_13;
+        }
+    }
+label_5:
+label_6:
+    edi = *(reloc.c_token);
+    rsi = "rect$angle";
+    eax = sm_palette ();
+    if (eax == 0) {
+        edi = *(reloc.c_token);
+        rsi = "ell$ipse";
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_14;
+        }
+        edi = ebp;
+        esi = 3;
+        goto label_4;
+    }
+    edi = ebp;
+    esi = 1;
+    goto label_4;
+label_14:
+    edi = *(reloc.c_token);
+    rsi = "circ$le";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_15;
+    }
+    edi = *(reloc.c_token);
+    rsi = "poly$gon";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_16;
+    }
+    edi = *(reloc.c_token);
+    if (ebp <= 0) {
+        goto label_17;
+    }
+    rax = *(reloc.first_object);
+    if (rax != 0) {
+        void (*0x8005b74)() ();
+    }
+label_13:
+    edi = *(reloc.c_token);
+    rsi = "circ$le";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_5;
+    }
+    edi = *(reloc.c_token);
+    rsi = "poly$gon";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_5;
+    }
+    eax = sm_palette ();
+    if (eax > 0) {
+        goto label_6;
+    }
+    edi = *(reloc.c_token);
+    rsi = "tag must be > zero";
+    eax = 0;
+    eax = sm_palette ();
+label_15:
+    edi = ebp;
+    esi = 2;
+    goto label_4;
+label_16:
+    edi = ebp;
+    esi = 4;
+    goto label_4;
+label_17:
+    rsi = "unrecognized object type";
+    eax = 0;
+    rax = sm_palette ();
+    rsi = loc__LC234;
+    rax = *(fs:0x28);
+    *((rsp + 0x68)) = rax;
+    eax = 0;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    eax = sm_palette (rbx, rbp);
+    /* Beware that this jump is a conditional jump.
+     * r2dec transformed it as a return, due being the
+     * last instruction. Please, check 'pdda' output
+     * for more hints. */
+    return void (*0x8005de0)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/set.o @ 0x8005a80 */
+#include <stdint.h>
+ 
+uint64_t set_object (int64_t arg11) {
+    xmm4 = arg11;
+label_4:
+    eax = edi;
+    ebx = esi;
+    *((rsp + 0x20)) = edi;
+    edi = *(reloc.c_token);
+    edx = rdi + 1;
+    rcx = *(fs:0x28);
+    *((rsp + 0x98)) = rcx;
+    ecx = 0;
+    *(reloc.c_token) = edx;
+    if (eax < 0xffffffff) {
+        *(reloc.c_token) = edi;
+        if (esi != 1) {
+            goto label_7;
+        }
+        rax = reloc_default_rectangle;
+        ebp = 0;
+        *((rsp + 0x18)) = 0;
+        *(rsp) = rax;
+        r13 = rax + 0xa0;
+label_0:
+        if (*(reloc.num_tokens) > edi) {
+            rax = rsp + 0x30;
+            *((rsp + 0x24)) = 0;
+            r15d = 0;
+            r14d = 0;
+            *((rsp + 0x27)) = 0;
+            *((rsp + 0x25)) = 0;
+            *((rsp + 0x26)) = 0;
+            *((rsp + 0x28)) = rax;
+            void (*0x8004c48)() ();
+        }
+        rax = *((rsp + 0x98));
+        rax ^= *(fs:0x28);
+        if (*(reloc.num_tokens) != edi) {
+            goto label_8;
+        }
+    }
+    rbp = *(reloc.first_object);
+    if (rbp == 0) {
+        goto label_9;
+    }
+    ecx = *((rsp + 0x20));
+    r12d = 0;
+    while (rax != 0) {
+        if (ecx > 0) {
+            if (*((rbp + 8)) >= ecx) {
+                goto label_10;
+            }
+        }
+        rax = *(rbp);
+        r12 = rbp;
+    }
+    if (*((rsp + 0x20)) != 0xffffffff) {
+        goto label_11;
+    }
+    eax = *((rbp + 8));
+    edx = 0;
+    esi = ebx;
+    r12 = rbp;
+    ebp = 0;
+    eax++;
+    edi = eax;
+    *((rsp + 0x20)) = eax;
+    rax = new_object ();
+    *(rsp) = rax;
+    do {
+label_2:
+        rax = *(rsp);
+        *(r12) = rax;
+label_1:
+        rax = *(rsp);
+        edi = *(reloc.c_token);
+        *(rax) = rbp;
+        *((rsp + 0x18)) = rax;
+        if (ebx == 1) {
+            __asm ("movdqu xmm6, xmmword [reloc.load_range]");
+            __asm ("movdqu xmm4, xmmword [reloc.first_object]");
+            rcx = rax;
+            __asm ("movups xmmword [rax + 0x18], xmm4");
+            __asm ("movdqu xmm5, xmmword [reloc.parse_fillstyle]");
+            __asm ("movups xmmword [rax + 0x38], xmm6");
+            __asm ("movdqu xmm7, xmmword [reloc.safe_strncpy]");
+            __asm ("movups xmmword [rax + 0x28], xmm5");
+            __asm ("movups xmmword [rax + 0x48], xmm7");
+            __asm ("movdqu xmm4, xmmword [reloc.clabel_onecolor]");
+            __asm ("movups xmmword [rax + 0x58], xmm4");
+            __asm ("movdqu xmm5, xmmword [reloc.clabel_interval]");
+            __asm ("movups xmmword [rax + 0x68], xmm5");
+            __asm ("movdqu xmm6, xmmword [reloc.might_be_numeric]");
+            __asm ("movups xmmword [rax + 0x78], xmm6");
+            __asm ("movdqu xmm7, xmmword [reloc.some_grid_selected]");
+            __asm ("movups xmmword [rax + 0x88], xmm7");
+            rax = *(reloc.spiderplot);
+            *((rcx + 0x98)) = rax;
+        }
+        rax = *(rsp);
+        r13 = rax + 0xa0;
+        goto label_0;
+        if (ebx == 1) {
+label_10:
+            goto label_12;
+        }
+        edi = *((rsp + 0x20));
+        edx = 0;
+        esi = ebx;
+        rax = new_object ();
+        *(rsp) = rax;
+    } while (r12 != 0);
+label_3:
+    rax = *(rsp);
+    *(reloc.first_object) = rax;
+    goto label_1;
+label_12:
+    if (*((rbp + 0x10)) != ebx) {
+        void (*0x800570f)() ();
+    }
+label_11:
+    edi = *((rsp + 0x20));
+    edx = 0;
+    esi = ebx;
+    ebp = 0;
+    rax = new_object ();
+    *(rsp) = rax;
+    goto label_2;
+label_9:
+    if (*((rsp + 0x20)) != 0xffffffff) {
+        edi = *((rsp + 0x20));
+        edx = 0;
+        rax = new_object ();
+        *(rsp) = rax;
+        goto label_3;
+    }
+    edx = 0;
+    edi = 1;
+    rax = new_object ();
+    *((rsp + 0x20)) = 1;
+    *(rsp) = rax;
+    goto label_3;
+label_7:
+    rsi = "Unknown object type";
+    eax = 0;
+    eax = sm_palette ();
+    edi = *(reloc.c_token);
+    rsi = "Expecting to or rto";
+    eax = 0;
+    sm_palette ();
+label_8:
+    eax = sm_palette ();
+    rsi = "Inconsistent options";
+    edi |= 0xffffffff;
+    eax = 0;
+    sm_palette ();
+    eax = *(reloc.c_token);
+    rsi = "rect$angle";
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    eax = sm_palette ();
+    if (eax == 0) {
+        edi = *(reloc.c_token);
+        rsi = "ell$ipse";
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_13;
+        }
+    }
+label_5:
+label_6:
+    edi = *(reloc.c_token);
+    rsi = "rect$angle";
+    eax = sm_palette ();
+    if (eax == 0) {
+        edi = *(reloc.c_token);
+        rsi = "ell$ipse";
+        eax = sm_palette ();
+        if (eax == 0) {
+            goto label_14;
+        }
+        edi = ebp;
+        esi = 3;
+        goto label_4;
+    }
+    edi = ebp;
+    esi = 1;
+    goto label_4;
+label_14:
+    edi = *(reloc.c_token);
+    rsi = "circ$le";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_15;
+    }
+    edi = *(reloc.c_token);
+    rsi = "poly$gon";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_16;
+    }
+    edi = *(reloc.c_token);
+    if (ebp <= 0) {
+        goto label_17;
+    }
+    rax = *(reloc.first_object);
+    if (rax != 0) {
+        void (*0x8005b74)() ();
+    }
+label_13:
+    edi = *(reloc.c_token);
+    rsi = "circ$le";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_5;
+    }
+    edi = *(reloc.c_token);
+    rsi = "poly$gon";
+    eax = sm_palette ();
+    if (eax != 0) {
+        goto label_5;
+    }
+    eax = sm_palette ();
+    if (eax > 0) {
+        goto label_6;
+    }
+    edi = *(reloc.c_token);
+    rsi = "tag must be > zero";
+    eax = 0;
+    eax = sm_palette ();
+label_15:
+    edi = ebp;
+    esi = 2;
+    goto label_4;
+label_16:
+    edi = ebp;
+    esi = 4;
+    goto label_4;
+label_17:
+    rsi = "unrecognized object type";
+    eax = 0;
+    rax = sm_palette ();
+    rsi = loc__LC234;
+    rax = *(fs:0x28);
+    *((rsp + 0x68)) = rax;
+    eax = 0;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    *(reloc.c_token) = edi;
+    eax = sm_palette (rbx, rbp);
+    /* Beware that this jump is a conditional jump.
+     * r2dec transformed it as a return, due being the
+     * last instruction. Please, check 'pdda' output
+     * for more hints. */
+    return void (*0x8005de0)() ();
+}
+
+

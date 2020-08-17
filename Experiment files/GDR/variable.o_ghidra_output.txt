@@ -1,0 +1,211 @@
+undefined * sym..text(uint32_t arg1)
+{
+    int32_t iVar1;
+    int64_t iVar2;
+    undefined *puVar3;
+    undefined *puVar4;
+    char *in_RSI;
+    undefined *puVar5;
+    undefined *puVar6;
+    
+    puVar3 = _obj.loadpath.7687;
+    puVar6 = _obj.last.7689;
+    puVar4 = _obj.p.7688;
+    puVar5 = "\x01"._0_8_;
+    // switch table (33 cases) at 0x8000b08
+    switch(arg1) {
+    case 1:
+        if (_obj.loadpath.7687 == (undefined *)0x0) goto code_r0x0800013c;
+        func_0x0800b5cc(0xffffffff, "", "\x01");
+    case 2:
+        if (puVar3 == (undefined *)0x0) {
+            func_0x0800b5cc("\tloadpath is empty\n", 1, 0x13, _reloc.stderr);
+        } else {
+            func_0x0800b5cc("\tloadpath is ", 1, 0xd, _reloc.stderr);
+            puVar5 = _obj.loadpath.7687;
+            if (_obj.loadpath.7687 < "\x01"._0_8_) {
+                do {
+                    func_0x0800b5cc(_reloc.stderr, 1, "\"%s\" ", puVar5);
+                    iVar2 = func_0x0800b5cc(puVar5);
+                    puVar5 = puVar5 + iVar2 + 1;
+                } while (puVar5 < "\x01"._0_8_);
+            }
+            func_0x0800b5cc(10, _reloc.stderr);
+            if ("\x01"._0_8_ != (undefined *)0x0) {
+                func_0x0800b5cc("\tloadpath from GNUPLOT_LIB is ", 1, 0x1e, _reloc.stderr);
+                puVar5 = "\x01"._0_8_;
+                if ("\x01"._0_8_ < _obj.last.7689) {
+                    do {
+                        func_0x0800b5cc(_reloc.stderr, 1, "\"%s\" ", puVar5);
+                        iVar2 = func_0x0800b5cc(puVar5);
+                        puVar5 = puVar5 + iVar2 + 1;
+                    } while (puVar5 < _obj.last.7689);
+                }
+                func_0x0800b5cc(10, _reloc.stderr);
+            }
+        }
+        func_0x0800b5cc(_reloc.stderr, 1, "\tgnuplotrc is read from %s\n", "/usr/local/share/gnuplot/5.4");
+        puVar3 = _obj.loadpath.7687;
+        puVar5 = "\x01"._0_8_;
+        break;
+    case 4:
+        if ((in_RSI != (char *)0x0) && (*in_RSI != '\0')) {
+            iVar2 = func_0x0800b5cc();
+            puVar6 = puVar6 + -(int64_t)puVar5;
+            if ((puVar3 != (undefined *)0x0) && (puVar5 != (undefined *)0x0)) {
+                func_0x0800b5cc(puVar3, puVar5, puVar6 + 1);
+            }
+            puVar3 = (undefined *)func_0x0800b5cc(puVar3, puVar6 + iVar2 + 2, "expand loadpath");
+            puVar5 = puVar3 + iVar2 + 1;
+            _obj.loadpath.7687 = puVar3;
+            func_0x0800b5cc(puVar5, puVar3, puVar6 + 1);
+            func_0x0800b5cc(puVar3);
+            _obj.last.7689 = puVar5 + (int64_t)puVar6;
+            "\x01"._0_8_ = puVar5;
+            puVar3[iVar2] = 0x3a;
+            puVar4 = puVar3;
+            while (puVar4 = (undefined *)func_0x0800b5cc(puVar4, 0x3a), puVar5 = "\x01"._0_8_,
+                  puVar4 != (undefined *)0x0) {
+                *puVar4 = 0;
+                puVar4 = puVar4 + 1;
+            }
+        }
+        break;
+    case 0x10:
+        "\x01"._8_8_ = "\x01"._0_8_;
+    case 8:
+        puVar6 = "\x01"._8_8_;
+        if (_obj.loadpath.7687 != (undefined *)0x0) {
+            if (_obj.p.7688 == (undefined *)0x0) {
+                _obj.p.7688 = _obj.loadpath.7687;
+                if ("\x01"._8_8_ == (undefined *)0x0) {
+                    "\x01"._8_8_ = _obj.last.7689;
+                    puVar6 = _obj.last.7689;
+                }
+            } else {
+                iVar2 = func_0x0800b5cc(_obj.p.7688);
+                _obj.p.7688 = puVar4 + iVar2 + 1;
+            }
+            puVar3 = _obj.p.7688;
+            puVar5 = "\x01"._0_8_;
+            if (puVar6 <= _obj.p.7688) {
+                _obj.p.7688 = (undefined *)0x0;
+                "\x01"._8_8_ = (undefined *)0x0;
+                puVar3 = (undefined *)0x0;
+            }
+        }
+        break;
+    case 0x20:
+        func_0x0800b5cc(_obj.loadpath.7687);
+        _obj.last.7689 = (undefined *)0x0;
+        _obj.p.7688 = (undefined *)0x0;
+        _obj.loadpath.7687 = (undefined *)0x0;
+        "\x01"._8_8_ = (undefined *)0x0;
+code_r0x0800013c:
+        iVar2 = func_0x0800b5cc("");
+        puVar3 = _obj.loadpath.7687;
+        puVar5 = _obj.loadpath.7687;
+        if (iVar2 != 0) {
+            iVar1 = func_0x0800b5cc(iVar2);
+            puVar3 = (undefined *)func_0x0800b5cc(iVar2);
+            _obj.last.7689 = puVar3 + iVar1;
+            puVar4 = puVar3;
+            _obj.loadpath.7687 = puVar3;
+            while (puVar4 = (undefined *)func_0x0800b5cc(puVar4, 0x3a), puVar5 = puVar3, puVar4 != (undefined *)0x0) {
+                *puVar4 = 0;
+                puVar4 = puVar4 + 1;
+            }
+        }
+    }
+    "\x01"._0_8_ = puVar5;
+    return puVar3;
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Could not reconcile some variable overlaps
+
+undefined8 sym.locale_handler(uint32_t arg1)
+{
+    int64_t iVar1;
+    undefined8 uVar2;
+    int64_t iVar3;
+    code *pcVar4;
+    char *pcVar5;
+    int64_t in_FS_OFFSET;
+    undefined auStack104 [16];
+    undefined auStack88 [12];
+    undefined4 uStack76;
+    undefined auStack72 [16];
+    undefined8 uStack56;
+    int64_t iStack48;
+    
+    iStack48 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    if (arg1 == 4) {
+        iVar3 = func_0x0800b5cc(2);
+        if (iVar3 == 0) goto code_r0x0800068f;
+        iVar3 = 0;
+        func_0x0800b5cc(_reloc.time_locale);
+        uVar2 = func_0x0800b5cc(2, 0);
+        _reloc.time_locale = func_0x0800b5cc(uVar2);
+        uStack56 = 0;
+        auStack104 = (undefined  [16])0x0;
+        _auStack88 = (undefined  [16])0x0;
+        auStack72 = (undefined  [16])0x0;
+        pcVar5 = "Sunday";
+        do {
+            func_0x0800b5cc(pcVar5, 0x20, reloc..LC13, auStack104);
+            iVar1 = iVar3 * 8;
+            iVar3 = iVar3 + 1;
+            func_0x0800b5cc(reloc.abbrev_day_names + iVar1, 8, reloc..LC14, auStack104);
+            pcVar5 = pcVar5 + 0x20;
+        } while (iVar3 != 7);
+        iVar3 = 0;
+        pcVar5 = "January";
+        do {
+            _auStack88 = CONCAT124(stack0xffffffffffffffac, (int32_t)iVar3);
+            func_0x0800b5cc(pcVar5, 0x20, reloc..LC15, auStack104);
+            iVar1 = iVar3 * 8;
+            iVar3 = iVar3 + 1;
+            func_0x0800b5cc(reloc.abbrev_month_names + iVar1, 8, reloc..LC16, auStack104);
+            pcVar5 = pcVar5 + 0x20;
+        } while (iVar3 != 0xc);
+    } else {
+        if ((int32_t)arg1 < 5) {
+            if (arg1 == 1) {
+code_r0x0800052d:
+                func_0x0800b5cc(_reloc.time_locale);
+                func_0x0800b5cc(2, reloc..LC11);
+                func_0x0800b5cc(0, reloc..LC11);
+                uVar2 = func_0x0800b5cc(2, 0);
+                _reloc.time_locale = func_0x0800b5cc(uVar2);
+            } else {
+                if (arg1 == 2) {
+                    uVar2 = func_0x0800b5cc(0, 0);
+                    func_0x0800b5cc(_reloc.stderr, 1, "\tgnuplot LC_CTYPE   %s\n", uVar2);
+                    func_0x0800b5cc(_reloc.stderr, 1, "\tgnuplot encoding   %s\n", 
+                                    *(undefined8 *)(reloc.encoding_names + (uint64_t)_reloc.encoding * 8));
+                    uVar2 = func_0x0800b5cc(2, 0);
+                    func_0x0800b5cc(_reloc.stderr, 1, "\tgnuplot LC_TIME    %s\n", uVar2);
+                    pcVar4 = _reloc.numeric_locale;
+                    if (_reloc.numeric_locale == (code *)0x0) {
+                        pcVar4 = reloc..LC10;
+                    }
+                    func_0x0800b5cc(_reloc.stderr, 1, "\tgnuplot LC_NUMERIC %s\n", pcVar4);
+                }
+            }
+        } else {
+            if (arg1 == 0x20) goto code_r0x0800052d;
+        }
+    }
+    if (iStack48 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+        return _reloc.time_locale;
+    }
+    func_0x0800b5cc();
+code_r0x0800068f:
+    func_0x0800b5cc(_reloc.c_token, "Locale not available");
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+

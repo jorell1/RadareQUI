@@ -1,0 +1,821 @@
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/help.o @ 0x8000050 */
+#include <stdint.h>
+ 
+uint64_t OutLine_InternalPager (int64_t arg1) {
+    rdi = arg1;
+    rsi = *(reloc.stderr);
+    if (*(obj.outfile) != rsi) {
+        goto label_1;
+    }
+    eax = *(obj.screensize);
+    eax -= 2;
+    if (eax > *(obj.pagelines)) {
+label_0:
+        rdi = rbp;
+        stderr ();
+        *(obj.pagelines)++;
+        return eax;
+    }
+    rcx = rsi;
+    edx = 0x17;
+    esi = 1;
+    rdi = "Press return for more: ";
+    rax = stderr ();
+    do {
+        rdi = *(reloc.stdin);
+        eax = stderr ();
+        if (eax == 0xffffffff) {
+            goto label_2;
+        }
+    } while (eax != 0xa);
+label_2:
+    *(obj.pagelines) = 0;
+    rsi = *(reloc.stderr);
+    goto label_0;
+label_1:
+    return void (*0x800be3d)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/help.o @ 0x80000f0 */
+#include <stdint.h>
+ 
+int64_t ShowSubtopics (int64_t arg7, int64_t arg1, int64_t arg2) {
+    int64_t var_10h;
+    int64_t var_11h;
+    int64_t var_418h;
+    int64_t var_8h;
+    int64_t var_10h_2;
+    int64_t var_1ch;
+    uint32_t var_sp_20h;
+    int64_t var_28h;
+    int64_t var_30h;
+    int64_t var_38h;
+    int64_t var_830h;
+    int64_t var_840h;
+    int64_t var_848h;
+    int64_t var_2838h;
+    xmm0 = arg7;
+    rdi = arg1;
+    rsi = arg2;
+    r14 = *(rdi);
+    *((rsp + 8)) = rdi;
+    rbx = rdi;
+    rdi = r14;
+    *((rsp + 0x28)) = rsi;
+    rax = *(fs:0x28);
+    *((rsp + 0x2838)) = rax;
+    eax = 0;
+    *((rsp + 0x830)) = 0;
+    rax = stderr (rbx, rbp, r12, r13, r14);
+    r15 = *((rbx + 0x20));
+    r12 = rax;
+    if (r15 == 0) {
+        goto label_6;
+    }
+    *((rsp + 0x1c)) = 0;
+    rbx += 0x20;
+    r13d = 0;
+    ebp = 0;
+    while (r12 != 0) {
+        r8 = r15 + r12;
+        if (*(r8) != 0x20) {
+            goto label_7;
+        }
+        r15 = r8 + 1;
+label_0:
+        if (rbp != 0) {
+            rsi = loc__LC1;
+            rdi = r15;
+            rax = stderr ();
+            rsi = rbp;
+            rdi = r15;
+            rdx = rax;
+            eax = stderr ();
+            if (eax == 0) {
+                goto label_8;
+            }
+        }
+        ecx = *((rsp + 0x1c));
+        if (ecx == 0) {
+            rbp = rsp + 0x830;
+            if (r12 == 0) {
+                goto label_9;
+            }
+            edx = 0x20;
+            rsi = r14;
+            rdi = rbp;
+            ecx = 0x2000;
+            __asm ("movdqa xmm0, xmmword [loc..LC4]");
+            *((rsp + 0x848)) = dx;
+            edx = 0x1fe4;
+            rax = 0x726f6620656c6261;
+            *((rsp + 0x840)) = rax;
+            *((rsp + 0x830)) = xmm0;
+            stderr ();
+            edx = 0x2000;
+            rsi = loc__LC2;
+            rdi = rbp;
+            stderr ();
+label_3:
+            rdi = rbp;
+            OutLine_InternalPager ();
+            *((rsp + 0x830)) = 0;
+        }
+        rax = (int64_t) r13d;
+        *((rsp + 0x1c)) = 1;
+        r13d++;
+        *((rsp + rax*8 + 0x30)) = r15;
+label_8:
+        r15 = *((rbx + 0x20));
+        rbx += 0x20;
+        if (r15 == 0) {
+            goto label_7;
+        }
+label_1:
+        rax = *((rsp + 8));
+        r14 = *(rax);
+        rdx = r12;
+        rsi = r14;
+        rdi = r15;
+        eax = stderr ();
+        if (eax != 0) {
+            goto label_7;
+        }
+    }
+    if (*((rbx + 0x18)) != 0) {
+        goto label_0;
+    }
+    r15 = *((rbx + 0x20));
+    rbx += 0x20;
+    if (r15 != 0) {
+        goto label_1;
+    }
+label_7:
+    if (r13d == 0) {
+        goto label_10;
+    }
+    rax = rsp + 0x30;
+    ebx = 0;
+    r14d = 0;
+    *((rsp + 8)) = rax;
+    eax = r13 - 1;
+    rbp = rsp + 0x830;
+    rax = rsp + rax*8 + 0x38;
+    *((rsp + 0x20)) = rax;
+label_2:
+    rax = *((rsp + 8));
+    rsi = loc__LC1;
+    r15 = *(rax);
+    rdi = *(rax);
+    rax = stderr ();
+    *((rsp + 0x10)) = rax;
+    if (ebx == 0) {
+        goto label_11;
+    }
+    if (r14d == 0) {
+        goto label_12;
+    }
+label_4:
+    r13d = 0;
+    r12 = loc__LC1;
+    do {
+        edx = 0x2000;
+        rsi = r12;
+        rdi = rbp;
+        r13d++;
+        stderr ();
+    } while (r13d < r14d);
+label_12:
+    r12 = *((rsp + 0x10));
+    ecx = 0x2000;
+    rsi = r15;
+    rdi = rbp;
+    r14d = 0x12;
+    rdx = r12;
+    r14d -= r12d;
+    stderr ();
+    if (r14d > 0) {
+        goto label_13;
+    }
+    do {
+        r14d += 0x12;
+        ebx++;
+    } while (r14d <= 0);
+label_13:
+    ebx++;
+    if (ebx > 3) {
+        goto label_14;
+    }
+label_5:
+    *((rsp + 8)) += 8;
+    rax = *((rsp + 8));
+    if (*((rsp + 0x20)) != rax) {
+        goto label_2;
+    }
+    eax = *((rsp + 0x1c));
+    if (eax == 0) {
+        goto label_10;
+    }
+    if (ebx <= 0) {
+        goto label_10;
+    }
+    edx = 0x2000;
+    rsi = loc__LC3;
+    rdi = rbp;
+    stderr ();
+    rdi = rbp;
+    OutLine_InternalPager ();
+    *((rsp + 0x1c)) = 1;
+    do {
+label_10:
+        rax = *((rsp + 0x28));
+        if (rax != 0) {
+            ecx = *((rsp + 0x1c));
+            *(rax) = cl;
+            *(rax) &= 1;
+        }
+        rax = *((rsp + 0x2838));
+        rax ^= *(fs:0x28);
+        if (*(rax) != 0) {
+            goto label_15;
+        }
+        return rax;
+label_9:
+        __asm ("movdqa xmm0, xmmword [loc..LC5]");
+        *((rsp + 0x848)) = 0;
+        rax = 0xa3a656c62616c69;
+        *((rsp + 0x840)) = rax;
+        *((rsp + 0x830)) = xmm0;
+        goto label_3;
+label_11:
+        r14d = 4;
+        goto label_4;
+label_14:
+        edx = 0x2000;
+        rsi = loc__LC3;
+        rdi = rbp;
+        ebx = 0;
+        stderr ();
+        rdi = rbp;
+        OutLine_InternalPager ();
+        *((rsp + 0x830)) = 0;
+        goto label_5;
+label_6:
+        *((rsp + 0x1c)) = 0;
+    } while (1);
+label_15:
+    rax = stderr ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/help.o @ 0x8000800 */
+#include <stdint.h>
+ 
+uint64_t StartOutput (void) {
+    __asm ("endbr64");
+    rdi = "PAGER";
+    rax = stderr ();
+    if (rax == 0) {
+        goto label_0;
+    }
+    while (rax == 0) {
+label_0:
+        rax = *(reloc.stderr);
+        rdi = "LINES";
+        *(obj.outfile) = rax;
+        rax = stderr ();
+        *(obj.screensize) = 0x18;
+        rdi = rax;
+        if (rax != 0) {
+            edx = 0;
+            esi = 0;
+            eax = stderr ();
+            edx = 0x18;
+            if (eax < 3) {
+                eax = edx;
+            }
+            *(obj.screensize) = eax;
+        }
+        *(obj.pagelines) = 0;
+        return rax;
+        stderr ();
+        rsi = loc__LC12;
+        rdi = rbp;
+        rax = stderr ();
+        *(obj.outfile) = rax;
+    }
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/help.o @ 0x80008a0 */
+#include <stdint.h>
+ 
+uint64_t OutLine (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    r8 = *(obj.outfile);
+    rsi = *(reloc.stderr);
+    if (r8 != rsi) {
+        goto label_1;
+    }
+    eax = *(obj.screensize);
+    eax -= 2;
+    if (eax > *(obj.pagelines)) {
+label_0:
+        rdi = rbp;
+        stderr ();
+        *(obj.pagelines)++;
+        return eax;
+    }
+    rcx = r8;
+    edx = 0x17;
+    esi = 1;
+    rdi = "Press return for more: ";
+    rax = stderr ();
+    do {
+        rdi = *(reloc.stdin);
+        eax = stderr ();
+        if (eax == 0xffffffff) {
+            goto label_2;
+        }
+    } while (eax != 0xa);
+label_2:
+    *(obj.pagelines) = 0;
+    rsi = *(reloc.stderr);
+    goto label_0;
+label_1:
+    rsi = r8;
+    return void (*0x800be3d)() ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/help.o @ 0x8000940 */
+#include <stdint.h>
+ 
+int64_t help (int64_t arg1, int64_t arg2, int64_t arg3) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_17h;
+    int64_t var_18h;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    __asm ("endbr64");
+    r13 = rsi;
+    r12 = rdi;
+    *((rsp + 0x18)) = rdx;
+    stderr (rbx, rbp, r12, r13, r14);
+    rdi = "Press return for more: ";
+    *(rax) = 0;
+    if (rdi != 0) {
+        rsi = r13;
+        eax = stderr ();
+        if (eax != 0) {
+            goto label_8;
+        }
+    }
+    rbp = keys;
+    if (rbp == 0) {
+        goto label_9;
+    }
+label_6:
+    rsi = loc__LC1;
+    rdi = r12;
+    rax = stderr ();
+    r14 = *(rbp);
+    rbx = rax;
+    if (r14 != 0) {
+        goto label_0;
+    }
+    goto label_10;
+    do {
+        rax = rbp;
+        rbp += 0x20;
+        r14 = *((rax + 0x20));
+        if (r14 == 0) {
+            goto label_10;
+        }
+label_0:
+        rdx = rbx;
+        rsi = r14;
+        rdi = r12;
+        eax = stderr ();
+        *((rsp + 0x10)) = eax;
+    } while (eax != 0);
+    if (*((r14 + rbx)) != 0) {
+        r9 = *((rbp + 0x20));
+        r13 = rbp + 0x20;
+        if (r9 == 0) {
+            goto label_11;
+        }
+        r15 = r14;
+        ecx = 0;
+label_1:
+        rdx = rbx;
+        rsi = r9;
+        rdi = r14;
+        *((rsp + 0x17)) = cl;
+        *((rsp + 8)) = r9;
+        eax = stderr ();
+        ecx = *((rsp + 0x17));
+        if (eax == 0) {
+            goto label_12;
+        }
+label_5:
+        if (cl != 0) {
+            goto label_13;
+        }
+    }
+label_11:
+    r15 = *(rbp);
+    rdi = *(rbp);
+    rax = stderr ();
+    r13 = rax;
+    if (rax != rbx) {
+        goto label_14;
+    }
+    if (*((r12 + r13)) != 0x20) {
+        goto label_15;
+    }
+label_2:
+    r13++;
+    rsi = loc__LC1;
+    rdi = r12 + r13;
+    stderr ();
+    rbx = r13 + rax;
+    r14 = *(rbp);
+    rax = rbp - 0x20;
+    if (r14 != 0) {
+        goto label_0;
+    }
+label_10:
+    *((rsp + 0x10)) = 1;
+label_3:
+    eax = *((rsp + 0x10));
+    return rax;
+label_12:
+    r9 = *((rsp + 8));
+    rsi = loc__LC1;
+    r13 += 0x20;
+    rdi = r9 + rbx;
+    stderr ();
+    r9 = *((rsp + 8));
+    rsi = r15;
+    rdx = rax + rbx;
+    rdi = r9;
+    eax = stderr ();
+    ecx = *((rsp + 0x17));
+    if (eax == 0) {
+        goto label_16;
+    }
+    rdi = *(reloc.stderr);
+    if (cl == 0) {
+        goto label_17;
+    }
+label_4:
+    rcx = *((r13 - 0x20));
+    rdx = "\t%s\n";
+    esi = 1;
+    eax = 0;
+    stderr ();
+    r9 = *(r13);
+    r15 = *((r13 - 0x20));
+    if (r9 == 0) {
+        goto label_13;
+    }
+    ecx = 1;
+    goto label_1;
+label_14:
+    rdi = r12;
+    eax = stderr ();
+    edx = r13d;
+    edx -= ebx;
+    eax += edx;
+    rax = (int64_t) eax;
+    if (rax < rbx) {
+        goto label_18;
+    }
+    rdx = (int64_t) edx;
+    rsi = r12;
+    rsi -= rdx;
+    rdx = rsi;
+    do {
+        ecx = *((rdx + rax));
+        *((r12 + rax)) = cl;
+        rax--;
+    } while (rax >= rbx);
+    r15 = *(rbp);
+label_18:
+    rdx = r13;
+    rsi = r15;
+    rdi = r12;
+    stderr ();
+    if (*((r12 + r13)) == 0x20) {
+        goto label_2;
+    }
+label_15:
+    if (*((rbp + 0x10)) == 0) {
+        goto label_3;
+    }
+label_7:
+    stderr ();
+    rax = *((rsp + 0x18));
+    if (rax != 0) {
+        if (*(rax) != 0) {
+            goto label_19;
+        }
+    }
+    rbx = *((rbp + 0x10));
+    if (rbx == 0) {
+        goto label_19;
+    }
+    do {
+        rdi = *(rbx);
+        stderr ();
+        rbx = *((rbx + 8));
+    } while (rbx != 0);
+label_19:
+    rsi = *((rsp + 0x18));
+    rdi = rbp;
+    ShowSubtopics ();
+    rdi = loc__LC3;
+    OutLine_InternalPager ();
+    rdi = *(obj.outfile);
+    if (rdi == *(reloc.stderr)) {
+        goto label_3;
+    }
+    eax = stderr ();
+    goto label_3;
+label_17:
+    r8 = r14;
+    ecx = ebx;
+    rdx = "Ambiguous request '%.*s'; possible matches:\n";
+    eax = 0;
+    esi = 1;
+    eax = stderr ();
+    rcx = r15;
+    esi = 1;
+    eax = 0;
+    rdi = *(reloc.stderr);
+    rdx = "\t%s\n";
+    stderr ();
+    rdi = *(reloc.stderr);
+    goto label_4;
+label_16:
+    r9 = *(r13);
+    if (r9 != 0) {
+        goto label_1;
+    }
+    goto label_5;
+label_8:
+    stderr ();
+    rbp = keys;
+    if (rbp != 0) {
+        goto label_6;
+    }
+label_9:
+    rdi = r13;
+    eax = LoadHelp ();
+    *((rsp + 0x10)) = eax;
+    if (eax == 0xffffffff) {
+        goto label_3;
+    }
+    rdi = "Press return for more: ";
+    stderr ();
+    rdi = r13;
+    rax = stderr ();
+    rbp = keys;
+    *(obj.oldpath.9722) = "Press return for more: ";
+    goto label_6;
+label_13:
+    rbp = obj_empty_key;
+    if (*((rbp + 0x10)) != 0) {
+        goto label_7;
+    }
+    goto label_3;
+}
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/help.o @ 0x8000470 */
+#include <stdint.h>
+ 
+int64_t LoadHelp (void) {
+    rsi = loc__LC6;
+    rax = *(fs:0x28);
+    *((rsp + 0x418)) = rax;
+    eax = 0;
+    rax = stderr (rbx, rbp, r12, r13, r14);
+    *(obj.helpfp) = rax;
+    if (rax == 0) {
+        goto label_4;
+    }
+    rbp = rsp + 0x10;
+    rdx = rax;
+    esi = 0x3ff;
+    rdi = rbp;
+    rax = stderr ();
+    if (rax == 0) {
+        goto label_4;
+    }
+    if (*((rsp + 0x10)) != 0x3f) {
+        goto label_4;
+    }
+    ebx = 0;
+    r14d = 0;
+    r12 = rsp + 0x11;
+label_0:
+    r13 = helpfp;
+    rdi = helpfp;
+    eax = stderr ();
+    if (eax != 0) {
+        goto label_5;
+    }
+    r13d = 1;
+    while (*((rsp + 0x10)) == 0x3f) {
+        rdi = r12;
+        stderr ();
+        rsi = loc__LC7;
+        edi = 0x28;
+        *((rsp + rax + 0x10)) = 0;
+        rax = stderr ();
+        rdi = r12;
+        r14 = rax;
+        rax = stderr ();
+        *((r14 + 0x18)) = r13b;
+        r13d = 0;
+        rdi = helpfp;
+        *(r14) = rax;
+        rax = keylist;
+        *((r14 + 0x10)) = 0;
+        *((r14 + 0x20)) = rax;
+        *((r14 + 8)) = 0;
+        *(obj.keycount)++;
+        *(obj.keylist) = r14;
+        rax = stderr ();
+        rdx = helpfp;
+        esi = 0x3ff;
+        rdi = rbp;
+        rbx = rax;
+        rax = stderr ();
+        if (rax == 0) {
+            goto label_6;
+        }
+    }
+label_6:
+    rsi = loc__LC8;
+    edi = 0x10;
+    rax = stderr ();
+    rdi = rbp;
+    r15 = rax;
+    *((rsp + 8)) = rax;
+    rax = stderr ();
+    r13 = r15;
+    *((r15 + 8)) = 0;
+    *(r15) = rax;
+    while (rax != 0) {
+        if (*((rsp + 0x10)) == 0x3f) {
+            goto label_1;
+        }
+        rsi = loc__LC8;
+        edi = 0x10;
+        rax = stderr ();
+        rdi = rbp;
+        r15 = rax;
+        rax = stderr ();
+        *((r15 + 8)) = 0;
+        *(r15) = rax;
+        *((r13 + 8)) = r15;
+        r13 = r15;
+        rdx = helpfp;
+        esi = 0x3ff;
+        rdi = rbp;
+        rax = stderr ();
+    }
+label_1:
+    rax = *((rsp + 8));
+    *((r14 + 8)) = rbx;
+    *((r14 + 0x10)) = rax;
+    eax = *((r14 + 0x18));
+    r14 = *((r14 + 0x20));
+    if (al == 1) {
+        goto label_0;
+    }
+    if (r14 != 0) {
+        goto label_1;
+    }
+    goto label_0;
+label_5:
+    rdi = r13;
+    stderr ();
+    eax = "PAGER";
+    rsi = "key array";
+    edi = rax + 1;
+    rdi = (int64_t) edi;
+    rdi <<= 5;
+    rax = stderr ();
+    rbx = keylist;
+    *(obj.keys) = rax;
+    r12 = rax;
+    if (rbx == 0) {
+        goto label_7;
+    }
+    do {
+        rax = *(rbx);
+        rdi = rbx;
+        rbp += 0x20;
+        *((rbp - 0x20)) = rax;
+        rax = *((rbx + 8));
+        *((rbp - 0x18)) = rax;
+        rax = *((rbx + 0x10));
+        *((rbp - 0x10)) = rax;
+        eax = *((rbx + 0x18));
+        rbx = *((rbx + 0x20));
+        *((rbp - 8)) = al;
+        stderr ();
+    } while (rbx != 0);
+label_7:
+    rsi = *(obj.keycount);
+    rcx = sym_keycomp;
+    edx = 0x20;
+    rdi = r12;
+    rax = rsi;
+    rax <<= 5;
+    rax += r12;
+    *(rax) = 0;
+    *((rax + 8)) = 0;
+    *((rax + 0x10)) = 0;
+    eax = stderr ();
+    eax = 0;
+    do {
+        rcx = *((rsp + 0x418));
+        rcx ^= *(fs:0x28);
+        if (rax != 0) {
+            goto label_8;
+        }
+        return rax;
+label_4:
+        eax = 0xffffffff;
+    } while (1);
+label_8:
+    rax = stderr ();
+    __asm ("endbr64");
+    r13 = keys;
+    if (r13 == 0) {
+        goto label_9;
+    }
+    eax = "PAGER";
+    if (eax <= 0) {
+        goto label_10;
+    }
+    eax--;
+    rax <<= 5;
+    r12 = r13 + rax + 0x20;
+    while (*((rbp + 0x18)) == 0) {
+label_2:
+        rbp += 0x20;
+        if (rbp == r12) {
+            goto label_10;
+        }
+label_3:
+        rdi = *(rbp);
+        rax = stderr ();
+    }
+    rbx = *((rbp + 0x10));
+    if (rbx == 0) {
+        goto label_2;
+    }
+    do {
+        rdi = *(rbx);
+        stderr ();
+        rdi = rbx;
+        rbx = *((rbx + 8));
+        stderr ();
+    } while (rbx != 0);
+    rbp += 0x20;
+    if (rbp != r12) {
+        goto label_3;
+    }
+label_10:
+    rdi = r13;
+    stderr ();
+    *(obj.keys) = 0;
+    *(obj.keycount) = "PAGER";
+label_9:
+    return rax;
+}
+
+

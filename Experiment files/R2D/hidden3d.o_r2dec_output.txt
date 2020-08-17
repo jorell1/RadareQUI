@@ -1,0 +1,1252 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/hidden3d.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int64_t cover_point_poly (int64_t arg7, int64_t arg1, int64_t arg2, int64_t arg3) {
+    xmm0 = arg7;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    /* [01] -r-x section size 18562 named .text */
+    xmm6 = *((rdx + 0x58));
+    xmm7 = 0;
+    __asm ("ucomisd xmm6, xmm7");
+    __asm ("jnp 0x8000220");
+    while (eax != 0) {
+        xmm2 = *(rdi);
+        xmm1 = *(rsi);
+        xmm3 = *((rdi + 8));
+        r8 = *(rdx);
+        __asm ("subsd xmm1, xmm2");
+        rax = *(0x08006640);
+        r10 = *((rdx + 0x10));
+        rcx = r8*8;
+        rcx -= r8;
+        r8 = *((rdx + 8));
+        __asm ("mulsd xmm1, xmm0");
+        r9 = rax + rcx*8;
+        rcx = r8*8;
+        xmm5 = *((r9 + 8));
+        rcx -= r8;
+        r8 = rax + rcx*8;
+        rcx = r10*8;
+        xmm11 = *(r8);
+        xmm12 = *((r8 + 8));
+        rcx -= r10;
+        __asm ("addsd xmm1, xmm2");
+        xmm2 = *((rsi + 8));
+        rax = rax + rcx*8;
+        __asm ("movapd xmm4, xmm11");
+        __asm ("movapd xmm9, xmm12");
+        xmm10 = *((rax + 8));
+        __asm ("subsd xmm2, xmm3");
+        __asm ("subsd xmm9, xmm5");
+        __asm ("movapd xmm14, xmm1");
+        __asm ("movapd xmm15, xmm10");
+        __asm ("subsd xmm14, xmm11");
+        __asm ("subsd xmm15, xmm12");
+        __asm ("mulsd xmm2, xmm0");
+        __asm ("addsd xmm2, xmm3");
+        xmm3 = *(r9);
+        __asm ("subsd xmm4, xmm3");
+        __asm ("movapd xmm8, xmm2");
+        __asm ("movapd xmm13, xmm2");
+        __asm ("subsd xmm8, xmm5");
+        __asm ("subsd xmm13, xmm12");
+        __asm ("subsd xmm5, xmm10");
+        __asm ("mulsd xmm4, xmm8");
+        __asm ("movapd xmm8, xmm1");
+        __asm ("subsd xmm8, xmm3");
+        __asm ("mulsd xmm8, xmm9");
+        xmm9 = *(rax);
+        __asm ("subsd xmm3, xmm9");
+        __asm ("subsd xmm4, xmm8");
+        __asm ("movapd xmm8, xmm9");
+        __asm ("subsd xmm8, xmm11");
+        __asm ("movapd xmm11, xmm14");
+        __asm ("movapd xmm14, xmm1");
+        __asm ("mulsd xmm11, xmm15");
+        __asm ("subsd xmm14, xmm9");
+        __asm ("mulsd xmm8, xmm13");
+        __asm ("mulsd xmm5, xmm14");
+        __asm ("subsd xmm8, xmm11");
+        __asm ("movapd xmm11, xmm2");
+        __asm ("subsd xmm11, xmm10");
+        __asm ("mulsd xmm3, xmm11");
+        __asm ("subsd xmm3, xmm5");
+        xmm5 = *(loc..LC1);
+        __asm ("comisd xmm4, xmm5");
+        if (rcx >= 0) {
+            __asm ("comisd xmm8, xmm5");
+            if (rcx >= 0) {
+                __asm ("comisd xmm3, xmm5");
+                if (rcx < 0) {
+                    goto label_0;
+                }
+                xmm5 = *(loc..LC2);
+            }
+        } else {
+label_0:
+            xmm5 = *(loc..LC2);
+            __asm ("subsd xmm4, xmm5");
+            __asm ("comisd xmm7, xmm4");
+            if (rcx < 0) {
+                goto label_1;
+            }
+            __asm ("subsd xmm8, xmm5");
+            __asm ("comisd xmm7, xmm8");
+            if (rcx < 0) {
+                goto label_1;
+            }
+            __asm ("subsd xmm3, xmm5");
+            __asm ("comisd xmm7, xmm3");
+            if (rcx < 0) {
+                goto label_1;
+            }
+        }
+        __asm ("mulsd xmm2, qword [rdx + 0x50]");
+        xmm4 = *((rdi + 0x10));
+        __asm ("mulsd xmm1, qword [rdx + 0x48]");
+        xmm3 = *((rsi + 0x10));
+        __asm ("subsd xmm3, xmm4");
+        __asm ("addsd xmm1, xmm2");
+        __asm ("addsd xmm1, qword [rdx + 0x60]");
+        __asm ("mulsd xmm0, xmm3");
+        __asm ("xorpd xmm1, xmmword [loc..LC3]");
+        __asm ("divsd xmm1, xmm6");
+        __asm ("addsd xmm0, xmm4");
+        __asm ("movapd xmm2, xmm0");
+        __asm ("subsd xmm2, xmm5");
+        __asm ("comisd xmm1, xmm2");
+        if (rcx < 0) {
+            goto label_1;
+        }
+        __asm ("subsd xmm1, xmm5");
+        eax = 0;
+        __asm ("comisd xmm0, xmm1");
+        al = (rcx >= 0) ? 1 : 0;
+        eax++;
+        return rax;
+    }
+label_1:
+    eax = 0;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/hidden3d.o @ 0x8000230 */
+#include <stdint.h>
+ 
+int64_t compare_edges_by_zmin (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    __asm ("endbr64");
+    rdx = *(rdi);
+    rax = *(0x08006600);
+    r8 = rsi;
+    rcx = *(0x08006640);
+    xmm1 = *(loc..LC1);
+    rdx *= 5;
+    rsi = *((rax + rdx*8 + 8));
+    rdx = rsi*8;
+    rdx -= rsi;
+    rsi = *(r8);
+    xmm0 = *((rcx + rdx*8 + 0x10));
+    rsi *= 5;
+    rsi = *((rax + rsi*8 + 8));
+    rax = rsi*8;
+    rax -= rsi;
+    __asm ("subsd xmm0, qword [rcx + rax*8 + 0x10]");
+    eax = 0xffffffff;
+    __asm ("comisd xmm1, xmm0");
+    if (rax <= 0) {
+        eax = 0;
+        __asm ("comisd xmm0, xmmword [loc..LC2]");
+        al = (rax > 0) ? 1 : 0;
+    }
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/hidden3d.o @ 0x80002a0 */
+#include <stdint.h>
+ 
+int64_t compare_polys_by_zmax (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    __asm ("endbr64");
+    rax = *(rdi);
+    rsi = *(rsi);
+    rcx = *(0x080065c0);
+    xmm1 = *(loc..LC1);
+    rdx = rax*8;
+    rdx -= rax;
+    rax = rsi*8;
+    rax -= rsi;
+    rdx <<= 4;
+    rax <<= 4;
+    xmm0 = *((rcx + rdx + 0x40));
+    __asm ("subsd xmm0, qword [rcx + rax + 0x40]");
+    eax = 0xffffffff;
+    __asm ("comisd xmm1, xmm0");
+    if (rax <= 0) {
+        eax = 0;
+        __asm ("comisd xmm0, xmmword [loc..LC2]");
+        al = (rax > 0) ? 1 : 0;
+    }
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/hidden3d.o @ 0x8000300 */
+#include <stdint.h>
+ 
+uint64_t color_edges (uint32_t arg6, signed int64_t arg1, uint32_t arg2, uint32_t arg3, uint32_t arg4) {
+    r9 = arg6;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    if (rdx < -1) {
+        goto label_4;
+    }
+    rax = rdx*8;
+    r10 = *(0x080065c0);
+    if (rcx <= 0xfffffffffffffffe) {
+        rcx = rdx;
+    }
+    rax -= rdx;
+    rax <<= 4;
+    rdx = rcx*8;
+    rax += r10;
+    rdx -= rcx;
+    r11d = *((rax + 0x68));
+    rdx <<= 4;
+    rdx += r10;
+    r10d = *((rdx + 0x68));
+    if (r10b == 0) {
+        goto label_5;
+    }
+    if (r11b == 0) {
+        goto label_6;
+    }
+    do {
+label_0:
+        return rax;
+label_5:
+        if (r11b != 0) {
+            goto label_7;
+        }
+        rax = *(0x08006600);
+        rdx = rdi * 5;
+        rdx = rax + rdx*8;
+        if (*((rdx + 0x10)) != 0xfffffffd) {
+            *((rdx + 0x10)) = r9d;
+        }
+        rdx = rsi * 5;
+        rax = rax + rdx*8;
+    } while (*((rax + 0x10)) == 0xfffffffd);
+    *((rax + 0x10)) = r9d;
+    return rax;
+label_4:
+    return rax;
+label_6:
+    rcx = *(0x08006600);
+    rbx = rdi * 5;
+    rbx = rcx + rbx*8;
+    if (*((rbx + 0x10)) != 0xfffffffd) {
+        *((rbx + 0x10)) = r9d;
+    }
+    rbx = rsi * 5;
+    rbx = rcx + rbx*8;
+    if (rdi == rsi) {
+        goto label_8;
+    }
+label_1:
+    if (*((rbx + 0x10)) == 0xfffffffd) {
+        goto label_0;
+    }
+label_2:
+    rcx = *(rax);
+    rsi = *(rbx);
+    rdi = *((rax + 8));
+    rbp = *((rbx + 8));
+    rax = *((rax + 0x10));
+    if (rcx == rsi) {
+        goto label_9;
+    }
+    if (rsi == rdi) {
+        goto label_10;
+    }
+    if (rsi != rax) {
+        goto label_11;
+    }
+    if (rcx == rbp) {
+        goto label_12;
+    }
+    if (rbp != rdi) {
+        goto label_11;
+    }
+label_3:
+    if (rcx < 0) {
+        goto label_11;
+    }
+    rax = rcx*8;
+    xmm0 = *((rdx + 0x48));
+    xmm1 = *((rdx + 0x50));
+    rax -= rcx;
+    rcx = *(0x08006640);
+    rax = rcx + rax*8;
+    __asm ("mulsd xmm1, qword [rax + 8]");
+    __asm ("mulsd xmm0, qword [rax]");
+    __asm ("addsd xmm0, xmm1");
+    xmm1 = *((rdx + 0x58));
+    __asm ("mulsd xmm1, qword [rax + 0x10]");
+    __asm ("addsd xmm0, xmm1");
+    __asm ("addsd xmm0, qword [rdx + 0x60]");
+    __asm ("comisd xmm0, xmmword [loc..LC0]");
+    if (rax <= 0) {
+        goto label_13;
+    }
+    if (r11b == 0) {
+        r8d = r9d;
+    }
+    *((rbx + 0x10)) = r8d;
+    return rax;
+label_7:
+    rcx = *(0x08006600);
+    rbx = rsi * 5;
+    rbx = rcx + rbx*8;
+    if (rdi != rsi) {
+        goto label_1;
+    }
+label_8:
+    ecx = .data;
+    if (ecx != 0) {
+        goto label_2;
+    }
+    goto label_1;
+label_13:
+    if (r10b == 0) {
+        r8d = r9d;
+    }
+    *((rbx + 0x10)) = r8d;
+    return rax;
+label_9:
+    if (rbp == rdi) {
+        goto label_14;
+    }
+    if (rbp != rax) {
+        goto label_11;
+    }
+label_12:
+    rcx = rdi;
+    goto label_3;
+label_10:
+    if (rcx == rbp) {
+        goto label_14;
+    }
+    if (rbp == rax) {
+        goto label_3;
+    }
+label_11:
+    rdx = "pvert >= 0";
+    rsi = "Assertion failed: %s";
+    edi |= 0xffffffff;
+    eax = 0;
+    rax = int_error ();
+label_14:
+    rcx = rax;
+    goto label_3;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/hidden3d.o @ 0x8000520 */
+#include <stdint.h>
+ 
+int64_t split_line_at_ratio (int64_t arg7, int64_t arg1, int64_t arg2) {
+    int64_t var_8h;
+    xmm0 = arg7;
+    rdi = arg1;
+    rsi = arg2;
+    rbx = rdi;
+    rdi = obj_vertices;
+    *((rsp + 8)) = xmm0;
+    int_error (rbx);
+    rsi = *(0x08006640);
+    rdx = rbp*8;
+    xmm4 = *((rsp + 8));
+    rdx -= rbp;
+    xmm6 = *(loc..LC2);
+    rcx = rsi + rdx*8;
+    rdx = rbx*8;
+    rdx -= rbx;
+    xmm1 = *(rcx);
+    xmm3 = *((rcx + 8));
+    rdx = rsi + rdx*8;
+    xmm2 = *((rcx + 0x10));
+    xmm0 = *(rdx);
+    xmm5 = *((rdx + 0x20));
+    __asm ("subsd xmm1, xmm0");
+    __asm ("mulsd xmm1, xmm4");
+    __asm ("addsd xmm1, xmm0");
+    xmm0 = *((rdx + 8));
+    __asm ("subsd xmm3, xmm0");
+    *(rax) = xmm1;
+    __asm ("mulsd xmm3, xmm4");
+    __asm ("addsd xmm3, xmm0");
+    xmm0 = *((rdx + 0x10));
+    __asm ("subsd xmm2, xmm0");
+    *((rax + 8)) = xmm3;
+    __asm ("mulsd xmm2, xmm4");
+    __asm ("addsd xmm2, xmm0");
+    xmm0 = *((rcx + 0x20));
+    *((rax + 0x18)) = 0;
+    __asm ("subsd xmm0, xmm5");
+    *((rax + 0x10)) = xmm2;
+    __asm ("mulsd xmm0, xmm4");
+    xmm4 = *(loc..LC6);
+    __asm ("addsd xmm0, xmm5");
+    __asm ("movapd xmm5, xmm3");
+    __asm ("subsd xmm5, qword [rdx + 8]");
+    *((rax + 0x20)) = xmm0;
+    __asm ("movapd xmm0, xmm1");
+    __asm ("subsd xmm0, qword [rdx]");
+    __asm ("andpd xmm5, xmm4");
+    __asm ("andpd xmm0, xmm4");
+    __asm ("addsd xmm0, xmm5");
+    __asm ("movapd xmm5, xmm2");
+    __asm ("subsd xmm5, qword [rdx + 0x10]");
+    __asm ("andpd xmm5, xmm4");
+    __asm ("addsd xmm0, xmm5");
+    xmm5 = 0;
+    __asm ("subsd xmm0, xmm6");
+    __asm ("comisd xmm5, xmm0");
+    if (rdx < 0) {
+        __asm ("subsd xmm1, qword [rcx]");
+        __asm ("subsd xmm3, qword [rcx + 8]");
+        __asm ("subsd xmm2, qword [rcx + 0x10]");
+        __asm ("andpd xmm1, xmm4");
+        __asm ("andpd xmm3, xmm4");
+        __asm ("addsd xmm1, xmm3");
+        __asm ("andpd xmm2, xmm4");
+        __asm ("addsd xmm1, xmm2");
+        __asm ("subsd xmm1, xmm6");
+        __asm ("comisd xmm5, xmm1");
+        if (rdx >= 0) {
+            goto label_0;
+        }
+        rax -= rsi;
+        rsi = 0x6db6db6db6db6db7;
+        rax >>= 3;
+        rax *= rsi;
+        return rax;
+    }
+    rdi = obj_vertices;
+    int_error ();
+    rax = rbx;
+    return rax;
+label_0:
+    rdi = obj_vertices;
+    int_error ();
+    rax = rbp;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/hidden3d.o @ 0x80006b0 */
+#include <stdint.h>
+ 
+int64_t draw_vertex (int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4) {
+    int64_t var_8h_2;
+    int64_t var_10h_2;
+    int64_t var_18h_2;
+    int64_t var_20h;
+    int64_t var_28h;
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_20h_2;
+    int64_t var_30h;
+    int64_t var_38h;
+    int64_t var_40h;
+    int64_t var_48h;
+    int64_t var_50h;
+    int64_t var_58h;
+    int64_t var_60h;
+    int64_t var_6ch;
+    int64_t var_70h;
+    int64_t var_78h_2;
+    int64_t var_80h;
+    int64_t var_88h;
+    int64_t var_90h;
+    int64_t var_98h;
+    int64_t var_a0h;
+    int64_t var_a8h;
+    int64_t var_ach;
+    int64_t var_b0h;
+    int64_t var_b8h;
+    int64_t var_c0h;
+    int64_t var_c8h;
+    int64_t var_d8h;
+    int64_t var_e0h;
+    int64_t var_e8h;
+    int64_t var_f0h;
+    int64_t var_f8h;
+    int64_t var_100h;
+    int64_t var_104h;
+    int64_t var_108h;
+    int64_t var_110h;
+    int64_t var_120h;
+    int64_t var_130h;
+    int64_t var_134h;
+    int64_t var_138h;
+    int64_t var_140h;
+    int64_t var_150h;
+    int64_t var_160h;
+    int64_t var_168h;
+    int64_t var_8h_3;
+    int64_t var_10h_3;
+    int64_t var_20h_3;
+    int64_t var_30h_2;
+    int64_t var_40h_2;
+    int64_t var_50h_2;
+    int64_t var_60h_2;
+    int64_t var_70h_2;
+    int64_t var_78h;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    rax = *(fs:0x28);
+    *((rsp + 0x78)) = rax;
+    eax = 0;
+    rax = *((rdi + 0x18));
+    if (rax == 0) {
+        goto label_0;
+    }
+    r13d = *((rax + 8));
+    rbx = rdi;
+    if (r13d >= 0xffffffff) {
+        goto label_3;
+    }
+    if (r13d == 0xfffffff7) {
+        goto label_3;
+    }
+    eax = r13 + 8;
+    while (eax != 0) {
+label_0:
+        rax = *((rsp + 0x78));
+        rax ^= *(fs:0x28);
+        if (eax != 1) {
+            goto label_4;
+        }
+        return rax;
+label_3:
+        xmm0 = 0;
+        __asm ("cvtsi2sd xmm0, dword [reloc.xscaler]");
+        __asm ("mulsd xmm0, qword [rbx]");
+        __asm ("cvttsd2si ebp, xmm0");
+        xmm0 = 0;
+        ebp += *(reloc.xmiddle);
+        __asm ("cvtsi2sd xmm0, dword [reloc.yscaler]");
+        __asm ("mulsd xmm0, qword [rbx + 8]");
+        edi = ebp;
+        __asm ("cvttsd2si r12d, xmm0");
+        r12d += *(reloc.ymiddle);
+        esi = r12d;
+        eax = int_error ();
+    }
+    rdx = *((rbx + 0x28));
+    if (rdx != 0) {
+        goto label_5;
+    }
+    rcx = 0xfffffffa00000002;
+    rax = *((rbx + 0x18));
+    rdx = *((rax + 0x30));
+    if (rdx == rcx) {
+        goto label_6;
+    }
+    rcx = 0xfffffffa00000003;
+    if (rdx == rcx) {
+        goto label_7;
+    }
+    edx = *((rax + 0x30));
+    if (edx == 3) {
+        goto label_8;
+    }
+    edx &= 0xfffffffd;
+    if (edx == 4) {
+        goto label_9;
+    }
+label_1:
+    if (r13d == 0xfffffff9) {
+        goto label_10;
+    }
+    rdx = *((rbx + 0x18));
+    xmm0 = *(loc..LC8);
+    rax = *(reloc.term);
+    __asm ("ucomisd xmm0, qword [rdx + 0x20]");
+    __asm ("jp 0x80007f4");
+    if (r13d == 0xfffffff9) {
+        rdx = *((rbx + 0x30));
+        xmm0 = *((rdx + 0x30));
+        __asm ("mulsd xmm0, qword [reloc.pointsize]");
+        uint64_t (*rax + 0xa0)() ();
+        rax = *(reloc.term);
+    }
+    if (r13d == 0xfffffff7) {
+        goto label_11;
+    }
+    rax = *((rax + 0x88));
+    if (r13d == 0xfffffff8) {
+        goto label_12;
+    }
+    edx = r13d;
+    esi = r12d;
+    edi = ebp;
+    void (*rax)() ();
+    do {
+label_2:
+        *((rbx + 0x18)) = 0;
+        goto label_0;
+label_5:
+        esi = r12d;
+        edi = ebp;
+        int_error ();
+        *((rbx + 0x18)) = 0;
+        goto label_0;
+label_11:
+        rcx = *((rbx + 0x18));
+        esi = r12d;
+        edi = ebp;
+        rdx = rcx + 0x28;
+        rax = uint64_t (*rax + 0x70)() ();
+    } while (1);
+label_6:
+    __asm ("movdqu xmm3, xmmword [rax]");
+    __asm ("cvttsd2si esi, qword [rbx + 0x20]");
+    rdi = rsp + 0x10;
+    *((rsp + 0x10)) = xmm3;
+    __asm ("movdqu xmm4, xmmword [rax + 0x10]");
+    *((rsp + 0x20)) = xmm4;
+    __asm ("movdqu xmm5, xmmword [rax + 0x20]");
+    *((rsp + 0x30)) = xmm5;
+    __asm ("movdqu xmm6, xmmword [rax + 0x30]");
+    *((rsp + 0x40)) = xmm6;
+    __asm ("movdqu xmm7, xmmword [rax + 0x40]");
+    *((rsp + 0x50)) = xmm7;
+    __asm ("movdqu xmm1, xmmword [rax + 0x50]");
+    *((rsp + 0x60)) = xmm1;
+    rax = *((rax + 0x60));
+    *((rsp + 0x70)) = rax;
+    int_error ();
+    rdi = rsp + 0x40;
+    rax = int_error ();
+    goto label_1;
+label_12:
+    rdx = *((rbx + 0x30));
+    esi = r12d;
+    edi = ebp;
+    __asm ("cvttsd2si edx, qword [rdx + 0x38]");
+    edx--;
+    void (*rax)() ();
+    goto label_2;
+label_9:
+    xmm0 = *((rbx + 0x20));
+    int_error ();
+    int_error ();
+    goto label_1;
+label_7:
+    __asm ("cvttsd2si rdi, qword [rbx + 0x20]");
+    int_error ();
+    goto label_1;
+label_8:
+    edi = *((rax + 0x34));
+    int_error ();
+    goto label_1;
+label_10:
+    rax = *((rbx + 0x30));
+    rdi = reloc_default_fillstyle;
+    xmm0 = *((rax + 0x30));
+    __asm ("mulsd xmm0, qword [reloc.radius_scaler]");
+    *((rsp + 8)) = xmm0;
+    eax = int_error ();
+    xmm0 = *((rsp + 8));
+    ecx = 0;
+    edi = ebp;
+    edx = eax;
+    rax = *(loc..LC7);
+    xmm1 = 0;
+    esi = r12d;
+    xmm2 = rax;
+    int_error ();
+    rdi = reloc_default_fillstyle;
+    al = int_error ();
+    if (al == 0) {
+        goto label_2;
+    }
+    rax = *(loc..LC7);
+    ecx = 0;
+    edx = 0;
+    xmm1 = 0;
+    xmm0 = *((rsp + 8));
+    esi = r12d;
+    edi = ebp;
+    xmm2 = rax;
+    int_error ();
+    goto label_2;
+label_4:
+    rax = int_error ();
+}
+
+
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/hidden3d.o @ 0x8002660 */
+#include <stdint.h>
+ 
+int64_t make_edge_constprop_0 (int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4) {
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    r13d = ecx;
+    r12 = rdx;
+    rbx = rdi;
+    rdi = obj_edges;
+    int_error (rbx, rbp, r12);
+    rsi = *(0x08006640);
+    rcx = rbx*8;
+    rdx = rbp*8;
+    rcx -= rbx;
+    rdx -= rbp;
+    *((rax + 0x10)) = r13d;
+    xmm0 = *((rsi + rcx*8 + 0x10));
+    __asm ("comisd xmm0, xmmword [rsi + rdx*8 + 0x10]");
+    *((rax + 0x18)) = r12;
+    *((rax + 0x20)) = 0xffffffffffffffff;
+    if (rdx < 0) {
+        goto label_1;
+    }
+    edx = *((r12 + 8));
+    *(rax) = rbx;
+    *((rax + 8)) = rbp;
+    if (edx == 0xfffffff6) {
+        goto label_2;
+    }
+    while (edx == 0xfffffff6) {
+        *((rax + 0x10)) = 0xfffffff5;
+label_0:
+        rax -= *(0x08006600);
+        rdx = 0xcccccccccccccccd;
+        rax >>= 3;
+        rax *= rdx;
+        return rax;
+label_1:
+        edx = *((r12 + 8));
+        *(rax) = rbp;
+        *((rax + 8)) = rbx;
+    }
+    if (edx != 0xfffffff5) {
+        goto label_0;
+    }
+label_2:
+    *((rax + 0x10)) = 0xfffffff6;
+    goto label_0;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.s pdg @ sym.s pdg @ sym.st pdg @ sym.st pdg @ sym.sto pdg @ sym.sto pdg @ sym.stor pdg @ sym.stor pdg @ sym.store pdg @ sym.store pdg @ sym.store_ pdg @ sym.store_ pdg @ sym.store_e pdg @ sym.store_e pdg @ sym.store_ed pdg @ sym.store_ed pdg @ sym.store_edg pdg @ sym.store_edg pdg @ sym.store_edge pdg @ sym.store_edge
+int64_t sym.store_edge(int64_t arg1, uint32_t arg2, uint32_t arg3, int64_t arg4, uint32_t arg5)
+{
+    double dVar1;
+    double dVar2;
+    int32_t iVar3;
+    uint32_t uVar4;
+    int64_t *piVar5;
+    undefined4 in_register_00000014;
+    int64_t iVar6;
+    int64_t iVar7;
+    int64_t iVar8;
+    int64_t iVar9;
+    
+    iVar6 = CONCAT44(in_register_00000014, arg3);
+    iVar9 = *(int64_t *)0x8006640 + arg1 * 0x38;
+    uVar4 = 1 << ((uint8_t)arg2 & 0x1f);
+    // switch table (7 cases) at 0x80049b8
+    switch(arg2) {
+    default:
+        iVar6 = iVar9 + -0x38;
+        break;
+    case 1:
+        iVar6 = iVar9 + iVar6 * -0x38;
+        break;
+    case 2:
+        iVar6 = iVar9 + iVar6 * -0x38 + -0x38;
+        break;
+    case 3:
+        uVar4 = uVar4 >> 1;
+        iVar6 = iVar9 + iVar6 * -0x38;
+        iVar9 = iVar9 + -0x38;
+        break;
+    case 4:
+        iVar6 = iVar9 + -0x38;
+        uVar4 = 0;
+        break;
+    case 5:
+        uVar4 = 0;
+        iVar6 = iVar9;
+        break;
+    case 6:
+        uVar4 = 0;
+        iVar6 = iVar9 + 0x38;
+    }
+    iVar7 = iVar6 - *(int64_t *)0x8006640 >> 3;
+    iVar8 = iVar7 * 0x6db6db6db6db6db7;
+    if ((_reloc..LC14 == *(double *)(iVar9 + 0x10)) || (_reloc..LC14 == *(double *)(iVar6 + 0x10))) {
+        return -2;
+    }
+    if ((uVar4 != 0) && ((_obj.hiddenTriangleLinesdrawnPattern & uVar4) == 0)) {
+        arg5 = 0xfffffffd;
+    }
+    piVar5 = (int64_t *)func_0x0803053f(obj.edges);
+    iVar9 = *(int64_t *)0x8006640;
+    *(uint32_t *)(piVar5 + 2) = arg5;
+    dVar1 = *(double *)(iVar9 + 0x10 + arg1 * 0x38);
+    dVar2 = *(double *)(iVar9 + 0x10 + iVar7 * 8);
+    piVar5[3] = arg4;
+    piVar5[4] = -1;
+    if (dVar1 < dVar2) {
+        iVar3 = *(int32_t *)(arg4 + 8);
+        *piVar5 = iVar8;
+        piVar5[1] = arg1;
+        if (iVar3 != -10) {
+            if (iVar3 != -0xb) goto code_r0x080026da;
+            goto code_r0x08002716;
+        }
+    } else {
+        iVar3 = *(int32_t *)(arg4 + 8);
+        *piVar5 = arg1;
+        piVar5[1] = iVar8;
+        if (iVar3 == -10) {
+code_r0x08002716:
+            *(undefined4 *)(piVar5 + 2) = 0xfffffff6;
+            goto code_r0x080026da;
+        }
+        if (iVar3 != -0xb) goto code_r0x080026da;
+    }
+    *(undefined4 *)(piVar5 + 2) = 0xfffffff5;
+code_r0x080026da:
+    return ((int64_t)((int64_t)piVar5 - *(int64_t *)0x8006600) >> 3) * -0x3333333333333333;
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.s pdd @ sym.s pdd @ sym.st pdd @ sym.st pdd @ sym.sto pdd @ sym.sto pdd @ sym.stor pdd @ sym.stor pdd @ sym.store pdd @ sym.store pdd @ sym.store_ pdd @ sym.store_ pdd @ sym.store_e pdd @ sym.store_e pdd @ sym.store_ed pdd @ sym.store_ed pdd @ sym.store_edg pdd @ sym.store_edg pdd @ sym.store_edge pdd @ sym.store_edge/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/hidden3d.o @ 0x8002720 */
+#include <stdint.h>
+ 
+uint64_t store_edge (uint32_t arg5, int64_t arg1, uint32_t arg2, uint32_t arg3, int64_t arg4) {
+    r8 = arg5;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    r11 = *(0x08006640);
+    rax = rdi*8;
+    r9 = rdx;
+    rdx = rcx;
+    rax -= rdi;
+    ecx = esi;
+    r10 = r11 + rax*8;
+    eax = 1;
+    eax <<= cl;
+    if (esi > 6) {
+        goto label_3;
+    }
+    rbx = reloc__rodata;
+    rcx = *((rbx + rsi*4));
+    rcx += rbx;
+    /* switch table (7 cases) at 0x80049b8 */
+    eax = void (*rcx)() ();
+    rcx = r10;
+    eax = 0;
+    do {
+label_0:
+        rsi = rcx;
+        xmm0 = *(loc..LC14);
+        r9 = 0x6db6db6db6db6db7;
+        rsi -= r11;
+        rsi >>= 3;
+        rsi *= r9;
+        __asm ("ucomisd xmm0, qword [r10 + 0x10]");
+        __asm ("jnp 0x8002858");
+label_1:
+        __asm ("ucomisd xmm0, qword [rcx + 0x10]");
+        __asm ("jnp 0x8002870");
+label_2:
+        if (eax != 0) {
+            eax = 0xfffffffd;
+            if ((*(obj.hiddenTriangleLinesdrawnPattern) & eax) != 0) {
+                r8d = eax;
+                goto label_4;
+            }
+        }
+label_4:
+        ecx = r8d;
+        void (*0x8002660)() ();
+        rcx = r10 + 0x38;
+        eax = 0;
+    } while (1);
+    rcx = r9*8;
+    rbx = r10;
+    rcx -= r9;
+    rcx <<= 3;
+    rbx -= rcx;
+    rcx = rbx;
+    goto label_0;
+    rcx = r9*8;
+    rbx = r10;
+    rcx -= r9;
+    rcx <<= 3;
+    rbx -= rcx;
+    rcx = rbx;
+    rcx -= 0x38;
+    goto label_0;
+    rcx = r9*8;
+    rbx = r10;
+    eax >>= 1;
+    r10 -= 0x38;
+    rcx -= r9;
+    rcx <<= 3;
+    rbx -= rcx;
+    rcx = rbx;
+    goto label_0;
+    rcx = r10 - 0x38;
+    eax = 0;
+    goto label_0;
+label_3:
+    rcx = r10 - 0x38;
+    goto label_0;
+    if (rbx != 0) {
+        goto label_1;
+    }
+    do {
+        rax = 0xfffffffffffffffe;
+        return rax;
+    } while (rbx == 0);
+    goto label_2;
+}
+   p p pd pd pdg pdg pdg  pdg  pdg @ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.s pdg @ sym.s pdg @ sym.se pdg @ sym.se pdg @ sym.set pdg @ sym.set pdg @ sym.set_ pdg @ sym.set_ pdg @ sym.set_h pdg @ sym.set_h pdg @ sym.set_hi pdg @ sym.set_hi pdg @ sym.set_hid pdg @ sym.set_hid pdg @ sym.set_hidd pdg @ sym.set_hidd pdg @ sym.set_hidde pdg @ sym.set_hidde pdg @ sym.set_hidden pdg @ sym.set_hidden pdg @ sym.set_hidden3 pdg @ sym.set_hidden3 pdg @ sym.set_hidden3d pdg @ sym.set_hidden3d pdg @ sym.set_hidden3do pdg @ sym.set_hidden3do pdg @ sym.set_hidden3dop pdg @ sym.set_hidden3dop pdg @ sym.set_hidden3dopt pdg @ sym.set_hidden3dopt pdg @ sym.set_hidden3dopti pdg @ sym.set_hidden3dopti pdg @ sym.set_hidden3doptio pdg @ sym.set_hidden3doptio pdg @ sym.set_hidden3doption pdg @ sym.set_hidden3doption pdg @ sym.set_hidden3doptions pdg @ sym.set_hidden3doptions
+void sym.set_hidden3doptions(void)
+{
+    int32_t iVar1;
+    undefined4 uVar2;
+    
+    if (_reloc.num_tokens <= _reloc.c_token) {
+        return;
+    }
+    do {
+        iVar1 = func_0x0803053f(_reloc.c_token, reloc..LC17);
+        if (iVar1 != 0) {
+            return;
+        }
+        uVar2 = func_0x0803053f(reloc.set_hidden3d_tbl, _reloc.c_token);
+    // switch table (13 cases) at 0x80049d4
+        switch(uVar2) {
+        case 0:
+            func_0x0803053f(_reloc.c_token, "");
+            return;
+        case 1:
+            _reloc.hiddenBacksideLinetypeOffset = 1;
+            _obj.hiddenTriangleLinesdrawnPattern = 3;
+            _obj.hiddenHandleUndefinedPoints = 1;
+            _reloc.c_token = _reloc.c_token + 1;
+            _obj.hiddenShowAlternativeDiagonal = 1;
+            _reloc..data = 1;
+            _reloc.hidden3d_layer = 0;
+            if (_reloc.num_tokens <= _reloc.c_token) {
+                _reloc..data = 1;
+                _obj.hiddenShowAlternativeDiagonal = 1;
+                _obj.hiddenHandleUndefinedPoints = 1;
+                _obj.hiddenTriangleLinesdrawnPattern = 3;
+                _reloc.hiddenBacksideLinetypeOffset = 1;
+                _reloc.hidden3d_layer = 0;
+                return;
+            }
+            iVar1 = func_0x0803053f(_reloc.c_token, reloc..LC17);
+            if (iVar1 != 0) {
+                return;
+            }
+            func_0x0803053f(_reloc.c_token, "");
+        case 0xc:
+            _reloc.hidden3d_layer = 0;
+            _reloc.c_token = _reloc.c_token + 1;
+            break;
+        case 2:
+            _reloc.c_token = _reloc.c_token + 1;
+            _reloc.hiddenBacksideLinetypeOffset = func_0x0803053f();
+            break;
+        case 3:
+            _reloc.hiddenBacksideLinetypeOffset = 0;
+            _reloc.c_token = _reloc.c_token + 1;
+            break;
+        case 4:
+            _reloc.c_token = _reloc.c_token + 1;
+            _obj.hiddenTriangleLinesdrawnPattern = func_0x0803053f();
+            break;
+        case 5:
+            _reloc.c_token = _reloc.c_token + 1;
+            _obj.hiddenHandleUndefinedPoints = func_0x0803053f();
+            if (2 < _obj.hiddenHandleUndefinedPoints - 1U) {
+                _obj.hiddenHandleUndefinedPoints = 3;
+            }
+            break;
+        case 6:
+            _obj.hiddenHandleUndefinedPoints = 3;
+            _reloc.c_token = _reloc.c_token + 1;
+            break;
+        case 7:
+            _obj.hiddenShowAlternativeDiagonal = 1;
+            _reloc.c_token = _reloc.c_token + 1;
+            break;
+        case 8:
+            _obj.hiddenShowAlternativeDiagonal = 0;
+            _reloc.c_token = _reloc.c_token + 1;
+            break;
+        case 9:
+            _reloc..data = 1;
+            _reloc.c_token = _reloc.c_token + 1;
+            break;
+        case 10:
+            _reloc..data = 0;
+            _reloc.c_token = _reloc.c_token + 1;
+            break;
+        case 0xb:
+            _reloc.hidden3d_layer = 1;
+            _reloc.c_token = _reloc.c_token + 1;
+            break;
+        default:
+            _reloc.c_token = _reloc.c_token + 1;
+        }
+        if (_reloc.num_tokens <= _reloc.c_token) {
+            return;
+        }
+    } while( true );
+}
+   p p pd pd pdd pdd pdd  pdd  pdd @ pdd @ pdd @  pdd @  pdd @ s pdd @ s pdd @ sy pdd @ sy pdd @ sym pdd @ sym pdd @ sym. pdd @ sym. pdd @ sym.s pdd @ sym.s pdd @ sym.se pdd @ sym.se pdd @ sym.set pdd @ sym.set pdd @ sym.set_ pdd @ sym.set_ pdd @ sym.set_h pdd @ sym.set_h pdd @ sym.set_hi pdd @ sym.set_hi pdd @ sym.set_hid pdd @ sym.set_hid pdd @ sym.set_hidd pdd @ sym.set_hidd pdd @ sym.set_hidde pdd @ sym.set_hidde pdd @ sym.set_hidden pdd @ sym.set_hidden pdd @ sym.set_hidden3 pdd @ sym.set_hidden3 pdd @ sym.set_hidden3d pdd @ sym.set_hidden3d pdd @ sym.set_hidden3do pdd @ sym.set_hidden3do pdd @ sym.set_hidden3dop pdd @ sym.set_hidden3dop pdd @ sym.set_hidden3dopt pdd @ sym.set_hidden3dopt pdd @ sym.set_hidden3dopti pdd @ sym.set_hidden3dopti pdd @ sym.set_hidden3doptio pdd @ sym.set_hidden3doptio pdd @ sym.set_hidden3doption pdd @ sym.set_hidden3doption pdd @ sym.set_hidden3doptions pdd @ sym.set_hidden3doptions/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/hidden3d.o @ 0x8002880 */
+#include <stdint.h>
+ 
+int64_t set_hidden3doptions (void) {
+    __asm ("endbr64");
+    edi = *(reloc.c_token);
+    if (edi >= *(reloc.num_tokens)) {
+        goto label_2;
+    }
+    rbx = 0x080049d4;
+    do {
+        rsi = loc__LC17;
+        eax = int_error (rbx);
+        if (eax != 0) {
+            goto label_1;
+        }
+        esi = *(reloc.c_token);
+        rdi = reloc_set_hidden3d_tbl;
+        eax = int_error ();
+        if (eax > 0xc) {
+            goto label_3;
+        }
+        rax = *((rbx + rax*4));
+        rax += rbx;
+        /* switch table (13 cases) at 0x80049d4 */
+        void (*rax)() ();
+        *(reloc.hidden3d_layer) = 1;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+label_0:
+        *(reloc.c_token) = edi;
+    } while (*(reloc.num_tokens) > edi);
+    do {
+label_1:
+        return rax;
+        *(obj.hiddenHandleBentoverQuadrangles) = 0;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        goto label_0;
+        *(obj.hiddenHandleBentoverQuadrangles) = 1;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        goto label_0;
+        *(obj.hiddenShowAlternativeDiagonal) = 0;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        goto label_0;
+        *(obj.hiddenShowAlternativeDiagonal) = 1;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        goto label_0;
+        *(obj.hiddenHandleUndefinedPoints) = 3;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        goto label_0;
+        *(reloc.c_token)++;
+        int_error ();
+        edi = *(reloc.c_token);
+        edx = rax - 1;
+        edx = 3;
+        if (edx >= 3) {
+            rax = rdx;
+        }
+        *(obj.hiddenHandleUndefinedPoints) = eax;
+        goto label_0;
+        *(reloc.c_token)++;
+        rax = int_error ();
+        edi = *(reloc.c_token);
+        *(obj.hiddenTriangleLinesdrawnPattern) = rax;
+        goto label_0;
+        *(obj.hiddenBacksideLinetypeOffset) = 0;
+        eax = *(reloc.c_token);
+        edi = rax + 1;
+        goto label_0;
+        *(reloc.c_token)++;
+        eax = int_error ();
+        edi = *(reloc.c_token);
+        *(obj.hiddenBacksideLinetypeOffset) = eax;
+        goto label_0;
+        *(obj.hiddenBacksideLinetypeOffset) = 1;
+        eax = *(reloc.c_token);
+        *(obj.hiddenTriangleLinesdrawnPattern) = 3;
+        *(obj.hiddenHandleUndefinedPoints) = 1;
+        edi = rax + 1;
+        *(obj.hiddenShowAlternativeDiagonal) = 1;
+        *(obj.hiddenHandleBentoverQuadrangles) = 1;
+        *(reloc.hidden3d_layer) = 0;
+        *(reloc.c_token) = edi;
+    } while (edi >= *(reloc.num_tokens));
+    rsi = loc__LC17;
+    eax = int_error ();
+    if (eax != 0) {
+        goto label_1;
+    }
+    edi = *(reloc.c_token);
+    rsi = "No further options allowed after 'defaults';
+    int_error ();
+    *(reloc.hidden3d_layer) = 0;
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    goto label_0;
+label_3:
+    eax = *(reloc.c_token);
+    edi = rax + 1;
+    goto label_0;
+    edi = *(reloc.c_token);
+    rsi = "No such option to hidden3d (or wrong order)";
+    eax = 0;
+    int_error ();
+label_2:
+    return rax;
+}
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/hidden3d.o @ 0x8002af0 */
+#include <stdint.h>
+ 
+uint64_t show_hidden3doptions (void) {
+    __asm ("endbr64");
+    edi = *(reloc.hidden3d_layer);
+    rax = "front";
+    rcx = "back";
+    rdx = "\t  Hidden3d elements will be drawn in %s of non-hidden3d elements\n";
+    esi = 1;
+    rdi = *(reloc.stderr);
+    if (edi != 0) {
+        rcx = rax;
+    }
+    eax = 0;
+    eax = int_error ();
+    ecx = *(obj.hiddenBacksideLinetypeOffset);
+    eax = 0;
+    r9d = *(obj.hiddenHandleUndefinedPoints);
+    r8 = *(obj.hiddenTriangleLinesdrawnPattern);
+    rdi = *(reloc.stderr);
+    esi = 1;
+    rdx = "\t  Back side of surfaces has linestyle offset of %d\n\t  Bit-Mask of Lines to draw in each triangle is %ld\n\t  %d: ";
+    int_error ();
+    eax = *(obj.hiddenHandleUndefinedPoints);
+    rcx = *(reloc.stderr);
+    if (eax == 2) {
+        goto label_1;
+    }
+    if (eax == 3) {
+        goto label_2;
+    }
+    if (eax == 1) {
+        goto label_3;
+    }
+    edx = 0x3c;
+    esi = 1;
+    rdi = "Value stored for undefined datapoint handling is illegal!!!\n";
+    int_error ();
+    do {
+label_0:
+        edx = .data;
+        esi = *(obj.hiddenShowAlternativeDiagonal);
+        rax = "not ";
+        rcx = loc__LC22;
+        r8 = rax;
+        rdi = *(reloc.stderr);
+        rdx = "\t  Will %suse other diagonal if it gives a less jaggy outline\n\t  Will %sdraw diagonal visibly if quadrangle is 'bent over'\n";
+        if (edx != 0) {
+            r8 = rcx;
+        }
+        esi = 1;
+        if (esi == 0) {
+            rcx = rax;
+        }
+        eax = 0;
+        void (*0x803053f)() ();
+label_1:
+        edx = 0x38;
+        esi = 1;
+        rdi = "Only undefined datapoints are omitted from the surface.\n";
+        int_error ();
+    } while (1);
+label_3:
+    edx = 0x41;
+    esi = 1;
+    rdi = "Outranged and undefined datapoints are omitted from the surface.\n";
+    int_error ();
+    goto label_0;
+label_2:
+    edx = 0x3d;
+    esi = 1;
+    rdi = "Will not check for undefined datapoints (may cause crashes).\n";
+    int_error ();
+    goto label_0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

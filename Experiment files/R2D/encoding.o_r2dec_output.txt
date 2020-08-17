@@ -1,0 +1,426 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/encoding.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int64_t utf8_getmore (int64_t arg5, int64_t arg1, int64_t arg2, int64_t arg3) {
+    int64_t var_8h;
+    int64_t var_10h;
+    int64_t var_18h;
+    int64_t var_20h;
+    int64_t var_28h;
+    r8 = arg5;
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    /* [01] -r-x section size 2483 named .text */
+    rcx = *(rsi);
+    rax = *(fs:0x28);
+    *((rsp + 0x28)) = rax;
+    eax = 0;
+    *(rsp) = 0x80;
+    eax = rdx - 1;
+    *((rsp + 8)) = 0x800;
+    rdx = rax;
+    r9 = rcx + rax + 1;
+    *((rsp + 0x10)) = 0x10000;
+    *((rsp + 0x18)) = 0x200000;
+    *((rsp + 0x20)) = 0x4000000;
+    do {
+        r8d = *(rcx);
+        eax = r8d;
+        eax &= 0xffffffc0;
+        if (al != 0x80) {
+            goto label_0;
+        }
+        rax = *(rdi);
+        r8d &= 0x3f;
+        rcx++;
+        rax <<= 6;
+        rax |= r8;
+        *(rdi) = rax;
+        *(rsi) = rcx;
+    } while (rcx != r9);
+    rdx = (int64_t) edx;
+    if (rax >= *((rsp + rdx*8))) {
+        eax = 1;
+    } else {
+label_0:
+        *(rdi) = 0xffff;
+        eax = 0;
+    }
+    rdx = *((rsp + 0x28));
+    rdx ^= *(fs:0x28);
+    if (rax == *((rsp + rdx*8))) {
+        return rax;
+    }
+    return _stack_chk_fail ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/encoding.o @ 0x8000100 */
+#include <stdint.h>
+ 
+void encoding_from_locale (void) {
+    __asm ("endbr64");
+    rsi = loc__LC0;
+    edi = 0;
+    r12d = 0x11;
+    return _stack_chk_fail (rbp);
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/encoding.o @ 0x80002e0 */
+#include <stdint.h>
+ 
+int64_t init_special_chars (void) {
+    int64_t var_25h;
+    int64_t var_28h;
+    __asm ("endbr64");
+    rsi = loc__LC0;
+    edi = 0;
+    r12 = reloc_degree_sign;
+    rax = *(fs:0x28);
+    *((rsp + 0x28)) = rax;
+    eax = 0;
+    r13 = rsp + 0x25;
+    return _stack_chk_fail (rbp, r12);
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/encoding.o @ 0x8000540 */
+#include <stdint.h>
+ 
+void init_encoding (void) {
+    __asm ("endbr64");
+    return _stack_chk_fail ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/encoding.o @ 0x8000570 */
+#include <stdint.h>
+ 
+int64_t latex_input_encoding (uint32_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    if (edi <= 0x11) {
+        rdx = 0x08000b58;
+        rax = *((rdx + rdi*4));
+        rax += rdx;
+        /* switch table (18 cases) at 0x8000b58 */
+        eax = void (*rax)() ();
+    }
+    eax = 0;
+    return rax;
+    rax = "latin5";
+    return rax;
+    rax = "latin9";
+    return rax;
+    rax = "cp437de";
+    return rax;
+    rax = "cp850";
+    return rax;
+    rax = "cp852";
+    return rax;
+    rax = "cp1250";
+    return rax;
+    rax = "cp1251";
+    return rax;
+    rax = "cp1252";
+    return rax;
+    rax = "koi8-r";
+    return rax;
+    rax = "koi8-u";
+    return rax;
+    rax = "utf8x";
+    return rax;
+    rax = "latin2";
+    return rax;
+    rax = "latin1";
+    return rax;
+    rsi = "invalid input encoding used";
+    edi |= 0xffffffff;
+    eax = 0;
+    return _stack_chk_fail (rax);
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/encoding.o @ 0x8000670 */
+#include <stdint.h>
+ 
+uint32_t contains8bit (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    while (al != 0) {
+        rdi++;
+        if (al < 0) {
+            goto label_0;
+        }
+        eax = *(rdi);
+    }
+    return eax;
+label_0:
+    eax = 1;
+    return eax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/encoding.o @ 0x80006a0 */
+#include <stdint.h>
+ 
+int64_t utf8toulong (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    __asm ("endbr64");
+    rax = *(rsi);
+    rdx = rax + 1;
+    *(rsi) = rdx;
+    eax = *(rax);
+    if (al < 0) {
+        edx = eax;
+        edx &= 0xffffffe0;
+        if (dl == 0xc0) {
+            goto label_0;
+        }
+        edx = eax;
+        edx &= 0xfffffff0;
+        if (dl == 0xe0) {
+            goto label_1;
+        }
+        edx = eax;
+        edx &= 0xfffffff8;
+        if (dl == 0xf0) {
+            goto label_2;
+        }
+        edx = eax;
+        edx &= 0xfffffffc;
+        if (dl == 0xf8) {
+            goto label_3;
+        }
+        edx = eax;
+        edx &= 0xfffffffe;
+        if (dl == 0xfc) {
+            goto label_4;
+        }
+        *(rdi) = 0xffff;
+        eax = 0;
+        return rax;
+    }
+    *(rdi) = rax;
+    eax = 1;
+    return rax;
+label_1:
+    eax &= 0xf;
+    edx = 2;
+    *(rdi) = rax;
+    void (*0x8000040)() ();
+label_0:
+    eax &= 0x1f;
+    edx = 1;
+    *(rdi) = rax;
+    void (*0x8000040)() ();
+label_2:
+    eax &= 7;
+    edx = 3;
+    *(rdi) = rax;
+    void (*0x8000040)() ();
+label_3:
+    eax &= 3;
+    edx = 4;
+    *(rdi) = rax;
+    void (*0x8000040)() ();
+label_4:
+    eax &= 1;
+    edx = 5;
+    *(rdi) = rax;
+    return utf8_getmore ();
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/encoding.o @ 0x8000760 */
+#include <stdint.h>
+ 
+int32_t ucs4toutf8 (uint32_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    __asm ("endbr64");
+    if (edi <= 0x7f) {
+        *(rsi) = dil;
+        eax = 1;
+        return eax;
+    }
+    if (edi > 0x7ff) {
+        if (edi <= 0xffff) {
+            goto label_0;
+        }
+        eax = 0;
+        if (edi <= 0x10ffff) {
+            goto label_1;
+        }
+        return eax;
+    }
+    eax = edi;
+    edi &= 0x3f;
+    eax >>= 6;
+    edi |= 0xffffff80;
+    eax |= 0xffffffc0;
+    *((rsi + 1)) = dil;
+    *(rsi) = al;
+    eax = 2;
+    return eax;
+label_1:
+    eax = edi;
+    eax >>= 0x12;
+    eax |= 0xfffffff0;
+    *(rsi) = al;
+    eax = edi;
+    eax >>= 0xc;
+    eax &= 0x3f;
+    eax |= 0xffffff80;
+    *((rsi + 1)) = al;
+    eax = edi;
+    edi &= 0x3f;
+    eax >>= 6;
+    edi |= 0xffffff80;
+    eax &= 0x3f;
+    *((rsi + 3)) = dil;
+    eax |= 0xffffff80;
+    *((rsi + 2)) = al;
+    eax = 4;
+    return eax;
+label_0:
+    eax = edi;
+    eax >>= 0xc;
+    eax |= 0xffffffe0;
+    *(rsi) = al;
+    eax = edi;
+    edi &= 0x3f;
+    eax >>= 6;
+    edi |= 0xffffff80;
+    eax &= 0x3f;
+    *((rsi + 2)) = dil;
+    eax |= 0xffffff80;
+    *((rsi + 1)) = al;
+    eax = 3;
+    return eax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/encoding.o @ 0x8000820 */
+#include <stdint.h>
+ 
+int64_t strlen_utf8 (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    edx = *(rdi);
+    if (dl == 0) {
+        goto label_0;
+    }
+    rdi++;
+    eax = 0;
+    do {
+        edx &= 0xc0;
+        dl = (edx != 0x80) ? 1 : 0;
+        rdi++;
+        edx = (int32_t) dl;
+        eax += edx;
+        edx = *((rdi - 1));
+    } while (dl != 0);
+    rax = (int64_t) eax;
+    return rax;
+label_0:
+    eax = 0;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/encoding.o @ 0x8000870 */
+#include <stdint.h>
+ 
+int64_t truncate_to_one_utf8_char (int64_t arg1) {
+    int64_t var_10h;
+    int64_t var_18h;
+    rdi = arg1;
+    __asm ("endbr64");
+    rsi = rdi;
+    edx = 8;
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    r12 = rsp + 0x10;
+    rdi = r12;
+    return _stack_chk_fail (rbp);
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/encoding.o @ 0x8000960 */
+#include <stdint.h>
+ 
+uint32_t is_sjis_lead_byte (int64_t arg3) {
+    rdx = arg3;
+    __asm ("endbr64");
+    edi = (int32_t) dil;
+    eax = rdi - 0x81;
+    al = (eax <= 0x1e) ? 1 : 0;
+    edi -= 0xe1;
+    dl = (edi <= 0xd) ? 1 : 0;
+    eax |= edx;
+    return eax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/encoding.o @ 0x8000990 */
+#include <stdint.h>
+ 
+int64_t strlen_sjis (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    edx = *(rdi);
+    if (dl == 0) {
+        goto label_1;
+    }
+    eax = 0;
+    ecx = 0;
+    while (edx > 0xd) {
+        ecx = r8d;
+        eax++;
+        rdx = (int64_t) ecx;
+        edx = *((rdi + rdx));
+        if (dl == 0) {
+            goto label_2;
+        }
+label_0:
+        esi = rdx - 0x81;
+        r8d = rcx + 1;
+        if (esi <= 0x1e) {
+            goto label_3;
+        }
+        edx -= 0xe1;
+    }
+label_3:
+    ecx += 2;
+    eax++;
+    rdx = (int64_t) ecx;
+    edx = *((rdi + rdx));
+    if (dl != 0) {
+        goto label_0;
+    }
+label_2:
+    rax = (int64_t) eax;
+    return rax;
+label_1:
+    eax = 0;
+    return rax;
+}
+
+

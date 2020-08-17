@@ -1,0 +1,603 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/contour.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int32_t reverse_sort (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    /* [01] -r-x section size 9809 named .text */
+    __asm ("endbr64");
+    xmm0 = *(rsi);
+    xmm1 = *(rdi);
+    eax = 1;
+    __asm ("comisd xmm0, xmm1");
+    if (? <= ?) {
+        eax = 0;
+        __asm ("comisd xmm1, xmm0");
+        al = (? > ?) ? 1 : 0;
+        eax = -eax;
+    }
+    return eax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/contour.o @ 0x8000070 */
+#include <stdint.h>
+ 
+int64_t chk_contour_kind (int64_t arg1) {
+    rdi = arg1;
+    eax = 1;
+    if (sil != 0) {
+        goto label_0;
+    }
+    rax = rdi;
+    do {
+        rdx = rax;
+        rax = *((rax + 0x10));
+    } while (rax != 0);
+    xmm0 = x_max;
+    __asm ("subsd xmm0, qword [obj.x_min]");
+    xmm2 = *(loc..LC0);
+    xmm3 = *(loc..LC1);
+    xmm1 = *(rdx);
+    __asm ("subsd xmm1, qword [rdi]");
+    __asm ("andpd xmm0, xmm2");
+    __asm ("mulsd xmm0, xmm3");
+    __asm ("andpd xmm1, xmm2");
+    __asm ("comisd xmm0, xmm1");
+    if (rax > 0) {
+        xmm0 = *(obj.y_max);
+        xmm1 = *((rdx + 8));
+        eax = 0;
+        __asm ("subsd xmm0, qword [obj.y_min]");
+        __asm ("subsd xmm1, qword [rdi + 8]");
+        __asm ("andpd xmm0, xmm2");
+        __asm ("andpd xmm1, xmm2");
+        __asm ("mulsd xmm0, xmm3");
+        __asm ("comisd xmm0, xmm1");
+        al = (rax > 0) ? 1 : 0;
+        return rax;
+    }
+    eax = 0;
+label_0:
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/contour.o @ 0x8000110 */
+#include <stdint.h>
+ 
+uint64_t solve_cubic_2 (int64_t arg1, int64_t arg2, signed int64_t arg3) {
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    r10 = (int64_t) edx;
+    r9d = rdx - 3;
+    rbx = r10*8;
+    r11 = rsi + rbx - 8;
+    xmm2 = *(r11);
+    if (edx <= 2) {
+        goto label_2;
+    }
+    r8d = rdx - 3;
+    rcx = rdi;
+    rax = rsi + 8;
+    r9 = r8;
+    r8 = rsi + r8*8 + 0x10;
+    do {
+        xmm0 = *((rax - 8));
+        xmm1 = *(rax);
+        rax += 8;
+        rcx += 0x18;
+        xmm3 = *((rcx - 8));
+        __asm ("mulsd xmm3, xmm0");
+        __asm ("subsd xmm1, xmm3");
+        *((rax - 8)) = xmm1;
+        __asm ("mulsd xmm0, qword [rcx - 0x18]");
+        __asm ("subsd xmm2, xmm0");
+    } while (r8 != rax);
+label_2:
+    if (edx <= 1) {
+        goto label_3;
+    }
+    rax = r10 * 3;
+    xmm0 = *((rdi + rax*8 - 0x30));
+    __asm ("mulsd xmm0, qword [rsi + rbx - 0x10]");
+    __asm ("subsd xmm2, xmm0");
+    *(r11) = xmm2;
+label_0:
+    rcx = rdi + 8;
+    eax = 0;
+    do {
+        xmm0 = *((rsi + rax*8));
+        __asm ("divsd xmm0, qword [rcx]");
+        *((rsi + rax*8)) = xmm0;
+        rax++;
+        rcx += 0x18;
+    } while (edx > eax);
+    xmm2 = *(r11);
+    if (edx > 1) {
+        rdx = r10 * 3;
+        rax = rsi + rbx - 0x10;
+        xmm1 = *((rdi + rdx*8 - 0x30));
+        xmm0 = *(rax);
+        __asm ("mulsd xmm1, xmm2");
+        __asm ("subsd xmm0, xmm1");
+        *(rax) = xmm0;
+    }
+label_1:
+    if (r9d < 0) {
+        goto label_4;
+    }
+    rcx = (int64_t) r9d;
+    rdx = r10 * 3;
+    r9 <<= 3;
+    rcx <<= 3;
+    rdx = rdi + rdx*8 - 0x48;
+    rax = rsi + rcx;
+    rcx = rsi + rcx - 8;
+    rcx -= r9;
+    do {
+        xmm1 = *(rdx);
+        xmm0 = *((rdx + 0x10));
+        rax -= 8;
+        rdx -= 0x18;
+        __asm ("mulsd xmm0, qword [rax + 0x10]");
+        __asm ("mulsd xmm1, xmm2");
+        __asm ("addsd xmm0, xmm1");
+        xmm1 = *((rax + 8));
+        __asm ("subsd xmm1, xmm0");
+        *((rax + 8)) = xmm1;
+    } while (rax != rcx);
+label_4:
+    return rax;
+    if (rax == rcx) {
+label_3:
+        goto label_0;
+    }
+    xmm2 = *(r11);
+    goto label_1;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/contour.o @ 0x8000260 */
+#include <stdint.h>
+ 
+uint64_t end_crnt_cntr (void) {
+    rsi = "gnuplot_contour";
+    edi = 0x40;
+    rax = gp_alloc (rbx);
+    rdi = *(obj.crnt_cntr_pt_index);
+    rsi = "contour coords";
+    rbx = rax;
+    rdi <<= 6;
+    rax = gp_alloc ();
+    esi = crnt_cntr_pt_index;
+    *((rbx + 8)) = rax;
+    if (esi <= 0) {
+        goto label_0;
+    }
+    edi = rsi - 1;
+    xmm1 = contour_level;
+    rdx = rax + 8;
+    rdi <<= 6;
+    rcx = obj_crnt_cntr;
+    rax = rax + rdi + 0x48;
+    do {
+        xmm0 = *(rcx);
+        rdx += 0x40;
+        rcx += 0x10;
+        *((rdx - 0x40)) = xmm0;
+        xmm0 = *((rcx - 8));
+        *((rdx - 0x30)) = xmm1;
+        *((rdx - 0x38)) = xmm0;
+    } while (rdx != rax);
+label_0:
+    rax = contour_list;
+    *((rbx + 0x34)) = esi;
+    *(obj.contour_list) = rbx;
+    *(rbx) = rax;
+    eax = 0;
+    *((rbx + 0x10)) = ax;
+    *(obj.crnt_cntr_pt_index) = 0;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/contour.o @ 0x8000310 */
+#include <stdint.h>
+ 
+int64_t add_cntr_point (int64_t arg8, int64_t arg7) {
+    int64_t var_8h;
+    xmm1 = arg8;
+    xmm0 = arg7;
+    ebx = crnt_cntr_pt_index;
+    if (ebx > 0x62) {
+        goto label_0;
+    }
+    eax = rbx + rbx;
+    rcx = obj_crnt_cntr;
+    ebx++;
+    edx = rax + 1;
+    do {
+        rax = (int64_t) eax;
+        *(obj.crnt_cntr_pt_index) = ebx;
+        *((rcx + rax*8)) = xmm0;
+        rax = (int64_t) edx;
+        *((rcx + rax*8)) = xmm1;
+        return rax;
+label_0:
+        *((rsp + 8)) = xmm1;
+        *(rsp) = xmm0;
+        end_crnt_cntr ();
+        eax = rbx + rbx - 2;
+        xmm1 = *((rsp + 8));
+        rcx = obj_crnt_cntr;
+        rdx = (int64_t) eax;
+        eax++;
+        xmm0 = *(rsp);
+        ebx = 2;
+        xmm2 = *((rcx + rdx*8));
+        rax = (int64_t) eax;
+        edx = 3;
+        *(obj.crnt_cntr) = xmm2;
+        xmm2 = *((rcx + rax*8));
+        eax = 2;
+        *(0x08002748) = xmm2;
+    } while (1);
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/contour.o @ 0x80003b0 */
+#include <stdint.h>
+ 
+int64_t add_edge_part_0 (int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4) {
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    r13 = rdi;
+    edi = 0x30;
+    r12 = rdx;
+    rsi = "contour edge";
+    rbx = rcx;
+    gp_alloc (rbx, rbp, r12);
+    *((rax + 0x20)) = 0;
+    rdx = *(rbx);
+    *(rax) = 0;
+    *((rax + 8)) = 0;
+    *((rax + 0x10)) = r13;
+    *((rax + 0x18)) = rbp;
+    *((rax + 0x2c)) = 1;
+    if (rdx != 0) {
+        *((rdx + 0x20)) = rax;
+        *(rbx) = rax;
+        return rax;
+    }
+    *(r12) = rax;
+    *(rbx) = rax;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/contour.o @ 0x8000440 */
+#include <stdint.h>
+ 
+int64_t update_cntr_pt_isra_0 (int64_t arg1, int64_t arg2) {
+    int64_t var_8h;
+    rdi = arg1;
+    rsi = arg2;
+    rbx = rdi;
+    rax = *(rdi);
+    xmm2 = *((rax + 0x18));
+    rax = *(rsi);
+    xmm1 = *((rax + 0x18));
+    __asm ("subsd xmm0, xmm2");
+    __asm ("subsd xmm1, xmm2");
+    __asm ("divsd xmm0, xmm1");
+    xmm1 = 0;
+    __asm ("comisd xmm1, xmm0");
+    if (? > ?) {
+        goto label_0;
+    }
+    xmm1 = *(loc..LC5);
+    __asm ("movapd xmm4, xmm1");
+    __asm ("minsd xmm4, xmm0");
+    __asm ("movapd xmm0, xmm4");
+    do {
+        rsi = "contour cntr_struct";
+        edi = 0x18;
+        *((rsp + 8)) = xmm1;
+        *(rsp) = xmm0;
+        gp_alloc ();
+        xmm0 = *(rsp);
+        xmm1 = *((rsp + 8));
+        rcx = *(rbp);
+        rdx = *(rbx);
+        __asm ("subsd xmm1, xmm0");
+        xmm2 = *((rcx + 8));
+        xmm3 = *((rdx + 8));
+        __asm ("mulsd xmm2, xmm0");
+        __asm ("mulsd xmm3, xmm1");
+        __asm ("mulsd xmm0, qword [rcx + 0x10]");
+        __asm ("mulsd xmm1, qword [rdx + 0x10]");
+        __asm ("addsd xmm2, xmm3");
+        __asm ("addsd xmm0, xmm1");
+        *(rax) = xmm2;
+        *((rax + 8)) = xmm0;
+        return rax;
+label_0:
+        __asm ("movapd xmm0, xmm1");
+        xmm1 = *(loc..LC5);
+    } while (1);
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/contour.o @ 0x8000500 */
+#include <stdint.h>
+ 
+uint64_t trace_contour (int64_t arg7, int64_t arg1, int64_t arg2) {
+    int64_t var_8h;
+    xmm0 = arg7;
+    rdi = arg1;
+    rsi = arg2;
+    r14 = rdi;
+    r13 = rsi;
+    *((rsp + 8)) = xmm0;
+    if (dl == 0) {
+        *((rdi + 0x28)) = 0;
+        *(rsi)--;
+    }
+    if (*(r14) == 0) {
+        goto label_5;
+    }
+label_3:
+    xmm0 = *((rsp + 8));
+    rsi = r14 + 0x18;
+    rdi = r14 + 0x10;
+    rax = update_cntr_pt_isra_0 ();
+    rcx = r14;
+    rbp = *(rcx);
+    r12 = rax;
+    r15 = rax;
+    eax = 0;
+    if (rbp == rax) {
+        goto label_6;
+    }
+label_0:
+    rax = rbp;
+    rsi = rbp + 0x18;
+    ebx = 0;
+    do {
+        rdx = *(rax);
+        if (rdx != rcx) {
+            if (*((rdx + 0x28)) == 0) {
+                rbx = rdx;
+                goto label_7;
+            }
+        }
+label_7:
+        rax += 8;
+    } while (rsi != rax);
+    if (rbx == 0) {
+        goto label_8;
+    }
+    *((rbx + 0x28)) = 0;
+    *(r13)--;
+    if (*((rbx + 0x2c)) == 3) {
+        goto label_9;
+    }
+    xmm0 = *((rsp + 8));
+    rsi = rbx + 0x18;
+    rdi = rbx + 0x10;
+    rax = update_cntr_pt_isra_0 ();
+    xmm0 = x_max;
+    xmm1 = *(r15);
+    __asm ("subsd xmm0, qword [obj.x_min]");
+    xmm2 = *(loc..LC0);
+    *((r15 + 0x10)) = rax;
+    __asm ("subsd xmm1, qword [rax]");
+    __asm ("andpd xmm0, xmm2");
+    __asm ("mulsd xmm0, qword [loc..LC1]");
+    __asm ("andpd xmm1, xmm2");
+    __asm ("comisd xmm0, xmm1");
+    if (*((rbx + 0x2c)) <= 3) {
+        goto label_10;
+    }
+    xmm0 = *(obj.y_max);
+    __asm ("subsd xmm0, qword [obj.y_min]");
+    xmm1 = *((r15 + 8));
+    __asm ("subsd xmm1, qword [rax + 8]");
+    __asm ("andpd xmm0, xmm2");
+    __asm ("mulsd xmm0, qword [loc..LC1]");
+    __asm ("andpd xmm1, xmm2");
+    __asm ("comisd xmm0, xmm1");
+    if (*((rbx + 0x2c)) <= 3) {
+        goto label_10;
+    }
+    rdi = rax;
+    gp_alloc ();
+label_2:
+    if (rbx == r14) {
+        goto label_11;
+    }
+    if (*((rbx + 0x2c)) == 2) {
+        goto label_12;
+    }
+label_1:
+    rcx = rbx;
+    rax = rbp;
+    rbp = *(rcx);
+    if (rbp != rax) {
+        goto label_0;
+    }
+label_6:
+    rbp = *((rcx + 8));
+    goto label_0;
+label_9:
+    if (rbx != r14) {
+        goto label_1;
+    }
+label_11:
+    xmm0 = *(r15);
+    *((r15 + 0x10)) = 0;
+    *(r12) = xmm0;
+    xmm0 = *((r15 + 8));
+    *((r12 + 8)) = xmm0;
+label_4:
+    rax = r12;
+    return rax;
+label_10:
+    r15 = rax;
+    goto label_2;
+label_5:
+    r12 = *((r14 + 8));
+    if (r12 != 0) {
+        goto label_3;
+    }
+    goto label_4;
+label_12:
+    *((r15 + 0x10)) = 0;
+    goto label_4;
+label_8:
+    *((r15 + 0x10)) = 0;
+    if (r12 == 0) {
+        goto label_13;
+    }
+    do {
+        rdi = r12;
+        r12 = *((r12 + 0x10));
+        gp_alloc ();
+    } while (r12 != 0);
+label_13:
+    rcx = *(reloc.stderr);
+    edx = 0x29;
+    esi = 1;
+    r12d = 0;
+    rdi = "trace_contour: unexpected end of contour\n";
+    gp_alloc ();
+    goto label_4;
+}
+
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/contour.o @ 0x8002550 */
+#include <stdint.h>
+ 
+uint64_t solve_tri_diag (int64_t arg1, int64_t arg2, int64_t arg3, signed int64_t arg4) {
+    rdi = arg1;
+    rsi = arg2;
+    rdx = arg3;
+    rcx = arg4;
+    __asm ("endbr64");
+    if (ecx <= 1) {
+        goto label_5;
+    }
+    r10d = rcx - 2;
+    rax = rdi + 8;
+    xmm3 = 0;
+    r8 = rsi;
+    r9 = r10;
+    r10 = rsi + r10*8 + 8;
+    while (1) {
+label_0:
+        xmm0 = *((rax + 0x10));
+        xmm2 = *((rax + 8));
+        r8 += 8;
+        rax += 0x18;
+        __asm ("divsd xmm0, xmm1");
+        xmm1 = *(rax);
+        __asm ("mulsd xmm2, xmm0");
+        __asm ("subsd xmm1, xmm2");
+        *(rax) = xmm1;
+        __asm ("mulsd xmm0, qword [r8 - 8]");
+        xmm1 = *(r8);
+        __asm ("subsd xmm1, xmm0");
+        *(r8) = xmm1;
+        if (r8 == r10) {
+            goto label_6;
+        }
+        xmm1 = *(rax);
+        __asm ("ucomisd xmm1, xmm3");
+        __asm ("jp 0x8002580");
+    }
+    if (r8 != r10) {
+        goto label_0;
+    }
+label_3:
+    eax = 0;
+    return rax;
+label_6:
+    rcx = (int64_t) ecx;
+    r8 = rcx * 3;
+    r8 <<= 3;
+    xmm1 = *((rdi + r8 - 0x10));
+    __asm ("ucomisd xmm1, xmm3");
+    __asm ("jnp 0x8002680");
+label_2:
+    rcx <<= 3;
+    rax = (int64_t) r9d;
+    xmm0 = *((rsi + rcx - 8));
+    __asm ("divsd xmm0, xmm1");
+    *((rdx + rcx - 8)) = xmm0;
+    rcx = rdi + r8 - 0x28;
+    while (1) {
+label_1:
+        xmm1 = *((rdx + rax*8 + 8));
+        __asm ("mulsd xmm1, qword [rcx + 8]");
+        rcx -= 0x18;
+        xmm0 = *((rsi + rax*8));
+        __asm ("subsd xmm0, xmm1");
+        __asm ("divsd xmm0, xmm2");
+        *((rdx + rax*8)) = xmm0;
+        rax--;
+        if (eax < 0) {
+            goto label_7;
+        }
+        xmm2 = *(rcx);
+        __asm ("ucomisd xmm2, xmm3");
+        __asm ("jp 0x8002610");
+    }
+    if (eax != 0) {
+        goto label_1;
+    }
+    eax = 0;
+    return rax;
+label_5:
+    rcx = (int64_t) ecx;
+    rax = rcx * 3;
+    xmm0 = *((rdi + rax*8 - 0x10));
+    __asm ("ucomisd xmm0, qword [loc..LC6]");
+    __asm ("jnp 0x8002689");
+label_4:
+    rcx <<= 3;
+    xmm1 = *((rsi + rcx - 8));
+    __asm ("divsd xmm1, xmm0");
+    *((rdx + rcx - 8)) = xmm1;
+label_7:
+    eax = 1;
+    return rax;
+    if (rcx != 0) {
+        goto label_2;
+    }
+    eax = 0;
+    return rax;
+    if (rcx == 0) {
+        goto label_3;
+    }
+    goto label_4;
+}
+
+

@@ -1,0 +1,670 @@
+void sym.mp_layout_size_and_offset(void)
+{
+    double dVar1;
+    
+    // [01] -r-x section size 5693 named .text
+    if (reloc..data != (code)0x0) {
+        dVar1 = (double)*(int32_t *)0x8001688;
+        _reloc.xsize = (float)(*(double *)0x80016a0 / (double)*(int32_t *)0x800168c);
+        _reloc.ysize = (float)(*(double *)0x80016a8 / dVar1);
+        if (*(char *)0x8001691 == '\0') {
+            dVar1 = (double)*(int32_t *)0x8001694 / dVar1;
+        } else {
+            dVar1 = _reloc..LC0 - (double)(*(int32_t *)0x8001694 + 1) / dVar1;
+        }
+        dVar1 = (double)(float)dVar1;
+        if (*(int64_t *)0x80018c0 != 0) {
+            _reloc.ysize = (float)((double)_reloc.ysize * (_reloc..LC0 - *(double *)0x8001978));
+            dVar1 = (double)(float)(dVar1 * (_reloc..LC0 - *(double *)0x8001978));
+        }
+        _reloc.xoffset =
+             (float)((double)(float)((double)(float)((double)*(int32_t *)0x8001698 / (double)*(int32_t *)0x800168c) -
+                                    (*(double *)0x80016a0 - _reloc..LC0) / (double)(*(int32_t *)0x800168c * 2)) +
+                    *(double *)0x80016b0);
+        _reloc.yoffset =
+             (float)((double)(float)(dVar1 - (*(double *)0x80016a8 - _reloc..LC0) / (double)(*(int32_t *)0x8001688 * 2))
+                    + *(double *)0x80016b8);
+    }
+    return;
+}
+
+
+void sym.mp_layout_margins_and_spacing(void)
+{
+    int32_t iVar1;
+    double dVar2;
+    double dVar3;
+    double dVar4;
+    double dVar5;
+    double dVar6;
+    
+    if (*(char *)0x80016c0 != '\0') {
+        dVar6 = *(double *)0x80016d8;
+        if (*(int32_t *)0x80016c8 != 3) {
+            dVar6 = ((double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c) * *(double *)0x80016d8) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar2 = *(double *)0x8001700;
+        if (*(int32_t *)0x80016f0 != 3) {
+            dVar2 = _reloc..LC0 -
+                    (*(double *)0x8001700 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar3 = *(double *)0x8001750;
+        if (*(int32_t *)0x8001740 != 3) {
+            dVar3 = _reloc..LC0 -
+                    (*(double *)0x8001750 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        _reloc.c_token = *(double *)0x8001728;
+        if (*(int32_t *)0x8001718 != 3) {
+            _reloc.c_token =
+                 (*(double *)0x8001728 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                 (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        dVar5 = *(double *)0x8001778;
+        if (*(int32_t *)0x8001768 != 3) {
+            dVar5 = (*(double *)0x8001778 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar4 = *(double *)0x80017a0;
+        if (*(int32_t *)0x8001790 != 3) {
+            dVar4 = (*(double *)0x80017a0 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        _reloc.lmargin = 3;
+        _reloc.rmargin = 3;
+        dVar2 = ((dVar2 - dVar6) - (double)(*(int32_t *)0x800168c + -1) * dVar5) / (double)*(int32_t *)0x800168c;
+        _reloc.num_tokens =
+             ((dVar3 - _reloc.c_token) - (double)(*(int32_t *)0x8001688 + -1) * dVar4) / (double)*(int32_t *)0x8001688;
+        dVar6 = (double)*(int32_t *)0x8001698 * (dVar5 + dVar2) + dVar6;
+        iVar1 = *(int32_t *)0x8001694;
+        if (*(char *)0x8001691 != '\0') {
+            iVar1 = (*(int32_t *)0x8001688 - *(int32_t *)0x8001694) + -1;
+        }
+        _reloc.c_token = (double)iVar1 * (dVar4 + _reloc.num_tokens) + _reloc.c_token;
+        _reloc.num_tokens = _reloc.c_token + _reloc.num_tokens;
+        _reloc.bmargin = CONCAT44((int32_t)((uint64_t)dVar6 >> 0x20), 3);
+        _reloc.tmargin = CONCAT44((int32_t)((uint64_t)(dVar2 + dVar6) >> 0x20), 3);
+    }
+    return;
+}
+
+
+void sym.mp_layout_set_margin_or_spacing.isra.0(int64_t arg1, int64_t arg2)
+{
+    int32_t iVar1;
+    int32_t iVar2;
+    double dVar3;
+    double dVar4;
+    
+    iVar1 = _reloc.num_tokens;
+    iVar2 = _reloc.c_token;
+    *(undefined8 *)arg2 = _reloc..LC2;
+    if (iVar1 <= iVar2) {
+        return;
+    }
+    iVar2 = func_0x08016b64(iVar2, reloc..LC3);
+    if (iVar2 != 0) {
+        return;
+    }
+    iVar2 = func_0x08016b64(_reloc.c_token, "sc$reen");
+    if (iVar2 == 0) {
+        iVar2 = func_0x08016b64(_reloc.c_token, "char$acter");
+        if (iVar2 != 0) {
+            *(undefined4 *)arg1 = 4;
+            _reloc.c_token = _reloc.c_token + 1;
+        }
+    } else {
+        *(undefined4 *)arg1 = 3;
+        _reloc.c_token = _reloc.c_token + 1;
+    }
+    dVar3 = (double)func_0x08016b64();
+    dVar4 = 0.00000000;
+    if (dVar3 < 0.00000000) {
+        *(undefined8 *)arg2 = _reloc..LC2;
+        if (*(int32_t *)arg1 != 3) {
+            return;
+        }
+    } else {
+        *(double *)arg2 = dVar3;
+        if (*(int32_t *)arg1 != 3) {
+            return;
+        }
+        if ((0.00000000 <= dVar3) && (dVar4 = dVar3, _reloc..LC0 < dVar3)) {
+            *(double *)arg2 = _reloc..LC0;
+            return;
+        }
+    }
+    *(double *)arg2 = dVar4;
+    return;
+}
+
+
+void sym.multiplot_next.part.0(void)
+{
+    int32_t iVar1;
+    double dVar2;
+    double dVar3;
+    double dVar4;
+    double dVar5;
+    double dVar6;
+    
+    if (*(char *)0x8001690 == '\0') {
+        *(int32_t *)0x8001698 = *(int32_t *)0x8001698 + 1;
+        if (*(int32_t *)0x8001698 == *(int32_t *)0x800168c) {
+            *(int32_t *)0x8001698 = 0;
+            *(int32_t *)0x8001694 = *(int32_t *)0x8001694 + 1;
+            if (*(int32_t *)0x8001694 == *(int32_t *)0x8001688) {
+                *(int32_t *)0x8001694 = 0;
+            }
+        }
+    } else {
+        *(int32_t *)0x8001694 = *(int32_t *)0x8001694 + 1;
+        if (*(int32_t *)0x8001694 == *(int32_t *)0x8001688) {
+            *(int32_t *)0x8001694 = 0;
+            *(int32_t *)0x8001698 = *(int32_t *)0x8001698 + 1;
+            if (*(int32_t *)0x8001698 == *(int32_t *)0x800168c) {
+                *(int32_t *)0x8001698 = 0;
+            }
+        }
+    }
+    if (*(char *)0x80016c0 == '\0') {
+        if (reloc..data != (code)0x0) {
+            dVar6 = (double)*(int32_t *)0x8001688;
+            _reloc.xsize = (float)(*(double *)0x80016a0 / (double)*(int32_t *)0x800168c);
+            _reloc.ysize = (float)(*(double *)0x80016a8 / dVar6);
+            if (*(char *)0x8001691 == '\0') {
+                dVar6 = (double)*(int32_t *)0x8001694 / dVar6;
+            } else {
+                dVar6 = _reloc..LC0 - (double)(*(int32_t *)0x8001694 + 1) / dVar6;
+            }
+            dVar6 = (double)(float)dVar6;
+            if (*(int64_t *)0x80018c0 != 0) {
+                _reloc.ysize = (float)((double)_reloc.ysize * (_reloc..LC0 - *(double *)0x8001978));
+                dVar6 = (double)(float)(dVar6 * (_reloc..LC0 - *(double *)0x8001978));
+            }
+            _reloc.xoffset =
+                 (float)((double)(float)((double)(float)((double)*(int32_t *)0x8001698 / (double)*(int32_t *)0x800168c)
+                                        - (*(double *)0x80016a0 - _reloc..LC0) / (double)(*(int32_t *)0x800168c * 2)) +
+                        *(double *)0x80016b0);
+            _reloc.yoffset =
+                 (float)((double)(float)(dVar6 - (*(double *)0x80016a8 - _reloc..LC0) /
+                                                 (double)(*(int32_t *)0x8001688 * 2)) + *(double *)0x80016b8);
+        }
+        return;
+    }
+    if (*(char *)0x80016c0 != '\0') {
+        dVar6 = *(double *)0x80016d8;
+        if (*(int32_t *)0x80016c8 != 3) {
+            dVar6 = ((double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c) * *(double *)0x80016d8) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar2 = *(double *)0x8001700;
+        if (*(int32_t *)0x80016f0 != 3) {
+            dVar2 = _reloc..LC0 -
+                    (*(double *)0x8001700 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar3 = *(double *)0x8001750;
+        if (*(int32_t *)0x8001740 != 3) {
+            dVar3 = _reloc..LC0 -
+                    (*(double *)0x8001750 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        _reloc.c_token = *(double *)0x8001728;
+        if (*(int32_t *)0x8001718 != 3) {
+            _reloc.c_token =
+                 (*(double *)0x8001728 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                 (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        dVar5 = *(double *)0x8001778;
+        if (*(int32_t *)0x8001768 != 3) {
+            dVar5 = (*(double *)0x8001778 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar4 = *(double *)0x80017a0;
+        if (*(int32_t *)0x8001790 != 3) {
+            dVar4 = (*(double *)0x80017a0 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        _reloc.lmargin = 3;
+        _reloc.rmargin = 3;
+        dVar2 = ((dVar2 - dVar6) - (double)(*(int32_t *)0x800168c + -1) * dVar5) / (double)*(int32_t *)0x800168c;
+        _reloc.num_tokens =
+             ((dVar3 - _reloc.c_token) - (double)(*(int32_t *)0x8001688 + -1) * dVar4) / (double)*(int32_t *)0x8001688;
+        dVar6 = (double)*(int32_t *)0x8001698 * (dVar5 + dVar2) + dVar6;
+        iVar1 = *(int32_t *)0x8001694;
+        if (*(char *)0x8001691 != '\0') {
+            iVar1 = (*(int32_t *)0x8001688 - *(int32_t *)0x8001694) + -1;
+        }
+        _reloc.c_token = (double)iVar1 * (dVar4 + _reloc.num_tokens) + _reloc.c_token;
+        _reloc.num_tokens = _reloc.c_token + _reloc.num_tokens;
+        _reloc.bmargin = CONCAT44((int32_t)((uint64_t)dVar6 >> 0x20), 3);
+        _reloc.tmargin = CONCAT44((int32_t)((uint64_t)(dVar2 + dVar6) >> 0x20), 3);
+    }
+    return;
+}
+
+
+void sym.multiplot_previous.part.0(void)
+{
+    int32_t iVar1;
+    double dVar2;
+    double dVar3;
+    double dVar4;
+    double dVar5;
+    double dVar6;
+    
+    if (*(char *)0x8001690 == '\0') {
+        *(int32_t *)0x8001698 = *(int32_t *)0x8001698 + -1;
+        if (*(int32_t *)0x8001698 < 0) {
+            *(int32_t *)0x8001698 = *(int32_t *)0x800168c + -1;
+            *(int32_t *)0x8001694 = *(int32_t *)0x8001694 + -1;
+            if (*(int32_t *)0x8001694 < 0) {
+                *(int32_t *)0x8001694 = *(int32_t *)0x8001688 + -1;
+            }
+        }
+    } else {
+        *(int32_t *)0x8001694 = *(int32_t *)0x8001694 + -1;
+        if (*(int32_t *)0x8001694 < 0) {
+            *(int32_t *)0x8001694 = *(int32_t *)0x8001688 + -1;
+            *(int32_t *)0x8001698 = *(int32_t *)0x8001698 + -1;
+            if (*(int32_t *)0x8001698 < 0) {
+                *(int32_t *)0x8001698 = *(int32_t *)0x800168c + -1;
+            }
+        }
+    }
+    if (*(char *)0x80016c0 == '\0') {
+        if (reloc..data != (code)0x0) {
+            dVar6 = (double)*(int32_t *)0x8001688;
+            _reloc.xsize = (float)(*(double *)0x80016a0 / (double)*(int32_t *)0x800168c);
+            _reloc.ysize = (float)(*(double *)0x80016a8 / dVar6);
+            if (*(char *)0x8001691 == '\0') {
+                dVar6 = (double)*(int32_t *)0x8001694 / dVar6;
+            } else {
+                dVar6 = _reloc..LC0 - (double)(*(int32_t *)0x8001694 + 1) / dVar6;
+            }
+            dVar6 = (double)(float)dVar6;
+            if (*(int64_t *)0x80018c0 != 0) {
+                _reloc.ysize = (float)((double)_reloc.ysize * (_reloc..LC0 - *(double *)0x8001978));
+                dVar6 = (double)(float)(dVar6 * (_reloc..LC0 - *(double *)0x8001978));
+            }
+            _reloc.xoffset =
+                 (float)((double)(float)((double)(float)((double)*(int32_t *)0x8001698 / (double)*(int32_t *)0x800168c)
+                                        - (*(double *)0x80016a0 - _reloc..LC0) / (double)(*(int32_t *)0x800168c * 2)) +
+                        *(double *)0x80016b0);
+            _reloc.yoffset =
+                 (float)((double)(float)(dVar6 - (*(double *)0x80016a8 - _reloc..LC0) /
+                                                 (double)(*(int32_t *)0x8001688 * 2)) + *(double *)0x80016b8);
+        }
+        return;
+    }
+    if (*(char *)0x80016c0 != '\0') {
+        dVar6 = *(double *)0x80016d8;
+        if (*(int32_t *)0x80016c8 != 3) {
+            dVar6 = ((double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c) * *(double *)0x80016d8) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar2 = *(double *)0x8001700;
+        if (*(int32_t *)0x80016f0 != 3) {
+            dVar2 = _reloc..LC0 -
+                    (*(double *)0x8001700 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar3 = *(double *)0x8001750;
+        if (*(int32_t *)0x8001740 != 3) {
+            dVar3 = _reloc..LC0 -
+                    (*(double *)0x8001750 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        _reloc.c_token = *(double *)0x8001728;
+        if (*(int32_t *)0x8001718 != 3) {
+            _reloc.c_token =
+                 (*(double *)0x8001728 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                 (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        dVar5 = *(double *)0x8001778;
+        if (*(int32_t *)0x8001768 != 3) {
+            dVar5 = (*(double *)0x8001778 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar4 = *(double *)0x80017a0;
+        if (*(int32_t *)0x8001790 != 3) {
+            dVar4 = (*(double *)0x80017a0 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        _reloc.lmargin = 3;
+        _reloc.rmargin = 3;
+        dVar2 = ((dVar2 - dVar6) - (double)(*(int32_t *)0x800168c + -1) * dVar5) / (double)*(int32_t *)0x800168c;
+        _reloc.num_tokens =
+             ((dVar3 - _reloc.c_token) - (double)(*(int32_t *)0x8001688 + -1) * dVar4) / (double)*(int32_t *)0x8001688;
+        dVar6 = (double)*(int32_t *)0x8001698 * (dVar5 + dVar2) + dVar6;
+        iVar1 = *(int32_t *)0x8001694;
+        if (*(char *)0x8001691 != '\0') {
+            iVar1 = (*(int32_t *)0x8001688 - *(int32_t *)0x8001694) + -1;
+        }
+        _reloc.c_token = (double)iVar1 * (dVar4 + _reloc.num_tokens) + _reloc.c_token;
+        _reloc.num_tokens = _reloc.c_token + _reloc.num_tokens;
+        _reloc.bmargin = CONCAT44((int32_t)((uint64_t)dVar6 >> 0x20), 3);
+        _reloc.tmargin = CONCAT44((int32_t)((uint64_t)(dVar2 + dVar6) >> 0x20), 3);
+    }
+    return;
+}
+
+
+void sym.multiplot_next(void)
+{
+    int32_t iVar1;
+    double dVar2;
+    double dVar3;
+    double dVar4;
+    double dVar5;
+    double dVar6;
+    
+    *(int32_t *)0x8001684 = *(int32_t *)0x8001684 + 1;
+    if (reloc..data == (code)0x0) {
+        return;
+    }
+    if (*(char *)0x8001690 == '\0') {
+        *(int32_t *)0x8001698 = *(int32_t *)0x8001698 + 1;
+        if (*(int32_t *)0x8001698 == *(int32_t *)0x800168c) {
+            *(int32_t *)0x8001698 = 0;
+            *(int32_t *)0x8001694 = *(int32_t *)0x8001694 + 1;
+            if (*(int32_t *)0x8001694 == *(int32_t *)0x8001688) {
+                *(int32_t *)0x8001694 = 0;
+            }
+        }
+    } else {
+        *(int32_t *)0x8001694 = *(int32_t *)0x8001694 + 1;
+        if (*(int32_t *)0x8001694 == *(int32_t *)0x8001688) {
+            *(int32_t *)0x8001694 = 0;
+            *(int32_t *)0x8001698 = *(int32_t *)0x8001698 + 1;
+            if (*(int32_t *)0x8001698 == *(int32_t *)0x800168c) {
+                *(int32_t *)0x8001698 = 0;
+            }
+        }
+    }
+    if (*(char *)0x80016c0 == '\0') {
+        if (reloc..data != (code)0x0) {
+            dVar6 = (double)*(int32_t *)0x8001688;
+            _reloc.xsize = (float)(*(double *)0x80016a0 / (double)*(int32_t *)0x800168c);
+            _reloc.ysize = (float)(*(double *)0x80016a8 / dVar6);
+            if (*(char *)0x8001691 == '\0') {
+                dVar6 = (double)*(int32_t *)0x8001694 / dVar6;
+            } else {
+                dVar6 = _reloc..LC0 - (double)(*(int32_t *)0x8001694 + 1) / dVar6;
+            }
+            dVar6 = (double)(float)dVar6;
+            if (*(int64_t *)0x80018c0 != 0) {
+                _reloc.ysize = (float)((double)_reloc.ysize * (_reloc..LC0 - *(double *)0x8001978));
+                dVar6 = (double)(float)(dVar6 * (_reloc..LC0 - *(double *)0x8001978));
+            }
+            _reloc.xoffset =
+                 (float)((double)(float)((double)(float)((double)*(int32_t *)0x8001698 / (double)*(int32_t *)0x800168c)
+                                        - (*(double *)0x80016a0 - _reloc..LC0) / (double)(*(int32_t *)0x800168c * 2)) +
+                        *(double *)0x80016b0);
+            _reloc.yoffset =
+                 (float)((double)(float)(dVar6 - (*(double *)0x80016a8 - _reloc..LC0) /
+                                                 (double)(*(int32_t *)0x8001688 * 2)) + *(double *)0x80016b8);
+        }
+        return;
+    }
+    if (*(char *)0x80016c0 != '\0') {
+        dVar6 = *(double *)0x80016d8;
+        if (*(int32_t *)0x80016c8 != 3) {
+            dVar6 = ((double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c) * *(double *)0x80016d8) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar2 = *(double *)0x8001700;
+        if (*(int32_t *)0x80016f0 != 3) {
+            dVar2 = _reloc..LC0 -
+                    (*(double *)0x8001700 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar3 = *(double *)0x8001750;
+        if (*(int32_t *)0x8001740 != 3) {
+            dVar3 = _reloc..LC0 -
+                    (*(double *)0x8001750 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        _reloc.c_token = *(double *)0x8001728;
+        if (*(int32_t *)0x8001718 != 3) {
+            _reloc.c_token =
+                 (*(double *)0x8001728 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                 (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        dVar5 = *(double *)0x8001778;
+        if (*(int32_t *)0x8001768 != 3) {
+            dVar5 = (*(double *)0x8001778 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar4 = *(double *)0x80017a0;
+        if (*(int32_t *)0x8001790 != 3) {
+            dVar4 = (*(double *)0x80017a0 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        _reloc.lmargin = 3;
+        _reloc.rmargin = 3;
+        dVar2 = ((dVar2 - dVar6) - (double)(*(int32_t *)0x800168c + -1) * dVar5) / (double)*(int32_t *)0x800168c;
+        _reloc.num_tokens =
+             ((dVar3 - _reloc.c_token) - (double)(*(int32_t *)0x8001688 + -1) * dVar4) / (double)*(int32_t *)0x8001688;
+        dVar6 = (double)*(int32_t *)0x8001698 * (dVar5 + dVar2) + dVar6;
+        iVar1 = *(int32_t *)0x8001694;
+        if (*(char *)0x8001691 != '\0') {
+            iVar1 = (*(int32_t *)0x8001688 - *(int32_t *)0x8001694) + -1;
+        }
+        _reloc.c_token = (double)iVar1 * (dVar4 + _reloc.num_tokens) + _reloc.c_token;
+        _reloc.num_tokens = _reloc.c_token + _reloc.num_tokens;
+        _reloc.bmargin = CONCAT44((int32_t)((uint64_t)dVar6 >> 0x20), 3);
+        _reloc.tmargin = CONCAT44((int32_t)((uint64_t)(dVar2 + dVar6) >> 0x20), 3);
+    }
+    return;
+}
+
+
+void sym.multiplot_previous(void)
+{
+    int32_t iVar1;
+    double dVar2;
+    double dVar3;
+    double dVar4;
+    double dVar5;
+    double dVar6;
+    
+    *(int32_t *)0x8001684 = *(int32_t *)0x8001684 + -1;
+    if (reloc..data == (code)0x0) {
+        return;
+    }
+    if (*(char *)0x8001690 == '\0') {
+        *(int32_t *)0x8001698 = *(int32_t *)0x8001698 + -1;
+        if (*(int32_t *)0x8001698 < 0) {
+            *(int32_t *)0x8001698 = *(int32_t *)0x800168c + -1;
+            *(int32_t *)0x8001694 = *(int32_t *)0x8001694 + -1;
+            if (*(int32_t *)0x8001694 < 0) {
+                *(int32_t *)0x8001694 = *(int32_t *)0x8001688 + -1;
+            }
+        }
+    } else {
+        *(int32_t *)0x8001694 = *(int32_t *)0x8001694 + -1;
+        if (*(int32_t *)0x8001694 < 0) {
+            *(int32_t *)0x8001694 = *(int32_t *)0x8001688 + -1;
+            *(int32_t *)0x8001698 = *(int32_t *)0x8001698 + -1;
+            if (*(int32_t *)0x8001698 < 0) {
+                *(int32_t *)0x8001698 = *(int32_t *)0x800168c + -1;
+            }
+        }
+    }
+    if (*(char *)0x80016c0 == '\0') {
+        if (reloc..data != (code)0x0) {
+            dVar6 = (double)*(int32_t *)0x8001688;
+            _reloc.xsize = (float)(*(double *)0x80016a0 / (double)*(int32_t *)0x800168c);
+            _reloc.ysize = (float)(*(double *)0x80016a8 / dVar6);
+            if (*(char *)0x8001691 == '\0') {
+                dVar6 = (double)*(int32_t *)0x8001694 / dVar6;
+            } else {
+                dVar6 = _reloc..LC0 - (double)(*(int32_t *)0x8001694 + 1) / dVar6;
+            }
+            dVar6 = (double)(float)dVar6;
+            if (*(int64_t *)0x80018c0 != 0) {
+                _reloc.ysize = (float)((double)_reloc.ysize * (_reloc..LC0 - *(double *)0x8001978));
+                dVar6 = (double)(float)(dVar6 * (_reloc..LC0 - *(double *)0x8001978));
+            }
+            _reloc.xoffset =
+                 (float)((double)(float)((double)(float)((double)*(int32_t *)0x8001698 / (double)*(int32_t *)0x800168c)
+                                        - (*(double *)0x80016a0 - _reloc..LC0) / (double)(*(int32_t *)0x800168c * 2)) +
+                        *(double *)0x80016b0);
+            _reloc.yoffset =
+                 (float)((double)(float)(dVar6 - (*(double *)0x80016a8 - _reloc..LC0) /
+                                                 (double)(*(int32_t *)0x8001688 * 2)) + *(double *)0x80016b8);
+        }
+        return;
+    }
+    if (*(char *)0x80016c0 != '\0') {
+        dVar6 = *(double *)0x80016d8;
+        if (*(int32_t *)0x80016c8 != 3) {
+            dVar6 = ((double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c) * *(double *)0x80016d8) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar2 = *(double *)0x8001700;
+        if (*(int32_t *)0x80016f0 != 3) {
+            dVar2 = _reloc..LC0 -
+                    (*(double *)0x8001700 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar3 = *(double *)0x8001750;
+        if (*(int32_t *)0x8001740 != 3) {
+            dVar3 = _reloc..LC0 -
+                    (*(double *)0x8001750 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        _reloc.c_token = *(double *)0x8001728;
+        if (*(int32_t *)0x8001718 != 3) {
+            _reloc.c_token =
+                 (*(double *)0x8001728 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                 (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        dVar5 = *(double *)0x8001778;
+        if (*(int32_t *)0x8001768 != 3) {
+            dVar5 = (*(double *)0x8001778 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar4 = *(double *)0x80017a0;
+        if (*(int32_t *)0x8001790 != 3) {
+            dVar4 = (*(double *)0x80017a0 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        _reloc.lmargin = 3;
+        _reloc.rmargin = 3;
+        dVar2 = ((dVar2 - dVar6) - (double)(*(int32_t *)0x800168c + -1) * dVar5) / (double)*(int32_t *)0x800168c;
+        _reloc.num_tokens =
+             ((dVar3 - _reloc.c_token) - (double)(*(int32_t *)0x8001688 + -1) * dVar4) / (double)*(int32_t *)0x8001688;
+        dVar6 = (double)*(int32_t *)0x8001698 * (dVar5 + dVar2) + dVar6;
+        iVar1 = *(int32_t *)0x8001694;
+        if (*(char *)0x8001691 != '\0') {
+            iVar1 = (*(int32_t *)0x8001688 - *(int32_t *)0x8001694) + -1;
+        }
+        _reloc.c_token = (double)iVar1 * (dVar4 + _reloc.num_tokens) + _reloc.c_token;
+        _reloc.num_tokens = _reloc.c_token + _reloc.num_tokens;
+        _reloc.bmargin = CONCAT44((int32_t)((uint64_t)dVar6 >> 0x20), 3);
+        _reloc.tmargin = CONCAT44((int32_t)((uint64_t)(dVar2 + dVar6) >> 0x20), 3);
+    }
+    return;
+}
+
+
+undefined4 sym.multiplot_current_panel(void)
+{
+    return *(undefined4 *)0x8001684;
+}
+
+
+
+
+void sym.multiplot_reset(void)
+{
+    int32_t iVar1;
+    double dVar2;
+    double dVar3;
+    double dVar4;
+    double dVar5;
+    double dVar6;
+    
+    if (*(char *)0x80016c0 == '\0') {
+        if (reloc..data != (code)0x0) {
+            dVar6 = (double)*(int32_t *)0x8001688;
+            _reloc.xsize = (float)(*(double *)0x80016a0 / (double)*(int32_t *)0x800168c);
+            _reloc.ysize = (float)(*(double *)0x80016a8 / dVar6);
+            if (*(char *)0x8001691 == '\0') {
+                dVar6 = (double)*(int32_t *)0x8001694 / dVar6;
+            } else {
+                dVar6 = _reloc..LC0 - (double)(*(int32_t *)0x8001694 + 1) / dVar6;
+            }
+            dVar6 = (double)(float)dVar6;
+            if (*(int64_t *)0x80018c0 != 0) {
+                _reloc.ysize = (float)((double)_reloc.ysize * (_reloc..LC0 - *(double *)0x8001978));
+                dVar6 = (double)(float)(dVar6 * (_reloc..LC0 - *(double *)0x8001978));
+            }
+            _reloc.xoffset =
+                 (float)((double)(float)((double)(float)((double)*(int32_t *)0x8001698 / (double)*(int32_t *)0x800168c)
+                                        - (*(double *)0x80016a0 - _reloc..LC0) / (double)(*(int32_t *)0x800168c * 2)) +
+                        *(double *)0x80016b0);
+            _reloc.yoffset =
+                 (float)((double)(float)(dVar6 - (*(double *)0x80016a8 - _reloc..LC0) /
+                                                 (double)(*(int32_t *)0x8001688 * 2)) + *(double *)0x80016b8);
+        }
+        return;
+    }
+    if (*(char *)0x80016c0 != '\0') {
+        dVar6 = *(double *)0x80016d8;
+        if (*(int32_t *)0x80016c8 != 3) {
+            dVar6 = ((double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c) * *(double *)0x80016d8) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar2 = *(double *)0x8001700;
+        if (*(int32_t *)0x80016f0 != 3) {
+            dVar2 = _reloc..LC0 -
+                    (*(double *)0x8001700 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar3 = *(double *)0x8001750;
+        if (*(int32_t *)0x8001740 != 3) {
+            dVar3 = _reloc..LC0 -
+                    (*(double *)0x8001750 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        _reloc.c_token = *(double *)0x8001728;
+        if (*(int32_t *)0x8001718 != 3) {
+            _reloc.c_token =
+                 (*(double *)0x8001728 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                 (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        dVar5 = *(double *)0x8001778;
+        if (*(int32_t *)0x8001768 != 3) {
+            dVar5 = (*(double *)0x8001778 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x1c)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x10);
+        }
+        dVar4 = *(double *)0x80017a0;
+        if (*(int32_t *)0x8001790 != 3) {
+            dVar4 = (*(double *)0x80017a0 * (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x18)) /
+                    (double)(uint64_t)*(uint32_t *)(_reloc.term + 0x14);
+        }
+        _reloc.lmargin = 3;
+        _reloc.rmargin = 3;
+        dVar2 = ((dVar2 - dVar6) - (double)(*(int32_t *)0x800168c + -1) * dVar5) / (double)*(int32_t *)0x800168c;
+        _reloc.num_tokens =
+             ((dVar3 - _reloc.c_token) - (double)(*(int32_t *)0x8001688 + -1) * dVar4) / (double)*(int32_t *)0x8001688;
+        dVar6 = (double)*(int32_t *)0x8001698 * (dVar5 + dVar2) + dVar6;
+        iVar1 = *(int32_t *)0x8001694;
+        if (*(char *)0x8001691 != '\0') {
+            iVar1 = (*(int32_t *)0x8001688 - *(int32_t *)0x8001694) + -1;
+        }
+        _reloc.c_token = (double)iVar1 * (dVar4 + _reloc.num_tokens) + _reloc.c_token;
+        _reloc.num_tokens = _reloc.c_token + _reloc.num_tokens;
+        _reloc.bmargin = CONCAT44((int32_t)((uint64_t)dVar6 >> 0x20), 3);
+        _reloc.tmargin = CONCAT44((int32_t)((uint64_t)(dVar2 + dVar6) >> 0x20), 3);
+    }
+    return;
+}
+
+

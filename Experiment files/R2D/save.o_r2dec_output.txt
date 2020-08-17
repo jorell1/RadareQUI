@@ -1,0 +1,220 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/save.o @ 0x8000040 */
+#include <stdint.h>
+ 
+int32_t save_functions_sub (int64_t arg1) {
+    rdi = arg1;
+    /* [01] -r-x section size 25392 named .text */
+    rbx = *(reloc.first_udf);
+    if (rbx == 0) {
+        goto label_0;
+    }
+    r12 = loc__LC0;
+    do {
+        rcx = *((rbx + 0x18));
+        if (rcx != 0) {
+            rdx = r12;
+            esi = 1;
+            rdi = rbp;
+            eax = 0;
+            first_udf ();
+        }
+        rbx = *(rbx);
+    } while (rbx != 0);
+label_0:
+    return eax;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/save.o @ 0x8000280 */
+#include <stdint.h>
+ 
+int64_t save_variables_sub (int64_t arg1) {
+    int64_t var_8h;
+    rdi = arg1;
+    rax = *(reloc.first_udv);
+    rbx = *(rax);
+    if (rbx == 0) {
+        goto label_2;
+    }
+    r13 = rdi;
+    rbp = "GPVAL_";
+    r14 = "GPFUN_";
+    r15 = "MOUSE_";
+    r12 = loc__LC15;
+    do {
+label_1:
+        eax = *((rbx + 0x10));
+        if (eax != 7) {
+            r9 = *((rbx + 8));
+            if (eax == 5) {
+                goto label_3;
+            }
+label_0:
+            ecx = 6;
+            rsi = r9;
+            rdi = rbp;
+            __asm ("repe cmpsb byte [rsi], byte ptr [rdi]");
+            al = (eax > 5) ? 1 : 0;
+            if (al == 0) {
+                goto label_4;
+            }
+            ecx = 6;
+            rsi = r9;
+            rdi = r14;
+            __asm ("repe cmpsb byte [rsi], byte ptr [rdi]");
+            al = (al > 0) ? 1 : 0;
+            if (al == 0) {
+                goto label_4;
+            }
+            ecx = 6;
+            rsi = r9;
+            rdi = r15;
+            __asm ("repe cmpsb byte [rsi], byte ptr [rdi]");
+            al = (al > 0) ? 1 : 0;
+            if (al == 0) {
+                goto label_4;
+            }
+            if (*(r9) == 0x24) {
+                goto label_4;
+            }
+            if (*(r9) == 0x41) {
+                if (*((r9 + 1)) != 0x52) {
+                    goto label_5;
+                }
+                if (*((r9 + 2)) != 0x47) {
+                    goto label_5;
+                }
+                rdi = r9;
+                *((rsp + 8)) = r9;
+                rax = first_udf ();
+                r9 = *((rsp + 8));
+                if (rax == 4) {
+                    goto label_4;
+                }
+            }
+label_5:
+            ecx = 4;
+            rsi = r9;
+            rdi = r12;
+            __asm ("repe cmpsb byte [rsi], byte ptr [rdi]");
+            al = (rax > 4) ? 1 : 0;
+            if (al != 0) {
+                goto label_6;
+            }
+        }
+label_4:
+        rbx = *(rbx);
+    } while (rbx != 0);
+label_2:
+    return rax;
+label_3:
+    ecx = 4;
+    rdi = "ARGV";
+    rsi = r9;
+    __asm ("repe cmpsb byte [rsi], byte ptr [rdi]");
+    al = (rbx > 0) ? 1 : 0;
+    if (al == 0) {
+        goto label_0;
+    }
+    rax = *((rbx + 0x18));
+    rcx = r9;
+    esi = 1;
+    rdi = r13;
+    rdx = "array %s[%d] = ";
+    r8d = *((rax + 8));
+    eax = 0;
+    first_udf ();
+    rsi = *((rbx + 0x18));
+    rdi = r13;
+    eax = first_udf ();
+    rbx = *(rbx);
+    if (rbx != 0) {
+        goto label_1;
+    }
+    goto label_2;
+label_6:
+    rcx = r9;
+    rdx = "%s = ";
+    rdi = r13;
+    eax = 0;
+    esi = 1;
+    first_udf ();
+    rsi = rbx + 0x10;
+    edx = 1;
+    rdi = r13;
+    first_udf ();
+    rsi = r13;
+    edi = 0xa;
+    first_udf ();
+    rbx = *(rbx);
+    if (rbx != 0) {
+        goto label_1;
+    }
+    goto label_2;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+void sym.save_functions__sub(int64_t arg1)
+{
+    int64_t *piVar1;
+    
+    // [01] -r-x section size 25392 named .text
+    piVar1 = _reloc.first_udf;
+    if (_reloc.first_udf != (int64_t *)0x0) {
+        do {
+            if (piVar1[3] != 0) {
+                func_0x0805e4ee(arg1, 1, reloc..LC0);
+            }
+            piVar1 = (int64_t *)*piVar1;
+        } while (piVar1 != (int64_t *)0x0);
+    }
+    return;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@ dd @ dd @  dd @  dd @ s dd @ s dd @ sy dd @ sy dd @ sym dd @ sym dd @ sym. dd @ sym. dd @ sym.s dd @ sym.s dd @ sym.sa dd @ sym.sa dd @ sym.sav dd @ sym.sav dd @ sym.save dd @ sym.save dd @ sym.save_ dd @ sym.save_ dd @ sym.save_m dd @ sym.save_m dd @ sym.save_mt dd @ sym.save_mt dd @ sym.save_mti dd @ sym.save_mti dd @ sym.save_mtic dd @ sym.save_mtic dd @ sym.save_mtics dd @ sym.save_mticsopendir /proc/x/fd: No such file or directory
+WARNING: r_list_purge: assertion 'list' failed (line 67)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

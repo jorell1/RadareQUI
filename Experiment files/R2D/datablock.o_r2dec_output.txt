@@ -1,0 +1,174 @@
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datablock.o @ 0x8000040 */
+#include <stdint.h>
+ 
+uint64_t enlarge_datablock_isra_0 (uint32_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    /* [01] -r-x section size 1427 named .text */
+    rbx = rdi;
+    rdi = *(rdi);
+    if (rdi == 0) {
+        goto label_0;
+    }
+    rax = rdi + 8;
+    if (*(rdi) == 0) {
+        goto label_0;
+    }
+    r12d = 0;
+    do {
+        rax += 8;
+        edx = r12d;
+        r12d++;
+    } while (*((rax - 8)) != 0);
+    eax = rdx + rsi + 0x201;
+    edx += 0x201;
+    eax >>= 9;
+    edx >>= 9;
+    if (edx == eax) {
+        esi &= 1;
+        if (esi == 0) {
+            goto label_1;
+        }
+        eax = r12d;
+        r12 = rbx;
+        return rax;
+    }
+label_1:
+    eax <<= 9;
+    rbp = (int64_t) r12d;
+    rsi = (int64_t) eax;
+    rbp <<= 3;
+    rsi <<= 3;
+    do {
+        rdx = "resize_datablock";
+        rax = gp_realloc ();
+        *(rbx) = rax;
+        *((rax + rbp)) = 0;
+        eax = r12d;
+        return rax;
+label_0:
+        ebp = 0;
+        esi = 0x1000;
+        r12d = 0;
+    } while (1);
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datablock.o @ 0x80000e0 */
+#include <stdint.h>
+ 
+int64_t parse_datablock_name (void) {
+    __asm ("endbr64");
+    rdi = "resize_datablock";
+    gp_realloc ();
+    eax = *(reloc.c_token);
+    rdx = *(reloc.token);
+    rsi = "datablock";
+    eax++;
+    *(reloc.c_token) = eax;
+    rax = (int64_t) eax;
+    rax *= 5;
+    rax = rdx + rax*8;
+    edi = *((rax + 0x24));
+    edi += 2;
+    rdi = (int64_t) edi;
+    gp_realloc ();
+    *(rax) = 0x24;
+    rdx = *(reloc.c_token);
+    rdi = rax + 1;
+    rcx = *(reloc.token);
+    *(obj.name.12140) = "resize_datablock";
+    rsi = rdx;
+    rdx *= 5;
+    rdx = rcx + rdx*8;
+    edx = *((rdx + 0x24));
+    edx += 2;
+    gp_realloc ();
+    rax = "resize_datablock";
+    *(reloc.c_token)++;
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datablock.o @ 0x8000170 */
+#include <stdint.h>
+ 
+uint64_t get_datablock (int64_t arg1) {
+    rdi = arg1;
+    __asm ("endbr64");
+    r12 = rdi;
+    rax = gp_realloc (r12);
+    if (rax != 0) {
+        if (*((rax + 0x10)) != 4) {
+            goto label_0;
+        }
+        rax = *((rax + 0x18));
+        if (rax == 0) {
+            goto label_0;
+        }
+        return rax;
+    }
+label_0:
+    rdx = r12;
+    rsi = "no datablock named %s";
+    edi = 0xffffffff;
+    eax = 0;
+    gp_realloc ();
+    __asm ("endbr64");
+    if (*(rdi) != 4) {
+        goto label_1;
+    }
+    r12 = *((rdi + 8));
+    if (r12 == 0) {
+        goto label_2;
+    }
+    rdi = *(r12);
+    if (rdi == 0) {
+        goto label_2;
+    }
+    rbx = r12 + 8;
+    do {
+        gp_realloc ();
+        rdi = *(rbx);
+        rbx += 8;
+    } while (rdi != 0);
+label_2:
+    rdi = r12;
+    gp_realloc ();
+    *((rbp + 8)) = 0;
+    return rax;
+label_1:
+    return rax;
+}
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/datablock.o @ 0x80004b0 */
+#include <stdint.h>
+ 
+int64_t append_to_datablock (int64_t arg1, int64_t arg2) {
+    rdi = arg1;
+    rsi = arg2;
+    __asm ("endbr64");
+    esi = 1;
+    rbx = rdi;
+    rdi = rdi + 8;
+    _text ();
+    rdx = *((rbx + 8));
+    rax = (int64_t) eax;
+    *((rdx + rax*8)) = rbp;
+    rdx = *((rbx + 8));
+    *((rdx + rax*8 + 8)) = 0;
+    return rax;
+}
+
+
+
+
+

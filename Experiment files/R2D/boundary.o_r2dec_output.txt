@@ -1,0 +1,464 @@
+
+
+
+
+
+
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/boundary.o @ 0x80032b0 */
+#include <stdint.h>
+ 
+int64_t do_key_sample_point (int64_t arg1) {
+    int64_t var_8h_2;
+    int64_t var_10h;
+    int64_t var_18h_3;
+    int64_t var_8h_3;
+    int64_t var_18h_2;
+    int64_t var_8h;
+    int64_t var_18h;
+    rdi = arg1;
+    __asm ("endbr64");
+    rbx = rdi;
+    rdi = *((rdi + 0x20));
+    r12 = *(reloc.term);
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    if (rdi != 0) {
+        if (*(rdi) == 4) {
+            goto label_5;
+        }
+        rdx = obj_yl;
+        rsi = obj_xl;
+        rcx = "key sample";
+        term ();
+        esi = *((rbp + 0x44));
+        eax = *(obj.xl);
+        edx = key_text_right;
+        if (esi == 0) {
+            edx = key_text_left;
+        }
+        eax -= edx;
+        *(obj.xl) = eax;
+    }
+    edi = 0xb;
+    uint64_t (*r12 + 0x110)() ();
+    eax = *((rbx + 0x10));
+    if (eax == 0xc3) {
+        goto label_6;
+    }
+    if (eax == 0x74a) {
+        goto label_0;
+    }
+label_1:
+    if (eax == 0x100) {
+        goto label_7;
+    }
+    if ((al & 2) != 0) {
+        goto label_8;
+    }
+    if (eax != 0x5c0) {
+        goto label_0;
+    }
+    rbx = *((rbx + 0x158));
+    if ((*((rbx + 0x68)) & 1) != 0) {
+        goto label_9;
+    }
+    do {
+label_0:
+        edi = 0xc;
+        uint64_t (*r12 + 0x110)() ();
+label_5:
+        rax = *((rsp + 0x18));
+        rax ^= *(fs:0x28);
+        if ((*((rbx + 0x68)) & 1) != 0) {
+            goto label_10;
+        }
+        return rax;
+label_6:
+        ecx = *((rbx + 0x40));
+        if (ecx < 0) {
+            goto label_11;
+        }
+label_8:
+        xmm0 = *(loc..LC31);
+        __asm ("ucomisd xmm0, qword [rbx + 0x50]");
+        __asm ("jp 0x80033c8");
+        if (ecx == 0) {
+            xmm0 = *(reloc.pointsize);
+            uint64_t (*r12 + 0xa0)() ();
+        }
+        esi = .data;
+        edi = boundary.c;
+        edi += *(obj.xl);
+        al = term ();
+    } while (al == 0);
+    edx = *((rbx + 0x38));
+    if (edx == 0xfffffff7) {
+        goto label_12;
+    }
+label_2:
+    edi = boundary.c;
+    esi = .data;
+    edi += *(obj.xl);
+    uint64_t (*r12 + 0x88)() ();
+    goto label_0;
+label_11:
+    rax = 0xfffffffc00000001;
+    rdi = rsp;
+    *((rsp + 8)) = 0;
+    uint64_t (*r12 + 0xe0)(void) (rax);
+    xmm0 = *(reloc.pointsize);
+    __asm ("mulsd xmm0, qword [reloc.pointintervalbox]");
+    uint64_t (*r12 + 0xa0)() ();
+    edi = boundary.c;
+    esi = .data;
+    edx = 6;
+    edi += *(obj.xl);
+    uint64_t (*r12 + 0x88)() ();
+    rdi = rbx + 0x30;
+    term ();
+    eax = *((rbx + 0x10));
+    if (eax != 0x74a) {
+        goto label_1;
+    }
+    goto label_0;
+label_7:
+    esi = .data;
+    edi = boundary.c;
+    edi += *(obj.xl);
+    al = term ();
+    if (al == 0) {
+        goto label_0;
+    }
+    edi = boundary.c;
+    esi = .data;
+    edx = 0xffffffff;
+    edi += *(obj.xl);
+    uint64_t (*r12 + 0x88)() ();
+    goto label_0;
+label_9:
+    rdi = rbx + 0x68;
+    term ();
+    edx = *((rbx + 0x70));
+    goto label_2;
+label_12:
+    rax = *((rbx + 0x158));
+    edx = *((rax + 0x58));
+    while (1) {
+        edi = boundary.c;
+        esi = .data;
+        rdx = rbx + 0x58;
+        edi += *(obj.xl);
+        uint64_t (*r12 + 0x70)() ();
+        rdi = rbx + 0x60;
+        term ();
+        goto label_0;
+        rdi = rax + 0x58;
+        term ();
+    }
+label_10:
+    term ();
+    __asm ("endbr64");
+    rbx = rdi;
+    edi = 0xa;
+    r12 = *(reloc.term);
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    rax = uint64_t (*r12 + 0x110)(void, void) (rbx, rbp);
+    if (bpl != 0) {
+        if (*((r12 + 0xc0)) == 0) {
+            goto label_3;
+        }
+        if ((*((r12 + 0xaa)) & 1) == 0) {
+            goto label_13;
+        }
+    }
+label_3:
+    if (*((rbx + 0x158)) == 0) {
+        goto label_14;
+    }
+    eax = *((rbx + 0x148));
+    if (eax == 1) {
+        goto label_15;
+    }
+    rdx = *(reloc.term);
+    edi = *((rdx + 0x1c));
+    if (eax == 2) {
+        goto label_16;
+    }
+    edi += *((rbx + 0xf8));
+    do {
+label_4:
+        if (bpl == 0) {
+            if (*((rbx + 0x74)) != 0) {
+                goto label_14;
+            }
+        }
+        eax = boundary.c;
+        eax += *(obj.key_title_extra);
+        r8 = rbx + 0x110;
+        edx = eax;
+        eax >>= 0x1f;
+        esi = *((rbx + 0x104));
+        eax += edx;
+        rdx = r8;
+        eax >>= 1;
+        esi -= eax;
+        term ();
+        edi = 0xfffffffe;
+        uint64_t (*r12 + 0x68)() ();
+label_14:
+        if (*((rbx + 0x7c)) >= 0xfffffffe) {
+            rax = *(reloc.term);
+            edx = 0;
+            rdi = rbx + 0x78;
+            rbp = *(reloc.clip_area);
+            rax = reloc_canvas;
+            if ((*((rax + 0xa8)) & 0x80) != 0) {
+                rax = rdx;
+            }
+            *(reloc.clip_area) = rax;
+            term ();
+            term ();
+            edi = *((rbx + 0xf8));
+            ecx = *((rbx + 0x104));
+            esi = *((rbx + 0x100));
+            edx = edi;
+            term ();
+            esi = *((rbx + 0x104));
+            edx = *((rbx + 0xfc));
+            edi = *((rbx + 0xf8));
+            ecx = esi;
+            term ();
+            edi = *((rbx + 0xfc));
+            ecx = *((rbx + 0x100));
+            esi = *((rbx + 0x104));
+            edx = edi;
+            term ();
+            esi = *((rbx + 0x100));
+            edx = *((rbx + 0xf8));
+            edi = *((rbx + 0xfc));
+            ecx = esi;
+            term ();
+            term ();
+            if (*((rbx + 0x158)) != 0) {
+                esi = *((rbx + 0x104));
+                eax = *(obj.key_title_extra);
+                eax += *(obj.key_title_height);
+                edx = *((rbx + 0xfc));
+                esi -= eax;
+                edi = *((rbx + 0xf8));
+                ecx = esi;
+                term ();
+            }
+            *(reloc.clip_area) = rbp;
+        }
+        xmm2 = 0;
+        ecx = *((rbx + 0x104));
+        eax = *(obj.key_title_extra);
+        xmm0 = 0;
+        __asm ("cvtsi2sd xmm2, dword [obj.key_entry_height]");
+        xmm1 = *(loc..LC32);
+        __asm ("addsd xmm1, qword [rbx + 0x68]");
+        eax += *(obj.key_title_height);
+        edx = key_size_left;
+        ecx -= eax;
+        edx += *((rbx + 0xf8));
+        __asm ("cvtsi2sd xmm0, ecx");
+        *(obj.xl) = edx;
+        __asm ("mulsd xmm1, xmm2");
+        __asm ("mulsd xmm1, qword [loc..LC8]");
+        __asm ("subsd xmm0, xmm1");
+        __asm ("cvttsd2si eax, xmm0");
+        *(obj.yl_ref) = "x2label";
+        *(obj.yl) = eax;
+        rax = *((rsp + 0x18));
+        rax ^= *(fs:0x28);
+        if (edx != 0) {
+            goto label_17;
+        }
+        return rax;
+label_15:
+        edi = *((rbx + 0xfc));
+        eax = *((rbx + 0xf8));
+        eax += edi;
+        edi = eax;
+        edi >>= 0x1f;
+        edi += eax;
+        edi >>= 1;
+    } while (1);
+label_13:
+    rax = 0xfffffffc00000001;
+    rdi = rsp;
+    *((rsp + 8)) = 0;
+    uint64_t (*r12 + 0xe0)(void) (rax);
+    edx = *((rbx + 0x100));
+    esi = *((rbx + 0xf8));
+    edi = 0x641;
+    r8d = key_height;
+    ecx = key_width;
+    uint64_t (*r12 + 0xc0)() ();
+    goto label_3;
+label_16:
+    eax = *((rbx + 0xfc));
+    eax -= edi;
+    edi = eax;
+    goto label_4;
+label_17:
+    rax = term ();
+    __asm ("endbr64");
+    rbx = *(reloc.term);
+    rax = *(fs:0x28);
+    *((rsp + 0x18)) = rax;
+    eax = 0;
+    if (*(0x08026802) != 0) {
+        eax = *((rbx + 0x1c));
+        xmm0 = 0;
+        xmm1 = 0;
+        esi = *(reloc.ysize);
+        __asm ("cvtsi2sd xmm1, dword [obj.key_entry_height]");
+        rdx = 0x080267ba;
+        __asm ("cvtsi2sd xmm0, rax");
+        __asm ("mulsd xmm0, qword [loc..LC33]");
+        eax = *(obj.ptitl_cnt);
+        eax += esi;
+        esi = eax;
+        esi >>= 0x1f;
+        __asm ("addsd xmm0, xmm1");
+        esi += eax;
+        esi >>= 1;
+        __asm ("cvttsd2si edi, xmm0");
+        term ();
+        rdi = 0x08026812;
+        term ();
+    }
+    if (*(0x080272a2) != 0) {
+        esi = *(reloc.ysize);
+        eax = *(obj.ptitl_cnt);
+        rdx = 0x0802725a;
+        edi = boundary.c;
+        eax += esi;
+        esi = eax;
+        esi >>= 0x1f;
+        esi += eax;
+        esi >>= 1;
+        term ();
+        rdi = 0x080272b2;
+        term ();
+    }
+    if (*(0x08026aaa) != 0) {
+        rdx = rsp + 0x10;
+        rsi = rsp + 8;
+        rcx = "xlabel";
+        rdi = 0x08026b32;
+        term ();
+        eax = *((rbx + 0x18));
+        xmm0 = 0;
+        ecx = boundary.c;
+        edi = *(reloc.plot_bounds);
+        rdx = 0x08026a62;
+        eax >>= 1;
+        ecx -= eax;
+        eax = *(obj.ptitl_cnt);
+        __asm ("cvtsi2sd xmm0, ecx");
+        __asm ("subsd xmm0, qword [rsp + 0x10]");
+        eax += edi;
+        edi = eax;
+        __asm ("cvttsd2si esi, xmm0");
+        edi >>= 0x1f;
+        edi += eax;
+        edi >>= 1;
+        term ();
+        rdi = 0x08026aba;
+        term ();
+    }
+    if (*(0x0802754a) != 0) {
+        eax = *((rbx + 0x18));
+        esi = boundary.c;
+        rdx = 0x08027502;
+        edi = *(reloc.plot_bounds);
+        eax >>= 1;
+        esi -= eax;
+        eax = *(obj.ptitl_cnt);
+        eax += edi;
+        edi = eax;
+        edi >>= 0x1f;
+        edi += eax;
+        edi >>= 1;
+        term ();
+        rdi = 0x0802755a;
+        term ();
+    }
+    if (*(0x080277f2) != 0) {
+        xmm0 = *(0x08027632);
+        term ();
+        __asm ("mulsd xmm0, qword [loc..LC8]");
+        eax = term ();
+        xmm0 = 0;
+        eax = term ();
+        eax += *((rbx + 0x18));
+        edi = ebp;
+        rdx = 0x080277aa;
+        esi = eax;
+        term ();
+        rdi = 0x08027802;
+        term ();
+    }
+    if (*(reloc.bmargin) != 0) {
+        esi = *(obj.time_y);
+        edi = "boundary";
+        term ();
+    }
+    rax = *((rsp + 0x18));
+    rax ^= *(fs:0x28);
+    if (*(reloc.bmargin) == 0) {
+        return rax;
+    }
+    rax = term ();
+    __asm ("endbr64");
+    if (*(0x08026420) != 0) {
+        ecx = boundary.c;
+        eax = "x2label";
+        eax += *(reloc.bar_lp);
+        edx = eax;
+        eax = ecx;
+        eax >>= 0x1f;
+        eax += ecx;
+        eax >>= 1;
+        eax += edx;
+        eax -= *(obj.yl);
+        *(obj.yl) = eax;
+    }
+    if (dil == 0) {
+        eax = boundary.c;
+        if (*(obj.key_entry_height) >= eax) {
+            *(obj.key_entry_height) = 0;
+            eax = "x2label";
+            *(obj.yl) = eax;
+            eax = *(obj.key_col_wth);
+            *(obj.xl) += eax;
+            return rax;
+        }
+        eax = boundary.c;
+        *(obj.yl) -= eax;
+    }
+    return rax;
+}
+
+
+/* r2dec pseudo code output */
+/* /home/jmov/PycharmProjects/RadareQUI/Specimens/ObjFiles/boundary.o @ 0x8003a80 */
+#include <stdint.h>
+ 
+int32_t at_left_of_key (void) {
+    __asm ("endbr64");
+    eax = "x2label";
+    al = (*(obj.yl) == eax) ? 1 : 0;
+    return eax;
+}
+
+

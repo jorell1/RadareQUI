@@ -1,0 +1,1281 @@
+void sym.gpfree_vgrid.part.0(int64_t arg1)
+{
+    // [01] -r-x section size 7728 named .text
+    func_0x0801f3c2(*(undefined8 *)(*(int64_t *)(arg1 + 0x18) + 0x78));
+    func_0x0801f3c2(*(undefined8 *)(arg1 + 0x18));
+    if (*(int64_t *)(arg1 + 0x18) == _obj.current_vgrid) {
+        _obj.current_vgrid = 0;
+    }
+    *(undefined8 *)(arg1 + 0x18) = 0;
+    *(undefined4 *)(arg1 + 0x10) = 7;
+    return;
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x08000264: Changing call to branch
+// WARNING: Possible PIC construction at 0x080004be: Changing call to branch
+// WARNING: Possible PIC construction at 0x080004fa: Changing call to branch
+// WARNING: Possible PIC construction at 0x080002b9: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800032d: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000384: Changing call to branch
+// WARNING: Possible PIC construction at 0x080003ca: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800043d: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800046b: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000498: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000e3a: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000e5d: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000e8d: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800101d: Changing call to branch
+// WARNING: Possible PIC construction at 0x08001077: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800109e: Changing call to branch
+// WARNING: Possible PIC construction at 0x080010cf: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800112b: Changing call to branch
+// WARNING: Possible PIC construction at 0x080011bf: Changing call to branch
+// WARNING: Possible PIC construction at 0x08001200: Changing call to branch
+// WARNING: Possible PIC construction at 0x080013d8: Changing call to branch
+// WARNING: Possible PIC construction at 0x080014e8: Changing call to branch
+// WARNING: Possible PIC construction at 0x080014b4: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000fa5: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000ed5: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000f1f: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000f41: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000f63: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800100c: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000dda: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000b1a: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000d33: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000c08: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000c32: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000c74: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000cf4: Changing call to branch
+// WARNING: Possible PIC construction at 0x080005bf: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000d89: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000d61: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x08000c79)
+// WARNING: Removing unreachable block (ram,0x08000d38)
+// WARNING: Removing unreachable block (ram,0x08000b1f)
+// WARNING: Removing unreachable block (ram,0x08000ddf)
+// WARNING: Removing unreachable block (ram,0x08000f68)
+// WARNING: Removing unreachable block (ram,0x08000f46)
+// WARNING: Removing unreachable block (ram,0x08000f24)
+// WARNING: Removing unreachable block (ram,0x08000eda)
+// WARNING: Removing unreachable block (ram,0x08000f09)
+// WARNING: Removing unreachable block (ram,0x08000f0c)
+// WARNING: Removing unreachable block (ram,0x08000faa)
+// WARNING: Removing unreachable block (ram,0x080014b9)
+// WARNING: Removing unreachable block (ram,0x080014ed)
+// WARNING: Removing unreachable block (ram,0x080013dd)
+// WARNING: Removing unreachable block (ram,0x08001205)
+// WARNING: Removing unreachable block (ram,0x0800121b)
+// WARNING: Removing unreachable block (ram,0x08001231)
+// WARNING: Removing unreachable block (ram,0x08001240)
+// WARNING: Removing unreachable block (ram,0x0800124f)
+// WARNING: Removing unreachable block (ram,0x0800125e)
+// WARNING: Removing unreachable block (ram,0x080014a0)
+// WARNING: Removing unreachable block (ram,0x0800126d)
+// WARNING: Removing unreachable block (ram,0x08001440)
+// WARNING: Removing unreachable block (ram,0x0800129e)
+// WARNING: Removing unreachable block (ram,0x08001339)
+// WARNING: Removing unreachable block (ram,0x08001343)
+// WARNING: Removing unreachable block (ram,0x080012e8)
+// WARNING: Removing unreachable block (ram,0x08001345)
+// WARNING: Removing unreachable block (ram,0x08001352)
+// WARNING: Removing unreachable block (ram,0x08001462)
+// WARNING: Removing unreachable block (ram,0x08001372)
+// WARNING: Removing unreachable block (ram,0x080014e2)
+// WARNING: Removing unreachable block (ram,0x080013a8)
+// WARNING: Removing unreachable block (ram,0x08001482)
+// WARNING: Removing unreachable block (ram,0x080013b6)
+// WARNING: Removing unreachable block (ram,0x080013c0)
+// WARNING: Removing unreachable block (ram,0x080011c4)
+// WARNING: Removing unreachable block (ram,0x080014c0)
+// WARNING: Removing unreachable block (ram,0x080011d1)
+// WARNING: Removing unreachable block (ram,0x08001130)
+// WARNING: Removing unreachable block (ram,0x08001138)
+// WARNING: Removing unreachable block (ram,0x080010d4)
+// WARNING: Removing unreachable block (ram,0x080010d8)
+// WARNING: Removing unreachable block (ram,0x080010f4)
+// WARNING: Removing unreachable block (ram,0x08001106)
+// WARNING: Removing unreachable block (ram,0x08001122)
+// WARNING: Removing unreachable block (ram,0x080010a3)
+// WARNING: Removing unreachable block (ram,0x080010bf)
+// WARNING: Removing unreachable block (ram,0x0800107c)
+// WARNING: Removing unreachable block (ram,0x08001097)
+// WARNING: Removing unreachable block (ram,0x08001022)
+// WARNING: Removing unreachable block (ram,0x08001159)
+// WARNING: Removing unreachable block (ram,0x0800119c)
+// WARNING: Removing unreachable block (ram,0x08001190)
+// WARNING: Removing unreachable block (ram,0x080011a2)
+// WARNING: Removing unreachable block (ram,0x0800118a)
+// WARNING: Removing unreachable block (ram,0x08001430)
+// WARNING: Removing unreachable block (ram,0x08001056)
+// WARNING: Removing unreachable block (ram,0x08001070)
+// WARNING: Removing unreachable block (ram,0x08001066)
+// WARNING: Removing unreachable block (ram,0x08000e92)
+// WARNING: Removing unreachable block (ram,0x08000f9e)
+// WARNING: Removing unreachable block (ram,0x08000e9a)
+// WARNING: Removing unreachable block (ram,0x08001011)
+// WARNING: Removing unreachable block (ram,0x08000ea8)
+// WARNING: Removing unreachable block (ram,0x08000fb8)
+// WARNING: Removing unreachable block (ram,0x08000eb8)
+// WARNING: Removing unreachable block (ram,0x08000e62)
+// WARNING: Removing unreachable block (ram,0x08000ec0)
+// WARNING: Removing unreachable block (ram,0x08000e73)
+// WARNING: Removing unreachable block (ram,0x08000e3f)
+// WARNING: Removing unreachable block (ram,0x08000e47)
+// WARNING: Removing unreachable block (ram,0x08000e5d)
+// WARNING: Removing unreachable block (ram,0x0800049d)
+// WARNING: Removing unreachable block (ram,0x08000470)
+// WARNING: Removing unreachable block (ram,0x08000491)
+// WARNING: Removing unreachable block (ram,0x08000442)
+// WARNING: Removing unreachable block (ram,0x08000446)
+// WARNING: Removing unreachable block (ram,0x08000450)
+// WARNING: Removing unreachable block (ram,0x08000518)
+// WARNING: Removing unreachable block (ram,0x08000528)
+// WARNING: Removing unreachable block (ram,0x08000464)
+// WARNING: Removing unreachable block (ram,0x080003cf)
+// WARNING: Removing unreachable block (ram,0x08000d66)
+// WARNING: Removing unreachable block (ram,0x080003da)
+// WARNING: Removing unreachable block (ram,0x08000568)
+// WARNING: Removing unreachable block (ram,0x08000591)
+// WARNING: Removing unreachable block (ram,0x08000594)
+// WARNING: Removing unreachable block (ram,0x080005b1)
+// WARNING: Removing unreachable block (ram,0x08000c80)
+// WARNING: Removing unreachable block (ram,0x080005c4)
+// WARNING: Removing unreachable block (ram,0x080005d0)
+// WARNING: Removing unreachable block (ram,0x08000c10)
+// WARNING: Removing unreachable block (ram,0x08000c37)
+// WARNING: Removing unreachable block (ram,0x08000c21)
+// WARNING: Removing unreachable block (ram,0x08000c90)
+// WARNING: Removing unreachable block (ram,0x08000c96)
+// WARNING: Removing unreachable block (ram,0x08000c9b)
+// WARNING: Removing unreachable block (ram,0x08000c26)
+// WARNING: Removing unreachable block (ram,0x080005e6)
+// WARNING: Removing unreachable block (ram,0x08000bd0)
+// WARNING: Removing unreachable block (ram,0x08000bd8)
+// WARNING: Removing unreachable block (ram,0x08000c02)
+// WARNING: Removing unreachable block (ram,0x08000c06)
+// WARNING: Removing unreachable block (ram,0x080005ec)
+// WARNING: Removing unreachable block (ram,0x080005f1)
+// WARNING: Removing unreachable block (ram,0x080005f6)
+// WARNING: Removing unreachable block (ram,0x08000611)
+// WARNING: Removing unreachable block (ram,0x08000618)
+// WARNING: Removing unreachable block (ram,0x0800062c)
+// WARNING: Removing unreachable block (ram,0x08000633)
+// WARNING: Removing unreachable block (ram,0x08000647)
+// WARNING: Removing unreachable block (ram,0x0800064e)
+// WARNING: Removing unreachable block (ram,0x080006ab)
+// WARNING: Removing unreachable block (ram,0x080006dd)
+// WARNING: Removing unreachable block (ram,0x08000715)
+// WARNING: Removing unreachable block (ram,0x08000744)
+// WARNING: Removing unreachable block (ram,0x0800077a)
+// WARNING: Removing unreachable block (ram,0x080007a8)
+// WARNING: Removing unreachable block (ram,0x080007d4)
+// WARNING: Removing unreachable block (ram,0x08000810)
+// WARNING: Removing unreachable block (ram,0x08000839)
+// WARNING: Removing unreachable block (ram,0x08000875)
+// WARNING: Removing unreachable block (ram,0x0800089e)
+// WARNING: Removing unreachable block (ram,0x080008d5)
+// WARNING: Removing unreachable block (ram,0x08000cfb)
+// WARNING: Removing unreachable block (ram,0x080008eb)
+// WARNING: Removing unreachable block (ram,0x08000904)
+// WARNING: Removing unreachable block (ram,0x08000970)
+// WARNING: Removing unreachable block (ram,0x08000979)
+// WARNING: Removing unreachable block (ram,0x08000982)
+// WARNING: Removing unreachable block (ram,0x08000994)
+// WARNING: Removing unreachable block (ram,0x080009c0)
+// WARNING: Removing unreachable block (ram,0x080009c9)
+// WARNING: Removing unreachable block (ram,0x080009d2)
+// WARNING: Removing unreachable block (ram,0x080009e2)
+// WARNING: Removing unreachable block (ram,0x08000a00)
+// WARNING: Removing unreachable block (ram,0x08000a08)
+// WARNING: Removing unreachable block (ram,0x08000a11)
+// WARNING: Removing unreachable block (ram,0x08000a19)
+// WARNING: Removing unreachable block (ram,0x08000a22)
+// WARNING: Removing unreachable block (ram,0x08000a9a)
+// WARNING: Removing unreachable block (ram,0x08000aa2)
+// WARNING: Removing unreachable block (ram,0x08000abb)
+// WARNING: Removing unreachable block (ram,0x08000b60)
+// WARNING: Removing unreachable block (ram,0x08000b6f)
+// WARNING: Removing unreachable block (ram,0x08000b80)
+// WARNING: Removing unreachable block (ram,0x08000b92)
+// WARNING: Removing unreachable block (ram,0x08000b95)
+// WARNING: Removing unreachable block (ram,0x08000ba4)
+// WARNING: Removing unreachable block (ram,0x08000bbc)
+// WARNING: Removing unreachable block (ram,0x08000ac5)
+// WARNING: Removing unreachable block (ram,0x08000c8a)
+// WARNING: Removing unreachable block (ram,0x080005ba)
+// WARNING: Removing unreachable block (ram,0x080003e7)
+// WARNING: Removing unreachable block (ram,0x080003ef)
+// WARNING: Removing unreachable block (ram,0x080003fa)
+// WARNING: Removing unreachable block (ram,0x0800042b)
+// WARNING: Removing unreachable block (ram,0x08000436)
+// WARNING: Removing unreachable block (ram,0x08000389)
+// WARNING: Removing unreachable block (ram,0x08000332)
+// WARNING: Removing unreachable block (ram,0x08000d8e)
+// WARNING: Removing unreachable block (ram,0x08000da1)
+// WARNING: Removing unreachable block (ram,0x08000db4)
+// WARNING: Removing unreachable block (ram,0x08000342)
+// WARNING: Removing unreachable block (ram,0x080002be)
+// WARNING: Removing unreachable block (ram,0x08000d7a)
+// WARNING: Removing unreachable block (ram,0x080002ca)
+// WARNING: Removing unreachable block (ram,0x080002cf)
+// WARNING: Removing unreachable block (ram,0x080002d5)
+// WARNING: Removing unreachable block (ram,0x08000d4f)
+// WARNING: Removing unreachable block (ram,0x080002df)
+// WARNING: Removing unreachable block (ram,0x080002e3)
+// WARNING: Removing unreachable block (ram,0x080002ea)
+// WARNING: Removing unreachable block (ram,0x080002fa)
+// WARNING: Removing unreachable block (ram,0x08000314)
+// WARNING: Removing unreachable block (ram,0x08000317)
+// WARNING: Removing unreachable block (ram,0x080004ff)
+// WARNING: Removing unreachable block (ram,0x08000507)
+// WARNING: Removing unreachable block (ram,0x080004c3)
+// WARNING: Removing unreachable block (ram,0x08000cc0)
+// WARNING: Removing unreachable block (ram,0x08000530)
+// WARNING: Removing unreachable block (ram,0x08000e0a)
+// WARNING: Removing unreachable block (ram,0x08000ffd)
+// WARNING: Removing unreachable block (ram,0x08000e33)
+// WARNING: Removing unreachable block (ram,0x08000551)
+// WARNING: Removing unreachable block (ram,0x08000ccc)
+// WARNING: Removing unreachable block (ram,0x080004cb)
+// WARNING: Removing unreachable block (ram,0x080002a0)
+// WARNING: Removing unreachable block (ram,0x080002b0)
+// WARNING: Removing unreachable block (ram,0x080002b7)
+// WARNING: Removing unreachable block (ram,0x080004ea)
+// WARNING: Removing unreachable block (ram,0x08000269)
+// WARNING: Removing unreachable block (ram,0x08000cd3)
+// WARNING: Removing unreachable block (ram,0x08000ce8)
+// WARNING: Removing unreachable block (ram,0x08000289)
+// WARNING: Removing unreachable block (ram,0x080004b4)
+// WARNING: Removing unreachable block (ram,0x08000cf9)
+// WARNING: Removing unreachable block (ram,0x08000cab)
+// WARNING: Removing unreachable block (ram,0x08000c3c)
+
+void sym.vfill.isra.0(void)
+{
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x08000233: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000269: Changing call to branch
+// WARNING: Possible PIC construction at 0x080004dd: Changing call to branch
+// WARNING: Possible PIC construction at 0x080002a5: Changing call to branch
+// WARNING: Possible PIC construction at 0x080002f5: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000349: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000390: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000422: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000457: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000484: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000e0a: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000e50: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000e65: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000fdb: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800105d: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800108e: Changing call to branch
+// WARNING: Possible PIC construction at 0x080010b6: Changing call to branch
+// WARNING: Possible PIC construction at 0x080010fd: Changing call to branch
+// WARNING: Possible PIC construction at 0x08001165: Changing call to branch
+// WARNING: Possible PIC construction at 0x080011dd: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800127e: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800141f: Changing call to branch
+// WARNING: Possible PIC construction at 0x08001462: Changing call to branch
+// WARNING: Possible PIC construction at 0x080014d8: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000ec4: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000f0c: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000f30: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000f52: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000f91: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000daf: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000b0d: Changing call to branch
+// WARNING: Possible PIC construction at 0x080005d8: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000bd8: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000c10: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000c54: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000ca2: Changing call to branch
+// WARNING: Possible PIC construction at 0x080005a0: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000d75: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000d9c: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000cdf: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x08000ca7)
+// WARNING: Removing unreachable block (ram,0x08000ce8)
+// WARNING: Removing unreachable block (ram,0x08000cab)
+// WARNING: Removing unreachable block (ram,0x08000c59)
+// WARNING: Removing unreachable block (ram,0x08000c15)
+// WARNING: Removing unreachable block (ram,0x08000c21)
+// WARNING: Removing unreachable block (ram,0x08000c90)
+// WARNING: Removing unreachable block (ram,0x08000c96)
+// WARNING: Removing unreachable block (ram,0x08000c26)
+// WARNING: Removing unreachable block (ram,0x08000c37)
+// WARNING: Removing unreachable block (ram,0x08000c9b)
+// WARNING: Removing unreachable block (ram,0x08000c3c)
+// WARNING: Removing unreachable block (ram,0x08000bdd)
+// WARNING: Removing unreachable block (ram,0x08000c02)
+// WARNING: Removing unreachable block (ram,0x08000c06)
+// WARNING: Removing unreachable block (ram,0x080005dd)
+// WARNING: Removing unreachable block (ram,0x08000c10)
+// WARNING: Removing unreachable block (ram,0x080005e6)
+// WARNING: Removing unreachable block (ram,0x08000bd0)
+// WARNING: Removing unreachable block (ram,0x08000bd8)
+// WARNING: Removing unreachable block (ram,0x080005ec)
+// WARNING: Removing unreachable block (ram,0x080005f1)
+// WARNING: Removing unreachable block (ram,0x080005f6)
+// WARNING: Removing unreachable block (ram,0x08000611)
+// WARNING: Removing unreachable block (ram,0x08000618)
+// WARNING: Removing unreachable block (ram,0x0800062c)
+// WARNING: Removing unreachable block (ram,0x08000633)
+// WARNING: Removing unreachable block (ram,0x08000647)
+// WARNING: Removing unreachable block (ram,0x0800064e)
+// WARNING: Removing unreachable block (ram,0x080006ab)
+// WARNING: Removing unreachable block (ram,0x080006dd)
+// WARNING: Removing unreachable block (ram,0x08000715)
+// WARNING: Removing unreachable block (ram,0x08000744)
+// WARNING: Removing unreachable block (ram,0x0800077a)
+// WARNING: Removing unreachable block (ram,0x080007a8)
+// WARNING: Removing unreachable block (ram,0x080007d4)
+// WARNING: Removing unreachable block (ram,0x08000810)
+// WARNING: Removing unreachable block (ram,0x08000839)
+// WARNING: Removing unreachable block (ram,0x08000875)
+// WARNING: Removing unreachable block (ram,0x0800089e)
+// WARNING: Removing unreachable block (ram,0x080008d5)
+// WARNING: Removing unreachable block (ram,0x08000cfb)
+// WARNING: Removing unreachable block (ram,0x080008eb)
+// WARNING: Removing unreachable block (ram,0x08000904)
+// WARNING: Removing unreachable block (ram,0x08000b12)
+// WARNING: Removing unreachable block (ram,0x08000b60)
+// WARNING: Removing unreachable block (ram,0x08000b6f)
+// WARNING: Removing unreachable block (ram,0x08000b80)
+// WARNING: Removing unreachable block (ram,0x08000b92)
+// WARNING: Removing unreachable block (ram,0x08000b95)
+// WARNING: Removing unreachable block (ram,0x08000970)
+// WARNING: Removing unreachable block (ram,0x08000979)
+// WARNING: Removing unreachable block (ram,0x08000982)
+// WARNING: Removing unreachable block (ram,0x08000994)
+// WARNING: Removing unreachable block (ram,0x080009c0)
+// WARNING: Removing unreachable block (ram,0x080009c9)
+// WARNING: Removing unreachable block (ram,0x080009d2)
+// WARNING: Removing unreachable block (ram,0x080009e2)
+// WARNING: Removing unreachable block (ram,0x08000a00)
+// WARNING: Removing unreachable block (ram,0x08000a08)
+// WARNING: Removing unreachable block (ram,0x08000a11)
+// WARNING: Removing unreachable block (ram,0x08000a19)
+// WARNING: Removing unreachable block (ram,0x08000a22)
+// WARNING: Removing unreachable block (ram,0x08000db4)
+// WARNING: Removing unreachable block (ram,0x08000a9a)
+// WARNING: Removing unreachable block (ram,0x08000aa2)
+// WARNING: Removing unreachable block (ram,0x08000abb)
+// WARNING: Removing unreachable block (ram,0x08000ac5)
+// WARNING: Removing unreachable block (ram,0x08000ba4)
+// WARNING: Removing unreachable block (ram,0x08000bbc)
+// WARNING: Removing unreachable block (ram,0x08000f96)
+// WARNING: Removing unreachable block (ram,0x08000f57)
+// WARNING: Removing unreachable block (ram,0x08000f35)
+// WARNING: Removing unreachable block (ram,0x08000f11)
+// WARNING: Removing unreachable block (ram,0x08000ec9)
+// WARNING: Removing unreachable block (ram,0x08000f09)
+// WARNING: Removing unreachable block (ram,0x08000f0c)
+// WARNING: Removing unreachable block (ram,0x080014dd)
+// WARNING: Removing unreachable block (ram,0x08001467)
+// WARNING: Removing unreachable block (ram,0x08001424)
+// WARNING: Removing unreachable block (ram,0x08001283)
+// WARNING: Removing unreachable block (ram,0x08001440)
+// WARNING: Removing unreachable block (ram,0x0800129e)
+// WARNING: Removing unreachable block (ram,0x08001339)
+// WARNING: Removing unreachable block (ram,0x08001343)
+// WARNING: Removing unreachable block (ram,0x080012e8)
+// WARNING: Removing unreachable block (ram,0x08001345)
+// WARNING: Removing unreachable block (ram,0x08001352)
+// WARNING: Removing unreachable block (ram,0x08001462)
+// WARNING: Removing unreachable block (ram,0x08001372)
+// WARNING: Removing unreachable block (ram,0x080014e2)
+// WARNING: Removing unreachable block (ram,0x080013a8)
+// WARNING: Removing unreachable block (ram,0x08001482)
+// WARNING: Removing unreachable block (ram,0x080013b6)
+// WARNING: Removing unreachable block (ram,0x080013c0)
+// WARNING: Removing unreachable block (ram,0x080011e2)
+// WARNING: Removing unreachable block (ram,0x0800121b)
+// WARNING: Removing unreachable block (ram,0x08001231)
+// WARNING: Removing unreachable block (ram,0x08001240)
+// WARNING: Removing unreachable block (ram,0x0800124f)
+// WARNING: Removing unreachable block (ram,0x0800125e)
+// WARNING: Removing unreachable block (ram,0x080014a0)
+// WARNING: Removing unreachable block (ram,0x0800126d)
+// WARNING: Removing unreachable block (ram,0x0800116a)
+// WARNING: Removing unreachable block (ram,0x0800119c)
+// WARNING: Removing unreachable block (ram,0x08001190)
+// WARNING: Removing unreachable block (ram,0x080011a2)
+// WARNING: Removing unreachable block (ram,0x080014c0)
+// WARNING: Removing unreachable block (ram,0x080011d1)
+// WARNING: Removing unreachable block (ram,0x0800118a)
+// WARNING: Removing unreachable block (ram,0x08001430)
+// WARNING: Removing unreachable block (ram,0x08001102)
+// WARNING: Removing unreachable block (ram,0x08001106)
+// WARNING: Removing unreachable block (ram,0x08001122)
+// WARNING: Removing unreachable block (ram,0x08001138)
+// WARNING: Removing unreachable block (ram,0x080010bb)
+// WARNING: Removing unreachable block (ram,0x080010bf)
+// WARNING: Removing unreachable block (ram,0x080010d8)
+// WARNING: Removing unreachable block (ram,0x080010f4)
+// WARNING: Removing unreachable block (ram,0x08001093)
+// WARNING: Removing unreachable block (ram,0x08001097)
+// WARNING: Removing unreachable block (ram,0x08001062)
+// WARNING: Removing unreachable block (ram,0x08001070)
+// WARNING: Removing unreachable block (ram,0x08001066)
+// WARNING: Removing unreachable block (ram,0x08000fe0)
+// WARNING: Removing unreachable block (ram,0x08000e6a)
+// WARNING: Removing unreachable block (ram,0x08000ec0)
+// WARNING: Removing unreachable block (ram,0x08000e73)
+// WARNING: Removing unreachable block (ram,0x08000f9e)
+// WARNING: Removing unreachable block (ram,0x08000e9a)
+// WARNING: Removing unreachable block (ram,0x08000ea8)
+// WARNING: Removing unreachable block (ram,0x08000fb8)
+// WARNING: Removing unreachable block (ram,0x08000eb8)
+// WARNING: Removing unreachable block (ram,0x08000e55)
+// WARNING: Removing unreachable block (ram,0x08000e5d)
+// WARNING: Removing unreachable block (ram,0x08000e14)
+// WARNING: Removing unreachable block (ram,0x08000e33)
+// WARNING: Removing unreachable block (ram,0x08000ffd)
+// WARNING: Removing unreachable block (ram,0x08001011)
+// WARNING: Removing unreachable block (ram,0x08001159)
+// WARNING: Removing unreachable block (ram,0x08001056)
+// WARNING: Removing unreachable block (ram,0x08000e47)
+// WARNING: Removing unreachable block (ram,0x08000489)
+// WARNING: Removing unreachable block (ram,0x08000491)
+// WARNING: Removing unreachable block (ram,0x0800045c)
+// WARNING: Removing unreachable block (ram,0x08000518)
+// WARNING: Removing unreachable block (ram,0x08000528)
+// WARNING: Removing unreachable block (ram,0x08000427)
+// WARNING: Removing unreachable block (ram,0x0800042b)
+// WARNING: Removing unreachable block (ram,0x08000436)
+// WARNING: Removing unreachable block (ram,0x08000446)
+// WARNING: Removing unreachable block (ram,0x08000464)
+// WARNING: Removing unreachable block (ram,0x08000450)
+// WARNING: Removing unreachable block (ram,0x08000395)
+// WARNING: Removing unreachable block (ram,0x080003da)
+// WARNING: Removing unreachable block (ram,0x08000568)
+// WARNING: Removing unreachable block (ram,0x08000591)
+// WARNING: Removing unreachable block (ram,0x08000594)
+// WARNING: Removing unreachable block (ram,0x080003e7)
+// WARNING: Removing unreachable block (ram,0x08000da1)
+// WARNING: Removing unreachable block (ram,0x080003ef)
+// WARNING: Removing unreachable block (ram,0x080003fa)
+// WARNING: Removing unreachable block (ram,0x0800034e)
+// WARNING: Removing unreachable block (ram,0x080002aa)
+// WARNING: Removing unreachable block (ram,0x080002b0)
+// WARNING: Removing unreachable block (ram,0x080002b7)
+// WARNING: Removing unreachable block (ram,0x08000d7a)
+// WARNING: Removing unreachable block (ram,0x080002ca)
+// WARNING: Removing unreachable block (ram,0x080002cf)
+// WARNING: Removing unreachable block (ram,0x080002d5)
+// WARNING: Removing unreachable block (ram,0x08000d4f)
+// WARNING: Removing unreachable block (ram,0x08000d66)
+// WARNING: Removing unreachable block (ram,0x080002df)
+// WARNING: Removing unreachable block (ram,0x080002e3)
+// WARNING: Removing unreachable block (ram,0x080002fa)
+// WARNING: Removing unreachable block (ram,0x08000314)
+// WARNING: Removing unreachable block (ram,0x08000317)
+// WARNING: Removing unreachable block (ram,0x08000d8e)
+// WARNING: Removing unreachable block (ram,0x08000342)
+// WARNING: Removing unreachable block (ram,0x080002ea)
+// WARNING: Removing unreachable block (ram,0x080004e2)
+// WARNING: Removing unreachable block (ram,0x080004ea)
+// WARNING: Removing unreachable block (ram,0x08000507)
+// WARNING: Removing unreachable block (ram,0x080002a0)
+// WARNING: Removing unreachable block (ram,0x0800026e)
+// WARNING: Removing unreachable block (ram,0x08000289)
+// WARNING: Removing unreachable block (ram,0x080004b4)
+// WARNING: Removing unreachable block (ram,0x08000cc0)
+// WARNING: Removing unreachable block (ram,0x08000530)
+// WARNING: Removing unreachable block (ram,0x08000e0a)
+// WARNING: Removing unreachable block (ram,0x08000551)
+// WARNING: Removing unreachable block (ram,0x08000ccc)
+// WARNING: Removing unreachable block (ram,0x08000cd3)
+// WARNING: Removing unreachable block (ram,0x080004cb)
+// WARNING: Removing unreachable block (ram,0x08000238)
+// WARNING: Removing unreachable block (ram,0x080005a5)
+// WARNING: Removing unreachable block (ram,0x080005b1)
+// WARNING: Removing unreachable block (ram,0x08000c80)
+// WARNING: Removing unreachable block (ram,0x08000c8a)
+// WARNING: Removing unreachable block (ram,0x080005ba)
+// WARNING: Removing unreachable block (ram,0x080005c4)
+// WARNING: Removing unreachable block (ram,0x080005d0)
+// WARNING: Removing unreachable block (ram,0x080001c0)
+// WARNING: Removing unreachable block (ram,0x080001c9)
+// WARNING: Removing unreachable block (ram,0x080001f0)
+// WARNING: Removing unreachable block (ram,0x080001f9)
+// WARNING: Removing unreachable block (ram,0x08000190)
+// WARNING: Removing unreachable block (ram,0x0800019d)
+
+void sym.check_grid_ranges(int64_t arg1)
+{
+    double *pdVar1;
+    double *pdVar2;
+    int32_t *piVar3;
+    double dVar4;
+    
+    piVar3 = _obj.current_vgrid;
+    if (_obj.current_vgrid != (int32_t *)0x0) {
+        pdVar1 = (double *)(_obj.current_vgrid + 0xe);
+        pdVar2 = (double *)(_obj.current_vgrid + 0x10);
+        dVar4 = (double)(*_obj.current_vgrid + -1);
+        *(double *)(_obj.current_vgrid + 6) =
+             (*(double *)(_obj.current_vgrid + 4) - *(double *)(_obj.current_vgrid + 2)) / dVar4;
+        *(double *)(piVar3 + 0x12) = (*pdVar2 - *pdVar1) / dVar4;
+        *(double *)(piVar3 + 0xc) = (*(double *)(piVar3 + 10) - *(double *)(piVar3 + 8)) / dVar4;
+        return;
+    }
+    func_0x0801f3c2(0xffffffff, "");
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+int64_t sym.get_vgrid_by_name(void)
+{
+    int64_t iVar1;
+    
+    iVar1 = func_0x0801f3c2();
+    if ((iVar1 != 0) && (*(int32_t *)(iVar1 + 0x10) != 6)) {
+        iVar1 = 0;
+    }
+    return iVar1;
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x0800158f: Changing call to branch
+// WARNING: Possible PIC construction at 0x080015ae: Changing call to branch
+// WARNING: Possible PIC construction at 0x080015df: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000055: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x080015e4)
+// WARNING: Removing unreachable block (ram,0x08001600)
+// WARNING: Removing unreachable block (ram,0x08000040)
+// WARNING: Removing unreachable block (ram,0x080015fa)
+// WARNING: Removing unreachable block (ram,0x080015b3)
+// WARNING: Removing unreachable block (ram,0x080015c0)
+// WARNING: Removing unreachable block (ram,0x080015d0)
+// WARNING: Removing unreachable block (ram,0x080015c6)
+// WARNING: Removing unreachable block (ram,0x08001594)
+// WARNING: Removing unreachable block (ram,0x08001598)
+// WARNING: Removing unreachable block (ram,0x080015ae)
+// WARNING: Removing unreachable block (ram,0x0800005a)
+// WARNING: Removing unreachable block (ram,0x08000080)
+// WARNING: Removing unreachable block (ram,0x08000067)
+
+void sym.vclear_command(void)
+{
+    uint8_t uVar1;
+    int32_t iVar2;
+    uint8_t uVar3;
+    char cVar4;
+    uint32_t uVar5;
+    uint8_t *puVar6;
+    int32_t iVar7;
+    
+    iVar7 = _reloc.c_token + 1;
+    uVar5 = _reloc.c_token;
+    if (_reloc.num_tokens <= iVar7) {
+        if (((_obj.current_vgrid == (int32_t *)0x0) || (iVar2 = *_obj.current_vgrid, iVar2 == 0)) ||
+           (*(int64_t *)(_obj.current_vgrid + 0x1e) == 0)) {
+            _reloc.c_token = iVar7;
+            return;
+        }
+        uVar5 = iVar2 * iVar2;
+    }
+    puVar6 = (uint8_t *)(uint64_t)uVar5;
+    uVar3 = (uint8_t)uVar5;
+    _reloc.c_token = iVar7;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    *puVar6 = *puVar6 + uVar3;
+    uVar1 = *puVar6;
+    *puVar6 = *puVar6 + uVar3;
+    uVar5 = uVar5 + CARRY1(uVar1, uVar3);
+    _uVar5 = (char *)(uint64_t)uVar5;
+    cVar4 = (char)uVar5;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    *_uVar5 = *_uVar5 + cVar4;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x0800162d: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800164c: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800004c: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800167f: Changing call to branch
+// WARNING: Possible PIC construction at 0x080016e6: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800171b: Changing call to branch
+// WARNING: Possible PIC construction at 0x080017d3: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800179d: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800185e: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x080017a2)
+// WARNING: Removing unreachable block (ram,0x08001807)
+// WARNING: Removing unreachable block (ram,0x08001858)
+// WARNING: Removing unreachable block (ram,0x0800185c)
+// WARNING: Removing unreachable block (ram,0x080017a6)
+// WARNING: Removing unreachable block (ram,0x080017d8)
+// WARNING: Removing unreachable block (ram,0x080017ea)
+// WARNING: Removing unreachable block (ram,0x080017dc)
+// WARNING: Removing unreachable block (ram,0x08001720)
+// WARNING: Removing unreachable block (ram,0x08001750)
+// WARNING: Removing unreachable block (ram,0x08001790)
+// WARNING: Removing unreachable block (ram,0x08001766)
+// WARNING: Removing unreachable block (ram,0x080017d0)
+// WARNING: Removing unreachable block (ram,0x0800177f)
+// WARNING: Removing unreachable block (ram,0x08001724)
+// WARNING: Removing unreachable block (ram,0x080016eb)
+// WARNING: Removing unreachable block (ram,0x080016ef)
+// WARNING: Removing unreachable block (ram,0x080016c0)
+// WARNING: Removing unreachable block (ram,0x080016df)
+// WARNING: Removing unreachable block (ram,0x08001747)
+// WARNING: Removing unreachable block (ram,0x0800170e)
+// WARNING: Removing unreachable block (ram,0x08000051)
+// WARNING: Removing unreachable block (ram,0x08000080)
+// WARNING: Removing unreachable block (ram,0x08000067)
+// WARNING: Removing unreachable block (ram,0x08001651)
+// WARNING: Removing unreachable block (ram,0x08001661)
+// WARNING: Removing unreachable block (ram,0x08001670)
+// WARNING: Removing unreachable block (ram,0x08001667)
+// WARNING: Removing unreachable block (ram,0x08000040)
+// WARNING: Removing unreachable block (ram,0x08001632)
+// WARNING: Removing unreachable block (ram,0x08001636)
+// WARNING: Removing unreachable block (ram,0x08001684)
+// WARNING: Removing unreachable block (ram,0x0800164c)
+// WARNING: Removing unreachable block (ram,0x08001863)
+
+void sym.unset_vgrid(void)
+{
+    uint8_t uVar1;
+    uint8_t uVar2;
+    char cVar3;
+    uint32_t uVar4;
+    uint8_t *in_RAX;
+    
+    if ((_reloc.num_tokens <= _reloc.c_token) &&
+       (in_RAX = (uint8_t *)func_0x0801f3c2(_reloc.c_token, "syntax: unset vgrid $<gridname>"),
+       _reloc.num_tokens <= _reloc.c_token)) {
+        return;
+    }
+    uVar2 = (uint8_t)in_RAX;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    uVar1 = *in_RAX;
+    *in_RAX = *in_RAX + uVar2;
+    uVar4 = (int32_t)in_RAX + (uint32_t)CARRY1(uVar1, uVar2);
+    _uVar4 = (char *)(uint64_t)uVar4;
+    cVar3 = (char)uVar4;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x08001899: Changing call to branch
+// WARNING: Possible PIC construction at 0x080018c4: Changing call to branch
+// WARNING: Possible PIC construction at 0x080018f2: Changing call to branch
+// WARNING: Possible PIC construction at 0x08001920: Changing call to branch
+// WARNING: Possible PIC construction at 0x08001964: Changing call to branch
+// WARNING: Possible PIC construction at 0x08001aae: Changing call to branch
+// WARNING: Possible PIC construction at 0x08001c88: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x08001ab3)
+// WARNING: Removing unreachable block (ram,0x08001969)
+// WARNING: Removing unreachable block (ram,0x08001971)
+// WARNING: Removing unreachable block (ram,0x0800198d)
+// WARNING: Removing unreachable block (ram,0x08001998)
+// WARNING: Removing unreachable block (ram,0x080019ad)
+// WARNING: Removing unreachable block (ram,0x080019b8)
+// WARNING: Removing unreachable block (ram,0x080019cd)
+// WARNING: Removing unreachable block (ram,0x08001aa0)
+// WARNING: Removing unreachable block (ram,0x080019d8)
+// WARNING: Removing unreachable block (ram,0x08001b28)
+// WARNING: Removing unreachable block (ram,0x08001a15)
+// WARNING: Removing unreachable block (ram,0x08001af0)
+// WARNING: Removing unreachable block (ram,0x08001a3e)
+// WARNING: Removing unreachable block (ram,0x08001ac0)
+// WARNING: Removing unreachable block (ram,0x08001a5f)
+// WARNING: Removing unreachable block (ram,0x08001925)
+// WARNING: Removing unreachable block (ram,0x0800194e)
+// WARNING: Removing unreachable block (ram,0x080018f7)
+// WARNING: Removing unreachable block (ram,0x08001920)
+// WARNING: Removing unreachable block (ram,0x080018c9)
+// WARNING: Removing unreachable block (ram,0x080018f2)
+// WARNING: Removing unreachable block (ram,0x0800189e)
+// WARNING: Removing unreachable block (ram,0x08001b5a)
+// WARNING: Removing unreachable block (ram,0x08001b98)
+// WARNING: Removing unreachable block (ram,0x08001ba7)
+// WARNING: Removing unreachable block (ram,0x08001bb2)
+// WARNING: Removing unreachable block (ram,0x08001bc1)
+// WARNING: Removing unreachable block (ram,0x08001bcc)
+// WARNING: Removing unreachable block (ram,0x08001bdb)
+// WARNING: Removing unreachable block (ram,0x08001c88)
+// WARNING: Removing unreachable block (ram,0x08001be6)
+// WARNING: Removing unreachable block (ram,0x08001d08)
+// WARNING: Removing unreachable block (ram,0x08001c1c)
+// WARNING: Removing unreachable block (ram,0x08001cd0)
+// WARNING: Removing unreachable block (ram,0x08001c40)
+// WARNING: Removing unreachable block (ram,0x08001ca0)
+// WARNING: Removing unreachable block (ram,0x08001c5c)
+// WARNING: Removing unreachable block (ram,0x080018c4)
+// WARNING: Removing unreachable block (ram,0x08001c8d)
+// WARNING: Removing unreachable block (ram,0x08001c91)
+
+void sym.voxel_command(int64_t arg7, int64_t arg8, int64_t arg9, undefined8 placeholder_3, undefined8 placeholder_4,
+                      undefined8 placeholder_5, undefined8 placeholder_6, undefined8 placeholder_7,
+                      undefined8 placeholder_8, undefined8 placeholder_9, int64_t arg3, int64_t arg4)
+{
+    uint8_t uVar1;
+    uint8_t uVar2;
+    char cVar3;
+    uint32_t uVar4;
+    uint8_t *in_RAX;
+    
+    uVar2 = (uint8_t)in_RAX;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    *in_RAX = *in_RAX + uVar2;
+    uVar1 = *in_RAX;
+    *in_RAX = *in_RAX + uVar2;
+    uVar4 = (int32_t)in_RAX + (uint32_t)CARRY1(uVar1, uVar2);
+    _uVar4 = (char *)(uint64_t)uVar4;
+    cVar3 = (char)uVar4;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    *_uVar4 = *_uVar4 + cVar3;
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Possible PIC construction at 0x08001d61: Changing call to branch
+// WARNING: Possible PIC construction at 0x08001d77: Changing call to branch
+// WARNING: Possible PIC construction at 0x08001d8c: Changing call to branch
+// WARNING: Possible PIC construction at 0x08001df5: Changing call to branch
+// WARNING: Possible PIC construction at 0x08001e0d: Changing call to branch
+// WARNING: Possible PIC construction at 0x08001e4d: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000269: Changing call to branch
+// WARNING: Possible PIC construction at 0x080004dd: Changing call to branch
+// WARNING: Possible PIC construction at 0x080002a5: Changing call to branch
+// WARNING: Possible PIC construction at 0x080002f5: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000349: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000390: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000422: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000457: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000484: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000e0a: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000e50: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000e65: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000fdb: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800105d: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800108e: Changing call to branch
+// WARNING: Possible PIC construction at 0x080010b6: Changing call to branch
+// WARNING: Possible PIC construction at 0x080010fd: Changing call to branch
+// WARNING: Possible PIC construction at 0x08001165: Changing call to branch
+// WARNING: Possible PIC construction at 0x080011dd: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800127e: Changing call to branch
+// WARNING: Possible PIC construction at 0x0800141f: Changing call to branch
+// WARNING: Possible PIC construction at 0x08001462: Changing call to branch
+// WARNING: Possible PIC construction at 0x080014d8: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000ec4: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000f0c: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000f30: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000f52: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000f91: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000daf: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000b0d: Changing call to branch
+// WARNING: Possible PIC construction at 0x080005d8: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000bd8: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000c10: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000c54: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000ca2: Changing call to branch
+// WARNING: Possible PIC construction at 0x080005a0: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000d75: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000d9c: Changing call to branch
+// WARNING: Possible PIC construction at 0x08000cdf: Changing call to branch
+// WARNING: Removing unreachable block (ram,0x08000ca7)
+// WARNING: Removing unreachable block (ram,0x08000ce8)
+// WARNING: Removing unreachable block (ram,0x08000cab)
+// WARNING: Removing unreachable block (ram,0x08000c59)
+// WARNING: Removing unreachable block (ram,0x08000c15)
+// WARNING: Removing unreachable block (ram,0x08000c21)
+// WARNING: Removing unreachable block (ram,0x08000c90)
+// WARNING: Removing unreachable block (ram,0x08000c96)
+// WARNING: Removing unreachable block (ram,0x08000c26)
+// WARNING: Removing unreachable block (ram,0x08000c37)
+// WARNING: Removing unreachable block (ram,0x08000c9b)
+// WARNING: Removing unreachable block (ram,0x08000c3c)
+// WARNING: Removing unreachable block (ram,0x08000bdd)
+// WARNING: Removing unreachable block (ram,0x08000c02)
+// WARNING: Removing unreachable block (ram,0x08000c06)
+// WARNING: Removing unreachable block (ram,0x080005dd)
+// WARNING: Removing unreachable block (ram,0x08000c10)
+// WARNING: Removing unreachable block (ram,0x080005e6)
+// WARNING: Removing unreachable block (ram,0x08000bd0)
+// WARNING: Removing unreachable block (ram,0x08000bd8)
+// WARNING: Removing unreachable block (ram,0x080005ec)
+// WARNING: Removing unreachable block (ram,0x080005f1)
+// WARNING: Removing unreachable block (ram,0x080005f6)
+// WARNING: Removing unreachable block (ram,0x08000611)
+// WARNING: Removing unreachable block (ram,0x08000618)
+// WARNING: Removing unreachable block (ram,0x0800062c)
+// WARNING: Removing unreachable block (ram,0x08000633)
+// WARNING: Removing unreachable block (ram,0x08000647)
+// WARNING: Removing unreachable block (ram,0x0800064e)
+// WARNING: Removing unreachable block (ram,0x080006ab)
+// WARNING: Removing unreachable block (ram,0x080006dd)
+// WARNING: Removing unreachable block (ram,0x08000715)
+// WARNING: Removing unreachable block (ram,0x08000744)
+// WARNING: Removing unreachable block (ram,0x0800077a)
+// WARNING: Removing unreachable block (ram,0x080007a8)
+// WARNING: Removing unreachable block (ram,0x080007d4)
+// WARNING: Removing unreachable block (ram,0x08000810)
+// WARNING: Removing unreachable block (ram,0x08000839)
+// WARNING: Removing unreachable block (ram,0x08000875)
+// WARNING: Removing unreachable block (ram,0x0800089e)
+// WARNING: Removing unreachable block (ram,0x080008d5)
+// WARNING: Removing unreachable block (ram,0x08000cfb)
+// WARNING: Removing unreachable block (ram,0x080008eb)
+// WARNING: Removing unreachable block (ram,0x08000904)
+// WARNING: Removing unreachable block (ram,0x08000b12)
+// WARNING: Removing unreachable block (ram,0x08000b60)
+// WARNING: Removing unreachable block (ram,0x08000b6f)
+// WARNING: Removing unreachable block (ram,0x08000b80)
+// WARNING: Removing unreachable block (ram,0x08000b92)
+// WARNING: Removing unreachable block (ram,0x08000b95)
+// WARNING: Removing unreachable block (ram,0x08000970)
+// WARNING: Removing unreachable block (ram,0x08000979)
+// WARNING: Removing unreachable block (ram,0x08000982)
+// WARNING: Removing unreachable block (ram,0x08000994)
+// WARNING: Removing unreachable block (ram,0x080009c0)
+// WARNING: Removing unreachable block (ram,0x080009c9)
+// WARNING: Removing unreachable block (ram,0x080009d2)
+// WARNING: Removing unreachable block (ram,0x080009e2)
+// WARNING: Removing unreachable block (ram,0x08000a00)
+// WARNING: Removing unreachable block (ram,0x08000a08)
+// WARNING: Removing unreachable block (ram,0x08000a11)
+// WARNING: Removing unreachable block (ram,0x08000a19)
+// WARNING: Removing unreachable block (ram,0x08000a22)
+// WARNING: Removing unreachable block (ram,0x08000db4)
+// WARNING: Removing unreachable block (ram,0x08000a9a)
+// WARNING: Removing unreachable block (ram,0x08000aa2)
+// WARNING: Removing unreachable block (ram,0x08000abb)
+// WARNING: Removing unreachable block (ram,0x08000ac5)
+// WARNING: Removing unreachable block (ram,0x08000ba4)
+// WARNING: Removing unreachable block (ram,0x08000bbc)
+// WARNING: Removing unreachable block (ram,0x08000f96)
+// WARNING: Removing unreachable block (ram,0x08000f57)
+// WARNING: Removing unreachable block (ram,0x08000f35)
+// WARNING: Removing unreachable block (ram,0x08000f11)
+// WARNING: Removing unreachable block (ram,0x08000ec9)
+// WARNING: Removing unreachable block (ram,0x08000f09)
+// WARNING: Removing unreachable block (ram,0x08000f0c)
+// WARNING: Removing unreachable block (ram,0x080014dd)
+// WARNING: Removing unreachable block (ram,0x08001467)
+// WARNING: Removing unreachable block (ram,0x08001424)
+// WARNING: Removing unreachable block (ram,0x08001283)
+// WARNING: Removing unreachable block (ram,0x08001440)
+// WARNING: Removing unreachable block (ram,0x0800129e)
+// WARNING: Removing unreachable block (ram,0x08001339)
+// WARNING: Removing unreachable block (ram,0x08001343)
+// WARNING: Removing unreachable block (ram,0x080012e8)
+// WARNING: Removing unreachable block (ram,0x08001345)
+// WARNING: Removing unreachable block (ram,0x08001352)
+// WARNING: Removing unreachable block (ram,0x08001462)
+// WARNING: Removing unreachable block (ram,0x08001372)
+// WARNING: Removing unreachable block (ram,0x080014e2)
+// WARNING: Removing unreachable block (ram,0x080013a8)
+// WARNING: Removing unreachable block (ram,0x08001482)
+// WARNING: Removing unreachable block (ram,0x080013b6)
+// WARNING: Removing unreachable block (ram,0x080013c0)
+// WARNING: Removing unreachable block (ram,0x080011e2)
+// WARNING: Removing unreachable block (ram,0x0800121b)
+// WARNING: Removing unreachable block (ram,0x08001231)
+// WARNING: Removing unreachable block (ram,0x08001240)
+// WARNING: Removing unreachable block (ram,0x0800124f)
+// WARNING: Removing unreachable block (ram,0x0800125e)
+// WARNING: Removing unreachable block (ram,0x080014a0)
+// WARNING: Removing unreachable block (ram,0x0800126d)
+// WARNING: Removing unreachable block (ram,0x0800116a)
+// WARNING: Removing unreachable block (ram,0x0800119c)
+// WARNING: Removing unreachable block (ram,0x08001190)
+// WARNING: Removing unreachable block (ram,0x080011a2)
+// WARNING: Removing unreachable block (ram,0x080014c0)
+// WARNING: Removing unreachable block (ram,0x080011d1)
+// WARNING: Removing unreachable block (ram,0x0800118a)
+// WARNING: Removing unreachable block (ram,0x08001430)
+// WARNING: Removing unreachable block (ram,0x08001102)
+// WARNING: Removing unreachable block (ram,0x08001106)
+// WARNING: Removing unreachable block (ram,0x08001122)
+// WARNING: Removing unreachable block (ram,0x08001138)
+// WARNING: Removing unreachable block (ram,0x080010bb)
+// WARNING: Removing unreachable block (ram,0x080010bf)
+// WARNING: Removing unreachable block (ram,0x080010d8)
+// WARNING: Removing unreachable block (ram,0x080010f4)
+// WARNING: Removing unreachable block (ram,0x08001093)
+// WARNING: Removing unreachable block (ram,0x08001097)
+// WARNING: Removing unreachable block (ram,0x08001062)
+// WARNING: Removing unreachable block (ram,0x08001070)
+// WARNING: Removing unreachable block (ram,0x08001066)
+// WARNING: Removing unreachable block (ram,0x08000fe0)
+// WARNING: Removing unreachable block (ram,0x08000e6a)
+// WARNING: Removing unreachable block (ram,0x08000ec0)
+// WARNING: Removing unreachable block (ram,0x08000e73)
+// WARNING: Removing unreachable block (ram,0x08000f9e)
+// WARNING: Removing unreachable block (ram,0x08000e9a)
+// WARNING: Removing unreachable block (ram,0x08000ea8)
+// WARNING: Removing unreachable block (ram,0x08000fb8)
+// WARNING: Removing unreachable block (ram,0x08000eb8)
+// WARNING: Removing unreachable block (ram,0x08000e55)
+// WARNING: Removing unreachable block (ram,0x08000e5d)
+// WARNING: Removing unreachable block (ram,0x08000e14)
+// WARNING: Removing unreachable block (ram,0x08000e33)
+// WARNING: Removing unreachable block (ram,0x08000ffd)
+// WARNING: Removing unreachable block (ram,0x08001011)
+// WARNING: Removing unreachable block (ram,0x08001159)
+// WARNING: Removing unreachable block (ram,0x08001056)
+// WARNING: Removing unreachable block (ram,0x08000e47)
+// WARNING: Removing unreachable block (ram,0x08000489)
+// WARNING: Removing unreachable block (ram,0x08000491)
+// WARNING: Removing unreachable block (ram,0x0800045c)
+// WARNING: Removing unreachable block (ram,0x08000518)
+// WARNING: Removing unreachable block (ram,0x08000528)
+// WARNING: Removing unreachable block (ram,0x08000427)
+// WARNING: Removing unreachable block (ram,0x0800042b)
+// WARNING: Removing unreachable block (ram,0x08000436)
+// WARNING: Removing unreachable block (ram,0x08000446)
+// WARNING: Removing unreachable block (ram,0x08000464)
+// WARNING: Removing unreachable block (ram,0x08000450)
+// WARNING: Removing unreachable block (ram,0x08000395)
+// WARNING: Removing unreachable block (ram,0x080003da)
+// WARNING: Removing unreachable block (ram,0x08000568)
+// WARNING: Removing unreachable block (ram,0x08000591)
+// WARNING: Removing unreachable block (ram,0x08000594)
+// WARNING: Removing unreachable block (ram,0x080003e7)
+// WARNING: Removing unreachable block (ram,0x08000da1)
+// WARNING: Removing unreachable block (ram,0x080003ef)
+// WARNING: Removing unreachable block (ram,0x080003fa)
+// WARNING: Removing unreachable block (ram,0x0800034e)
+// WARNING: Removing unreachable block (ram,0x080002aa)
+// WARNING: Removing unreachable block (ram,0x080002b0)
+// WARNING: Removing unreachable block (ram,0x080002b7)
+// WARNING: Removing unreachable block (ram,0x08000d7a)
+// WARNING: Removing unreachable block (ram,0x080002ca)
+// WARNING: Removing unreachable block (ram,0x080002cf)
+// WARNING: Removing unreachable block (ram,0x080002d5)
+// WARNING: Removing unreachable block (ram,0x08000d4f)
+// WARNING: Removing unreachable block (ram,0x08000d66)
+// WARNING: Removing unreachable block (ram,0x080002df)
+// WARNING: Removing unreachable block (ram,0x080002e3)
+// WARNING: Removing unreachable block (ram,0x080002fa)
+// WARNING: Removing unreachable block (ram,0x08000314)
+// WARNING: Removing unreachable block (ram,0x08000317)
+// WARNING: Removing unreachable block (ram,0x08000d8e)
+// WARNING: Removing unreachable block (ram,0x08000342)
+// WARNING: Removing unreachable block (ram,0x080002ea)
+// WARNING: Removing unreachable block (ram,0x080004e2)
+// WARNING: Removing unreachable block (ram,0x080004ea)
+// WARNING: Removing unreachable block (ram,0x08000507)
+// WARNING: Removing unreachable block (ram,0x080002a0)
+// WARNING: Removing unreachable block (ram,0x0800026e)
+// WARNING: Removing unreachable block (ram,0x08000289)
+// WARNING: Removing unreachable block (ram,0x080004b4)
+// WARNING: Removing unreachable block (ram,0x08000cc0)
+// WARNING: Removing unreachable block (ram,0x08000530)
+// WARNING: Removing unreachable block (ram,0x08000e0a)
+// WARNING: Removing unreachable block (ram,0x08000551)
+// WARNING: Removing unreachable block (ram,0x08000ccc)
+// WARNING: Removing unreachable block (ram,0x08000cd3)
+// WARNING: Removing unreachable block (ram,0x080004cb)
+// WARNING: Removing unreachable block (ram,0x08001e52)
+// WARNING: Removing unreachable block (ram,0x08000240)
+// WARNING: Removing unreachable block (ram,0x08001e12)
+// WARNING: Removing unreachable block (ram,0x08001dfa)
+// WARNING: Removing unreachable block (ram,0x08001d91)
+// WARNING: Removing unreachable block (ram,0x08001da9)
+// WARNING: Removing unreachable block (ram,0x08001db4)
+// WARNING: Removing unreachable block (ram,0x08001dbb)
+// WARNING: Removing unreachable block (ram,0x08001dcb)
+// WARNING: Removing unreachable block (ram,0x08001dd2)
+// WARNING: Removing unreachable block (ram,0x08001de3)
+// WARNING: Removing unreachable block (ram,0x08001e18)
+// WARNING: Removing unreachable block (ram,0x08001e28)
+// WARNING: Removing unreachable block (ram,0x08001e3e)
+// WARNING: Removing unreachable block (ram,0x08001e43)
+// WARNING: Removing unreachable block (ram,0x08001e38)
+// WARNING: Removing unreachable block (ram,0x08001dea)
+// WARNING: Removing unreachable block (ram,0x08001d7c)
+// WARNING: Removing unreachable block (ram,0x08001d66)
+// WARNING: Removing unreachable block (ram,0x080005a5)
+// WARNING: Removing unreachable block (ram,0x080005b1)
+// WARNING: Removing unreachable block (ram,0x08000c80)
+// WARNING: Removing unreachable block (ram,0x08000c8a)
+// WARNING: Removing unreachable block (ram,0x080005ba)
+// WARNING: Removing unreachable block (ram,0x080005c4)
+// WARNING: Removing unreachable block (ram,0x080005d0)
+
+void sym.f_voxel(int64_t arg7)
+{
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+

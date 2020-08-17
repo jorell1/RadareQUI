@@ -1,0 +1,701 @@
+void sym.function.part.0(int64_t arg7, int64_t arg8)
+{
+    double extraout_XMM0_Qa;
+    double extraout_XMM0_Qa_00;
+    double dVar1;
+    double dVar2;
+    
+    // [01] -r-x section size 447 named .text
+    dVar1 = (double)arg8 * (double)arg8 + (double)arg7 * (double)arg7;
+    func_0x08007e72(dVar1, dVar1);
+    dVar2 = dVar1 * _reloc..LC1;
+    func_0x08007e72(dVar2, dVar1);
+    dVar1 = (double)(float)(extraout_XMM0_Qa / dVar1) * (extraout_XMM0_Qa_00 / dVar2);
+    minss(ZEXT416(_reloc..LC0), ZEXT816((uint64_t)dVar1 & 0xffffffff00000000 | (uint64_t)(uint32_t)(float)dVar1));
+    return;
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+// WARNING: Instruction at (ram,0x0800027c) overlaps instruction at (ram,0x0800027a)
+// 
+// WARNING: Removing unreachable block (ram,0x08000293)
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable var_18h to Decompiler type: Unknown type
+// identifier signed
+// WARNING: [r2ghidra] Var arg_70h is stack pointer based, which is not supported for decompilation.
+// WARNING: [r2ghidra] Var arg_60h is stack pointer based, which is not supported for decompilation.
+// WARNING: [r2ghidra] Var arg_68h is stack pointer based, which is not supported for decompilation.
+// WARNING: [r2ghidra] Var arg_178h is stack pointer based, which is not supported for decompilation.
+// WARNING: [r2ghidra] Var arg_58h is stack pointer based, which is not supported for decompilation.
+// WARNING: [r2ghidra] Failed to match type signed int64_t for variable var_20h to Decompiler type: Unknown type
+// identifier signed
+
+undefined8 sym.fwrite_matrix(int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4, int64_t arg5, int64_t arg6)
+{
+    float *pfVar1;
+    uint8_t *puVar2;
+    undefined uVar3;
+    int32_t iVar4;
+    uint32_t *puVar5;
+    char *pcVar6;
+    uint8_t uVar15;
+    uint32_t uVar7;
+    uint64_t uVar8;
+    code *pcVar9;
+    double dVar10;
+    undefined8 *puVar11;
+    undefined8 uVar12;
+    undefined8 *puVar13;
+    float *pfVar14;
+    uint8_t uVar18;
+    char *pcVar16;
+    uint64_t uVar17;
+    undefined2 uVar19;
+    char cVar20;
+    char *pcVar21;
+    double *pdVar22;
+    int64_t iVar23;
+    undefined4 *puVar24;
+    int32_t iVar25;
+    undefined8 *puVar26;
+    undefined4 *puVar27;
+    undefined4 *puVar28;
+    int64_t in_FS_OFFSET;
+    bool bVar29;
+    bool bVar30;
+    bool bVar31;
+    uint8_t uVar32;
+    undefined4 extraout_XMM0_Da;
+    undefined extraout_XMM0 [16];
+    undefined extraout_XMM0_00 [16];
+    float fVar33;
+    float fVar34;
+    uint64_t in_XMM1_Qa;
+    double dVar35;
+    double dVar36;
+    undefined in_XMM2 [16];
+    undefined auVar37 [16];
+    double dVar38;
+    undefined auVar39 [16];
+    undefined4 uVar40;
+    undefined in_XMM7 [16];
+    unkbyte10 Var41;
+    undefined auStack512 [384];
+    undefined8 uStack128;
+    int64_t iStack112;
+    uint64_t uStack104;
+    char *pcStack96;
+    char acStack88 [8];
+    undefined8 *puStack80;
+    float fStack68;
+    uint64_t uStack64;
+    
+    uVar32 = 0;
+    iVar25 = (int32_t)arg4;
+    fStack68 = (float)iVar25;
+    pdVar22 = (double *)acStack88;
+    uStack64 = *(uint64_t *)(in_FS_OFFSET + 0x28);
+    pcStack96 = (char *)0x800013c;
+    puStack80 = (undefined8 *)arg2;
+    uVar7 = func_0x08007e72(SUB168(CONCAT124(SUB1612((undefined  [16])0x0 >> 0x20, 0), fStack68), 0), &fStack68, 4, 1);
+    uVar40 = SUB164(in_XMM7, 0);
+    if (uVar7 == 1) {
+        uVar12 = 1;
+        pcStack96 = (char *)0x80001a6;
+        pcVar16 = (char *)arg1;
+        func_0x08007e72(arg6, 4, (int64_t)iVar25);
+        uVar40 = SUB164(in_XMM7, 0);
+        if (0 < (int32_t)arg3) {
+            iVar23 = arg5 + 4;
+            puVar11 = puStack80;
+            do {
+                pcStack96 = (char *)0x80001d5;
+                func_0x08007e72(arg5, 4, 1, arg1);
+                arg6 = *puVar11;
+                arg5 = arg5 + 4;
+                puVar11 = puVar11 + 1;
+                pcStack96 = (char *)0x80001f0;
+                pcVar16 = (char *)arg1;
+                func_0x08007e72(arg6, 4, (int64_t)iVar25);
+                uVar40 = SUB164(in_XMM7, 0);
+            } while (arg5 != iVar23 + (uint64_t)((int32_t)arg3 - 1) * 4);
+        }
+    } else {
+        pcVar16 = (char *)(uint64_t)uVar7;
+        uVar12 = 0;
+        pcStack96 = (char *)0x8000160;
+        arg6 = (int64_t)_reloc.stderr;
+        func_0x08007e72(_reloc.stderr, 1, "fwrite 1 returned %d\n");
+    }
+    bVar29 = false;
+    uVar8 = uStack64 ^ *(uint64_t *)(in_FS_OFFSET + 0x28);
+    bVar31 = (int64_t)uVar8 < 0;
+    bVar30 = uVar8 == 0;
+    if (bVar30) {
+        return uVar12;
+    }
+    pcStack96 = "fwrite 1 returned %d\n";
+    Var41 = func_0x08007e72();
+    uVar19 = (undefined2)((unkuint10)Var41 >> 0x40);
+    pcVar9 = (code *)Var41;
+    fVar34 = SUB164(extraout_XMM0, 0);
+    fVar33 = (float)in_XMM1_Qa;
+    // [05] -r-- section size 62 named .rodata.str1.1
+    cVar20 = (char)((unkuint10)Var41 >> 0x48);
+    if (bVar29 || bVar30) {
+        uVar8 = (int64_t)*(int32_t *)(arg1 + 0x20) * 0x65722031;
+        puVar24 = (undefined4 *)(uVar8 & 0xffffffff);
+        iVar25 = (int32_t)(uVar8 >> 0x20);
+        pcVar21 = acStack88;
+        if (bVar30) goto code_r0x08000281;
+        if (iVar25 != 0 && iVar25 != -1) {
+            pcVar9 = (code *)(uint64_t)((int32_t)Var41 + 0x61f);
+            pcVar21 = acStack88;
+            goto code_r0x08000281;
+        }
+        uVar15 = (uint8_t)((unkuint10)Var41 >> 8);
+        *(uint8_t *)(in_FS_OFFSET + 0x6a000c7a) = *(uint8_t *)(in_FS_OFFSET + 0x6a000c7a) & uVar15;
+        arg1 = ZEXT48((uint32_t)(*(int32_t *)((int64_t)puVar24 + 0x61) * 0x64257972));
+        *(char *)(arg6 + 0x62) = *(char *)(arg6 + 0x62) + cVar20;
+        pcVar21 = (char *)(arg5 + 0x6f);
+        *pcVar21 = *pcVar21 + (char)Var41;
+        pcVar6 = acStack88;
+        auVar39 = extraout_XMM0;
+        if (*pcVar21 == '\0') {
+            puVar2 = (uint8_t *)((int64_t)puVar24 + in_FS_OFFSET + 0x6f);
+            uVar18 = (uint8_t)((uint64_t)pcVar16 >> 8);
+            *puVar2 = *puVar2 & uVar18;
+            if (*puVar2 != 0) {
+                out(*puVar24, uVar19);
+                out(*(undefined *)(puVar24 + (uint64_t)uVar32 * 0x3ffffffffffffffe + 1), uVar19);
+                puVar2 = (uint8_t *)(arg6 + 0x75);
+                *puVar2 = *puVar2 & uVar18;
+                if (*puVar2 != 0) {
+                    pdVar22 = (double *)acStack88;
+                    if (*puVar2 != 0) goto code_r0x080002aa;
+                    puVar2 = (uint8_t *)
+                             ((int64_t)(puVar24 + (uint64_t)uVar32 * 0x3ffffffffffffffe + 1) +
+                             (uint64_t)uVar32 * -2 + 0x6a);
+                    *puVar2 = *puVar2 & uVar15;
+                    uVar3 = in(uVar19);
+                    *(undefined *)arg6 = uVar3;
+    // WARNING: Bad instruction - Truncating control flow here
+                    halt_baddata();
+                }
+                goto code_r0x080002a6;
+            }
+            goto code_r0x0800024b;
+        }
+    } else {
+        if (bVar31) {
+            *pcVar16 = *pcVar16 + cVar20;
+            pcVar9 = pcVar9 + -0x73;
+            *pcVar9 = (code)((uint8_t)*pcVar9 >> 5 | (char)*pcVar9 << 3);
+    // WARNING: Bad instruction - Truncating control flow here
+            halt_baddata();
+        }
+        *pcVar9 = (code)((char)*pcVar9 + (char)Var41);
+code_r0x0800024b:
+        pcStack96 = acStack88;
+        uStack104 = arg1;
+        iStack112 = arg5;
+        arg5 = 0;
+        in_XMM1_Qa = (uint64_t)_reloc..LC4;
+        uStack128 = *(undefined8 *)(in_FS_OFFSET + 0x28);
+        pcVar9 = reloc..rodata;
+        pcVar21 = auStack512 + 8;
+        uVar40 = _reloc..LC3;
+code_r0x08000281:
+        auVar39 = ZEXT416((uint32_t)_reloc..LC5);
+        in_XMM2 = ZEXT416(_reloc..LC6);
+        pcVar6 = pcVar21;
+    }
+    pdVar22 = (double *)pcVar6;
+    *(code **)((int64_t)pdVar22 + 0x50) = pcVar9;
+    *(undefined **)((int64_t)pdVar22 + 0x60) = (undefined *)((int64_t)pdVar22 + 0x70);
+    *(undefined4 *)((int64_t)pdVar22 + 0x28) = uVar40;
+code_r0x080002a6:
+    do {
+        fVar33 = (float)in_XMM1_Qa;
+        fVar34 = SUB164(auVar39, 0);
+        in_XMM2 = CONCAT124(SUB1612(in_XMM2 >> 0x20, 0), SUB164(in_XMM2, 0) - fVar34);
+code_r0x080002aa:
+        dVar10 = pdVar22[0xc];
+        *(float *)pdVar22 = fVar34;
+        iVar25 = (int32_t)((double)(fVar33 - *(float *)(pdVar22 + 5)) * _reloc..LC7 + _reloc..LC8);
+        *(int32_t *)((int64_t)pdVar22 + 0x4c) = (int32_t)((double)SUB164(in_XMM2, 0) * _reloc..LC7 + _reloc..LC8);
+        pdVar22[-1] = 0.00000000;
+        func_0x08007e72(dVar10, 1, 0x100, "binary%d", (int32_t)arg5 + 1);
+        pdVar22[-1] = 0.00000000;
+        dVar10 = (double)func_0x08007e72(dVar10, reloc..LC10);
+        uVar40 = *(undefined4 *)pdVar22;
+        pdVar22[0xd] = dVar10;
+        if (dVar10 == 0.00000000) goto code_r0x08000819;
+        iVar4 = *(int32_t *)((int64_t)pdVar22 + 0x4c);
+        *(undefined4 *)pdVar22 = uVar40;
+        pdVar22[-1] = 0.00000000;
+        dVar10 = (double)func_0x08007e72(uVar40, (int64_t)iVar4, 4);
+        pdVar22[6] = dVar10;
+        pdVar22[-1] = 0.00000000;
+        dVar10 = (double)func_0x08007e72((int64_t)iVar25, 4);
+        pdVar22[0xb] = dVar10;
+        pdVar22[-1] = 0.00000000;
+        puVar11 = (undefined8 *)func_0x08007e72((int64_t)iVar4, 8);
+        auVar39 = ZEXT416(*(uint32_t *)pdVar22);
+        uVar8 = (uint64_t)*(uint32_t *)pdVar22;
+        if (iVar4 < 1) {
+            if (0 < iVar25) goto code_r0x080003ce;
+code_r0x08000846:
+            dVar10 = pdVar22[0xb];
+            dVar38 = pdVar22[6];
+            pdVar22[-1] = 0.00000000;
+            func_0x08007e72(uVar8, pdVar22[0xd], puVar11, *(undefined4 *)((int64_t)pdVar22 + 0x4c), iVar25, dVar38, 
+                            dVar10);
+            pdVar22[-1] = 0.00000000;
+            func_0x08007e72(dVar38);
+            pdVar22[-1] = 0.00000000;
+            func_0x08007e72(dVar10);
+        } else {
+            *(uint32_t *)(pdVar22 + 1) = iVar4 - 1U;
+            puVar13 = puVar11;
+            do {
+                *(int32_t *)pdVar22 = SUB164(auVar39, 0);
+                puVar26 = puVar13 + 1;
+                pdVar22[-1] = 0.00000000;
+                uVar12 = func_0x08007e72(SUB168(auVar39, 0), (int64_t)iVar25, 4);
+                auVar39 = ZEXT416(*(uint32_t *)pdVar22);
+                *puVar13 = uVar12;
+                puVar13 = puVar26;
+            } while (puVar11 + (uint64_t)(iVar4 - 1U) + 1 != puVar26);
+            uVar17 = (uint64_t)(iVar25 - 1);
+            dVar10 = _reloc..LC12;
+            if (0 < iVar25) {
+code_r0x080003ce:
+                dVar10 = _reloc..LC12;
+                uVar8 = SUB168(auVar39, 0);
+                pfVar14 = (float *)pdVar22[0xb];
+                uVar17 = (uint64_t)(iVar25 - 1);
+                fVar34 = *(float *)(pdVar22 + 5);
+                pfVar1 = pfVar14 + uVar17 + 1;
+                do {
+                    *pfVar14 = fVar34;
+                    pfVar14 = pfVar14 + 1;
+                    fVar34 = (float)((double)fVar34 + _reloc..LC12);
+                } while (pfVar1 != pfVar14);
+                *(int32_t *)(pdVar22 + 1) = *(int32_t *)((int64_t)pdVar22 + 0x4c) + -1;
+                if (*(int32_t *)((int64_t)pdVar22 + 0x4c) < 1) goto code_r0x08000846;
+            }
+            auVar37 = ZEXT816((uint64_t)dVar10);
+            pdVar22[7] = (double)(uint64_t)*(uint32_t *)(pdVar22 + 1);
+            pdVar22[8] = (double)(uVar17 * 4 + 4);
+            dVar10 = 0.00000000;
+            do {
+                pdVar22[4] = (double)SUB164(auVar39, 0);
+                *(float *)((int64_t)pdVar22[6] + (int64_t)dVar10 * 4) = SUB164(auVar39, 0);
+                if (0 < iVar25) {
+                    pfVar14 = (float *)puVar11[(int64_t)dVar10];
+                    fVar34 = *(float *)(pdVar22 + 5);
+                    dVar38 = pdVar22[4] * pdVar22[4];
+                    pfVar1 = (float *)((int64_t)pdVar22[8] + (int64_t)pfVar14);
+                    do {
+                        dVar35 = (double)fVar34;
+                        dVar36 = dVar35 * dVar35 + dVar38;
+                        if (arg5 == 1) {
+                            pdVar22[3] = SUB168(auVar37, 0);
+                            pdVar22[2] = dVar38;
+                            pdVar22[1] = dVar35;
+                            *pdVar22 = dVar36;
+                            pdVar22[-1] = 0.00000000;
+                            func_0x08007e72(dVar36, dVar35, dVar36, SUB168(auVar37, 0));
+                            auVar37 = ZEXT816((uint64_t)pdVar22[3]);
+                            dVar38 = pdVar22[2];
+                            dVar35 = pdVar22[1];
+                            auVar39 = minss(ZEXT416(_reloc..LC0), 
+                                            CONCAT124(SUB1612(CONCAT88(SUB168(extraout_XMM0_00 >> 0x40, 0), 
+                                                                       SUB168(extraout_XMM0_00, 0) / *pdVar22) >> 0x20, 
+                                                              0), (float)(SUB168(extraout_XMM0_00, 0) / *pdVar22)));
+                            fVar34 = SUB164(auVar39, 0);
+                        } else {
+                            fVar34 = (float)(_reloc..LC8 / (_reloc..LC8 + dVar36));
+                        }
+                        *pfVar14 = fVar34;
+                        pfVar14 = pfVar14 + 1;
+                        fVar34 = (float)(dVar35 + SUB168(auVar37, 0));
+                    } while (pfVar14 != pfVar1);
+                }
+                dVar38 = (double)((int64_t)dVar10 + 1);
+                uVar8 = (uint64_t)(pdVar22[4] + SUB168(auVar37, 0)) & 0xffffffff00000000 |
+                        (uint64_t)(uint32_t)(float)(pdVar22[4] + SUB168(auVar37, 0));
+                auVar39 = ZEXT816(uVar8);
+                bVar29 = pdVar22[7] != dVar10;
+                dVar10 = dVar38;
+            } while (bVar29);
+            dVar10 = pdVar22[0xb];
+            dVar35 = pdVar22[6];
+            *pdVar22 = dVar38;
+            pdVar22[-1] = 0.00000000;
+            func_0x08007e72(uVar8, pdVar22[0xd], puVar11, *(undefined4 *)((int64_t)pdVar22 + 0x4c), iVar25, dVar35, 
+                            dVar10);
+            pdVar22[-1] = 0.00000000;
+            func_0x08007e72(dVar35);
+            pdVar22[-1] = 0.00000000;
+            func_0x08007e72(dVar10);
+            iVar23 = (int64_t)*pdVar22;
+            puVar13 = puVar11;
+            do {
+                uVar12 = *puVar13;
+                puVar13 = puVar13 + 1;
+                pdVar22[-1] = 0.00000000;
+                func_0x08007e72(uVar12);
+            } while (puVar11 + iVar23 != puVar13);
+        }
+        pdVar22[-1] = 0.00000000;
+        func_0x08007e72(puVar11);
+        pdVar22[10] = (double)((int64_t)pdVar22[10] + 0x10);
+        puVar5 = (uint32_t *)pdVar22[10];
+        if (arg5 == 1) {
+            dVar10 = pdVar22[0xc];
+            pdVar22[-1] = 0.00000000;
+            func_0x08007e72(dVar10, 1, 0x100, "binary%d", 3);
+            pdVar22[-1] = 0.00000000;
+            dVar10 = (double)func_0x08007e72(dVar10, reloc..LC10);
+            pdVar22[5] = dVar10;
+            if (dVar10 == 0.00000000) {
+code_r0x08000819:
+                pdVar22[-1] = 0.00000000;
+                func_0x08007e72("Could not open output file\n", 1, 0x1b, _reloc.stderr);
+                uVar12 = 1;
+            } else {
+                pdVar22[-1] = 0.00000000;
+                dVar10 = (double)func_0x08007e72(0x1f, 4);
+                pdVar22[3] = dVar10;
+                pdVar22[-1] = 0.00000000;
+                dVar10 = (double)func_0x08007e72(0x1f, 4);
+                pdVar22[4] = dVar10;
+                pdVar22[-1] = 0.00000000;
+                puVar13 = (undefined8 *)func_0x08007e72(0x1f, 8);
+                puVar11 = puVar13;
+                do {
+                    puVar26 = puVar11 + 1;
+                    pdVar22[-1] = 0.00000000;
+                    uVar12 = func_0x08007e72(0x1f, 4);
+                    *puVar11 = uVar12;
+                    dVar10 = _reloc..LC12;
+                    puVar11 = puVar26;
+                } while (puVar13 + 0x1f != puVar26);
+                pfVar14 = (float *)pdVar22[4];
+                auVar39 = ZEXT416((uint32_t)_reloc..LC5);
+                auVar37 = ZEXT816((uint64_t)_reloc..LC12);
+                pfVar1 = pfVar14 + 0x1e;
+                fVar34 = _reloc..LC5;
+                while( true ) {
+                    dVar38 = (double)SUB164(auVar39, 0) + dVar10;
+                    *pfVar14 = fVar34;
+                    fVar34 = (float)dVar38;
+                    auVar39 = CONCAT124(SUB1612(CONCAT88(SUB168(auVar39 >> 0x40, 0), dVar38) >> 0x20, 0), fVar34);
+                    if (pfVar1 == pfVar14) break;
+                    if (0.00000000 < fVar34) {
+                        fVar34 = fVar34 + fVar34;
+                    }
+                    pfVar14 = pfVar14 + 1;
+                }
+                auVar39 = ZEXT416((uint32_t)_reloc..LC5);
+                iVar23 = 0;
+                fVar34 = _reloc..LC5;
+                while( true ) {
+                    puVar24 = (undefined4 *)puVar13[iVar23];
+                    pdVar22[2] = (double)SUB164(auVar39, 0);
+                    *(float *)((int64_t)pdVar22[3] + iVar23 * 4) = fVar34;
+                    puVar27 = puVar24;
+                    fVar34 = _reloc..LC5;
+                    do {
+                        pdVar22[1] = SUB168(auVar37, 0);
+                        puVar28 = puVar27 + 1;
+                        *pdVar22 = (double)fVar34;
+                        pdVar22[-1] = 0.00000000;
+                        sym.function.part.0(pdVar22[2], (double)fVar34, *(undefined *)(pdVar22 + -1));
+                        dVar10 = *pdVar22;
+                        dVar38 = pdVar22[1];
+                        auVar37 = ZEXT816((uint64_t)dVar38);
+                        *puVar27 = extraout_XMM0_Da;
+                        fVar34 = (float)(dVar10 + dVar38);
+                        puVar27 = puVar28;
+                    } while (puVar24 + 0x1f != puVar28);
+                    fVar34 = (float)(pdVar22[2] + dVar38);
+                    uVar8 = (uint64_t)(pdVar22[2] + dVar38) & 0xffffffff00000000 | (uint64_t)(uint32_t)fVar34;
+                    auVar39 = ZEXT816(uVar8);
+                    if (iVar23 == 0x1e) break;
+                    if (0.00000000 < fVar34) {
+                        fVar34 = fVar34 + fVar34;
+                    }
+                    iVar23 = iVar23 + 1;
+                }
+                dVar10 = pdVar22[4];
+                dVar38 = pdVar22[3];
+                pdVar22[-1] = 0.00000000;
+                func_0x08007e72(uVar8, pdVar22[5], puVar13, 0x1f, 0x1f, dVar38, dVar10);
+                pdVar22[-1] = 0.00000000;
+                func_0x08007e72(dVar38);
+                pdVar22[-1] = 0.00000000;
+                func_0x08007e72(dVar10);
+                puVar11 = puVar13;
+                do {
+                    uVar12 = *puVar11;
+                    puVar11 = puVar11 + 1;
+                    pdVar22[-1] = 0.00000000;
+                    func_0x08007e72(uVar12);
+                } while (puVar13 + 0x1f != puVar11);
+                pdVar22[-1] = 0.00000000;
+                func_0x08007e72(puVar13);
+                uVar12 = 0;
+            }
+            if (pdVar22[0x2f] == *(double *)(in_FS_OFFSET + 0x28)) {
+                return uVar12;
+            }
+            pdVar22[-1] = 0.00000000;
+            func_0x08007e72();
+    // WARNING: Bad instruction - Truncating control flow here
+            halt_baddata();
+        }
+        in_XMM2 = ZEXT416(puVar5[1]);
+        arg5 = 1;
+        auVar39 = ZEXT416(*puVar5);
+        in_XMM1_Qa = (uint64_t)puVar5[3];
+        *(uint32_t *)(pdVar22 + 5) = puVar5[2];
+    } while( true );
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+
+undefined8 sym.main(void)
+{
+    uint64_t uVar1;
+    float fVar2;
+    undefined4 *puVar3;
+    uint64_t uVar4;
+    int32_t iVar5;
+    int64_t iVar6;
+    int64_t iVar7;
+    float *pfVar8;
+    undefined8 *puVar9;
+    undefined8 uVar10;
+    undefined8 *puVar11;
+    float *pfVar12;
+    uint64_t uVar13;
+    int32_t iVar14;
+    int64_t iVar15;
+    int32_t iVar16;
+    float *pfVar17;
+    uint64_t uVar18;
+    undefined8 *puVar19;
+    undefined4 *puVar20;
+    undefined4 *puVar21;
+    int64_t in_FS_OFFSET;
+    bool bVar22;
+    float fVar23;
+    undefined4 extraout_XMM0_Da;
+    undefined extraout_XMM0 [16];
+    float fVar24;
+    float fVar25;
+    double dVar26;
+    double dVar27;
+    double dVar28;
+    undefined auVar29 [16];
+    undefined auVar30 [16];
+    uint64_t uStack432;
+    code *pcStack360;
+    undefined auStack328 [264];
+    int64_t iStack64;
+    
+    iVar14 = 0;
+    iStack64 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    pcStack360 = reloc..rodata;
+    fVar24 = _reloc..LC4;
+    fVar2 = _reloc..LC5;
+    fVar25 = _reloc..LC6;
+    fVar23 = _reloc..LC3;
+    do {
+        uVar18 = (uint64_t)(uint32_t)fVar2;
+        dVar28 = (double)(fVar25 - fVar2) * _reloc..LC7 + _reloc..LC8;
+        dVar26 = (double)(fVar24 - fVar23) * _reloc..LC7 + _reloc..LC8;
+        iVar5 = (int32_t)dVar28;
+        iVar16 = (int32_t)dVar26;
+        func_0x08007e72(fVar2, dVar26, dVar28, auStack328, 1, 0x100, "binary%d", iVar14 + 1);
+        iVar6 = func_0x08007e72(auStack328, reloc..LC10);
+        if (iVar6 == 0) {
+code_r0x08000819:
+            func_0x08007e72("Could not open output file\n", 1, 0x1b, _reloc.stderr);
+            uVar10 = 1;
+code_r0x080007f4:
+            if (iStack64 != *(int64_t *)(in_FS_OFFSET + 0x28)) {
+                func_0x08007e72();
+    // WARNING: Bad instruction - Truncating control flow here
+                halt_baddata();
+            }
+            return uVar10;
+        }
+        iVar7 = func_0x08007e72(uVar18, (int64_t)iVar5, 4);
+        pfVar8 = (float *)func_0x08007e72((int64_t)iVar16, 4);
+        puVar9 = (undefined8 *)func_0x08007e72((int64_t)iVar5, 8);
+        auVar30 = ZEXT416((uint32_t)fVar2);
+        if (iVar5 < 1) {
+            if (0 < iVar16) goto code_r0x080003ce;
+code_r0x08000846:
+            func_0x08007e72(uVar18, iVar6, puVar9, iVar5, iVar16, iVar7, pfVar8);
+            func_0x08007e72(iVar7);
+            func_0x08007e72(pfVar8);
+        } else {
+            puVar11 = puVar9;
+            do {
+                puVar19 = puVar11 + 1;
+                uVar10 = func_0x08007e72(SUB168(auVar30, 0), (int64_t)iVar16, 4);
+                auVar30 = auVar30 & (undefined  [16])0xffffffff;
+                *puVar11 = uVar10;
+                puVar11 = puVar19;
+            } while (puVar9 + (uint64_t)(iVar5 - 1) + 1 != puVar19);
+            uVar13 = (uint64_t)(iVar16 - 1);
+            dVar26 = _reloc..LC12;
+            if (0 < iVar16) {
+code_r0x080003ce:
+                dVar26 = _reloc..LC12;
+                uVar18 = SUB168(auVar30, 0);
+                uVar13 = (uint64_t)(iVar16 - 1);
+                pfVar12 = pfVar8;
+                fVar25 = fVar23;
+                do {
+                    *pfVar12 = fVar25;
+                    pfVar12 = pfVar12 + 1;
+                    fVar25 = (float)((double)fVar25 + _reloc..LC12);
+                } while (pfVar8 + uVar13 + 1 != pfVar12);
+                if (iVar5 < 1) goto code_r0x08000846;
+            }
+            uStack432 = (uint64_t)(iVar5 - 1);
+            auVar29 = ZEXT816((uint64_t)dVar26);
+            uVar18 = 0;
+            do {
+                dVar26 = (double)SUB164(auVar30, 0);
+                *(float *)(iVar7 + uVar18 * 4) = SUB164(auVar30, 0);
+                if (0 < iVar16) {
+                    pfVar17 = (float *)puVar9[uVar18];
+                    pfVar12 = pfVar17 + uVar13 + 1;
+                    fVar25 = fVar23;
+                    do {
+                        dVar27 = (double)fVar25;
+                        dVar28 = dVar27 * dVar27 + dVar26 * dVar26;
+                        if (iVar14 == 1) {
+                            func_0x08007e72(dVar28, dVar27, dVar28, SUB168(auVar29, 0));
+                            auVar29 = auVar29 & (undefined  [16])0xffffffffffffffff;
+                            dVar28 = SUB168(extraout_XMM0, 0) / dVar28;
+                            auVar30 = minss(ZEXT416(_reloc..LC0), 
+                                            CONCAT124(SUB1612(CONCAT88(SUB168(extraout_XMM0 >> 0x40, 0), dVar28) >> 0x20
+                                                              , 0), (float)dVar28));
+                            fVar25 = SUB164(auVar30, 0);
+                        } else {
+                            fVar25 = (float)(_reloc..LC8 / (_reloc..LC8 + dVar28));
+                        }
+                        *pfVar17 = fVar25;
+                        pfVar17 = pfVar17 + 1;
+                        fVar25 = (float)(dVar27 + SUB168(auVar29, 0));
+                    } while (pfVar17 != pfVar12);
+                }
+                uVar1 = uVar18 + 1;
+                dVar26 = dVar26 + SUB168(auVar29, 0);
+                uVar4 = (uint64_t)dVar26 & 0xffffffff00000000 | (uint64_t)(uint32_t)(float)dVar26;
+                auVar30 = ZEXT816(uVar4);
+                bVar22 = uStack432 != uVar18;
+                uVar18 = uVar1;
+            } while (bVar22);
+            func_0x08007e72(uVar4, iVar6, puVar9, iVar5, iVar16, iVar7, pfVar8);
+            func_0x08007e72(iVar7);
+            func_0x08007e72(pfVar8);
+            puVar11 = puVar9;
+            do {
+                uVar10 = *puVar11;
+                puVar11 = puVar11 + 1;
+                func_0x08007e72(uVar10);
+            } while (puVar9 + uVar1 != puVar11);
+        }
+        func_0x08007e72(puVar9);
+        if (iVar14 == 1) {
+            func_0x08007e72(auStack328, 1, 0x100, "binary%d", 3);
+            iVar6 = func_0x08007e72(auStack328, reloc..LC10);
+            if (iVar6 != 0) {
+                iVar7 = func_0x08007e72(0x1f, 4);
+                pfVar8 = (float *)func_0x08007e72(0x1f, 4);
+                puVar11 = (undefined8 *)func_0x08007e72(0x1f, 8);
+                puVar9 = puVar11;
+                do {
+                    puVar19 = puVar9 + 1;
+                    uVar10 = func_0x08007e72(0x1f, 4);
+                    *puVar9 = uVar10;
+                    dVar26 = _reloc..LC12;
+                    puVar9 = puVar19;
+                } while (puVar11 + 0x1f != puVar19);
+                auVar30 = ZEXT416((uint32_t)_reloc..LC5);
+                auVar29 = ZEXT816((uint64_t)_reloc..LC12);
+                pfVar12 = pfVar8;
+                fVar23 = _reloc..LC5;
+                while( true ) {
+                    dVar28 = (double)SUB164(auVar30, 0) + dVar26;
+                    *pfVar12 = fVar23;
+                    fVar23 = (float)dVar28;
+                    auVar30 = CONCAT124(SUB1612(CONCAT88(SUB168(auVar30 >> 0x40, 0), dVar28) >> 0x20, 0), fVar23);
+                    if (pfVar8 + 0x1e == pfVar12) break;
+                    if (0.00000000 < fVar23) {
+                        fVar23 = fVar23 + fVar23;
+                    }
+                    pfVar12 = pfVar12 + 1;
+                }
+                auVar30 = ZEXT416((uint32_t)_reloc..LC5);
+                iVar15 = 0;
+                fVar23 = _reloc..LC5;
+                while( true ) {
+                    puVar3 = (undefined4 *)puVar11[iVar15];
+                    *(float *)(iVar7 + iVar15 * 4) = fVar23;
+                    puVar20 = puVar3;
+                    fVar23 = _reloc..LC5;
+                    do {
+                        dVar26 = SUB168(auVar29, 0);
+                        puVar21 = puVar20 + 1;
+                        sym.function.part.0((int64_t)(double)SUB164(auVar30, 0), (int64_t)(double)fVar23);
+                        auVar29 = auVar29 & (undefined  [16])0xffffffffffffffff;
+                        *puVar20 = extraout_XMM0_Da;
+                        fVar23 = (float)((double)fVar23 + dVar26);
+                        puVar20 = puVar21;
+                    } while (puVar3 + 0x1f != puVar21);
+                    dVar26 = (double)SUB164(auVar30, 0) + dVar26;
+                    fVar23 = (float)dVar26;
+                    uVar18 = (uint64_t)dVar26 & 0xffffffff00000000 | (uint64_t)(uint32_t)fVar23;
+                    auVar30 = ZEXT816(uVar18);
+                    if (iVar15 == 0x1e) break;
+                    if (0.00000000 < fVar23) {
+                        fVar23 = fVar23 + fVar23;
+                    }
+                    iVar15 = iVar15 + 1;
+                }
+                func_0x08007e72(uVar18, iVar6, puVar11, 0x1f, 0x1f, iVar7, pfVar8);
+                func_0x08007e72(iVar7);
+                func_0x08007e72(pfVar8);
+                puVar9 = puVar11;
+                do {
+                    uVar10 = *puVar9;
+                    puVar9 = puVar9 + 1;
+                    func_0x08007e72(uVar10);
+                } while (puVar11 + 0x1f != puVar9);
+                func_0x08007e72(puVar11);
+                uVar10 = 0;
+                goto code_r0x080007f4;
+            }
+            goto code_r0x08000819;
+        }
+        fVar23 = *(float *)((int64_t)pcStack360 + 0x18);
+        fVar25 = *(float *)((int64_t)pcStack360 + 0x14);
+        iVar14 = 1;
+        fVar2 = *(float *)((int64_t)pcStack360 + 0x10);
+        fVar24 = *(float *)((int64_t)pcStack360 + 0x1c);
+        pcStack360 = (code *)(float *)((int64_t)pcStack360 + 0x10);
+    } while( true );
+}
+
+

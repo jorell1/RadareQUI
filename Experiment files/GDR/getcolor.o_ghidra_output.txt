@@ -1,0 +1,699 @@
+void sym.HSV_2_RGB(int64_t arg1)
+{
+    double dVar1;
+    double dVar2;
+    double dVar3;
+    double dVar4;
+    double dVar5;
+    double dVar6;
+    
+    // [01] -r-x section size 5923 named .text
+    dVar5 = *(double *)(arg1 + 8);
+    dVar1 = *(double *)(arg1 + 0x10);
+    if (dVar5 != _reloc..LC0) {
+        dVar4 = _reloc..LC1 * *(double *)arg1;
+        dVar3 = dVar4;
+        if ((double)((uint64_t)dVar4 & _reloc..LC3) < _reloc..LC2) {
+            _dVar3 = orpd(ZEXT816((uint64_t)
+                                  ((double)(int64_t)dVar4 -
+                                  (double)(-(uint64_t)(dVar4 < (double)(int64_t)dVar4) & (uint64_t)_reloc..LC4))), 
+                          ZEXT816(~_reloc..LC3 & (uint64_t)dVar4));
+            dVar3 = SUB168(_dVar3, 0);
+        }
+        dVar4 = dVar4 - (double)(int32_t)dVar3;
+        dVar2 = (_reloc..LC4 - dVar5) * dVar1;
+        dVar6 = (_reloc..LC4 - dVar5 * dVar4) * dVar1;
+        dVar5 = (_reloc..LC4 - dVar5 * (_reloc..LC4 - dVar4)) * dVar1;
+    // switch table (5 cases) at 0x8001764
+        switch((int32_t)dVar3 % 6) {
+        case 0:
+            *(double *)arg1 = dVar1;
+            *(double *)(arg1 + 8) = dVar5;
+            *(double *)(arg1 + 0x10) = dVar2;
+            return;
+        case 1:
+            *(double *)arg1 = dVar6;
+            *(double *)(arg1 + 8) = dVar1;
+            *(double *)(arg1 + 0x10) = dVar2;
+            return;
+        case 2:
+            *(double *)arg1 = dVar2;
+            *(double *)(arg1 + 8) = dVar1;
+            *(double *)(arg1 + 0x10) = dVar5;
+            return;
+        case 3:
+            *(double *)arg1 = dVar2;
+            *(double *)(arg1 + 8) = dVar6;
+            return;
+        case 4:
+            *(double *)arg1 = dVar5;
+            *(double *)(arg1 + 8) = dVar2;
+            return;
+        default:
+            *(double *)arg1 = dVar1;
+            *(double *)(arg1 + 8) = dVar2;
+            *(double *)(arg1 + 0x10) = dVar6;
+            return;
+        }
+    }
+    *(double *)(arg1 + 8) = dVar1;
+    *(double *)arg1 = dVar1;
+    return;
+}
+
+
+void sym.color_components_from_gray
+               (double placeholder_0, double placeholder_1, undefined8 placeholder_2, int64_t arg10, int64_t arg11,
+               double placeholder_5, double placeholder_6, undefined8 placeholder_7, int64_t arg1,
+               undefined8 placeholder_9, uint32_t arg3)
+{
+    uint32_t uVar1;
+    double *pdVar2;
+    int32_t iVar3;
+    uint32_t arg3_00;
+    uint64_t uVar4;
+    int64_t iVar5;
+    uint64_t extraout_RDX;
+    int32_t iVar6;
+    char *placeholder_9_00;
+    double *pdVar7;
+    int64_t in_FS_OFFSET;
+    double dVar8;
+    undefined8 extraout_XMM0_Qa;
+    undefined8 extraout_XMM0_Qa_00;
+    undefined8 extraout_XMM0_Qa_01;
+    undefined8 extraout_XMM0_Qa_02;
+    double extraout_XMM0_Qa_03;
+    undefined8 placeholder_0_00;
+    undefined8 in_XMM0_Qb;
+    undefined extraout_XMM0 [16];
+    undefined extraout_XMM0_00 [16];
+    undefined extraout_XMM0_01 [16];
+    double dVar9;
+    double dVar10;
+    undefined auVar11 [16];
+    double dVar12;
+    double dVar13;
+    double dVar14;
+    undefined auVar15 [16];
+    undefined8 in_XMM6_Qb;
+    undefined8 placeholder_7_00;
+    undefined auVar16 [16];
+    double dStack88;
+    double dStack72;
+    double dStack64;
+    undefined auStack56 [24];
+    int64_t iStack32;
+    
+    pdVar7 = _reloc.Gcomplex;
+    auVar15 = CONCAT88(in_XMM6_Qb, placeholder_6);
+    auVar16 = (undefined  [16])0x0;
+    placeholder_7_00 = 0;
+    auVar11 = (undefined  [16])0x0;
+    iStack32 = *(int64_t *)(in_FS_OFFSET + 0x28);
+    if (0.00000000 <= placeholder_0) {
+        auVar11 = minsd(ZEXT816((uint64_t)_reloc..LC4), CONCAT88(in_XMM0_Qb, placeholder_0));
+    }
+    dVar10 = SUB168(auVar11, 0);
+    if (*(uint32_t *)0x800e353 == 0x66) {
+        func_0x0800e347(dVar10, 0, dVar10, arg10, arg11, placeholder_5, placeholder_6, 0, reloc.free);
+        func_0x0800e347(_reloc.__stack_chk_fail, auStack56);
+        placeholder_7_00 = SUB168(auVar16, 0);
+        auVar11 = auVar11 & (undefined  [16])0xffffffffffffffff;
+        if (reloc.undefined != (code)0x0) {
+            pdVar7 = (double *)0xffffffff;
+            uVar1 = func_0x0800e347();
+            uVar4 = extraout_RDX;
+            goto code_r0x08001030;
+        }
+        func_0x0800e347(auStack56);
+        placeholder_5 = 0.00000000;
+        placeholder_6 = SUB168(extraout_XMM0, 0);
+        if (placeholder_6 < 0.00000000) {
+            dStack88 = 0.00000000;
+        } else {
+            auVar11 = minsd(ZEXT816((uint64_t)_reloc..LC4), extraout_XMM0);
+            dStack88 = SUB168(auVar11, 0);
+        }
+        placeholder_1 = 0.00000000;
+        func_0x0800e347(dVar10, 0, dVar10, 0x800e507);
+        func_0x0800e347(*(undefined8 *)0x800e4ef, auStack56);
+        if (reloc.undefined != (code)0x0) goto code_r0x080010b1;
+        func_0x0800e347(auStack56);
+        placeholder_5 = 0.00000000;
+        if (SUB168(extraout_XMM0_00, 0) < 0.00000000) {
+            arg10 = 0;
+        } else {
+            auVar11 = minsd(ZEXT816((uint64_t)_reloc..LC4), extraout_XMM0_00);
+            arg10 = (int64_t)SUB168(auVar11, 0);
+        }
+        placeholder_1 = 0.00000000;
+        func_0x0800e347(dVar10, 0, dVar10, arg10, 0x800e64f);
+        func_0x0800e347(*(undefined8 *)0x800e637, auStack56);
+        if (reloc.undefined == (code)0x0) {
+            func_0x0800e347();
+            placeholder_7_00 = 0;
+            if (SUB168(extraout_XMM0_01, 0) < 0.00000000) {
+                dVar12 = 0.00000000;
+            } else {
+                auVar11 = minsd(ZEXT816((uint64_t)_reloc..LC4), extraout_XMM0_01);
+                dVar12 = SUB168(auVar11, 0);
+                placeholder_1 = dVar12;
+            }
+            *(int64_t *)(arg1 + 8) = arg10;
+            *(double *)(arg1 + 0x10) = dVar12;
+            *(double *)arg1 = dStack88;
+            placeholder_6 = dStack88;
+            goto code_r0x08000bc0;
+        }
+    } else {
+        if (*(uint32_t *)0x800e353 < 0x67) {
+            if (*(uint32_t *)0x800e353 == 99) {
+                dVar12 = (*(double *)0x800e777 / _reloc..LC13 + *(double *)0x800e77f * dVar10) * _reloc..LC31;
+                if (*(double *)0x800e76f != _reloc..LC4) {
+                    func_0x0800e347(dVar10, _reloc..LC4 / *(double *)0x800e76f, dVar10, dVar12, arg11, _reloc..LC4, 
+                                    placeholder_6, 0);
+                    dVar10 = extraout_XMM0_Qa_03;
+                }
+                func_0x0800e347(dVar12, &dStack64, &dStack72);
+                placeholder_5 = _reloc..LC4;
+                auVar11 = ZEXT816((uint64_t)_reloc..LC4);
+                dVar12 = *(double *)0x800e787 * dVar10 * (_reloc..LC4 - dVar10) * _reloc..LC7;
+                dVar13 = (_reloc..LC32 * dStack72 + _reloc..LC33 * dStack64) * dVar12 + dVar10;
+                placeholder_1 = dStack72 * _reloc..LC36 * dVar12;
+                dVar12 = (_reloc..LC34 * dStack72 - dStack64 * _reloc..LC35) * dVar12 + dVar10;
+                if (dVar13 < 0.00000000) {
+                    arg11 = 0;
+                } else {
+                    auVar15 = minsd(ZEXT816((uint64_t)_reloc..LC4), ZEXT816((uint64_t)dVar13));
+                    arg11 = (int64_t)SUB168(auVar15, 0);
+                }
+                placeholder_7_00 = 0;
+                *(int64_t *)arg1 = arg11;
+                if (dVar12 < 0.00000000) {
+                    arg10 = 0;
+                } else {
+                    auVar15 = minsd(ZEXT816((uint64_t)placeholder_5), ZEXT816((uint64_t)dVar12));
+                    arg10 = (int64_t)SUB168(auVar15, 0);
+                    arg11 = arg10;
+                }
+                placeholder_6 = 0.00000000;
+                *(int64_t *)(arg1 + 8) = arg10;
+                if (dVar10 + placeholder_1 < 0.00000000) {
+                    dVar10 = 0.00000000;
+                } else {
+                    auVar11 = minsd(auVar11, ZEXT816((uint64_t)(dVar10 + placeholder_1)));
+                    dVar10 = SUB168(auVar11, 0);
+                    placeholder_5 = dVar10;
+                }
+                *(double *)(arg1 + 0x10) = dVar10;
+            } else {
+                if (*(uint32_t *)0x800e353 != 100) goto code_r0x08000c38;
+                placeholder_5 = 0.00000000;
+                if (dVar10 < 0.00000000) {
+                    *(double *)arg1 = _reloc.Gcomplex[1];
+                    *(double *)(arg1 + 8) = pdVar7[2];
+                    *(double *)(arg1 + 0x10) = pdVar7[3];
+                } else {
+                    if (_reloc..LC4 < dVar10) {
+                        pdVar7 = _reloc.Gcomplex + (int64_t)*(int32_t *)0x800e37b * 4 + -4;
+                        *(double *)arg1 = pdVar7[1];
+                        *(double *)(arg1 + 8) = pdVar7[2];
+                        *(double *)(arg1 + 0x10) = pdVar7[3];
+                    } else {
+                        if (*(int32_t *)0x800e37b < 2) {
+                            iVar5 = 0;
+                            pdVar2 = _reloc.Gcomplex;
+                            placeholder_7_00 = 0;
+                        } else {
+                            uVar4 = (uint64_t)(*(int32_t *)0x800e37b - 1);
+                            iVar6 = 0;
+                            while( true ) {
+                                dVar10 = SUB168(auVar11, 0);
+                                placeholder_6 = SUB168(auVar15, 0);
+                                iVar3 = (int32_t)uVar4;
+                                if (iVar3 == iVar6) break;
+                                uVar1 = (iVar3 + iVar6) / 2;
+                                if (pdVar7[(int64_t)(int32_t)uVar1 * 4] <= dVar10 &&
+                                    dVar10 != pdVar7[(int64_t)(int32_t)uVar1 * 4]) {
+code_r0x08001030:
+                                    iVar6 = uVar1 + 1;
+                                } else {
+                                    uVar4 = (uint64_t)uVar1;
+                                }
+                            }
+                            iVar5 = (int64_t)iVar3 * 0x20;
+                            pdVar2 = pdVar7 + (int64_t)iVar3 * 4;
+                            placeholder_7_00 = SUB168(auVar16, 0);
+                        }
+                        placeholder_5 = *pdVar2;
+                        arg11 = (int64_t)pdVar2[1];
+                        arg10 = (int64_t)pdVar2[2];
+                        placeholder_1 = pdVar2[3];
+                        if (dVar10 == placeholder_5) {
+                            *(int64_t *)arg1 = arg11;
+                            *(int64_t *)(arg1 + 8) = arg10;
+                            *(double *)(arg1 + 0x10) = placeholder_1;
+                        } else {
+                            pdVar7 = (double *)((int64_t)pdVar7 + iVar5 + -0x20);
+                            placeholder_5 = placeholder_5 - *pdVar7;
+                            dVar10 = (dVar10 - *pdVar7) / placeholder_5;
+                            arg11 = (int64_t)(((double)arg11 - pdVar7[1]) * dVar10 + pdVar7[1]);
+                            dVar12 = pdVar7[2];
+                            *(int64_t *)arg1 = arg11;
+                            arg10 = (int64_t)(((double)arg10 - dVar12) * dVar10 + dVar12);
+                            dVar12 = pdVar7[3];
+                            *(int64_t *)(arg1 + 8) = arg10;
+                            placeholder_1 = (placeholder_1 - dVar12) * dVar10 + dVar12;
+                            *(double *)(arg1 + 0x10) = placeholder_1;
+                        }
+                    }
+                }
+            }
+        } else {
+            if (*(uint32_t *)0x800e353 == 0x72) {
+                placeholder_7_00 = 0;
+                func_0x0800e347(dVar10, placeholder_1, dVar10, arg10, arg11, placeholder_5, placeholder_6, 0);
+                *(undefined8 *)arg1 = extraout_XMM0_Qa;
+                func_0x0800e347(dVar10);
+                *(undefined8 *)(arg1 + 8) = extraout_XMM0_Qa_00;
+                func_0x0800e347(dVar10);
+                *(undefined8 *)(arg1 + 0x10) = extraout_XMM0_Qa_01;
+            } else {
+code_r0x08000c38:
+                placeholder_1 = _reloc..LC4 / *(double *)0x800e76f;
+                placeholder_7_00 = 0;
+                func_0x0800e347(dVar10, placeholder_1, dVar10, arg10, arg11, placeholder_5, placeholder_6, 0);
+                *(undefined8 *)(arg1 + 0x10) = extraout_XMM0_Qa_02;
+                *(undefined8 *)(arg1 + 8) = extraout_XMM0_Qa_02;
+                *(undefined8 *)arg1 = extraout_XMM0_Qa_02;
+            }
+        }
+code_r0x08000bc0:
+        if (iStack32 == *(int64_t *)(in_FS_OFFSET + 0x28)) {
+            return;
+        }
+        func_0x0800e347();
+    }
+    func_0x0800e347(0xffffffff, "Undefined value third color during function evaluation");
+code_r0x080010b1:
+    placeholder_9_00 = "Undefined value second color during function evaluation";
+    pdVar7 = (double *)0xffffffff;
+    func_0x0800e347();
+    sym.color_components_from_gray
+              ((double)placeholder_0_00, placeholder_1, dVar10, arg10, arg11, placeholder_5, placeholder_6, 
+               placeholder_7_00, (int64_t)pdVar7, placeholder_9_00, arg3_00);
+    dVar10 = _reloc..LC4;
+    if (*(uint32_t *)0x800e353 != 0x67) {
+        if (_reloc.undefined == 99) {
+            auVar11 = ZEXT816((uint64_t)_reloc..LC4);
+            dVar12 = 0.00000000;
+            if (_reloc..LC4 - *pdVar7 < 0.00000000) {
+                dVar13 = 0.00000000;
+            } else {
+                auVar15 = minsd(ZEXT816((uint64_t)_reloc..LC4), ZEXT816((uint64_t)(_reloc..LC4 - *pdVar7)));
+                dVar13 = SUB168(auVar15, 0);
+            }
+            *pdVar7 = dVar13;
+            if (dVar10 - pdVar7[1] < 0.00000000) {
+                dVar13 = 0.00000000;
+            } else {
+                auVar15 = minsd(ZEXT816((uint64_t)dVar10), ZEXT816((uint64_t)(dVar10 - pdVar7[1])));
+                dVar13 = SUB168(auVar15, 0);
+            }
+            pdVar7[1] = dVar13;
+            if (0.00000000 <= dVar10 - pdVar7[2]) {
+                auVar11 = minsd(auVar11, ZEXT816((uint64_t)(dVar10 - pdVar7[2])));
+                dVar12 = SUB168(auVar11, 0);
+            }
+            pdVar7[2] = dVar12;
+            return;
+        }
+        if (_reloc.undefined == 0x68) {
+            dVar10 = pdVar7[1];
+            dVar12 = pdVar7[2];
+            if (dVar10 != _reloc..LC0) {
+                dVar9 = _reloc..LC1 * *pdVar7;
+                dVar13 = dVar9;
+                if ((double)((uint64_t)dVar9 & _reloc..LC3) < _reloc..LC2) {
+                    auVar11 = orpd(ZEXT816((uint64_t)
+                                           ((double)(int64_t)dVar9 -
+                                           (double)(-(uint64_t)(dVar9 < (double)(int64_t)dVar9) & (uint64_t)_reloc..LC4)
+                                           )), 
+                                   CONCAT88(0xffffffffffffffff, ~_reloc..LC3 & (uint64_t)dVar9) &
+                                   (undefined  [16])0xffffffffffffffff);
+                    dVar13 = SUB168(auVar11, 0);
+                }
+                dVar9 = dVar9 - (double)(int32_t)dVar13;
+                dVar8 = (_reloc..LC4 - dVar10) * dVar12;
+                dVar14 = (_reloc..LC4 - dVar10 * dVar9) * dVar12;
+                dVar10 = (_reloc..LC4 - dVar10 * (_reloc..LC4 - dVar9)) * dVar12;
+                switch((int32_t)dVar13 % 6) {
+                case 0:
+                    *pdVar7 = dVar12;
+                    pdVar7[1] = dVar10;
+                    pdVar7[2] = dVar8;
+                    return;
+                case 1:
+                    *pdVar7 = dVar14;
+                    pdVar7[1] = dVar12;
+                    pdVar7[2] = dVar8;
+                    return;
+                case 2:
+                    *pdVar7 = dVar8;
+                    pdVar7[1] = dVar12;
+                    pdVar7[2] = dVar10;
+                    return;
+                case 3:
+                    *pdVar7 = dVar8;
+                    pdVar7[1] = dVar14;
+                    return;
+                case 4:
+                    *pdVar7 = dVar10;
+                    pdVar7[1] = dVar8;
+                    return;
+                default:
+                    *pdVar7 = dVar12;
+                    pdVar7[1] = dVar8;
+                    pdVar7[2] = dVar14;
+                    return;
+                }
+            }
+            pdVar7[1] = dVar12;
+            *pdVar7 = dVar12;
+            return;
+        }
+    }
+    return;
+}
+
+
+bool sym.palettes_differ(uint32_t arg1, uint32_t arg2)
+{
+    double *pdVar1;
+    int32_t iVar2;
+    double *pdVar3;
+    double *pdVar4;
+    undefined4 in_RSI;
+    int32_t *piVar5;
+    undefined4 in_RDI;
+    int32_t *piVar6;
+    bool bVar7;
+    
+    piVar6 = (int32_t *)CONCAT44(in_RDI, arg1);
+    piVar5 = (int32_t *)CONCAT44(in_RSI, arg2);
+    bVar7 = true;
+    if ((((piVar6[1] == piVar5[1]) && (*(char *)(piVar6 + 5) == *(char *)(piVar5 + 5))) &&
+        (piVar6[0x10] == piVar5[0x10])) && (piVar6[6] == piVar5[6])) {
+    // switch table (16 cases) at 0x8001778
+        switch(piVar6[1]) {
+        case 99:
+            return true;
+        case 100:
+            iVar2 = piVar6[0xb];
+            if (iVar2 != piVar5[0xb]) {
+                return true;
+            }
+            if (0 < iVar2) {
+                pdVar3 = *(double **)(piVar6 + 0xc);
+                pdVar4 = *(double **)(piVar5 + 0xc);
+                pdVar1 = pdVar3 + (uint64_t)(iVar2 - 1) * 4 + 4;
+                do {
+                    if (*pdVar3 != *pdVar4) {
+                        return true;
+                    }
+                    if (pdVar3[1] != pdVar4[1]) {
+                        return true;
+                    }
+                    if (pdVar3[2] != pdVar4[2]) {
+                        return true;
+                    }
+                    if (pdVar3[3] != pdVar4[3]) {
+                        return true;
+                    }
+                    pdVar3 = pdVar3 + 4;
+                    pdVar4 = pdVar4 + 4;
+                } while (pdVar3 != pdVar1);
+            }
+        default:
+            return false;
+        case 0x66:
+            bVar7 = true;
+            iVar2 = func_0x0800e347(*(undefined8 *)(piVar6 + 0x18), *(undefined8 *)(piVar5 + 0x18));
+            if ((iVar2 == 0) &&
+               (iVar2 = func_0x0800e347(*(undefined8 *)(piVar6 + 0x6a), *(undefined8 *)(piVar5 + 0x6a)), iVar2 == 0)) {
+                iVar2 = func_0x0800e347(*(undefined8 *)(piVar6 + 0xbc), *(undefined8 *)(piVar5 + 0xbc));
+                bVar7 = iVar2 != 0;
+            }
+            break;
+        case 0x67:
+            bVar7 = _reloc..LC5 <
+                    (double)((uint64_t)(*(double *)(piVar6 + 0x108) - *(double *)(piVar5 + 0x108)) & _reloc..LC3);
+            break;
+        case 0x72:
+            bVar7 = true;
+            if (((*piVar6 == *piVar5) && (piVar6[2] == piVar5[2])) && (piVar6[3] == piVar5[3])) {
+                bVar7 = piVar6[4] != piVar5[4];
+            }
+        }
+    }
+    return bVar7;
+}
+
+
+// WARNING: [r2ghidra] Var arg_8h is stack pointer based, which is not supported for decompilation.
+// WARNING: [r2ghidra] Var arg_10h is stack pointer based, which is not supported for decompilation.
+// WARNING: [r2ghidra] Var arg_18h is stack pointer based, which is not supported for decompilation.
+
+void sym.rgb255_from_rgb1(int64_t arg1)
+{
+    double dVar1;
+    double dVar2;
+    double dVar3;
+    double in_stack_00000008;
+    double in_stack_00000010;
+    double in_stack_00000018;
+    
+    dVar1 = _reloc..LC7;
+    dVar3 = in_stack_00000010 * _reloc..LC6;
+    dVar2 = _reloc..LC6 * in_stack_00000018;
+    *(char *)arg1 = (char)(int32_t)(in_stack_00000008 * _reloc..LC6 + _reloc..LC7);
+    *(char *)(arg1 + 1) = (char)(int32_t)(dVar3 + dVar1);
+    *(char *)(arg1 + 2) = (char)(int32_t)(dVar2 + dVar1);
+    return;
+}
+
+
+void sym.quantize_gray(int64_t arg7)
+{
+    double *pdVar1;
+    undefined auVar2 [16];
+    double dVar3;
+    
+    dVar3 = (double)_reloc.sqrt * (double)arg7;
+    if ((double)((uint64_t)dVar3 & _reloc..LC3) < _reloc..LC2) {
+        auVar2 = orpd(ZEXT816((uint64_t)
+                              ((double)(int64_t)dVar3 -
+                              (double)(-(uint64_t)(dVar3 < (double)(int64_t)dVar3) & (uint64_t)_reloc..LC4))), 
+                      ZEXT816(~_reloc..LC3 & (uint64_t)dVar3));
+        dVar3 = SUB168(auVar2, 0);
+    }
+    if (((*(int32_t *)0x800e353 == 100) &&
+        (((dVar3 / (double)(_reloc.sqrt + -1) != 0.00000000 || (2 < *(int32_t *)0x800e37b)) &&
+         (dVar3 = _reloc..LC4 / (double)_reloc.sqrt, _reloc.evaluate_at <= dVar3)))) && (0 < *(int32_t *)0x800e37b)) {
+        pdVar1 = _reloc.Gcomplex;
+        while (((double)arg7 < *pdVar1 || (pdVar1[4] <= (double)arg7))) {
+            pdVar1 = pdVar1 + 4;
+            if (pdVar1 == _reloc.Gcomplex + (uint64_t)(*(int32_t *)0x800e37b - 1) * 4 + 4) {
+                return;
+            }
+        }
+        if (pdVar1[4] - *pdVar1 < dVar3) {
+            return;
+        }
+    }
+    return;
+}
+
+
+// WARNING: [r2ghidra] Var arg_8h is stack pointer based, which is not supported for decompilation.
+
+double sym.GetColorValueFromFormula(uint32_t arg1)
+{
+    bool bVar1;
+    double in_XMM0_Qa;
+    double dVar2;
+    uint64_t uVar3;
+    undefined8 in_XMM0_Qb;
+    undefined auVar4 [16];
+    
+    if ((int32_t)arg1 < 0) {
+        arg1 = -arg1;
+        in_XMM0_Qa = _reloc..LC4 - in_XMM0_Qa;
+        in_XMM0_Qb = 0;
+    }
+    // switch table (37 cases) at 0x80017b8
+    switch(arg1) {
+    case 0:
+        return 0.00000000;
+    case 1:
+        return _reloc..LC7;
+    case 2:
+        return _reloc..LC4;
+    case 3:
+        break;
+    case 5:
+        in_XMM0_Qa = in_XMM0_Qa * in_XMM0_Qa * in_XMM0_Qa;
+        break;
+    case 6:
+        in_XMM0_Qa = in_XMM0_Qa * in_XMM0_Qa * in_XMM0_Qa * in_XMM0_Qa;
+        break;
+    case 7:
+        auVar4 = sqrtsd(CONCAT88(in_XMM0_Qb, in_XMM0_Qa), CONCAT88(in_XMM0_Qb, in_XMM0_Qa));
+        bVar1 = in_XMM0_Qa < 0.00000000;
+        in_XMM0_Qa = SUB168(auVar4, 0);
+        if (bVar1) {
+            func_0x0800e347();
+        }
+        break;
+    case 8:
+        auVar4 = sqrtsd(CONCAT88(in_XMM0_Qb, in_XMM0_Qa), CONCAT88(in_XMM0_Qb, in_XMM0_Qa));
+        if (in_XMM0_Qa < 0.00000000) {
+            func_0x0800e347();
+            auVar4 = auVar4 & (undefined  [16])0xffffffffffffffff;
+        }
+        dVar2 = SUB168(auVar4, 0);
+        auVar4 = sqrtsd(auVar4, auVar4);
+        in_XMM0_Qa = SUB168(auVar4, 0);
+        if (dVar2 < 0.00000000) {
+            func_0x0800e347(dVar2, in_XMM0_Qa, 0, dVar2);
+        }
+        break;
+    case 9:
+        in_XMM0_Qa = (double)func_0x0800e347(in_XMM0_Qa * _reloc..LC8 * _reloc..LC9);
+        break;
+    case 10:
+        in_XMM0_Qa = (double)func_0x0800e347(in_XMM0_Qa * _reloc..LC8 * _reloc..LC9);
+        break;
+    case 0xc:
+        in_XMM0_Qa = (in_XMM0_Qa + in_XMM0_Qa) - _reloc..LC4;
+    case 4:
+        in_XMM0_Qa = in_XMM0_Qa * in_XMM0_Qa;
+        break;
+    case 0xd:
+        in_XMM0_Qa = (double)func_0x0800e347(in_XMM0_Qa * _reloc..LC10 * _reloc..LC9);
+        break;
+    case 0xe:
+        dVar2 = in_XMM0_Qa * _reloc..LC10;
+        goto code_r0x08000748;
+    case 0xf:
+        in_XMM0_Qa = (double)func_0x0800e347(in_XMM0_Qa * _reloc..LC11 * _reloc..LC9);
+        break;
+    case 0x10:
+        in_XMM0_Qa = (double)func_0x0800e347(in_XMM0_Qa * _reloc..LC11 * _reloc..LC9);
+        break;
+    case 0x11:
+        dVar2 = in_XMM0_Qa * _reloc..LC11;
+        goto code_r0x08000778;
+    case 0x12:
+        dVar2 = in_XMM0_Qa * _reloc..LC11;
+        goto code_r0x08000748;
+    case 0x13:
+        dVar2 = in_XMM0_Qa * _reloc..LC12;
+code_r0x08000778:
+        uVar3 = func_0x0800e347(dVar2 * _reloc..LC9);
+        in_XMM0_Qa = (double)(uVar3 & _reloc..LC3);
+        break;
+    case 0x14:
+        dVar2 = in_XMM0_Qa * _reloc..LC12;
+code_r0x08000748:
+        uVar3 = func_0x0800e347(dVar2 * _reloc..LC9);
+        in_XMM0_Qa = (double)(uVar3 & _reloc..LC3);
+        break;
+    case 0x15:
+        in_XMM0_Qa = _reloc..LC13 * in_XMM0_Qa;
+        break;
+    case 0x16:
+        in_XMM0_Qa = in_XMM0_Qa * _reloc..LC13 - _reloc..LC4;
+        break;
+    case 0x17:
+        in_XMM0_Qa = in_XMM0_Qa * _reloc..LC13 - _reloc..LC14;
+        break;
+    case 0x18:
+        in_XMM0_Qa = (double)((uint64_t)(in_XMM0_Qa * _reloc..LC13 - _reloc..LC4) & _reloc..LC3);
+        break;
+    case 0x19:
+        in_XMM0_Qa = (double)((uint64_t)(in_XMM0_Qa * _reloc..LC13 - _reloc..LC14) & _reloc..LC3);
+        break;
+    case 0x1a:
+        in_XMM0_Qa = in_XMM0_Qa * _reloc..LC15 - _reloc..LC7;
+        break;
+    case 0x1b:
+        in_XMM0_Qa = in_XMM0_Qa * _reloc..LC15 - _reloc..LC4;
+        break;
+    case 0x1c:
+        in_XMM0_Qa = in_XMM0_Qa * _reloc..LC15;
+    case 0xb:
+        in_XMM0_Qa = (double)((uint64_t)(in_XMM0_Qa - _reloc..LC7) & _reloc..LC3);
+        break;
+    case 0x1d:
+        in_XMM0_Qa = (double)((uint64_t)(in_XMM0_Qa * _reloc..LC15 - _reloc..LC4) & _reloc..LC3);
+        break;
+    case 0x1e:
+        if (in_XMM0_Qa <= _reloc..LC16) {
+            return 0.00000000;
+        }
+        if (_reloc..LC17 <= in_XMM0_Qa) {
+            return _reloc..LC4;
+        }
+        in_XMM0_Qa = in_XMM0_Qa / _reloc..LC18 - _reloc..LC19;
+        break;
+    case 0x1f:
+        if (in_XMM0_Qa <= _reloc..LC20) {
+            return 0.00000000;
+        }
+        if (_reloc..LC21 <= in_XMM0_Qa) {
+            return _reloc..LC4;
+        }
+        in_XMM0_Qa = (in_XMM0_Qa + in_XMM0_Qa) - _reloc..LC22;
+        break;
+    case 0x20:
+        if (_reloc..LC20 < in_XMM0_Qa) {
+            if (_reloc..LC21 < in_XMM0_Qa) {
+                in_XMM0_Qa = in_XMM0_Qa / _reloc..LC26 - _reloc..LC27;
+            } else {
+                in_XMM0_Qa = _str.q_____p + in_XMM0_Qa * _reloc..LC24;
+            }
+        } else {
+            in_XMM0_Qa = _reloc..LC23 * in_XMM0_Qa;
+        }
+        break;
+    case 0x21:
+        in_XMM0_Qa = (double)((uint64_t)((in_XMM0_Qa + in_XMM0_Qa) - _reloc..LC7) & _reloc..LC3);
+        break;
+    case 0x22:
+        in_XMM0_Qa = in_XMM0_Qa + in_XMM0_Qa;
+        break;
+    case 0x23:
+        in_XMM0_Qa = (in_XMM0_Qa + in_XMM0_Qa) - _reloc..LC7;
+        break;
+    case 0x24:
+        in_XMM0_Qa = (in_XMM0_Qa + in_XMM0_Qa) - _reloc..LC4;
+        break;
+    default:
+        return 0.00000000;
+    }
+    dVar2 = 0.00000000;
+    if ((0.00000000 < in_XMM0_Qa) && (dVar2 = _reloc..LC4, in_XMM0_Qa < _reloc..LC4)) {
+        return in_XMM0_Qa;
+    }
+    return dVar2;
+}
+
+
+@ pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.r pdg @ sym.r pdg @ sym.rg pdg @ sym.rg pdg @ sym.rgb pdg @ sym.rgb pdg @ sym.rgb1 pdg @ sym.rgb1 pdg @ sym.rgb1m pdg @ sym.rgb1m pdg @ sym.rgb1ma pdg @ sym.rgb1ma pdg @ sym.rgb1max pdg @ sym.rgb1max pdg @ sym.rgb1maxc pdg @ sym.rgb1maxc pdg @ sym.rgb1maxco pdg @ sym.rgb1maxco pdg @ sym.rgb1maxcol pdg @ sym.rgb1maxcol pdg @ sym.rgb1maxcolo pdg @ sym.rgb1maxcolo pdg @ sym.rgb1maxcolor pdg @ sym.rgb1maxcolor pdg @ sym.rgb1maxcolors pdg @ sym.rgb1maxcolors pdg @ sym.rgb1maxcolors_ pdg @ sym.rgb1maxcolors_ pdg @ sym.rgb1maxcolors_f pdg @ sym.rgb1maxcolors_f pdg @ sym.rgb1maxcolors_fr pdg @ sym.rgb1maxcolors_fr pdg @ sym.rgb1maxcolors_fro pdg @ sym.rgb1maxcolors_fro pdg @ sym.rgb1maxcolors_from pdg @ sym.rgb1maxcolors_from pdg @ sym.rgb1maxcolors_from_ pdg @ sym.rgb1maxcolors_from_ pdg @ sym.rgb1maxcolors_from_g pdg @ sym.rgb1maxcolors_from_g pdg @ sym.rgb1maxcolors_from_gr pdg @ sym.rgb1maxcolors_from_gr pdg @ sym.rgb1maxcolors_from_gra pdg @ sym.rgb1maxcolors_from_gra pdg @ sym.rgb1maxcolors_from_gray pdg @ sym.rgb1maxcolors_from_grayGhidra Decompiler Error: Deleting integrated varnode
+
+
+pdg @ pdg @  pdg @  pdg @ s pdg @ s pdg @ sy pdg @ sy pdg @ sym pdg @ sym pdg @ sym. pdg @ sym. pdg @ sym.r pdg @ sym.r pdg @ sym.rg pdg @ sym.rg pdg @ sym.rgb pdg @ sym.rgb pdg @ sym.rgb2 pdg @ sym.rgb2 pdg @ sym.rgb25 pdg @ sym.rgb25 pdg @ sym.rgb255 pdg @ sym.rgb255 pdg @ sym.rgb255m pdg @ sym.rgb255m pdg @ sym.rgb255ma pdg @ sym.rgb255ma pdg @ sym.rgb255max pdg @ sym.rgb255max pdg @ sym.rgb255maxc pdg @ sym.rgb255maxc pdg @ sym.rgb255maxco pdg @ sym.rgb255maxco pdg @ sym.rgb255maxcol pdg @ sym.rgb255maxcol pdg @ sym.rgb255maxcolo pdg @ sym.rgb255maxcolo pdg @ sym.rgb255maxcolor pdg @ sym.rgb255maxcolor pdg @ sym.rgb255maxcolors pdg @ sym.rgb255maxcolors pdg @ sym.rgb255maxcolors_ pdg @ sym.rgb255maxcolors_ pdg @ sym.rgb255maxcolors_f pdg @ sym.rgb255maxcolors_f pdg @ sym.rgb255maxcolors_fr pdg @ sym.rgb255maxcolors_fr pdg @ sym.rgb255maxcolors_fro pdg @ sym.rgb255maxcolors_fro pdg @ sym.rgb255maxcolors_from pdg @ sym.rgb255maxcolors_from pdg @ sym.rgb255maxcolors_from_ pdg @ sym.rgb255maxcolors_from_ pdg @ sym.rgb255maxcolors_from_g pdg @ sym.rgb255maxcolors_from_g pdg @ sym.rgb255maxcolors_from_gr pdg @ sym.rgb255maxcolors_from_gr pdg @ sym.rgb255maxcolors_from_gra pdg @ sym.rgb255maxcolors_from_gra pdg @ sym.rgb255maxcolors_from_gray pdg @ sym.rgb255maxcolors_from_grayGhidra Decompiler Error: Deleting integrated varnode
+
+
