@@ -92,7 +92,7 @@ def main(args):
             file = file.replace(".c", ".o")
 
             ghidra_file = join(GHIDRA_PATH, GHIDRA_NAME.format(file))
-            r2dec_file = join(GHIDRA_PATH, R2DEC_NAME.format(file))
+            r2dec_file = join(R2DEC_PATH, R2DEC_NAME.format(file))
 
             src_ghidra_lev_scores.append(get_lev_distance(src_file, ghidra_file))
             src_r2_lev_scores.append(get_lev_distance(src_file, r2dec_file))
