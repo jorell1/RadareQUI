@@ -3,6 +3,8 @@ import glob
 import argparse
 import matplotlib.pyplot as plt
 import numpy as np
+import pdb
+import glob
 
 from os import listdir
 from os.path import isfile, join
@@ -28,7 +30,9 @@ def get_args():
 
 
 def get_lzjd_digest(path):
-    return digest(path)
+    pdb.set_trace()
+    li = glob.glob(join(path, "*.*"))
+    return digest(li)
 
 
 def get_lzjd_sim(src_hash, decompiled_hash):
@@ -39,7 +43,9 @@ def get_lev_distance(src, decompiled):
     lev_score = -1
     with open(src, 'r') as original:
         with open(decompiled, 'r') as dec_output:
-            lev_score = distance(original, dec_output)
+            sf = original.read()
+            df = dec_output.read()
+            lev_score = distance(sf, df)
     return lev_score
 
 
@@ -53,20 +59,15 @@ def main(args):
     global SRC
     SRC = args.srcpath
 
-    src_files = [exe for exe in listdir(args.srcpath) if (isfile(join(args.srcpath, exe)) and '.c' in exe)]
+    #src_files = [exe for exe in listdir(args.srcpath) if (isfile(join(args.srcpath, exe)) and '.c' in exe)]
     #ghidra_files = [exe for exe in listdir(GHIDRA_PATH) if (isfile(join(GHIDRA_PATH, exe)) and 'ghidra' in exe)]
     #r2dec_files = [exe for exe in listdir(R2DEC_PATH) if (isfile(join(R2DEC_PATH, exe)) and 'r2dec' in exe)]
 
-    import pdb
-    pdb.set_trace()
 
     # get the LZJD Digest values for all files
     src_hashes = get_lzjd_digest(SRC)
     ghidra_hashes = get_lzjd_digest(GHIDRA_PATH)
     r2dec_hashes = get_lzjd_digest(R2DEC_PATH)
-
-    if len(src_hashes) != len(ghidra_hashes) or len(src_hashes) != len(r2dec_hashes) :
-        raise Exception
 
     # empty scores
     src_ghidra_lzjd_scores = []
@@ -78,6 +79,7 @@ def main(args):
     ghidra_r2_lev_scores = []
 
     for i in range(TOTAL_FILES):
+
         src_ghidra_lzjd_scores.append(get_lzjd_sim(src_hashes[i], ghidra_hashes[i]))
         src_r2_lzjd_scores.append(get_lzjd_sim(src_hashes[i], r2dec_hashes[i]))
         ghidra_r2_lzjd_scores.append(get_lzjd_sim(ghidra_hashes[i], r2dec_hashes[i]))
@@ -87,16 +89,20 @@ def main(args):
             src_file = join(SRC, file)
 
             # remove the extension
-            file.replace(".c", "")
+            file = file.replace(".c", ".o")
 
             ghidra_file = join(GHIDRA_PATH, GHIDRA_NAME.format(file))
             r2dec_file = join(GHIDRA_PATH, R2DEC_NAME.format(file))
 
+            src_ghidra_lev_scores.append(get_lev_distance(src_file, ghidra_file))
+            src_r2_lev_scores.append(get_lev_distance(src_file, r2dec_file))
+            ghidra_r2_lev_scores.append(get_lev_distance(ghidra_file, r2dec_file))
 
+    for i in TOTAL_FILES:
+        print("For file {} LZJD Ghidra:{} R2:{} both:{}".format(i, src_ghidra_lzjd_scores[i],
+                                                                src_r2_lzjd_scores[i],
+                                                                ghidra_r2_lzjd_scores[i]))
 
-
-
-        get_lev_distance()
     print("done")
 
 
