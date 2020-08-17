@@ -76,15 +76,25 @@ def main(args):
     src_ghidra_lev_scores = []
     src_r2_lev_scores = []
     ghidra_r2_lev_scores = []
-
+    gidra_doms =0
     for i in range(TOTAL_FILES):
 
         src_ghidra_lzjd_scores.append(get_lzjd_sim(src_hashes[i], ghidra_hashes[i]))
         src_r2_lzjd_scores.append(get_lzjd_sim(src_hashes[i], r2dec_hashes[i]))
         ghidra_r2_lzjd_scores.append(get_lzjd_sim(ghidra_hashes[i], r2dec_hashes[i]))
+    for i in range(TOTAL_FILES):
+        print("For file {} LZJD Ghidra:{} R2:{} DIFF:{} both:{}".format(i, src_ghidra_lzjd_scores[i],
+                                                                        src_r2_lzjd_scores[i],
+                                                                        src_ghidra_lzjd_scores[i] - src_r2_lzjd_scores[
+                                                                            i],
+                                                                        ghidra_r2_lzjd_scores[i]))
 
-    """
+        if src_ghidra_lzjd_scores[i] - src_r2_lzjd_scores[i] >= 0:
+            gidra_doms += 1
+    print("Ghidra dominates on {} files".format(gidra_doms))
+
     for file in listdir(SRC):
+
         if isfile(join(SRC, file)):
             src_file = join(SRC, file)
 
@@ -97,12 +107,8 @@ def main(args):
             src_ghidra_lev_scores.append(get_lev_distance(src_file, ghidra_file))
             src_r2_lev_scores.append(get_lev_distance(src_file, r2dec_file))
             ghidra_r2_lev_scores.append(get_lev_distance(ghidra_file, r2dec_file))
-    """
 
-    for i in range(TOTAL_FILES):
-        print("For file {} LZJD Ghidra:{} R2:{} both:{}".format(i, src_ghidra_lzjd_scores[i],
-                                                                src_r2_lzjd_scores[i],
-                                                                ghidra_r2_lzjd_scores[i]))
+
 
     print("done")
 
