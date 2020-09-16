@@ -35,7 +35,8 @@ FILE_SCORES_LEV = {}
 def get_args():
     parser = argparse.ArgumentParser(description="Analytics using LZJD on files")
     parser.add_argument('srcpath', help='Path to the folder containing the source files')
-    parser.add_argument('ghidra_decompiled_path', help='Path to the folder containing the ghidra decompiled output files')
+    parser.add_argument('ghidra_decompiled_path', help='Path to the folder containing the ghidra decompiled output '
+                                                       'files')
     parser.add_argument('r2dec_decompiled_path', help='Path to the folder containing the r2dec decompiled output files')
     parser.add_argument('-l', '--levenshtein', action='store_true', default='store_false', dest='show_lev',
                         help='Run Levenshtein Distance calculations')
@@ -49,7 +50,7 @@ def get_lzjd_digest(path):
 
 
 def get_lzjd_sim(src_hash, decompiled_hash):
-    return sim(src_hash, decompiled_hash)
+    return 1 - sim(src_hash, decompiled_hash)
 
 
 def get_lev_distance(src, decompiled):
@@ -80,30 +81,29 @@ def main(args):
 
     show_lev = args.show_lev
 
-    for f in listdir(SRC):
-        if isfile(join(SRC, f)):
-            global DIGESTS
-            DIGESTS[f] = {'src': None, 'r2': None, 'ghidra': None}
-
-            # calculate digest of file
-            DIGESTS[f]['src'] = digest(join(SRC, f))
-            f = f.replace(".c", ".o")
-            DIGESTS[f]['ghidra'] = digest(join(GHIDRA_PATH, GHIDRA_NAME.format(f)))
-            DIGESTS[f]['r2'] = digest(join(R2DEC_PATH, R2DEC_NAME.format(f)))
+    # for f in listdir(SRC):
+    #     if isfile(join(SRC, f)):
+    #         global DIGESTS
+    #         DIGESTS[f] = {'src': None, 'r2': None, 'ghidra': None}
+    #
+    #         # calculate digest of file
+    #         DIGESTS[f]['src'] = digest(join(SRC, f))
+    #         f = f.replace(".c", ".o")
+    #         DIGESTS[f]['ghidra'] = digest(join(GHIDRA_PATH, GHIDRA_NAME.format(f)))
+    #         DIGESTS[f]['r2'] = digest(join(R2DEC_PATH, R2DEC_NAME.format(f)))
 
     global TOTAL_FILES
-    TOTAL_FILES = len(DIGESTS)
+    #TOTAL_FILES = len(DIGESTS)
 
     # get the LZJD Digest values for all files
-    #
-    # src_hashes = get_lzjd_digest(SRC)
-    # ghidra_hashes = get_lzjd_digest(GHIDRA_PATH)
-    # r2dec_hashes = get_lzjd_digest(R2DEC_PATH)
+    src_hashes = get_lzjd_digest(SRC)
+    ghidra_hashes = get_lzjd_digest(GHIDRA_PATH)
+    r2dec_hashes = get_lzjd_digest(R2DEC_PATH)
 
     # empty scores
-    # src_ghidra_lzjd_scores = []
-    # src_r2_lzjd_scores = []
-    # ghidra_r2_lzjd_scores = []
+    src_ghidra_lzjd_scores = []
+    src_r2_lzjd_scores = []
+    ghidra_r2_lzjd_scores = []
 
     src_ghidra_lev_scores = []
     src_r2_lev_scores = []
@@ -111,10 +111,10 @@ def main(args):
 
     gidra_doms = 0
 
-    # for i in range(TOTAL_FILES):
-    #     src_ghidra_lzjd_scores.append(get_lzjd_sim(src_hashes[i], ghidra_hashes[i]))
-    #     src_r2_lzjd_scores.append(get_lzjd_sim(src_hashes[i], r2dec_hashes[i]))
-    #     ghidra_r2_lzjd_scores.append(get_lzjd_sim(ghidra_hashes[i], r2dec_hashes[i]))
+    for i in range(len):
+        src_ghidra_lzjd_scores.append(get_lzjd_sim(src_hashes[i], ghidra_hashes[i]))
+        src_r2_lzjd_scores.append(get_lzjd_sim(src_hashes[i], r2dec_hashes[i]))
+        ghidra_r2_lzjd_scores.append(get_lzjd_sim(ghidra_hashes[i], r2dec_hashes[i]))
 
     for i in range(TOTAL_FILES):
         print("For file {} LZJD Ghidra:{} R2:{} DIFF:{} both:{}".format(i, src_ghidra_lzjd_scores[i],
