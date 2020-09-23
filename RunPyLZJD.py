@@ -4,7 +4,7 @@ import argparse
 import matplotlib.pyplot as plt
 import numpy as np
 import pdb
-import glob
+import glob, math
 
 from os import listdir
 from os.path import isfile, join
@@ -27,6 +27,7 @@ TOTAL_FILES = 51
 #                 'src_r2': []  # src-r2 lzjd values
 #                 'ghidra_r2': []}  # ghidra-r2 lzjd values }
 DIGESTS = {}
+SCORES = {}
 
 # Structures to hold the file values in the form:
 #   {'file_name': {'src_ghidra': []} # src-ghidra LEV values
@@ -69,9 +70,16 @@ def get_lev_distance(src, decompiled):
     return lev_score
 
 
-def prepare_plot():
-    figure, ax = plt.subplots()
-    ax.plot()
+def plot_boxplt(data, title):
+    fig, ax1 = plt.subplots()
+    ax1.set_title(title)
+    ax1.boxplot(data)
+    plt.show()
+
+
+def plot_hist(data):
+    plt.hist(data, bins=math.ceil( math.sqrt(len(data)) ))
+    plt.show()
 
 
 def main(args):
@@ -86,76 +94,73 @@ def main(args):
     SRC = args.srcpath
 
     show_lev = args.show_lev
+    baseline = args.show_lev
 
-    if args.baseline:
+    if baseline is True:
         baseline_src_digest = get_lzjd_digest(BASELINE_SRC)
         baseline_bleached_digest = get_lzjd_digest(BASELINE_OUT)
         print("Baseline test performed: LZJD Score for 'ideal decompilation': {}".format(
                 get_lzjd_sim(baseline_src_digest[0], baseline_bleached_digest[0])))
         exit(0)
 
-    # for f in listdir(SRC):
-    #     if isfile(join(SRC, f)):
-    #         global DIGESTS
-    #         DIGESTS[f] = {'src': None, 'r2': None, 'ghidra': None}
-    #
-    #         # calculate digest of file
-    #         DIGESTS[f]['src'] = digest(join(SRC, f))
-    #         f = f.replace(".c", ".o")
-    #         DIGESTS[f]['ghidra'] = digest(join(GHIDRA_PATH, GHIDRA_NAME.format(f)))
-    #         DIGESTS[f]['r2'] = digest(join(R2DEC_PATH, R2DEC_NAME.format(f)))
+    for f in listdir(SRC):
+        if isfile(join(SRC, f)):
+            global DIGESTS
+            DIGESTS[f] = {'src': None, 'r2': None, 'ghidra': None}
 
-    global TOTAL_FILES
-    #TOTAL_FILES = len(DIGESTS)
+            # calculate digest of src file
+            DIGESTS[f]['src'] = digest(join(SRC, f))
 
-    # get the LZJD Digest values for all files
-    src_hashes = get_lzjd_digest(SRC)
-    ghidra_hashes = get_lzjd_digest(GHIDRA_PATH)
-    r2dec_hashes = get_lzjd_digest(R2DEC_PATH)
+            # name adjustment
+            f2 = f.replace(".c", ".o")
 
-    # empty scores
-    src_ghidra_lzjd_scores = []
-    src_r2_lzjd_scores = []
-    ghidra_r2_lzjd_scores = []
+            # calculate digest of ghidra and r2 outputs
+            DIGESTS[f]['ghidra'] = digest(join(GHIDRA_PATH, GHIDRA_NAME.format(f2)))
+            DIGESTS[f]['r2'] = digest(join(R2DEC_PATH, R2DEC_NAME.format(f2)))
 
-    src_ghidra_lev_scores = []
-    src_r2_lev_scores = []
-    ghidra_r2_lev_scores = []
+            global SCORES
+            # obtain the similarity from source
+            SCORES[f] = {'ghidra': get_lzjd_sim(DIGESTS[f]['src'], DIGESTS[f]['ghidra']),
+                         'r2': get_lzjd_sim(DIGESTS[f]['src'], DIGESTS[f]['r2']),
+                         'x': get_lzjd_sim(DIGESTS[f]['ghidra'], DIGESTS[f]['r2'])}
 
     gidra_doms = 0
-
-    for i in range(TOTAL_FILES):
-        src_ghidra_lzjd_scores.append(get_lzjd_sim(src_hashes[i], ghidra_hashes[i]))
-        src_r2_lzjd_scores.append(get_lzjd_sim(src_hashes[i], r2dec_hashes[i]))
-        ghidra_r2_lzjd_scores.append(get_lzjd_sim(ghidra_hashes[i], r2dec_hashes[i]))
-
-    for i in range(TOTAL_FILES):
-        print("For file {} LZJD Ghidra:{} R2:{} DIFF:{} both:{}".format(i, src_ghidra_lzjd_scores[i],
-                                                                        src_r2_lzjd_scores[i],
-                                                                        src_ghidra_lzjd_scores[i]-src_r2_lzjd_scores[i],
-                                                                        ghidra_r2_lzjd_scores[i]))
-
-        if src_ghidra_lzjd_scores[i] - src_r2_lzjd_scores[i] < 0:
+    for f in SCORES:
+        print("{}: Scores \tG:{} \t R2:{} \tX:{} \tD:{}".format(f,
+                                                                SCORES[f]['ghidra'],
+                                                                SCORES[f]['r2'],
+                                                                SCORES[f]['x'],
+                                                                SCORES[f]['ghidra'] - SCORES[f]['r2']))
+        if SCORES[f]['ghidra'] > SCORES[f]['r2']:
             gidra_doms += 1
+    print("Ghidra Dominated on {} files".format(gidra_doms))
 
-    print("Ghidra is dominated on {} files".format(gidra_doms))
+    pdb.set_trace()
+    bxplt_data_gd = [score['ghidra'] for score in SCORES.values()]
+    bxplt_data_r1 = [score['r2'] for score in SCORES.values()]
 
-    gidra_doms = 0
+    plot_boxplt([bxplt_data_gd, bxplt_data_r1], 'Ghidra vs R2')
 
-    for file in listdir(SRC):
-        if isfile(join(SRC, file)):
-            src_file = join(SRC, file)
-            print("{} Performing Levenshtein Distance on {}".format(gidra_doms, src_file))
+    if show_lev is True:
+        src_ghidra_lev_scores = []
+        src_r2_lev_scores = []
+        ghidra_r2_lev_scores = []
 
-            # remove the extension
-            file = file.replace(".c", ".o")
+        gidra_doms = 0
+        for file in listdir(SRC):
+            if isfile(join(SRC, file)):
+                src_file = join(SRC, file)
+                print("{} Performing Levenshtein Distance on {}".format(gidra_doms, src_file))
 
-            ghidra_file = join(GHIDRA_PATH, GHIDRA_NAME.format(file))
-            r2dec_file = join(R2DEC_PATH, R2DEC_NAME.format(file))
+                # remove the extension
+                file = file.replace(".c", ".o")
 
-            src_ghidra_lev_scores.append(get_lev_distance(src_file, ghidra_file))
-            src_r2_lev_scores.append(get_lev_distance(src_file, r2dec_file))
-            ghidra_r2_lev_scores.append(get_lev_distance(ghidra_file, r2dec_file))
+                ghidra_file = join(GHIDRA_PATH, GHIDRA_NAME.format(file))
+                r2dec_file = join(R2DEC_PATH, R2DEC_NAME.format(file))
+
+                src_ghidra_lev_scores.append(get_lev_distance(src_file, ghidra_file))
+                src_r2_lev_scores.append(get_lev_distance(src_file, r2dec_file))
+                ghidra_r2_lev_scores.append(get_lev_distance(ghidra_file, r2dec_file))
             gidra_doms += 1
 
     gidra_doms = 0
