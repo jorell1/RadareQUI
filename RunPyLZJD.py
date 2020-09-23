@@ -15,10 +15,13 @@ GHIDRA_PATH = ""
 R2DEC_PATH = ""
 SRC = ""
 
+BASELINE_DIR = "C:\\Users\\student\\PycharmProjects\\RadareQUI\\Experiment files"
+BASELINE_SRC = join(BASELINE_DIR, "BleachedSRC")
+BASELINE_OUT = join(BASELINE_DIR, "BleachedOUT")
 GHIDRA_NAME = "{}_ghidra_output.txt"
 R2DEC_NAME = "{}_r2dec_output.txt"
 
-TOTAL_FILES = -1
+TOTAL_FILES = 51
 # Structures to hold the file values in the form:
 #   {'file_name': {'src_ghidra': []  # src-ghidra lzjd values
 #                 'src_r2': []  # src-r2 lzjd values
@@ -34,12 +37,15 @@ FILE_SCORES_LEV = {}
 
 def get_args():
     parser = argparse.ArgumentParser(description="Analytics using LZJD on files")
+    parser.add_argument('-b', '--baseline', action='store_true', default='store_false', dest='baseline',
+                        help='Run Baseline test only')
+    parser.add_argument('-l', '--levenshtein', action='store_true', default='store_false', dest='show_lev',
+                        help='Run Levenshtein Distance calculations')
+
     parser.add_argument('srcpath', help='Path to the folder containing the source files')
     parser.add_argument('ghidra_decompiled_path', help='Path to the folder containing the ghidra decompiled output '
                                                        'files')
     parser.add_argument('r2dec_decompiled_path', help='Path to the folder containing the r2dec decompiled output files')
-    parser.add_argument('-l', '--levenshtein', action='store_true', default='store_false', dest='show_lev',
-                        help='Run Levenshtein Distance calculations')
 
     return parser.parse_args()
 
@@ -50,7 +56,7 @@ def get_lzjd_digest(path):
 
 
 def get_lzjd_sim(src_hash, decompiled_hash):
-    return 1 - sim(src_hash, decompiled_hash)
+    return sim(src_hash, decompiled_hash)
 
 
 def get_lev_distance(src, decompiled):
@@ -80,6 +86,13 @@ def main(args):
     SRC = args.srcpath
 
     show_lev = args.show_lev
+
+    if args.baseline:
+        baseline_src_digest = get_lzjd_digest(BASELINE_SRC)
+        baseline_bleached_digest = get_lzjd_digest(BASELINE_OUT)
+        print("Baseline test performed: LZJD Score for 'ideal decompilation': {}".format(
+                get_lzjd_sim(baseline_src_digest[0], baseline_bleached_digest[0])))
+        exit(0)
 
     # for f in listdir(SRC):
     #     if isfile(join(SRC, f)):
@@ -111,7 +124,7 @@ def main(args):
 
     gidra_doms = 0
 
-    for i in range(len):
+    for i in range(TOTAL_FILES):
         src_ghidra_lzjd_scores.append(get_lzjd_sim(src_hashes[i], ghidra_hashes[i]))
         src_r2_lzjd_scores.append(get_lzjd_sim(src_hashes[i], r2dec_hashes[i]))
         ghidra_r2_lzjd_scores.append(get_lzjd_sim(ghidra_hashes[i], r2dec_hashes[i]))
