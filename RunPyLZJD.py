@@ -10,6 +10,7 @@ from os import listdir
 from os.path import isfile, join
 from pyLZJD import sim, digest
 from Levenshtein import distance
+import scipy.stats as stats
 
 GHIDRA_PATH = ""
 R2DEC_PATH = ""
@@ -78,8 +79,14 @@ def plot_boxplt(data, title):
 
 
 def plot_hist(data):
-    plt.hist(data, bins=math.ceil( math.sqrt(len(data)) ))
+    plt.hist(data, bins=math.ceil(math.sqrt(len(data)) ))
     plt.show()
+
+
+def run_ttest(data1, data2):
+    print("Shapiro Output: {}".format(stats.shapiro(data1)))
+    print("Shapiro Output: {}".format(stats.shapiro(data2)))
+    print("T-test Output: {}".format(stats.ttest_rel(data1, data2)))
 
 
 def main(args):
@@ -96,12 +103,11 @@ def main(args):
     show_lev = args.show_lev
     baseline = args.show_lev
 
-    if baseline is True:
-        baseline_src_digest = get_lzjd_digest(BASELINE_SRC)
-        baseline_bleached_digest = get_lzjd_digest(BASELINE_OUT)
-        print("Baseline test performed: LZJD Score for 'ideal decompilation': {}".format(
-                get_lzjd_sim(baseline_src_digest[0], baseline_bleached_digest[0])))
-        exit(0)
+    baseline_src_digest = get_lzjd_digest(BASELINE_SRC)
+    baseline_bleached_digest = get_lzjd_digest(BASELINE_OUT)
+    print("Baseline test performed: LZJD Score for 'ideal decompilation': {}".format(
+            get_lzjd_sim(baseline_src_digest[0], baseline_bleached_digest[0])))
+    exit(0)
 
     for f in listdir(SRC):
         if isfile(join(SRC, f)):
@@ -126,7 +132,7 @@ def main(args):
 
     gidra_doms = 0
     for f in SCORES:
-        print("{}: Scores \tG:{} \t R2:{} \tX:{} \tD:{}".format(f,
+        print("{0:12}: Scores G:{1:20} R2:{2:20} X:{3:20} D:{4:20}".format(f,
                                                                 SCORES[f]['ghidra'],
                                                                 SCORES[f]['r2'],
                                                                 SCORES[f]['x'],
@@ -135,11 +141,14 @@ def main(args):
             gidra_doms += 1
     print("Ghidra Dominated on {} files".format(gidra_doms))
 
-    pdb.set_trace()
     bxplt_data_gd = [score['ghidra'] for score in SCORES.values()]
     bxplt_data_r1 = [score['r2'] for score in SCORES.values()]
 
     plot_boxplt([bxplt_data_gd, bxplt_data_r1], 'Ghidra vs R2')
+    plot_hist(bxplt_data_gd)
+    plot_hist(bxplt_data_r1)
+
+    run_ttest(bxplt_data_gd,bxplt_data_r1)
 
     if show_lev is True:
         src_ghidra_lev_scores = []
@@ -161,23 +170,17 @@ def main(args):
                 src_ghidra_lev_scores.append(get_lev_distance(src_file, ghidra_file))
                 src_r2_lev_scores.append(get_lev_distance(src_file, r2dec_file))
                 ghidra_r2_lev_scores.append(get_lev_distance(ghidra_file, r2dec_file))
-            gidra_doms += 1
 
-    gidra_doms = 0
-    if show_lev:
-        for i in range(TOTAL_FILES):
-            print("For file {} LZJD Ghidra:{} R2:{} DIFF:{} both:{}".format(i, src_ghidra_lev_scores[i],
-                                                                            src_r2_lev_scores[i],
-                                                                            src_ghidra_lev_scores[i] - src_r2_lev_scores[i],
-                                                                            ghidra_r2_lev_scores[i]))
+            for i in range(TOTAL_FILES):
+                print("For file {} LZJD Ghidra:{} R2:{} DIFF:{} both:{}".format(i, src_ghidra_lev_scores[i],
+                                                                                src_r2_lev_scores[i],
+                                                                                src_ghidra_lev_scores[i] - src_r2_lev_scores[i],
+                                                                                ghidra_r2_lev_scores[i]))
 
-            if src_ghidra_lev_scores[i] - src_r2_lev_scores[i] < 0:
-                gidra_doms += 1
-        print("Ghidra is dominated on {} files".format(gidra_doms))
+                if src_ghidra_lev_scores[i] < src_r2_lev_scores[i]:
+                    gidra_doms += 1
+            print("Ghidra Dominated on {} files".format(gidra_doms))
 
-    prepare_plot()
-
-    plt.plot([i for i in range(TOTAL_FILES)], src_ghidra_lzjd_scores, )
     print("done")
 
 
