@@ -34,6 +34,7 @@ CKEYWORDS = ['auto', 'break', 'case', 'char', 'const', 'continue', 'default', 'd
 
 
 def get_keyword_sequence(file):
+    #print(" Getting keyword squence for {}".format(file))
     sequence = ""
     with open(file, 'r', encoding='utf-8') as src:
         for line in src:
@@ -100,10 +101,12 @@ def run_ttest(data1, data2):
 def run_keyword_test():
     for f in listdir(SRC):
         if isfile(join(SRC, f)):
+            print("Keyword test: Running on {}".format(f))
             # prepare a dictionary with the digests ready to compare
             KWSEQS_DIGESTS[f] = {'src': None, 'r2': None, 'ghidra': None}
 
             # calculate the digest of the source sequence
+            #print("Keyword test: Getting digest...".format(f))
             KWSEQS_DIGESTS[f]['src'] = digest(get_keyword_sequence(join(SRC, f)))
             # name adjustment
             f2 = f.replace(".c", ".o")
@@ -113,19 +116,21 @@ def run_keyword_test():
             KWSEQS_DIGESTS[f]['r2'] = digest(get_keyword_sequence(join(R2DEC_PATH, R2DEC_NAME.format(f2))))
 
             # obtain the similarity from source
-            KWSEQS_SCORES[f] = {'ghidra': get_lzjd_sim(DIGESTS[f]['src'], DIGESTS[f]['ghidra']),
-                                'r2': get_lzjd_sim(DIGESTS[f]['src'], DIGESTS[f]['r2']),
-                                'x': get_lzjd_sim(DIGESTS[f]['ghidra'], DIGESTS[f]['r2'])}
+            #print("Keyword test: Comparing...".format(f))
+            KWSEQS_SCORES[f] = {'ghidra': get_lzjd_sim(KWSEQS_DIGESTS[f]['src'], KWSEQS_DIGESTS[f]['ghidra']),
+                                'r2': get_lzjd_sim(KWSEQS_DIGESTS[f]['src'], KWSEQS_DIGESTS[f]['r2']),
+                                'x': get_lzjd_sim(KWSEQS_DIGESTS[f]['ghidra'], KWSEQS_DIGESTS[f]['r2'])}
     gidra_doms = 0
     for f in KWSEQS_SCORES:
         print("{0:12}: Scores G:{1:20} R2:{2:20} X:{3:20} D:{4:20}".format(f,
                                                                            KWSEQS_SCORES[f]['ghidra'],
                                                                            KWSEQS_SCORES[f]['r2'],
                                                                            KWSEQS_SCORES[f]['x'],
-                                                                           KWSEQS_SCORES[f]['ghidra'] - SCORES[f]['r2'])
+                                                                           KWSEQS_SCORES[f]['ghidra'] -
+                                                                           KWSEQS_SCORES[f]['r2'])
               )
 
-        if SCORES[f]['ghidra'] > SCORES[f]['r2']:
+        if KWSEQS_SCORES[f]['ghidra'] > KWSEQS_SCORES[f]['r2']:
             gidra_doms += 1
     print("Ghidra Dominated on {} files".format(gidra_doms))
 
@@ -161,6 +166,7 @@ def run_levenshtein_test():
             if src_ghidra_lev_scores[i] < src_r2_lev_scores[i]:
                 gidra_doms += 1
         print("Ghidra Dominated on {} files".format(gidra_doms))
+
 
 def run_main_test():
     # iterate over the files in the directory
