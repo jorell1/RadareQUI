@@ -30,7 +30,12 @@ FILE_SCORES_LEV = {}
 CKEYWORDS = ['auto', 'break', 'case', 'char', 'const', 'continue', 'default', 'do', 'bool',
              'double', 'else', 'enum', 'extern', 'float', 'for', 'goto', 'if', 'int', 'int64_t',
              'long', 'register', 'return', 'short', 'signed', 'sizeof', 'static', 'struct',
-             'switch', 'typedef', 'union', 'unsigned', 'void', 'volatile', 'while']
+             'switch', 'union', 'unsigned', 'void', 'volatile', 'while']
+# change int_64t to just int
+# run levenshtein on kw seq
+
+PRINT_SEQ = ['external.c']
+    # ['internal.c', 'save.c']
 
 
 def get_keyword_sequence(file):
@@ -42,7 +47,6 @@ def get_keyword_sequence(file):
                 if word in CKEYWORDS:
                     sequence += " "
                     sequence += word
-
     return sequence
 
 
@@ -107,14 +111,25 @@ def run_keyword_test():
 
             # calculate the digest of the source sequence
             #print("Keyword test: Getting digest...".format(f))
-            KWSEQS_DIGESTS[f]['src'] = digest(get_keyword_sequence(join(SRC, f)))
+            seq_src = get_keyword_sequence(join(SRC, f))
+
+            KWSEQS_DIGESTS[f]['src'] = digest(seq_src)
             # name adjustment
             f2 = f.replace(".c", ".o")
 
             # calculate digest of ghidra and r2 keyword sequence outputs
-            KWSEQS_DIGESTS[f]['ghidra'] = digest(get_keyword_sequence(join(GHIDRA_PATH, GHIDRA_NAME.format(f2))))
-            KWSEQS_DIGESTS[f]['r2'] = digest(get_keyword_sequence(join(R2DEC_PATH, R2DEC_NAME.format(f2))))
+            seq_GDR = get_keyword_sequence(join(GHIDRA_PATH, GHIDRA_NAME.format(f2)))
+            KWSEQS_DIGESTS[f]['ghidra'] = digest(seq_GDR)
+            seq_R2 = get_keyword_sequence(join(R2DEC_PATH, R2DEC_NAME.format(f2)))
+            KWSEQS_DIGESTS[f]['r2'] = digest(seq_R2)
 
+            print_seq = len(seq_src) > 300 and (len(seq_GDR) < 50 or len(seq_R2) < 50)
+
+            if f in PRINT_SEQ:
+                print("Sequence for ", f)
+                print("SRC:", seq_src)
+                print("GDR:", seq_GDR)
+                print("R2:", seq_R2)
             # obtain the similarity from source
             #print("Keyword test: Comparing...".format(f))
             KWSEQS_SCORES[f] = {'ghidra': get_lzjd_sim(KWSEQS_DIGESTS[f]['src'], KWSEQS_DIGESTS[f]['ghidra']),
