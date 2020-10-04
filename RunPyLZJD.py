@@ -25,8 +25,7 @@ DIGESTS = {}
 SCORES = {}
 KWSEQS_DIGESTS = {}
 KWSEQS_SCORES = {}
-
-FILE_SCORES_LEV = {}
+LEV_SCORES = {}
 CKEYWORDS = ['auto', 'break', 'case', 'char', 'const', 'continue', 'default', 'do', 'bool',
              'double', 'else', 'enum', 'extern', 'float', 'for', 'goto', 'if', 'int', 'int64_t',
              'long', 'register', 'return', 'short', 'signed', 'sizeof', 'static', 'struct',
@@ -46,6 +45,9 @@ def get_keyword_sequence(file):
             for word in line.split():
                 if word in CKEYWORDS:
                     sequence += " "
+                    if word == "int64_t":
+                        sequence += "int"
+                        continue
                     sequence += word
     return sequence
 
@@ -76,11 +78,15 @@ def get_lzjd_sim(src_hash, decompiled_hash):
 
 def get_lev_distance(src, decompiled):
     lev_score = -1
-    with open(src, 'r', encoding='utf=8') as original:
-        with open(decompiled, 'r', encoding='utf=8') as dec_output:
-            sf = original.read()
-            df = dec_output.read()
-            lev_score = distance(sf, df)
+    if isfile(src) and isfile(decompiled):
+        with open(src, 'r', encoding='utf=8') as original:
+            with open(decompiled, 'r', encoding='utf=8') as dec_output:
+                sf = original.read()
+                df = dec_output.read()
+                lev_score = distance(sf, df)
+    else:
+        lev_score = distance(src, decompiled)
+
     return lev_score
 
 
@@ -184,6 +190,11 @@ def run_levenshtein_test():
 
 
 def run_main_test():
+    """
+        Test to compare the contents of the source files against the output files of the decompilers
+    :return:
+    """
+
     # iterate over the files in the directory
     for f in listdir(SRC):
         if isfile(join(SRC, f)):
@@ -215,6 +226,46 @@ def run_main_test():
         if SCORES[f]['ghidra'] > SCORES[f]['r2']:
             gidra_doms += 1
     print("Ghidra Dominated on {} files".format(gidra_doms))
+
+
+def run_levenshtein_kw_test():
+    for f in listdir(SRC):
+        if isfile(join(SRC, f)):
+            seq_src = get_keyword_sequence(join(SRC, f))
+            f2 = f.replace(".c", ".o")
+            seq_GDR = get_keyword_sequence(join(GHIDRA_PATH, GHIDRA_NAME.format(f2)))
+            seq_R2 = get_keyword_sequence(join(R2DEC_PATH, R2DEC_NAME.format(f2)))
+
+            LEV_SCORES[f] = {'ghidra': get_lev_distance(seq_src, seq_GDR),
+                         'r2': get_lev_distance(seq_src, seq_R2),
+                         'x': get_lev_distance(seq_GDR,seq_R2)}
+
+    gidra_doms = 0
+    for f in SCORES:
+        print("{0:12}: Scores G:{1:20} R2:{2:20} X:{3:20} D:{4:20}".format(f,
+                                                                           LEV_SCORES[f]['ghidra'],
+                                                                           LEV_SCORES[f]['r2'],
+                                                                           LEV_SCORES[f]['x'],
+                                                                           LEV_SCORES[f]['ghidra'] - SCORES[f]['r2']))
+        if LEV_SCORES[f]['ghidra'] < LEV_SCORES[f]['r2']:
+            gidra_doms += 1
+    print("Ghidra Dominated on {} files".format(gidra_doms))
+
+    # Prepare plots in function instead
+    # This section of code prepares visualizations on the data for easy analysis
+
+    # obtian the scores as input data to the plots
+    bxplt_data_gd = [score['ghidra'] for score in LEV_SCORES.values()]
+    bxplt_data_r2 = [score['r2'] for score in LEV_SCORES.values()]
+
+    # create plots
+    plot_boxplt([bxplt_data_gd, bxplt_data_r2], 'Levenshtein Distance: Ghidra vs R2')
+    plot_hist(bxplt_data_gd)
+    plot_hist(bxplt_data_r2)
+
+    # run pairwise t test
+    print("Performing T-Test on Levenshtein Distnace of sequences")
+    run_ttest(bxplt_data_gd, bxplt_data_r2)
 
 
 def main(args):
@@ -266,12 +317,12 @@ def main(args):
 
     # obtian the scores as input data to the plots
     bxplt_data_gd = [score['ghidra'] for score in SCORES.values()]
-    bxplt_data_r1 = [score['r2'] for score in SCORES.values()]
+    bxplt_data_r2 = [score['r2'] for score in SCORES.values()]
 
     # create plots
-    plot_boxplt([bxplt_data_gd, bxplt_data_r1], 'Ghidra vs R2')
+    plot_boxplt([bxplt_data_gd, bxplt_data_r2], 'Ghidra vs R2')
     plot_hist(bxplt_data_gd)
-    plot_hist(bxplt_data_r1)
+    plot_hist(bxplt_data_r2)
 
     #######################
     ### Pairwise T-test ###
@@ -279,7 +330,8 @@ def main(args):
 
     # After preparing the plots its a great idea to run a T-test to see if there is a difference in the means of
     # the data. This essentially tells us if one of the decompilers outperformed the other.
-    run_ttest(bxplt_data_gd, bxplt_data_r1)
+    print("Performing T-Test on Main Test Scores")
+    run_ttest(bxplt_data_gd, bxplt_data_r2)
 
     #######################
     ### Keyword Testing ###
@@ -287,13 +339,17 @@ def main(args):
 
     # This section of code will extract a sequence of c language keywords from source and output files and
     # run the LZJD algorithms again to compare keword sequences.
-    run_keyword_test()
+    #run_keyword_test()
 
     # LEVENSHTEIN on the full files does not make sense....
     if show_lev is True:
         run_levenshtein_test()
 
-    print("done")
+    # This will make the same process of extracting the keyword squences and perform the levenshtein distance
+    # analysis on the sequences to see how far are they from each other
+    run_levenshtein_kw_test()
+
+    print("Done.")
 
 
 if __name__ == '__main__':
