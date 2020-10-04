@@ -246,7 +246,8 @@ def run_levenshtein_kw_test():
                                                                            LEV_SCORES[f]['ghidra'],
                                                                            LEV_SCORES[f]['r2'],
                                                                            LEV_SCORES[f]['x'],
-                                                                           LEV_SCORES[f]['ghidra'] - SCORES[f]['r2']))
+                                                                           LEV_SCORES[f]['ghidra'] -
+                                                                           LEV_SCORES[f]['r2']))
         if LEV_SCORES[f]['ghidra'] < LEV_SCORES[f]['r2']:
             gidra_doms += 1
     print("Ghidra Dominated on {} files".format(gidra_doms))
@@ -320,7 +321,7 @@ def main(args):
     bxplt_data_r2 = [score['r2'] for score in SCORES.values()]
 
     # create plots
-    plot_boxplt([bxplt_data_gd, bxplt_data_r2], 'Ghidra vs R2')
+    plot_boxplt([bxplt_data_gd, bxplt_data_r2], 'LZJD: Ghidra vs R2')
     plot_hist(bxplt_data_gd)
     plot_hist(bxplt_data_r2)
 
@@ -339,7 +340,24 @@ def main(args):
 
     # This section of code will extract a sequence of c language keywords from source and output files and
     # run the LZJD algorithms again to compare keword sequences.
-    #run_keyword_test()
+    run_keyword_test()
+
+    ####################
+    ## Prepare Plots ###
+    ####################
+
+
+    # obtian the scores as input data to the plots
+    bxplt_data_gd = [score['ghidra'] for score in KWSEQS_SCORES.values()]
+    bxplt_data_r2 = [score['r2'] for score in KWSEQS_SCORES.values()]
+
+    # create plots
+    plot_boxplt([bxplt_data_gd, bxplt_data_r2], 'Keyword LZJD: Ghidra vs R2')
+    plot_hist(bxplt_data_gd)
+    plot_hist(bxplt_data_r2)
+
+    print("Performing T-Test on Keyword Test Scores")
+    run_ttest(bxplt_data_gd, bxplt_data_r2)
 
     # LEVENSHTEIN on the full files does not make sense....
     if show_lev is True:
