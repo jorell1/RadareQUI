@@ -33,9 +33,26 @@ CKEYWORDS = ['auto', 'break', 'case', 'char', 'const', 'continue', 'default', 'd
 # change int_64t to just int
 # run levenshtein on kw seq
 
-PRINT_SEQ = ['external.c']
-    # ['internal.c', 'save.c']
+PRINT_SEQ = ['variable.c', 'tabulate.c', 'stdfn.c', 'voxelgrid.c', 'vplot.c', 'jitter.c']
+        #['plot2d.c', 'save.c']
+    # ['external.c']
+    # ['internal.c', ]
 
+
+#note: levenshtein - divide the leven score by the len of the sequence from the original (normalize)
+
+#store kword sequences filter out small ones (under)
+
+#len of kw seq for ghidra in acending other
+
+# do the scatter plot of the sequences levenshtein score
+# remove files that are shorter than 10k in size
+
+#chapt 3 is where the data came from and explain the thought procces
+
+#chapt 4 is discusing the results
+
+#look for a levenshtein that factors in the lengths of the strings being compared
 
 def get_keyword_sequence(file):
     #print(" Getting keyword squence for {}".format(file))
@@ -236,9 +253,9 @@ def run_levenshtein_kw_test():
             seq_GDR = get_keyword_sequence(join(GHIDRA_PATH, GHIDRA_NAME.format(f2)))
             seq_R2 = get_keyword_sequence(join(R2DEC_PATH, R2DEC_NAME.format(f2)))
 
-            LEV_SCORES[f] = {'ghidra': get_lev_distance(seq_src, seq_GDR),
-                         'r2': get_lev_distance(seq_src, seq_R2),
-                         'x': get_lev_distance(seq_GDR,seq_R2)}
+            LEV_SCORES[f] = {'ghidra': get_lev_distance(seq_src, seq_GDR)/len(seq_src),
+                         'r2': get_lev_distance(seq_src, seq_R2)/len(seq_src),
+                         'x': get_lev_distance(seq_GDR, seq_R2)/len(seq_src)}
 
     gidra_doms = 0
     for f in SCORES:
