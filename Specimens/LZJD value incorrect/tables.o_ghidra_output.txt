@@ -1,0 +1,134 @@
+undefined4 sym.lookup_table(int64_t arg1, int64_t arg2)
+{
+    int64_t iVar1;
+    int32_t iVar2;
+    
+    iVar1 = *(int64_t *)arg1;
+    while ((iVar1 != 0 && (iVar2 = func_0x0801b49c(arg2 & 0xffffffff), iVar2 == 0))) {
+        iVar1 = *(int64_t *)(arg1 + 0x10);
+        arg1 = arg1 + 0x10;
+    }
+    return *(undefined4 *)(arg1 + 8);
+}
+
+
+undefined8 sym.lookup_ftable(int64_t arg1, int64_t arg2)
+{
+    int64_t iVar1;
+    int32_t iVar2;
+    
+    iVar1 = *(int64_t *)arg1;
+    while ((iVar1 != 0 && (iVar2 = func_0x0801b49c(arg2 & 0xffffffff), iVar2 == 0))) {
+        iVar1 = *(int64_t *)(arg1 + 0x10);
+        arg1 = arg1 + 0x10;
+    }
+    return *(undefined8 *)(arg1 + 8);
+}
+
+
+undefined4 sym.lookup_table_entry(int64_t arg1, int64_t arg2)
+{
+    int32_t iVar1;
+    undefined8 uVar2;
+    int64_t iVar3;
+    
+    iVar3 = *(int64_t *)arg1;
+    if (iVar3 != 0) {
+        uVar2 = func_0x0801b49c(arg2);
+        do {
+            iVar1 = func_0x0801b49c(arg2, iVar3, uVar2);
+            if (iVar1 == 0) {
+                return *(undefined4 *)(arg1 + 8);
+            }
+            iVar3 = *(int64_t *)(arg1 + 0x10);
+            arg1 = arg1 + 0x10;
+        } while (iVar3 != 0);
+    }
+    return 0xffffffff;
+}
+
+
+int32_t sym.lookup_table_nth(int64_t arg1, int64_t arg2)
+{
+    int32_t iVar1;
+    undefined8 uVar2;
+    int64_t *piVar3;
+    int64_t iVar4;
+    int32_t iVar5;
+    int32_t iVar6;
+    
+    iVar4 = *(int64_t *)arg1;
+    if (iVar4 == 0) {
+        iVar5 = -1;
+    } else {
+        piVar3 = (int64_t *)(arg1 + 0x10);
+        iVar5 = 0;
+        iVar6 = -1;
+        while( true ) {
+            iVar1 = func_0x0801b49c(arg2, iVar4);
+            if (iVar1 == 0) break;
+            uVar2 = func_0x0801b49c(iVar4);
+            iVar1 = func_0x0801b49c(arg2, iVar4, uVar2);
+            if ((iVar6 == -1) && (iVar1 == 0)) {
+                iVar6 = iVar5;
+            }
+            iVar4 = *piVar3;
+            piVar3 = piVar3 + 2;
+            iVar5 = iVar5 + 1;
+            if (iVar4 == 0) {
+                return iVar6;
+            }
+        }
+    }
+    return iVar5;
+}
+
+
+int32_t sym.lookup_table_nth_reverse(int64_t arg1, int64_t arg2, int64_t arg3)
+{
+    int64_t iVar1;
+    int32_t iVar2;
+    undefined8 uVar3;
+    int64_t *piVar4;
+    int32_t iVar5;
+    
+    iVar5 = (int32_t)arg2 + -1;
+    if (iVar5 < 0) {
+        iVar5 = -1;
+    } else {
+        piVar4 = (int64_t *)(arg1 + -0x10 + (int64_t)(int32_t)arg2 * 0x10);
+        do {
+            iVar1 = *piVar4;
+            if (iVar1 != 0) {
+                uVar3 = func_0x0801b49c(iVar1);
+                iVar2 = func_0x0801b49c(arg3, iVar1, uVar3);
+                if (iVar2 == 0) {
+                    return iVar5;
+                }
+            }
+            iVar5 = iVar5 + -1;
+            piVar4 = piVar4 + -2;
+        } while (iVar5 != -1);
+    }
+    return iVar5;
+}
+
+
+void sym.reverse_table_lookup(uint32_t arg1, int64_t arg2)
+{
+    int64_t *piVar1;
+    undefined4 in_RDI;
+    int64_t *piVar2;
+    
+    piVar2 = (int64_t *)CONCAT44(in_RDI, arg1);
+    do {
+        if (*piVar2 == 0) {
+            return;
+        }
+        piVar1 = piVar2 + 1;
+        piVar2 = piVar2 + 2;
+    } while (*(int32_t *)piVar1 != (int32_t)arg2);
+    return;
+}
+
+

@@ -1,0 +1,108 @@
+void sym.init_dynarray(int64_t arg1, int64_t arg2, int64_t arg3, int64_t arg4)
+{
+    undefined8 uVar1;
+    
+    *(undefined8 *)(arg1 + 0x20) = 0;
+    if (arg3 != 0) {
+        uVar1 = func_0x080035c5(arg3 * arg2, "init dynarray");
+        *(undefined8 *)(arg1 + 0x20) = uVar1;
+    }
+    *(int64_t *)arg1 = arg3;
+    *(int64_t *)(arg1 + 0x10) = arg4;
+    *(int64_t *)(arg1 + 0x18) = arg2;
+    *(undefined8 *)(arg1 + 8) = 0;
+    return;
+}
+
+
+void sym.free_dynarray(int64_t arg1)
+{
+    func_0x080035c5(*(undefined8 *)(arg1 + 0x20));
+    *(undefined8 *)(arg1 + 0x20) = 0;
+    *(undefined8 *)arg1 = 0;
+    *(undefined8 *)(arg1 + 8) = 0;
+    return;
+}
+
+
+void sym.resize_dynarray(int64_t arg1, int64_t arg2)
+{
+    char *pcVar1;
+    char *pcVar2;
+    char **unaff_RBX;
+    undefined8 unaff_RBP;
+    char **ppcVar3;
+    
+    while( true ) {
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -8) = unaff_RBP;
+        *(char ***)((int64_t)*(undefined **)0x20 + -0x10) = unaff_RBX;
+        pcVar2 = *(char **)(arg1 + 0x20);
+        if (pcVar2 != (char *)0x0) break;
+        pcVar2 = "dynarray wasn\'t initialized";
+        ppcVar3 = (char **)0xffffffff;
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x20) = 0x8000154;
+        func_0x080035c5();
+        arg2 = (int64_t)(pcVar2 + (int64_t)*ppcVar3);
+        unaff_RBX = (char **)arg1;
+        *(undefined **)0x20 = (BADSPACEBASE *)((int64_t)*(undefined **)0x20 + -0x18);
+        arg1 = (int64_t)ppcVar3;
+    }
+    if ((char *)arg2 != (char *)0x0) {
+        pcVar1 = *(char **)(arg1 + 0x18);
+        *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x20) = 0x8000112;
+        pcVar2 = (char *)func_0x080035c5(pcVar2, (int64_t)pcVar1 * arg2, "extend dynarray");
+        *(int64_t *)arg1 = arg2;
+        *(char **)(arg1 + 0x20) = pcVar2;
+        return;
+    }
+    *(undefined8 *)((int64_t)*(undefined **)0x20 + -0x20) = 0x8000125;
+    func_0x080035c5();
+    *(char **)(arg1 + 0x20) = (char *)0x0;
+    *(char **)arg1 = (char *)0x0;
+    *(char **)(arg1 + 8) = (char *)0x0;
+    return;
+}
+
+
+// WARNING: Control flow encountered bad instruction data
+
+int64_t sym.nextfrom_dynarray(uint32_t arg1)
+{
+    int64_t iVar1;
+    undefined2 extraout_DX;
+    int64_t iVar2;
+    char *pcVar3;
+    undefined4 in_RDI;
+    int64_t *piVar4;
+    
+    piVar4 = (int64_t *)CONCAT44(in_RDI, arg1);
+    iVar2 = piVar4[4];
+    if (iVar2 != 0) {
+        iVar1 = piVar4[1];
+        if (*piVar4 <= iVar1) {
+            func_0x080035c5(piVar4, *piVar4 + piVar4[2]);
+            iVar2 = piVar4[4];
+            iVar1 = piVar4[1];
+        }
+        piVar4[1] = iVar1 + 1;
+        return iVar1 * piVar4[3] + iVar2;
+    }
+    iVar2 = 0xffffffff;
+    func_0x080035c5(0xffffffff, "dynarray wasn\'t initialized");
+    if (*(int64_t *)(iVar2 + 0x20) != 0) {
+        iVar1 = *(int64_t *)(iVar2 + 8);
+        if (iVar1 != 0) {
+            iVar1 = iVar1 + -1;
+            *(int64_t *)(iVar2 + 8) = iVar1;
+        }
+        return iVar1;
+    }
+    pcVar3 = "dynarray wasn\'t initialized";
+    func_0x080035c5(0xffffffff);
+    // [05] -r-- section size 58 named .rodata.str1.1
+    out(*pcVar3, extraout_DX);
+    // WARNING: Bad instruction - Truncating control flow here
+    halt_baddata();
+}
+
+

@@ -1,0 +1,90 @@
+void sym.expand_newline(int64_t arg1)
+{
+    char cVar1;
+    int64_t iVar2;
+    undefined2 *puVar3;
+    
+    // [01] -r-x section size 6948 named .text
+    iVar2 = func_0x0801d949();
+    puVar3 = (undefined2 *)func_0x0801d949(iVar2 * 2 + 1, reloc..LC0);
+    do {
+        while (*(char *)arg1 == '\n') {
+            *puVar3 = 0x6e5c;
+            cVar1 = *(char *)arg1;
+            puVar3 = puVar3 + 1;
+            arg1 = (int64_t)(arg1 + 1);
+            if (cVar1 == '\0') {
+                return;
+            }
+        }
+        *(char *)puVar3 = *(char *)arg1;
+        puVar3 = (undefined2 *)((int64_t)puVar3 + 1);
+        cVar1 = *(char *)arg1;
+        arg1 = (int64_t)(arg1 + 1);
+    } while (cVar1 != '\0');
+    return;
+}
+
+
+// WARNING: Removing unreachable block (ram,0x080001d8)
+
+void sym.output_number(int64_t arg7, undefined8 placeholder_1, undefined8 placeholder_2, undefined8 placeholder_3,
+                      undefined8 placeholder_4, undefined8 placeholder_5, undefined8 placeholder_6,
+                      undefined8 placeholder_7, int64_t arg1, int64_t arg2)
+{
+    char *pcVar1;
+    undefined *puVar2;
+    int64_t iVar3;
+    code *pcVar4;
+    int64_t iVar5;
+    code *pcVar6;
+    bool bVar7;
+    bool bVar8;
+    
+    iVar5 = (int64_t)(int32_t)arg1;
+    pcVar1 = *(char **)(iVar5 * 0x2a8 + 0x801dad1);
+    if (*(int32_t *)(iVar5 * 0x2a8 + 0x801dac9) == 1) {
+        bVar8 = *pcVar1 == '%';
+        if (((bVar8) && (bVar8 = pcVar1[1] == 's', bVar8)) && (bVar8 = pcVar1[2] == '\0', bVar8)) {
+            func_0x0801d949(_reloc..LC1, arg7, arg2, 0x80, "");
+        } else {
+            iVar3 = SUB168(SEXT816(iVar5) * SEXT416(0x2a8) >> 0x40, 0);
+            bVar7 = iVar3 != 0 && iVar3 != -1;
+            *(undefined *)arg2 = 0x22;
+            iVar3 = 4;
+            pcVar4 = *(code **)(iVar5 * 0x2a8 + 0x801dad1);
+            pcVar6 = reloc..LC3;
+            do {
+                if (iVar3 == 0) break;
+                iVar3 = iVar3 + -1;
+                bVar7 = (uint8_t)*pcVar4 < (uint8_t)*pcVar6;
+                bVar8 = *pcVar4 == *pcVar6;
+                pcVar4 = pcVar4 + 1;
+                pcVar6 = pcVar6 + 1;
+            } while (bVar8);
+            if ((!bVar7 && !bVar8) == bVar7) {
+                func_0x0801d949(arg2 + 1, 0x7f, _reloc.timefmt);
+            } else {
+                func_0x0801d949(arg2 + 1, 0x7f);
+            }
+            while (puVar2 = (undefined *)func_0x0801d949(arg2, 10), puVar2 != (undefined *)0x0) {
+                *puVar2 = 0x20;
+            }
+            iVar5 = func_0x0801d949(arg2);
+            *(undefined2 *)(arg2 + iVar5) = 0x22;
+        }
+    } else {
+        func_0x0801d949(_reloc..LC1, arg7, arg2, 0x80, pcVar1);
+    }
+    iVar5 = func_0x0801d949(arg2);
+    *(undefined2 *)(arg2 + iVar5) = 0x20;
+    return;
+}
+
+
+
+
+
+
+
+
