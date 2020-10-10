@@ -119,6 +119,24 @@ def plot_hist(data):
     plt.show()
 
 
+def plot_scatter(data):
+    filenames = data.keys()
+    x = []
+    y = []
+
+    for name in filenames:
+        x.append(data[name]['ghidra'])
+        y.append(data[name]['r2'])
+
+    plt.scatter(x, y)
+    plt.xlabel("Ghidra")
+    plt.ylabel("R2")
+    for i, name in enumerate(data):
+        plt.annotate(name, (x[i], y[i]))
+
+    plt.show()
+
+
 def run_ttest(data1, data2):
     print("Shapiro Output: {}".format(stats.shapiro(data1)))
     print("Shapiro Output: {}".format(stats.shapiro(data2)))
@@ -383,6 +401,8 @@ def main(args):
     # This will make the same process of extracting the keyword squences and perform the levenshtein distance
     # analysis on the sequences to see how far are they from each other
     run_levenshtein_kw_test()
+
+    plot_scatter(KWSEQS_SCORES)
 
     print("Done.")
 
