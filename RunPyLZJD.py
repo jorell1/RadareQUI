@@ -133,6 +133,7 @@ def plot_scatter(data):
     plt.ylabel("R2")
     for i, name in enumerate(data):
         plt.annotate(name, (x[i], y[i]))
+    plt.plot((0, 1), 'r--')
 
     plt.show()
 
