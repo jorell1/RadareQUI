@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import scipy.stats as stats
 from Levenshtein import distance
 from pyLZJD import sim, digest
+from pyjarowinkler import distance as jaro_distance
 
 GHIDRA_PATH = ""
 R2DEC_PATH = ""
@@ -26,6 +27,7 @@ SCORES = {}
 KWSEQS_DIGESTS = {}
 KWSEQS_SCORES = {}
 LEV_SCORES = {}
+JARO_SCORES = {}
 CKEYWORDS = ['auto', 'break', 'case', 'char', 'const', 'continue', 'default', 'do', 'bool',
              'double', 'else', 'enum', 'extern', 'float', 'for', 'goto', 'if', 'int', 'int64_t',
              'long', 'register', 'return', 'short', 'signed', 'sizeof', 'static', 'struct',
@@ -107,6 +109,10 @@ def get_lev_distance(src, decompiled):
     return lev_score
 
 
+def get_jaro_distance(src, decompiled):
+    return jaro_distance.get_jaro_distance(src, decompiled, winkler=False)
+
+
 def plot_boxplt(data, title):
     fig, ax1 = plt.subplots()
     ax1.set_title(title)
@@ -134,7 +140,7 @@ def plot_scatter(data, title=""):
     for i, name in enumerate(data):
         plt.annotate(name, (x[i], y[i]))
     plt.plot((0, 1), 'r--')
-    plt.title = title
+    plt.title(title)
     plt.show()
 
 
@@ -146,14 +152,14 @@ def run_ttest(data1, data2):
 
 def run_keyword_test():
     print("""
-    +++++++++++++++++++++++++++++++
-    +++ Performing Keyword Test +++
-    +++++++++++++++++++++++++++++++
-    """)
+        +++++++++++++++++++++++++++++++
+        +++ Performing Keyword Test +++
+        +++++++++++++++++++++++++++++++
+        """)
 
     for f in listdir(SRC):
         if isfile(join(SRC, f)):
-            print("Keyword test: Running on {}".format(f))
+            # print("Keyword test: Running on {}".format(f))
             # prepare a dictionary with the digests ready to compare
             KWSEQS_DIGESTS[f] = {'src': None, 'r2': None, 'ghidra': None}
 
@@ -198,7 +204,7 @@ def run_keyword_test():
             gidra_doms += 1
     print("Ghidra Dominated on {} files".format(gidra_doms))
 
-    plot_scatter(KWSEQS_SCORES, "LZJD Keyword Sequence Scores")
+    plot_scatter(KWSEQS_SCORES, title="LZJD Keyword Sequence Scores")
 
     # obtian the scores as input data to the plots
     bxplt_data_gd = [score['ghidra'] for score in KWSEQS_SCORES.values()]
@@ -285,7 +291,12 @@ def run_main_test():
     print("Ghidra Dominated on {} files".format(gidra_doms))
 
 
-def run_levenshtein_kw_test():
+def run_jaro_kw_test():
+    print("""
+        ++++++++++++++++++++++++++++++++++++
+        +++ Performing JARO Keyword Test +++
+        ++++++++++++++++++++++++++++++++++++
+        """)
     for f in listdir(SRC):
         if isfile(join(SRC, f)):
             seq_src = get_keyword_sequence(join(SRC, f))
@@ -293,12 +304,61 @@ def run_levenshtein_kw_test():
             seq_GDR = get_keyword_sequence(join(GHIDRA_PATH, GHIDRA_NAME.format(f2)))
             seq_R2 = get_keyword_sequence(join(R2DEC_PATH, R2DEC_NAME.format(f2)))
 
+            JARO_SCORES[f] = {'ghidra': get_jaro_distance(seq_src, seq_GDR),
+                         'r2': get_jaro_distance(seq_src, seq_R2),
+                         'x': get_jaro_distance(seq_GDR, seq_R2)}
+
+    gidra_doms = 0
+    for f in JARO_SCORES:
+        print("{0:12}: Scores G:{1:20} R2:{2:20} X:{3:20} D:{4:20}".format(f,
+                                                                           JARO_SCORES[f]['ghidra'],
+                                                                           JARO_SCORES[f]['r2'],
+                                                                           JARO_SCORES[f]['x'],
+                                                                           JARO_SCORES[f]['ghidra'] -
+                                                                           JARO_SCORES[f]['r2']))
+        if JARO_SCORES[f]['ghidra'] > JARO_SCORES[f]['r2']:
+            gidra_doms += 1
+    print("Ghidra Dominated on {} files".format(gidra_doms))
+
+    # Prepare plots in function instead
+    # This section of code prepares visualizations on the data for easy analysis
+    plot_scatter(JARO_SCORES, title="Jaro Keyword sequence scores")
+
+    # obtian the scores as input data to the plots
+    bxplt_data_gd = [score['ghidra'] for score in JARO_SCORES.values()]
+    bxplt_data_r2 = [score['r2'] for score in JARO_SCORES.values()]
+
+    # create plots
+    plot_boxplt([bxplt_data_gd, bxplt_data_r2], 'Jaro Distance: Ghidra vs R2')
+    plot_hist(bxplt_data_gd)
+    plot_hist(bxplt_data_r2)
+
+    # run pairwise t test
+    print("Performing T-Test on Jaro Distnace of sequences")
+    run_ttest(bxplt_data_gd, bxplt_data_r2)
+
+
+def run_levenshtein_kw_test():
+    print("""
+        +++++++++++++++++++++++++++++++++++++++++++
+        +++ Performing Levenshtein Keyword Test +++
+        +++++++++++++++++++++++++++++++++++++++++++
+            """)
+
+    for f in listdir(SRC):
+        if isfile(join(SRC, f)):
+            seq_src = get_keyword_sequence(join(SRC, f))
+            f2 = f.replace(".c", ".o")
+            seq_GDR = get_keyword_sequence(join(GHIDRA_PATH, GHIDRA_NAME.format(f2)))
+            seq_R2 = get_keyword_sequence(join(R2DEC_PATH, R2DEC_NAME.format(f2)))
+
+            # this is normalized by the lenght of the original sequence
             LEV_SCORES[f] = {'ghidra': get_lev_distance(seq_src, seq_GDR)/len(seq_src),
                          'r2': get_lev_distance(seq_src, seq_R2)/len(seq_src),
                          'x': get_lev_distance(seq_GDR, seq_R2)/len(seq_src)}
 
     gidra_doms = 0
-    for f in SCORES:
+    for f in LEV_SCORES:
         print("{0:12}: Scores G:{1:20} R2:{2:20} X:{3:20} D:{4:20}".format(f,
                                                                            LEV_SCORES[f]['ghidra'],
                                                                            LEV_SCORES[f]['r2'],
@@ -311,6 +371,7 @@ def run_levenshtein_kw_test():
 
     # Prepare plots in function instead
     # This section of code prepares visualizations on the data for easy analysis
+    plot_scatter(LEV_SCORES, title="Levenshtein Keyword sequence scores")
 
     # obtian the scores as input data to the plots
     bxplt_data_gd = [score['ghidra'] for score in LEV_SCORES.values()]
@@ -325,7 +386,7 @@ def run_levenshtein_kw_test():
     print("Performing T-Test on Levenshtein Distnace of sequences")
     run_ttest(bxplt_data_gd, bxplt_data_r2)
 
-    plot_scatter(LEV_SCORES, "Levenshtein Keyword sequence scores")
+
 
 
 def main(args):
@@ -401,7 +462,6 @@ def main(args):
     # run the LZJD algorithms again to compare keword sequences.
     run_keyword_test()
 
-
     # LEVENSHTEIN on the full files does not make sense....
     # if show_lev is True:
     #     run_levenshtein_test()
@@ -411,7 +471,7 @@ def main(args):
     run_levenshtein_kw_test()
 
     # This is just so to see if the Jaro algorithms coincides with LZJD or the Levenshtein scores
-    
+    run_jaro_kw_test()
 
     print("Done.")
 
