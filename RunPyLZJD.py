@@ -35,7 +35,7 @@ CKEYWORDS = ['auto', 'break', 'case', 'char', 'const', 'continue', 'default', 'd
 # change int_64t to just int
 # run levenshtein on kw seq
 
-PRINT_SEQ = ['variable.c', 'tabulate.c', 'stdfn.c', 'voxelgrid.c', 'vplot.c', 'jitter.c']
+PRINT_SEQ = ['bf_test.c'] #, 'tabulate.c', 'stdfn.c', 'voxelgrid.c', 'vplot.c', 'jitter.c']
         #['plot2d.c', 'save.c']
     # ['external.c']
     # ['internal.c', ]
@@ -55,6 +55,12 @@ PRINT_SEQ = ['variable.c', 'tabulate.c', 'stdfn.c', 'voxelgrid.c', 'vplot.c', 'j
 #chapt 4 is discusing the results
 
 #look for a levenshtein that factors in the lengths of the strings being compared
+
+
+#ADD A simple short example (extract out the smallest file)
+#Add a discussion on an example where R2 does a better Job than Ghidra and vice versa (show keyword sequences)
+
+
 
 def get_keyword_sequence(file):
     #print(" Getting keyword squence for {}".format(file))
@@ -211,9 +217,9 @@ def run_keyword_test():
     bxplt_data_r2 = [score['r2'] for score in KWSEQS_SCORES.values()]
 
     # create plots
-    plot_boxplt([bxplt_data_gd, bxplt_data_r2], 'Keyword LZJD: Ghidra vs R2')
-    plot_hist(bxplt_data_gd)
-    plot_hist(bxplt_data_r2)
+    # plot_boxplt([bxplt_data_gd, bxplt_data_r2], 'Keyword LZJD: Ghidra vs R2')
+    # plot_hist(bxplt_data_gd)
+    # plot_hist(bxplt_data_r2)
 
     print("Performing T-Test on Keyword Test Scores")
     run_ttest(bxplt_data_gd, bxplt_data_r2)
@@ -329,9 +335,9 @@ def run_jaro_kw_test():
     bxplt_data_r2 = [score['r2'] for score in JARO_SCORES.values()]
 
     # create plots
-    plot_boxplt([bxplt_data_gd, bxplt_data_r2], 'Jaro Distance: Ghidra vs R2')
-    plot_hist(bxplt_data_gd)
-    plot_hist(bxplt_data_r2)
+    # plot_boxplt([bxplt_data_gd, bxplt_data_r2], 'Jaro Distance: Ghidra vs R2')
+    # plot_hist(bxplt_data_gd)
+    # plot_hist(bxplt_data_r2)
 
     # run pairwise t test
     print("Performing T-Test on Jaro Distnace of sequences")
@@ -352,11 +358,26 @@ def run_levenshtein_kw_test():
             seq_GDR = get_keyword_sequence(join(GHIDRA_PATH, GHIDRA_NAME.format(f2)))
             seq_R2 = get_keyword_sequence(join(R2DEC_PATH, R2DEC_NAME.format(f2)))
 
-            # this is normalized by the lenght of the original sequence
-            LEV_SCORES[f] = {'ghidra': get_lev_distance(seq_src, seq_GDR)/len(seq_src),
-                         'r2': get_lev_distance(seq_src, seq_R2)/len(seq_src),
-                         'x': get_lev_distance(seq_GDR, seq_R2)/len(seq_src)}
+           
+            # Get Normalization coefficient that wont throw the scale out
+            normalization_coefficient = len(seq_src)
 
+            if normalization_coefficient < len(seq_GDR):
+                normalization_coefficient = len(seq_GDR)
+
+            if normalization_coefficient < len(seq_R2):
+                normalization_coefficient = len(seq_R2)
+
+            # this is normalized by the lenght of the original sequence
+            LEV_SCORES[f] = {'ghidra': get_lev_distance(seq_src, seq_GDR)/normalization_coefficient,
+                         'r2': get_lev_distance(seq_src, seq_R2)/normalization_coefficient,
+                         'x': get_lev_distance(seq_GDR, seq_R2)/normalization_coefficient}
+
+        if f in PRINT_SEQ:
+            print("Sequence for ", f)
+            print("SRC:", seq_src)
+            print("GDR:", seq_GDR)
+            print("R2:", seq_R2)
     gidra_doms = 0
     for f in LEV_SCORES:
         print("{0:12}: Scores G:{1:20} R2:{2:20} X:{3:20} D:{4:20}".format(f,
@@ -378,9 +399,9 @@ def run_levenshtein_kw_test():
     bxplt_data_r2 = [score['r2'] for score in LEV_SCORES.values()]
 
     # create plots
-    plot_boxplt([bxplt_data_gd, bxplt_data_r2], 'Levenshtein Distance: Ghidra vs R2')
-    plot_hist(bxplt_data_gd)
-    plot_hist(bxplt_data_r2)
+    # plot_boxplt([bxplt_data_gd, bxplt_data_r2], 'Levenshtein Distance: Ghidra vs R2')
+    # plot_hist(bxplt_data_gd)
+    # plot_hist(bxplt_data_r2)
 
     # run pairwise t test
     print("Performing T-Test on Levenshtein Distnace of sequences")
