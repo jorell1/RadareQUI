@@ -13,7 +13,8 @@ from pyjarowinkler import distance as jaro_distance
 GHIDRA_PATH = ""
 R2DEC_PATH = ""
 SRC = ""
-
+EXAMPLE_FILE = "alloc.c"
+EXAMPLE_FILE_DIR = "C:\\Users\\student\\PycharmProjects\\RadareQUI\\Specimens\\LZJD value incorrect"
 BASELINE_DIR = "C:\\Users\\student\\PycharmProjects\\RadareQUI\\Experiment files"
 BASELINE_SRC = join(BASELINE_DIR, "BleachedSRC")
 BASELINE_OUT = join(BASELINE_DIR, "BleachedOUT")
@@ -81,6 +82,8 @@ def get_args():
     parser = argparse.ArgumentParser(description="Analytics using LZJD on files")
     parser.add_argument('-b', '--baseline', action='store_true', default='store_false', dest='baseline',
                         help='Run Baseline test only')
+    parser.add_argument('-e', '--example', action='store_true', default='store_false', dest='example',
+                        help='Obtain an example of the process stages')
     parser.add_argument('-l', '--levenshtein', action='store_true', default='store_false', dest='show_lev',
                         help='Run Levenshtein Distance calculations')
 
@@ -358,7 +361,7 @@ def run_levenshtein_kw_test():
             seq_GDR = get_keyword_sequence(join(GHIDRA_PATH, GHIDRA_NAME.format(f2)))
             seq_R2 = get_keyword_sequence(join(R2DEC_PATH, R2DEC_NAME.format(f2)))
 
-           
+
             # Get Normalization coefficient that wont throw the scale out
             normalization_coefficient = len(seq_src)
 
@@ -408,6 +411,53 @@ def run_levenshtein_kw_test():
     run_ttest(bxplt_data_gd, bxplt_data_r2)
 
 
+def run_example():
+    print("""
+            ++++++++++++++++++++++++++++++
+            +++ Performing Example Run +++
+            ++++++++++++++++++++++++++++++
+            """)
+    f = EXAMPLE_FILE
+    EKWSEQS_DIGESTS = {}
+    EKWSEQS_SCORES = {}
+    if isfile(join(EXAMPLE_FILE_DIR, f)):
+        # prepare a dictionary with the digests ready to compare
+        EKWSEQS_DIGESTS[f] = {'src': None, 'r2': None, 'ghidra': None}
+
+
+        print("Performing Keyword Sequence Extraction on {}".format(f))
+        seq_src = get_keyword_sequence(join(EXAMPLE_FILE_DIR, f))
+        print("Keyword Sequence is:\n {}\n".format(seq_src))
+
+        # calculate the digest of the source sequence
+        EKWSEQS_DIGESTS[f]['src'] = digest(seq_src)
+        # name adjustment
+        f2 = f.replace(".c", ".o")
+
+        # calculate digest of ghidra and r2 keyword sequence outputs
+        print("Performing Keyword Sequence Extraction on {}".format(GHIDRA_NAME.format(f2)))
+        seq_GDR = get_keyword_sequence(join(EXAMPLE_FILE_DIR, GHIDRA_NAME.format(f2)))
+        print("Keyword Sequence is:\n {}\n".format(seq_GDR))
+
+        EKWSEQS_DIGESTS[f]['ghidra'] = digest(seq_GDR)
+
+        print("Performing Keyword Sequence Extraction on {}".format(R2DEC_NAME.format(f2)))
+        seq_R2 = get_keyword_sequence(join(EXAMPLE_FILE_DIR, R2DEC_NAME.format(f2)))
+        print("Keyword Sequence is:\n {}\n".format(seq_R2))
+
+        EKWSEQS_DIGESTS[f]['r2'] = digest(seq_R2)
+
+        print("Performing Keyword Sequence similarity analysis with LZJD ".format(R2DEC_NAME.format(f2)))
+        EKWSEQS_SCORES[f] = {'ghidra': get_lzjd_sim(EKWSEQS_DIGESTS[f]['src'], EKWSEQS_DIGESTS[f]['ghidra']),
+                            'r2': get_lzjd_sim(EKWSEQS_DIGESTS[f]['src'], EKWSEQS_DIGESTS[f]['r2']),
+                            'x': get_lzjd_sim(EKWSEQS_DIGESTS[f]['ghidra'], EKWSEQS_DIGESTS[f]['r2'])}
+        for f in EKWSEQS_SCORES:
+            print("{0:12}: Scores G:{1:20} R2:{2:20} X:{3:20} D:{4:20}".format(f,
+                                                                               EKWSEQS_SCORES[f]['ghidra'],
+                                                                               EKWSEQS_SCORES[f]['r2'],
+                                                                               EKWSEQS_SCORES[f]['x'],
+                                                                               EKWSEQS_SCORES[f]['ghidra'] -
+                                                                               EKWSEQS_SCORES[f]['r2']))
 
 
 def main(args):
@@ -423,6 +473,7 @@ def main(args):
 
     show_lev = args.show_lev
     baseline = args.baseline
+    example = args.example
 
     if baseline is True:
         #####################
@@ -442,6 +493,12 @@ def main(args):
         print("Baseline test performed: LZJD Score for 'ideal decompilation': {}".format(
             get_lzjd_sim(baseline_src_digest[0], baseline_bleached_digest[0])))
         exit(0)
+
+    if example is True:
+        run_example()
+        exit(0)
+
+
 
     ######################
     ### Main LZJD Test ###
