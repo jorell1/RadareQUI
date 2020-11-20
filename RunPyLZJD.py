@@ -372,15 +372,15 @@ def run_levenshtein_kw_test():
                 normalization_coefficient = len(seq_R2)
 
             # this is normalized by the lenght of the original sequence
-            LEV_SCORES[f] = {'ghidra': get_lev_distance(seq_src, seq_GDR)/normalization_coefficient,
-                         'r2': get_lev_distance(seq_src, seq_R2)/normalization_coefficient,
-                         'x': get_lev_distance(seq_GDR, seq_R2)/normalization_coefficient}
+            LEV_SCORES[f] = {'ghidra': 1 - get_lev_distance(seq_src, seq_GDR)/normalization_coefficient,
+                         'r2': 1 - get_lev_distance(seq_src, seq_R2)/normalization_coefficient,
+                         'x': 1 - get_lev_distance(seq_GDR, seq_R2)/normalization_coefficient}
 
-        if f in PRINT_SEQ:
-            print("Sequence for ", f)
-            print("SRC:", seq_src)
-            print("GDR:", seq_GDR)
-            print("R2:", seq_R2)
+        # if f in PRINT_SEQ:
+        #     print("Sequence for ", f)
+        #     print("SRC:", seq_src)
+        #     print("GDR:", seq_GDR)
+        #     print("R2:", seq_R2)
     gidra_doms = 0
     for f in LEV_SCORES:
         print("{0:12}: Scores G:{1:20} R2:{2:20} X:{3:20} D:{4:20}".format(f,
