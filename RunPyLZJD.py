@@ -267,6 +267,11 @@ def run_main_test():
     :return:
     """
 
+    print("""
+            +++++++++++++++++++++++++++++++++++++++++++
+            +++ Performing Main LZJD Full File Test +++
+            +++++++++++++++++++++++++++++++++++++++++++
+                """)
     # iterate over the files in the directory
     for f in listdir(SRC):
         if isfile(join(SRC, f)):
@@ -298,7 +303,16 @@ def run_main_test():
         if SCORES[f]['ghidra'] > SCORES[f]['r2']:
             gidra_doms += 1
     print("Ghidra Dominated on {} files".format(gidra_doms))
+    # This section of code prepares visualizations on the data for easy analysis
+    plot_scatter(SCORES, title="LZJD Full File scores")
 
+    # obtian the scores as input data to the plots
+    bxplt_data_gd = [score['ghidra'] for score in SCORES.values()]
+    bxplt_data_r2 = [score['r2'] for score in SCORES.values()]
+
+    # run pairwise t test
+    print("Performing T-Test on LZJD Distnace of files")
+    run_ttest(bxplt_data_gd, bxplt_data_r2)
 
 def run_jaro_kw_test():
     print("""
@@ -389,7 +403,7 @@ def run_levenshtein_kw_test():
                                                                            LEV_SCORES[f]['x'],
                                                                            LEV_SCORES[f]['ghidra'] -
                                                                            LEV_SCORES[f]['r2']))
-        if LEV_SCORES[f]['ghidra'] < LEV_SCORES[f]['r2']:
+        if LEV_SCORES[f]['ghidra'] > LEV_SCORES[f]['r2']:
             gidra_doms += 1
     print("Ghidra Dominated on {} files".format(gidra_doms))
 
@@ -506,7 +520,7 @@ def main(args):
 
     # This test will take all the files in the folders provided in the arguments and will perform an LZJD test
     # with the source vs the output files
-    # run_main_test()
+    run_main_test()
 
     ####################
     ## Prepare Plots ###
