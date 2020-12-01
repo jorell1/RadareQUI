@@ -25,6 +25,7 @@ TOTAL_FILES = 51
 # Structures to hold the file values in the form:
 DIGESTS = {}
 SCORES = {}
+WINNERS = {}
 KWSEQS_DIGESTS = {}
 KWSEQS_SCORES = {}
 LEV_SCORES = {}
@@ -224,7 +225,7 @@ def run_keyword_test():
     # plot_hist(bxplt_data_gd)
     # plot_hist(bxplt_data_r2)
 
-    print("Performing T-Test on Keyword Test Scores")
+    print("Performing T-Test on LZJD distance of sequences")
     run_ttest(bxplt_data_gd, bxplt_data_r2)
 
 
@@ -311,8 +312,9 @@ def run_main_test():
     bxplt_data_r2 = [score['r2'] for score in SCORES.values()]
 
     # run pairwise t test
-    print("Performing T-Test on LZJD Distnace of files")
+    print("Performing T-Test on LZJD Distance of files")
     run_ttest(bxplt_data_gd, bxplt_data_r2)
+
 
 def run_jaro_kw_test():
     print("""
@@ -474,6 +476,40 @@ def run_example():
                                                                                EKWSEQS_SCORES[f]['r2']))
 
 
+def run_get_winners():
+    print("""
+            +++++++++++++++++++++++++++++
+            +++ Obtaining The Winners +++
+            +++++++++++++++++++++++++++++
+            """)
+
+    for f in KWSEQS_SCORES:
+        WINNERS[f] = {}
+        if KWSEQS_SCORES[f]['ghidra'] > KWSEQS_SCORES[f]['r2']:
+            WINNERS[f]['LZJD'] = 'Ghidra'
+        else:
+            WINNERS[f]['LZJD'] = 'R2'
+    for f in LEV_SCORES:
+        if LEV_SCORES[f]['ghidra'] > LEV_SCORES[f]['r2']:
+            WINNERS[f]['Levenshtein'] = 'Ghidra'
+        else:
+            WINNERS[f]['Levenshtein'] = 'R2'
+    for f in JARO_SCORES:
+        if JARO_SCORES[f]['ghidra'] > JARO_SCORES[f]['r2']:
+            WINNERS[f]['Jaro'] = 'Ghidra'
+        else:
+            WINNERS[f]['Jaro'] = 'R2'
+
+
+    print("{0:12} & {1:20} & {2:20} & {3:20} ".format('File', 'LZJD', 'Levenshtein', 'Jaro'))
+    for f in WINNERS:
+
+        print("{0:12} & {1:20} & {2:20} & {3:20} ".format(f,
+                                                          WINNERS[f]['LZJD'],
+                                                          WINNERS[f]['Levenshtein'],
+                                                          WINNERS[f]['Jaro']))
+
+
 def main(args):
     # grabbing parameters form arg parse
     global GHIDRA_PATH
@@ -564,6 +600,8 @@ def main(args):
 
     # This is just so to see if the Jaro algorithms coincides with LZJD or the Levenshtein scores
     run_jaro_kw_test()
+
+    run_get_winners()
 
     print("Done.")
 
