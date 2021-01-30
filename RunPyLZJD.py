@@ -155,9 +155,11 @@ def plot_scatter(data, title=""):
 
 
 def run_ttest(data1, data2):
-    print("Shapiro Output: {}".format(stats.shapiro(data1)))
-    print("Shapiro Output: {}".format(stats.shapiro(data2)))
+    print("Shapiro p-value Ghidra Data Set: {}".format(stats.shapiro(data1)[1]))
+    print("Shapiro p-value R2 Data Set: {}".format(stats.shapiro(data2)[1]))
+
     print("T-test Output: {}".format(stats.ttest_rel(data1, data2)))
+    print("Wilcoxon Output: {}".format(stats.wilcoxon(data1, data2)))
 
 
 def run_keyword_test():
